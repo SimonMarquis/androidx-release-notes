@@ -1,0 +1,18 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#october_26_2026",
+  "title": "October 26, 2026",
+  "releasedOn": "2026-10-26",
+  "updated": "2026-10-26T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#october_26_2026",
+  "components": [
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.12.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.12.0-alpha02",
+      "detailsHtml": "<ul>\n <li>Effect Play services:\n  <ul>\n   <li>Introduce a new <code>media3-effect-play-services</code> module providing Google Play services media effects, including <code>EnhancementSessionDecorator</code> for video enhancement and <code>StudioSoundAudioProcessor</code> for audio source separation.</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": "https://github.com/androidx/media/commits/1.12.0-alpha02"
+    }
+  ],
+  "rssUpdated": "2026-10-26T00:00:00Z"
+}
