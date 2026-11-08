@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#november_11_2022",
+  "title": "November 11, 2022",
+  "releasedOn": "2022-11-11",
+  "updated": "2022-11-11T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#november_11_2022",
+  "components": [
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.4.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.4.0-alpha02",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added support for Kotlin <code>1.7.21</code></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/a1e318590b217ecfce1b2de17eed2f18b6a680bb..c950703bd4594e7a5cf41004d1395cb44ade44a3/compose/compiler"
+    }
+  ]
+}

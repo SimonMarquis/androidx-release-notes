@@ -1,0 +1,89 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#november_8_2022",
+  "title": "November 8, 2022",
+  "releasedOn": "2022-11-08",
+  "updated": "2022-11-08T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#november_8_2022",
+  "components": [
+    {
+      "id": "test-annotation",
+      "name": "Test Annotation",
+      "version": "1.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#annotation-1.0.1",
+      "detailsHtml": "<p>Changes since 1.0.0 include:</p>\n<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Update to kotlin stdlib 1.7.10</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-runner",
+      "name": "Test Runner",
+      "version": "1.5.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#runner-1.5.0",
+      "detailsHtml": "<p>Changes since 1.4.0 include:</p>\n<p><strong>New features</strong></p>\n<ul>\n <li>Record android Trace spans for test lifecycle events</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Denote the long standing @Beta/@ExperimentalTestApi androidx.test.runner.screenshot as stable but deprecated (in favor of new androidx.test.core/espresso screenshot APIs)</li>\n <li>Deprecate the '-e timeout' runtime parameter in favor of JUnit's Timeout rule.</li>\n <li>Add an AbstractFilter class.</li>\n <li>Add AndroidClasspathSuite and experimental PackagePrefixClasspathSuite</li>\n <li>No-op and deprecate Google Analytics</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Add support for reading from TestStorage in -e testFile</li>\n <li>Handle case where app crashes before instrumentationResultPrinter is set.</li>\n <li>Report the process crash immediately in the orchestrator instrumentation listener.</li>\n <li>Support parameterized test names with commas and hashes.</li>\n <li>Improve error handling during test discovery phase in orchestrator</li>\n <li>Enhance error handling in exception scenarios (app crashes, etc)</li>\n</ul>\n<p><strong>Dependency Changes</strong></p>\n<ul>\n <li>Update to\n  <ul>\n   <li>org.junit:junit:4.13.2</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-rules",
+      "name": "Test Rules",
+      "version": "1.5.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#rules-1.4.1",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-monitor",
+      "name": "Test Monitor",
+      "version": "1.6.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#monitor-1.6.0",
+      "detailsHtml": "<p>Changes since 1.5.0 include:</p>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Internal API changes to support ActivityScenario#launchActivityForResult</li>\n <li>Add internal API for supporting different tracing libraries.</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Remove 'Activities that are still in CREATED to STOPPED' log spam</li>\n</ul>\n<p><strong>Dependency Changes</strong></p>\n<ul>\n <li>Add dependency on androidx.tracing</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-espresso",
+      "name": "Test Espresso",
+      "version": "3.5.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#espresso-3.5.0",
+      "detailsHtml": "<p>The following artifacts were released:</p>\n<ul>\n <li><code>androidx.test.espresso:espresso-accessibility:3.5.0</code></li>\n <li><code>androidx.test.espresso:espresso-core:3.5.0</code></li>\n <li><code>androidx.test.espresso:espresso-contrib:3.5.0</code></li>\n <li><code>androidx.test.espresso:espresso-idling-resource:3.5.0</code></li>\n <li><code>androidx.test.espresso:espresso-intents:3.5.0</code></li>\n <li><code>androidx.test.espresso:espresso-remote:3.5.0</code></li>\n <li><code>androidx.test.espresso:espresso-web:3.5.0</code></li>\n <li><code>androidx.test.espresso.idling:idling-concurrent:3.5.0</code></li>\n <li><code>androidx.test.espresso.idling:idling-net:3.5.0</code></li>\n</ul>\n<p><strong>New Features</strong></p>\n<ul>\n <li>Record android Trace spans for Espresso actions</li>\n <li>Espresso's DefaultFailureHandler now saves a screenshot on test failures to TestStorage</li>\n <li>Add experimental ViewInteraction.captureToBitmap extension function</li>\n <li>Save view hierarchy to a file on failures</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Promote ViewMatchers hasTextColor and hasBackground as stable APIs</li>\n <li>Add IntentsRule</li>\n <li>Add inverted matchers for IntentMatchers.hasExtraWithKey() and BundleMatchers.hasKey()</li>\n <li>Add a ViewAction that scrolls to the last position in a RecyclerView.</li>\n <li>Add IntentMatcher.hasExtra API</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Preserve tool type on up event</li>\n <li>Make IdlingRegistry more thread-safe.</li>\n <li>Support other views for scrollTo()</li>\n <li>Remove unnecessary <code>interruptEspressoTasks</code> warning logs for each Espresso interaction on Robolectric.</li>\n <li>Remove timeout in CloseKeyboardAction when running under Robolectric</li>\n <li>Use consistent InputDevice source for input gesture injection</li>\n <li>Support simulating ActivityNotFoundExceptions in Espresso Intents.</li>\n <li>Truncate view hierarchy in exception messages when it gets too large.</li>\n <li>Display number and list of ambiguously matched views.</li>\n <li>Validate that onView.check/perform() is invoked on the UI thread</li>\n</ul>\n<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Update to\n  <ul>\n   <li>kotlin stdlib 1.7.10</li>\n   <li>jsr305:2.0.2</li>\n   <li>tagsoup:1.2.1</li>\n   <li>androidx.annotation:1.2.0</li>\n  </ul></li>\n <li>contrib:\n  <ul>\n   <li>update to drawer 1.1.1, recycler view 1.2.1, material 1.4.0</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-core",
+      "name": "Test Core",
+      "version": "1.5.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#core-1.5.0",
+      "detailsHtml": "<p>Changes since 1.4.0 include:</p>\n<p><strong>New features</strong></p>\n<ul>\n <li>Record android Trace spans for ActivityScenario launch and close.</li>\n <li>Add new experimental APIs for screenshots. These APIs will automatically select the highest fidelity for taking screenshots based on platform API level, and support the Automated Test Device (ATD) emulator images.\n  <ul>\n   <li>View.captureToBitmap extension function</li>\n   <li>Window.captureRegionToBitmap extension function</li>\n   <li>takeScreenshot()</li>\n  </ul></li>\n <li>Add experimental Bitmap.writeToTestStorage API</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Add ActivityScenario#launchActivityForResult API and modify ActivityScenario#launch to remove use of Bootstrap Activity API. This change should improve performance and stability of ActivityScenario#launch. ActivityScenario#getResult will now enforce that it can only be used with ActivityScenario#launchActivityForResult</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fix ActivityScenario#launch when targeting and running on Android 33</li>\n <li>Use elapsedRealtime instead of currentTimeMillis to track ActivityScenario timeouts.</li>\n <li>Fix ActivityScenario's issue with starting an Activity from intent with package name in self-instrumenting tests.</li>\n <li>Reduce ActivityScenario overhead by using plain whitebackground and disabling transition animations in internal Activities</li>\n</ul>\n<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Update to\n  <ul>\n   <li>kotlin stdlib 1.7.10</li>\n   <li>androidx.lifecycle:lifecycle-common:2.3.1</li>\n   <li>androidx.annotation:annotation:1.2.0</li>\n  </ul></li>\n <li>Add\n  <ul>\n   <li>androidx.test.services:storage:1.4.2</li>\n   <li>com.google.guava:listenablefuture:1.0</li>\n   <li>androidx.concurrent:concurrent-futures:1.1.0</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-ext-junit",
+      "name": "Test Ext JUnit",
+      "version": "1.1.4",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#ext.junit-1.1.4",
+      "detailsHtml": "<p>Changes since 1.1.3 include:</p>\n<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Update to kotlin stdlib 1.7.10</li>\n <li>Update to org.junit:junit:4.13.2</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-ext-truth",
+      "name": "Test Ext Truth",
+      "version": "1.5.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#ext.truth-1.5.0",
+      "detailsHtml": "<p>Changes since 1.4.0 include:</p>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Add BundleSubject#stringArray</li>\n <li>Add ParcelableSubject.marshallsEquallyTo()</li>\n <li>Add BundleSubject#doubleFloat</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Make Intent matchers fail explicitly for null intent</li>\n</ul>\n<p><strong>Dependency Changes</strong></p>\n<ul>\n <li>Update to\n  <ul>\n   <li>com.google.guava:guava:30.1.1-android</li>\n   <li>com.google.truth:truth:1.1.3</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-services",
+      "name": "Test Services",
+      "version": "1.4.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#services-1.4.2",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-orchestrator",
+      "name": "Test Orchestrator",
+      "version": "1.4.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#orchestrator-1.4.2",
+      "detailsHtml": "",
+      "commitsUrl": null
+    }
+  ]
+}
