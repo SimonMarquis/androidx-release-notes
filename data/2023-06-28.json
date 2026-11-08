@@ -1,0 +1,65 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#june_28_2023",
+  "title": "June 28, 2023",
+  "releasedOn": "2023-06-28",
+  "updated": "2023-06-28T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#june_28_2023",
+  "components": [
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.5.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.5.0-beta03",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9eb2d144f9209cb9c4205ad1f981eb7ddf29b96e..24dc7b0781cb908b2385ec207ca1b3a72cb90093/compose/animation"
+    },
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.4.8",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.4.8",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Target Kotlin compiler version is bumped to 1.8.22.</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Improved error message for <code>@Composable</code> overrides. Now it correctly points out annotation mismatch.</li>\n <li>Warn about redundant <code>@Composable</code> annotation on inline lambdas that should not be marked as composable. This feature will not be supported with K2 compiler.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2fe7d40c0deea40f58e95e1e709fc55c5d5ad477..a0c8102678bd6a0e2f5cf2df3d220b4fe85cba5e/compose/compiler"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.5.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.5.0-beta03",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9eb2d144f9209cb9c4205ad1f981eb7ddf29b96e..24dc7b0781cb908b2385ec207ca1b3a72cb90093/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.5.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.5.0-beta03",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>BottomSheetState</code>, <code>ModalBottomSheetState</code> and <code>BottomDrawerState</code> now expose a progress property indicating the progress between the current (settled) anchor and the closest anchor in the swipe direction. (<a href=\"https://android-review.googlesource.com/#/q/I1b31727b4f56df890e336bea9f4de526733aaacc\">I1b317</a>, <a href=\"https://issuetracker.google.com/issues/271169225\">b/271169225</a>, <a href=\"https://issuetracker.google.com/issues/276375124\">b/276375124</a>, <a href=\"https://issuetracker.google.com/issues/276776071\">b/276776071</a>, <a href=\"https://issuetracker.google.com/issues/270066861\">b/270066861</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9eb2d144f9209cb9c4205ad1f981eb7ddf29b96e..24dc7b0781cb908b2385ec207ca1b3a72cb90093/compose/material"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.5.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.5.0-beta03",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Skip recomposition of subcompositions that will be removed. (<a href=\"https://android-review.googlesource.com/#/q/Ieeb9919897a9f9b4274ddc77e66608a673cd1112\">Ieeb99</a>, <a href=\"https://issuetracker.google.com/issues/254645321\">b/254645321</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9eb2d144f9209cb9c4205ad1f981eb7ddf29b96e..24dc7b0781cb908b2385ec207ca1b3a72cb90093/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.5.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.5.0-beta03",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Added FocusTargetModifierNode interface that can be used to create a custom FocusTarget. (<a href=\"https://android-review.googlesource.com/#/q/Ifb1d6a93af9292ec159b72513cb3f40b62c643e0\">Ifb1d6</a>)</li>\n <li>Fixed an issue with Dialog and Popup composables that could result in the child window not resizing as expected when <code>usePlatformDefaultWidth=true</code>. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/2616362\">I112ee</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9eb2d144f9209cb9c4205ad1f981eb7ddf29b96e..24dc7b0781cb908b2385ec207ca1b3a72cb90093/compose/ui"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.7.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.7.0-beta02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Navigation Compose now has the right z-order for custom transitions that use navigate with the <code>popUpTo</code> option.(<a href=\"https://android-review.googlesource.com/#/q/Ib1c3a329755b2cbec3d28568d03d73e5aa9b9128\">/Ib1c3a</a>, <a href=\"https://issuetracker.google.com/285153947\">b/285153947</a>)</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}
