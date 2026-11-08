@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#may_19_2025",
+  "title": "May 19, 2025",
+  "releasedOn": "2025-05-19",
+  "updated": "2025-05-19T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#may_19_2025",
+  "components": [
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.8.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.8.0-alpha01",
+      "detailsHtml": "<p>May 19th, 2025</p>\n<p>Use the 1.8.0 <a href=\"https://developer.android.com/jetpack/androidx/releases/media3#1.8.0\">stable version</a>.</p>",
+      "commitsUrl": null
+    }
+  ]
+}

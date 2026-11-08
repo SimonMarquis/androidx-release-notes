@@ -1,0 +1,25 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#may_16_2025",
+  "title": "May 16, 2025",
+  "releasedOn": "2025-05-16",
+  "updated": "2025-05-16T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#may_16_2025",
+  "components": [
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.7.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.7.1",
+      "detailsHtml": "<p>May 16th, 2025</p>\n<p>This release has the same code as 1.6.1 and is being released to ensure it appears as a 'newer' release than 1.7.0, which was an alpha release accidentally tagged as stable (see below).</p>",
+      "commitsUrl": null
+    },
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.7.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.7.0",
+      "detailsHtml": "<p>May 16th, 2025</p>\n<p>This release should have been <code>1.7.0-alpha01</code>, but was accidentally tagged <code>1.7.0</code> (i.e. stable) on maven.google.com. <strong>Please do not use it.</strong> Stay on 1.6.1 or upgrade to 1.7.1 (which has the same code as 1.6.1).</p>",
+      "commitsUrl": null
+    }
+  ]
+}

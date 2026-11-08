@@ -1,0 +1,25 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#may_23_2025",
+  "title": "May 23, 2025",
+  "releasedOn": "2025-05-23",
+  "updated": "2025-05-23T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#may_23_2025",
+  "components": [
+    {
+      "id": "lifecycle-viewmodel-navigation3",
+      "name": "Lifecycle ViewModel Navigation3",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#lifecycle-viewmodel-navigation3-1.0.0-alpha01",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "navigation3",
+      "name": "Navigation3",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation3#1.0.0-alpha02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue with the <code>SavedStateNavEntryDecorator</code> which caused collisions for different data classes with the same property values. (<a href=\"https://issuetracker.google.com/418070648\">b/418070648</a>, <a href=\"https://android-review.googlesource.com/#/q/Iff47751d5de26bfee744069461cee38419988699\">Iff4775</a>)</li>\n <li>Fixed a missing class issue that would cause crashes when running without declaring explicit dependencies. (<a href=\"https://issuetracker.google.com/419049149\">b/419049149</a>, <a href=\"https://android-review.googlesource.com/#/q/I4b4edbf046a62164e56e1871ca9918d9683a2abf\">I4b4ed</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1c211305886d70caa42620facce1b97ed7e47bf5..3db836162afb266b54eb37d28c7c12231755fc9b/navigation3"
+    }
+  ]
+}
