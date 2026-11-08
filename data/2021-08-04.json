@@ -1,0 +1,313 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#august_4_2021",
+  "title": "August 4, 2021",
+  "releasedOn": "2021-08-04",
+  "updated": "2021-08-04T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#august_4_2021",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.3.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.3.1",
+      "detailsHtml": "<p><strong>Dependency updates</strong></p>\n<ul>\n <li>Activity now depends on Kotlin <code>1.5.21</code>.</li>\n <li>Activity Compose now depends on Compose <code>1.0.1</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7077236bd50d5bf31068c8ac40302765010a0e56..c076d3eb651533329571facecfb54dc72e1b0fc4/activity"
+    },
+    {
+      "id": "benchmark",
+      "name": "Benchmark",
+      "version": "1.1.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/benchmark#1.1.0-alpha05",
+      "detailsHtml": "<p><code>1.1.0-alpha04</code> was cancelled before release due to a sporatic crash. <a href=\"https://issuetracker.google.com/issues/193827052\">b/193827052</a></p>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Switched <a href=\"https://developer.android.com/reference/kotlin/androidx/benchmark/macro/MacrobenchmarkScope#startActivityAndWait(android.content.Intent)\">startActivityAndWait</a> to invoke launch via <code>am start</code>, which reduces the time of each measurement iteration by approximately 5 seconds, at the cost of no longer supporting intent parcelables. (<a href=\"https://android-review.googlesource.com/#/q/I5a6f55819fe095da1317b55405a6a5a9fe3cb758\">I5a6f5</a>, <a href=\"https://issuetracker.google.com/issues/192009149\">b/192009149</a></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Reduce aggressiveness of thermal throttle detection, and recompute baseline if throttles are detected frequently. (<a href=\"https://android-review.googlesource.com/#/q/I7327b4f1c15317fad28de1f06a148aad29c7cd4f\">I7327b</a>)</li>\n <li>Fixes FrameTimingMetric to work on Android S beta (<a href=\"https://android-review.googlesource.com/#/q/Ib60ccf09fb2fa09f128374140c3657015626dd2c\">Ib60cc</a>, <a href=\"https://issuetracker.google.com/issues/193260119\">b/193260119</a>)</li>\n <li>Use an <code>EmptyActivity</code> to bring the target app out of a force-stopped state to better support <code>CompilationMode.BaselineProfile</code>. (<a href=\"https://android-review.googlesource.com/#/q/Id7cac284a5a42f5aeaf92ba6522061f794afcc96\">Id7cac</a>, <a href=\"https://issuetracker.google.com/issues/192084204\">b/192084204</a>)</li>\n <li>Changed trace file extension to <code>.perfetto-trace</code> to match platform standard. (<a href=\"https://android-review.googlesource.com/#/q/I4c236a26dfc5494415ee3f4d340329244a22c2b6\">I4c236</a>, <a href=\"https://issuetracker.google.com/issues/174663039\">b/174663039</a>)</li>\n <li>StartupTimingMetric now outputs the \"fullyDrawnMs\" metric to measure time until your application has completed rendering. To define this metric for your app, call Activity.reportFullyDrawn when your initial content is ready, such as when your initial list items are loaded from DB or network. (reportFullyDrawn method available without build version checks on ComponentActivity). Note that your test must run long enough to capture the metric (startActivityAndWait doesn't wait for reportFullyDrawn). (<a href=\"https://android-review.googlesource.com/#/q/If1141474620b0f2d50f59801a1a8e1cac49ae51d\">If1141</a>, <a href=\"https://issuetracker.google.com/issues/179176560\">b/179176560</a>)</li>\n <li>Reduce cost of appending Ui metadata to traces by 50+ ms (<a href=\"https://android-review.googlesource.com/#/q/Ic839003ca1a321d56dca7686db29cb3c00c67fc5\">Ic8390</a>, <a href=\"https://issuetracker.google.com/issues/193923003\">b/193923003</a>)</li>\n <li>Drastically increased polling frequency when stopping tracing, which can reduce e.g. startup benchmark runtime by 30+% (<a href=\"https://android-review.googlesource.com/#/q/Idfbc18c4c997d2d78292b14a44d405d11fe7b43e\">Idfbc1</a>, <a href=\"https://issuetracker.google.com/issues/193723768\">b/193723768</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ccf79f53033e665475116a4e78ff124df2a52c4b..d725303accfa9be6d5c3d61c7603ed1b9a780cbd/benchmark"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.0.1",
+      "detailsHtml": "<p><strong>Dependency Updates</strong></p>\n<ul>\n <li>Updated to depend on Kotlin <code>1.5.21</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7077236bd50d5bf31068c8ac40302765010a0e56..c076d3eb651533329571facecfb54dc72e1b0fc4/compose/animation"
+    },
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.0.1",
+      "detailsHtml": "<p><strong>Dependency Updates</strong></p>\n<ul>\n <li>Updated to depend on Kotlin <code>1.5.21</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7077236bd50d5bf31068c8ac40302765010a0e56..c076d3eb651533329571facecfb54dc72e1b0fc4/compose/compiler/compiler-hosted"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.0.1",
+      "detailsHtml": "<p><strong>Dependency Updates</strong></p>\n<ul>\n <li>Updated to depend on Kotlin <code>1.5.21</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7077236bd50d5bf31068c8ac40302765010a0e56..c076d3eb651533329571facecfb54dc72e1b0fc4/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.0.1",
+      "detailsHtml": "<p><strong>Dependency Updates</strong></p>\n<ul>\n <li>Updated to depend on Kotlin <code>1.5.21</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7077236bd50d5bf31068c8ac40302765010a0e56..c076d3eb651533329571facecfb54dc72e1b0fc4/compose/material"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.0.1",
+      "detailsHtml": "<p><strong>Dependency Updates</strong></p>\n<ul>\n <li>Updated to depend on Kotlin <code>1.5.21</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7077236bd50d5bf31068c8ac40302765010a0e56..c076d3eb651533329571facecfb54dc72e1b0fc4/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.0.1",
+      "detailsHtml": "<p><strong>Dependency Updates</strong></p>\n<ul>\n <li>Updated to depend on Kotlin <code>1.5.21</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7077236bd50d5bf31068c8ac40302765010a0e56..c076d3eb651533329571facecfb54dc72e1b0fc4/compose/ui"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>AnimatedImageVector</code> and the related APIs are now in the new <code>androidx.compose.animation:animation-graphics</code> module. (<a href=\"https://android-review.googlesource.com/#/q/I6087391a9869d2315a71422f24175f42ec085681\">I60873</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Moved <code>InfiniteAnimationPolicy</code> to :compose:ui (<a href=\"https://android-review.googlesource.com/#/q/I5eb09c7aa24a85fd2e66cc9b84ea6c906dc5210a\">I5eb09</a>, <a href=\"https://issuetracker.google.com/issues/160602714\">b/160602714</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1a3ba62b97c98d85f6c0ac2fb6483fc9ac60872e..d725303accfa9be6d5c3d61c7603ed1b9a780cbd/compose/animation"
+    },
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.1.0-alpha01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1a3ba62b97c98d85f6c0ac2fb6483fc9ac60872e..d725303accfa9be6d5c3d61c7603ed1b9a780cbd/compose/compiler/compiler-hosted"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Updated <code>DrawScope#drawImage</code> method that consumes source and destination rects to consume an optional FilterQuality parameter. This is useful for pixel art that is intended to be pixelated when scaled up for pixel based art. Updated BitmapPainter + Image composable to also consume an optional FilterQuality parameter (<a href=\"https://android-review.googlesource.com/#/q/Ie4fb04013701add0fba1c5c6bb9da2812d6436e7\">Ie4fb0</a>, <a href=\"https://issuetracker.google.com/issues/180311607\">b/180311607</a>)</li>\n <li>TextField now clears selection when back button is pressed, which matches Android EditText behavior. (<a href=\"https://android-review.googlesource.com/#/q/I3ca164d09ee6d82f292aacfd2df0af05643cb1aa\">I3ca16</a>, <a href=\"https://issuetracker.google.com/issues/174173645\">b/174173645</a>)</li>\n <li>Add Cursor Handle. (<a href=\"https://android-review.googlesource.com/#/q/I07a8217c8ecbcd1c84c1a8df20c6e8b07d409148\">I07a82</a>, <a href=\"https://issuetracker.google.com/issues/173016579\">b/173016579</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Scrolling via semantics actions for lazy lists and regular scrolling components is now animated (<a href=\"https://android-review.googlesource.com/#/q/Id9066420fd80bbea3c0463813be0338fff017514\">Id9066</a>, <a href=\"https://issuetracker.google.com/issues/190742024\">b/190742024</a>)</li>\n</ul>\n<p><strong>External Contribution</strong></p>\n<ul>\n <li><code>LazyVerticalGrid</code> now accepts both horizontal and vertical arrangement parameters. (<a href=\"https://android-review.googlesource.com/#/q/If9c929e4d44f1c5e55184e426b62ab4b41c76ff6\">If9c92</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1a3ba62b97c98d85f6c0ac2fb6483fc9ac60872e..d725303accfa9be6d5c3d61c7603ed1b9a780cbd/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Updated <code>DrawScope#drawImage</code> method that consumes source and destination rects to consume an optional FilterQuality parameter. This is useful for pixel art that is intended to be pixelated when scaled up for pixel based art. Updated BitmapPainter + Image composable to also consume an optional FilterQuality parameter (<a href=\"https://android-review.googlesource.com/#/q/Ie4fb04013701add0fba1c5c6bb9da2812d6436e7\">Ie4fb0</a>, <a href=\"https://issuetracker.google.com/issues/180311607\">b/180311607</a>)</li>\n <li>Renamed BadgeBox to BadgedBox, changed parameters to accept Badge composable. Added Badge component that is the typical badge content for a BadgedBox. (<a href=\"https://android-review.googlesource.com/#/q/I639c692b5fe86e8aabfb01df2020114ea13b4912\">I639c6</a>)</li>\n <li>Added NavigationRail component, see the docs and samples for usage information (<a href=\"https://android-review.googlesource.com/#/q/I8de77279455344ff38bd4d04ba3c30e3c0dda0fb\">I8de77</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Added a bottom-aligned NavigationRail sample and Catalog app demo. (<a href=\"https://android-review.googlesource.com/#/q/I3cffc68a7a8d6591f2d59bb407f23b1ebe43361b\">I3cffc</a>)</li>\n <li>Dialogs now follow the platform sizing behaviour. Set usePlatformDefaultWidth to false to override this behaviour. (<a href=\"https://android-review.googlesource.com/#/q/Iffaedb8890f59627a58fb4f33d06044ac120fd7d\">Iffaed</a>, <a href=\"https://issuetracker.google.com/issues/192682388\">b/192682388</a>)</li>\n <li>Added navigation-rail demo to the catalog app. (<a href=\"https://android-review.googlesource.com/#/q/I0496024f7358b4accbb5e62e3198a6ead14c685e\">I04960</a>)</li>\n <li>Added badge demo to the catalog app. (<a href=\"https://android-review.googlesource.com/#/q/If285dd945a8e32efeb6ba912eb6bc535554ca140\">If285d</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1a3ba62b97c98d85f6c0ac2fb6483fc9ac60872e..d725303accfa9be6d5c3d61c7603ed1b9a780cbd/compose/material"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.1.0-alpha01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1a3ba62b97c98d85f6c0ac2fb6483fc9ac60872e..d725303accfa9be6d5c3d61c7603ed1b9a780cbd/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>RelocationRequester.bringIntoView</code> now accepts a rectangle as a parameter which enables us to bring a part of a composable into view (<a href=\"https://android-review.googlesource.com/#/q/Ice2c55d582bbeb80757cf30e2334bb970a31f438\">Ice2c5</a>, <a href=\"https://issuetracker.google.com/issues/194330245\">b/194330245</a>)</li>\n <li><code>AnimatedImageVector</code> and the related APIs are now in the new <code>androidx.compose.animation:animation-graphics</code> module. (<a href=\"https://android-review.googlesource.com/#/q/I6087391a9869d2315a71422f24175f42ec085681\">I60873</a>)</li>\n <li>Added experimental modifier to handle relocation requests. (<a href=\"https://android-review.googlesource.com/#/q/I65a97bd7fca7271781efe31fcc9cb387e9857b51\">I65a97</a>, <a href=\"https://issuetracker.google.com/issues/178211874\">b/178211874</a>)</li>\n <li>\n  <p>Introduced BrushPainter API to support drawing of an arbitrary Brush within a Painter, similar to ColorPainter</p>\n  <p>Updated Brush API to have an intrinsic size parameter that is queried within BrushPainter (<a href=\"https://android-review.googlesource.com/#/q/Ia27529070e6f2acdac9d2c73f41e886b36452f34\">Ia2752</a>, <a href=\"https://issuetracker.google.com/issues/189466433\">b/189466433</a>)</p>\n </li>\n <li>\n  <p>Updated DrawScope#drawImage method that consumes source and destination rects to consume an optional FilterQuality parameter. This is useful for pixel art that is intended to be pixelated when scaled up for pixel based art. Updated BitmapPainter + Image composable to also consume an optional FilterQuality parameter (<a href=\"https://android-review.googlesource.com/#/q/Ie4fb04013701add0fba1c5c6bb9da2812d6436e7\">Ie4fb0</a>, <a href=\"https://issuetracker.google.com/issues/180311607\">b/180311607</a>)</p>\n </li>\n <li>\n  <p>Added <code>GestureScope.advanceEventTime</code> method to give more control over the timing of events in a gesture (<a href=\"https://android-review.googlesource.com/#/q/Ibf3e2d35b4462863aa0de010cb2d0fe0d10cd3d1\">Ibf3e2</a>)</p>\n </li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>In order to better support chaining of draw modifiers, make sure the Modifier.paint implementation calls drawsContent. Previously Modifier.paint was expected to a leaf node in the chain of Modifiers, however, by doing so it prevents it from being configured on a composable container (ex. box) or adding additional decorations on top such as <code>Modifier.paint().border()</code>. By having Modifier.paint call drawContent after drawing the contents of the given painter, we have better behavior consistency in behavior with the modifier pattern. (<a href=\"https://android-review.googlesource.com/#/q/Ibb2a7ae54a86643ba4fc1604ce39df7477ab66f0\">Ibb2a7</a>, <a href=\"https://issuetracker.google.com/issues/178201337\">b/178201337</a>, <a href=\"https://issuetracker.google.com/issues/186213275\">b/186213275</a>)</li>\n <li>Dialogs now follow the platform sizing behaviour. Set <code>usePlatformDefaultWidth</code> to false to override this behaviour. (<a href=\"https://android-review.googlesource.com/#/q/Iffaedb8890f59627a58fb4f33d06044ac120fd7d\">Iffaed</a>, <a href=\"https://issuetracker.google.com/issues/192682388\">b/192682388</a>)</li>\n <li>Moved <code>InfiniteAnimationPolicy</code> to :compose:ui (<a href=\"https://android-review.googlesource.com/#/q/I5eb09c7aa24a85fd2e66cc9b84ea6c906dc5210a\">I5eb09</a>, <a href=\"https://issuetracker.google.com/issues/160602714\">b/160602714</a>)</li>\n <li>Scrolling via semantics actions for lazy lists and regular scrolling components is now animated (<a href=\"https://android-review.googlesource.com/#/q/Id9066420fd80bbea3c0463813be0338fff017514\">Id9066</a>, <a href=\"https://issuetracker.google.com/issues/190742024\">b/190742024</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1a3ba62b97c98d85f6c0ac2fb6483fc9ac60872e..d725303accfa9be6d5c3d61c7603ed1b9a780cbd/compose/ui"
+    },
+    {
+      "id": "core-google-shortcuts",
+      "name": "Core-Telecom",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#core-google-shortcuts-1.1.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Indexing support for URI based icons in Donated shortcuts to be displayed by Google apps.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/720ae3dd8b52a9505c88d436616c421214a389c3..d725303accfa9be6d5c3d61c7603ed1b9a780cbd/core/core-google-shortcuts"
+    },
+    {
+      "id": "datastore",
+      "name": "Datastore",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/datastore#1.0.0",
+      "detailsHtml": "<p><strong>Major features of 1.0.0</strong></p>\n<p>Jetpack DataStore is a data storage solution that allows you to store key-value pairs or typed objects with protocol buffers. DataStore uses Kotlin coroutines and Flow to store data asynchronously, consistently, and transactionally.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/34b1eceb499a984d35a72b8eacbaacb4a5d781e9..1999f75936498263f82e18b8c21a2b7cc76a5eb2/datastore"
+    },
+    {
+      "id": "exifinterface",
+      "name": "Exifinterface",
+      "version": "1.3.3",
+      "url": "https://developer.android.com/jetpack/androidx/releases/exifinterface#1.3.3",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix parsing subsec-related tags. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1508143\">aosp/1508143</a>)</li>\n <li>Prevent RuntimeException when calling setDataSource. (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/c8e66e9039c7bccb3bce6d9b40b80f12f1f42eba\">c8e66e9</a>)</li>\n <li>Prevent skipBytes from infinitely looping. (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/fdbe88b8753e72d1c6136aa3df29b55c0c8e704e\">fdbe88b</a>)</li>\n <li>Catch RuntimeException from MediaMetadataRetriever. (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/389b21a687663a13b894d69dde9a10ca6de9f548\">389b21a</a>)</li>\n <li>Add support for saving attributes for DNG files (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/3017dbcbebc1868f0e541c65138a6d875aeb1e49\">3017dbc</a>)</li>\n <li>Replace non-thumbnail tags with thumbnail tags. (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/e1b916d1f235df260f6ec5d8ecc1c1797634e232\">e1b916d</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/a54af0aba131d0a6fff39aaf991e9e713ab9777f..2a2663bc8cbda3f59b4c0387b92ce9c74c3492b6/exifinterface/exifinterface"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.4.0-alpha06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.4.0-alpha06",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue with multiple back stacks when rapidly swapping between back stacks that would appear as an <code>IllegalStateException</code> while restoring a <code>FragmentTransaction</code> or as a second copy of a fragment appearing. (<a href=\"https://android-review.googlesource.com/#/q/I9039f01490dae53cb66ef435161b153b4a0568ff\">I9039f</a>)</li>\n <li>Fixed an issue where <code>FragmentManager</code> would hold onto a copy of state previously saved via <code>saveBackStack()</code> even after that state was restored. (<a href=\"https://android-review.googlesource.com/#/q/Ied212e256fedc5ba5288d046c023ba1b767a894a\">Ied212</a>)</li>\n <li>The <code>dismissAllowingStateLoss()</code> method of <code>DialogFragment</code> no longer crashes when you call it after the state is saved when specifically adding the DialogFragment via the <code>show(FragmentTransaction, String)</code> method. (<a href=\"https://android-review.googlesource.com/#/q/I844222aba9e56d7ae6b0cdb57793ab38f6dbe4c1\">I84422</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/97264aa4532db7f7db1ffb3f42f3a9204971dbfc..d725303accfa9be6d5c3d61c7603ed1b9a780cbd/fragment"
+    },
+    {
+      "id": "games-activity",
+      "name": "Games-Activity",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/games#games-activity-1.0.0",
+      "detailsHtml": "<p><strong>Major features of 1.0.0</strong></p>\n<p>This is the initial release to stable of Games-Activity, Games-Controller and Games-Text-Input. See the <a href=\"https://developer.android.com/games/agdk\">AGDK Home Page</a> for more information.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/opt/gamesdk/+log/c6508fc0745ecbc0bccc6e55bcc47aefc0ada7a8..565cb7b2f1f88bc527c07a1512ab6ae719b7990d/GameActivity"
+    },
+    {
+      "id": "games-controller",
+      "name": "Games-Controller",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/games#games-controller-1.0.0",
+      "detailsHtml": "<p><strong>Major features of 1.0.0</strong></p>\n<p>This is the initial release to stable of Games-Activity, Games-Controller and Games-Text-Input. See the <a href=\"https://developer.android.com/games/agdk\">AGDK Home Page</a> for more information.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/opt/gamesdk/+log/c6508fc0745ecbc0bccc6e55bcc47aefc0ada7a8..565cb7b2f1f88bc527c07a1512ab6ae719b7990d/src/paddleboat"
+    },
+    {
+      "id": "games-text-input",
+      "name": "Games-Text-Input",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/games#games-text-input-1.0.0",
+      "detailsHtml": "<p><strong>Major features of 1.0.0</strong></p>\n<p>This is the initial release to stable of Games-Activity, Games-Controller and Games-Text-Input. See the <a href=\"https://developer.android.com/games/agdk\">AGDK Home Page</a> for more information.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/opt/gamesdk/+log/c6508fc0745ecbc0bccc6e55bcc47aefc0ada7a8..565cb7b2f1f88bc527c07a1512ab6ae719b7990d/GameTextInput"
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.4.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.4.0-alpha03",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><strong>Source-breaking change</strong>: ViewModelProvider has been rewritten in Kotlin. <code>ViewModelProvider.Factory.create</code> method no longer allows nullable generic. (<a href=\"https://android-review.googlesource.com/#/q/I9b9f6617dc9377bc99a954eb096194b1240c98fe\">I9b9f6</a>)</li>\n</ul>\n<p><strong>Behavior Changes</strong></p>\n<ul>\n <li>The <code>Lifecycle.repeatOnLifecycle</code>: <code>block</code> is now always invoked serially when repeating execution. (<a href=\"https://android-review.googlesource.com/#/q/Ibab3391210cbd14fdfe950899f9cb226bd9512fb\">Ibab33</a>)</li>\n</ul>\n<p><strong>External Contribution</strong></p>\n<ul>\n <li>Thanks <a href=\"https://github.com/chao2zhang\">chao2zhang</a> for fixing the code snippets in the <code>repeatOnLifecycle</code> documentation. <a href=\"https://github.com/androidx/androidx/pull/205\">#205</a>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ccf79f53033e665475116a4e78ff124df2a52c4b..d725303accfa9be6d5c3d61c7603ed1b9a780cbd/lifecycle"
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "version": "1.4.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media#media-1.4.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix mutability flag for creating <code>PendingIntent</code> to prevent crash when targeting Android S.</li>\n <li>Fix ClassVerificationFailure for <code>NotificationCompat.MediaStyle</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1d797e449a5d71eb3b46febbc8dddc1d5e57eb27..05c3ad7166c3859d0a8da6e8786a9d3b6f54efbe/media/media"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.4.0-alpha06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.4.0-alpha06",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>The <code>requireSlidingPaneLayout()</code> and <code>requireDetailPaneNavHostFragment()</code> methods on <code>AbstractListDetailFragment</code> have been renamed to <code>getSlidingPaneLayout()</code> and <code>getDetailPaneNavHostFragment()</code>, respectively. (<a href=\"https://android-review.googlesource.com/#/q/I34a0844edbccd871c37de5caf9cd4af62a7d0821\">I34a08</a>)</li>\n</ul>\n<p><strong>Behavior Changes</strong></p>\n<ul>\n <li>When navigating with animations (like <code>Crossfade</code>), the new destination’s <code>Lifecycle</code> will now only reach the <code>RESUMED</code> when the animation completes. (<a href=\"https://android-review.googlesource.com/#/q/If0543dd1c20e7338078115e98b5585623f9b8f1c\">If0543</a>, <a href=\"https://issuetracker.google.com/issues/172112072\">b/172112072</a>, <a href=\"https://issuetracker.google.com/issues/194301889\">b/194301889</a>)</li>\n <li>Navigation Compose's <code>NavHost</code> now sets the graph as part of the first composition. (<a href=\"https://android-review.googlesource.com/#/q/Ieb7be7689ab5c40cfcc52fefd70a87b406ce8c60\">Ieb7be</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Popping the last destination of a navigation graph no longer throws a <code>ClassCastException</code>. (<a href=\"https://android-review.googlesource.com/#/q/If0543dd1c20e7338078115e98b5585623f9b8f1c\">If0543</a>, <a href=\"https://issuetracker.google.com/issues/172112072\">b/172112072</a>, <a href=\"https://issuetracker.google.com/issues/194301889\">b/194301889</a>)</li>\n <li>Fixed a <code>NullPointerException</code> that would occur when adding a deep link without a <code>Uri</code> and navigating via a route or deep link. (<a href=\"https://android-review.googlesource.com/#/q/938a0cc7f71bf0c8c7556ef7fe2f772f9d0ec07c\">938a0c</a>, <a href=\"https://issuetracker.google.com/193805425\">b/193805425</a>)</li>\n <li>Fixed an issue in Navigation Compose where a deep linked <code>NavBackStackEntry</code> would not reach the <code>RESUMED</code> state. (<a href=\"https://android-review.googlesource.com/#/q/I192c5d5922901f94ea0cf5abe7a922c0a63cc033\">I192c5</a>)</li>\n <li>Fixed an issue where popping a dialog destination would not update the NavController's system back button handling, potentially causing the NavController to intercept the back button even though it does not have any back stack to pop. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1782668\">aosp/1782668</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/97264aa4532db7f7db1ffb3f42f3a9204971dbfc..d725303accfa9be6d5c3d61c7603ed1b9a780cbd/navigation"
+    },
+    {
+      "id": "profileinstaller",
+      "name": "ProfileInstaller",
+      "version": "1.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/profileinstaller#1.0.1",
+      "detailsHtml": "<p>Updated to be compatible with Compose 1.0.1.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7077236bd50d5bf31068c8ac40302765010a0e56..c076d3eb651533329571facecfb54dc72e1b0fc4/profileinstaller/profileinstaller"
+    },
+    {
+      "id": "profileinstaller",
+      "name": "ProfileInstaller",
+      "version": "1.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/profileinstaller#1.1.0-alpha02",
+      "detailsHtml": "<p>Updated to be compatible with Compose 1.1.0-alpha01.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/97264aa4532db7f7db1ffb3f42f3a9204971dbfc..d725303accfa9be6d5c3d61c7603ed1b9a780cbd/profileinstaller/profileinstaller"
+    },
+    {
+      "id": "sharetarget",
+      "name": "ShareTarget",
+      "version": "1.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/sharetarget#1.2.0-alpha01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Share target service explicit value for android:exported attribute fix for Android 12. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1742473\">aosp/1742473</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/414b76580d5a2e88020d6631354817a0f34fec00..11d2376b4247b10f75e08c7fcfd67dbf1994a6c1/sharetarget/sharetarget"
+    },
+    {
+      "id": "startup",
+      "name": "Startup",
+      "version": "1.1.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/startup#1.1.0",
+      "detailsHtml": "<p>This release is identical to <code>androidx.startup:startup-runtime:1.1.0-rc01</code>.</p>\n<p><strong>Important changes since 1.0.0</strong></p>\n<ul>\n <li>\n  <p>Multiple <code>InitializationProvider</code> <code>&lt;provider&gt;</code> elements can now be added to the application’s AndroidManifest.xml for libraries or applications that require automatic initialization in multiple processes. <a href=\"https://android-review.googlesource.com/#/q/Ia07123fcae20f7bdfc9b9f38830d84134fb8d3d4\">Ia0712</a>, <a href=\"https://issuetracker.google.com/issues/183136596\">b/183136596</a></p>\n </li>\n <li>\n  <p>Better proguard rules, multi-dex rules to ensure <code>Initializer</code>s end up in the primary dex file. <a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1743740\">aosp/1743740</a></p>\n </li>\n <li>\n  <p>Add baseline profile rules to optimize the use of <code>androidx.startup</code>. <a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1763934\">aosp/17639340</a></p>\n </li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/436aaeb1688cb1a3dd5f07e7cde763abd5f2761f..aea86511661df6f9895d38bab5053a80d15f24c4/startup/startup-runtime"
+    },
+    {
+      "id": "viewpager2",
+      "name": "ViewPager2",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/viewpager2#1.1.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>\n  <p>Upgrade androidx to use Kotlin 1.4 (<a href=\"https://android-review.googlesource.com/#/q/Id647100407925c16d734c8c43392b4e2d108d0e3\">Id6471</a>, <a href=\"https://issuetracker.google.com/issues/165307851\">b/165307851</a>, <a href=\"https://issuetracker.google.com/issues/165300826\">b/165300826</a>)</p>\n </li>\n <li>\n  <p>Move to targeting Java 8 for all androidx libraries (<a href=\"https://android-review.googlesource.com/#/q/2923f39afb2f019e043f3a8e1d409fa49d90808e\">2923f39</a>)</p>\n </li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed dispatch of window insets, all pages now get the same insets. (<a href=\"https://android-review.googlesource.com/#/q/I47fef39b5fca4a936c8428b741097974b56a518c\">I47fef</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6c98d66b901be2eecdf89477ccd70d2490ca6fc2..d725303accfa9be6d5c3d61c7603ed1b9a780cbd/viewpager2/viewpager2"
+    },
+    {
+      "id": "wear",
+      "name": "Wear",
+      "version": "1.2.0-alpha13",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#wear-1.2.0-alpha13",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Renamed <code>WearTypeHelper.isChinaDevice</code> to<code>WearTypeHelper.isChinaBuild</code>. (<a href=\"https://android-review.googlesource.com/#/q/I4730259bc10061164e989fba882331496b457316\">I47302</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>We have added accessibility features to <code>androidx.wear.widget.ConfirmationOverlay</code> that will read out messages if set followed by animation description. (<a href=\"https://android-review.googlesource.com/#/q/I524ddf3007652a024191197e46e1e6641d239c73\">I524dd</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/97264aa4532db7f7db1ffb3f42f3a9204971dbfc..d725303accfa9be6d5c3d61c7603ed1b9a780cbd/wear/wear"
+    },
+    {
+      "id": "wear-complications-watchface",
+      "name": "Wear Complications & Watchface",
+      "version": "1.0.0-alpha19",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#complications-watchface-1.0.0-alpha19",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>We've added <code>ListenableWatchFaceMetadataClient.listenableCreateWatchFaceMetadataClient</code> which provides a <code>ListenableFuture</code> wrapper for <code>WatchFaceMetadataClient.createWatchFaceMetadataClient</code>. (<a href=\"https://android-review.googlesource.com/#/q/I5fa37e1f8b22279c5900b837a93b2e20f388a1fa\">I5fa37</a>)</li>\n <li><code>UserStyleOption.getOptionForId</code> now accepts <code>UserStyleOption.Id</code> instead of a byte array. (<a href=\"https://android-review.googlesource.com/#/q/I469bed315164f9b8f3c9dc847d426f3798389468\">I469be</a>)</li>\n <li>Provide constants <code>BooleanOption.TRUE</code> and <code>BooleanOption.FALSE</code> and disallow instance creation (<a href=\"https://android-review.googlesource.com/#/q/I46e096d6cc1d80a53e01f814ba337d57de8ba41b\">I46e09</a>)</li>\n <li>Methods in wear-watchface-client that can throw RemoteException have now been annotated accordingly. (<a href=\"https://android-review.googlesource.com/#/q/Ib8438ef3e1bb63051f3ce7a8bff0da5bb58839fe\">Ib8438</a>)</li>\n <li>For consistency we've renamed <code>EditorSession.createOnWatchEditingSession</code> to <code>createOnWatchEditorSession</code>, similarly <code>createHeadlessEditingSession</code> is now <code>createHeadlessEditorSession</code>. Their guava wrappers have also been renamed. (<a href=\"https://android-review.googlesource.com/#/q/I1526b764a598937eb0bc16dab2b32e35ce279cfc\">I1526b</a>)</li>\n <li><code>EditorSession</code> is now an interface and <code>ListenableEditorSession.commitChangesOnClose</code> is now properly delegated. (<a href=\"https://android-review.googlesource.com/#/q/I7dc3ef8eea4ae8f5f11ccef7086d2909763ad411\">I7dc3e</a>)</li>\n <li>We now reject any user style schema that has settings or options with conflicting IDs (<a href=\"https://android-review.googlesource.com/#/q/Ic27153688978dca2bd801b4d69af6296a2eb3b2c\">Ic2715</a>)</li>\n <li>We have added an overloaded <code>UserStyle.get</code> which accepts <code>UserStyleSetting.Id</code>. (<a href=\"https://android-review.googlesource.com/#/q/I2aa0ff7c6075a91436fe9b5a87f935a1356862e2\">I2aa0f</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/97264aa4532db7f7db1ffb3f42f3a9204971dbfc..d725303accfa9be6d5c3d61c7603ed1b9a780cbd/wear"
+    },
+    {
+      "id": "wear-ongoing",
+      "name": "Wear-Ongoing",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#wear-ongoing-1.0.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Some setters on OngoingActivity.Builder now accept a null argument in order to give symmetry and consistency to the setters and getters (<a href=\"https://android-review.googlesource.com/#/q/I17ee5238d2e515be2796fa12ecb6adc97e44fcd9\">I17ee5</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/86ff5b4bb956431ec884586ce0aea0127e189ec4..d725303accfa9be6d5c3d61c7603ed1b9a780cbd/wear/wear-ongoing"
+    },
+    {
+      "id": "wear-phone-interactions",
+      "name": "Wear-Phone-Interactions",
+      "version": "1.0.0-alpha07",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#wear-phone-interactions-1.0.0-alpha07",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Renamed <code>WearTypeHelper.isChinaDevice</code> to<code>WearTypeHelper.isChinaBuild</code>. (<a href=\"https://android-review.googlesource.com/#/q/I4730259bc10061164e989fba882331496b457316\">I47302</a>)</li>\n <li>We have updated RemoteAuthClient library to automatically pick redirect_uri based on device type (RoW/China). (<a href=\"https://android-review.googlesource.com/#/q/I38866d48ffdeaa961edd5e67360b509d7ccffd6c\">I38866</a>)</li>\n <li>Fixed bug that caused converting BridgingConfig to/from Bundle to fail with ClassCastException. Added unit tests for BridgingManagerService class. (<a href=\"https://android-review.googlesource.com/#/q/I68ecb506624219155adb5c3aa2fc67621fefb73e\">I68ecb</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/97264aa4532db7f7db1ffb3f42f3a9204971dbfc..d725303accfa9be6d5c3d61c7603ed1b9a780cbd/wear/wear-phone-interactions"
+    },
+    {
+      "id": "wear-remote-interactions",
+      "name": "Wear-Remote-Interactions",
+      "version": "1.0.0-alpha06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#wear-remote-interactions-1.0.0-alpha06",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/97264aa4532db7f7db1ffb3f42f3a9204971dbfc..d725303accfa9be6d5c3d61c7603ed1b9a780cbd/wear/wear-remote-interactions"
+    },
+    {
+      "id": "wear-input",
+      "name": "Wear-Input",
+      "version": "1.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#input-1.1.0-rc01",
+      "detailsHtml": "<p>No API Changes since <code>androidx.wear:wear-input:1.1.0-beta01</code> and <code>androidx.wear:wear-input-testing:1.1.0-beta01</code></p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/97264aa4532db7f7db1ffb3f42f3a9204971dbfc..1d48419d620e931d6c410d4dedb2788d95a8fc98/wear"
+    },
+    {
+      "id": "wear-compose",
+      "name": "Wear Compose",
+      "version": "1.0.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-compose#1.0.0-alpha03",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added CurvedText component, that allows developers to easily write text following the curvature a circle (usually at the edge of a circular screen) (<a href=\"https://android-review.googlesource.com/#/q/Id1267f2b4bc88780b7a91b77a51c31d3606fc9aa\">Id1267</a>)</li>\n <li>We have renamed <code>CardDefaults.imageBackgroundPainter()</code> to <code>CardDefaults.imageWithScrimBackgroundPainter()</code> to make it clear that the background image with have a scrim drawn over it. (<a href=\"https://android-review.googlesource.com/#/q/I5320680f975d6ec32e00648b08f82c29cfc4884d\">I53206</a>)</li>\n <li>Adding ScalingLazyColumn component that provides a list component for Wear Material that gives a fisheye view with the list contents scaling down in size and becoming transparent as they scale towards the edge of the component. (<a href=\"https://android-review.googlesource.com/#/q/I7070cd6a7250352dc4d9c0a110a9e7468dc02c0a\">I7070c</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>We changed the default color of the appName content in AppCard in response to a UX Spec update. The default color for the appName is now <code>MaterialTheme.colors.onSurfaceVariant</code>. Additionally added a missing parameter doc description for the title slot. (<a href=\"https://android-review.googlesource.com/#/q/Ic4ad16cbf62de5c4ba89de1062c42b0025ec7db5\">Ic4ad1</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/97264aa4532db7f7db1ffb3f42f3a9204971dbfc..d725303accfa9be6d5c3d61c7603ed1b9a780cbd/wear/compose"
+    },
+    {
+      "id": "window",
+      "name": "Window",
+      "version": "1.0.0-alpha10",
+      "url": "https://developer.android.com/jetpack/androidx/releases/window#1.0.0-alpha10",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Rename WindowInfoRepo to WindowInfoRepository and adjust corresponding classes / files.</li>\n <li>Convert current window metrics to a Flow in WindowInfoRepository since the value changes over time.</li>\n <li>Rename WindowInfoRepoJavaAdapter to WindowInfoRepoCallbackAdapter</li>\n <li>Add helper method to create test FoldingFeature objects</li>\n <li>Update packages to group classes based on the feature they are supporting.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Rename ActivityExt to ActivityExtensions Change from Repo to Repository. (<a href=\"https://android-review.googlesource.com/#/q/I61a16da6f3ad5afdfb3171aaf6232d77b07e2466\">I61a16</a>)</li>\n <li>Update packages for classes. (<a href=\"https://android-review.googlesource.com/#/q/I23ae25660737c35c61685a4b3078282dd23fd0cf\">I23ae2</a>)</li>\n <li>Remove WindowMetrics from WindowInfoRepo (<a href=\"https://android-review.googlesource.com/#/q/I24663dd37f91f2402b88ab2a90803d8f91da9aca\">I24663</a>)</li>\n <li>Remove WindowManager and use WindowInfoRepo\n  <ul>\n   <li>Make WindowBackend internal. (<a href=\"https://android-review.googlesource.com/#/q/I06d9a0047401fe2426b78f30f7a8e25bee7d9b1a\">I06d9a</a>)</li>\n  </ul></li>\n <li>Convert window metrics to Flow.\n  <ul>\n   <li>Rename java adapter to WindowInfoRepoCallbackAdapter</li>\n   <li>Remove callbackFlow so no more experimental APIs are in use. (<a href=\"https://android-review.googlesource.com/#/q/Ia4d152c3cc21ef8c3f90255e65721702cad40585\">Ia4d15</a>)</li>\n  </ul></li>\n <li>Add helper method to create test display features.\n  <ul>\n   <li>Change from occlusionMode to occlusionType (<a href=\"https://android-review.googlesource.com/#/q/If4cff35f63b253d14abf92f7cd70b69a0858ead5\">If4cff</a>)</li>\n  </ul></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix proguard error where core library was being removed.</li>\n <li>Fix error where WindowLayoutInfo was not being delivered to additional subscribers.</li>\n <li>Fix error where config changes would not trigger folding feature updates.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/19ae3a88ff0824d615355b492cb56049e16991f2..d725303accfa9be6d5c3d61c7603ed1b9a780cbd/window"
+    },
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.6.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.6.0-rc01",
+      "detailsHtml": "<p>This version is identical to <code>androidx.work:work-*:2.6.0-beta02</code>.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/97264aa4532db7f7db1ffb3f42f3a9204971dbfc..fb4befebd5dfb03c14a0593799f68f1567993e6b/work"
+    }
+  ]
+}

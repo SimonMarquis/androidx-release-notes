@@ -1,0 +1,193 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#august_18_2021",
+  "title": "August 18, 2021",
+  "releasedOn": "2021-08-18",
+  "updated": "2021-08-18T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#august_18_2021",
+  "components": [
+    {
+      "id": "benchmark",
+      "name": "Benchmark",
+      "version": "1.1.0-alpha06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/benchmark#1.1.0-alpha06",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added <code>androidx.benchmark.iterations</code> instrumentation argument to allow manual overriding of iteration count when testing/profiling locally. (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/6188be16ae462fa0c42da6a7fa70d7d4b7cd42d3\">6188be</a>, <a href=\"https://issuetracker.google.com/issues/194137879\">b/194137879</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Switched to Simpleperf as default sampling profiler on API 29+. (<a href=\"https://android-review.googlesource.com/#/q/Ic4b346221bb91dea1e7078e369f106f9e48be1e3\">Ic4b34</a>, <a href=\"https://issuetracker.google.com/issues/158303822\">b/158303822</a>)</li>\n</ul>\n<p><strong>Known Issues</strong></p>\n<ul>\n <li><code>CompilationMode.BaselineProfile</code> is a work in progress. Avoid using it to determine how good a profile is for now.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d725303accfa9be6d5c3d61c7603ed1b9a780cbd..1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc/benchmark"
+    },
+    {
+      "id": "camera",
+      "name": "Camera",
+      "version": "1.1.0-alpha08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#1.1.0-alpha08",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Add setOutputImageFormat API for image analysis config. User can select ImageAnalysis.OUTPUT_IMAGE_FORMAT_YUV_420_888 or ImageAnalysis.OUTPUT_IMAGE_FORMAT_RGBA_8888. By default, ImageAnalysis.OUTPUT_IMAGE_FORMAT_YUV_420_888 will be selected. (<a href=\"https://android-review.googlesource.com/#/q/I7902dfe9a05e40e928319ab6e2fae25cf1084623\">I7902d</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>ExperimentalUseCaseGroupLifecycle annotation is removed now that the APIs are no longer experimental. (<a href=\"https://android-review.googlesource.com/#/q/I17b85c8bb3cd33f85bff02bcd3abaeeca1a39b15\">I17b85</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed Preview screen is too bright on the Huawei P20 Lite. This problem only occurs when certain special Preview resolutions are used together with a large zoom in value. (<a href=\"https://android-review.googlesource.com/#/q/Idefce5b35d6a2c275b08da127bb7a7f278216e23\">Idefce</a>, <a href=\"https://issuetracker.google.com/issues/192129158\">b/192129158</a>)</li>\n <li>Fixed an issue that flash is not working on some devices when setting flash mode to FLASH_MODE_ON shortly followed by taking pictures. (<a href=\"https://android-review.googlesource.com/#/q/Ieb49b78a6b5bc9ea30b0edee91af76359454d9ac\">Ieb49b</a>)</li>\n <li>Fixed the issue where Preview will halt for a while when taking pictures if VideoCapture, ImageCapture and Preview are bound. (<a href=\"https://android-review.googlesource.com/#/q/I5619740857a7d5b62d64d4811e84fbd5ab959579\">I56197</a>, <a href=\"https://issuetracker.google.com/issues/193864120\">b/193864120</a>)</li>\n <li>Allows ImageAnalysis to select a resolution larger than 1080p. A LIMITED-level above device can support a RECORD size resolution for ImageAnalysis when it is bound together with Preview and ImageCapture. The trade-off is the selected resolution for the ImageCapture will also need to be a RECORD size resolution. To successfully select a RECORD size resolution for ImageAnalysis, a RECORD size target resolution should be set on both ImageCapture and ImageAnalysis. This indicates that the application clearly understands the trade-off and prefers the ImageAnalysis to have a larger resolution rather than the ImageCapture to have a MAXIMUM resolution. For the definitions of RECORD, MAXIMUM sizes and more details see https://developer.android.com/reference/android/hardware/camera2/CameraDevice#regular-capture. The RECORD size refers to the camera device's maximum supported recording resolution, as determined by CamcorderProfile. The MAXIMUM size refers to the camera device's maximum output resolution for that format or target from StreamConfigurationMap.getOutputSizes(int). (<a href=\"https://android-review.googlesource.com/#/q/I1ee973a50f9605324f06f406ca2230a464ed2363\">I1ee97</a>, <a href=\"https://issuetracker.google.com/issues/192911449\">b/192911449</a>)</li>\n <li>Add the Exif info to the captured image. (<a href=\"https://android-review.googlesource.com/#/q/I01ff0014f5124fc265ead5816789f41047e43cac\">I01ff0</a>, <a href=\"https://issuetracker.google.com/issues/193342619\">b/193342619</a>)</li>\n <li>In ImageCapture, return the URI of the saved image if the saving location is File. (<a href=\"https://android-review.googlesource.com/#/q/Ib5b49b6b3555503b12f7461f6eca8f4407cab636\">Ib5b49</a>, <a href=\"https://issuetracker.google.com/issues/149241379\">b/149241379</a>)</li>\n <li>Fixed an issue that captured images with flash is dark on many devices. (<a href=\"https://android-review.googlesource.com/#/q/I4e51038d54b47955a57c7e80200c506759cf9562\">I4e510</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/86548c494687f4a4aadf3ebb2f724e410b378fcb..9e98cbf6f7926e3ccb8a11600bd631b238ed64c9/camera"
+    },
+    {
+      "id": "camera",
+      "name": "Camera",
+      "version": "1.0.0-alpha28",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#extensions-view-1.0.0-alpha28",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>ExperimentalUseCaseGroupLifecycle annotation is removed now that the APIs are no longer experimental. (<a href=\"https://android-review.googlesource.com/#/q/I17b85c8bb3cd33f85bff02bcd3abaeeca1a39b15\">I17b85</a>)</li>\n <li>refactored RotationListener and renamed it to RotationProvider. It continues to provide the same feature with slightly different API. (<a href=\"https://android-review.googlesource.com/#/q/Idffc534a5f631e664003f51c4a401cad2c8905a0\">Idffc5</a>)</li>\n <li>rename TAP_TO_FOCUS_UNSUCCESSFUL to TAP_TO_FOCUS_NOT_FOCUSED and TAP_TO_FOCUS_SUCCESSFUL to TAP_TO_FOCUS_FOCUSED. Made OutputSize final (<a href=\"https://android-review.googlesource.com/#/q/I099fa41340ec664013a9e1658912d34e40799cc9\">I099fa</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Removed deprecated <code>&lt;EffectName&gt;&lt;UseCase&gt;Extender</code> classes, ExtensionsErrorListener and related ExtensionsManager APIs. (<a href=\"https://android-review.googlesource.com/#/q/I3b8c3a872fcf0b157a5fc86770ab2f7a118c2279\">I3b8c3</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/86548c494687f4a4aadf3ebb2f724e410b378fcb..9e98cbf6f7926e3ccb8a11600bd631b238ed64c9/camera"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.1.0-alpha02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>StartOffset is now supported in repeatable and infiniteRepeatable, as a way to delay the start time or fast forward the animation before the animation starts. This start offset will not be repeated (<a href=\"https://android-review.googlesource.com/#/q/Ic679f995fa5d118ae5bd50966bc9d775557e06df\">Ic679f</a>, <a href=\"https://issuetracker.google.com/issues/195079908\">b/195079908</a>)</li>\n <li>New Enter/Exit transition for scale. It can be used in combination with other types of Enter/ExitTransitions. (<a href=\"https://android-review.googlesource.com/#/q/I372dade56f09168b8d5450c897550b93dd819e53\">I372da</a>, <a href=\"https://issuetracker.google.com/issues/191325593\">b/191325593</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d725303accfa9be6d5c3d61c7603ed1b9a780cbd..1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc/compose/animation"
+    },
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.1.0-alpha02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d725303accfa9be6d5c3d61c7603ed1b9a780cbd..1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc/compose/compiler/compiler-hosted"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.1.0-alpha02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added DpSize versions for <code>Modifier.size</code> and <code>requiredSize</code> (<a href=\"https://android-review.googlesource.com/#/q/I3fc7e0a9bd9989a8217ccc2ecf9aaea047693e1d\">I3fc7e</a>, <a href=\"https://issuetracker.google.com/issues/194219828\">b/194219828</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d725303accfa9be6d5c3d61c7603ed1b9a780cbd..1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.1.0-alpha02",
+      "detailsHtml": "<p><strong>External Contribution</strong></p>\n<ul>\n <li>Fix the behavior of SwipeableState in the case where the swipe offset is within a rounding error of an anchor. (<a href=\"https://android-review.googlesource.com/#/q/I03d39d25bc376314d7197484c2a707498296aa97\">I03d39</a>, <a href=\"https://issuetracker.google.com/issues/191993377\">b/191993377</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d725303accfa9be6d5c3d61c7603ed1b9a780cbd..1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc/compose/material"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.1.0-alpha02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d725303accfa9be6d5c3d61c7603ed1b9a780cbd..1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.1.0-alpha02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>PointerEvent now has support for reading mouse button state and keyboard modifier state. (<a href=\"https://android-review.googlesource.com/#/q/I6310c8e6bd4d2e383389db7d4a33299aa1c52cd3\">I6310c</a>, <a href=\"https://issuetracker.google.com/issues/180075467\">b/180075467</a>)</li>\n <li>Injected gestures now use the MainTestClock's time as the source of truth for time. The current time for injected events in <code>performGesture</code> will be initialized to the current time of the MainTestClock. (<a href=\"https://android-review.googlesource.com/#/q/Ifb364da90fcbecacfcf7614168969655777905cd\">Ifb364</a>, <a href=\"https://issuetracker.google.com/issues/192064452\">b/192064452</a>)</li>\n <li>Added <code>DpRect(DpOffset, DpSize)</code> constructor (<a href=\"https://android-review.googlesource.com/#/q/I2cf1636d05302a444587d6a6c43bd2e52c0a903f\">I2cf16</a>, <a href=\"https://issuetracker.google.com/issues/194219828\">b/194219828</a>)</li>\n <li>Added DpSize class (<a href=\"https://android-review.googlesource.com/#/q/I7abb129c8c18a3f77b68aec5c2060d2aad11a693\">I7abb1</a>, <a href=\"https://issuetracker.google.com/issues/194219828\">b/194219828</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Updated Vector graphics xml parsing to support ColorStateLists as root color tint properties on VectorDrawables. (<a href=\"https://android-review.googlesource.com/#/q/I86915d08bdf50f729e91ec85c9f8595ad16f9562\">I86915</a>, <a href=\"https://issuetracker.google.com/issues/195668138\">b/195668138</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d725303accfa9be6d5c3d61c7603ed1b9a780cbd..1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc/compose/ui"
+    },
+    {
+      "id": "documentfile",
+      "name": "DocumentFile",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/documentfile#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix ClassVerificationFailures for <code>DocumentFile</code>. (<a href=\"https://issuetracker.google.com/issues/188452767\">b/188452767</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.4.0-alpha07",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.4.0-alpha07",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d725303accfa9be6d5c3d61c7603ed1b9a780cbd..1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc/fragment"
+    },
+    {
+      "id": "games-performance-tuner",
+      "name": "Games-Performance-Tuner",
+      "version": "1.5.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/games#games-performance-tuner-1.5.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>It is now possible to set the interval between APT uploads programmatically, rather than using the settings file.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Added function: <code>TuningFork_setAggregationStrategyInterval</code></li>\n <li>Added field to TuningFork_Settings struct: <code>aggregation_strategy_intervalms_or_count</code></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/opt/gamesdk/+log/c6508fc0745ecbc0bccc6e55bcc47aefc0ada7a8..4c8e6cfcfafe81d9deb1f499b3156e43a91123b7/src/tuningfork"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.4.0-alpha07",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.4.0-alpha07",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Navigation Compose now properly saves state after configuration changes and when changing graphs while using the multiple back stack feature. (<a href=\"https://android-review.googlesource.com/#/q/If5a3d68c4a610f008ab6823a3982f0d0c312083a\">If5a3d</a>, <a href=\"https://issuetracker.google.com/issues/195141957\">b/195141957</a>)</li>\n <li>Re-selecting the same tab when using navigation compose with multiple back stacks will no longer result in a blank screen. (<a href=\"https://android-review.googlesource.com/#/q/I860dc9f2cc2516924c03dba491a37aa8ace99bb3\">I860dc</a>, <a href=\"https://issuetracker.google.com/issues/194925622\">b/194925622</a>)</li>\n <li><code>NavHost</code> now observes for changes in the <code>Lifecycle.State</code> of <code>NavBackStackEntry</code>s which means using a <code>NavHost</code> in a fragment now will properly be recomposed as the lifecycle changes instead of resulting in a blank screen. (<a href=\"https://android-review.googlesource.com/#/q/I4eb8586e4db4bebfac63525e9dcdab11b57fcff5\">I4eb85</a>, <a href=\"https://issuetracker.google.com/issues/195864489\">b/195864489</a>)</li>\n <li>Fixed an issue where dismissing a <code>DialogFragment</code> would not correctly update the <code>NavController</code> state after recreating your activity (i.e., after a configuration change). (<a href=\"https://android-review.googlesource.com/#/q/Icd72b58ece54484b576b44fc2fb9dbf68ccb9ab9\">Icd72b</a>)</li>\n <li>Fixed an issue where popping a dialog destination would not update the NavController's system back button handling, potentially causing the NavController to intercept the back button even though it does not have any back stack to pop. (<a href=\"https://android-review.googlesource.com/#/q/If3b3464fea674b146f071448373afbac49f8cdc5\">If3b34</a>)</li>\n <li>Safe-args now automatically generates a <code>toSavedStateHandle</code> method for arguments which can be used to test your <code>ViewModel</code> code. (<a href=\"https://android-review.googlesource.com/#/q/If1e2debe0126482e571cae59bcc89e27db63483d\">If1e2d</a>, <a href=\"https://issuetracker.google.com/issues/193353880\">b/193353880</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/175c082bd7563f6414a75b30d2ce3d167c5e7f3a..1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc/navigation"
+    },
+    {
+      "id": "profileinstaller",
+      "name": "ProfileInstaller",
+      "version": "1.1.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/profileinstaller#1.1.0-alpha03",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Change profileinstaller skip behavior to log the PackageInfo.lastUpdatedTime in a file in the app's files directory and compare it prior to installing the profile on the next run. (<a href=\"https://android-review.googlesource.com/#/q/Ib93d1917a8a6a56162bf9e84c58ecc585fe86bfb\">Ib93d1</a>)</li>\n <li>Adjust profile format on P, Q, R devices to conform to ART requirements (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1786568\">I84e89</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d725303accfa9be6d5c3d61c7603ed1b9a780cbd..1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc/profileinstaller/profileinstaller"
+    },
+    {
+      "id": "slidingpanelayout",
+      "name": "SlidingPaneLayout",
+      "version": "1.2.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/slidingpanelayout#1.2.0-alpha04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li><code>SlidingPaneLayout</code> now animates between the single pane and two pane modes when using a Foldable device. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1702066/\">aosp/1702066</a>, <a href=\"https://issuetracker.google.com/186211031\">b/186211031</a>)</li>\n <li>Improved compatibility with additional measure specs to ensure that <code>SlidingPaneLayout</code> can be used in any type of layout without throwing an <code>IllegalStateException</code>. (<a href=\"https://android-review.googlesource.com/1774187\">aosp/1774187</a>, <a href=\"https://android-review.googlesource.com/1773623\">aosp/1773623</a>, <a href=\"https://android-review.googlesource.com/1773256\">aosp/1773256</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue where tapping on an empty position of the detail pane would pass through clicks to the list pane when the panes overlap. (<a href=\"https://android-review.googlesource.com/1755141\">aosp/1755141</a>)</li>\n</ul>\n<p><strong>Dependency Updates</strong></p>\n<ul>\n <li>SlidingPaneLayout now depends on <a href=\"https://developer.android.com/jetpack/androidx/releases/window#1.0.0-alpha10\">Window 1.0.0-alpha10</a>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/19ae3a88ff0824d615355b492cb56049e16991f2..7da80dd5f7c0c44d669ccb882c1aa6f81569254d/slidingpanelayout/slidingpanelayout"
+    },
+    {
+      "id": "wear",
+      "name": "Wear",
+      "version": "1.2.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#wear-1.2.0-beta01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix bug that caused ConfirmationActivity to crash if no message was provided. (<a href=\"https://android-review.googlesource.com/#/q/Ie6055a81b7d1c696d4b4f7eb81ff03862f35f665\">Ie6055</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d725303accfa9be6d5c3d61c7603ed1b9a780cbd..1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc/wear/wear"
+    },
+    {
+      "id": "wear-complications-watchface",
+      "name": "Wear Complications & Watchface",
+      "version": "1.0.0-alpha20",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#complications-watchface-1.0.0-alpha20",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>We have added createFallbackPreviewData to ComplicationDataSourceInfo which can be used when ComplicationDataSourceInfoRetriever.retrievePreviewComplicationData returns null. (<a href=\"https://android-review.googlesource.com/#/q/I38c4dc237d114b51234a4b8df6528280513e4843\">I38c4d</a>)</li>\n <li>ComplicationDataSourceUpdateRequester has been turned into an interface to allow mocking in unit tests. You can construct a concrete ComplicationDataSourceUpdateRequester with ComplicationDataSourceUpdateRequester.create(). (<a href=\"https://android-review.googlesource.com/#/q/I7da226172823e58d1d0c6140f96e39f9e8e7ece9\">I7da22</a>)</li>\n <li>RenderParameters.pressedComplicationSlotIds has been replaced by RenderParameters.lastComplicationTapDownEvents which exposes the new TapEvent class which contains a triple of x, y coordinates of the tap in pixels and a time stamp. <code>WatchFace.TapListener.onTap</code> has been replaced by <code>onTapEvent(@TapType tapType: Int, tapEvent: TapEvent)</code>. In addition, <code>InteractiveWatchFaceClient.displayPressedAnimation</code> has been removed. (<a href=\"https://android-review.googlesource.com/#/q/Id87d2f42f4e051d400bff931595309fb20dbf489\">Id87d2</a>)</li>\n <li>Added explicit threading annotation for setImportantForAccessibility (<a href=\"https://android-review.googlesource.com/#/q/I990faac25c6136591f97c8d4cdea0b3372f51af2\">I990fa</a>)</li>\n <li>ComplicationSlotBoundsType has been moved to androidx-wear-watchface.ComplicationSlotBoundsType in wear/wear-watchface. (<a href=\"https://android-review.googlesource.com/#/q/I09420017bd5d811cc59f428add4c6f3a1fd9353a\">I09420</a>)</li>\n <li>We have added support for passing string resource ids into UserStyleSetting and Options. This is now the recommended way to construct those objects. (<a href=\"https://android-review.googlesource.com/#/q/I03d5f65e8ad15cfd361778242786f7b9b8830693\">I03d5f</a>)</li>\n <li>Limits have been imposed upon the maximum wire size of a UserStyle Schema. Also Icons in the schema must not be bigger than 400x400 pixels. (<a href=\"https://android-review.googlesource.com/#/q/I3b65b34f5018b0f28ca86552b91fceefa136f659\">I3b65b</a>)</li>\n <li>We added a MutableUserStyle class to support changes to UserStyle instances (<a href=\"https://android-review.googlesource.com/#/q/I95a4097e1765c987b87f281c431ef64b2449cff7\">I95a40</a>)</li>\n <li>We have renamed <code>ListenableWatchFaceMetadataClient.Companion#listenableCreateWatchFaceMetadataClient</code> to <code>ListenableWatchFaceMetadataClient.Companion#createListenableWatchFaceMetadataClient</code>. (<a href=\"https://android-review.googlesource.com/#/q/I64ce21f528ffcbb1717749b14d27035202987309\">I64ce2</a>)</li>\n <li>We've modified EditorState.previewComplicationsData to only contain data for enabled complications, and we've added <code>EditorSession.DEFAULT_PREVIEW_TIME_MILLIS</code> which if passed to<code>renderWatchFaceToBitmap</code> or <code>PreviewScreenshotParams</code> requests rendering with the watch face's default preview time. (<a href=\"https://android-review.googlesource.com/#/q/If7b3c08c2fc0bb70a3fb9ab5b2df8c6a86ff30d7\">If7b3c</a>)</li>\n <li>We have removed UserStyleSetting constructors taking CharSequence from the public API. It's recommended to use the constructors that require StringResource IDs instead. (<a href=\"https://android-review.googlesource.com/#/q/I8537b7c6842e2cdcda0ed9e5c562d35a527bdbc6\">I8537b</a>)</li>\n <li><code>CurrentUserStyleRepository.UserStyleChangeListener</code> now supports SAM conversion. (<a href=\"https://android-review.googlesource.com/#/q/I8598927b8384af5b03b9b9e189c307d0901a3282\">I85989</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d725303accfa9be6d5c3d61c7603ed1b9a780cbd..1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc/wear"
+    },
+    {
+      "id": "wear-phone-interactions-wear-remote-interactions",
+      "name": "Wear-Phone-Interactions Wear-Remote-Interactions",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#1.0.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Renamed class <code>RemoteIntentHelper</code> to <code>RemoteActivityHelper</code>. Renamed functions <code>RemoteIntentHelper#getRemoteIntentExtraIntent</code> and <code>RemoteIntentHelper#getRemoteIntentNodeId</code> to <code>RemoteActivityHelper#getTargetIntent</code> and <code>RemoteActivityHelper#getTargetNodeId</code>, respectively. (<a href=\"https://android-review.googlesource.com/#/q/Id2042393d23e7e7520e631e01f84bd40bff45ce3\">Id2042</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d725303accfa9be6d5c3d61c7603ed1b9a780cbd..1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc/wear"
+    },
+    {
+      "id": "wear-input-wear-input-testing",
+      "name": "Wear",
+      "version": "1.1.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#1.1.0",
+      "detailsHtml": "<p><strong>Major changes since 1.0.0</strong></p>\n<ul>\n <li>Added a <code>layout_</code> prefix to boxedEdges attribute (now <code>layout_BoxedEdges</code>) for <code>BoxInsetLayout</code> in order to comply with android naming convention. This will remove the linter error in Android Studio for these attributes. (<a href=\"https://android-review.googlesource.com/q/I4272f09a6d6d44cda5eb22c2b6117280c7b04ad3\">I4272f</a>)</li>\n <li>Added optional <code>EXTRA_ANIMATION_DURATION_MILLIS</code> to <code>ConfirmationActivity</code> to allow for the duration that the confirmation dialog is displayed. (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/adb83ce3ab9c842b802587107e138253e28ce4f6\">adb83ce</a>, <a href=\"https://issuetracker.google.com/143356547\">b/143356547</a>)</li>\n <li>Updated <code>WearableActionDrawView</code>to delay action drawer inflation until the drawer is opened for the first time. (<a href=\"https://android-review.googlesource.com/q/I01026235e0282201b19bf63277ec78344bcdb070\">I01026</a>, <a href=\"https://issuetracker.google.com/issues/163870541\">b/163870541</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/792501d04a4ca4858f27d36ec77bf3b35c3211af..ad54b370b5a26a3ecac49960af95bbcff8c66d59/wear/wear"
+    },
+    {
+      "id": "wear-ongoing",
+      "name": "Wear-core",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#wear-ongoing-1.0.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d725303accfa9be6d5c3d61c7603ed1b9a780cbd..0cdc4fd8c6d04f740cd6224042b7b173e0d38721/wear/wear-ongoing"
+    },
+    {
+      "id": "wear-compose",
+      "name": "Wear Compose",
+      "version": "1.0.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-compose#1.0.0-alpha04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added a SwipeToDismissBox and swipeable modifier that can be used to support a left-to-right swipe-to-dismiss gesture. Although independent of navigation components, this is expected to be used to exit one screen and navigate to another. Added integration tests to demo swipe-to-dismiss. (<a href=\"https://android-review.googlesource.com/#/q/I7bbaa6256c170c7e46cd9d7a8de5af0ea45d2a06\">I7bbaa</a>)</li>\n <li>We have added ScalingLazyColumnItemInfo and ScalingLazyColumnLayoutInfo interfaces to ScalingLazyColumnState class to enable developers to know the actual positions and sizes of items in the ScalingLazyColumn after scaling has been applied. We have also fixed a bug with the way that scaling was calculated when 'top' content padding is applied to the ScalingLazyColumn. (<a href=\"https://android-review.googlesource.com/#/q/I27c07d0048f076da4d30e3b602f86fa417f1f1f9\">I27c07</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add CurvedTextStyle class to specify curved text styling Options. Similar to TextStyle, but now only supports color, fontSize and background. More styling options will be added in the future. (<a href=\"https://android-review.googlesource.com/#/q/I96ac3539ec781ecbbc00085c06d33e9cce014646\">I96ac3</a>)</li>\n <li>We have added ScalingLazyColumnItemInfo and ScalingLazyColumnLayoutInfo interfaces to ScalingLazyColumnState class to enable developers to know the actual positions and sizes of items in the ScalingLazyColumn after scaling has been applied. We have also fixed a bug with the way that scaling was calculated when 'top' content padding is applied to the ScalingLazyColumn. (<a href=\"https://android-review.googlesource.com/#/q/I27c07d0048f076da4d30e3b602f86fa417f1f1f9\">I27c07</a>)</li>\n <li>Added <code>@ExperimentalWearMaterialApi</code> to <code>SwipeDismissTarget</code> enum, part of the <code>SwipeToDismissBox</code> API. (<a href=\"https://android-review.googlesource.com/#/q/I48b5e453dfac2f72517b56c26f398c74a1aeacc2\">I48b5e</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Added test material for SwipeToDismissBox (<a href=\"https://android-review.googlesource.com/#/q/I9febcf2ff228d7a2887e064ea9c587e7423db201\">I9febc</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d725303accfa9be6d5c3d61c7603ed1b9a780cbd..1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc/wear/compose"
+    },
+    {
+      "id": "wear-tiles",
+      "name": "Wear Tiles",
+      "version": "1.0.0-alpha10",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-tiles#1.0.0-alpha10",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Removed layout checkers from public API. These will always be enabled, although will only raise a warning if a check fails. (<a href=\"https://android-review.googlesource.com/#/q/Ie9f2944b028e8a0ad00f36a7748eb31c828499cf\">Ie9f29</a>)</li>\n <li>TileRenderer now accepts a UI context, instead of the Application Context.</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed bug which prevented clickable elements in a Spannable from being clicked.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/97264aa4532db7f7db1ffb3f42f3a9204971dbfc..1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc/wear/tiles"
+    },
+    {
+      "id": "window",
+      "name": "Window",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/window#1.0.0-beta01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Removed old constants and made <code>FoldingFeature</code> into an interface.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Remove old constants and make FoldFeature an interface. (<a href=\"https://android-review.googlesource.com/#/q/I9a2d53acc03284cbdf274f12186e969a769fbd33\">I9a2d5</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Libraries that depend on the <code>Test Core</code> library have been upgraded to version <code>1.4.0</code> and will now work with Android platform version S. (<a href=\"https://android-review.googlesource.com/#/q/I88b726b2d76735ac012ea47298e0bf02092cd857\">I88b72</a>, <a href=\"https://issuetracker.google.com/issues/189353863\">b/189353863</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d725303accfa9be6d5c3d61c7603ed1b9a780cbd..f659ade9a1989a7e7f26d1e7f66b19d832ce1cb5/window"
+    }
+  ]
+}
