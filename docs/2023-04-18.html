@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>April 18, 2023 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for April 18, 2023: Media3 1.0.1.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2023-04-18.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="april-18-2023">
+            <div class="date-divider"><a href="./#april-18-2023" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">April 18, 2023</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="stable" data-search="media3 1.0.1 2023-04-18 april 18, 2023" id="april-18-2023-media3-1-0-1">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                <div class="actions"><a href="https://github.com/androidx/media/commits/1.0.1" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.0.1" class="badge stable">1.0.1</a></div>
+              </div>
+              <div class="notes"><p>This release corresponds to the <a href="https://github.com/google/ExoPlayer/releases/tag/r2.18.6">ExoPlayer 2.18.6 release</a>.</p><ul><li>Core library:
+  <ul><li>Reset target live stream override when seeking to default position <a href="https://github.com/google/ExoPlayer/pull/11051" title="#11051" class="ref ref-github">#11051</a>.</li><li>Fix bug where empty sample streams in the media could cause playback to be stuck.</li></ul></li><li>Session:
+  <ul><li>Fix bug where multiple identical queue items published by a legacy <code>MediaSessionCompat</code> result in an exception in <code>MediaController</code> <a href="https://github.com/androidx/media/issues/290" title="#290" class="ref ref-github">#290</a>.</li><li>Add missing forwarding of <code>MediaSession.broadcastCustomCommand</code> to the legacy <code>MediaControllerCompat.Callback.onSessionEvent</code> <a href="https://github.com/androidx/media/issues/293" title="#293" class="ref ref-github">#293</a>.</li><li>Fix bug where calling <code>MediaSession.setPlayer</code> doesn't update the available commands.</li><li>Fix issue that <code>TrackSelectionOverride</code> instances sent from a <code>MediaController</code> are ignored if they reference a group with <code>Format.metadata</code> <a href="https://github.com/androidx/media/issues/296" title="#296" class="ref ref-github">#296</a>.</li><li>Fix issue where <code>Player.COMMAND_GET_CURRENT_MEDIA_ITEM</code> needs to be available to access metadata via the legacy <code>MediaSessionCompat</code>.</li><li>Fix issue where <code>MediaSession</code> instances on a background thread cause crashes when used in <code>MediaSessionService</code> <a href="https://github.com/androidx/media/issues/318" title="#318" class="ref ref-github">#318</a>.</li><li>Fix issue where a media button receiver was declared by the library without the app having intended this <a href="https://github.com/androidx/media/issues/314" title="#314" class="ref ref-github">#314</a>.</li></ul></li><li>DASH:
+  <ul><li>Fix handling of empty segment timelines <a href="https://github.com/google/ExoPlayer/issues/11014" title="#11014" class="ref ref-github">#11014</a>.</li></ul></li><li>RTSP:
+  <ul><li>Retry with TCP if RTSP Setup with UDP fails with RTSP Error 461 UnsupportedTransport <a href="https://github.com/google/ExoPlayer/issues/11069" title="#11069" class="ref ref-github">#11069</a>.</li></ul></li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
