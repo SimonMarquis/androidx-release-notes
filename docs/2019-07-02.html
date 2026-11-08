@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>July 2, 2019 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for July 2, 2019: Activity 1.0.0-rc01, Activity 1.1.0-alpha01, Appcompat 1.1.0-rc01, Arch Core 2.1.0-rc01, and more.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2019-07-02.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="july-2-2019">
+            <div class="date-divider"><a href="./#july-2-2019" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">July 2, 2019</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="rc" data-search="activity 1.0.0-rc01 2019-07-02 july 2, 2019" id="july-2-2019-activity-1-0-0-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/activity">Activity</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/7b91c9627d1e99d3ab66a4045fbb4ebf28427c02..31e072b23ddd65615efc5f3fbece2276b6b5cae4/activity" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/activity#1.0.0-rc01" class="badge rc">1.0.0-rc01</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="activity 1.1.0-alpha01 2019-07-02 july 2, 2019" id="july-2-2019-activity-1-1-0-alpha01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/activity">Activity</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/7b91c9627d1e99d3ab66a4045fbb4ebf28427c02..73a6643abc8d19bf3ae23376c260e6194f1bd7bd/activity" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/activity#1.1.0-alpha01" class="badge alpha">1.1.0-alpha01</a></div>
+              </div>
+              <div class="notes"><p><strong>New features</strong></p><ul><li><code>activity</code> now depends on Lifecycle <code>2.2.0-alpha02</code>. <a href="https://android-review.googlesource.com/1007817" title="aosp/1007817" class="ref ref-gerrit">aosp/1007817</a></li><li><code>activity-ktx</code> added a dependency on <code>lifecycle-runtime-ktx</code>; you no longer need to explicitly add it to your dependencies when using <code>activity-ktx</code> or libraries that depend on <code>activity-ktx</code> (such as <code>fragment-ktx</code>). <a href="https://android-review.googlesource.com/987162" title="aosp/987162" class="ref ref-gerrit">aosp/987162</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="appcompat 1.1.0-rc01 2019-07-02 july 2, 2019" id="july-2-2019-appcompat-1-1-0-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/appcompat">Appcompat</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/376680be19694e4b5615ff485a5ded82e68cb6db..16509068d2009cdd24134b48887e3d8abd6b7109/appcompat" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/appcompat#1.1.0-rc01" class="badge rc">1.1.0-rc01</a></div>
+              </div>
+              <div class="notes"><strong>Note:</strong><span> This version will only compile against the Q Beta 4 SDK.</span> 
+<p><strong>Bug fixes</strong></p><ul><li>DayNight now honors <code>configChanges</code> correctly <a href="https://android-review.googlesource.com/981105" title="aosp/981105" class="ref ref-gerrit">aosp/981105</a></li><li>Only call <code>onConfigurationChanged</code> on started Activities <a href="https://android-review.googlesource.com/987483" title="aosp/987483" class="ref ref-gerrit">aosp/987483</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="arch core 2.1.0-rc01 2019-07-02 july 2, 2019" id="july-2-2019-arch-core-2-1-0-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/arch">Arch Core</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/fbdc0c35696b2e1ee3216e3e8c397aeb1abe4311..031e16ab465321fba520b9977ed2972def14b7de/arch" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/arch#2.1.0-rc01" class="badge rc">2.1.0-rc01</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="autofill 1.0.0-alpha01 2019-07-02 july 2, 2019" id="july-2-2019-autofill-1-0-0-alpha01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/autofill">Autofill</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/autofill#1.0.0-alpha01" class="badge alpha">1.0.0-alpha01</a></div>
+              </div>
+              <div class="notes"><p>This is the first release of <code>androidx.autofill:autofill:1.0.0-alpha01</code>. The commits included in this initial version can be found <a href="https://android.googlesource.com/platform/frameworks/support/+log/a6ddab53486a549190d183f626993551dfaeacf5/autofill">here</a>.</p> 
+<strong>Note:</strong><span> This version is dependent on the Java 8 programming language. Please read <a href="https://developer.android.com/studio/write/java8-support">Use Java 8 language features</a> to learn how to use it in your project.</span> 
+<p><strong>New features</strong></p><p>This is the initial release of autofill AndroidX module. It provides new autofill hint constants added to allow more granular annotation of form fields.</p></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="benchmark 1.0.0-alpha03 2019-07-02 july 2, 2019" id="july-2-2019-benchmark-1-0-0-alpha03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/benchmark">Benchmark</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/a1664e857bbcb746318a95abefa845edd9c88bf8..e648705631f06c43be445aafdccd8f55121dce8d/benchmark" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/benchmark#1.0.0-alpha03" class="badge alpha">1.0.0-alpha03</a></div>
+              </div>
+              <div class="notes"><p><strong>New features</strong></p><ul><li>Expose sleep duration due to thermal throttling per benchmark in the full JSON report</li></ul><p><strong>Bug fixes</strong></p><ul><li>The Gradle plugin should no longer be required to be applied after Android plugins and the Android block</li><li>Adds support for benchmark reports on Android 10 devices using scoped storage</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="camerax 1.0.0-alpha03 2019-07-02 july 2, 2019" id="july-2-2019-camerax-1-0-0-alpha03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/camera">CameraX</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/57ec1f21171cea40e93847ce2776a6604ea47872..da18b8e358a305e4ae90edc548eb48927f037696/camera" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/camera#1.0.0-alpha03" class="badge alpha">1.0.0-alpha03</a></div>
+              </div>
+              <div class="notes"><strong>Note:</strong><span> This version is dependent on the Java 8 programming language. Please read <a href="https://developer.android.com/studio/write/java8-support">Use Java 8 language features</a> to learn how to use it in your project.</span> 
+<p><strong>API Changes</strong></p><ul><li>Added javadoc clarification for “target” in setTarget configuration calls</li></ul><p><strong>Camera-Core</strong></p><ul><li>Fixed unconfigured Input/Output Surface crash on rapid open/close or bind/unbind</li><li>Move to new Futures implementations</li><li>Test fixes for more robust testing</li><li>Core integration test now shows capture time for photos</li><li>Developed internal compat class for Executors</li><li>Timing test app capture images waits for previous to complete &amp; improved stability</li></ul><p><strong>Extensions</strong></p><ul><li>Added versioning checks</li><li>Additional test coverage - extension event callbacks</li><li>Improvements for internally corresponding image and meta-data</li><li>Fixes to mode switching in test app</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="core 1.1.0-rc02 2019-07-02 july 2, 2019" id="july-2-2019-core-1-1-0-rc02">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/core">Core</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/f0674eb1d73638c1220aca545ca46fab14d8f764..236c058a2ec13f5c20c151f37bad489910caa27f/core" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/core#1.1.0-rc02" class="badge rc">1.1.0-rc02</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug fixes</strong></p><ul><li><code>FingerprintManagerCompat#getFingerprintManagerOrNull</code> on API level 23 should not check <code>PackageManager</code> (<a href="https://developer.android.com/jetpack/androidx/releases/124066957">b/124066957</a>) <a href="https://android-review.googlesource.com/c/987433" title="aosp/987433" class="ref ref-gerrit">aosp/987433</a></li><li>Fix equality comparison in AccessibilityNodeInfoCompat <a href="https://android-review.googlesource.com/c/985736" title="aosp/985736" class="ref ref-gerrit">aosp/985736</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="core-pip 1.0.0-alpha01 2019-07-02 july 2, 2019" id="july-2-2019-core-role-1-0-0-alpha01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/core">Core-pip</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/core#core-role-1.0.0-alpha01" class="badge alpha">1.0.0-alpha01</a></div>
+              </div>
+              <div class="notes"><strong>Note:</strong><span> This version is dependent on the Java 8 programming language. Please read <a href="https://developer.android.com/studio/write/java8-support">Use Java 8 language features</a> to learn how to use it in your project.</span>   <strong>Note:</strong><span> This version will only work with the Q Beta 4 SDK.</span> 
+<p><strong>New features</strong></p><ul><li>Added <code>RoleManagerCompat</code> containing the name and documentation for roles that might be available in the system.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="dynamicanimation 1.1.0-alpha02 2019-07-02 july 2, 2019" id="july-2-2019-dynamicanimation-1-1-0-alpha02">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/dynamicanimation">DynamicAnimation</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/21e165dc2f0fe0acc7ced317d75f4e92155a8e35..668764cd97f4074bc1f309fa4b55467402332773/dynamic-animation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/dynamicanimation#1.1.0-alpha02" class="badge alpha">1.1.0-alpha02</a></div>
+              </div>
+              <div class="notes"><strong>Note:</strong><span> This version is dependent on the Java 8 programming language. Please read <a href="https://developer.android.com/studio/write/java8-support">Use Java 8 language features</a> to learn how to use it in your project.</span> 
+<p><strong>Bug fixes</strong></p><ul><li>Fixed a bug in the handling of pending position when canceled <a href="https://android-review.googlesource.com/c/978170" title="aosp/978170" class="ref ref-gerrit">aosp/978170</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="exifinterface 1.1.0-beta01 2019-07-02 july 2, 2019" id="july-2-2019-exifinterface-1-1-0-beta01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/exifinterface">Exifinterface</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/0b2c8b5a3ea18e80b32b57c49dba74c2812946ee..d6a77c87bb913a6393a2185e5552eae55267b204/exifinterface" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/exifinterface#1.1.0-beta01" class="badge beta">1.1.0-beta01</a></div>
+              </div>
+              <div class="notes"><p><strong>New features</strong></p><ul><li>Throws <code>NullPointerException</code> when <code>null</code> is set for <code>@NonNull</code> arguments</li><li>Support for XMP tags</li></ul><p><strong>API changes</strong></p><ul><li>Added more methods for getting attribute info</li><li><code>hasAttribute</code>, <code>getAttributeBytes</code>, and <code>getAttributesRange</code></li></ul><p><strong>Bug fixes</strong></p><ul><li>Prevent file descriptor memory leak</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="fragment 1.1.0-rc01 2019-07-02 july 2, 2019" id="july-2-2019-fragment-1-1-0-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/fragment">Fragment</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/0491995874ce17bcaf19ad9864f5ec6a0ae1b46d..31e072b23ddd65615efc5f3fbece2276b6b5cae4/fragment" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/fragment#1.1.0-rc01" class="badge rc">1.1.0-rc01</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug fixes</strong></p><ul><li>Fragments now properly update their visibility when using <code>show()</code> or <code>hide()</code> operations while the transition is running. <a href="https://issuetracker.google.com/issues/133385058" title="b/133385058" class="ref ref-issue">b/133385058</a></li><li>Fixed a <code>NullPointerException</code> when popping a <code>FragmentTransaction</code> that used <code>setPrimaryNavigationFragment()</code> before <code>replace()</code>. <a href="https://issuetracker.google.com/issues/134673465" title="b/134673465" class="ref ref-issue">b/134673465</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="fragment 1.2.0-alpha01 2019-07-02 july 2, 2019" id="july-2-2019-fragment-1-2-0-alpha01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/fragment">Fragment</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/0491995874ce17bcaf19ad9864f5ec6a0ae1b46d..588801999e8e8ea9ec080a796f72fefa17f3cd3b/fragment" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/fragment#1.2.0-alpha01" class="badge alpha">1.2.0-alpha01</a></div>
+              </div>
+              <div class="notes"><p><strong>New features</strong></p><ul><li>FragmentManager now calls <code>requestApplyInsets()</code> after attaching the Fragment’s view and directly before calling <code>onViewCreated()</code>, ensuring that your view always has the correct insets. <a href="https://issuetracker.google.com/issues/135945162" title="b/135945162" class="ref ref-issue">b/135945162</a></li></ul><p><strong>Bug fixes</strong></p><ul><li>Fixed a <code>NullPointerException</code> when popping a <code>FragmentTransaction</code> that used <code>setPrimaryNavigationFragment()</code> before <code>replace()</code>. <a href="https://issuetracker.google.com/issues/134673465" title="b/134673465" class="ref ref-issue">b/134673465</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="lifecycle 2.1.0-rc01 2019-07-02 july 2, 2019" id="july-2-2019-lifecycle-2-1-0-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/lifecycle">Lifecycle</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/be101c5ab63016840c743ab315e9a77ea4e3164a..7265375be17be52ccd946a32866dab91dd56e434/lifecycle" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/lifecycle#2.1.0-rc01" class="badge rc">2.1.0-rc01</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="lifecycle 2.2.0-alpha02 2019-07-02 july 2, 2019" id="july-2-2019-lifecycle-2-2-0-alpha02">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/lifecycle">Lifecycle</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/7a4525ac3c56adff5e0de713ca54eae89518e28c..8acc8b2884fbd5add837e33d631ea687070b1aaa/lifecycle" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/lifecycle#2.2.0-alpha02" class="badge alpha">2.2.0-alpha02</a></div>
+              </div>
+              <div class="notes"><p><strong>API changes</strong></p><ul><li>Replaced <code>LiveDataScope.initialValue</code> with <code>LiveDataScope.latestValue</code> which will track the current emitted value of the <code>liveData</code> block.</li><li>Added a new overload to the <code>liveData</code> builder that receives <code>timeout</code> parameter as type <code>Duration</code></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="lifecycle viewmodel savedstate 1.0.0-alpha02 2019-07-02 july 2, 2019" id="july-2-2019-lifecycle-viewmodel-savedstate-1-0-0-alpha02">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/lifecycle">Lifecycle ViewModel SavedState</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/eced0496fd103512ad396c143917ceafa4d34591..2e1f4a8ef6eb4252735ed377398bc56f310406c0/lifecycle/viewmodel-savedstate" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/lifecycle#lifecycle-viewmodel-savedstate-1.0.0-alpha02" class="badge alpha">1.0.0-alpha02</a></div>
+              </div>
+              <div class="notes"><p><strong>New features</strong></p><ul><li>Added <code>SavedStateHandle.getLiveData()</code> overload which accepts a default value.</li></ul><p><strong>API Changes</strong></p><ul><li><code>SavedStateVMFactory</code> is renamed to <code>SavedStateViewModelFactory</code>.</li><li><code>AbstractSavedStateVMFactory</code> is renamed to <code>AbstractSavedStateViewModelFactory</code>.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="media2 widget 1.0.0-beta01 2019-07-02 july 2, 2019" id="july-2-2019-media2-widget-1-0-0-beta01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media2">Media2 Widget</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/media2#media2-widget-1.0.0-beta01" class="badge beta">1.0.0-beta01</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="navigation 2.1.0-alpha06 2019-07-02 july 2, 2019" id="july-2-2019-navigation-2-1-0-alpha06">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/navigation">Navigation</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/067bb2bdba5ad5259e147e5f36ec20c5efa9ae42..498e1c39f543ee174434d4fc26e26219c298e9cd/navigation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/navigation#2.1.0-alpha06" class="badge alpha">2.1.0-alpha06</a></div>
+              </div>
+              <div class="notes"><strong>Note:</strong><span> This version is dependent on the Java 8 programming language. Please read <a href="https://developer.android.com/studio/write/java8-support">Use Java 8 language features</a> to learn how to use it in your project.</span> 
+<p><strong>New features</strong></p><ul><li>The <code>app:navGraph</code> attribute used by NavHostFragment has now been moved to the <code>navigation-runtime</code> artifact. Custom navigators that can be added via XML should use this attribute to gain integration with the Navigation Editor’s Host panel. <a href="https://issuetracker.google.com/issues/133880955" title="b/133880955" class="ref ref-issue">b/133880955</a></li></ul><p><strong>API changes</strong></p><ul><li>The <code>getViewModelStore()</code> API on <code>NavController</code> has been deprecated in favor of the new <code>getViewModelStoreOwner()</code> method that returns a <code>ViewModelStoreOwner</code>. <a href="https://android-review.googlesource.com/987010" title="aosp/987010" class="ref ref-gerrit">aosp/987010</a></li><li>The implementation of floating window destinations, such as <code>&lt;dialog&gt;</code> destinations, has been generalized into a marker interface, <code>FloatingWindow</code>, that all <code>&lt;dialog&gt;</code> destinations now implement. NavigationUI methods for interacting with the top app bar now ignore <code>FloatingWindow</code> destinations. <a href="https://issuetracker.google.com/issues/133600763" title="b/133600763" class="ref ref-issue">b/133600763</a></li></ul><p><strong>Behavior changes</strong></p><ul><li>Navigation now correctly keeps its state in sync with what is seen on the screen when using a <code>&lt;dialog&gt;</code> destination. As a consequence, Navigation now automatically pops <code>&lt;dialog&gt;</code> destinations when you navigate to a non-dialog and non-activity destination, such as a <code>&lt;fragment&gt;</code> destination. <a href="https://issuetracker.google.com/issues/134089818" title="b/134089818" class="ref ref-issue">b/134089818</a></li></ul><p><strong>Bug fixes</strong></p><ul><li>Navigation now suppresses the animation that occurs when recreating the activity when handling a deep link, fixing a visual flash. <a href="https://issuetracker.google.com/issues/130362979" title="b/130362979" class="ref ref-issue">b/130362979</a></li><li>Fixed a bug where the Navigation back stack would be out of sync when popping a Fragment as the initial fragment is being added. <a href="https://issuetracker.google.com/issues/133832218" title="b/133832218" class="ref ref-issue">b/133832218</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="preference 1.1.0-rc01 2019-07-02 july 2, 2019" id="july-2-2019-preference-1-1-0-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/preference">Preference</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/5470bb0c38e4c47f1beec4ddc938aea793e21610..9dfdadc6f6c3d72afe18252007bf44b9c6535386/preference" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/preference#1.1.0-rc01" class="badge rc">1.1.0-rc01</a></div>
+              </div>
+              <div class="notes"><p><strong>API changes</strong></p><ul><li>Deprecate <code>Preference#onInitializeAccessibilityNodeInfo</code></li><li>This method proxied accessibility node info for a specific Preference - but this is the wrong layer for this customization. If you would like to adjust accessibility information, you should instead override onBindViewHolder, and add accessibility information to the view directly.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="recyclerview 1.1.0-beta01 2019-07-02 july 2, 2019" id="july-2-2019-recyclerview-1-1-0-beta01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/recyclerview">Recyclerview</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/0c2a7091f663f8e853290ecb2a84c08fc7adac86..ac1bdc42de0ec27ad22ee33f04deb8772fccacf6/recyclerview" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/recyclerview#1.1.0-beta01" class="badge beta">1.1.0-beta01</a></div>
+              </div>
+              <div class="notes"><p><strong>New features</strong></p><ul><li><code>RecyclerView</code> now participates in nested scrolling when a scroll is initiated via accessibility events. <a href="https://android-review.googlesource.com/973584" title="aosp/973584" class="ref ref-gerrit">aosp/973584</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="savedstate 1.0.0-rc01 2019-07-02 july 2, 2019" id="july-2-2019-savedstate-1-0-0-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/savedstate">SavedState</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/fbdc0c35696b2e1ee3216e3e8c397aeb1abe4311..31e072b23ddd65615efc5f3fbece2276b6b5cae4/savedstate" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/savedstate#1.0.0-rc01" class="badge rc">1.0.0-rc01</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug fixes</strong></p><ul><li>Fixed incorrect proguard rule <a href="https://issuetracker.google.com/issues/132655499" title="b/132655499" class="ref ref-issue">b/132655499</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="swiperefreshlayout 1.1.0-alpha02 2019-07-02 july 2, 2019" id="july-2-2019-swiperefreshlayout-1-1-0-alpha02">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/swiperefreshlayout">SwipeRefreshLayout</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/d9ca300b3f70db75744a6d743f85e3784287434a..9a7b3cb32a2c7adac9b7af4bc2f996f1eb79fc12/swiperefreshlayout" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/swiperefreshlayout#1.1.0-alpha02" class="badge alpha">1.1.0-alpha02</a></div>
+              </div>
+              <div class="notes"><strong>Note:</strong><span> This version is dependent on the Java 8 programming language. Please read <a href="https://developer.android.com/studio/write/java8-support">Use Java 8 language features</a> to learn how to use it in your project.</span> 
+<p><strong>Bug fixes</strong></p><ul><li>Implemented saving and restoring of the refreshing state of SwipeRefreshLayout</li><li>Fixed usability bug when SwipeRefreshLayout is embedded in a RecyclerView</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="transition 1.1.0 2019-07-02 july 2, 2019" id="july-2-2019-transition-1-1-0">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/transition">Transition</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/946804c1a990b156e5e20a148c8affe71d38c144..d0129b3926300ba2edf0b0fce433c939612425e9/transition" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/transition#1.1.0" class="badge stable">1.1.0</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="transition 1.2.0-beta01 2019-07-02 july 2, 2019" id="july-2-2019-transition-1-2-0-beta01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/transition">Transition</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/f584907a42c20e38f68e1b60f1f701db76ca1408..b5043f248cd7bf97c96a596159a075f473375cc1/transition" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/transition#1.2.0-beta01" class="badge beta">1.2.0-beta01</a></div>
+              </div>
+              <div class="notes"><strong>Note:</strong><span> This version should be used if you are specifying 29 as a <code>targetSdkVersion</code> and will only work with the Q Beta 4 SDK.</span> 
+<p><strong>New features</strong></p><ul><li>This version should be used if you are specifying 29 as a <code>targetSdkVersion</code>. Otherwise, some of the transitions will not work properly. Instead of the reflection calls, this version uses the new public methods added in API Level 29. It is a part of our restrictions on non-SDK interfaces effort.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="vectordrawable 1.1.0-rc01 2019-07-02 july 2, 2019" id="july-2-2019-vectordrawable-1-1-0-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/vectordrawable">VectorDrawable</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/75e93a025020288fd9cd22580aabbcd7b11b4fd9..f9b2f91a3f91561b19c57efc84710ec995d5fc45/graphics/drawable" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/vectordrawable#1.1.0-rc01" class="badge rc">1.1.0-rc01</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="viewpager2 1.0.0-alpha06 2019-07-02 july 2, 2019" id="july-2-2019-viewpager2-1-0-0-alpha06">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/viewpager2">ViewPager2</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/abb953b4f55bff29662946b07e361bcbf2d76ca8..75429d194b9c286a3b71cd8bd7468c25dd25cd59/viewpager2" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/viewpager2#1.0.0-alpha06" class="badge alpha">1.0.0-alpha06</a></div>
+              </div>
+              <div class="notes"><p>This is our last planned alpha before freezing the API and moving to beta - please provide us with API feedback.</p><p><strong>New features</strong></p><ul><li>Foundations for improved Accessibility: <code>ACTION_PAGE_RIGHT</code>, <code>ACTION_PAGE_DOWN</code>, etc.</li></ul><p><strong>API changes</strong></p><ul><li><code>FragmentStateAdapter</code>: non-primary-item <code>Fragment</code>s are capped at <code>STARTED</code>, and their <code>menuVisibility</code> is set to false.</li><li><code>PageTransformer</code>, <code>MarginPageTransformer</code>, <code>CompositePageTransformer</code>: documentation for <code>position</code>fixed.</li></ul><p><strong>Bug fixes</strong></p><ul><li><code>currentItem</code> after data-set change / adapter change fixed.</li><li><code>MarginPageTransformer</code> with <code>offscreenPageLimit</code> issue fixed.</li><li>Accessibility actions while in <code>FakeDrag</code> behaviour fixed.</li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>

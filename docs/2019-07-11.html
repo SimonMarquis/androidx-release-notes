@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>July 11, 2019 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for July 11, 2019: WorkManager 2.1.0.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2019-07-11.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="july-11-2019">
+            <div class="date-divider"><a href="./#july-11-2019" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">July 11, 2019</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="stable" data-search="workmanager 2.1.0 2019-07-11 july 11, 2019" id="july-11-2019-workmanager-2-1-0">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/work">WorkManager</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/work#2.1.0" class="badge stable">2.1.0</a></div>
+              </div>
+              <div class="notes"><p><strong>Important changes since 2.0.1</strong></p><ul><li><code>work-runtime-ktx</code> now requires Java 8. If you run into any issues, you can add the following to your <code>build.gradle</code>: <code>kotlinOptions { jvmTarget = "1.8" }</code></li><li>Added on-demand initialization for WorkManager, which will create WorkManager only when referenced. <a href="https://issuetracker.google.com/127497100" title="b/127497100" class="ref ref-issue">b/127497100</a> To set up your project for on-demand initialization:
+  <ol><li><a href="https://developer.android.com/topic/libraries/architecture/workmanager/advanced/custom-configuration#remove-default">Disable the automatic initializer</a>.</li><li>Implement <code>Configuration.Provider</code> on your custom <code>Application</code> object.</li><li>Change all references of <code>WorkManager.getInstance()</code> to <code>WorkManager.getInstance(Context)</code>. As part of this change, we have deprecated <code>WorkManager.getInstance()</code>. It is always safer to call the new <code>WorkManager.getInstance(Context)</code> replacement, even if you're not doing on-demand initialization.</li></ol></li><li><code>PeriodicWorkRequest</code>s now support initial delays. You can use the <code>setInitialDelay</code> method on <code>PeriodicWorkRequest.Builder</code> to set an initial delay. <a href="https://issuetracker.google.com/111404867" title="b/111404867" class="ref ref-issue">b/111404867</a></li><li>Added the ability to delegate to one or more registered <code>WorkerFactory</code>s using <code>DelegatingWorkerFactory</code>. <a href="https://issuetracker.google.com/131435993" title="b/131435993" class="ref ref-issue">b/131435993</a></li><li>Added the ability to customize the <code>Executor</code> used by WorkManager for all its internal book-keeping via <code>Configuration.Builder.setTaskExecutor</code>.</li><li>Added the ability to create unit testable <code>Worker</code> and <code>ListenableWorker</code> classes by using <code>TestWorkerBuilder</code> and <code>TestListenableWorkerBuilder</code> in the <code>work-testing</code> artifact.
+  <ul><li>Note that <code>work-testing</code> now pulls in Kotlin as a dependency and includes several Kotlin extensions by default.</li></ul></li><li>Added run attempt count to <code>WorkInfo</code>. <a href="https://issuetracker.google.com/127290461" title="b/127290461" class="ref ref-issue">b/127290461</a></li><li><code>Data</code> types can now store and retrieve bytes and byte arrays. This does NOT change the maximum size of <code>Data</code> objects.</li><li>WorkManager now depends on <code>Room 2.1.0</code>, which should fix some database issues.</li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
