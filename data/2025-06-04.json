@@ -1,0 +1,217 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#june_4_2025",
+  "title": "June 4, 2025",
+  "releasedOn": "2025-06-04",
+  "updated": "2025-06-04T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#june_4_2025",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.12.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.12.0-alpha02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/navigationevent#1.0.0-alpha02\">NavigationEvent <code>1.0.0-alpha02</code></a>: Fixed a <code>ConcurrentModificationException</code> that could occur when <code>NavigationEventCallback.remove()</code> was called due to simultaneously modifying the internal list of closeables. (<a href=\"https://android-review.googlesource.com/#/q/I6306693f5fd98795f68917d7c6fac8b90a3c6a1c\">I63066</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/cd41781824511ce4d5c4a05d2df4aaaee669f0bc..786176dc2284c87a0e620477608e0aca9adeff15/activity"
+    },
+    {
+      "id": "appcompat",
+      "name": "AppCompat",
+      "version": "1.7.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.7.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>AppCompat</code> has been updated to use Activity 1.8.0 to allow it to use the <code>initializeViewTreeOwners()</code> API from <code>ComponentActivity</code> to ensure that it always has the correct <code>ViewTreeOwners</code> set. This fixes an incompatibility between <code>AppCompatActivity</code> and <a href=\"https://developer.android.com/jetpack/androidx/releases/navigationevent\">NavigationEvent</a> and libraries that build on top of it such as <a href=\"https://developer.android.com/jetpack/androidx/releases/navigation3\">Navigation 3</a>. (<a href=\"https://android-review.googlesource.com/#/q/I969192dacdbae2c6feb9734cafc21cd0ee352680\">I96919</a>, <a href=\"https://issuetracker.google.com/issues/419208471\">b/419208471</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/31e0791ed498d528e1ee51f54e0c7cd334729997..e144631ecabce2e5206abae98d8f18101bac88e0/appcompat"
+    },
+    {
+      "id": "appfunctions",
+      "name": "Appfunctions",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appfunctions#1.0.0-alpha02",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Support Android 16 API(s).</li>\n <li>Better support for parameterized <code>AppFunctionSerializable(s)</code> at compile time.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Introduced <code>AppFunctionSchemaDefinition</code> API, enabling agents to define their own predefined function schemas.</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Error handling for missing runtime enabled state of <code>AppFunctions</code>.</li>\n <li>Minor bugfix in <code>observeAppFunctions</code> API to observe changes in <code>AppFunctionComponentMetadata</code>.</li>\n <li>Additional error logs.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b6c541571b9fb5471f965fc52612cb280713e5e4..786176dc2284c87a0e620477608e0aca9adeff15/appfunctions"
+    },
+    {
+      "id": "autofill",
+      "name": "Autofill",
+      "version": "1.3.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/autofill#1.3.0",
+      "detailsHtml": "<p><strong>Important changes since AutoFill 1.2.0</strong></p>\n<ul>\n <li>Adds autofill hint constants for wallet valuables types.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/de7ff0d66c069bf65e3faae7d59e3ca579031e03..934a41ec2c6c5c7a033e600ca0635df2c79ccd13/autofill/autofill"
+    },
+    {
+      "id": "benchmark",
+      "name": "Benchmark",
+      "version": "1.4.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/benchmark#1.4.0-beta02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added a <code>BaselineProfileConfig.Builder</code> to make it easier to call <code>BaselineProfileRule.collectWithResults()</code> for Java developers. (<a href=\"https://android-review.googlesource.com/#/q/I9490595dee3820ef8a3d003a6ef8a146d8f1635a\">I94905</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/44ffa166a34fac89733f1cfb97ccd5b40b7d6d3d..786176dc2284c87a0e620477608e0aca9adeff15/benchmark"
+    },
+    {
+      "id": "camera-featurecombinationquery",
+      "name": "Camera Featurecombinationquery",
+      "version": "1.5.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera-featurecombinationquery#1.5.0-beta01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>With the update to 1.5.0-beta01, the <code>FeatureCombinationQuery</code> artifacts have been moved to their own library group. This change is necessary to improve the modularity and maintainability of the CameraX library.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li><code>SessionConfigurationCompat</code> and <code>SessionParametersCompat</code> have been renamed to <code>SessionConfigurationLegacy</code> and <code>SessionParametersLegacy</code> respectively to better reflect their function in supporting older APIs only.</li>\n <li>Similarly, the method name/signature of <code>CameraDeviceSetupCompat.#isSessionConfigurationSupported(SessionConfigurationCompat)</code> has been changed to <code>CameraDeviceSetupCompat.#isSessionConfigurationSupportedLegacy(SessionConfigurationLegacy)</code></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "camera-viewfinder",
+      "name": "Camera Viewfinder",
+      "version": "1.5.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera-viewfinder#1.5.0-beta02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/a99266d9ab8e4a0b6b8d4c11d8fc79524f59c314..7442ed2cb3111f2187694f18723b4fbd1c9efa69/camera/viewfinder"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.9.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.9.0-alpha04",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5fd8d5a2f883c1cdd7f712b200d5a4fedf342136..786176dc2284c87a0e620477608e0aca9adeff15/compose/animation"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.9.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.9.0-alpha04",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>PrefetchScheduler</code> and customisation have been deprecated in favor of the internal implementation that does all the work automatically. (<a href=\"https://android-review.googlesource.com/#/q/I3a9a678918c7ce33174b9c330142a650cc9e3b2a\">I3a9a6</a>, <a href=\"https://issuetracker.google.com/issues/420551535\">b/420551535</a>)</li>\n <li>Updated <code>Scrollable2DState</code> to use an offset in the <code>canScroll</code> method instead of an angle. (<a href=\"https://android-review.googlesource.com/#/q/I28694cebf0b29b236eea1eaa6e072c7cf7dad623\">I28694</a>, <a href=\"https://issuetracker.google.com/issues/417268474\">b/417268474</a>)</li>\n <li>Replaced <code>addAnnotation</code> in <code>AnnotatedOutputTransformation</code> with <code>addStyle</code>. (<a href=\"https://android-review.googlesource.com/#/q/I91c6f52917074ecfecdeadcb96a5da4f14592f8e\">I91c6f</a>, <a href=\"https://issuetracker.google.com/issues/417991824\">b/417991824</a>)</li>\n <li>Stabilized <code>LazyLayout</code>. (<a href=\"https://android-review.googlesource.com/#/q/If5db4170daec197e39612bcfb5f8b5d4cdd8db52\">If5db4</a>)</li>\n <li>Stabilized an empty constructor for <code>LazyLayoutPrefetchState</code> and it's scheduling method <code>schedulePrecomposition</code> and <code>schedulePrecompositionAndPremeasure</code>. (<a href=\"https://android-review.googlesource.com/#/q/I4362f3417ebe652d967463a474e4ba799967930d\">I4362f</a>, <a href=\"https://issuetracker.google.com/issues/252853717\">b/252853717</a>)</li>\n <li>Introduced <code>ProcessTextKey</code> on Android used for context menu items that's added for <code>PROCESS_TEXT</code> intent actions. (<a href=\"https://android-review.googlesource.com/#/q/If0ac40e1a2c4e385de4ebeb0e41afc5f09b00187\">If0ac4</a>)</li>\n <li>Make context menu APIs public. Exposed <code>Modifier.addTextContextMenuComponents</code> and <code>Modifier.filterTextContextMenuComponents</code> to add and remove items in context menu. And also made the following elementary APIs public so that one can build a customized context menu:\n  <ul>\n   <li><code>TextContextMenuProvider</code></li>\n   <li><code>TextContextMenuDataProvider</code></li>\n   <li><code>TextContextMenuData</code></li>\n   <li><code>TextContextMenuComponent</code></li>\n   <li><code>LocalTextContextMenuDropdownProvider</code></li>\n   <li><code>LocalTextContextMenuToolbarProvider</code> (<a href=\"https://android-review.googlesource.com/#/q/I1b7b0fd6744fbae808a3e142cca4ad53bd3731f1\">I1b7b0</a>)</li>\n  </ul></li>\n <li>Make <code>LazyLayoutItemProvider</code> stable (<a href=\"https://android-review.googlesource.com/#/q/Icce09a01e2668ea0a93678ec84d189aa4769e26c\">Icce09</a>, <a href=\"https://issuetracker.google.com/issues/261565751\">b/261565751</a>)</li>\n <li>Introduced android smart selection features that can be enable/disabled via <code>ComposeFoundationFlags.isSmartSelectionEnabled</code>. It also exposed a static <code>compositionLocal</code> <code>LocalTextClassifierCoroutineContext</code> that can be used to specify the <code>CoroutineContext</code> in which the <code>TextClassification</code> job is launched. (<a href=\"https://android-review.googlesource.com/#/q/I1dbaa65e254cc11c1217d2c8ff551c92f7f642f6\">I1dbaa</a>, <a href=\"https://issuetracker.google.com/issues/139321320\">b/139321320</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5fd8d5a2f883c1cdd7f712b200d5a4fedf342136..786176dc2284c87a0e620477608e0aca9adeff15/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.9.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.9.0-alpha04",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5fd8d5a2f883c1cdd7f712b200d5a4fedf342136..786176dc2284c87a0e620477608e0aca9adeff15/compose/material"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.9.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.9.0-alpha04",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>SnapshotStateSet</code> now implements Parcelable on Android, it is now supported to be used as part <code>rememberSaveable { ... }</code>. (<a href=\"https://android-review.googlesource.com/#/q/I755dd7d20ed39545a1b7805b28b676fcff019fff\">I755dd</a>, <a href=\"https://issuetracker.google.com/issues/378623803\">b/378623803</a>)</li>\n <li><code>SnapshotStateList</code> now implements Parcelable on Android, it is now supported to be used as part <code>rememberSaveable { ... }</code>. (<a href=\"https://android-review.googlesource.com/#/q/Id18be0bf1ad0bf5c7de580f5289629b838c76876\">Id18be</a>, <a href=\"https://issuetracker.google.com/issues/378623803\">b/378623803</a>)</li>\n <li><code>movableContentOf()</code> is now marked with <code>@RememberInComposition</code> annotation, which allows lint to catch incorrect usages (<a href=\"https://android-review.googlesource.com/#/q/I2738d6889fdf3aea8a6017d30c8a8f53c7915e9d\">I2738d</a>)</li>\n <li>Updated experimental composition observers API to allow for more comprehensive observation of recomposition causes (<a href=\"https://android-review.googlesource.com/#/q/I32b6ac0ac3c4c584e03c755a1651b28882ae4a37\">I32b6a</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an ordering issue with the dispatching of <code>onForgotton</code> that could, for example, cause the <code>onDispose</code> of disposable effects to execute in the wrong order. (<a href=\"https://android-review.googlesource.com/#/q/Ic1c9127c3faf980e373eaa2c162a6cc49d55ff28\">Ic1c91</a>, <a href=\"https://issuetracker.google.com/issues/417450712\">b/417450712</a>)</li>\n <li>Fix for for reusing state handling in pausable composition (<a href=\"https://android-review.googlesource.com/#/q/Ife96e7e011daa3644cdda2f112bbe7bbedb49ae4\">Ife96e</a>, <a href=\"https://issuetracker.google.com/issues/404058957\">b/404058957</a>)</li>\n <li>Minor bug fix to make mutable collection detection compatible for both K1 and K2 (<a href=\"https://android-review.googlesource.com/#/q/Ie48784d814683fa1a73ab7c41d3225fc84d3b14c\">Ie4878</a>)</li>\n <li>Minor bug fix to make annotation lookup on overridden property accessors compatible for both K1 and K2 (<a href=\"https://android-review.googlesource.com/#/q/I9900dbc6263666591db1dfe1c9d2ca21f26319f3\">I9900d</a>)</li>\n</ul>\n<p><strong>External Contribution</strong></p>\n<ul>\n <li>Fixed a bug affecting Molecule users where using <code>RecompositionMode.Immediate</code> could cause missed recompositions. (<a href=\"https://android-review.googlesource.com/#/q/I9f3a9b3d879aef23a73eb4110f2efed6cca81dfa\">I9f3a9</a>, <a href=\"https://issuetracker.google.com/issues/419527812\">b/419527812</a>)</li>\n <li>Exposed <code>PausableComposition</code> isApplied and <code>isCancelled</code> getters which allow for checking the state of the <code>PausableComposition</code>. (<a href=\"https://android-review.googlesource.com/#/q/I994aa9f48fcdb5eeb551bc7db4cba917af408d23\">I994aa</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5fd8d5a2f883c1cdd7f712b200d5a4fedf342136..786176dc2284c87a0e620477608e0aca9adeff15/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.9.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.9.0-alpha04",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added modifier APIs for customizable shadows. (<a href=\"https://android-review.googlesource.com/#/q/I2058d6641d5d0747f1455034a4300776035985b2\">I2058d</a>, <a href=\"https://issuetracker.google.com/issues/160665122\">b/160665122</a>)</li>\n <li>Add a <code>SemanticsModifierNode.isImportantForBounds</code> property that determines whether the node should be taken into account when computing bounds. The property is true by default and can be set to false to indicate that the node should not be taken into account for bounds. (<a href=\"https://android-review.googlesource.com/#/q/I7ebec06c2af89f7890743b4ff4c2388fc0ebbde7\">I7ebec</a>)</li>\n <li>Add a <code>SemanticsPropertyKey</code> factory function for declaring Android-specific semantics properties that are made available as accessibility extras exposed via <code>AccessibilityNodeInfo.getExtras</code>. (<a href=\"https://android-review.googlesource.com/#/q/I2ed511dc37b144196a911e7e55b56ea35205a5a2\">I2ed51</a>)</li>\n <li>Removed usages of <code>ComposeUiFlags.isRemoveFocusedViewFixEnabled</code> and deprecated the flag. (<a href=\"https://android-review.googlesource.com/#/q/I5032840c5419ce8802619df0cfc5226d9fdd62ea\">I50328</a>)</li>\n <li>Introduce new customizable shadow framework. This includes <code>DropShadowPainter</code> and <code>InnerShadowPainter</code> as well as the <code>DropShadow/InnerShadow</code> dependencies. Shadow infrastructure is shared such that the same generated shadows can be shared at multiple callsites without having to re-generate the shadows n-times. (<a href=\"https://android-review.googlesource.com/#/q/I24f7a227d0bcb3886682ff05d6f77ca6d2a133bd\">I24f7a</a>, <a href=\"https://issuetracker.google.com/issues/160665122\">b/160665122</a>)</li>\n <li>Introduce <code>CompositeShader</code> and <code>CompositeShaderBrush</code> which creates a composited result between two shaders. Also add <code>ShaderBrush#transform</code> to set a transformation matrix for the shader. (<a href=\"https://android-review.googlesource.com/#/q/I2621aeede742c15964faefa927631208a98ff1a2\">I2621a</a>, <a href=\"https://issuetracker.google.com/issues/160665122\">b/160665122</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a bug in <code>NestedScrollInteropConnection</code> where fling methods were being in the wrong order with respect to views. (<a href=\"https://android-review.googlesource.com/#/q/I56ad4f04e5b29aceb7d7ceeb40976ad17aaf9ce0\">I56ad4</a>)</li>\n <li>Previously, dialogs that drew full screen were not drawing within the display cutout region. This bug is fixed so that dialogs with <code>decorFitsSystemWindows = false</code> and <code>usePlatformDefaultWidth = false</code> can take the display cutout region. (<a href=\"https://android-review.googlesource.com/#/q/I9e9758a01b07a7943030f33c20720fe24186e0d6\">I9e975</a>)</li>\n <li>Fixed a bug where <code>TalkBack</code>’s green focus indicator was not drawn after being turned on while the Compose app is in the background. (<a href=\"https://android-review.googlesource.com/#/q/Ifd12a124dc56036a06136583a75fb142a76de3d3\">Ifd12a</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5fd8d5a2f883c1cdd7f712b200d5a4fedf342136..786176dc2284c87a0e620477608e0aca9adeff15/compose/ui"
+    },
+    {
+      "id": "emoji2",
+      "name": "Emoji2",
+      "version": "1.6.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/emoji2#1.6.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Emoji 16.0 data updates (<a href=\"https://android-review.googlesource.com/#/q/Ifc87850ef48d8d2a01f350e6a24cb893e617d222\">Ifc878</a>)</li>\n <li>Adding “emoji” suffix to the content description</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>This library now uses <a href=\"https://jspecify.dev/\">JSpecify nullness annotations</a>, which are type-use. Kotlin developers should use the following compiler arguments to enforce correct usage: <code>-Xjspecify-annotations=strict</code>, <code>-Xtype-enhancement-improvements-strict-mode</code> (<a href=\"https://android-review.googlesource.com/#/q/Id07e72428528003ad92b9ab1475ec46f877c9bc6\">Id07e7</a>, <a href=\"https://issuetracker.google.com/issues/326456246\">b/326456246</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d54bd534b3505f8abf050634eb0fdd0d7219707b..786176dc2284c87a0e620477608e0aca9adeff15/emoji2"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.8.8",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.8.8",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue where <code>FragmentManager</code> would crash while trying to save the state of Fragments that were added with <code>setMaxLifecycle(Lifecycle.State.INITIALIZED)</code>. These fragments, since they never when through <code>onCreate()</code>, no longer have any state saved or <code>onSaveInstanceState()</code> called. (<a href=\"https://android-review.googlesource.com/#/q/I6e37a01551008636d6b5ccafa65f03fcbd19321f\">I6e37a</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7edaa16f0a4d8d4afbe11d4d62aca84635ff839a..d008d0faccfc0ad192d2b2df27e3c61227f381f6/fragment"
+    },
+    {
+      "id": "health-connect",
+      "name": "Health Connect",
+      "version": "1.1.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/health-connect#1.1.0-rc02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Added support for missing device types (<a href=\"https://android-review.googlesource.com/#/q/Ied486c58dc3fba73fe4d66a4350cb31067de484a\">Ied486</a>)</li>\n <li>Updated mindfulness sessions permission string (<a href=\"https://android-review.googlesource.com/#/q/I13ab5eb7ac9d95f462ac57579d029fcefc3aed1e\">I13ab5</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/8877830981271e343c44dc34861cade7ae0281bc..8ff90930ee1c084c0f4cc9b3eecd9cd7b4c3d8d5/health/connect"
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.9.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.9.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix <code>SavedStateHandle.remove(key)</code> not clearing <code>SavedStateHandle.getMutableStateFlow(key)</code> states. (<a href=\"https://android-review.googlesource.com/q/commit:d5f9390a213fb05892f0db98bfd826be98f081a7\">d5f939</a>, <a href=\"https://issuetracker.google.com/418746333\">b/418746333</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ac0ac96d77785db18140c9bad8f1de95f2418806..ae1648c05b723380a53f708fa745357395a7bf0e/lifecycle"
+    },
+    {
+      "id": "mediarouter",
+      "name": "Mediarouter",
+      "version": "1.8.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/mediarouter#1.8.0",
+      "detailsHtml": "<p><strong>Important changes since MediaRouter 1.7.0</strong></p>\n<ul>\n <li>Add new API to support connecting (and disconnecting) to routes without affecting the route selection.</li>\n <li>Add new API that allows providers to take parameters when creating a controller.</li>\n <li>Add new API for listening for changes in the list of bound <code>MediaRouteProviderService</code> clients.</li>\n <li>New API to support stream expansion with route connection.</li>\n <li>Update <code>onRouteDisconnected</code> callback with both disconnected and requested routes.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/068e09c26f719be79a26e04bcec353e197730b41..f7fb264c3718c3816f1cfd173f61c34e261aa51a/mediarouter"
+    },
+    {
+      "id": "navigation3",
+      "name": "Navigation3",
+      "version": "1.0.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation3#1.0.0-alpha03",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>Navigation3</code> will no longer clear decorator states for <code>backStacks</code> that have been swapped out and replaced with another <code>backStack</code> instance. (<a href=\"https://android-review.googlesource.com/#/q/I28a42b98cc811be99d8380b1cfceee02b42608ab\">I28a42</a>, <a href=\"https://issuetracker.google.com/issues/415076044\">b/415076044</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3db836162afb266b54eb37d28c7c12231755fc9b..4fb12d1b1dc4dcae8ca603c7a5db938cc1abe39c/navigation3"
+    },
+    {
+      "id": "navigationevent",
+      "name": "Navigationevent",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigationevent#1.0.0-alpha02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Replace <code>NavigationEventDispatcher</code>'s secondary constructor with default arguments. (<a href=\"https://android-review.googlesource.com/#/q/I716a05450ebb11d7360f4a9c09a3cd89205d542a\">I716a0</a>)</li>\n <li>Remove priority property from <code>NavigationEventCallback</code>. Pass priority to <code>NavigationEventDispatcher.addCallback()</code> instead. (<a href=\"https://android-review.googlesource.com/#/q/I13caecd84220bf919549958d79e424d1fc2cd3ab\">I13cae</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a <code>ConcurrentModificationException</code> that could occur when <code>NavigationEventCallback.remove()</code> was called due to simultaneously modifying the internal list of closeables. (<a href=\"https://issuetracker.google.com/issues/420919815\">b/420919815</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/cd41781824511ce4d5c4a05d2df4aaaee669f0bc..4fb12d1b1dc4dcae8ca603c7a5db938cc1abe39c/navigationevent/navigationevent"
+    },
+    {
+      "id": "photopicker",
+      "name": "Photopicker",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/photopicker#1.0.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>The initial alpha release of androidx implementations of the <a href=\"https://developer.android.com/reference/android/widget/photopicker/package-summary\">Embedded PhotoPicker</a> that enable both View based and Compose based applications to easily integrate with the Embedded Photopicker service.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Added <code>EmbeddedPhotopicker</code> composable for as an entrypoint for compose based applications.\n  <ul>\n   <li><code>rememberEmbeddedPhotoPickerState</code> can be used (recommended) or applications can implement their own state management with the <code>EmbeddedPhotoPickerState</code> interface.</li>\n  </ul></li>\n <li>Added <code>EmbeddedPhotopickerView</code> as an entrypoint for view based applications.\n  <ul>\n   <li><code>EmbeddedPhotoPickerStateChangeListener</code> can be used to receive related callbacks to state inside the PhotoPicker.</li>\n  </ul></li>\n <li>Added <code>TestEmbeddedPhotoPickerProvider</code> to allow apps to test flows that rely on the Embedded Photopicker.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "security-crypto-security-crypto-ktx",
+      "name": "Security-state",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/security#1.1.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-uiautomator",
+      "name": "Test Uiautomator",
+      "version": "2.4.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test-uiautomator#2.4.0-alpha04",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Renamed <code>onView</code> to <code>onElement</code> to clarify it works with compose (<a href=\"https://android-review.googlesource.com/#/q/I53a3b4e35ee2fad641bf243ce015bc48fe02c012\">I53a3b</a>, <a href=\"https://issuetracker.google.com/issues/419006806\">b/419006806</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix <code>waitForStableInActiveWindow</code> (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/290457f1e7a325b8f837a65f47a46a26cfea4d46\">290457f1</a>, <a href=\"https://issuetracker.google.com/issues/420349130\">b/420349130</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/cd41781824511ce4d5c4a05d2df4aaaee669f0bc..786176dc2284c87a0e620477608e0aca9adeff15/test/uiautomator/uiautomator"
+    },
+    {
+      "id": "wear-compose",
+      "name": "Wear Compose",
+      "version": "1.5.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-compose#1.5.0-beta03",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>OpenOnPhoneDialog</code> now announces only the message text under TalkBack, and skips the icon semantics. The <code>OpenOnPhoneDialogDefaults</code> have been updated to remove the <code>iconContentDescription</code> and the <code>contentDescription</code> parameter from <code>icon()</code>. Also, <code>ConfirmationDialogDefaults</code> now has modifier parameters on <code>SuccessIcon</code> and <code>FailureIcon</code> composables. (<a href=\"https://android-review.googlesource.com/#/q/Id2ae2a01db6a94ce63a448693922d92beac10c01\">Id2ae2</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Changed the order in which we apply the effect of <code>SurfaceTransformation</code> parameters. Before, the transformations applied to Wear Material3 components were done as follows: background painter, container transformation, content transformation. Now, the first 2 are inverted, and we apply any passed in modifier between them, so it is affected by container transformations. This fixes cases like using a placeholder shimmer effect with elements in a TLC using the transformation parameter. (<a href=\"https://android-review.googlesource.com/#/q/I786cfe1468d88d9c0f36b200d69362b46abdad55\">I786cf</a>)</li>\n <li><code>RevealState.Saver</code> was added to be used to restore the state of <code>SwipeToReveal</code> when activity or process is recreated. <code>rememberRevealState</code> function now uses this Saver by default. (<a href=\"https://android-review.googlesource.com/#/q/Ie0ecb5568107b73d31ab34f0b47156478cbe06a5\">Ie0ecb</a>)</li>\n <li><code>SwipeToReveal</code> primary and secondary actions buttons should default to <code>ButtonDefault.Height</code> (fixed bug where these were filling the maximum height for taller buttons). (<a href=\"https://android-review.googlesource.com/#/q/Ibfba1e8afb8b2886bc9f4264fe39789c4e8759d7\">Ibfba1</a>)</li>\n <li>Changed <code>SwipeToReveal</code> to reset the last component interacted with, when the swipe right gesture is performed. (<a href=\"https://android-review.googlesource.com/#/q/Ia8450d487b714a753af628bb8d2d8a5a42d65a73\">Ia8450</a>)</li>\n <li><code>SwipeToReveal</code> was changed to settle on the <code>Revealing</code> state when the end position of the swipe is in between the revealing and revealed anchors, and is closer to the Revealing anchor. (<a href=\"https://android-review.googlesource.com/#/q/If445848ae32cce0a0d28ca35360967ed07b1bf42\">If4458</a>)</li>\n <li>Now <code>ButtonGroup</code>'s content is properly inverted in a RTL layout (<a href=\"https://android-review.googlesource.com/#/q/Ib378dab6a641f32bb97adefb9b3440703f747707\">Ib378d</a>)</li>\n <li><code>AnimatedText</code> now supports RTL text direction (<a href=\"https://android-review.googlesource.com/#/q/I4533cbdc3ce9b1118920e933e2aa89524d9d68a5\">I4533c</a>)</li>\n <li><code>TransformingLazyColumn</code> now resizes items correctly when the bottom item is removed (<a href=\"https://android-review.googlesource.com/#/q/Idacab201ec5dbb09886cd08666785f1850117aee\">Idacab</a>)</li>\n <li><code>TransformingLazyColumn</code> now makes just one measuring pass, which improves performance by reducing frame times. (<a href=\"https://android-review.googlesource.com/#/q/I501a1ac8048d0b718919a4be042e66e84a22d2de\">I501a1</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/cd41781824511ce4d5c4a05d2df4aaaee669f0bc..786176dc2284c87a0e620477608e0aca9adeff15/wear/compose"
+    },
+    {
+      "id": "wear-protolayout",
+      "name": "Wear ProtoLayout",
+      "version": "1.3.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-protolayout#1.3.0",
+      "detailsHtml": "<p><strong>Important changes since 1.2.0</strong></p>\n<ul>\n <li>Material 3 design comes to the watch, with components and layouts that are optimized for the round display and scale appropriately from small to large screen sizes\n  <ul>\n   <li>This includes Kotlin-only, <code>protolayout-material3</code> library with more Compose-like APIs for the following components and features:</li>\n   <li>Dynamic color theme coming from the system and watch face with the latest Material3 theme for colors, shapes and typography</li>\n   <li><code>MaterialScope</code> for taking care of all opinionated defaults and easier customization</li>\n   <li><code>iconEdgeButton</code>, <code>textEdgeButton</code></li>\n   <li><code>iconButton</code>, <code>textButton</code>, <code>button</code>, <code>imageButton</code>, <code>avatarButton</code>, <code>compactButton</code></li>\n   <li><code>titleCard</code>, <code>appCard</code>, <code>graphicDataCard</code>, <code>iconDataCard</code>, <code>textDataCard</code></li>\n   <li><code>circularProgressIndicator</code>, <code>segmentedCircularProgressIndicator</code></li>\n   <li><code>primaryLayout</code>, <code>buttonGroup</code></li>\n   <li>All components work across any SDK levels and <code>ProtoLayout</code> Renderer version, supplying sensible fallbacks where applicable</li>\n  </ul></li>\n <li>More Kotlin-friendly, Compose-like APIs for base ProtoLayout elements\n  <ul>\n   <li><code>LayoutModifier</code> with ability to add the most of modifiers as chained functions (<code>padding</code>, <code>contentDescription</code> (including <code>clearSemantics</code>), <code>background</code>, <code>clip</code>, <code>opacity</code> etc.), convertible to the existing <code>Modifiers</code> object</li>\n   <li><code>LayoutColors</code> and <code>LayoutString</code> as types with easier support for using dynamic fields and constraints</li>\n   <li><code>text</code> and <code>fontStyle</code></li>\n   <li>better map support for <code>StateBuilder</code>, including <code>DynamicDataMap</code> and factory methods such as <code>intAppDataKey</code> for easier creation of <code>AppDataKey</code> objects</li>\n  </ul></li>\n <li>Lottie animations support including option to set different triggers on when animation should start, for example when layout is loaded or when layout becomes visible\n  <ul>\n   <li>Improved gradient support:</li>\n   <li>Linear gradient API as part of <code>Brush</code> that can be used in <code>Background</code> modifiers for elements such as <code>Box</code>, <code>Spacer</code>, etc. …</li>\n   <li>Allow dynamic color values in <code>ColorStop</code> used for linear and sweep gradient</li>\n   <li>Existing Sweep Gradient in arc objects now supports dynamic colors and start and end angles</li>\n  </ul></li>\n <li>Platform data binding in <code>protolayout-expression</code> to receive information anytime that layout’s visibility is changed, which for example can be use to hide certain parts of the layout while tile is being swiped to</li>\n <li>Testing library - <code>protolayout-testing</code> - has been added to support easier Unit test coverage for any ProtoLayout elements</li>\n <li>New element <code>DashedArcLine</code> with improved set of features so that line can have dashes, as opposed to the existing <code>ArcLine</code></li>\n <li><code>ArcSpacer</code> support for setting its length in DP dimension instead of degrees</li>\n <li>Added roundness <code>FontSetting</code> axis applicable to some fonts</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c7938d4e7647114b0f950c73aa11b9ebde3e446b..90062705131fa122cdd8d9bed30380b183dc48bd/wear/protolayout"
+    },
+    {
+      "id": "wear-tiles",
+      "name": "Wear Tiles",
+      "version": "1.5.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-tiles#1.5.0",
+      "detailsHtml": "<p><strong>Important changes since 1.4.0</strong></p>\n<ul>\n <li>Added new API <code>TileService.onRecentInteractionEvents()</code> for processing interaction tile events (Enter / Leave) in batches.\n  <ul>\n   <li>The existing APIs in <code>TileService</code> for <code>onEnterEvent</code> and <code>onLeaveEvent</code> are deprecated and won’t work from SDK 36+ for Apps targeting API 36 or more</li>\n  </ul></li>\n <li>Critical bug fix for any clients targeting SDK higher than 34 and requesting a tile update on API 34 that would cause a <code>SecurityException</code>.</li>\n <li>Starting from Wear 6 (SDK level 36+), all Tiles will be displayed in a system font that is defined by each device.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c7938d4e7647114b0f950c73aa11b9ebde3e446b..90062705131fa122cdd8d9bed30380b183dc48bd/wear/tiles"
+    },
+    {
+      "id": "webkit",
+      "name": "Webkit",
+      "version": "1.14.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/webkit#1.14.0",
+      "detailsHtml": "<p><strong>Important changes since 1.13.0</strong></p>\n<ul>\n <li>Introducing the <code>PaymentRequest</code> API for invoking Android native payment apps through <code>org.chromium.intent.action.PAY</code> intent. <code>PaymentRequest</code> is disabled by default and <code>WebView</code> host apps can call <a href=\"https://developer.android.com/reference/androidx/webkit/WebSettingsCompat#setPaymentRequestEnabled(android.webkit.WebSettings,boolean)\">WebSettingsCompat.setPaymentRequestEnabled(settings, true)</a> to enable it. In addition, <code>PaymentRequest</code> requires a <code>&lt;queries&gt;</code> tag in <code>AndroidManifest.xml</code>. See documentation for <code>setPaymentRequestEnabled()</code> for more information.</li>\n <li>Introducing the experimental Navigation API for enhanced web navigation tracking and management within <code>WebView</code>. These APIs provide detailed information about navigation events. Get started by calling <a href=\"https://developer.android.com/reference/androidx/webkit/WebViewCompat#setWebNavigationClient(android.webkit.WebView,androidx.webkit.WebNavigationClient)\">WebViewCompat.setNavigationClient</a> with an implementation of the new <a href=\"https://developer.android.com/reference/androidx/webkit/WebNavigationClient\">WebNaviagationClient</a> interface to get detailed information about page navigation. For more information about the navigation lifecycle, please see the <a href=\"https://docs.google.com/presentation/d/1YVqDmbXI0cllpfXD7TuewiexDNZYfwk6fRdmoXJbBlM\">Life of a Navigation Presentation</a>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/dca78d01925c289445e3fc462a376b774107cbbc..e0db6d8bb2835e53b913e6bf0a913b68f6aaf6d7/webkit/webkit"
+    }
+  ]
+}
