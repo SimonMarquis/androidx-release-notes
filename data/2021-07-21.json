@@ -1,0 +1,273 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#july_21_2021",
+  "title": "July 21, 2021",
+  "releasedOn": "2021-07-21",
+  "updated": "2021-07-21T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#july_21_2021",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.2.4",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.2.4",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/activity#1.3.0-rc02\">Activity <code>1.3.0-rc02</code></a>: The ActivityResultRegistry callbacks are now properly saved and restored so callbacks are not duplicated in the savedState. (<a href=\"https://android-review.googlesource.com/#/q/I9781617370ad24f768249df42d2ab148915097cb\">I97816</a>, <a href=\"https://issuetracker.google.com/issues/191893160\">b/191893160</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/f4a57ed58db086df5059f059a09e014df9f46e4c..332dfe3d3ed401984ae01f42076cf5801ddfd81d/activity"
+    },
+    {
+      "id": "appcompat",
+      "name": "AppCompat",
+      "version": "1.3.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.3.1",
+      "detailsHtml": "<p><strong>Dependency updates</strong></p>\n<ul>\n <li>AppCompat now depends on <a href=\"https://developer.android.com/jetpack/androidx/releases/activity#1.2.4\">Activity <code>1.2.4</code></a> and <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.3.6\">Fragment <code>1.3.6</code></a>, making the fixes from those releases included by default when using AppCompat <code>1.3.1</code>. (<a href=\"https://android-review.googlesource.com/#/q/I8fbecaffdb3a74946a8bf938f1c2722910499b34\">I8fbec</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d95b070080d7877a6bcacca6ba04acd28c0b5d79..917b374627def8db1abcc7f1e1160aff596171f8/appcompat"
+    },
+    {
+      "id": "appsearch",
+      "name": "AppSearch",
+      "version": "1.0.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appsearch#1.0.0-alpha03",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Release of the Platform Storage Backend to allow clients to use the AppSearch API with the new <a href=\"https://developer.android.com/reference/android/app/appsearch/AppSearchManager\"><code>android.app.appsearch.AppSearchManager</code></a> service launching in Android S. For more details, please visit AppSearch Developer Guide.</li>\n <li>Annotation processor support for AutoValue</li>\n <li>Removal of maximum size limit of single string property</li>\n <li>New storage format to reduce initialization latency</li>\n <li>A one-time, internal data migration from old storage format to new storage format</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Correctly enforces maximum document limit when inserting new documents</li>\n <li>Fixed crash during AppSearchSession creation</li>\n <li>Fixed bugs in SetSchema that were not detecting some cases of backwards incompatibility and index incompatibility</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "autofill",
+      "name": "Autofill",
+      "version": "1.2.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/autofill#1.2.0-beta01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added new extended hint constants for more requested field types:\n  <ul>\n   <li>WiFi Password</li>\n   <li>Email OTP</li>\n   <li>Authenticator app OTP</li>\n   <li>UPI address</li>\n   <li>Address unit</li>\n   <li>Address dependent locality</li>\n   <li>Promo codes</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "camera",
+      "name": "Camera",
+      "version": "1.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#1.0.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>\n  <p>Fixed the issue that the <code>ListenableFuture</code> returned in <code>setZoomRatio</code> and <code>setLinearZoom</code> cannot complete on some android 11 devices (<a href=\"https://android-review.googlesource.com/#/q/I716d7273111769d3da23de346ebfec8f017d3b98\">I716d7</a>)</p>\n </li>\n <li>\n  <p>Fixed the issue that the camera gets stuck at closing camera state on some devices and causes black preview. (<a href=\"https://android-review.googlesource.com/q/I34c99dd6bf6dcf95ee174f28bacc8bbc9c0caa59\">I34c99</a>)</p>\n </li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/de3cb1599436fa5736337b468448853d1981fadc..a955b74b0c426a59775ffe00c594d41a71e88686/camera"
+    },
+    {
+      "id": "camera",
+      "name": "Camera",
+      "version": "1.1.0-alpha07",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#1.1.0-alpha07",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a Samsung Galaxy Note 5 issue that camera gets stuck after taking pictures with flash on/auto in dark environment (<a href=\"https://android-review.googlesource.com/#/q/If6871a66f0f9681603ecb7ab92a3a6ede9ec6753\">If6871</a>)</li>\n <li>Fixed <code>YuvToJpegProcessor</code> EOFException issue when extension mode is enabled and <code>ImageCapture#CAPTURE_MODE_MAX_QUALITY</code> mode is set. (<a href=\"https://android-review.googlesource.com/#/q/I538bdbc1e460cb5ad3d98cf87017127d7e68f131\">I538bd</a>, <a href=\"https://issuetracker.google.com/issues/192017012\">b/192017012</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d042a98877f160baa61a8f88718b6a49b7a15d61..86548c494687f4a4aadf3ebb2f724e410b378fcb/camera"
+    },
+    {
+      "id": "camera",
+      "name": "Camera",
+      "version": "1.0.0-alpha27",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#1.0.0-alpha27",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Promoted the viewport API out of experimental. Remove the experimental annotation of the API. (<a href=\"https://android-review.googlesource.com/#/q/I717ea8239870d3a34816a7a8deec129a410b451e\">I717ea</a>)</li>\n <li>Renamed <code>CoordinateTransform#getTransform</code> to <code>CoordinateTransform#transform</code> and update JavaDoc (<a href=\"https://android-review.googlesource.com/#/q/I864aefbb93188c78a44a67eac7cc533c81a6ce9a\">I864ae</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed <code>PreviewView PERFORMANCE</code> mode stretch issue when using it together with Compose UI. (<a href=\"https://android-review.googlesource.com/#/q/Ie11371e57cb196552cef786c5567ddb60187fdca\">Ie1137</a>, <a href=\"https://issuetracker.google.com/issues/183864890\">b/183864890</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d042a98877f160baa61a8f88718b6a49b7a15d61..86548c494687f4a4aadf3ebb2f724e410b378fcb/camera"
+    },
+    {
+      "id": "car-app",
+      "name": "Car App",
+      "version": "1.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/car-app#1.1.0-alpha02",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>API Level 3: Added a <code>CarHardwareManager</code>that can be used to query vehicle’s hardware data, such as model and make, fuel levels and other sensors. Currently, this feature is only available for Android Auto 6.7+ in the open-testing channel. Testing this in a desktop environment requires a new version of <code>Desktop Head Unit</code> which will be released separately. Stay tuned on <a href=\"https://developer.android.com/training/cars/testing\">Test Android apps for cars page</a> for details on when the new version becomes available.</li>\n <li>Follow the <a href=\"https://developer.android.com/training/cars/apps\">development guide</a> and the library reference for additional details and design guidelines on how to use these features in car hosts that are compatible with API level 3.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Consolidated <code>SessionController</code> and <code>ScreenController</code> lifecycle methods into a single <code>moveToState</code> method (<a href=\"https://android-review.googlesource.com/#/q/I1ed00d9e4df59af59643da25d9385f7a9326a3be\">I1ed00</a>)</li>\n <li>Added <code>CarContext#getHostInfo()</code> (<a href=\"https://android-review.googlesource.com/#/q/I8977e05be0746c1160bcee0b28e245e6bd18cb26\">I8977e</a>)</li>\n <li>Removed deprecated fields. (<a href=\"https://android-review.googlesource.com/#/q/I671682a7b8071cb93c140e734af56a1d7fd84a12\">I67168</a>)</li>\n <li>Updated <code>SessionController</code> and <code>ScreenController</code> to expose constructors directly (<a href=\"https://android-review.googlesource.com/#/q/Iabf22d3bc74e9f18db7e763a2ce6a93de8796cb5\">Iabf22</a>)</li>\n <li>Removed <code>PinSignInMethod.Builder</code> and <code>ProviderSignInMethod.Builder</code> (<a href=\"https://android-review.googlesource.com/#/q/I9f0cb418805ce421545f7ca9f4681e050ceb8d0d\">I9f0cb</a>)</li>\n <li>Added 'setCarAppResult()' to enable using templated apps 'for result' in AAOS (<a href=\"https://android-review.googlesource.com/#/q/I37741edda17f20e598774e8735a4b69cde6c593c\">I37741</a>)</li>\n <li>Annotated <code>CarHardware</code> interfaces with <code>@MainThread</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ib2f851610b8e1d12b6b59345dff28e7218fb5585\">Ib2f85</a>)</li>\n <li>Renamed <code>OnCarDataListener</code> to <code>OnCarDataAvailableListener</code> (<a href=\"https://android-review.googlesource.com/#/q/I518ca17f196c6e251eadb189edaec1ff3ce61aa1\">I518ca</a>)</li>\n <li>Updated <code>CarInfo</code>, <code>Speed</code>, <code>Mileage</code> method names and javadoc. (<a href=\"https://android-review.googlesource.com/#/q/I866723b47136e2bee9b5f7fb770672d2813f4a71\">I86672</a>)</li>\n <li>Renamed <code>Toll</code> to <code>TollCard</code>. (<a href=\"https://android-review.googlesource.com/#/q/I3e7c8d02668bcbfc706f8794dfec334e350ae427\">I3e7c8</a>)</li>\n <li>Removed deprecated <code>PinSignInMethod.getPin</code> which is replaced by <code>PinSignInMethod.getPinCode</code> (<a href=\"https://android-review.googlesource.com/#/q/I996ce02262fc36a6686de682432bdbf4af9c05bc\">I996ce</a>)</li>\n <li>Removed <code>OnInputCompletedListener</code> (replaced with <code>InputCallback</code>). (<a href=\"https://android-review.googlesource.com/#/q/Ib5be1385276c86a62f3460716a2cd423bd268577\">Ib5be1</a>)</li>\n <li>Changed <code>PinSignInMethod</code> to take <code>CharSequence</code> instead of <code>String</code> (<a href=\"https://android-review.googlesource.com/#/q/I275d5db8128dac97c85663493118dc279d3fbae5\">I275d5</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Javadoc fixes for car hardware. (<a href=\"https://android-review.googlesource.com/#/q/I2abbccc5fa3c48cbcb1901d6c1c90ddd8bf0aaad\">I2abbc</a>)</li>\n</ul>\n<p><strong>External Contribution</strong></p>\n<p><strong>Known Issues</strong></p>\n<ul>\n <li>In the <code>SignInTemplate</code>, using the <code>InputSignInMethod</code> may result in a <code>NullPointerException</code> in the car host. This will be addressed in the next release of the library. To workaround the issue, include this line in your app’s Proguard config: <code>-keep class androidx.car.app.model.signin.InputSignInMethod { *; }</code></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/cffcc074543c8c27a9fa134f558d332f2f5acf61..97264aa4532db7f7db1ffb3f42f3a9204971dbfc/car/app"
+    },
+    {
+      "id": "datastore",
+      "name": "Datastore",
+      "version": "1.0.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/datastore#1.0.0-rc02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Clarify that <code>SharedPreferencesMigration</code> does not run if there are no keys. (<a href=\"https://android-review.googlesource.com/#/q/Icfa327c72834bab2a53be8f3696f48c19781c93f\">Icfa32</a>, <a href=\"https://issuetracker.google.com/issues/192824325\">b/192824325</a>)</li>\n <li>Fix bug where <code>SharedPreferencesMigration</code> constructed with <code>MIGRATE_ALL_KEYS</code> would throw an exception if the key requested does not yet exist. (<a href=\"https://android-review.googlesource.com/#/q/Ie318a9eb3772f5ef6dd231c18837842b887587e0\">Ie318a</a>, <a href=\"https://issuetracker.google.com/issues/192824325\">b/192824325</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d820781c3ac6a7414042bafed5ca02affaca48a2..34b1eceb499a984d35a72b8eacbaacb4a5d781e9/datastore"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.3.6",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.3.6",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.4.0-alpha03\">Fragment <code>1.4.0-alpha03</code></a>: The <code>FragmentManager</code> will no longer crash when you attempt to hide a removing fragment. (<a href=\"https://android-review.googlesource.com/#/q/I573ddcfcd1b9c782b5546dd4643e0e4ed042b277\">I573dd</a>, <a href=\"https://issuetracker.google.com/issues/183634730\">b/183634730</a>)</li>\n <li>The Fragment’s view is now properly set to <code>GONE</code> when using <code>hide()</code> when the root view has <code>transitionGroup=”true”</code> set. (<a href=\"https://android-review.googlesource.com/1766655\">aosp/1766655</a>, <a href=\"https://issuetracker.google.com/issues/193603427\">b/193603427</a>)</li>\n <li><code>FragmentActivity</code> now always unlocks the saved state as its first operation in lifecycle callbacks it overrides. (<a href=\"https://android-review.googlesource.com/#/q/I6db7adb364dfbdd922a376242d54519028d4a9c9\">I6db7a</a>)</li>\n</ul>\n<p><strong>Dependency update</strong></p>\n<ul>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.3.6\">Fragment <code>1.3.6</code></a>: Fragments now depends on <a href=\"https://developer.android.com/jetpack/androidx/releases/activity#1.2.4\">Activity <code>1.2.4</code></a> (<a href=\"https://android-review.googlesource.com/#/q/I3a66c06ec44c43106e6f7fb48ba9b9f964429b45\">I3a66c</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9f7c7f1ee129c30eda48c6e13a4a525ed2c846f6..9bda870a1d83164b81bca5882af8863c0259462f/fragment"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.4.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.4.0-alpha05",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.3.6\">Fragment <code>1.3.6</code></a>: The Fragment’s view is now properly set to <code>GONE</code> when using <code>hide()</code> when the root view has <code>transitionGroup=”true”</code> set. (<a href=\"https://android-review.googlesource.com/1766655\">aosp/1766655</a>, <a href=\"https://issuetracker.google.com/issues/193603427\">b/193603427</a>)</li>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.3.6\">Fragment <code>1.3.6</code></a>: <code>FragmentActivity</code> now always unlocks the saved state as its first operation in lifecycle callbacks it overrides. (<a href=\"https://android-review.googlesource.com/#/q/I6db7adb364dfbdd922a376242d54519028d4a9c9\">I6db7a</a>)</li>\n</ul>\n<p><strong>Dependency update</strong></p>\n<ul>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.3.6\">Fragment <code>1.3.6</code></a>: Fragments now depends on <a href=\"https://developer.android.com/jetpack/androidx/releases/activity#1.2.4\">Activity <code>1.2.4</code></a> (<a href=\"https://android-review.googlesource.com/#/q/I3a66c06ec44c43106e6f7fb48ba9b9f964429b45\">I3a66c</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/19ae3a88ff0824d615355b492cb56049e16991f2..97264aa4532db7f7db1ffb3f42f3a9204971dbfc/fragment"
+    },
+    {
+      "id": "games-controller",
+      "name": "Games-Controller",
+      "version": "1.0.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/games#games-controller-1.0.0-rc02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed packaging error that caused Prefab import to fail on empty, unused architecture/version permutations.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/opt/gamesdk/+log/c6508fc0745ecbc0bccc6e55bcc47aefc0ada7a8..c87dbd94f9a843d9a766afb6de82957457b96c05/src/paddleboat"
+    },
+    {
+      "id": "leanback",
+      "name": "Leanback",
+      "version": "1.1.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/leanback#leanback-1.1.0-rc02",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "leanback-leanback-preference",
+      "name": "Leanback Leanback-Preference",
+      "version": "1.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/leanback#1.2.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Made leanback GridLayoutManager public and exchangeable in BaseGridView. (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/f316b5dc1f24099be9115c6c39ab62b78e33a6d0\">f316b5</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Made leanback GridLayoutManager public and exchangeable in BaseGridView. (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/f316b5dc1f24099be9115c6c39ab62b78e33a6d0\">f316b5</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/bf8af1081ee3ce8c6dbea9e75c37f53dd8c0553b..97264aa4532db7f7db1ffb3f42f3a9204971dbfc/leanback"
+    },
+    {
+      "id": "leanback-paging",
+      "name": "Leanback-Paging",
+      "version": "1.1.0-alpha08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/leanback#leanback-paging-1.1.0-alpha08",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added <code>.peek()</code> and <code>.snapshot()</code> APIs to PagingDataAdapter, allowing inspection of presented data without triggering page fetch. (<a href=\"https://android-review.googlesource.com/#/q/Ic89171a55a10a73b585f130d2a9eb1b8927db1fd\">Ic8917</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6207afb1646d302c5d29c2c67d332b48db87fb27..97264aa4532db7f7db1ffb3f42f3a9204971dbfc/leanback/leanback-paging"
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "version": "1.4.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media#media-1.4.0",
+      "detailsHtml": "<p><strong>Important changes since 1.3.0</strong></p>\n<ul>\n <li>Added a new bundle key <code>METADATA_KEY_SERIES_CONTENT_ID</code> used for the TV series's media content ID in MediaMetadataCompat</li>\n <li>Added a new bundle key <code>METADATA_KEY_NEXT_EPISODE_CONTENT_ID</code> used for the TV episode’s next episode content ID in MediaMetadataCompat</li>\n <li>Deprecate <code>MediaControllerCompat.TransportControls#EXTRA_LEGACY_STREAM_TYPE</code> and add <code>MediaConstants#TRANSPORT_CONTROLS_EXTRAS_KEY_LEGACY_STREAM_TYPE</code> instead</li>\n <li>Add an extra key to shuffle media for playFromUri</li>\n <li>Add @Nullable annotation to Result class</li>\n <li>Fix missing <code>EXTRA_KEY_EVENT</code> of intent for MediaButtonReceiver</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/dbd565a0becb2aa026b58af3b04c56b35c554290..1d797e449a5d71eb3b46febbc8dddc1d5e57eb27/media/media"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.4.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.4.0-alpha05",
+      "detailsHtml": "<p><strong>Behavior Changes</strong></p>\n<ul>\n <li>Navigation Compose’s <code>NavHost</code> now always uses Crossfades when navigating through destinations. (<a href=\"https://android-review.googlesource.com/#/q/I07049268d9c78bfbc6bb49f94bf2a1284d4f1180\">I07049</a>, <a href=\"https://issuetracker.google.com/issues/172112072\">b/172112072</a>)</li>\n <li>You can now make changes to the graph of a NavHost. Graphs with the same startDestination and destinations in the graph will be considered equal and will not clear the <code>NavController</code> back stack. (<a href=\"https://android-review.googlesource.com/#/q/I0b8dbcea4186232c3280c4a43be11e4fafcc6ce3\">I0b8db</a>, <a href=\"https://issuetracker.google.com/issues/175392262\">b/175392262</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a <code>NoSuchElementException</code> when calling <code>popBackStack()</code> from within a <code>LifecycleObserver</code> attached to a <code>NavBackStackEntry</code> caused by reentrant updates to the NavController's state. (<a href=\"https://android-review.googlesource.com/#/q/I646215354c80b1c4571c7351b782db9897d1ddc2\">I64621</a>)</li>\n <li><code>AbstractListDetailFragment</code> now allows <code>SlidingPaneLayout</code> to be completely stripped from your APK when <code>AbstractListDetailFragment</code> is not used. (<a href=\"https://android-review.googlesource.com/#/q/I611adc2ebb2f61e7a51b2d9299902ff4656c6025\">I611ad</a>)</li>\n <li><code>NavGraph</code> and <code>NavDestination</code> now override the equals method so two objects with the same values will be considered equal. (<a href=\"https://android-review.googlesource.com/#/q/I166eb54122cabc12cc569daea8eefcf8e0ec95a7\">I166eb</a>, <a href=\"https://issuetracker.google.com/issues/175392262\">b/175392262</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/19ae3a88ff0824d615355b492cb56049e16991f2..97264aa4532db7f7db1ffb3f42f3a9204971dbfc/navigation"
+    },
+    {
+      "id": "paging",
+      "name": "Paging",
+      "version": "3.1.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/paging#3.1.0-alpha03",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>\n  <p>A third LoadResult return type LoadResult.Invalid is added to PagingSource. When a PagingSource.load returns LoadResult.Invalid, paging will discard the loaded data and invalidate the PagingSource. This return type is designed to handle potentially invalid or stale data that can be returned from the database or network.</p>\n  <p>For example, if the underlying database gets written into but the PagingSource does not invalidate in time, it may return inconsistent results if its implementation depends on the immutability of the backing dataset it loads from (e.g., LIMIT OFFSET style db implementations). In this scenario, it is recommended to check for invalidation after loading and to return LoadResult.Invalid, which causes Paging to discard any pending or future load requests to this PagingSource and invalidate it.</p>\n  <p>This return type is also supported by Paging2 API that leverages LivePagedList or RxPagedList. When using a PagingSource with Paging2's PagedList APIs, the PagedList is immediately detached, stopping further attempts to load data on this PagedList and triggers invalidation on the PagingSource.</p>\n  <p>LoadResult is a sealed class, which means this is a source-incompatible change such that use cases directly using PagingSource.load results will have to handle LoadResult.Invalid at compile time. For example, Kotlin users leveraging exhaustive-when to check return type will have to add a check for Invalid type. (<a href=\"https://android-review.googlesource.com/#/q/Id6bd3f2544f1ba97a95a0d590353438a95fedf2a\">Id6bd3</a>, <a href=\"https://issuetracker.google.com/issues/191806126\">b/191806126</a>, <a href=\"https://issuetracker.google.com/issues/192013267\">b/192013267</a>)</p>\n </li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Invalidation callbacks added via PagingSource.registerInvalidatedCallback or DataSource.addInvalidatedCallback now automatically trigger if they were registered on a PagingSource / DataSource that was already invalid. This resolves a race condition which caused Paging to drop invalidation signals and get stuck when provided a Source which was already invalid during initial load. Additionally, invalidate callbacks are now properly removed after being triggered as they are guaranteed to be called at most once. (<a href=\"https://android-review.googlesource.com/#/q/I27e699be2bfa3d6656d10c8c0c1f2ef9638f52fc\">I27e69</a>)</li>\n <li>Submitting the placeholder initial value (InitialPagedList) from a newly instantiated PagedList stream, e.g., LivePagedListBuilder or RxPagedListBuilder will no longer clear previously loaded data.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/19ae3a88ff0824d615355b492cb56049e16991f2..97264aa4532db7f7db1ffb3f42f3a9204971dbfc/paging"
+    },
+    {
+      "id": "paging-compose",
+      "name": "Paging Compose",
+      "version": "1.0.0-alpha12",
+      "url": "https://developer.android.com/jetpack/androidx/releases/paging#paging-compose-1.0.0-alpha12",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>items(lazyPagingItems)</code> and <code>itemsIndexed(lazyPagingItems)</code> used to connect Paging with <code>LazyColumn/Row</code> now accept the option key param which allows you to specify a stable key representing the item. You can read more about keys <a href=\"https://developer.android.com/jetpack/compose/lists#item-keys\">here.</a> (<a href=\"https://android-review.googlesource.com/#/q/I7986d308b9588a43bb11fe7ac4f3b420bbafda70\">I7986d</a>)</li>\n <li>Function <code>lazyPagingItems.getAsState(index)</code> is now deprecated. Use <code>lazyPagingItems[index]</code> instead. (<a href=\"https://android-review.googlesource.com/#/q/I086cbb113a0c4ddcc333c78fa1346612e4496a5b\">I086cb</a>, <a href=\"https://issuetracker.google.com/issues/187339372\">b/187339372</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/19ae3a88ff0824d615355b492cb56049e16991f2..97264aa4532db7f7db1ffb3f42f3a9204971dbfc/paging/paging-compose"
+    },
+    {
+      "id": "paging",
+      "name": "Paging",
+      "version": "3.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/paging#3.0.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Accessing <code>PagedList.dataSource</code> from the initial value produced by <code>LivePagedList</code> or <code>RxPagedList</code> will no longer incorrectly throw an IllegalStateException (<a href=\"https://android-review.googlesource.com/#/q/I96707a477f347bd19e7aeccdb52eca39d637297a\">I96707</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5651d1dbcb19d1b2d3cc50e8c379a8cc9f6ee1ad..650bc3241df3e2336ba181a08d14611087c73083/paging"
+    },
+    {
+      "id": "profileinstaller",
+      "name": "ProfileInstaller",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/profileinstaller#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed bug that would trigger strict mode in some circumstances.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1a3ba62b97c98d85f6c0ac2fb6483fc9ac60872e..97264aa4532db7f7db1ffb3f42f3a9204971dbfc/profileinstaller/profileinstaller"
+    },
+    {
+      "id": "room",
+      "name": "Room",
+      "version": "2.4.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.4.0-alpha04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>\n  <p>Room now supports multimap return types <code>@Dao</code> methods, useful for JOIN statements. The supported types of multimaps are <code>Map</code> along with Guava's <code>ImmutableMap</code>, <code>ImmutableSetMultimap</code> and <code>ImmutableListMultimap</code>.</p>\n  <p>The following are examples of multimap queries:</p>\n  <p><em>One-to-One Relation Map</em></p>\n  <div></div>\n  <pre><code><span>@Query</span><span>(</span><span>\"SELECT * FROM Song JOIN Artist ON Song.artistId = Artist.artistId\"</span><span>)</span>\n<span>fun</span><span> </span><span>getSongAndArtist</span><span>():</span><span> </span><span>Map&lt;Song</span><span>,</span><span> </span><span>Artist</span>&gt;\n</code></pre>\n  <p><em>One-to-Many Relation Map (Standard multimap)</em></p>\n  <div></div>\n  <pre><code><span>@Query</span><span>(</span><span>\"SELECT * FROM Artist JOIN Album ON Artist.id = Album.artistId\"</span><span>)</span>\n<span>fun</span><span> </span><span>getArtistAndAlbums</span><span>():</span><span> </span><span>Map&lt;Artist</span><span>,</span><span> </span><span>List&lt;Album&gt;</span>&gt;\n</code></pre>\n  <p>The multimap result can also be wrapped in the supported async return types, such as <code>LiveData</code>, Rx’s <code>Observable</code>, or coroutines <code>Flow</code>.</p>\n  <strong>Note:</strong><span>In version 2.4.0-alpha04, only multimaps with POJOs as type parameters are supported, but in a future version String and primitives will also be supported.</span> \n </li>\n</ul>\n<p><strong>Room-Paging</strong></p>\n<ul>\n <li>\n  <p><code>androidx.room:room-paging</code> is released, providing native Paging 3.0 support for Room queries returning <code>androidx.paging.PagingSource</code>.</p>\n  <div></div>\n  <pre><code><span>@Dao</span>\n<span>interface</span><span> </span><span>UserDao</span><span> </span><span>{</span>\n<span>  </span><span>@Query</span><span>(</span><span>\"SELECT * FROM users ORDER BY id ASC\"</span><span>)</span>\n<span>  </span><span>fun</span><span> </span><span>loadUsers</span><span>():</span><span> </span><span>PagingSource&lt;Int</span><span>,</span><span> </span><span>User</span>&gt;\n<span>}</span>\n</code></pre>\n </li>\n <li>\n  <p>This artifact replaces the <code>androidx.paging.PagingSource</code> implementation generated by Room with one built on top of Paging 3.0 APIs. The new PagingSource implementation parses keys differently, so any key manually supplied to Room’s PagingSource would need to account for this behavior change, including the initialKey passed via Pager’s constructor. Pages will start loading from the <code>Key</code> with <code>Key</code> being the first loaded item. This deviates from existing behavior where <code>LoadParams.Refresh.Key</code> is treated as the user's scroll position and items are loaded both before and after the key.</p>\n </li>\n <li>\n  <p>The artifact is optional and opting out will fallback to existing support for Paging 3.0 that was introduced in Room 2.3. However, this artifact will become non-optional in future release for those using Room with Paging 3.0. To opt-in, add the new room-paging artifact to your classpath. If you are using Gradle, you can add the following snippet to your build.gradle:</p>\n  <div></div>\n  <pre><code><span>dependency</span><span> </span><span>{</span>\n<span>  </span><span>implementation</span><span>(</span><span>\"androidx.room:room-paging:2.4.0-alpha04\"</span><span>)</span>\n<span>}</span>\n</code></pre>\n </li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix an issue in auto migrations regarding handling foreign key violations. (<a href=\"https://issuetracker.google.com/190113935\">b/190113935</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ccf79f53033e665475116a4e78ff124df2a52c4b..97264aa4532db7f7db1ffb3f42f3a9204971dbfc/room"
+    },
+    {
+      "id": "sqlite",
+      "name": "Sqlite",
+      "version": "2.2.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/sqlite#2.2.0-alpha02",
+      "detailsHtml": "<p>No significant changes since 2.2.0-alpha01. This release is just to align with <a href=\"https://developer.android.com/jetpack/androidx/releases/room#2.4.0-alpha04\">Room <code>2.4.0-alpha04</code></a> release.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ccf79f53033e665475116a4e78ff124df2a52c4b..97264aa4532db7f7db1ffb3f42f3a9204971dbfc/sqlite"
+    },
+    {
+      "id": "startup",
+      "name": "Startup",
+      "version": "1.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/startup#1.1.0-rc01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Better proguard rules, multi-dex rules to ensure <code>Initializer</code>s end up in the primary dex file. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1743740\">aosp/1743740</a>)</li>\n <li>Add baseline profile rules to optimize the use of <code>androidx.startup</code>. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1763934\">aosp/1763934</a>0</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/66681ad83c328d0dd821b943bb3d375f02c1db61..436aaeb1688cb1a3dd5f07e7cde763abd5f2761f/startup/startup-runtime"
+    },
+    {
+      "id": "wear",
+      "name": "Wear",
+      "version": "1.2.0-alpha12",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#wear-1.2.0-alpha12",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>We have added a new API <code>WearTypeHelper</code> in <code>androidx.wear.utils</code> for determining whether the given wear device is for China. (<a href=\"https://android-review.googlesource.com/#/q/Ib01a930f280286abf7824604a93cae0fece23cb5\">Ib01a9</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/19ae3a88ff0824d615355b492cb56049e16991f2..97264aa4532db7f7db1ffb3f42f3a9204971dbfc/wear/wear"
+    },
+    {
+      "id": "wear-complications-watchface",
+      "name": "Wear Complications & Watchface",
+      "version": "1.0.0-alpha18",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#complications-watchface-1.0.0-alpha18",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>We moved <code>ComplicationHelperActivity</code> to <code>androidx.wear:wear-watchface</code> library. (<a href=\"https://android-review.googlesource.com/#/q/I39e76d0e26e7f56cba741a5a654176e0813ea424\">I39e76</a>)</li>\n <li>For consistency and clarity, <code>ComplicationProvider</code> has been renamed to <code>ComplicationDataSource</code> and all classes with Provider in their name have been similarly renamed. (<a href=\"https://android-review.googlesource.com/#/q/Iaef0bf0ebfad43990f4cde8ff89048102a1c97bb\">Iaef0b</a>)</li>\n <li><code>CanvasComplication.isHighlighted</code> has been moved into <code>RenderParameters.pressedComplicationSlotIds</code> this is a step towards making <code>CanvasComplication</code> stateless. To support this change <code>CanvasComplication.render</code> now also takes the <code>slotId</code> as a parameter and we now pass the <code>ComplicationSlot</code> into <code>GlesTextureComplication</code>. (<a href=\"https://android-review.googlesource.com/#/q/I50e6e600d10f512689b680404eda737595b7a5e8\">I50e6e</a>)</li>\n <li>We have added <code>headlessDeviceConfig</code> to <code>EditorRequest</code>, if non null this parameter is used to construct a headless instance to back the EditorSession rather than acting on the interactive instance. This allows the editor to be invoked for a watch face that isn't the current one. (<a href=\"https://android-review.googlesource.com/#/q/I0a8204d7ddd6fa8dac0e082877fc5c741ce1c26a\">I0a820</a>)</li>\n <li>We've added an experimental <code>WatchFaceMetadataClient</code> which allows efficient retrieval of static watch face metadata such as the <code>UserStyleSchema</code> and fixed details about <code>ComplicationSlots</code>. (<a href=\"https://android-review.googlesource.com/#/q/I6bfdf94361b3b84eb5ac7313b44f748b186a3aae\">I6bfdf</a>)</li>\n <li>We have renamed <code>CanvasRenderer.uiThreadInit</code> to init. (<a href=\"https://android-review.googlesource.com/#/q/I6fff94f222fda71b99927fcfa7c8657682ba2868\">I6fff9</a>)</li>\n <li>We've added PreviewScreenshotParams an optional new parameter for EditorRequest which instructs EditorSession to take a preview screenshot on commit with these parameter. The preview image is exposed on <code>EditorState.previewImage</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ic2c1668f05a5d7fb9c73ea75a44f7499c4a5999c\">Ic2c16</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Developers no longer need to add ComplicationHelperActivity to their own manifest. (<a href=\"https://android-review.googlesource.com/#/q/I6f0c2af08d927095e6bacbad49724fc2c33a282d\">I6f0c2</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/19ae3a88ff0824d615355b492cb56049e16991f2..97264aa4532db7f7db1ffb3f42f3a9204971dbfc/wear"
+    },
+    {
+      "id": "wear-input",
+      "name": "Wear-core",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#input-1.1.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/19ae3a88ff0824d615355b492cb56049e16991f2..97264aa4532db7f7db1ffb3f42f3a9204971dbfc/wear/wear-input"
+    },
+    {
+      "id": "wear-phone-interactions",
+      "name": "Wear-Phone-Interactions",
+      "version": "1.0.0-alpha06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#wear-phone-interactions-1.0.0-alpha06",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>BridgingManagerSeviceBinder</code> class is now a subclass of Service and is renamed to BridgingManagerSevice. (<a href=\"https://android-review.googlesource.com/#/q/I9fca232a5d402c03b2d879187de92b14ab3c2444\">I9fca2</a>)</li>\n <li>Method <code>RemoteAuthClient.Callback.onAuthorizationError</code> is changed to include OAuthRequest parameter. Methods requiring callback now also require an executor for the callback to be run on. (<a href=\"https://android-review.googlesource.com/#/q/I35e119436556aeae193fb146369af9e97b8c71c4\">I35e11</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>We have made the authentication API clearer with more documented parameters and by using properties where possible. (<a href=\"https://android-review.googlesource.com/#/q/I1228725db7defda787b49d322bfed4ab307f2b9b\">I12287</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/19ae3a88ff0824d615355b492cb56049e16991f2..97264aa4532db7f7db1ffb3f42f3a9204971dbfc/wear/wear-phone-interactions"
+    },
+    {
+      "id": "wear-remote-interactions",
+      "name": "Wear-Remote-Interactions",
+      "version": "1.0.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#wear-remote-interactions-1.0.0-alpha05",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>\n  <p>We have added the <code>RemoteIntentHelper</code> class (previously RemoteIntent in the Wearable Support Library) which can be used for opening intents on other devices (i.e. from watch to phone). (<a href=\"https://android-review.googlesource.com/#/q/I1d7e07052da1e0f942e61b044de08f97b8c51279\">I1d7e0</a>)</p>\n </li>\n <li>\n  <p>The PlayStoreAvailability class has been removed from the AndroidX library. To detect whether the Play Store is available on a connected phone, use the <a href=\"https://developer.android.com/reference/kotlin/androidx/wear/phone/interactions/PhoneTypeHelper.Companion#getPhoneDeviceType(android.content.Context)\"><code>androidx.phone.interactions.PhoneTypeHelper.getPhoneDeviceType</code></a> method to determine if the connected phone is an Android phone. Then use the <code>androidx.wear.utils.WearTypeHelper.isChinaDevice</code> method to determine if the connected phone is a Chinese device. If the phone is an Android phone and if it is not a Chinese device then the Play Store will be available. (<a href=\"https://android-review.googlesource.com/#/q/Ie7dec297fc1b01c4e308bd001a3666fd87e509a0\">Ie7dec</a>)</p>\n </li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/24330de8135d689b34a31a701181b20549e8db25..97264aa4532db7f7db1ffb3f42f3a9204971dbfc/wear/wear-remote-interactions"
+    },
+    {
+      "id": "wear-compose",
+      "name": "Wear Compose",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-compose#1.0.0-alpha02",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added a new class CurvedRow to laid out composables in an arc (<a href=\"https://android-review.googlesource.com/#/q/I29941d2f915c3da65194402367dcd30898a4d0b2\">I29941</a>)</li>\n <li>Added a new type of card for use in applications (TitleCard), also add support for having images as the background to Cards to emphasize their contents (<a href=\"https://android-review.googlesource.com/#/q/I53b0f56021b718041832202707613b2e2667cd72\">I53b0f</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add support for radial alignment to CurvedRow (similar to the vertical alignment in a row) (<a href=\"https://android-review.googlesource.com/#/q/Id9de5375161076290a6ec3935724381f8fa8e403\">Id9de5</a>)</li>\n <li>Add a new class CurvedRow to laid out composables in an arc (<a href=\"https://android-review.googlesource.com/#/q/I29941d2f915c3da65194402367dcd30898a4d0b2\">I29941</a>)</li>\n <li>Added a new type of card for use in applications (TitleCard), also add support for having images as the background to Cards to emphasize their contents (<a href=\"https://android-review.googlesource.com/#/q/I53b0f56021b718041832202707613b2e2667cd72\">I53b0f</a>)</li>\n <li>Added toggle icons (checkbox, switch and radio buttons) to ToggleChipDefaults to make it easier for developers to configure ToggleChip and SplitToggleChips (<a href=\"https://android-review.googlesource.com/#/q/I7b6395b8daffdb656f5092e23af8a39196a5cbf6\">I7b639</a>)</li>\n <li>The start and end content padding for Chips has been updated so that it is consistently 14.dp regardless of whether the Chip has an icon present or not (was previously 12.dp if icon present and 14.dp if not) (<a href=\"https://android-review.googlesource.com/#/q/I34c8671e43deff8c262f5208c342de1859ce7ee6\">I34c86</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Add tests for CurvedRow (<a href=\"https://android-review.googlesource.com/#/q/I93cdbc88ff3fcf8c87e8d51184b043abd9acbb14\">I93cdb</a>)</li>\n <li>Tying Wear Compose dependencies to Compose 1.0.0-rc01. (<a href=\"https://android-review.googlesource.com/#/q/Ie6bc96b55141518fe956d21119318db5734bd64f\">Ie6bc9</a>)</li>\n <li>Changed the handing of background image painting in Cards and Chips so that the image is Cropped rather than being stretched in order to maintain image proportions. (<a href=\"https://android-review.googlesource.com/#/q/I29b41e2dc4dcfc789e2349da986bc070eca9b874\">I29b41</a>)</li>\n <li>Added more demos and integration tests for Button and ToggleButton. (<a href=\"https://android-review.googlesource.com/#/q/Id6461620cb501d1108d2c24e0f0894014ffd9434\">5e27ed2</a>)</li>\n <li>Added more Chip tests to cover the content colors for imageBackgroundChips (<a href=\"https://android-review.googlesource.com/#/q/Ia9183927d1b1bd37da6e2b6a76498e7cbe320cf5\">Ia9183</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/19ae3a88ff0824d615355b492cb56049e16991f2..97264aa4532db7f7db1ffb3f42f3a9204971dbfc/wear/compose"
+    },
+    {
+      "id": "wear-tiles",
+      "name": "Wear Tiles",
+      "version": "1.0.0-alpha09",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-tiles#1.0.0-alpha09",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added layout checkers to Wear Tiles' renderer. (<a href=\"https://android-review.googlesource.com/#/q/I3a8692e72398b01fdb29a19b7f64d6d9452032de\">I3a869</a>)\n  <ul>\n   <li>These are used to validate best practises in your tile. To begin with, these will raise a warning if your tile does not contain any elements with a <code>Semantics</code> modifier.</li>\n  </ul></li>\n <li>Added documentation for <code>DefaultTileProviderClient</code> and <code>TestingTileProviderClient constructors</code>. (<a href=\"https://android-review.googlesource.com/#/q/I9f4b9b06673a425efb9b4f12dd35248052982b7b\">I9f4b9</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Renaming in TileProviderClient (<a href=\"https://android-review.googlesource.com/#/q/I0ec368d77860a55f6cac36de01e8d718a6c92587\">I0ec36</a>):\n  <ul>\n   <li><code>getApiVersion</code> -&gt; <code>requestApiVersion</code></li>\n   <li><code>tile/resourcesRequest</code> -&gt; <code>requestTile/Resources</code></li>\n   <li><code>onTileFooEvent</code> -&gt; <code>sendOnTileFooEvent</code></li>\n  </ul></li>\n <li>Added layout checkers to Wear Tiles' renderer. (<a href=\"https://android-review.googlesource.com/#/q/I3a8692e72398b01fdb29a19b7f64d6d9452032de\">I3a869</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Ensure that a LaunchAction target does not have special permissions. (<a href=\"https://android-review.googlesource.com/#/q/I391366818173f1f313806c45da729c539a70a7da\">I39136</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/19ae3a88ff0824d615355b492cb56049e16991f2..97264aa4532db7f7db1ffb3f42f3a9204971dbfc/wear/tiles"
+    },
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.7.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.7.0-alpha05",
+      "detailsHtml": "<p>This release also contains bug fixes from the <a href=\"https://developer.android.com/jetpack/androidx/releases/work#2.6.0-beta02\">WorkManager <code>2.6.0-beta02</code></a> release.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9718dac3db72190dec105d92592bea08527f196a..ed683bd5038dd4cdcc7440896b7949d6917b0c8a/work"
+    },
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.6.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.6.0-beta02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>RemoteWorkManager</code> now correctly unbinds from <code>RemoteWorkManagerService</code> which allows <code>RemoteWorkManagerService</code> to clean up correctly. <a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1730694\">aosp/1730694</a></li>\n <li><code>RemoteListenableWorker</code> now correctly unbinds from <code>RemoteWorkerService</code> which allows <code>RemoteWorkerService</code> to clean up correctly. <a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1743817\">aosp/1743817</a></li>\n <li><code>ForceStopRunnable</code> now only runs in the primary app process. This is an optimization, and avoids resource contention for apps that use multiple processes. <a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1749180\">aosp/1749180</a>, <a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1761729\">aosp/1761729</a></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/86ff5b4bb956431ec884586ce0aea0127e189ec4..97264aa4532db7f7db1ffb3f42f3a9204971dbfc/work"
+    }
+  ]
+}

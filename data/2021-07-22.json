@@ -1,0 +1,25 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#july_22_2021",
+  "title": "July 22, 2021",
+  "releasedOn": "2021-07-22",
+  "updated": "2021-07-22T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#july_22_2021",
+  "components": [
+    {
+      "id": "constraintlayout",
+      "name": "ConstraintLayout",
+      "version": "2.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-2.1.0-rc01",
+      "detailsHtml": "<p>This is the release candidate for 2.1.0, providing minor improvements and fixes from the last beta. For more information, see the GitHub article <a href=\"https://github.com/androidx/constraintlayout/wiki/What's-New-in-2.1\">What's New in 2.1</a>.</p>",
+      "commitsUrl": null
+    },
+    {
+      "id": "constraintlayout-compose",
+      "name": "ConstraintLayout-compose",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-compose-1.0.0-beta01",
+      "detailsHtml": "<p>This release is the first beta. It is considered as feature complete, providing <a href=\"https://developer.android.com/reference/androidx/constraintlayout/widget/ConstraintLayout\"><code>ConstraintLayout</code></a> and <a href=\"https://developer.android.com/reference/androidx/constraintlayout/motion/widget/MotionLayout\"><code>MotionLayout</code></a> for Compose.</p>\n<p>For more information, see the GitHub article <a href=\"https://github.com/androidx/constraintlayout/wiki/What's-New-in-1.0-(Compose)\">What's New in 1.0 (Compose)</a>.</p>",
+      "commitsUrl": null
+    }
+  ]
+}
