@@ -1,0 +1,217 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#march_10_2021",
+  "title": "March 10, 2021",
+  "releasedOn": "2021-03-10",
+  "updated": "2021-03-10T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#march_10_2021",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.2.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.2.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>RequestMultiplePermissions</code> now always returns results for all requested permissions instead of only permissions that weren’t previously granted. (<a href=\"https://android-review.googlesource.com/#/q/I50bc3db9c59c7a3e3ca8afc7c3fe1b1318c26067\">I50bc3</a>, <a href=\"https://issuetracker.google.com/issues/180884668\">b/180884668</a>)</li>\n <li><code>ActivityResultRegistry</code> now ensures that in progress <code>launch()</code> requests will return their results even if you <code>unregister()</code>, then <code>register()</code> again with the same key. (<a href=\"https://android-review.googlesource.com/#/q/I9ef34256a1e0f93fd1fd8983e867b9dd5e8e2441\">I9ef34</a>, <a href=\"https://issuetracker.google.com/issues/181267562\">b/181267562</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2b9107d21669925e066ad87d9caa04b7dedf59d4..48102953c701f63f9237bdd6133a70d6eac30a78/activity"
+    },
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.3.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.3.0-alpha04",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/activity#1.2.1\">Activity <code>1.2.1</code></a>: <code>RequestMultiplePermissions</code> now always returns results for all requested permissions instead of only permissions that weren’t previously granted. (<a href=\"https://android-review.googlesource.com/#/q/I50bc3db9c59c7a3e3ca8afc7c3fe1b1318c26067\">I50bc3</a>, <a href=\"https://issuetracker.google.com/issues/180884668\">b/180884668</a>)</li>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/activity#1.2.1\">Activity <code>1.2.1</code></a>: <code>ActivityResultRegistry</code> now ensures that in progress <code>launch()</code> requests will return their results even if you <code>unregister()</code>, then <code>register()</code> again with the same key. (<a href=\"https://android-review.googlesource.com/#/q/I9ef34256a1e0f93fd1fd8983e867b9dd5e8e2441\">I9ef34</a>, <a href=\"https://issuetracker.google.com/issues/181267562\">b/181267562</a>)</li>\n <li>Activity Compose no longer adds test dependencies to the runtime classpath. (<a href=\"https://android-review.googlesource.com/#/q/Ifd8b37d57361e94de7e848f0f6ed91a9f0ee37c0\">Ifd8b3</a>)</li>\n <li>Fixed an issue with <code>BackHandler</code> where the previously set <code>onBack</code> lambda was still being used after recomposition. (<a href=\"https://android-review.googlesource.com/#/q/8eb5ebe7c4e0ab803af4c02b1922043c0037a9b4\">8eb5eb</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4b6cff92e45f1d4467086aa2c6aa0248b4883950..52fbd7ed5b07ca4431fa828325a1f8da45b02e51/activity"
+    },
+    {
+      "id": "annotation-experimental",
+      "name": "Annotation-Experimental",
+      "version": "1.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/annotation#annotation-experimental-1.1.0-rc01",
+      "detailsHtml": "<p>No changes since prior beta release.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/aee18b103203a91ee89df91f0af5df2ecff356d6..1eb7d82174683e4f49dfc1ad1a6a085767a40410/annotation/annotation-experimental"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.0.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.0.0-beta02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Enforce restrictions on public usage of experimental APIs (<a href=\"https://android-review.googlesource.com/#/q/I6aa29518ed4d6a3821d921d2ae1a300e31183dcc\">I6aa29</a>, <a href=\"https://issuetracker.google.com/issues/174531520\">b/174531520</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/df134e0f94ac70e36764a70dc7fb6a083e0e0fab..52fbd7ed5b07ca4431fa828325a1f8da45b02e51/compose/animation"
+    },
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.0.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.0.0-beta02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/df134e0f94ac70e36764a70dc7fb6a083e0e0fab..52fbd7ed5b07ca4431fa828325a1f8da45b02e51/compose/compiler/compiler"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.0.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.0.0-beta02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Multiple small optimizations in LazyColumn measuring logic were added (<a href=\"https://android-review.googlesource.com/#/q/Ic6889648c8192f400dabce375d87bdfad50a6f96\">Ic6889</a>)</li>\n <li>Added new <code>LocalSoftwareKeyboardController</code> composition local API to replace previous SoftwareKeyboardController interface on TextField. (<a href=\"https://android-review.googlesource.com/#/q/I5951e802fbec7c26862b976de64b78640accd1f7\">I5951e</a>, <a href=\"https://issuetracker.google.com/issues/168778053\">b/168778053</a>)</li>\n <li>Added new <code>LocalSoftwareKeyboardController</code> composition local API to replace previous SoftwareKeyboardController interface on TextField. (<a href=\"https://android-review.googlesource.com/#/q/I84472a517db4b15345302346c967e7c6b359109b\">I84472</a>, <a href=\"https://issuetracker.google.com/issues/168778053\">b/168778053</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Enforce restrictions on public usage of experimental APIs (<a href=\"https://android-review.googlesource.com/#/q/I6aa29518ed4d6a3821d921d2ae1a300e31183dcc\">I6aa29</a>, <a href=\"https://issuetracker.google.com/issues/174531520\">b/174531520</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/df134e0f94ac70e36764a70dc7fb6a083e0e0fab..52fbd7ed5b07ca4431fa828325a1f8da45b02e51/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.0.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.0.0-beta02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added new <code>LocalSoftwareKeyboardController</code> composition local API to replace previous <code>SoftwareKeyboardController</code> interface on TextField. (<a href=\"https://android-review.googlesource.com/#/q/I5951e802fbec7c26862b976de64b78640accd1f7\">I5951e</a>, <a href=\"https://issuetracker.google.com/issues/168778053\">b/168778053</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Enforce restrictions on public usage of experimental APIs (<a href=\"https://android-review.googlesource.com/#/q/I6aa29518ed4d6a3821d921d2ae1a300e31183dcc\">I6aa29</a>, <a href=\"https://issuetracker.google.com/issues/174531520\">b/174531520</a>)</li>\n <li>Changed the default horizontal alignment for TopAppBar and BottomAppBar to Start, consistent with Row (<a href=\"https://android-review.googlesource.com/#/q/Ib2dc7beec6fbf4ef1a9762414ee4d50f0113b850\">Ib2dc7</a>)</li>\n <li>Added a new module and placeholder UI for a Compose Material catalog, currently nested in existing integration test demos. (<a href=\"https://android-review.googlesource.com/#/q/Idfcb3d3bd4b5934ae33855e83c61d150853c928b\">Idfcb3</a>)</li>\n <li><code>androidx.compose.ui:ui</code> no longer depends on AppCompat or Fragment. If you are using a ComposeView in your application, and you are using Fragment and/or AppCompat, make sure that you are using AppCompat 1.3+ / Fragment 1.3+ - these versions are needed to correctly set lifecycle and saved state owners required for ComposeView. (<a href=\"https://android-review.googlesource.com/#/q/I1d6fa61deebc7771082d19a8268bd37b5f99194d\">I1d6fa</a>, <a href=\"https://issuetracker.google.com/issues/161814404\">b/161814404</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/df134e0f94ac70e36764a70dc7fb6a083e0e0fab..52fbd7ed5b07ca4431fa828325a1f8da45b02e51/compose/material"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.0.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.0.0-beta02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Enforce restrictions on public usage of experimental APIs (<a href=\"https://android-review.googlesource.com/#/q/I6aa29518ed4d6a3821d921d2ae1a300e31183dcc\">I6aa29</a>, <a href=\"https://issuetracker.google.com/issues/174531520\">b/174531520</a>)</li>\n <li>Fix for broken <code>rememberSaveable { mutableStateOf(0) }</code> when used inside a destination of navigation-compose. (<a href=\"https://android-review.googlesource.com/#/q/I1312b5b210dde32250945d164a2f3a1b574cb0a8\">I1312b</a>, <a href=\"https://issuetracker.google.com/issues/180042685\">b/180042685</a>, <a href=\"https://issuetracker.google.com/issues/180701630\">b/180701630</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/df134e0f94ac70e36764a70dc7fb6a083e0e0fab..52fbd7ed5b07ca4431fa828325a1f8da45b02e51/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.0.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.0.0-beta02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added new <code>LocalSoftwareKeyboardController</code> composition local API to replace previous SoftwareKeyboardController interface on TextField. (<a href=\"https://android-review.googlesource.com/#/q/I5951e802fbec7c26862b976de64b78640accd1f7\">I5951e</a>, <a href=\"https://issuetracker.google.com/issues/168778053\">b/168778053</a>)</li>\n <li>Added new <code>LocalSoftwareKeyboardController</code> composition local API to replace previous SoftwareKeyboardController interface on TextField. (<a href=\"https://android-review.googlesource.com/#/q/I84472a517db4b15345302346c967e7c6b359109b\">I84472</a>, <a href=\"https://issuetracker.google.com/issues/168778053\">b/168778053</a>)</li>\n <li>Removed the following <code>SemanticsMatcher</code>s:\n  <ul>\n   <li><code>hasWidth(width, tolerance)</code></li>\n   <li><code>hasHeight(height, tolerance)</code></li>\n   <li><code>hasLeftPosition(left, tolerance)</code></li>\n   <li><code>hasTopPosition(top, tolerance)</code></li>\n   <li><code>hasRightPosition(right, tolerance)</code></li>\n   <li><code>hasBottomPosition(bottom, tolerance)</code> (<a href=\"https://android-review.googlesource.com/#/q/If16bd0ec44dd7d3462cad13578fa5f798ec3ab96\">If16bd</a>)</li>\n  </ul></li>\n <li>Marked the following <code>SemanticsMatchers</code> as @ExperimentalTestApi:\n  <ul>\n   <li><code>hasWidth(width, tolerance)</code></li>\n   <li><code>hasHeight(height, tolerance)</code></li>\n   <li><code>hasLeftPosition(left, tolerance)</code></li>\n   <li><code>hasTopPosition(top, tolerance)</code></li>\n   <li><code>hasRightPosition(right, tolerance)</code></li>\n   <li><code>hasBottomPosition(bottom, tolerance)</code> (<a href=\"https://android-review.googlesource.com/#/q/Ia600c2aed8a4570927306bcafa8ed98ce53ce26d\">Ia600c</a>)</li>\n  </ul></li>\n <li>Added the following <code>SemanticsMatcher</code>s:\n  <ul>\n   <li><code>hasWidth(width, tolerance)</code></li>\n   <li><code>hasHeight(height, tolerance)</code></li>\n   <li><code>hasLeftPosition(left, tolerance)</code></li>\n   <li><code>hasTopPosition(top, tolerance)</code></li>\n   <li><code>hasRightPosition(right, tolerance)</code></li>\n   <li><code>hasBottomPosition(bottom, tolerance)</code> (<a href=\"https://android-review.googlesource.com/#/q/I2f5021f77a1bb827435709354688d0f7be285a92\">I2f502</a>)</li>\n  </ul></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Enforce restrictions on public usage of experimental APIs (<a href=\"https://android-review.googlesource.com/#/q/I6aa29518ed4d6a3821d921d2ae1a300e31183dcc\">I6aa29</a>, <a href=\"https://issuetracker.google.com/issues/174531520\">b/174531520</a>)</li>\n <li><code>androidx.compose.ui:ui</code> no longer depends on AppCompat or Fragment. If you are using a ComposeView in your application, and you are using Fragment and/or AppCompat, make sure that you are using AppCompat 1.3+ / Fragment 1.3+ - these versions are needed to correctly set lifecycle and saved state owners required for ComposeView. (<a href=\"https://android-review.googlesource.com/#/q/I1d6fa61deebc7771082d19a8268bd37b5f99194d\">I1d6fa</a>, <a href=\"https://issuetracker.google.com/issues/161814404\">b/161814404</a>)</li>\n <li>Fix for broken <code>rememberSaveable { mutableStateOf(0) }</code> when used inside a destination of navigation-compose. (<a href=\"https://android-review.googlesource.com/#/q/I1312b5b210dde32250945d164a2f3a1b574cb0a8\">I1312b</a>, <a href=\"https://issuetracker.google.com/issues/180042685\">b/180042685</a>, <a href=\"https://issuetracker.google.com/issues/180701630\">b/180701630</a>)</li>\n <li>Added new <code>LocalSoftwareKeyboardController</code> composition local API to replace previous SoftwareKeyboardController interface on TextField. (<a href=\"https://android-review.googlesource.com/#/q/I658b6bfc5c917db486c631312e3456469a615831\">I658b6</a>, <a href=\"https://issuetracker.google.com/issues/168778053\">b/168778053</a>)</li>\n <li>Fixed rare NoSuchElementException in <code>ComposeRootRegistry</code>'s <code>tearDownRegistry()</code> (<a href=\"https://android-review.googlesource.com/#/q/Iddce1d32c69427846cd114bcb15f63807ee575f9\">Iddce1</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/df134e0f94ac70e36764a70dc7fb6a083e0e0fab..52fbd7ed5b07ca4431fa828325a1f8da45b02e51/compose/ui"
+    },
+    {
+      "id": "core",
+      "name": "Core",
+      "version": "1.5.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.5.0-beta03",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added ExecutorCompat, which creates an Executor from a Handler. (<a href=\"https://android-review.googlesource.com/#/q/Ib4ca32d49f1324c54226ad38988dc21c77a73272\">Ib4ca3</a>, <a href=\"https://issuetracker.google.com/issues/181237835\">b/181237835</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5c90131a69042a6a3e13952e1da9e7ffc571c31d..d84c0393bf1b89f62643ffc60b5e2318ec30298e/core"
+    },
+    {
+      "id": "datastore",
+      "name": "Datastore",
+      "version": "1.0.0-alpha08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/datastore#1.0.0-alpha08",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>You can now add a migration that depends on context to your <code>dataStore</code> and <code>preferencesDataStore</code> property delegate. (<a href=\"https://android-review.googlesource.com/#/q/I4ef69b0eed544cde4f05cdee9e885d36af0f4abb\">I4ef69</a>, <a href=\"https://issuetracker.google.com/issues/173726702\">b/173726702</a>)</li>\n <li>Adds helper functions to get the name of the file if you are no longer using datastore delegate or context.createDataStore (<a href=\"https://android-review.googlesource.com/#/q/I60f9a28df922ca7a730152cc4f83c2117e48d06a\">I60f9a</a>)</li>\n <li>Serializer writeTo and readFrom are now suspending. If you have implemented a Serializer, you will need to update your functions to be suspend functions. (<a href=\"https://android-review.googlesource.com/#/q/I1e58eaa9a6c0653e5da461deecc35113a6e1d1ed\">I1e58e</a>)</li>\n <li>Added property delegates for RxDataStore users. (<a href=\"https://android-review.googlesource.com/#/q/Ied7680e698bc98b385b4bb4f33b6481963e7589a\">Ied768</a>, <a href=\"https://issuetracker.google.com/issues/173726702\">b/173726702</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Enforce restrictions on public usage of experimental APIs (<a href=\"https://android-review.googlesource.com/#/q/I6aa29518ed4d6a3821d921d2ae1a300e31183dcc\">I6aa29</a>, <a href=\"https://issuetracker.google.com/issues/174531520\">b/174531520</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5c90131a69042a6a3e13952e1da9e7ffc571c31d..52fbd7ed5b07ca4431fa828325a1f8da45b02e51/datastore"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.3.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.3.1",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Dialogs within a <code>DialogFragment</code> can now get access to ViewTree owners through their DecorView, ensuring that <code>DialogFragment</code> can be used with <code>ComposeView</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ib92905306e16dcaee63c985f22b5e36b6718dd39\">Ib9290</a>, <a href=\"https://issuetracker.google.com/issues/180691023\">b/180691023</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fragments inflated into an already <code>RESUMED</code> activity using FragmentContainerView are now properly shown after a configuration change. (<a href=\"https://android-review.googlesource.com/#/q/Ie14c80467b66186862319469f51bbd4d7ebcbbb9\">Ie14c8</a>, <a href=\"https://issuetracker.google.com/issues/180538371\">b/180538371</a>)</li>\n <li>There is no longer an extra <code>}</code> at the end of the fragment <code>toString()</code> (<a href=\"https://android-review.googlesource.com/#/q/I547053a275afdde0720a63370629af49c1b8cd2e\">I54705</a>, <a href=\"https://issuetracker.google.com/issues/177761088\">b/177761088</a>)</li>\n <li>Overridden methods in FragmentActivity now properly inherit the base method javaDoc (<a href=\"https://android-review.googlesource.com/#/q/I736ce6ad3c248c093ccb4cdf1f40029451fd1422\">I736ce</a>, <a href=\"https://issuetracker.google.com/issues/139548782\">b/139548782</a>)</li>\n <li>The docs for <code>setFragmentResult</code> and <code>setFragmentResultListener</code> have updated their parameters docs to reflect that they no longer accept nullables (<a href=\"https://android-review.googlesource.com/#/q/I990baa2e1b71a11b11342c366c284903c247e631\">I990ba</a>, <a href=\"https://issuetracker.google.com/issues/178348386\">b/178348386</a>)</li>\n</ul>\n<p><strong>New State Manager Bug Fixes</strong></p>\n<ul>\n <li>Fixed a memory leak in fragments caused by <code>mFocusedView</code> (<a href=\"https://android-review.googlesource.com/#/q/Ib4e9eddfba3ad925471890ff0078d9a65416f7da\">Ib4e9e</a>, <a href=\"https://issuetracker.google.com/issues/179925887\">b/179925887</a>)</li>\n <li>Fragments now properly call <code>onCreateOptionsMenu</code> when using show/hide transactions (<a href=\"https://android-review.googlesource.com/#/q/I8bce888e4b9757b5f5c3200e8d884e16372b6ec6\">I8bce8</a>, <a href=\"https://issuetracker.google.com/issues/180255554\">b/180255554</a>)</li>\n <li>Child fragments with transitions that start prior to the fragment being laid out will now properly reach <code>RESUMED</code> (<a href=\"https://android-review.googlesource.com/#/q/Ic11e655bd4ed206485c2762a1af4e5bc7aa4cf9c\">Ic11e6</a>, <a href=\"https://issuetracker.google.com/issues/180825150\">b/180825150</a>)</li>\n <li>Fragments inflated using the <code>&lt;fragment&gt;</code> tag will now always make it to <code>RESUMED</code> (<a href=\"https://android-review.googlesource.com/#/q/I452acc8016d1be2f4be611cd3affeb33687600ec\">I452ac</a>, (<a href=\"https://android-review.googlesource.com/#/q/I9fa498952456908a11a257cb3fdedcb89fb083a6\">I9fa49</a>)</li>\n</ul>\n<p><strong>Dependency Updates</strong></p>\n<ul>\n <li>Fragment 1.3.1 depends on <a href=\"https://developer.android.com/jetpack/androidx/releases/activity#1.2.1\">Activity <code>1.2.1</code></a>. (<a href=\"https://android-review.googlesource.com/#/q/I557b913b9c31c7856cd508151e3190c6779c191e\">I557b9</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b4fe1cc9ec5c6d25591e037e4f84316c36d6825a..587cd19caebfbd63197a766916bf5296b3a6d65e/fragment"
+    },
+    {
+      "id": "hilt",
+      "name": "Hilt",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/hilt#1.0.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Remove <code>@Deprecated</code> types from the AndroidX Hilt artifacts, specifically <code>@androidx.hilt.ViewModelInject</code> and <code>@androidx.hilt.Assisted</code>. Note that <code>@ViewModelInject</code> was replaced by <a href=\"https://dagger.dev/hilt/view-model\">@HiltViewModel</a>. (<a href=\"https://android-review.googlesource.com/#/q/I626fede2d170649f874fc0e6ac110ca0abc1aa16\">I626fe</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/aee18b103203a91ee89df91f0af5df2ecff356d6..52fbd7ed5b07ca4431fa828325a1f8da45b02e51/hilt"
+    },
+    {
+      "id": "hilt-navigation-compose",
+      "name": "Hilt-Navigation-Compose",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/hilt#hilt-navigation-compose-1.0.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>The <code>:hilt-navigation-compose</code> artifact provides APIs that allow users to get a <code>@HiltViewModel</code> annotated <code>ViewModel</code> from a Navigation back stack entry within a Compose application using <code>:navigation-compose</code>. The function <code>hiltNavGraphViewModel()</code> can either take a <code>NavBackStackEntry</code> or a 'route' string that can be used to scope the <code>ViewModel</code> to either the current back stack entry or to a parent entry in the stack. (<a href=\"https://android-review.googlesource.com/#/q/Ia92343c281823099390b2e1795b89cdb1abfc440\">Ia9234</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "lifecycle-viewmodel-compose",
+      "name": "Lifecycle-Viewmodel-Compose",
+      "version": "1.0.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#lifecycle-viewmodel-compose-1.0.0-alpha03",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>LocalViewModelStoreOwner.current</code> now returns a nullable <code>ViewModelStoreOwner</code> to better determine whether a <code>ViewModelStoreOwner</code> is available in the current composition. APIs that require a <code>ViewModelStoreOwner</code>, such as <code>viewModel()</code> and <code>NavHost</code>, still throw an exception if a <code>ViewModelStoreOwner</code> is not set. (<a href=\"https://android-review.googlesource.com/#/q/Idf39af28f00e0c0522a897a1202385d21da828be\">Idf39a</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4b6cff92e45f1d4467086aa2c6aa0248b4883950..52fbd7ed5b07ca4431fa828325a1f8da45b02e51/lifecycle/lifecycle-viewmodel-compose"
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "version": "1.3.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media#media-1.3.0-rc01",
+      "detailsHtml": "<p>No changes since <code>1.3.0-beta01</code>.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/602cf9bff5e74e4355760aa47d3fc73a2e6d779b..f3234e2c593978c340dcbd7bf815df23317517ef/media/media"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.3.4",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.3.4",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li><code>ReferenceType</code> arguments can now be properly parsed when sent as part of a deeplink URI. This supports both the raw integer value as well as hex values prefixed by <code>0x</code>. (<a href=\"https://github.com/androidx/androidx/pull/127\">#127</a>, <a href=\"https://issuetracker.google.com/issues/179166693\">b/179166693</a>)</li>\n <li>The <code>android:defaultValue</code> for an argument with <code>app:argType=\"float\"</code> now supports integer default values, allowing you to use <code>android:defaultValue=\"0\"</code>rather than requiring the use of <code>0.0</code>. (<a href=\"https://github.com/androidx/androidx/pull/117\">#117</a>, <a href=\"https://issuetracker.google.com/issues/173766247\">b/173766247</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix stuck installation progress when using Navigation’s support for dynamic features. (<a href=\"https://android-review.googlesource.com/#/q/Ib27a77bc4572fc69cea38d738255c987449d6137\">Ib27a7</a>, <a href=\"https://issuetracker.google.com/issues/169636207\">b/169636207</a>)</li>\n <li>Calling <code>setViewModelStore</code> or <code>setLifecycleOwner</code> with the same object that has already been set will now be a no-op (<a href=\"https://android-review.googlesource.com/#/q/Idf491fa68c0771dd617832cefe4c03e8ea85dae7\">Idf491</a>, <a href=\"https://issuetracker.google.com/issues/177825470\">b/177825470</a>)</li>\n <li>Safe-Args now adds suppress annotations on the proper methods when using java. (<a href=\"https://android-review.googlesource.com/#/q/I8fbc577e6e16bc8b2441377df1a59f9f59abae56\">I8fbc5</a>, <a href=\"https://issuetracker.google.com/issues/179463137\">b/179463137</a>)</li>\n</ul>\n<p><strong>External Contributions</strong></p>\n<ul>\n <li>Thanks <a href=\"https://github.com/JvmName\"><code>JvmName</code></a> for the pull request to ensure that <code>ReferenceType</code> arguments can now be properly parsed when sent as part of a deeplink URI. (<a href=\"https://github.com/androidx/androidx/pull/127\">#127</a>, <a href=\"https://issuetracker.google.com/issues/179166693\">b/179166693</a>)</li>\n <li>Thanks <a href=\"https://github.com/tatocaster\"><code>tatocaster</code></a> for the pull request to allow the <code>defaultValue</code> for an argument with <code>app:argType=”float”</code> now supports integer default values. (<a href=\"https://github.com/androidx/androidx/pull/117\">#117</a>, <a href=\"https://issuetracker.google.com/issues/173766247\">b/173766247</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2295caa3f58e03d553783241bde8e36b8c14acc9..ac398a3ebf3b1e2659e61710acf5220ba17dfc11/navigation"
+    },
+    {
+      "id": "navigation-compose",
+      "name": "Navigation Compose",
+      "version": "1.0.0-alpha09",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#compose-1.0.0-alpha09",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>LocalViewModelStoreOwner.current</code> now returns a nullable <code>ViewModelStoreOwner</code> to better determine whether a <code>ViewModelStoreOwner</code> is available in the current composition. APIs that require a <code>ViewModelStoreOwner</code>, such as <code>viewModel()</code> and <code>NavHost</code>, still throw an exception if a <code>ViewModelStoreOwner</code> is not set. (<a href=\"https://android-review.googlesource.com/#/q/Idf39af28f00e0c0522a897a1202385d21da828be\">Idf39a</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Navigation Compose now depends on <a href=\"https://developer.android.com/jetpack/androidx/releases/navigation#2.3.4\">Navigation 2.3.4</a> which includes the fix for attempting to set the same ViewModelStore object after the graph has been set. (<a href=\"https://android-review.googlesource.com/#/q/I65c24fcd5674c1ac72715c612854aac62c2eda88\">I65c24</a>, <a href=\"https://issuetracker.google.com/issues/177825470\">b/177825470</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4b6cff92e45f1d4467086aa2c6aa0248b4883950..52fbd7ed5b07ca4431fa828325a1f8da45b02e51/navigation/navigation-compose"
+    },
+    {
+      "id": "paging",
+      "name": "Paging",
+      "version": "3.0.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/paging#3.0.0-beta02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Rx3 extensions now correctly propagate <code>@ExperimentalCoroutinesApi</code> Opt-In requirement. Previously they were marked on the <code>@get</code> method, which is ignored by the Kotlin Compiler due to: https://youtrack.jetbrains.com/issue/KT-45227 (<a href=\"https://android-review.googlesource.com/#/q/I5733cdcebf531126d4aa6bef66daefe53a8d7177\">I5733c</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Enforce restrictions on public usage of experimental APIs (<a href=\"https://android-review.googlesource.com/#/q/I6aa29518ed4d6a3821d921d2ae1a300e31183dcc\">I6aa29</a>, <a href=\"https://issuetracker.google.com/issues/174531520\">b/174531520</a>)</li>\n <li>Fixed a bug causing <code>PagingState</code> to always be <code>null</code> when remote refresh is called.</li>\n <li>Fixed a bug where empty pages returned by PagingSource could prevent Paging from fetching again to fulfill <code>prefetchDistance</code> causing Paging to get “stuck”.</li>\n</ul>\n<strong>Note:</strong><span> Users using PagingSource provided by Room should upgrade to 2.3.0-beta03, which fixes a critical threading bug that could cause Paging to crash due to creating PagingSource on the main thread.</span>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/602cf9bff5e74e4355760aa47d3fc73a2e6d779b..52fbd7ed5b07ca4431fa828325a1f8da45b02e51/paging"
+    },
+    {
+      "id": "room",
+      "name": "Room",
+      "version": "2.3.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.3.0-beta03",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added incremental compilation support for KSP. (<a href=\"https://android-review.googlesource.com/#/q/I031c1f94890ebe2a382c26f7f0745edb790a5a7b\">I031c1</a>, <a href=\"https://issuetracker.google.com/issues/176453350\">b/176453350</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a bug where creating PagingSource on the main thread could trigger an ANR. (<a href=\"https://android-review.googlesource.com/#/q/I42b74e397bcf717f509b1d53203d2edced89afb0\">I42b74</a>, <a href=\"https://issuetracker.google.com/issues/181221318\">b/181221318</a>)</li>\n <li>Fixed <code>@ExperimentalRoomApi</code> visibility to be public instead of package private. (<a href=\"https://issuetracker.google.com/issues/181356119\">b/181356119</a>)</li>\n</ul>\n<p><strong>External Contribution</strong></p>\n<ul>\n <li>Allow Room to accept a POJO return type in a <code>@Query</code> annotated DAO method when it is also annotated with <code>@SkipQueryVerification</code>. Room will do a best-effort to convert the result of the query to the POJO return type the same way it is done for a <code>@RawQuery</code> annotated DAO method. Thanks to ‘Markus Riegel | hey@marcorei.com’. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1605977\">I45acb</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/028c82c1173bb9300dd314de4118eb21d92156d1..fe0dc921b17e832473de7029a40ca518f2e50266/room"
+    },
+    {
+      "id": "wear-complications-watchface",
+      "name": "Wear Complications & Watchface",
+      "version": "1.0.0-alpha09",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#complications-watchface-1.0.0-alpha09",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>The interface between WCS/SysUI host and the on watch face has evolved. It’s now possible for an editor to determine if a style change will enable or disable a complication (enabled = initiallyEnabled plus any override from ComplicationsUserStyleSetting). Also <code>EditorService.closeEditor</code>allows SysUI to remotely close an on watch face editor if needed.</li>\n <li>In addition <code>InteractiveWatchFaceWcsClient.setUserStyle</code> with a more powerful command <code>updateInstance</code> which: changes the instance ID, sets the style, and clears complications all in one go.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>TraceEvents have been added to the watchface libraries. (<a href=\"https://android-review.googlesource.com/#/q/I1a1417e576e9c871cab63c4eb6a0fc60e82842a6\">I1a141</a>)</li>\n <li><code>ComplicationState</code> now has a new property <code>initiallyEnabled</code> which is useful for predicting the consequences of switching styles. (<a href=\"https://android-review.googlesource.com/#/q/I8c9052560ad5b68d88d3e2b05255017ea7087a2f\">I8c905</a>)</li>\n <li>We've replaced <code>InteractiveWatchFaceWcsClient.setUserStyle</code> with a more powerful command <code>updateInstance</code> which: changes the instance ID, sets the style, and clears complications. (<a href=\"https://android-review.googlesource.com/#/q/Ife6f658e8d86d85f986d66d52e00d84d1884cd19\">Ife6f6</a>)</li>\n <li>WatchFaceClient screenshot APIs no longer compress the screenshots because that was slow, instead we leave any post processing up to the caller. (<a href=\"https://android-review.googlesource.com/#/q/Id35af41e21a27ce412542f8bbb40a66991695d26\">Id35af</a>)</li>\n <li>It's now possible to remotely close an on watchface editor via <code>EditorService.closeEditor</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ic5aa4a1ac99cff2303a2116007b68dae18a4c579\">Ic5aa4</a>)</li>\n <li>Added nullability annotations (<a href=\"https://android-review.googlesource.com/#/q/Ic16ed43e46dfd51803d40e6332b0cf34467aaf7c\">Ic16ed</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5c90131a69042a6a3e13952e1da9e7ffc571c31d..52fbd7ed5b07ca4431fa828325a1f8da45b02e51/wear"
+    },
+    {
+      "id": "wear-ongoing-wear-phone-interactions",
+      "name": "Wear-Ongoing Wear-Phone-Interactions",
+      "version": "1.0.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#ongoing-phone-interactions-1.0.0-alpha03",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Migrate OAuthClient from Wearable Support Library to AndroidX. This migrated class is renamed to RemoteAuthClient and it gives support for remote authentication on Wearables together with support for adding OAuth PKCE extension. Additional handlers and helper classes for communication are provided.</li>\n <li>Ongoing activities can now be associated with a Notification that has a tag, using the new OngoingActivity.Builder constructor.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Added support for notification tags on the Ongoing Activities Library (<a href=\"https://android-review.googlesource.com/#/q/I653b41b716ff5b3d590a5be03e417be8dc01236c\">I653b4</a>)</li>\n <li>Migrate OAuthClient from Wear Support Library to AndroidX, and add support for OAuth PKCE extension (<a href=\"https://android-review.googlesource.com/#/q/I3eaaa7dd09af837a0221400b3bea639ebb8dd215\">I3eaaa</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/602cf9bff5e74e4355760aa47d3fc73a2e6d779b..52fbd7ed5b07ca4431fa828325a1f8da45b02e51/wear"
+    },
+    {
+      "id": "wear-remote-interactions",
+      "name": "Wear-Remote-Interactions",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#wear-remote-interactions-1.0.0-alpha02",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Migrating PlayStoreAvailability class from Wearable Support Library to AndroidX which provides an API for checking whether the Play Store is available on the Phone.</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Migrating PlayStoreAvailability class from Wearable Support Library to AndroidX. (<a href=\"https://android-review.googlesource.com/#/q/I69bfe4354149947c8c3631e9e55d994597895e9e\">I69bfe</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/aee18b103203a91ee89df91f0af5df2ecff356d6..52fbd7ed5b07ca4431fa828325a1f8da45b02e51/wear/wear-remote-interactions"
+    },
+    {
+      "id": "wear-tiles",
+      "name": "Wear Tiles",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#1.0.0-alpha01",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "window",
+      "name": "Window",
+      "version": "1.0.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/window#window-1.0.0-alpha04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Fixes a bug where no WindowLayoutInfo is emitted if there isn’t an OEM implementation. Now we emit an empty WIndowLayoutInfo.</li>\n <li>Fix a bug where state would not update properly if the hinge state changed while the app was backgrounded. Now the state should be consistent.</li>\n <li>Update our proguard files to ignore warnings from runtime dependencies.</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Emit an empty value when the OEM library is missing. (<a href=\"https://android-review.googlesource.com/#/q/Ide935358cb94670673234f2ac6fcc8c689b63244\">Ide935</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/aee18b103203a91ee89df91f0af5df2ecff356d6..52fbd7ed5b07ca4431fa828325a1f8da45b02e51/window/window"
+    },
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.7.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.7.0-alpha02",
+      "detailsHtml": "<strong>Note:</strong><span> WorkManager Version 2.7.0-alpha02 is <strong>only compatible</strong> with the Android 12 Developer Preview 1 SDK.</span> \n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Make <code>PendingIntent</code> mutability explicit, to fix a crash when targeting Android 12. (<a href=\"https://issuetracker.google.com/issues/180884673\">b/180884673</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/51b9293137916801ce8564a523a6ae77398694c1..23e58206a34ee2ac5a0e6ac8bf8d6e4f1e070efb/work"
+    }
+  ]
+}

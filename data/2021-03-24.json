@@ -1,0 +1,273 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#march_24_2021",
+  "title": "March 24, 2021",
+  "releasedOn": "2021-03-24",
+  "updated": "2021-03-24T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#march_24_2021",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.2.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.2.2",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue in the <code>InvalidFragmentVersionForActivityResult</code> lint check that led to a false positive when using Fragment 1.3.1 or higher. (<a href=\"https://android-review.googlesource.com/#/q/I54da158c0ca4bfa6246f51226fd4991dc485b0d2\">I54da1</a>, <a href=\"https://issuetracker.google.com/issues/182388985\">b/182388985</a>)</li>\n <li><code>ComponentActivity</code> now avoids a <code>ClassNotFoundException</code> when launching an <code>Intent</code> from an <code>ActivityResultContract</code> that was previously held as an extra in another <code>Intent</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ieff0578bfd0875f22d42b19040ee24999bb23c89\">Ieff05</a>, <a href=\"https://issuetracker.google.com/issues/182906230\">b/182906230</a>)</li>\n</ul>\n<p><strong>Dependency Updates</strong></p>\n<ul>\n <li>Activity now depends on <a href=\"https://developer.android.com/jetpack/androidx/releases/lifecycle#2.3.1\">Lifecycle <code>2.3.1</code></a>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/48102953c701f63f9237bdd6133a70d6eac30a78..2e83201d839574608d563976022ea651a4a4192c/activity"
+    },
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.3.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.3.0-alpha05",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/activity#1.2.2\">Activity 1.2.2</a>: Fixed an issue in the <code>InvalidFragmentVersionForActivityResult</code> lint check that led to a false positive when using Fragment 1.3.1 or higher. (<a href=\"https://android-review.googlesource.com/#/q/I54da158c0ca4bfa6246f51226fd4991dc485b0d2\">I54da1</a>, <a href=\"https://issuetracker.google.com/issues/182388985\">b/182388985</a>)</li>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/activity#1.2.2\">Activity 1.2.2</a>: <code>ComponentActivity</code> now avoids a <code>ClassNotFoundException</code> when launching an <code>Intent</code> from an <code>ActivityResultContract</code> that was previously held as an extra in another <code>Intent</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ieff0578bfd0875f22d42b19040ee24999bb23c89\">Ieff05</a>, <a href=\"https://issuetracker.google.com/issues/182906230\">b/182906230</a>)</li>\n</ul>\n<p><strong>Dependency Updates</strong></p>\n<ul>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/activity#1.2.2\">Activity 1.2.2</a>: Activity now depends on <a href=\"https://developer.android.com/jetpack/androidx/releases/lifecycle#2.3.1\">Lifecycle <code>2.3.1</code></a>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/52fbd7ed5b07ca4431fa828325a1f8da45b02e51..5c42896eb6591b09e3952030fb7ea8d9b8c42713/activity"
+    },
+    {
+      "id": "annotation",
+      "name": "Annotation",
+      "version": "1.2.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/annotation#annotation-1.2.0",
+      "detailsHtml": "<p><strong>Major changes since 1.1.0</strong></p>\n<ul>\n <li>Added <code>@ChecksSdkIntAtLeast</code> annotation, which can be used to identify methods or fields used to gate access on SDK level and satisfy the <code>NewApi</code> lint check.</li>\n <li>Added <code>@DoNotInline</code> annotation, which is paired with a Proguard rule to prevent members from being inlined during optimization.</li>\n <li>A variety of annotations are now annotated with <code>@Documented</code> to ensure they show up in documentation for annotated members.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1eb7d82174683e4f49dfc1ad1a6a085767a40410..733fe826e7dadc17467ed3aabe6b724c1d14d704/annotation/annotation"
+    },
+    {
+      "id": "annotation",
+      "name": "Annotation",
+      "version": "1.3.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/annotation#annotation-1.3.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Deprecated <code>@InspectableProperty</code> in favor of <code>@Attribute</code> in <code>androidx.resourceinspection</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ic0eff8463bacf8efb21c2dfe90e136849b8ef26f\">Ic0eff</a>)</li>\n <li>Added <code>@GravityInt</code> annotation for marking elements containing gravity values packed into integers. (<a href=\"https://android-review.googlesource.com/#/q/Ifcaa4ad1df11c767b1060bcfcf2debeb9b1a666f\">Ifcaa4</a>, <a href=\"https://issuetracker.google.com/issues/180620048\">b/180620048</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1eb7d82174683e4f49dfc1ad1a6a085767a40410..5c42896eb6591b09e3952030fb7ea8d9b8c42713/annotation/annotation"
+    },
+    {
+      "id": "annotation-experimental",
+      "name": "Annotation-Experimental",
+      "version": "1.1.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/annotation#annotation-experimental-1.1.0-rc02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Added Proguard rules to ensure that code optimization does not warn about missing Kotlin meta-annotations.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1eb7d82174683e4f49dfc1ad1a6a085767a40410..733fe826e7dadc17467ed3aabe6b724c1d14d704/annotation/annotation-experimental"
+    },
+    {
+      "id": "appcompat",
+      "name": "AppCompat",
+      "version": "1.3.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.3.0-rc01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Prevents permissions from being revoked prematurely when handling IME content insertion</li>\n</ul>\n<p><strong>Dependency Updates</strong></p>\n<ul>\n <li>AppCompat now depends on <a href=\"https://developer.android.com/jetpack/androidx/releases/activity#1.2.2\">Activity <code>1.2.2</code></a>, <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.3.2\">Fragment <code>1.3.2</code></a>, and <a href=\"https://developer.android.com/jetpack/androidx/releases/lifecycle#2.3.1\">Lifecycle <code>2.3.1</code></a>. (<a href=\"https://android-review.googlesource.com/#/q/Ia75a16f05e4144bd7bc6d06018620e46f37378b0\">Ia75a1</a>)</li>\n</ul>\n<p><strong>External Contribution</strong></p>\n<ul>\n <li>Fixed propagation of <code>android:theme</code> attribute across <code>&lt;include&gt;</code>d layouts on pre-Lollipop devices (Simon Bergner at Opera)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6207afb1646d302c5d29c2c67d332b48db87fb27..d4cb15fdc3d603b2628e4bfe9c57a72dea59b7e8/appcompat"
+    },
+    {
+      "id": "autofill",
+      "name": "Autofill",
+      "version": "1.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/autofill#1.2.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added new extended hint constants for more requested field types:\n  <ul>\n   <li>WiFi Password</li>\n   <li>Email OTP</li>\n   <li>Authenticator app OTP</li>\n   <li>UPI address</li>\n   <li>Address unit</li>\n   <li>Address dependent locality</li>\n   <li>Promo codes</li>\n  </ul></li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Added new autofill hints for some requested types (Email OTP, Granular address fields, Promo codes, UPI ID). (<a href=\"https://android-review.googlesource.com/#/q/I89e2f2b9631c8369c07248b32c239bde37f5aab8\">I89e2f</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7ef7019a95c1b606a0ccd2856b1ad7b332e3501b..5c42896eb6591b09e3952030fb7ea8d9b8c42713/autofill/autofill"
+    },
+    {
+      "id": "camera-camera2-core-lifecycle",
+      "name": "Camera Camera2, Core, & Lifecycle",
+      "version": "1.0.0-rc04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#1.0.0-rc04",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed initialization failure on UMIDIGI BISON devices (<a href=\"https://android-review.googlesource.com/#/q/I57d9e1c1e2ba1e4d585c3fcbba18820a65ab5562\">I57d9e</a>, <a href=\"https://issuetracker.google.com/issues/180818665\">b/180818665</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/cbbcaf606229323f6a80e9627683e68773ea249b..c790ba79eb9b47d7edda547565fafbbf09f55f10/camera"
+    },
+    {
+      "id": "camera-camera2-core-lifecycle",
+      "name": "Camera Camera2, Core, & Lifecycle",
+      "version": "1.1.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#1.1.0-alpha03",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Output JPEG format for <code>ImageCapture#OnImageCapturedCallback</code> when Extensions modes is enabled. (<a href=\"https://android-review.googlesource.com/#/q/I0d7b1a770ddb506f3fc1977aa8bd34c5b43a1c69\">I0d7b1</a>)</li>\n <li>Fixed initialization failure on UMIDIGI BISON devices (<a href=\"https://android-review.googlesource.com/#/q/I57d9e1c1e2ba1e4d585c3fcbba18820a65ab5562\">I57d9e</a>, <a href=\"https://issuetracker.google.com/issues/180818665\">b/180818665</a>)</li>\n <li>Fixed Samsung A3 stretched preview in PreviewView. (<a href=\"https://android-review.googlesource.com/#/q/Iacb30b0ff035d5a24ac221470a6815d96eca1725\">Iacb30</a>, <a href=\"https://issuetracker.google.com/issues/180121821\">b/180121821</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5c90131a69042a6a3e13952e1da9e7ffc571c31d..fe710f46552d00a05886b5490e9fc247aaf91529/camera"
+    },
+    {
+      "id": "camera-extensions-view",
+      "name": "Camera Extensions & View",
+      "version": "1.0.0-alpha23",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#extensions-view-1.0.0-alpha23",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>CameraView is being deprecated. Please use <code>LifecycleCameraController</code> instead. See <a href=\"https://medium.com/androiddevelopers/camerax-learn-how-to-use-cameracontroller-e3ed10fffecf\">the migration guide</a> (<a href=\"https://android-review.googlesource.com/#/q/Idac2c38fa3a2fcd57814ca9f5f4b48345337a629\">Idac2c</a>)</li>\n <li>Added FloatRange annotation to setLinearZoom() (<a href=\"https://android-review.googlesource.com/#/q/I699718001b1c9f453d3bf4068717a7aeee4ea35e\">I69971</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Pinned camera-view dependencies to rely on 1.0.0 artifacts. Depending on camera-view will not longer cause gradle's dependency resolution to automatically upgrade camera-core, camera-camera2 and camera-lifecycle to the latest 1.1.0 artifacts, though camera-view is still compatible with those artifacts if they are explicitly set to use 1.1.0. (<a href=\"https://android-review.googlesource.com/#/q/Ic8fa123684e2ab739b4a4b271f004c4d3f631bf5\">Ic8fa1</a>, <a href=\"https://issuetracker.google.com/issues/181599852\">b/181599852</a>)</li>\n <li>Fixed Samsung A3 stretched preview in PreviewView. (<a href=\"https://android-review.googlesource.com/#/q/Iacb30b0ff035d5a24ac221470a6815d96eca1725\">Iacb30</a>, <a href=\"https://issuetracker.google.com/issues/180121821\">b/180121821</a>)</li>\n <li>Fixed the issue where if camera selector cannot be set before camera is initialized. (<a href=\"https://android-review.googlesource.com/#/q/Ic8bd0b78548cd4ee6f77eb0fc82f7459c19a5b1e\">Ic8bd0</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5c90131a69042a6a3e13952e1da9e7ffc571c31d..fe710f46552d00a05886b5490e9fc247aaf91529/camera"
+    },
+    {
+      "id": "car-app",
+      "name": "Car App",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/car-app#1.0.0-rc01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a race condition bug where <code>NavigationManagerCallback#onStopNavigation</code> was being called after the callback was cleared. This happened if the callback was cleared before the callback executor actually ran (<a href=\"https://android-review.googlesource.com/#/q/I7fc5ebe1f371b0530f084f76236ab058f71f2a5c\">I7fc5e</a>, <a href=\"https://issuetracker.google.com/issues/181143772\">b/181143772</a>)</li>\n <li>Fixed an issue that required the app to explicitly take a dependency on <code>lifecycle-common-java8</code> (<a href=\"https://android-review.googlesource.com/#/q/I8b8c831d1fe033a2f8b8e653f373b10539dd0969\">I8b8c8</a>)</li>\n <li>Fixed a <code>NullPointerException</code> that was thrown when the app receives a <code>stopNavigation</code> call when it has already removed a callback (<a href=\"https://android-review.googlesource.com/#/q/Ib8b89f43bd5891ef9f8b53944b5ef00979d8e607\">Ib8b89</a>, <a href=\"https://issuetracker.google.com/issues/181143772\">b/181143772</a>)</li>\n <li>Improvements to not dispatch calls to app if its lifecycle is not at least in a <code>CREATED</code> state (<a href=\"https://android-review.googlesource.com/#/q/I8696503d1a9859411c4a52fa73d2852c8b3383d9\">I86965</a>, <a href=\"https://issuetracker.google.com/issues/179800224\">b/179800224</a>, <a href=\"https://issuetracker.google.com/issues/177921120\">b/177921120</a>)</li>\n <li>Fixed an issue where an invalid min API specified in the app's manifest would throw, causing an ANR on the host. (<a href=\"https://android-review.googlesource.com/#/q/Iffeddb795639f3a62611814784be7cffd59d2f7d\">Iffedd</a>, <a href=\"https://issuetracker.google.com/issues/174231592\">b/174231592</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9f4c909a46b4d538ee280141d444dc3bf8acca7c..e3a516e6a35300705fe998d142ca4fcea7e582e5/car/app/app"
+    },
+    {
+      "id": "car-app-testing",
+      "name": "Car App Testing",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/car-app#testing-1.0.0-alpha01",
+      "detailsHtml": "<p>This is the first Jetpack release of the previously closed source testing library. Refer to our <a href=\"https://github.com/android/car-samples/tree/main/car_app_library\">samples</a> on how to use this library in your tests.</p>\n<p><strong>New Features</strong></p>\n<ul>\n <li>The controllers for the model classes have been removed. Model getters are now part of the public API surface which allows for validating values that were set in the builders.</li>\n <li>The previous <code>CarAppServiceController</code> has been replaced by the new <code>SessionController</code> for testing logic related to the lifetime of the connection to the hots.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.0.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.0.0-beta03",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/52fbd7ed5b07ca4431fa828325a1f8da45b02e51..5c42896eb6591b09e3952030fb7ea8d9b8c42713/compose/animation"
+    },
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.0.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.0.0-beta03",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/52fbd7ed5b07ca4431fa828325a1f8da45b02e51..5c42896eb6591b09e3952030fb7ea8d9b8c42713/compose/compiler/compiler"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.0.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.0.0-beta03",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>DefaultMonotonicFrameClock</code> is deprecated. Calling <code>withFrameNanos</code> or <code>Recomposer.runRecomposeAndApplyChanges</code> with no <code>MonotonicFrameClock</code> will now throw <code>IllegalStateException</code>. (<a href=\"https://android-review.googlesource.com/#/q/I4eb0d7a8ebae7497735d25bc35e9f94c66ce2232\">I4eb0d</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>FlingBehavior.performFling()</code> is now called even when velocity is 0 (<a href=\"https://android-review.googlesource.com/#/q/I0b6e5934c646494c1b96340c0f9822d28b9cd2c2\">I0b6e5</a>, <a href=\"https://issuetracker.google.com/issues/181237123\">b/181237123</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/52fbd7ed5b07ca4431fa828325a1f8da45b02e51..5c42896eb6591b09e3952030fb7ea8d9b8c42713/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.0.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.0.0-beta03",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>DefaultMonotonicFrameClock</code> is deprecated. Calling <code>withFrameNanos</code> or <code>Recomposer.runRecomposeAndApplyChanges</code> with no <code>MonotonicFrameClock</code> will now throw <code>IllegalStateException</code>. (<a href=\"https://android-review.googlesource.com/#/q/I4eb0d7a8ebae7497735d25bc35e9f94c66ce2232\">I4eb0d</a>)</li>\n <li>Added a new API <code>LeadingIconTab</code> to support displaying an icon and inline text in a tab. (<a href=\"https://android-review.googlesource.com/#/q/I2326771eb8d8f8716a8a13bdd8b6e6682912be35\">I23267</a>)</li>\n</ul>\n<p><strong>External Contribution</strong></p>\n<ul>\n <li>[by Jossi Wolf] <code>BottomDrawer</code> now wraps the content of the drawer slot. <code>BottomDrawer</code> doesn't throw an <code>IllegalStateException</code> when the parent has infinite height. The bottom drawer will now open to an expanded state if it is smaller than 50% of its parent. Docs around <code>BottomDrawerState</code> and <code>ModalBottomSheetLayoutState</code> have been updated. <code>BottomDrawerState#isOpen</code> returns true now if it is in either open or expanded state. (<a href=\"https://android-review.googlesource.com/#/q/I8724160d0a593e4f8611f33a7da231b9450debba\">I87241</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/52fbd7ed5b07ca4431fa828325a1f8da45b02e51..5c42896eb6591b09e3952030fb7ea8d9b8c42713/compose/material"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.0.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.0.0-beta03",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>DefaultMonotonicFrameClock</code> is deprecated. Calling <code>withFrameNanos</code> or <code>Recomposer.runRecomposeAndApplyChanges</code> with no <code>MonotonicFrameClock</code> will now throw <code>IllegalStateException</code>. (<a href=\"https://android-review.googlesource.com/#/q/I4eb0d7a8ebae7497735d25bc35e9f94c66ce2232\">I4eb0d</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/52fbd7ed5b07ca4431fa828325a1f8da45b02e51..5c42896eb6591b09e3952030fb7ea8d9b8c42713/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.0.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.0.0-beta03",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Deferred check for ViewTree dependencies of ComposeView (<a href=\"https://android-review.googlesource.com/#/q/I8dbbf72f5646a6420c41995cc38732bce6b53d55\">I8dbbf</a>, <a href=\"https://issuetracker.google.com/issues/182466548\">b/182466548</a>)</li>\n <li>Added optional <code>startX</code>/<code>endX</code> and <code>startY</code>/<code>endY</code> parameters to <code>swipeUp</code>/<code>swipeDown</code>/<code>swipeLeft</code>/<code>swipeRight</code> functions in <code>GestureScope</code>. (<a href=\"https://android-review.googlesource.com/#/q/I49e2d463a3cf71668a95ca9ebf9355905b6f352e\">I49e2d</a>, <a href=\"https://issuetracker.google.com/issues/182063305\">b/182063305</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/52fbd7ed5b07ca4431fa828325a1f8da45b02e51..5c42896eb6591b09e3952030fb7ea8d9b8c42713/compose/ui"
+    },
+    {
+      "id": "core-core-ktx",
+      "name": "Core Core-Ktx",
+      "version": "1.5.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.5.0-rc01",
+      "detailsHtml": "<p><strong>Summary</strong></p>\n<ul>\n <li>No changes from previous beta03</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d84c0393bf1b89f62643ffc60b5e2318ec30298e..d4cb15fdc3d603b2628e4bfe9c57a72dea59b7e8/core"
+    },
+    {
+      "id": "core-core-ktx",
+      "name": "Core Core-Ktx",
+      "version": "1.6.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.6.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Adds <code>Handler.hasCallbacks()</code> method for parity with platform SDK (<a href=\"https://android-review.googlesource.com/#/q/Idce1c9fbe0d93bd9ebcb26716a63834bb1c4c12d\">Idce1c</a>, <a href=\"https://issuetracker.google.com/issues/113855676\">b/113855676</a>)</li>\n <li>Adds capability related setter methods to <code>ShortcutInfoCompat.Builder</code> (<a href=\"https://android-review.googlesource.com/#/q/I45af6c6b3ee63e9ca09574a607d06817167d7b60\">I45af6</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d84c0393bf1b89f62643ffc60b5e2318ec30298e..5c42896eb6591b09e3952030fb7ea8d9b8c42713/core"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.3.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.3.2",
+      "detailsHtml": "<p><strong>New State Manager Bug Fixes</strong></p>\n<ul>\n <li>When running both <code>popBackStack()</code> and <code>commit()</code> operations together, the last operation will now set the direction for all animations rather than running some pop animations and some enter animations. (<a href=\"https://android-review.googlesource.com/#/q/I7072e2c8008318ae812ae461a42ddafbbe6055cd\">I7072e</a>, <a href=\"https://issuetracker.google.com/issues/181142246\">b/181142246</a>)</li>\n <li>Views within in a shared element hierarchy will no longer have their transition name cleared when doing a shared element transition. (<a href=\"https://android-review.googlesource.com/#/q/I4d4a6d7770d5c6d54e4c647559d5cabae71f0051\">I4d4a6</a>, <a href=\"https://issuetracker.google.com/issues/179934757\">b/179934757</a>)</li>\n</ul>\n<p><strong>Dependency Updates</strong></p>\n<ul>\n <li>Fragment now depends on <a href=\"https://developer.android.com/jetpack/androidx/releases/activity#1.2.2\">Activity 1.2.2</a>, fixing an issue with Activity’s <code>InvalidFragmentVersionForActivityResult</code> lint check when using Fragment 1.3.1 or higher.</li>\n <li>Fragment now depends on <a href=\"https://developer.android.com/jetpack/androidx/releases/lifecycle#2.3.1\">Lifecycle 2.3.1</a>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/587cd19caebfbd63197a766916bf5296b3a6d65e..359e0b300368007d383fda1172a2813f9126d11f/fragment"
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.3.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.3.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>The <code>NonNullableMutableLiveData</code> lint rule can now properly differentiate between field variables with different nullability. (<a href=\"https://issuetracker.google.com/issues/169249668\">b/169249668</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ab69093e69997058cb4a9e61203401169b6ee2a8..0b84d3ed85bf44f60f4fdda15ef20767cfe06876/lifecycle"
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.4.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.4.0-alpha01",
+      "detailsHtml": "<p><strong>Behavior Changes</strong></p>\n<ul>\n <li>\n  <p><code>lifecycle-process</code> now uses <code>androidx.startup</code> to initialize the <code>ProcessLifecycleOwner</code>.</p>\n  <p>Previously, this was being done by <code>androidx.lifecycle.ProcessLifecycleOwnerInitializer</code>.</p>\n  <p>If you used <code>tools:node=\"remove\"</code> the <code>ContentProvider</code> being used to initialize process lifecycle in the past, then you need to do the following instead.</p>\n  <div></div>\n  <pre><code><span> </span>&lt;provider\n<span>    </span>android:name=\"androidx.startup.InitializationProvider\"\n<span>    </span>android:authorities=\\\"${applicationId}.androidx-startup\"\n<span>    </span>android:exported=\"false\"\n<span>    </span>tools:node=\\\"merge\"&gt;\n<span>    </span>&lt;!--<span> </span>If<span> </span>you<span> </span>are<span> </span>using<span> </span>androidx.startup<span> </span>to<span> </span>initialize<span> </span>other<span> </span>components<span> </span>--&gt;\n<span>    </span>&lt;meta-data\n<span>        </span>android:name=\"androidx.lifecycle.ProcessLifecycleInitializer\"\n<span>        </span>android:value=\"androidx.startup\"\n<span>        </span>tools:node=\"remove\"<span> </span>/&gt;\n<span> </span>&lt;/provider&gt;\n</code></pre>\n  <p>(or)</p>\n  <div></div>\n  <pre><code><span> </span>&lt;!--<span> </span>If<span> </span>you<span> </span>want<span> </span>to<span> </span>disable<span> </span>androidx.startup<span> </span>completely.<span> </span>--&gt;\n<span> </span>&lt;provider\n<span>    </span>android:name=\"androidx.startup.InitializationProvider\"\n<span>    </span>android:authorities=\"${applicationId}.androidx-startup\"\n<span>    </span>tools:node=\"remove\"&gt;\n<span> </span>&lt;/provider&gt;\n</code></pre>\n </li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Added a <code>Flow.flowWithLifecycle</code> API that emits values from the upstream Flow when the lifecycle is at least in a certain state using the <code>Lifecycle.repeatOnLifecycle</code> API. This is an alternative to the also new <code>LifecycleOwner.addRepeatinJob</code> API. (<a href=\"https://android-review.googlesource.com/#/q/I0f4cdfd2579b2dae2990f30ec67dc4fd97c46bfc\">I0f4cd</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/lifecycle#2.3.1\">Lifecycle 2.3.1</a>: The <code>NonNullableMutableLiveData</code> lint rule can now properly differentiate between field variables with different nullability. (<a href=\"https://issuetracker.google.com/issues/169249668\">b/169249668</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ab69093e69997058cb4a9e61203401169b6ee2a8..5c42896eb6591b09e3952030fb7ea8d9b8c42713/lifecycle"
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "version": "1.3.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media#media-1.3.0-rc02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Set <code>FLAG_IMMUTABLE</code> to the PendingIntent of MediaButtonReceiver which is required for apps targeting Android 12.</li>\n <li>Fixed a <code>NullPointerException</code> in <code>MediaSessionCompat</code> with API 27 after <code>setCallback(null)</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/f3234e2c593978c340dcbd7bf815df23317517ef..b676241c1174d10580a889743248a2cd1b315dd0/media/media"
+    },
+    {
+      "id": "paging",
+      "name": "Paging",
+      "version": "3.0.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/paging#3.0.0-beta03",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>We've revamped how placeholders are handled when list is reloaded to prevent unexpected jumps in RecyclerView. See <a href=\"https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:paging/runtime/src/main/java/androidx/paging/NullPaddedDiffing.md\">NullPaddedDiffing.md</a> for details. (<a href=\"https://android-review.googlesource.com/#/q/If1490f5bc833a61793d27eeaae9b37b26153df87\">If1490</a>, <a href=\"https://issuetracker.google.com/issues/170027529\">b/170027529</a>, <a href=\"https://issuetracker.google.com/issues/177338149\">b/177338149</a>)</li>\n <li>The various PagedList builders (old compatibility path) no longer incorrectly synchronously call <code>DataSource.Factory.create()</code> on Main thread when <code>.build()</code> is called. (<a href=\"https://issuetracker.google.com/182798948\">b/182798948</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/52fbd7ed5b07ca4431fa828325a1f8da45b02e51..5c42896eb6591b09e3952030fb7ea8d9b8c42713/paging"
+    },
+    {
+      "id": "recyclerview",
+      "name": "RecyclerView",
+      "version": "1.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/recyclerview#1.2.0-rc01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>ConcatAdapter.Config.Builder</code> now has default values that match <code>Config.DEFAULT</code> (<a href=\"https://issuetracker.google.com/issues/157169835\">b/157169835</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5c90131a69042a6a3e13952e1da9e7ffc571c31d..28a2b25e799c715db874d822a8c4197a249698cb/recyclerview/recyclerview"
+    },
+    {
+      "id": "resource-inspection",
+      "name": "Resource Inspection",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/resourceinspection#1.0.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<p>The Resource Inspection library provides a convenient way for library developers to surface the attributes of custom views in Android Studio’s <a href=\"https://developer.android.com/studio/debug/layout-inspector#4-0-0-live-layout-inspector\">Live Layout Inspector</a>. This initial release is <code>1.0.0-alpha01</code>.</p>",
+      "commitsUrl": null
+    },
+    {
+      "id": "room",
+      "name": "Room",
+      "version": "2.3.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.3.0-rc01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix an issue that prevented Coroutine Flow queries created by Room to be consumed in a suspending <code>withTransaction</code> block. (<a href=\"https://android-review.googlesource.com/q/I797bf24d579e11cc51eeb49098228caa5c7b4a7c\">I797bf</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/fe0dc921b17e832473de7029a40ca518f2e50266..29ce56e372f451c2dbf8036b1b9754733a15f32e/room"
+    },
+    {
+      "id": "slidingpanelayout",
+      "name": "SlidingPaneLayout",
+      "version": "1.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/slidingpanelayout#1.2.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li><code>SlidingPaneLayout</code> is now <strong>fold-aware</strong>. On a foldable device, <code>SlidingPaneLayout</code> will automatically adjust the size of the two panes so that the panes are on either side of the fold, hinge, etc.</li>\n</ul>\n<p><strong>Behavior Changes</strong></p>\n<ul>\n <li><code>SlidingPaneLayout</code> now has a new UI styling when the two panes overlap. Each pane will now extend from edge to edge, with the detail or secondary pane fully covering the list or primary pane when the <code>SlidingPaneLayout</code> is open. APIs specific to the old UI styling, such as the fade color, have been deprecated. (<a href=\"https://android-review.googlesource.com/#/q/Ia60cedb855a39d79489774a8b1961248a8026fb9\">Ia60ce</a>)</li>\n <li><code>SlidingPaneLayout</code> now defaults to ‘closed’ - i.e., showing the list or primary pane. Calling <code>open()</code> or <code>openPane()</code> will now show the detail or secondary pane. (<a href=\"https://android-review.googlesource.com/#/q/I5d26cbab8f00c52910d2a283f57349780fc93d0d\">I5d26c</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>SlidingPaneLayout now allows registering multiple PanelSlideListeners. (<a href=\"https://android-review.googlesource.com/#/q/I50ce2f92348cc3c9e6ee8a7e27ae64e62e88e88f\">I50ce2</a>)</li>\n <li>Developers can now control whether users can swipe between the list and detail panes by setting a lock mode. (<a href=\"https://android-review.googlesource.com/#/q/Idf2fdc56a37e4cfdcfa80b5bbc4c498cfda54ae2\">Idf2fd</a>, <a href=\"https://android-review.googlesource.com/#/q/I5d26cbab8f00c52910d2a283f57349780fc93d0d\">I5d26c</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/f778df0ff4a2d74de91163d48b9a03fa278397e7..5c42896eb6591b09e3952030fb7ea8d9b8c42713/slidingpanelayout/slidingpanelayout"
+    },
+    {
+      "id": "wear",
+      "name": "Wear",
+      "version": "1.2.0-alpha07",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#wear-1.2.0-alpha07",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixing errors with non-curved children inside of WearArcLayout caused by using screen size with height bigger than width. These non-curved children are now correctly placed inside of an arc on all screen types.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/aee18b103203a91ee89df91f0af5df2ecff356d6..5c42896eb6591b09e3952030fb7ea8d9b8c42713/wear/wear"
+    },
+    {
+      "id": "wear-complications-watchface",
+      "name": "Wear Complications & Watchface",
+      "version": "1.0.0-alpha10",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#complications-watchface-1.0.0-alpha10",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>It’s now possible to create open gl objects (e.g. textures) during WatchFaceService.createWatchFace because GlesRenderer now requires an explicit call to initOpenGLContext which can be done inside createWatchFace.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li><code>IdAndComplicationData</code> was a bit awkward and has been removed from the public API. Classes &amp; interfaces that used it have been refactored. (<a href=\"https://android-review.googlesource.com/#/q/I4c92843bda1adcaeab5b1db692ae71b9ebc1353f\">I4c928</a>)</li>\n <li>We've replaced <code>ReferenceTime</code> with <code>CountUpTimeReference</code> and <code>CountDownTimeReference</code> which are more self explanatory. (<a href=\"https://android-review.googlesource.com/#/q/Ib66c634425f70816b3762ab1f64a993cfe633581\">Ib66c6</a>)</li>\n <li>Added some missing <code>@Px</code> and <code>@ColorInt</code> annotations. (<a href=\"https://android-review.googlesource.com/#/q/I9bbc3031af93f9bb09ffd5aad4751bb5d487aa3e\">I9bbc3</a>)</li>\n <li><code>Complication.complicationConfigExtras</code> is now non-nullable and defaults to <code>Bundle.EMPTY</code>. (<a href=\"https://android-review.googlesource.com/#/q/Iad04f911e5e612373bda6ab10f2c7874800e92d4\">Iad04f</a>)</li>\n <li><code>GlesRenderer</code> now requires you to call <code>initOpenGLContext</code> after construction. This function was an internal detail but is now on the public API to allow GL calls earlier inside createWatchFace. (<a href=\"https://android-review.googlesource.com/#/q/I726c279f6e7ae6185b1a446c0e314c4286673d1f\">I726c2</a>)</li>\n <li>We've removed <code>Complication.setRenderer</code> as it should not be needed. (<a href=\"https://android-review.googlesource.com/#/q/Ie992fabad06e17527b17a3b9a258615d6404849e\">Ie992f</a>)</li>\n <li><code>Complicaiton.setComplicationBounds</code> is no longer part of the public API. If you need to adjust the position of a complication, this can be done via <code>ComplicationsUserStyleSetting</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ibd9e5f1f8d44f5ab4c8842e5117fa5aebb2fef7e\">Ibd9e5</a>)</li>\n <li><code>ComplicationsManager.TapCallback.onComplicationSingleTapped</code> has been renamed to <code>onComplicationTapped</code>. (<a href=\"https://android-review.googlesource.com/#/q/I3a55cf884e7c4f7899774975ff02811a8fd1c967\">I3a55c</a>)</li>\n <li><code>ComplicationOutlineRenderer.drawComplicationSelectOutline</code> has been renamed to <code>drawComplicationOutline</code>. (<a href=\"https://android-review.googlesource.com/#/q/I14b8857a5903560b22379f2e383368b0b00d0830\">I14b88</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/52fbd7ed5b07ca4431fa828325a1f8da45b02e51..5c42896eb6591b09e3952030fb7ea8d9b8c42713/wear"
+    },
+    {
+      "id": "window",
+      "name": "Window",
+      "version": "1.0.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/window#window-1.0.0-alpha05",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<p>We have added convenience methods to FoldingFeature so that apps can tell if the feature is separating, occluding, and determine the orientation of the hinge. We are also hiding the hinge type so that</p>\n<p>We are removing the synchronous read methods from WindowManager. Synchronous read methods are error prone since there is an implicit race condition. Register listeners and callbacks to receive updates on the WindowLayoutInfo.</p>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add convenience methods for working with FoldingFeatures (<a href=\"https://android-review.googlesource.com/#/q/Ie733f53b8eaf2226704bb097ed83dc1b6b0e057c\">Ie733f</a>)</li>\n <li>Removes synchronous read methods from WindowManager (<a href=\"https://android-review.googlesource.com/#/q/I96fd460f1dbde8028d85c7ec9703d71094531411\">I96fd4</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/080f233e07421eca8f842f05f11c12b4cdb84f5b..5c42896eb6591b09e3952030fb7ea8d9b8c42713/window/window"
+    },
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.6.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.6.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>\n  <p><code>WorkManager</code> now uses <code>androidx.startup</code> to initialize WorkManager. Previously, this was being done by <code>androidx.work.impl.WorkManagerInitializer</code>. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1608813\">aosp/1608813</a>)</p>\n  <p>If you used <code>tools:node=\"remove\"</code> the <code>ContentProvider</code> being used to initialize process lifecycle in the past, then you need to do the following instead.</p>\n  <div></div>\n  <pre><code><span> </span>&lt;provider\n<span>    </span>android:name=\"androidx.startup.InitializationProvider\"\n<span>    </span>android:authorities=\\\"${applicationId}.androidx-startup\"\n<span>    </span>android:exported=\"false\"\n<span>    </span>tools:node=\\\"merge\"&gt;\n<span>    </span>&lt;!--<span> </span>If<span> </span>you<span> </span>are<span> </span>using<span> </span>androidx.startup<span> </span>to<span> </span>initialize<span> </span>other<span> </span>components<span> </span>--&gt;\n<span>    </span>&lt;meta-data\n<span>        </span>android:name=\"androidx.work.impl.WorkManagerInitializer\"\n<span>        </span>android:value=\"androidx.startup\"\n<span>        </span>tools:node=\"remove\"<span> </span>/&gt;\n<span> </span>&lt;/provider&gt;\n</code></pre>\n  <p>(or)</p>\n  <div></div>\n  <pre><code><span> </span>&lt;!--<span> </span>If<span> </span>you<span> </span>want<span> </span>to<span> </span>disable<span> </span>android.startup<span> </span>completely.<span> </span>--&gt;\n<span> </span>&lt;provider\n<span>    </span>android:name=\"androidx.startup.InitializationProvider\"\n<span>    </span>android:authorities=\"${applicationId}.androidx-startup\"\n<span>    </span>tools:node=\"remove\"&gt;\n<span> </span>&lt;/provider&gt;\n</code></pre>\n </li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add a <code>Result.getOutputData()</code> API which returns the ListenableWorker's <code>outputData</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ie51e31db49b6952172dd502d2178164c951a2db1\">Ie51e3</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Add a workaround for an OEM bug which causes a <code>SecurityException</code> to be thrown when using <code>AlarmManager</code> APIs. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1587518\">aosp/1587518</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b32e1d4efc3b6976da585fb8783f913e92108428..5c42896eb6591b09e3952030fb7ea8d9b8c42713/work"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#march_11_2021",
+  "title": "March 11, 2021",
+  "releasedOn": "2021-03-11",
+  "updated": "2021-03-11T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#march_11_2021",
+  "components": [
+    {
+      "id": "constraintlayout",
+      "name": "ConstraintLayout",
+      "version": "2.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-2.1.0-beta01",
+      "detailsHtml": "<p><strong>ConstraintLayout</strong></p>\n<p>android:layout_width and android:layout_height are back being non-optional due to compatibility issues.</p>\n<p><strong>MotionLayout</strong></p>\n<ul>\n <li>Programmatic support for inserting and removing onSwipe and onClick on Transitions</li>\n <li>Experimental Support for Transitions through screen rotation</li>\n <li>support duration argument to transitions</li>\n <li>Better support for customAttributes that are boolean or References</li>\n</ul>\n<p><strong>Helpers</strong></p>\n<ul>\n <li>added a way to animate or jump directly to a given item of a Carousel</li>\n <li>new CircularFlow helper</li>\n</ul>\n<p>See additional information on this release <a href=\"https://github.com/androidx/constraintlayout/wiki/What's-New-in-2.1\">here</a> and <a href=\"https://androidstudio.googleblog.com/2021/03/constraintlayout-210-beta-1.html\">bugs closed</a>.</p>",
+      "commitsUrl": null
+    },
+    {
+      "id": "constraintlayout-compose",
+      "name": "ConstraintLayout-compose",
+      "version": "1.0.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-compose-1.0.0-alpha04",
+      "detailsHtml": "<p>Update to use the latest constraintlayout-core engine</p>",
+      "commitsUrl": null
+    }
+  ]
+}
