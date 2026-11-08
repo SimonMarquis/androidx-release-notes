@@ -30,21 +30,47 @@ runs:
           esac
 
           for theme in light dark; do
-            dark_mode=""
-            [[ "$theme" == dark ]] && dark_mode=--force-dark-mode
+            screenshot="$OUTPUT/$device-$theme.png"
 
-            chromium \
-              --headless \
-              --no-sandbox \
-              --no-first-run \
-              --disable-gpu \
-              --enable-features=OverlayScrollbar:mode/overlay \
-              --hide-scrollbars \
-              --force-device-scale-factor="$dpr" \
-              --window-size="$width,$height" \
-              --virtual-time-budget=2000 \
-              $dark_mode \
-              --screenshot="$OUTPUT/$device-$theme.png" \
-              "file://$(realpath "$PAGE")"
+            for attempt in 1 2 3; do
+              echo "::group::Chromium screenshot: $device-$theme (attempt $attempt/3)"
+
+              if timeout --kill-after=10s 1m chromium \
+                --headless \
+                --no-sandbox \
+                --no-first-run \
+                --disable-gpu \
+                --enable-features=OverlayScrollbar:mode/overlay \
+                --hide-scrollbars \
+                --force-device-scale-factor="$dpr" \
+                --window-size="$width,$height" \
+                --virtual-time-budget=2000 \
+                $([[ "$theme" == dark ]] && echo --force-dark-mode) \
+                --screenshot="$screenshot" \
+                "file://$(realpath "$PAGE")"
+              then
+                echo "::endgroup::"
+                break
+              else
+                status=$?
+              fi
+
+              echo "::endgroup::"
+
+              # 124 = timeout; 137 = killed with SIGKILL (possibly after timeout's kill-after period).
+              if [[ "$status" -ne 124 && "$status" -ne 137 ]]; then
+                echo "::error::Chromium failed with exit code $status ($device/$theme)"
+                exit "$status"
+              fi
+
+              rm -f "$screenshot"
+
+              if [[ "$attempt" -eq 3 ]]; then
+                echo "::error::Chromium timed out after 3 attempts ($device/$theme, exit code $status)"
+                exit "$status"
+              fi
+
+              echo "::warning::Chromium timed out for $device/$theme (exit code $status). Retrying ($attempt/3)..."
+            done
           done
         done
