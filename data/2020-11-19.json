@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#november_19_2020",
+  "title": "November 19, 2020",
+  "releasedOn": "2020-11-19",
+  "updated": "2020-11-19T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#november_19_2020",
+  "components": [
+    {
+      "id": "constraintlayout",
+      "name": "ConstraintLayout",
+      "version": "2.1.0-alpha1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-2.1.0-alpha1",
+      "detailsHtml": "<p>First alpha of the 2.1 release. Introduces support for:</p>\n<ul>\n <li>Carousel motion helper, to build custom carousel views</li>\n <li>MotionLayout scenes supports include and constraints override</li>\n <li>MotionLayout adds richer support for rotation (input and output)</li>\n <li>MotionLayout adds ViewTransitions, allowing single view transitions for mutation of constraintsets</li>\n</ul>\n<p>See additional information on this release <a href=\"https://androidstudio.googleblog.com/2020/11/constraintlayout-210-alpha-1.html\">here</a>.</p>",
+      "commitsUrl": null
+    }
+  ]
+}

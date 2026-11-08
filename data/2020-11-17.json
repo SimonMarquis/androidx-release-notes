@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#november_17_2020",
+  "title": "November 17, 2020",
+  "releasedOn": "2020-11-17",
+  "updated": "2020-11-17T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#november_17_2020",
+  "components": [
+    {
+      "id": "datastore",
+      "name": "Datastore",
+      "version": "1.0.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/datastore#1.0.0-alpha04",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a packaging issue that causes the following crash in Preference Datastore <code>1.0.0-alpha03</code>: <code>java.lang.NoClassDefFoundError: Failed resolution of: Landroidx/datastore/preferences</code>\n  <ul>\n   <li>The crash was originally reported here: <a href=\"https://issuetracker.google.com/issues/173036843\">b/173036843</a></li>\n   <li>(<a href=\"https://android-review.googlesource.com/#/q/I4712daf1343574f79ead8393079a84570a49b4bf\">I4712d</a>, <a href=\"https://issuetracker.google.com/issues/173036843\">b/173036843</a>)</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2d49f9fa892a0d067580a871f3aa0cd6764f4c3b..64e990c9cb237828482b8517567ab6d1ef4f177a/datastore"
+    }
+  ]
+}
