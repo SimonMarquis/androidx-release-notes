@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>April 14, 2025 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for April 14, 2025: Media3 1.6.1.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2025-04-14.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="april-14-2025">
+            <div class="date-divider"><a href="./#april-14-2025" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">April 14, 2025</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="stable" data-search="media3 1.6.1 2025-04-14 april 14, 2025" id="april-14-2025-media3-1-6-1">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                <div class="actions"><a href="https://github.com/androidx/media/commits/1.6.1" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.6.1" class="badge stable">1.6.1</a></div>
+              </div>
+              <div class="notes"><p>April 14th, 2025</p><p><code>androidx.media3:media3-*:1.6.1</code> is released. Version 1.6.1 contains <a href="https://github.com/androidx/media/commits/1.6.1">these commits</a>.</p><ul><li>Common Library:
+  <ul><li>Add <code>PlaybackParameters.withPitch(float)</code> method for easily copying a <code>PlaybackParameters</code> with a new <code>pitch</code> value <a href="https://github.com/androidx/media/issues/2257" title="#2257" class="ref ref-github">#2257</a>.</li></ul></li><li>ExoPlayer:
+  <ul><li>Fix issue where media item transition fails due to recoverable renderer error during initialization of the next media item <a href="https://github.com/androidx/media/issues/2229" title="#2229" class="ref ref-github">#2229</a>.</li><li>Fix issue where <code>ProgressiveMediaPeriod</code> throws an <code>IllegalStateException</code> as <code>PreloadMediaSource</code> attempts to call its <code>getBufferedDurationUs()</code> before it is prepared <a href="https://github.com/androidx/media/issues/2315" title="#2315" class="ref ref-github">#2315</a>.</li><li>Fix sending <code>CmcdData</code> in manifest requests for DASH, HLS, and SmoothStreaming <a href="https://github.com/androidx/media/pull/2253" title="#2253" class="ref ref-github">#2253</a>.</li><li>Ensure <code>AdPlaybackState.withAdDurationsUs(long[][])</code> can be used after ad groups have been removed. The user still needs to pass in an array of durations for removed ad groups which can be empty or null <a href="https://github.com/androidx/media/issues/2267" title="#2267" class="ref ref-github">#2267</a>.</li></ul></li><li>Extractors:
+  <ul><li>MP4: Parse <code>alternate_group</code> from the <code>tkhd</code> box and expose it as an <code>Mp4AlternateGroupData</code> entry in each track's <code>Format.metadata</code> <a href="https://github.com/androidx/media/issues/2242" title="#2242" class="ref ref-github">#2242</a>.</li></ul></li><li>Audio:
+  <ul><li>Fix offload issue where the position might get stuck when playing a playlist of short content <a href="https://github.com/androidx/media/issues/1920" title="#1920" class="ref ref-github">#1920</a>.</li></ul></li><li>Session:
+  <ul><li>Lower aggregation timeout for platform <code>MediaSession</code> callbacks from 500 to 100 milliseconds and add an experimental setter to allow apps to configure this value.</li><li>Fix issue where notifications reappear after they have been dismissed by the user <a href="https://github.com/androidx/media/issues/2302" title="#2302" class="ref ref-github">#2302</a>.</li><li>Fix a bug where the session returned a single-item timeline when the wrapped player is actually empty. This happened when the wrapped player doesn't have <code>COMMAND_GET_TIMELINE</code> available while <code>COMMAND_GET_CURRENT_MEDIA_ITEM</code> is available and the wrapped player is empty <a href="https://github.com/androidx/media/issues/2320" title="#2320" class="ref ref-github">#2320</a>.</li><li>Fix a bug where calling <code>MediaSessionService.setMediaNotificationProvider</code> is silently ignored after other interactions with the service like <code>setForegroundServiceTimeoutMs</code> <a href="https://github.com/androidx/media/issues/2305" title="#2305" class="ref ref-github">#2305</a>.</li></ul></li><li>UI:
+  <ul><li>Enable <code>PlayerSurface</code> to work with <code>ExoPlayer.setVideoEffects</code> and <code>CompositionPlayer</code>.</li><li>Fix bug where <code>PlayerSurface</code> can't be recomposed with a new <code>Player</code>.</li></ul></li><li>HLS extension:
+  <ul><li>Fix issue where chunk duration wasn't set in <code>CmcdData</code> for HLS media, causing an assertion failure when processing encrypted media segments <a href="https://github.com/androidx/media/issues/2312" title="#2312" class="ref ref-github">#2312</a>.</li></ul></li><li>RTSP extension:
+  <ul><li>Add support for URI with RTSPT scheme as a way to configure the RTSP session to use TCP <a href="https://github.com/androidx/media/issues/1484" title="#1484" class="ref ref-github">#1484</a>.</li></ul></li><li>Cast extension:
+  <ul><li>Add support for playlist metadata <a href="https://github.com/androidx/media/pull/2235" title="#2235" class="ref ref-github">#2235</a>.</li></ul></li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
