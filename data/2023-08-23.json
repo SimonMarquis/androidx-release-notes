@@ -1,0 +1,233 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#august_23_2023",
+  "title": "August 23, 2023",
+  "releasedOn": "2023-08-23",
+  "updated": "2023-08-23T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#august_23_2023",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.8.0-alpha07",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.8.0-alpha07",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>\n  <p>Activity Compose has added a new <code>PredictiveBackHandler</code> Composable to handle predictive back gesture events. It provides a <code>Flow</code> of <code>BackEventCompat</code> objects that must be collected in the suspending lamba you provide:</p>\n  <div></div>\n  <pre><code>PredictiveBackHandler { progress: Flow&lt;BackEventCompat&gt; -&gt;\n  // code for gesture back started\n  try {\n    progress.collect { backEvent -&gt;\n    // code for progress\n  }\n  // code for completion\n  } catch (e: CancellationException) {\n    // code for cancellation\n  }\n}\n</code></pre>\n  <p>It also comes with a compile time warning via lint rule to ensure the <code>Flow</code> calls <code>collect()</code>. (<a href=\"https://android-review.googlesource.com/#/q/Id27732d3729a866399eea48c188995275c0f5255\">Id2773</a>, <a href=\"https://issuetracker.google.com/issues/294884345\">b/294884345</a>)</p>\n </li>\n <li>\n  <p>The <code>onBackPressedDispatcher</code> in <code>ComponentActivity</code> is now initialized lazily so that it is only created when required. (<a href=\"https://android-review.googlesource.com/#/q/I0bf8e1b37c55bbd0dbc2b69ff7e224fb2409daa8\">I0bf8e</a>)</p>\n </li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>ComponentActivity</code> will no longer show a NPE on Android 13 when it gets an <code>onBackPressed()</code> callback and the Activity has already been <code>DESTROYED</code>. (<a href=\"https://android-review.googlesource.com/#/q/Idb0555c76dd63173a1fa93e34b8bc622500b9176\">Idb055</a>, <a href=\"https://issuetracker.google.com/issues/291869278\">b/291869278</a>)</li>\n <li>Removed usages of experimental <code>isAtLeastU()</code> API (<a href=\"https://android-review.googlesource.com/#/q/Ie9117598f70e8873011f98ebbe0e6cd502772c87\">Ie9117</a>, <a href=\"https://issuetracker.google.com/issues/289269026\">b/289269026</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/a83d3b232cf53ff8483130686a9d19ae65b7919f..3315f1ef094c312203fe26841287902916fbedf5/activity"
+    },
+    {
+      "id": "annotation",
+      "name": "Annotation",
+      "version": "1.7.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/annotation#1.7.0-rc01",
+      "detailsHtml": "<p>This release does not contain any changes from the prior beta.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5d7dd999525725bd038a00ca4e89e0fef624a6da..f7f02b332becdac55393a5abbd5f2a95fcfed836/annotation/annotation"
+    },
+    {
+      "id": "benchmark",
+      "name": "Benchmark",
+      "version": "1.2.0-beta04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/benchmark#1.2.0-beta04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>The Baseline Profiles Gradle plugin now supports Android Gradle Plugin 8.3. (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/2eb1e46de9ab545a059814e2ef7083c441f79693\">aosp/2715214</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix failures in writing / moving and pulling files (especially those from parameterized tests) by sanitizing output file names further, avoiding '=' and ':' in output file names. (<a href=\"https://android-review.googlesource.com/#/q/I759d8bd2eec57db3829038fb73dad80e8d9849e2\">I759d8</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5d7dd999525725bd038a00ca4e89e0fef624a6da..22eceaa7039e3fc1207b151f73e842c8021075f7/benchmark"
+    },
+    {
+      "id": "camera",
+      "name": "Camera",
+      "version": "1.3.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#1.3.0-rc01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added <code>PendingRecording.asPersistentRecording</code> to allow a recording to continuously record while the <code>VideoCapture</code> it's Recorder is attached to is rebound. (<a href=\"https://android-review.googlesource.com/#/q/I517c6ce300cef6c38afcaa4e97792d9694bbffca\">I517c6</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a crash when a stream is shared with both <code>VideoCapture</code> and Preview. Also fixed a black screen on LEGACY devices when stream sharing is enabled.</li>\n <li>Fixed large captured JPEG image issue on Samsung S7 (SM-G930T, SM-G930V) series devices. The captured JPEG images contain redundant 0's padding data in the JFIF compressed data segment. It causes the captured images to have large file size. Those redundant 0's padding data will be removed to make the captured images have normal image file sizes. (<a href=\"https://android-review.googlesource.com/#/q/I407b0731d23a749a3cab21d8ed8cb5d52fe0ab0e\">I407b0</a>, <a href=\"https://issuetracker.google.com/issues/288828159\">b/288828159</a>)</li>\n <li>Fixed large captured JPEG image issue on Samsung S22 (SM-S901B, SM-S901B/DS) and S22+ (SM-S906B) series devices. The captured JPEG images contain redundant 0's padding data in the JFIF compressed data segment. It causes the captured images to have large file size about 13MB on S22 SM-S901B/DS device. Those redundant 0's padding data will be removed to make the captured images have normal image file sizes. (<a href=\"https://android-review.googlesource.com/#/q/I73be940494d3d600e6e2cdc99eb1f3814fb8bed2\">I73be9</a>, <a href=\"https://issuetracker.google.com/issues/288828159\">b/288828159</a>)</li>\n <li>Fixed large captured JPEG image issue on Samsung A5, A52, A70 and A72 series devices. The captured JPEG images contain redundant 0's padding data in the JFIF compressed data segment. It causes the captured images to have extreme file size (ex about 32MB or even 96 MB). Those redundant 0's padding data will be removed to make the captured images have normal image file sizes. (<a href=\"https://android-review.googlesource.com/#/q/I97c4d7745cfbff789e8890a9a04ee735eb84e5ed\">I97c4d</a>, <a href=\"https://issuetracker.google.com/issues/288828159\">b/288828159</a>)</li>\n <li>Fixed the native crash when taking pictures with Extensions enabled (<a href=\"https://android-review.googlesource.com/#/q/I698f5739cd3d42243721184c1162f0ba86523e0d\">I698f5</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/a5d48fc5725f8aac203c2ae3bd24e0e53dafbd4d..e2a76338ab0e3f3c8be9b898fbc326c5b0e16711/camera"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.6.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.6.0-alpha04",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Add <code>SeekableTransitionState</code> to allow developers to control the progress of a transition. (<a href=\"https://android-review.googlesource.com/#/q/I8e69df11beeb580c8ba4552fc5d7647367a44dcc\">I8e69d</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5d7dd999525725bd038a00ca4e89e0fef624a6da..216f103fa4a5c7247f7bafc8bb3014616c265f0c/compose/animation"
+    },
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.5.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.5.2",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Insert line numbers for return statements in constant-returning composable functions. (<a href=\"https://android-review.googlesource.com/#/q/I42d8958b996a6dd58d66d1d1068398b5032d9fe6\">I42d89</a>)</li>\n <li>Fix a memory leak caused by switching to the new compiler plugin entrypoint. (<a href=\"https://android-review.googlesource.com/#/q/Id70013d2d31276cf1cb062d7a7af8fafd870e3f0\">4f0a101</a>)</li>\n <li>Stop transforming non-composable fun interfaces in Compose compiler. This causes fun interfaces to be handled the same way as lambdas, including memoization rules. (<a href=\"https://android-review.googlesource.com/#/q/Ieabb4a9df24f77e9b5e7e41adf360c50cede604f\">28b3ce9</a>)</li>\n <li>Use vararg argument type for inferring stability on call site. (<a href=\"https://android-review.googlesource.com/#/q/I0eda18303ecb655e3d0bac60ed006d41bd2e39e8\">bc83645</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2afaef8594bfa39e6e31140fbecae2a2c71eaf29..ff1732b8405b315a030ae84e4e03416f36e75fad/compose/compiler"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.6.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.6.0-alpha04",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Add <code>ReusableComposition</code> interface for managing lifecycle and reuse of subcompositions. (<a href=\"https://android-review.googlesource.com/#/q/I812d1fa36791857a04471882d5edabea1400c15e\">I812d1</a>, <a href=\"https://issuetracker.google.com/issues/252846775\">b/252846775</a>)</li>\n <li><code>Modifier.focusGroup</code> has been promoted to stable APIs. (<a href=\"https://android-review.googlesource.com/#/q/I7ffa30d82e2e382865fcd57f5ee7640959c087e2\">I7ffa3</a>)</li>\n <li>Add overloads for <code>BasicTextField2</code> that accept an immutable value and a callback to change that value, just like the current <code>BasicTextField</code> API. (<a href=\"https://android-review.googlesource.com/#/q/I3f2b851e744fe2cd6f9c0c79e9f2ecbf35d2fdca\">I3f2b8</a>)</li>\n <li><code>GridItemSpan::currentLineSpan</code> is now a stable API. (<a href=\"https://android-review.googlesource.com/#/q/Icc29c5af036d72c218cc4c630e166c4088209049\">Icc29c</a>)</li>\n <li>Canvas that accepts <code>contentDescription</code> is now a stable API. (<a href=\"https://android-review.googlesource.com/#/q/Ib3d2916e9521268daf351ad17dce8d6a35d57aa5\">Ib3d29</a>)</li>\n <li>Introduced <code>viewportSize</code> in <code>ScrollState</code>, a way of knowing the <code>viewPort</code> size of the component that uses <code>ScrollState</code> after measuring happens. (<a href=\"https://android-review.googlesource.com/#/q/I8b85a0058db96f4b0eb5a6afa32e5293adaaeda5\">I8b85a</a>, <a href=\"https://issuetracker.google.com/issues/283102682\">b/283102682</a>)</li>\n <li>Fixed an issue where the prefetching in Pager did not match the behavior in Views. (<a href=\"https://android-review.googlesource.com/#/q/I93352e6de29fa8bc23b3af7516872d3e2da7ce0e\">I93352</a>, <a href=\"https://issuetracker.google.com/issues/289088847\">b/289088847</a>)</li>\n <li><code>Modifier.consumeWindowInsets(PaddingValues)</code> is now stable.\n  <ul>\n   <li><code>Deprecated Modifier.consumedWindowInsets</code> API is now removed. Use <code>Modifier.consumeWindowInsets</code> instead. (<a href=\"https://android-review.googlesource.com/#/q/Id72bbe3b02da9e9c34295a963b9efd1ceed96e41\">Id72bb</a>)</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5d7dd999525725bd038a00ca4e89e0fef624a6da..216f103fa4a5c7247f7bafc8bb3014616c265f0c/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.6.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.6.0-alpha04",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue where some components using <code>Subcomposition</code> (e.g. <code>BottomSheetScaffold</code>) inside a Scaffold inside a <code>LookaheadScope</code> were attempting to read their size too early. (<a href=\"https://android-review.googlesource.com/#/q/If2c5daa98914149d12be03e02ba650c24acf19b8\">If2c5d</a>)</li>\n <li>Fixed <code>DropdownMenu</code>'s <code>offset</code> calculation so x offsets depend solely on the local layout direction, and y offsets will no longer be reversed when the menu is near the bottom of the screen. (<a href=\"https://android-review.googlesource.com/#/q/Iccc743f3306d9b259f0cc21d1089d9479df203fb\">Iccc74</a>, <a href=\"https://issuetracker.google.com/issues/294103942\">b/294103942</a>)</li>\n <li>Optimized <code>BottomSheetScaffold</code>'s layout internals and fixed a potential issue with <code>BottomSheetScaffold</code> inside a <code>LookaheadLayout</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ic0afaf770bc5062ddae0159698402a00cf29bd0c\">Ic0afa</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5d7dd999525725bd038a00ca4e89e0fef624a6da..216f103fa4a5c7247f7bafc8bb3014616c265f0c/compose/material"
+    },
+    {
+      "id": "compose-material-3",
+      "name": "Compose Material 3",
+      "version": "1.2.0-alpha06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3#1.2.0-alpha06",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed <code>DropdownMenu</code>'s <code>offset</code> calculation so x offsets depend solely on the local layout direction, and y offsets will no longer be reversed when the menu is near the bottom of the screen. (<a href=\"https://android-review.googlesource.com/#/q/Iccc743f3306d9b259f0cc21d1089d9479df203fb\">Iccc74</a>, <a href=\"https://issuetracker.google.com/issues/294103942\">b/294103942</a>)</li>\n <li>Fixed <code>DropdownMenu</code>'s <code>offset</code> calculation so x offsets depend solely on the local layout direction, and y offsets will no longer be reversed when the menu is near the bottom of the screen. (<a href=\"https://android-review.googlesource.com/#/q/Ib87a2157a9870409fdf066337c00585fd3ae005c\">Ib87a2</a>, <a href=\"https://issuetracker.google.com/issues/294103942\">b/294103942</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5d7dd999525725bd038a00ca4e89e0fef624a6da..3315f1ef094c312203fe26841287902916fbedf5/compose/material3"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.6.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.6.0-alpha04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Re-throw exceptions that are swallowed during recomposition loop (<a href=\"https://android-review.googlesource.com/#/q/I93d0b31d3d4a4b0298db5d604572761fad143464\">4dff9a</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Added a method to deactivate <code>ReusableComposition</code>, removing observations but keeping nodes in place. The deactivated composition can be activated again by calling <code>setContent</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ib7f318c47b9e4cad19da5702ddd0ea69fc4fa827\">Ib7f31</a>)</li>\n <li>Add <code>ReusableComposition</code> interface for managing lifecycle and reuse of subcompositions. (<a href=\"https://android-review.googlesource.com/#/q/I812d1fa36791857a04471882d5edabea1400c15e\">I812d1</a>, <a href=\"https://issuetracker.google.com/issues/252846775\">b/252846775</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5d7dd999525725bd038a00ca4e89e0fef624a6da..216f103fa4a5c7247f7bafc8bb3014616c265f0c/compose/runtime"
+    },
+    {
+      "id": "compose-runtime-tracing",
+      "name": "Compose Runtime Tracing",
+      "version": "1.0.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#runtime-tracing-1.0.0-alpha04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Compatible with latest versions of Benchmark and Tracing Perfetto, enabling support for Composition Tracing at app startup (cold start) e.g. in AndroidX Benchmark and Android Studio (starting from Hedgehog Beta 2).</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Renamed <code>androidx.tracing.perfetto.Trace</code> to <code>androidx.tracing.perfetto.PerfettoSdkTrace</code>. (<a href=\"https://android-review.googlesource.com/#/q/I44af824893288c17c792369058132cca3ac61f1b\">I44af8</a>)</li>\n <li>Making Tracing Perfetto SDK APIs consistent with <code>android.os.Trace</code>. (<a href=\"https://android-review.googlesource.com/#/q/I73ba07ca6cc4bd2b6519553c395fe9075a49fe75\">I73ba0</a>, <a href=\"https://issuetracker.google.com/issues/282199917\">b/282199917</a>)</li>\n <li>Prerequisites for tracing at app startup. (<a href=\"https://android-review.googlesource.com/#/q/Iad890a61eab26611469704a7451c6fdc611622e5\">Iad890</a>)</li>\n <li>Merged experimental and public API files (<a href=\"https://android-review.googlesource.com/#/q/I0f2e1b547f5c460e72edae3d84f3ae7cfc27cf30\">I0f2e1</a>, <a href=\"https://issuetracker.google.com/issues/278769092\">b/278769092</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/87533b4ff06971ed59028936cd9b6da988cd4522..216f103fa4a5c7247f7bafc8bb3014616c265f0c/compose/runtime/runtime-tracing"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.6.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.6.0-alpha04",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added a method to deactivate <code>ReusableComposition</code>, removing observations but keeping nodes in place. The deactivated composition can be activated again by calling <code>setContent</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ib7f318c47b9e4cad19da5702ddd0ea69fc4fa827\">Ib7f31</a>)</li>\n <li>Add <code>ReusableComposition</code> interface for managing lifecycle and reuse of subcompositions. (<a href=\"https://android-review.googlesource.com/#/q/I812d1fa36791857a04471882d5edabea1400c15e\">I812d1</a>, <a href=\"https://issuetracker.google.com/issues/252846775\">b/252846775</a>)</li>\n <li><code>Modifier.focusGroup</code> has been promoted to stable APIs. (<a href=\"https://android-review.googlesource.com/#/q/I7ffa30d82e2e382865fcd57f5ee7640959c087e2\">I7ffa3</a>)</li>\n <li>Added androidx annotations to various graphics APIs to specify <code>ColorInt</code>, <code>FloatRange</code>, <code>IntRange</code>, <code>Size</code> and more. (<a href=\"https://android-review.googlesource.com/#/q/I70487409f64808e1f004e7ed05e8497fbf607a63\">I70487</a>, <a href=\"https://issuetracker.google.com/issues/290950582\">b/290950582</a>)</li>\n <li>Updated <code>ColorFilter</code> API to have concrete subclass types for improved inspectability of parameters. (<a href=\"https://android-review.googlesource.com/#/q/I5fe2980d3425708e8563851bbfc9a6d6d17ad261\">I5fe29</a>)</li>\n <li>Introduce wear-tooling-preview library to list valid wear devices that can be used for UI previews (<a href=\"https://android-review.googlesource.com/#/q/Ib036edb1823884c5f9e312d6733e7c3db22f9a0a\">Ib036e</a>)</li>\n <li>Created the <code>FontScalable</code> interface to handle the font scaling part of the Density interface. (<a href=\"https://android-review.googlesource.com/#/q/I2cf3f4c2fd79f7ab7b12789a90c5e68b53fef56a\">I2cf3f</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c11630971f4f8eeb21a3691bb8a0d9fb4d31585b..216f103fa4a5c7247f7bafc8bb3014616c265f0c/compose/ui"
+    },
+    {
+      "id": "core-performance-core-performance-play-services-core-performance-testing",
+      "name": "Core",
+      "version": "1.0.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.0.0-alpha03",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Initial library implementation of <code>core-performance-testing</code>, containing test doubles for core-performance.</li>\n <li>Initial library implementation or <code>core-performance-play-services</code>. Google specific implementation provides up to date media performance class information.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add optional module providing media performance class from Google Play Services.</li>\n <li>core-performance constructors changed to support optional implementation.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "core-uwb",
+      "name": "Core Uwb",
+      "version": "1.0.0-alpha07",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core-uwb#1.0.0-alpha07",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue that AOSP backend is not used when CN devices has Google Play Services installed.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4aed940027a19667e67d155563fc5fa8b7279313..3315f1ef094c312203fe26841287902916fbedf5/core/uwb"
+    },
+    {
+      "id": "credentials",
+      "name": "Credentials",
+      "version": "1.2.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/credentials#1.2.0-beta03",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Removes uvm extensions, due to planned deprecation from the webauthn spec. (<a href=\"https://android-review.googlesource.com/q/I2d46d60d9e6384b7233d7825d2dedfc409df369b\">I2d46d</a>)</li>\n <li>Ensure compliance to webauthn spec regarding <code>clientExtensions</code>, <code>credProps</code>, and rk properties (<a href=\"https://android-review.googlesource.com/q/I3ab0122b871e3308f0d3271a8ef9fe56cf81864c\">I3ab01</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3d02aa58ef50902c5b6abea5c6db4d2bba9257c9..3315f1ef094c312203fe26841287902916fbedf5/credentials"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.7.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.7.0-alpha03",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue with Fragments when using predictive back that caused the first fragment in the fragment manager’s back stack to be skipped and the Activity to finish when using system back via 3 button navigation or the predictive back gesture. (<a href=\"https://android-review.googlesource.com/#/q/I0664b44dd7f6dc49bafb932e3ae47f1aba483fd6\">I0664b</a>, <a href=\"https://issuetracker.google.com/issues/295231788\">b/295231788</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/8f3937053b6b5e938d7576851bef39c829b017ee..3315f1ef094c312203fe26841287902916fbedf5/fragment"
+    },
+    {
+      "id": "games-performance-tuner",
+      "name": "Games-Performance-Tuner",
+      "version": "2.0.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/games#games-performance-tuner-2.0.0-alpha05",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Migrated Protobuf library to Protobuf lite.</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed issues with dangling pointer.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/opt/gamesdk/+log/c0b5cfbd59e5c47f65bad1301a37013efcf45bfa..d10c609303f8e9f75167e727b0f8fd58715117f3/games-performance-tuner"
+    },
+    {
+      "id": "mediarouter",
+      "name": "Mediarouter",
+      "version": "1.6.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/mediarouter#1.6.0-rc01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added automatic dismissal of the <code>MediaRouter</code> dialog when screen is turned off. (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/b96f8039105d4991a435f734c63218d28ebe208a\">Ib25ee</a>).</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Changed the <code>MediaRouter</code> logging tag to <code>AxMediaRouter</code> to disambiguate from the platform <code>MediaRouter</code>. (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/1d6347e40e3f856453abf16078c1786b54532634\">Ib619f</a>).</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4aed940027a19667e67d155563fc5fa8b7279313..2c0f492a1ad8bfa69506ab50b77cbc51e3e2a66c/mediarouter"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.7.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.7.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issues in Navigation with Compose where when using a <code>Scaffold</code> it was possible to get an error for trying to access a <code>Lifecycle.State.DESTROYED</code> <code>ViewModel</code>. (<a href=\"https://android-review.googlesource.com/#/q/I1dc115fc2b454d68c1a23c78e72707d6d4c739a5\">I1dc11</a>, <a href=\"https://issuetracker.google.com/issues/268422136\">b/268422136</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ac88ab16827b2945b6f026fe517f8e300cfbd0b2..fd8660753c8ba907ddedda62ae5a37ba7bceffc0/navigation"
+    },
+    {
+      "id": "privacysandbox-ads",
+      "name": "Privacysandbox Ads",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/privacysandbox-ads#1.1.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5d7dd999525725bd038a00ca4e89e0fef624a6da..3315f1ef094c312203fe26841287902916fbedf5/privacysandbox/ads"
+    },
+    {
+      "id": "room",
+      "name": "Room",
+      "version": "2.6.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.6.0-beta01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Handling the special case <code>SQLite</code> exception during upsert encountered when the <code>2067 SQLITE_CONSTRAINT_UNIQUE</code> exception is thrown during an upsert, upsert should perform an update. (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/01002bedc549e0264a5f920dc554ed7dd7785cfe\">If2849</a>, <a href=\"https://issuetracker.google.com/243039555\">b/243039555</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5d7dd999525725bd038a00ca4e89e0fef624a6da..3315f1ef094c312203fe26841287902916fbedf5/room"
+    },
+    {
+      "id": "sqlite",
+      "name": "Sqlite",
+      "version": "2.4.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/sqlite#2.4.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5d7dd999525725bd038a00ca4e89e0fef624a6da..3315f1ef094c312203fe26841287902916fbedf5/sqlite"
+    },
+    {
+      "id": "tracing-perfetto",
+      "name": "Tracing Perfetto",
+      "version": "1.0.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/tracing#perfetto-1.0.0-beta02",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Enabled support for tracing at app startup (cold start).</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c2c1745b1d05b772c7bbe82834a9197ba5b85114..22eceaa7039e3fc1207b151f73e842c8021075f7/tracing"
+    },
+    {
+      "id": "wear-ongoing",
+      "name": "Wear-Ongoing",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#wear-ongoing-1.1.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Add a content description field to Ongoing Activity. This will be used by accessibility services to describe the Ongoing Activity. (<a href=\"https://android-review.googlesource.com/#/q/I79fc6eaebca0dbb4cd5e7998e29b77152c1547c9\">I79fc6</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Added <code>@RequiresPermission</code> to APIs that require granting the <code>POST_NOTIFICATIONS</code> permission on SDK 33 and above. (<a href=\"https://android-review.googlesource.com/#/q/Ie542eb66c9af6e3c3a7c59bb291c7c5879458631\">Ie542e</a>, <a href=\"https://issuetracker.google.com/issues/238790278\">b/238790278</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/e29ee7ab92601af2140abdabaabf4960517e49f2..3315f1ef094c312203fe26841287902916fbedf5/wear/wear-ongoing"
+    },
+    {
+      "id": "wear-tooling-preview",
+      "name": "Wear-Tooling-Preview",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#wear-tooling-preview-1.0.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Add <code>WearDevices</code> to list valid wear devices that can be used for UI previews (<a href=\"https://android-review.googlesource.com/#/q/Ib036edb1823884c5f9e312d6733e7c3db22f9a0a\">Ib036e</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "wear-compose",
+      "name": "Wear Compose",
+      "version": "1.3.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-compose#1.3.0-alpha04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>We have added undo support for the secondary action of <code>SwipeToReveal</code>. (<a href=\"https://android-review.googlesource.com/#/q/I7a22d3c215e9f7f079685e87aa0c0a267e7b0036\">I7a22d</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add <code>HorizontalPageIndicator</code> in Wear Material3 library. (<a href=\"https://android-review.googlesource.com/#/q/Ifee996864667def4d04905328cb5e6667037842a\">Ifee99</a>)</li>\n <li>Updated Wear Compose preview tooling to use the <code>androidx.wear.tooling.preview</code> library. (<a href=\"https://android-review.googlesource.com/#/q/Ib036edb1823884c5f9e312d6733e7c3db22f9a0a\">Ib036e</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix a bug in round buttons where modifiers were not chained correctly. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/2697934\">I5e162</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5d7dd999525725bd038a00ca4e89e0fef624a6da..3315f1ef094c312203fe26841287902916fbedf5/wear/compose"
+    },
+    {
+      "id": "wear-compose",
+      "name": "Wear Compose",
+      "version": "1.0.0-alpha10",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-compose#1.0.0-alpha10",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>\n  <p>Added an InlineSlider for wear compose. InlineSlider allows users to make a selection from a range of values. The range of selections is shown as a bar between the minimum and maximum values of the range, from which users may select a single value. (<a href=\"https://android-review.googlesource.com/#/q/If01485d8dd34fc309770c843709a8bceae10e2fd\">If0148</a>)</p>\n </li>\n <li>\n  <p>Check out the new Compose for <a href=\"https://developer.android.com/codelabs/compose-for-wear-os#1\">WearOS Codelab</a>!</p>\n </li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Macrobenchmark now has a <code>minSdkVersion</code> of <code>23</code>. (<a href=\"https://android-review.googlesource.com/#/q/If265556949897999b3841e99bb59919fcdfa2c15\">If2655</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Update transition handling in SwipeDismissableNavHost in a SideEffect (<a href=\"https://android-review.googlesource.com/#/q/I04994074e7d024dcf857c156c8c265b57e3769f8\">I04994</a>, <a href=\"https://issuetracker.google.com/issues/202863359\">b/202863359</a>)</li>\n <li>Update transition handling in SwipeDismissableNavHost (<a href=\"https://android-review.googlesource.com/#/q/I1cbe09cd902f785dcb68f11f098b340e4da1e55a\">I1cbe0</a>, <a href=\"https://issuetracker.google.com/issues/202863359\">b/202863359</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b5f9c6b124ab46a4c5eee7f15d2443287f8a539d..f07d12061370a603549747200c79b60239706330/wear/compose"
+    },
+    {
+      "id": "wear-watchface",
+      "name": "Wear Watchface",
+      "version": "1.2.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-watchface#1.2.0-beta01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>From Android T, WearOS will now support a default weather system complication.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add weather default system fallback for complications. (<a href=\"https://android-review.googlesource.com/#/q/Ia0994329edec853a3ff0293ec2cd291556d841c6\">Ia0994</a>)</li>\n <li>This patch adds <code>WatchFaceRuntimeService</code> and <code>WatchFaceControlClient.createWatchFaceRuntimeControlClient</code> along with guava wrappers. These add support for watch face runtimes which are a special kind of watch face that loads it's definition from another package. Currently WearOS only supports the runtime for the <a href=\"https://developer.android.com/training/wearables/wff\">Android Watch Face Format</a>. (<a href=\"https://android-review.googlesource.com/#/q/I2799f9aa593a208ac5b40b768b37d7c072bb91c4\">I2799f</a>)</li>\n <li>This patch is a follow up to <a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/2636578\">aosp/2636578</a> where we rename the int defs so any code depending on <code>WatchFaceType</code>, <code>CanvasType</code>, <code>TapType</code> or <code>ComplicationsSlotBoundsType</code> doesn't need to change. (<a href=\"https://android-review.googlesource.com/#/q/I4098ba9d91d7783ada0c1b4e70e18249e0f68bc5\">I4098b</a>)</li>\n <li>Updated API files to annotate compatibility suppression. (<a href=\"https://android-review.googlesource.com/#/q/I8e87ae292b38fac1886001f5317acda1592f174b\">I8e87a</a>, <a href=\"https://issuetracker.google.com/issues/287516207\">b/287516207</a>)</li>\n <li>This patch exposes <code>WatchFaceType</code> constants in <code>WatchFaceTypes</code>, <code>CanvasType</code> constants in <code>CanvasTypes</code>, <code>TapType</code> constants in <code>TapTypes</code> and <code>ComplicationsSlotBoundsType</code> constants in <code>ComplicationsSlotBoundsType</code>. (<a href=\"https://android-review.googlesource.com/#/q/I3b85afb17aa66668bb1b012c1eb9849b38affeb9\">I3b85a</a>, <a href=\"https://issuetracker.google.com/issues/288750666\">b/288750666</a>)</li>\n <li><code>WatchFace.OverlayStyle</code> has very low usage and is not well supported by OEMs so we're depreciating it with intention to remove it at a later date. (<a href=\"https://android-review.googlesource.com/#/q/I7344a08f21f3a2986594288409cea11f4ec0b7d8\">I7344a</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3b5b931546a48163444a9eddc533489fcddd7494..3315f1ef094c312203fe26841287902916fbedf5/wear/watchface"
+    }
+  ]
+}

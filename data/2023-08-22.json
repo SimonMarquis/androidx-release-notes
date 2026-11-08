@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#august_22_2023",
+  "title": "August 22, 2023",
+  "releasedOn": "2023-08-22",
+  "updated": "2023-08-22T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#august_22_2023",
+  "components": [
+    {
+      "id": "test-runner",
+      "name": "Test Runner",
+      "version": "1.6.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#runner-1.6.0-alpha04",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Force initialization of instrumentationRunListener, to prevent NPEs when instrumenting system server process.</li>\n</ul>\n<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Upgrade to androidx.annotation:1.7.0-beta01</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

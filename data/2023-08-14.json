@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#august_14_2023",
+  "title": "August 14, 2023",
+  "releasedOn": "2023-08-14",
+  "updated": "2023-08-14T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#august_14_2023",
+  "components": [
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.1.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.1.1",
+      "detailsHtml": "<ul>\n <li>Common Library:\n  <ul>\n   <li>Remove accidentally added <code>multidex</code> dependency from all modules (<a href=\"https://github.com/androidx/media/issues/499\">#499</a>).</li>\n  </ul></li>\n <li>ExoPlayer:\n  <ul>\n   <li>Fix issue in <code>PlaybackStatsListener</code> where spurious <code>PlaybackStats</code> are created after the playlist is cleared.</li>\n   <li>Add additional fields to Common Media Client Data (CMCD) logging: streaming format (sf), stream type (st), version (v), top birate (tb), object duration (d), measured throughput (mtp) and object type (ot) (<a href=\"https://github.com/google/ExoPlayer/issues/8699\">#8699</a>).</li>\n  </ul></li>\n <li>Audio:\n  <ul>\n   <li>Fix a bug where <code>Player.getState()</code> never transitioned to <code>STATE_ENDED</code> when playing very short files (<a href=\"https://github.com/androidx/media/issues/538\">#538</a>).</li>\n  </ul></li>\n <li>Audio Offload:\n  <ul>\n   <li>Prepend Ogg ID Header and Comment Header Pages to bitstream for offloaded Opus playback in accordance with RFC 7845.</li>\n  </ul></li>\n <li>Video:\n  <ul>\n   <li>H.265/HEVC: Fix parsing SPS short and long term reference picture info.</li>\n  </ul></li>\n <li>Text:\n  <ul>\n   <li>CEA-608: Change cue truncation logic to only consider visible text. Previously indent and tab offset were included when limiting the cue length to 32 characters (which was technically correct by the spec) (<a href=\"https://github.com/google/ExoPlayer/issues/11019\">#11019</a>).</li>\n  </ul></li>\n <li>IMA extension:\n  <ul>\n   <li>Bump IMA SDK version to 3.30.3.</li>\n  </ul></li>\n <li>Session:\n  <ul>\n   <li>Add custom layout to the state of the controller and provide a getter to access it. When the custom layout changes, <code>MediaController.Listener.onCustomLayoutChanged</code> is called. Apps that want to send different custom layouts to different Media3 controller can do this in <code>MediaSession.Callback.onConnect</code> by using an <code>AcceptedResultBuilder</code> to make sure the custom layout is available to the controller when connection completes.</li>\n   <li>Fix cases where <code>MediaLibraryServiceLegacyStub</code> sent an error to a <code>Result</code> that didn't support this which produced an <code>UnsupportedOperationException</code> (<a href=\"https://github.com/androidx/media/issues/78\">#78</a>).</li>\n   <li>Fix the way <code>PlayerWrapper</code> creates a <code>VolumeProviderCompat</code> by determining <code>volumeControlType</code> through both legacy commands (<code>COMMAND_ADJUST_DEVICE_VOLUME</code> and <code>COMMAND_SET_DEVICE_VOLUME</code>) and new commands (<code>COMMAND_ADJUST_DEVICE_VOLUME_WITH_FLAGS</code> and <code>COMMAND_SET_DEVICE_VOLUME_WITH_FLAGS</code>) (<a href=\"https://github.com/androidx/media/issues/554\">#554</a>).</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}
