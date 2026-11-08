@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#october_11_2019",
+  "title": "October 11, 2019",
+  "releasedOn": "2019-10-11",
+  "updated": "2019-10-11T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#october_11_2019",
+  "components": [
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.2.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.2.0-beta02",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed an issue where Fragment's <code>onInflate()</code> did not receive proper attributes from <code>FragmentContainerView</code>, breaking cases such as <code>NavHostFragment</code>. (<a href=\"https://issuetracker.google.com/issues/142421837\">b/142421837</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/20f7c62349217f2b3f79a3c7548b2331235de42c..50959249335066aab14331fa93c0fa132cc00deb/fragment"
+    }
+  ]
+}

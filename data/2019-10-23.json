@@ -1,0 +1,145 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#october_23_2019",
+  "title": "October 23, 2019",
+  "releasedOn": "2019-10-23",
+  "updated": "2019-10-23T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#october_23_2019",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.1.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6f072e1c234477ad31b7dfe6dfc22b08cc7307f5..c378b9a2eae63d2701c82b0144af36e33d15c26a/activity/activity"
+    },
+    {
+      "id": "annotation-experimental",
+      "name": "Annotation-Experimental",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/annotation#experimental-1.0.0-rc01",
+      "detailsHtml": "<p><strong>Known issues</strong></p>\n<p>When using Studio 3.5 stable, warnings from the <code>@Experimental</code> usage lint detector are not displayed in the IDE for invalid Java usages of Kotlin <code>@Experimental</code> annotation. See <a href=\"https://issuetracker.google.com/issues/140640322\">b/140640322</a>.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/400408ab67b8b2dc8df47dacc7456fccc303bdd0..0bc38a30ea2471d0866c80859ed7fa94e664f461/annotation"
+    },
+    {
+      "id": "autofill",
+      "name": "Autofill",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/autofill#1.0.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/391dc4bc729d2973a6e6e57916d3008c58026e56..ce07ec29121b02ac196689766626af39a5fa8700/autofill"
+    },
+    {
+      "id": "benchmark",
+      "name": "Benchmark",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/benchmark#1.0.0-rc01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Added systrace tracing to benchmarks</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed metric instability issue where JIT wouldn't finish before warm up due to deprioritization (<a href=\"https://issuetracker.google.com/issues/140773023\">b/140773023</a>)</li>\n <li>Unified JSON output directory across Android Gradle Plugin 3.5 and 3.6</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1c249aa2bda2320b9d136bfa1f5c9ca95e856efc..12751d3bc911509ac8f983745088c152fc999978/benchmark/"
+    },
+    {
+      "id": "biometric",
+      "name": "Biometric",
+      "version": "1.0.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/biometric#1.0.0-rc02",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Added a workaround for certain devices that are known to incorrectly provide a weak biometric when crypto-based authentication is invoked on API versions 28 and 29 (<a href=\"https://issuetracker.google.com/issues/142150327\">b/142150327</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/fe945d3eaf74d53a53dfbb4a0ba51bb0781be415..4be2d81a8c67ebabf9c92d684f7fa293015f418e/biometric"
+    },
+    {
+      "id": "browser",
+      "name": "Browser",
+      "version": "1.2.0-alpha09",
+      "url": "https://developer.android.com/jetpack/androidx/releases/browser#1.2.0-alpha09",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>The <code>Token</code> class can be used to represent the identity of a package, it contains both the package name and the signature of the package’s signing certificate.\n  <ul>\n   <li>It is designed to be serialized to a byte[] for persistence.</li>\n   <li>It is used by the <code>TrustedWebActivityService</code> to determine what TWA provider is allowed to connect to it.</li>\n   <li>It is used by the <code>TrustedWebActivityConnectionPool</code> by the TWA provider to determine which packages are valid to connect to.</li>\n  </ul></li>\n <li>The <code>TokenStore</code> interface is now used by the <code>TrustedWebActivityService</code> to determine which app is allowed to connect to it.\n  <ul>\n   <li>It is up to the client to call <code>TokenStore#store</code>, <code>TrustedWebActivityService</code> only loads the Tokens.</li>\n  </ul></li>\n <li>The <code>TrustedWebActivityServiceConnectionPool</code> (previously TrustedWebActivityServiceConnectionManager) no longer stores the set of verified packages:\n  <ul>\n   <li><code>registerClient</code> and <code>getVerifiedPackages</code> have now been removed.</li>\n   <li>The collection of verified packages is now provided manually to <code>execute</code> (previously <code>connect</code>) and <code>serviceExistsForScope</code>.</li>\n  </ul></li>\n <li>The <code>TrustedWebActivityService</code> delegates to the overriding class to store the verified provider.\n  <ul>\n   <li><code>setVerifiedProvider</code> has been removed.</li>\n   <li>The client must implement <code>getTokenStore</code> which returns a <code>TokenStore</code> that can be used to store and retrieve a <code>Token</code>.</li>\n  </ul></li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>The <code>TrustedWebActivityServiceConnectionManager</code> class:\n  <ul>\n   <li>Is now called <code>TrustedWebActivityServiceConnectionPool</code>.</li>\n   <li>Is now final.</li>\n   <li>Is constructed by the static <code>create</code> method instead of a public constructor.</li>\n  </ul></li>\n <li>The <code>TrustedWebActivityService</code> class:\n  <ul>\n   <li>Has thread annotations on overridable methods.</li>\n  </ul></li>\n <li>The <code>TrustedWebActivityServiceWrapper</code> class:\n  <ul>\n   <li>Is now called <code>TrustedWebActivityServiceConnection</code>.</li>\n   <li>Is now final.</li>\n   <li>Now throws raw RemoteExceptions instead of wrapping them in RuntimeExceptions.</li>\n  </ul></li>\n <li>The <code>ShareTarget#FileFormField</code> class is now final.</li>\n <li>The <code>TrustedWebUtils#splashScreensAreSupported</code> method has been renamed to <code>areSplashScreensSupported</code>.</li>\n <li>The <code>TrustedWebActivityIntentBuilder#getUrl</code> method has been renamed to <code>TrustedWebActivityIntentBuilder#getUri</code>.</li>\n <li>The <code>SplashScreenParamKey</code> static fields have been prefixed with <code>KEY_</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5859e2fea48acda3c5a0216e2973e71a7ce75538..5ce6d3ab9df61dc34670503ed762053d336a09c0/browser"
+    },
+    {
+      "id": "coordinatorlayout",
+      "name": "CoordinatorLayout",
+      "version": "1.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/coordinatorlayout#1.1.0-rc01",
+      "detailsHtml": "<strong>Note:</strong><span> The next release of CoordinatorLayout will remove the deprecated <code>DefaultBehavior</code> annotation. Switch all usages of that annotation to the <code>AttachedBehavior</code> interface instead.</span> \n<p><strong>New features</strong></p>\n<ul>\n <li>Exposed CoordinatorLayout to accessibility services (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1056175\">aosp/1056175</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c8501f258905089258e1d19e04fd610bb923c364..b98f40c889e3083050d4270e953874921fde8e52/coordinatorlayout"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.2.0-rc01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li><code>FragmentContainerView</code> now supports the <code>class</code> attribute in addition to <code>android:name</code>, mirroring the functionality of the <code>&lt;fragment&gt;</code> tag. (<a href=\"https://issuetracker.google.com/issues/142722242\">b/142722242</a>)</li>\n <li>Added a new Lint check that ensures you are using <code>getViewLifecycleOwner()</code> when observing <code>LiveData</code> from <code>onCreateView()</code>, <code>onViewCreated()</code>, or <code>onActivityCreated()</code>. (<a href=\"https://issuetracker.google.com/issues/137122478\">b/137122478</a>)</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>The <code>onDismiss</code> and <code>onCancel</code> callbacks on <code>DialogFragment</code> now guarantee that the <code>DialogInterface</code> passed to them is non-null and that <code>getDialog()</code> returns non-null when they are executed. (<a href=\"https://issuetracker.google.com/issues/141974033\">b/141974033</a>)</li>\n <li><code>FragmentContainerView</code> now adds the Fragment defined by <code>class</code> or <code>android:name</code> as part of inflation, ensuring that <code>findFragmentById()</code> and <code>findFragmentByTag()</code> work immediately afterwards. (<a href=\"https://issuetracker.google.com/issues/142520327\">b/142520327</a>)</li>\n <li>Fixed an <code>IllegalStateException</code> in <code>FragmentContainerView</code> due to the state being saved. (<a href=\"https://issuetracker.google.com/issues/142580713\">b/142580713</a>)</li>\n <li>Fixed an <code>UnsupportedOperationException</code> in <code>FragmentContainerView</code> when the <code>FragmentContainerView</code> class is obfuscated. (<a href=\"https://issuetracker.google.com/issues/142657034\">b/142657034</a>)</li>\n</ul>\n<p><strong>Known issues</strong></p>\n<ul>\n <li>Fragments referenced only via the <code>class</code> or <code>android:name</code> attribute on a <code>FragmentContainerView</code> are not kept by ProGuard automatically, requiring that you manually add a keep rule for each fragment class. We have disabled the Lint rule suggesting moving to <code>FragmentContainerView</code> until this is fixed via <code>aapt2</code>. (<a href=\"https://issuetracker.google.com/issues/142601969\">b/142601969</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/50959249335066aab14331fa93c0fa132cc00deb..b36efec9f0fbc815605584732e6e2b59b7fd0575/fragment"
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.2.0-rc01",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed an issue where <code>launchWhenCreated</code> and related methods would run one frame later than the associated lifecycle method due to its use of <code>Dispatchers.Main</code> instead of <code>Dispatchers.Main.immediate</code>. (<a href=\"https://android-review.googlesource.com/1145596\">aosp/1145596</a>)</li>\n</ul>\n<p><strong>External contributions</strong></p>\n<ul>\n <li>Thanks to Nicklas Ansman for contributing the fix! (<a href=\"https://android-review.googlesource.com/1145596\">aosp/1145596</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/0b805f6f9716b03d7e7753590d78f3f2115e1e76..b7bd1f02d0ebc5d54b228055b60fc52a478c69a3/lifecycle"
+    },
+    {
+      "id": "lifecycle-viewmodel-savedstate",
+      "name": "Lifecycle ViewModel-SavedState",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#viewmodel-savedstate-1.0.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/f14ad350142290622d1645e1d0e280cbe8ca4c2f..c378b9a2eae63d2701c82b0144af36e33d15c26a/lifecycle/lifecycle-viewmodel-savedstate"
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "version": "1.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media#1.2.0-alpha01",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li>Added the following methods:\n  <ul>\n   <li><code>MediaSessionCompat.Callback.onSetPlaybackSpeed()</code></li>\n   <li><code>MediaControllerCompat.setPlaybackSpeed()</code></li>\n   <li><code>MediaControllerCompat.getSessionInfo()</code></li>\n  </ul></li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Implemented prevention against a <code>BadParcelableException</code> when passing a Bundle object via an IPC call</li>\n <li>The constructor of <code>MediaControllerCompat</code> no longer throws a <code>RemoteException</code></li>\n <li>Implemented prevention against the calling of callback methods after <code>MediaSessionCompat.release()</code></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/de87d1aef00e890a6117a03ca8af2168b2227bc5..f14ad350142290622d1645e1d0e280cbe8ca4c2f/media"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.2.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2180ea57914af961d4f2bb43802b42ae0d1802e0..c378b9a2eae63d2701c82b0144af36e33d15c26a/navigation"
+    },
+    {
+      "id": "recyclerview",
+      "name": "Recyclerview",
+      "version": "1.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/recyclerview#1.1.0-rc01",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed an \"Application Not Responding\" when overriding <code>RecyclerViewAccessibilityDelegate.ItemDelegate</code> (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1138057/\">aosp/1138057</a>, <a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1133434/\">aosp/1133434</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7cf80b101a4e9ee0fa66337dd7528f7b5d670c78..b4450eea34b0f7f4c6a46b25e2ffb1cfcaef2966/recyclerview/recyclerview"
+    },
+    {
+      "id": "room",
+      "name": "Room",
+      "version": "2.2.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.2.1",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed a bug where Room would incorrectly warn about <code>CURSOR_MISMATCH</code> with the compiler option<code>expandProjection</code> turned ON. (<a href=\"http://issuetracker.google.com/140759491\">b/140759491</a>)</li>\n <li>Added a retry mechanism for handling the missing native library used for verifying queries during compile time.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/31d127394de2acb29cd81204796b413f5a1db8b2..33f1d55259b216abd7f9f5a8bcb2a363f8a0070c/room"
+    },
+    {
+      "id": "transition",
+      "name": "Transition",
+      "version": "1.3.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/transition#1.3.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/71bb8aed30b5127486fc7bf88a0b8dfe0b36180e..c378b9a2eae63d2701c82b0144af36e33d15c26a/transition/transition"
+    },
+    {
+      "id": "viewpager2",
+      "name": "ViewPager2",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/viewpager2#1.0.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/cb65a71c76ace87c2046f2212ca9031d44cbb256..743e7f1c517cfe59c2e2e4149c655888670508d4/viewpager2"
+    },
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.3.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.3.0-alpha03",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Added <code>WorkManager.createCancelPendingIntent()</code> API which makes it easy to cancel <code>WorkRequest</code>s without having to register another component in the <code>AndroidManifest.xml</code>. This API makes it especially easy to cancel <code>WorkRequest</code>s from <code>Notification</code>s. We expect this to be paired with the new foreground APIs in 2.3.0.</li>\n <li>WorkManager now depends on <code>androidx.room:*:2.2.0</code> stable.</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Renamed <code>ForegroundInfo.getNotificationType()</code> to <code>ForegroundInfo.getForegroundServiceType()</code> to be more consistent with the underlying platform APIs. (<a href=\"https://issuetracker.google.com/issues/142729893\">b/142729893</a>, <a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1143316\">aosp/1143316</a>)</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed a bug which is caused by an unnecessary call to <code>setTransactionSuccessful()</code> outside of a transaction. This happens for rare migrations. (<a href=\"https://issuetracker.google.com/issues/142580433\">b/142580433</a>, <a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1141737\">aosp/1141737</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3ceb16dfb202e267249a5a5f14e9159ff0f95d9e..bc0450b5cd9c18270bfc4ce5068140e0b76d52c9/work"
+    }
+  ]
+}
