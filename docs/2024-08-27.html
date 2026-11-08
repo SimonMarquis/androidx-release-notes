@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>August 27, 2024 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for August 27, 2024: Media3 1.4.1.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2024-08-27.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="august-27-2024">
+            <div class="date-divider"><a href="./#august-27-2024" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">August 27, 2024</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="stable" data-search="media3 1.4.1 2024-08-27 august 27, 2024" id="august-27-2024-media3-1-4-1">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                <div class="actions"><a href="https://github.com/androidx/media/commits/1.4.1" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.4.1" class="badge stable">1.4.1</a></div>
+              </div>
+              <div class="notes"><ul><li>ExoPlayer:
+  <ul><li>Handle preload callbacks asynchronously in <code>PreloadMediaSource</code> <a href="https://github.com/androidx/media/issues/1568" title="#1568" class="ref ref-github">#1568</a>.</li><li>Allow playback regardless of buffered duration when loading fails <a href="https://github.com/androidx/media/issues/1571" title="#1571" class="ref ref-github">#1571</a>.</li></ul></li><li>Extractors:
+  <ul><li>MP3: Fix <code>Searched too many bytes</code> error by correctly ignoring trailing non-MP3 data based on the length field in an <code>Info</code> frame <a href="https://github.com/androidx/media/issues/1480" title="#1480" class="ref ref-github">#1480</a>.</li></ul></li><li>Text:
+  <ul><li>TTML: Fix handling of percentage <code>tts:fontSize</code> values to ensure they are correctly inherited from parent nodes with percentage <code>tts:fontSize</code> values.</li><li>Fix <code>IndexOutOfBoundsException</code> in <code>LegacySubtitleUtil</code> due to incorrectly handling the case of the requested output start time being greater than or equal to the final event time in the <code>Subtitle</code> <a href="https://github.com/androidx/media/issues/1516" title="#1516" class="ref ref-github">#1516</a>.</li></ul></li><li>DRM:
+  <ul><li>Fix <code>android.media.MediaCodec$CryptoException: Operation not supported in this configuration: ERROR_DRM_CANNOT_HANDLE</code> error on API 31+ devices playing L1 Widevine content. This error is caused by an incomplete implementation of the framework <a href="https://developer.android.com/reference/android/media/MediaDrm#requiresSecureDecoder(java.lang.String)"><code>MediaDrm.requiresSecureDecoder</code></a> method <a href="https://github.com/androidx/media/issues/1603" title="#1603" class="ref ref-github">#1603</a>.</li></ul></li><li>Effect:
+  <ul><li>Add a <code>release()</code> method to <code>GlObjectsProvider</code>.</li></ul></li><li>Session:
+  <ul><li>Transform a double-tap of <code>KEYCODE_HEADSETHOOK</code> into a 'seek to next' action, as <a href="https://developer.android.com/reference/androidx/media3/session/MediaSession#media-key-events-mapping">documented</a> <a href="https://github.com/androidx/media/issues/1493" title="#1493" class="ref ref-github">#1493</a>.</li><li>Handle <code>KEYCODE_HEADSETHOOK</code> as a 'play' command in <code>MediaButtonReceiver</code> when deciding whether to ignore it to avoid a <code>ForegroundServiceDidNotStartInTimeException</code> <a href="https://github.com/androidx/media/issues/1581" title="#1581" class="ref ref-github">#1581</a>.</li></ul></li><li>RTSP Extension:
+  <ul><li>Skip invalid Media Descriptions in SDP parsing <a href="https://github.com/androidx/media/issues/1472" title="#1087" class="ref ref-github">#1087</a>.</li></ul></li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
