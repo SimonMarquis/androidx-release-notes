@@ -1,0 +1,26 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#february_6_2026",
+  "title": "February 6, 2026",
+  "releasedOn": "2026-02-06",
+  "updated": "2026-02-06T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#february_6_2026",
+  "components": [
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.9.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.9.2",
+      "detailsHtml": "<ul>\n <li>ExoPlayer:\n  <ul>\n   <li>Fix bug where <code>ProgressiveMediaSource</code> propagates out-of-date timeline info to player and the queued periods unexpectedly get removed (<a href=\"https://github.com/androidx/media/issues/3016\">#3016</a>).</li>\n  </ul></li>\n <li>Session:\n  <ul>\n   <li>Fix issue where system UI button placement workaround negatively affects other UI surface like Android Auto or manufacturers not needing the workaround (<a href=\"https://github.com/androidx/media/issues/3041\">#3041</a>).</li>\n  </ul></li>\n <li>Cast extension:\n  <ul>\n   <li>Fix bug where transferring from Cast to local playback was broken.</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": "https://github.com/androidx/media/commits/1.9.2"
+    },
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.10.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.10.0-alpha01",
+      "detailsHtml": "<p>Use the 1.10.0 <a href=\"https://developer.android.com/jetpack/androidx/releases/media3#1.10.0\">stable version</a>.</p>",
+      "commitsUrl": null
+    }
+  ],
+  "rssUpdated": "2026-02-06T00:00:00Z"
+}

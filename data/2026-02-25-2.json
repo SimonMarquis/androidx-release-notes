@@ -1,0 +1,18 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#february_25_2026_2",
+  "title": "February 25, 2026",
+  "releasedOn": "2026-02-25",
+  "updated": "2026-02-25T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#february_25_2026_2",
+  "components": [
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.10.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.10.0-beta01",
+      "detailsHtml": "<p>Use the 1.10.0 <a href=\"https://developer.android.com/jetpack/androidx/releases/media3#1.10.0\">stable version</a>.</p>",
+      "commitsUrl": null
+    }
+  ],
+  "rssUpdated": "2026-02-25T00:00:00Z"
+}
