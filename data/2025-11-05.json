@@ -1,0 +1,178 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#november_5_2025",
+  "title": "November 5, 2025",
+  "releasedOn": "2025-11-05",
+  "updated": "2025-11-05T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#november_5_2025",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.12.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.12.0-rc01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix runtime failures for <code>BackHandler</code> and <code>PredictiveBackHandler</code> in apps using custom Activity classes. These composables now safely fall back to <code>LocalOnBackPressedDispatcherOwner</code> while preserving dispatch order in apps that support <code>NavigationEventDispatcherOwner</code>. (<a href=\"https://android-review.googlesource.com/#/q/I43873459dbaa00b35fbf22f6fc5e9172f97198d2\">I43873</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/46bcdef6281ae0f03c3a2bb2812edfc2c0e66d05..bcc8bee1eb595dcb47e9d7acf0379692cc49061f/activity"
+    },
+    {
+      "id": "appfunctions",
+      "name": "Appfunctions",
+      "version": "1.0.0-alpha06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appfunctions#1.0.0-alpha06",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Support embedding resource as part of AppFunction response</li>\n <li>Allow using <code>FLAG_GRANT_PERSISTABLE_URI_PERMISSION</code> in <code>AppFunctionUriGrant</code></li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add <code>ResourceHolder</code> API (<a href=\"https://android-review.googlesource.com/#/q/I08c1cd97978c0a1008a4d06a4dec7411f74d399c\">I08c1c</a>, <a href=\"https://issuetracker.google.com/issues/447530724\">b/447530724</a>)</li>\n <li>Add <code>AppFunctionTextResource</code> API (<a href=\"https://android-review.googlesource.com/#/q/I7d54f8f56818addcc43de8bf20960a5a62c4f48d\">I7d54f</a>, <a href=\"https://issuetracker.google.com/issues/447530724\">b/447530724</a>)</li>\n <li>Add <code>AppFunctionOneOfTypeMetadata</code> API (<a href=\"https://android-review.googlesource.com/#/q/I12c67479b526332fa58a03164ccb51cd5daddcd6\">I12c67</a>, <a href=\"https://issuetracker.google.com/issues/449915612\">b/449915612</a>)</li>\n <li>Drop Compat suffix from Service APIs. (<a href=\"https://android-review.googlesource.com/#/q/Ib9291c5faeb6caf1dac723b81b7642350f812674\">Ib9291</a>, <a href=\"https://issuetracker.google.com/issues/449797980\">b/449797980</a>, <a href=\"https://issuetracker.google.com/issues/449797980\">b/449797980</a>)</li>\n <li>Support build <code>AppFunctionData</code> from <code>AllOfType</code> (<a href=\"https://android-review.googlesource.com/#/q/Ib11763755ead6155aaa8919779ffc262e1d69227\">Ib1176</a>, <a href=\"https://issuetracker.google.com/issues/447535093\">b/447535093</a>)</li>\n <li>Add get/set Parcelable API(s) in <code>AppFunctionData</code> (<a href=\"https://android-review.googlesource.com/#/q/I3aec78ef958a7c9d26d430b1033f51bbbe903de0\">I3aec7</a>, <a href=\"https://issuetracker.google.com/issues/447530985\">b/447530985</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix the issue that ignoring nullable required field would fail when constructing <code>AppFunctionData</code> (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/3791966\">I52195</a>)</li>\n <li>Fix the issue that using <code>List&lt;PendingIntent&gt;</code> with <code>AppFunction</code> would fail at compile time (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/3795955\">Iebde7</a>)</li>\n <li>Fix the issue that <code>ByteArray</code>’s metadata was generated incorrectly as <code>List&lt;ByteArray&gt;</code> (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/3810704\">I2e499</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/dac153545321dddc78a0fe286c86be49f86de8f6..a3cfe112d4f736e9cd9dd1c4b222448bfcc3cfa4/appfunctions"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.10.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.10.0-beta02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/784e4a2de372f09d49c65fbc1ca64681a25a5f06..d1c84233fc2372352b838d165d256581ff37ada9/compose/animation"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.10.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.10.0-beta02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/784e4a2de372f09d49c65fbc1ca64681a25a5f06..d1c84233fc2372352b838d165d256581ff37ada9/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.10.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.10.0-beta02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/784e4a2de372f09d49c65fbc1ca64681a25a5f06..d1c84233fc2372352b838d165d256581ff37ada9/compose/material"
+    },
+    {
+      "id": "compose-material-3",
+      "name": "Compose Material 3",
+      "version": "1.5.0-alpha08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3#1.5.0-alpha08",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>hourInput</code> and <code>minuteInput</code> properties added to the <code>TimePickerState</code> interface. These properties are intended to hold the raw, unvalidated input from the user. The existing hour and minute properties remain and represent the last known valid time. (<a href=\"https://android-review.googlesource.com/#/q/I09d74e7f175ee2ab5339384e568a48e388914c66\">I09d74</a>, <a href=\"https://issuetracker.google.com/issues/394612017\">b/394612017</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>A bug where Switch could not be used with <code>ReusableContent</code> without animating has been fixed. (<a href=\"https://android-review.googlesource.com/#/q/I61093900125d4d045c5bcf129e3a2d420044cefe\">I61093</a>,<a href=\"https://issuetracker.google.com/issues/455909150\"> b/455909150</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/46bcdef6281ae0f03c3a2bb2812edfc2c0e66d05..c907d5394acb1b40d6145046653734db55e55b8b/compose/material3"
+    },
+    {
+      "id": "compose-material3-adaptive",
+      "name": "Compose Material3 Adaptive",
+      "version": "1.3.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3-adaptive#1.3.0-alpha03",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/46bcdef6281ae0f03c3a2bb2812edfc2c0e66d05..de4156d8a5b07409092dc83ff4008ace1c8363e4/compose/material3/adaptive"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.10.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.10.0-beta02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>\n  <p>We've made several API-incompatible changes to simplify the installation and management of <code>RetainedValuesStore</code>s. Existing calls to <code>retain</code> and <code>RetainedEffect</code> are unaffected, but any custom <code>RetainedValuesStore</code>s will require a migration to be compatible with this release. (<a href=\"https://android-review.googlesource.com/#/q/If3c2f6af591234cc185e38263fa5671c72ff5813\">If3c2f</a>, <a href=\"https://issuetracker.google.com/issues/451921682\">b/451921682</a>, <a href=\"https://issuetracker.google.com/issues/450539803\">b/450539803</a>)</p>\n </li>\n <li>\n  <p><code>RetainedValuesStore</code> no longer exposes low-level APIs to start/stop retention. Retention state now automatically follows the content. <code>LocalRetainedValuesStoreProvider</code> is now offered to install <code>RetainedValuesStore</code>. <code>LocalRetainedValuesStore</code> should not be provided directly. See the updated documentation and samples for more information on these changes.</p>\n </li>\n <li>\n  <p><code>RetainedValuesStoreProvider</code> is renamed to <code>RetainedValuesStoreRegistry</code>. This class now only exposes APIs to install and manage the <code>RetainedValuesStore</code>s in composition.</p>\n </li>\n <li>\n  <p><code>ControlledRetainedValuesStore</code> is replaced by <code>ManagedRetainedValuesStore</code>.</p>\n </li>\n <li>\n  <p><code>RetainedValuesStore</code> is now an interface.</p>\n </li>\n</ul>\n<p>Previously, installing a custom <code>RetainedValuesStore</code> may have looked like this:</p>\n<div></div>\n<pre><code><span>  </span><span>val</span><span> </span><span>retainedValuesStore</span><span> </span><span>=</span><span> </span><span>retainControlledRetainedValuesStore</span><span>()</span>\n<span>  </span><span>if</span><span> </span><span>(</span><span>active</span><span>)</span><span> </span><span>{</span>\n<span>      </span><span>CompositionLocalProvider</span><span>(</span><span>LocalRetainedValuesStore</span><span> </span><span>provides</span><span> </span><span>retainedValuesStore</span><span>)</span><span> </span><span>{</span>\n<span>          </span><span>content</span><span>()</span>\n<span>      </span><span>}</span>\n\n<span>      </span><span>val</span><span> </span><span>composer</span><span> </span><span>=</span><span> </span><span>currentComposer</span>\n<span>      </span><span>DisposableEffect</span><span>(</span><span>retainedValuesStore</span><span>)</span><span> </span><span>{</span>\n<span>          </span><span>val</span><span> </span><span>cancellationHandle</span><span> </span><span>=</span>\n<span>              </span><span>if</span><span> </span><span>(</span><span>retainedValuesStore</span><span>.</span><span>retainExitedValuesRequestsFromSelf</span><span> &gt; </span><span>0</span><span>)</span><span> </span><span>{</span>\n<span>                  </span><span>composer</span><span>.</span><span>scheduleFrameEndCallback</span><span> </span><span>{</span>\n<span>                      </span><span>retainedValuesStore</span><span>.</span><span>stopRetainingExitedValues</span><span>()</span>\n<span>                  </span><span>}</span>\n<span>              </span><span>}</span><span> </span><span>else</span><span> </span><span>{</span>\n<span>                  </span><span>null</span>\n<span>              </span><span>}</span>\n\n<span>          </span><span>onDispose</span><span> </span><span>{</span>\n<span>              </span><span>cancellationHandle</span><span>?.</span><span>cancel</span><span>()</span>\n<span>              </span><span>retainedValuesStore</span><span>.</span><span>startRetainingExitedValues</span><span>()</span>\n<span>          </span><span>}</span>\n<span>      </span><span>}</span>\n<span>  </span><span>}</span>\n</code></pre>\n<p>With these API changes, this installation can be expressed with this code instead:</p>\n<div></div>\n<pre><code><span>  </span><span>val</span><span> </span><span>retainedValuesStore</span><span> </span><span>=</span><span> </span><span>retainManagedRetainedValuesStore</span><span>()</span>\n<span>  </span><span>if</span><span> </span><span>(</span><span>active</span><span>)</span><span> </span><span>{</span>\n<span>      </span><span>LocalRetainedValuesStoreProvider</span><span>(</span><span>retainedValuesStore</span><span>)</span><span> </span><span>{</span>\n<span>          </span><span>content</span><span>()</span>\n<span>      </span><span>}</span>\n<span>  </span><span>}</span>\n</code></pre>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Transfers invalidations of the scope in movable content before moving that content out of the slot table (<a href=\"https://android-review.googlesource.com/#/q/I9d1230d2fc2ff52f9e041b4d42bb6d3d86fd1d80\">I9d123</a>, <a href=\"https://issuetracker.google.com/issues/451651649\">b/451651649</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/784e4a2de372f09d49c65fbc1ca64681a25a5f06..d1c84233fc2372352b838d165d256581ff37ada9/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.10.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.10.0-beta02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/784e4a2de372f09d49c65fbc1ca64681a25a5f06..d1c84233fc2372352b838d165d256581ff37ada9/compose/ui"
+    },
+    {
+      "id": "core-splashscreen",
+      "name": "Core-splashscreen",
+      "version": "1.2.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#core-splashscreen-1.2.0",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/40e5626dcdec536576fecb4158c54e929329f682..39e25369b3a6dd0b08038933f4c1b15af324b339/core/core-splashscreen"
+    },
+    {
+      "id": "core-backported-fixes",
+      "name": "Core-backported-fixes",
+      "version": "1.0.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#core-backported-fixes-1.0.0-beta02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Add known issue b/452390376 (<a href=\"https://developer.android.com/reference/android/hardware/camera2/CameraMetadata#CONTROL_AE_MODE_ON_LOW_LIGHT_BOOST_BRIGHTNESS_PRIORITY\">Auto Exposure Mode Low Light Boost (LLB)</a>) cannot be enabled for stream use cases such as VIDEO_CALL on Pixel 10 devices. (<a href=\"https://android-review.googlesource.com/#/q/Iba4803d52c9c93b88694aceb7d218b4c7a0e77f0\">Iba480</a>, <a href=\"https://issuetracker.google.com/issues/452390376\">b/452390376</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Mark specific pixel builds as fixed. (<a href=\"https://android-review.googlesource.com/#/q/I4c7519189c6fd1a792333925e0a1bd3cbb37c712\">I4c751</a>, <a href=\"https://issuetracker.google.com/issues/398591036\">b/398591036</a>)</li>\n <li>Add support for specifying a list of manually tested build fingerprints for a KnownIssue. (<a href=\"https://android-review.googlesource.com/#/q/Iea9f9f14a4c81a66689552d59ecaf2b41f02c494\">Iea9f9</a>, <a href=\"https://issuetracker.google.com/issues/453691379\">b/453691379</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3ee4b76dd7f79cd4ce3fbe7aa76816fec0b8186a..9b6dee951e595dec2015b7b31a9591a22f7ea265/core/core-backported-fixes"
+    },
+    {
+      "id": "core-location-altitude-core-location-altitude-external-protobuf-core-location-altitude-proto",
+      "name": "Core-location-altitude Core-location-altitude-external-protobuf Core-location-altitude-proto",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#core-location-altitude-1.0.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b8a68b0896897fa158508d73a31998a26161d9a7..b7446a78657b91b088b062544628faaf3c5a5582/core"
+    },
+    {
+      "id": "datastore",
+      "name": "Datastore",
+      "version": "1.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/datastore#1.2.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/86834fc8081b293eb0510226f68608d1688b9b99..ba855a7539de0ec6b32d3c2c3d3d90346f2bf854/datastore"
+    },
+    {
+      "id": "input-motionprediction",
+      "name": "Input-motionprediction",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/input#input-motionprediction-1.0.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.10.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.10.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/46bcdef6281ae0f03c3a2bb2812edfc2c0e66d05..75dae7c6076e30667f6ec99ab8f3790ac42a9cc3/lifecycle"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.9.6",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.9.6",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>The Navigation <code>SafeArgs</code> plugin has been migrated to the modern Android Gradle Plugin APIs which should ensure it is compatible with all AGP 8.4.2+ releases. As a result of these changes, the output directory for files generated by the plugin has been changed to the default location provided by AGP. (<a href=\"https://android-review.googlesource.com/#/q/Ie09d6947cd45dba0c9300d1c5d6f5c100bb0f736\">Ie09d6</a>, <a href=\"https://android-review.googlesource.com/#/q/I7c431915405539e350c26c49ce7b62782ba9fa6d\">I7c431</a>, <a href=\"https://issuetracker.google.com/issues/203559535\">b/203559535</a>, <a href=\"https://issuetracker.google.com/issues/293920476\">b/293920476</a>, <a href=\"https://issuetracker.google.com/issues/269532448\">b/269532448</a>, <a href=\"https://issuetracker.google.com/issues/443261197\">b/443261197</a>)</li>\n <li>Navigation <code>SafeArgs</code> plugin will no longer require setting the <code>useAndroidX</code> property when being used with AGP 9.0.0-alpha04+. (<a href=\"https://android-review.googlesource.com/#/q/I6c3a4eecab1c0927d72742952acdf4aa135b7c7e\">I6c3a4</a>, <a href=\"https://issuetracker.google.com/issues/444746731\">b/444746731</a>, <a href=\"https://issuetracker.google.com/issues/443106400\">b/443106400</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/312fd656536cad70baa4b54621f396d2bd72543f..35a9607626f7b80b5418beb35a698f22307e6be3/navigation"
+    },
+    {
+      "id": "navigation3",
+      "name": "Navigation3",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation3#1.0.0-rc01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>NavDisplay</code> now sets a <code>LocalLifecycleOwner</code> at the <code>Scene</code> level that allows scene authors to determine whether all transitions have finished by checking that the <code>Lifecycle.State</code> is <code>RESUMED</code>. The behavior of the <code>LocalLifecycleOwner</code> at the <code>NavEntry</code> level is unchanged: it also remains capped at <code>STARTED</code> if a transition is in progress and is additionally capped at <code>CREATED</code> if that <code>NavEntry</code> has been popped from the back stack and is in the process of animating out. (<a href=\"https://android-review.googlesource.com/#/q/I03113a4729d59a9d2bc09d4422d41615f60ab935\">I03113</a>, <a href=\"https://issuetracker.google.com/issues/454045829\">b/454045829</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/46bcdef6281ae0f03c3a2bb2812edfc2c0e66d05..ebd829d61998c48ea35b0e2adbc801d9c5ae36cc/navigation3"
+    },
+    {
+      "id": "navigationevent",
+      "name": "Navigationevent",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigationevent#1.0.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/56e97d713c63942b89d95099730e3650408e0321..7cc48474876c19197c67eda0f2d537f62760130e/navigationevent"
+    },
+    {
+      "id": "savedstate",
+      "name": "Savedstate",
+      "version": "1.4.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/savedstate#1.4.0",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/a4c23caec259e53f8cfdc40b79e95c6f33136bec..56090e32a2b7028588a6dd0c73d706c6dd8dd1ee/savedstate"
+    },
+    {
+      "id": "wear-compose",
+      "name": "Wear Compose",
+      "version": "1.5.5",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-compose#1.5.5",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Improve <code>TimePicker</code> number visibility on small screens (<a href=\"https://android-review.googlesource.com/#/q/I70fbe12cda89485cab14f5bb17004b12a5c7d5ba\">I70fbe</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d600d4f1409804d07c6a4d50c71c333822ed8b03..01a1cf69f31a0d08503d82bc77f1151a90b5fc84/wear/compose"
+    },
+    {
+      "id": "xr-glimmer",
+      "name": "Xr Glimmer",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/xr-glimmer#1.0.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Initial developer release of Jetpack Compose Glimmer, design language and UI components for building augmented Android XR experiences. Designed for clarity, legibility, and minimal distraction with simplified styling, differentiated focus, and optimized elevation.</li>\n <li>Get started with our initial set of Jetpack Compose Glimmer components:\n  <ul>\n   <li>Text</li>\n   <li>Icons</li>\n   <li>Title Chips</li>\n   <li>Cards</li>\n   <li>Lists</li>\n   <li>Buttons</li>\n   <li>Stacks (Under development)</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c907d5394acb1b40d6145046653734db55e55b8b/xr/glimmer/glimmer"
+    }
+  ],
+  "rssUpdated": "2025-11-05T00:00:00Z"
+}

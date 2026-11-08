@@ -1,0 +1,314 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#november_19_2025",
+  "title": "November 19, 2025",
+  "releasedOn": "2025-11-19",
+  "updated": "2025-11-19T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#november_19_2025",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.12.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.12.0",
+      "detailsHtml": "<p><strong>Important changes since 1.11.0:</strong></p>\n<ul>\n <li>The <code>Androidx Activity</code> library is now dependent on the new <code>NavigationEvent</code> library. This includes support for the <code>NavigationEventDispatcher</code> in <code>ComponentActivity</code> and <code>ComponentDialog</code>. The <code>OnBackPressed</code> APIs have also been rewritten on top of the <code>NavigationEvent</code> APIs to ensure it is backward compatible with the previous library.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/cc0d43d81e035bfc91fee2dd339c049e4fef8cc9..693a1dc9ba291b1c951cb7f2930fe3009e85e49e/activity"
+    },
+    {
+      "id": "appfunctions",
+      "name": "Appfunctions",
+      "version": "1.0.0-alpha07",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appfunctions#1.0.0-alpha07",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Support deprecating <code>AppFunction</code> (<a href=\"https://android-review.googlesource.com/#/q/I392294f4cda7036d967d010c41f5acb2b1136abb\">I39229</a>, <a href=\"https://issuetracker.google.com/issues/454661174\">b/454661174</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix issue with non-null required top-level parameters (<a href=\"https://android-review.googlesource.com/#/q/Ic60fc80c67ad724866313c3c744954493b9c0e78\">Ic60fc</a>, <a href=\"https://b.corp.google.com/issues/456717542\">b/456717542</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/a3cfe112d4f736e9cd9dd1c4b222448bfcc3cfa4..fe02b1e42b486a2911eb323ef49a2caf556982bc/appfunctions"
+    },
+    {
+      "id": "car-app",
+      "name": "Car App",
+      "version": "1.8.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/car-app#1.8.0-alpha03",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added an Image to Rows, which enables new list use cases.</li>\n <li>Add <code>SectionedItemTemplate#alphabeticalIndexingStrategy</code> to allow different alphabetic indexing for list accelerators.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Added an <code>endImageType</code> for <code>endImages</code> in Rows (<a href=\"https://android-review.googlesource.com/#/q/I8865bd1f704f3c58dcf865f3bf827c1fd2c69b41\">I8865b</a>)</li>\n <li>Add <code>SectionedItemTemplate#alphabeticalIndexingStrategy</code>. This is a replacement to <code>#isAlphabeticalIndexingAllowed</code> and gives developers more options for alphabetical indexing. (<a href=\"https://android-review.googlesource.com/#/q/Ia164dd88866ec0c8caf99bb5f61b8e0721851a1c\">Ia164d</a>, <a href=\"https://issuetracker.google.com/issues/410092683\">b/410092683</a>)</li>\n <li>Add support for an end Image to a car app Row. (<a href=\"https://android-review.googlesource.com/#/q/If93f0ed10b30a90f597c246823a41dee9b87f9c2\">If93f0</a>)</li>\n <li>Added <code>CarIcon MediaPlayback</code> to simplify use of standard action <code>MediaPlayback</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ib6cb7469c686b3730642d305e95001420133bb9f\">Ib6cb7</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Moving the default <code>minSdk</code> from API 21 to API 23 (<a href=\"https://android-review.googlesource.com/#/q/Ibdfca5942dbb414ca07594ba240093db14aad4df\">Ibdfca</a>, <a href=\"https://issuetracker.google.com/issues/380448311\">b/380448311</a>, <a href=\"https://issuetracker.google.com/issues/435705964\">b/435705964</a>, <a href=\"https://issuetracker.google.com/issues/435705223\">b/435705223</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/e8af6ab7417811bf386c52a59ab5d0b94d194eeb..4d752a0684fb1bf991cd0d15ebd3649ee8684ca1/car/app"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.10.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.10.0-rc01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>unveilIn</code> and <code>veilOut</code> options are now available for <code>EnterExitTransitions</code>. This allows to animate an overlay layer in front of the entering or exiting content. (<a href=\"https://android-review.googlesource.com/#/q/If26fe2c15212de1b0ad2b91ad70bfd5d882610c2\">If26fe</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Support bounds tracking through detaching &amp; reattaching of <code>sharedElement</code> (<a href=\"https://android-review.googlesource.com/#/q/be0e9e763a9683077c0525f7c0b6cf3aab144d07\">be0e9e</a>)</li>\n <li>Make shared element map observable for transition activeness observation. (<a href=\"https://android-review.googlesource.com/#/q/1fc2ecd18345bebf0c2ad31382478a877e47ea3a\">1fc2ec</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d1c84233fc2372352b838d165d256581ff37ada9..b48588febd37d5947dfa0f2827d2b5ca6af2ed90/compose/animation"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.9.5",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.9.5",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b7d3ef4c3ddc955decb747a0aa7b72eb953b1e41..1dc35fe3e1d2d1b9dad444a0458c5e8039ba3d26/compose/animation"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.10.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.10.0-rc01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Disabled <code>isCacheWindowForPagerEnabled</code> flag. (<a href=\"https://android-review.googlesource.com/#/q/Iffdec7dd9d2c7f8f967f0e8d415a1dd9bade7341\">Iffdec</a>, <a href=\"https://issuetracker.google.com/issues/458193632\">b/458193632</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d1c84233fc2372352b838d165d256581ff37ada9..b48588febd37d5947dfa0f2827d2b5ca6af2ed90/compose/foundation"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.9.5",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.9.5",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b7d3ef4c3ddc955decb747a0aa7b72eb953b1e41..1dc35fe3e1d2d1b9dad444a0458c5e8039ba3d26/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.10.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.10.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d1c84233fc2372352b838d165d256581ff37ada9..b48588febd37d5947dfa0f2827d2b5ca6af2ed90/compose/material"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.9.5",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.9.5",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b7d3ef4c3ddc955decb747a0aa7b72eb953b1e41..1dc35fe3e1d2d1b9dad444a0458c5e8039ba3d26/compose/material"
+    },
+    {
+      "id": "compose-material-3",
+      "name": "Compose Material 3",
+      "version": "1.5.0-alpha09",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3#1.5.0-alpha09",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Adding expressive menu updates. This includes a new toggleable menu item, selectable menu item, menu groups, and menu popup. It also includes new expressive menu default values in <code>MenuDefaults</code>. (<a href=\"https://android-review.googlesource.com/#/q/I5cdd4602ebdbdaafe64530aa90b941b3f8f78d28\">I5cdd4</a>, <a href=\"https://issuetracker.google.com/issues/417731597\">b/417731597</a>, <a href=\"https://issuetracker.google.com/issues/448646125\">b/448646125</a>, <a href=\"https://issuetracker.google.com/issues/448646896\">b/448646896</a>, <a href=\"https://issuetracker.google.com/issues/448646891\">b/448646891</a>)</li>\n <li>The <code>Modifier.minimumInteractiveComponentSize</code> now provides two new public <code>AlignmentLines: MinimumInteractiveTopAlignmentLine</code> and <code>MinimumInteractiveLeftAlignmentLine</code>. These lines mark the visual edges of a component before extra space is added to meet minimum touch target requirements. (<a href=\"https://android-review.googlesource.com/#/q/I7f485758ac96d65dda9cb5c9a3720dad938cd031\">I7f485</a>, <a href=\"https://issuetracker.google.com/issues/458124197\">b/458124197</a>)</li>\n <li>Added <code>ExpandedDockedSearchBarWithGap</code>. (<a href=\"https://android-review.googlesource.com/#/q/Idb7f84f427518f29f7098981453059c1e2d125cf\">Idb7f8</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add checks to enable precision pointer component sizing. (<a href=\"https://android-review.googlesource.com/#/q/I8108d4aa8e847e4bbd534d9879cd13e32a178dae\">I8108d</a>)</li>\n <li>Add <code>Modifier.align</code> to <code>ButtonGroupScope</code> (<a href=\"https://android-review.googlesource.com/#/q/I0389016a088f07194e58088670c7b679c5f3dc6e\">I03890</a>, <a href=\"https://issuetracker.google.com/issues/416590906\">b/416590906</a>)</li>\n <li>Remove deprecated experimental <code>ModalBottomSheet</code> APIs that have been in at least one stable release. (<a href=\"https://android-review.googlesource.com/#/q/Ifbe1da0ba4e86e08461e425ea6bd72c3e958147f\">Ifbe1d</a>, <a href=\"https://issuetracker.google.com/issues/449757604\">b/449757604</a>)</li>\n <li>New <code>ButtonGroup</code> overload with <code>verticalAlignment</code> parameter. (<a href=\"https://android-review.googlesource.com/#/q/I23a37b349bb151e6c6c4bd4a443b588c970ee6c1\">I23a37</a>, <a href=\"https://issuetracker.google.com/issues/416590906\">b/416590906</a>)</li>\n <li>Removed deprecated hidden experimental APIs that have been in at least one stable release. (<a href=\"https://android-review.googlesource.com/#/q/I4f68d0bc899a40c729e52d16eee103c9545d73cd\">I4f68d</a>, <a href=\"https://issuetracker.google.com/issues/449754465\">b/449754465</a>, <a href=\"https://issuetracker.google.com/issues/449749933\">b/449749933</a>, <a href=\"https://issuetracker.google.com/issues/401311419\">b/401311419</a>, <a href=\"https://issuetracker.google.com/issues/449749928\">b/449749928</a>, <a href=\"https://issuetracker.google.com/issues/449756019\">b/449756019</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Add tooltip to floating toolbar's default overflow button. (<a href=\"https://android-review.googlesource.com/#/q/Ife952463b108fbe81cde436742b6407a2047b1f2\">Ife952</a>, <a href=\"https://issuetracker.google.com/issues/422781172\">b/422781172</a>)</li>\n <li>Fix <code>WideNavigationRail</code>'s indicator being cut if its set to a larger width via a larger label size. (<a href=\"https://android-review.googlesource.com/#/q/I9d740694039f775f71282d64cf86b9268c550fec\">I9d740</a>, <a href=\"https://issuetracker.google.com/issues/444728723\">b/444728723</a>)</li>\n <li>Update split button trailing buttons to center the icon optically depending on the given shape even in RTL. (<a href=\"https://android-review.googlesource.com/#/q/Icab824524076ab63c857f77b19acfd3007de3697\">Icab82</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c907d5394acb1b40d6145046653734db55e55b8b..4d752a0684fb1bf991cd0d15ebd3649ee8684ca1/compose/material3"
+    },
+    {
+      "id": "compose-material3-adaptive",
+      "name": "Compose Material3 Adaptive",
+      "version": "1.3.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3-adaptive#1.3.0-alpha04",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixes <code>ThreePaneScaffold</code> crashes when margins are set. (<a href=\"https://android-review.googlesource.com/#/q/2df348fdb7fbade31bad8be4ae0cc995912a992f\">2df348</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/de4156d8a5b07409092dc83ff4008ace1c8363e4..4d752a0684fb1bf991cd0d15ebd3649ee8684ca1/compose/material3/adaptive"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.10.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.10.0-rc01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Guard against reentrant modification when recording derived states in <code>SnapshotStateObserver</code> (<a href=\"https://android-review.googlesource.com/#/q/I7b86222f143f4a70dfcc0be9c9bde437ab756e64\">I7b862</a>, <a href=\"https://issuetracker.google.com/issues/435655844\">b/435655844</a>, <a href=\"https://issuetracker.google.com/issues/456249373\">b/456249373</a>, <a href=\"https://issuetracker.google.com/issues/402535073\">b/402535073</a>)</li>\n <li>[Lint] Minor bug fix to make the detector warn compound assignment properly. (<a href=\"https://android-review.googlesource.com/#/q/I08319a3f15e1f9dd2f4edd28a7dea9e7d131c481\">I08319</a>, <a href=\"https://issuetracker.google.com/issues/456775556\">b/456775556</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d1c84233fc2372352b838d165d256581ff37ada9..b48588febd37d5947dfa0f2827d2b5ca6af2ed90/compose/runtime"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.9.5",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.9.5",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Transfers invalidations of the scope in movable content before moving that content out of the slot table (<a href=\"https://android-review.googlesource.com/#/q/I9d1230d2fc2ff52f9e041b4d42bb6d3d86fd1d80\">I9d123</a>, <a href=\"https://issuetracker.google.com/issues/451651649\">b/451651649</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b7d3ef4c3ddc955decb747a0aa7b72eb953b1e41..1dc35fe3e1d2d1b9dad444a0458c5e8039ba3d26/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.10.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.10.0-rc01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Correctly send <code>visibilityChanged</code> callbacks with false when <code>minDurationMs</code> is not zero. (<a href=\"https://android-review.googlesource.com/#/q/2ac08b84ed4deab3b28c513e46bd3177b5579267\">2ac08b8</a>, <a href=\"https://issuetracker.google.com/issues/456384555\">b/456384555</a>)</li>\n <li>Do not call <code>onVisibilityChanged</code> callback when the node is initially not visible. (<a href=\"https://android-review.googlesource.com/#/q/3969e8d29808265bcd5cc1730541f15e9b0cb3cf\">3969e8d</a>, <a href=\"https://issuetracker.google.com/issues/447364998\">b/447364998</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d1c84233fc2372352b838d165d256581ff37ada9..b48588febd37d5947dfa0f2827d2b5ca6af2ed90/compose/ui"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.9.5",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.9.5",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b7d3ef4c3ddc955decb747a0aa7b72eb953b1e41..1dc35fe3e1d2d1b9dad444a0458c5e8039ba3d26/compose/ui"
+    },
+    {
+      "id": "datastore",
+      "name": "Datastore",
+      "version": "1.2.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/datastore#1.2.0",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/420da5f291449f11801e378c6789a328a06ec6cb..9c556fd714d249b153cbe3ddce61e9eb43f77ffc/datastore"
+    },
+    {
+      "id": "datastore",
+      "name": "Datastore",
+      "version": "1.3.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/datastore#1.3.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added KMP Web support in <code>DataStore</code> by using the <code>sessionStorage</code> API. This feature allows <code>DataStore</code> to persist data temporarily within a single browser tab. (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/3130f94ffea871b556a231bed86f331c1fd82643\">I60fad</a>, <a href=\"https://issuetracker.google.com/316376114\">b/316376114</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9c556fd714d249b153cbe3ddce61e9eb43f77ffc..fa8c4d8394173ca27d836045c97432e9b7462ecf/datastore"
+    },
+    {
+      "id": "emoji-emoji-appcompat-emoji-bundled",
+      "name": "Emoji Emoji-appcompat Emoji-bundled",
+      "version": "1.2.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/emoji#1.2.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>EmojiMetadata</code> typeface specified as non null. (<a href=\"https://android-review.googlesource.com/#/q/Ic727f852ab6a1ca1e799eea8b1e2919473613ac5\">Ic727f</a>, <a href=\"https://issuetracker.google.com/issues/236341259\">b/236341259</a>)</li>\n <li><code>EmojiCompat</code> correctly sets <code>EditorInfo.extras</code> on Android R (<a href=\"https://android-review.googlesource.com/#/q/I1ea9bdd579e64139d98bc1298ad2d9c5ade65045\">I1ea9b</a>, <a href=\"https://issuetracker.google.com/issues/196452690\">b/196452690</a>)</li>\n <li>Custom widgets that use IME not subclassing <code>EditText</code> may call <code>EmojiCompat.updateEditorInfo</code> to inform IME that they support <code>EmojiCompat</code> processing. (<a href=\"https://android-review.googlesource.com/#/q/I1ea9bdd579e64139d98bc1298ad2d9c5ade65045\">I1ea9b</a>, <a href=\"https://issuetracker.google.com/issues/196452690\">b/196452690</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Moving the default <code>minSdk</code> from API 21 to API 23 (<a href=\"https://android-review.googlesource.com/#/q/Ibdfca5942dbb414ca07594ba240093db14aad4df\">Ibdfca</a>, <a href=\"https://issuetracker.google.com/issues/380448311\">b/380448311</a>, <a href=\"https://issuetracker.google.com/issues/435705964\">b/435705964</a>, <a href=\"https://issuetracker.google.com/issues/435705223\">b/435705223</a>)</li>\n <li>This library now uses <a href=\"https://jspecify.dev/\">JSpecify nullness annotations</a>, which are type-use. Kotlin developers should use the following compiler arguments to enforce correct usage: <code>-Xjspecify-annotations=strict, -Xtype-enhancement-improvements-strict-mode</code> (<a href=\"https://android-review.googlesource.com/#/q/Ibb74cbbb710f914213543cc1c6a8273e0e19c4e4\">Ibb74c</a>, <a href=\"https://issuetracker.google.com/issues/326456246\">b/326456246</a>)</li>\n <li><code>EmojiCompat</code> init callbacks will now use the handler from each view, respecting views not on the main thread. (<a href=\"https://android-review.googlesource.com/#/q/Iccbcfb16840662f348cb632cfba9b263fb7ad963\">Iccbcf</a>, <a href=\"https://issuetracker.google.com/issues/278897602\">b/278897602</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c432e3c08f7a59f114989dbcefaa1e18fb555df3..e5dc00768ba5e06b850928bd526e1a0a0337c8a2/emoji"
+    },
+    {
+      "id": "games-activity",
+      "name": "Games-activity",
+      "version": "4.4.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/games#games-activity-4.4.0-beta01",
+      "detailsHtml": "<ul>\n <li>This release transitions <code>androidx.games:games-activity</code> from alpha to beta.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/opt/gamesdk/+log/c28257b2c517145c01bca12b3af2531f5bf494d6..8f89733591eaa8e79de6ddbbb5936c8ac8904ec0/game-activity"
+    },
+    {
+      "id": "games-text-input",
+      "name": "Games-text-input",
+      "version": "4.3.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/games#games-text-input-4.3.0-beta01",
+      "detailsHtml": "<ul>\n <li>This release transitions <code>androidx.games:games-text-input</code> from alpha to beta.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/opt/gamesdk/+log/2ae5d1f41c01ac94f38b46132b1f45f4346fa773..8f89733591eaa8e79de6ddbbb5936c8ac8904ec0/game-text-input"
+    },
+    {
+      "id": "ink",
+      "name": "Ink",
+      "version": "1.0.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/ink#1.0.0-beta02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Experimental custom low latency shape APIs, assorted bug fixes (<a href=\"https://android-review.googlesource.com/#/q/Ib8d2fe54389b3a2a9f5d305343878dd766d02527\">Ib8d2f</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Improve floating point precision on <code>StrokeInputBatch</code> serialization, fixing a drift in the values from repeated encoding and decoding</li>\n <li>More robust system input sanitization.</li>\n <li>Fix brush texture support in <code>InProgressStrokes</code> composable</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/46bcdef6281ae0f03c3a2bb2812edfc2c0e66d05..4d752a0684fb1bf991cd0d15ebd3649ee8684ca1/ink"
+    },
+    {
+      "id": "input-motionprediction",
+      "name": "Input-motionprediction",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/input#input-motionprediction-1.0.0",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.10.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.10.0",
+      "detailsHtml": "<p><strong>Important changes since 2.9.0:</strong></p>\n<ul>\n <li>\n  <p>Add a <code>rememberLifecycleOwner</code> composable to enable creating scoped lifecycles directly within the UI. This is useful for components that need to manage their own lifecycles independently such as a <code>HorizontalPager</code> that wants to only make the current page <code>RESUMED</code> or libraries like <a href=\"https://developer.android.com/jetpack/androidx/releases/navigation3#1.0.0\">Navigation3</a>:</p>\n  <div></div>\n  <pre><code><span>@Composable</span>\n<span>fun</span><span> </span><span>MyComposable</span><span>()</span><span> </span><span>{</span>\n<span>    </span><span>// This LifecycleOwner is automatically moved to DESTROYED when</span>\n<span>    </span><span>// it leaves composition and its maxLifecycle is the maximum of either</span>\n<span>    </span><span>// the maxLifecycle you set or the Lifecycle.State of the parentLifecycleOwner</span>\n<span>    </span><span>val</span><span> </span><span>lifecycleOwner</span><span> </span><span>=</span><span> </span><span>rememberLifecycleOwner</span><span>(</span>\n<span>        </span><span>maxLifecycle</span><span> </span><span>=</span><span> </span><span>RESUMED</span><span>,</span>\n<span>        </span><span>parentLifecycleOwner</span><span> </span><span>=</span><span> </span><span>LocalLifecycleOwner</span><span>.</span><span>current</span><span>,</span>\n<span>    </span><span>)</span>\n<span>    </span><span>CompositionLocalProvider</span><span>(</span><span>LocalLifecycleOwner</span><span> </span><span>provides</span><span> </span><span>lifecycleOwner</span><span>)</span><span> </span><span>{</span>\n<span>        </span><span>val</span><span> </span><span>childLifecycleOwner</span><span> </span><span>=</span><span> </span><span>LocalLifecycleOwner</span><span>.</span><span>current</span>\n<span>    </span><span>}</span>\n<span>}</span>\n</code></pre>\n </li>\n <li>\n  <p>The <code>lifecycle-viewmodel-navigation3</code> artifact provides a prebuilt integration for <a href=\"https://developer.android.com/jetpack/androidx/releases/navigation3#1.0.0\">Navigation3</a>, allowing you to enable scoping <code>ViewModel</code> instances to individual screens (‘entries’) by using the <code>rememberViewModelStoreNavEntryDecorator()</code> API:</p>\n  <div></div>\n  <pre><code><span>@Composable</span>\n<span>fun</span><span> </span><span>MyComposable</span><span>()</span><span> </span><span>{</span>\n<span>    </span><span>NavDisplay</span><span>(</span>\n<span>        </span><span>backStack</span><span> </span><span>=</span><span> </span><span>backStack</span><span>,</span>\n<span>        </span><span>entryDecorators</span><span> </span><span>=</span>\n<span>            </span><span>listOf</span><span>(</span>\n<span>                </span><span>rememberSaveableStateHolderNavEntryDecorator</span><span>(),</span>\n<span>                </span><span>// Add this line to automatically scope ViewModels to each entry</span>\n<span>                </span><span>rememberViewModelStoreNavEntryDecorator</span><span>(),</span>\n<span>            </span><span>),</span>\n<span>        </span><span>entryProvider</span><span> </span><span>=</span><span> </span><span>entryProvider</span><span> </span><span>{</span>\n<span>            </span><span>// Add your entries here</span>\n<span>        </span><span>}</span>\n<span>    </span><span>}</span>\n<span>}</span>\n</code></pre>\n </li>\n <li>\n  <p>Add a builder factory function for <code>CreationExtras</code>, providing a more convenient and idiomatic Kotlin API.</p>\n  <div></div>\n  <pre><code><span>override</span><span> </span><span>val</span><span> </span><span>defaultViewModelCreationExtras</span><span>:</span><span> </span><span>CreationExtras</span>\n<span>    </span><span>// Use the CreationExtras builder to add in a custom value to the default</span>\n<span>    </span><span>// CreationExtras in your Activity or Fragment</span>\n<span>    </span><span>get</span><span>()</span><span> </span><span>=</span><span> </span><span>super</span><span>.</span><span>defaultViewModelCreationExtras</span><span> </span><span>+</span><span> </span><span>CreationExtras</span><span> </span><span>{</span>\n<span>        </span><span>this</span><span>[</span><span>CustomKey</span><span>]</span><span> </span><span>=</span><span> </span><span>\"customValue\"</span>\n<span>   </span><span>}</span>\n</code></pre>\n </li>\n <li>\n  <p>Add native support for nullable types in <code>SavedStateHandle.saved</code>, simplifying saving and restoring nullable properties.</p>\n </li>\n <li>\n  <p>Mark <code>SavedStateHandle</code> constructors as <code>@VisibleForTesting</code>.</p>\n </li>\n <li>\n  <p>The minSdk has changed from API 21 to API 23.</p>\n </li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/de92a2e4117ed83ceccc5bf636358c1df27d4bd6..ee621bea3237b1eab3c48eef4cf7ef7c7943b4bb/lifecycle"
+    },
+    {
+      "id": "navigation3",
+      "name": "Navigation3",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation3#1.0.0",
+      "detailsHtml": "<p><strong>Introducing Navigation3!</strong></p>\n<ul>\n <li>The Navigation3 library is now stable! Navigation3 is the AndroidX Compose first approach to navigation.</li>\n <li>For more information, see our <a href=\"https://android-developers.googleblog.com/2025/05/announcing-jetpack-navigation-3-for-compose.html\">announcement blog post</a>, visit the <a href=\"https://goo.gle/nav3\">resources</a>, and try <a href=\"https://github.com/android/nav3-recipes\">the recipes</a>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1c211305886d70caa42620facce1b97ed7e47bf5..7eee8c24b22a08646c79f7457d72a760c36ccc25/navigation3"
+    },
+    {
+      "id": "navigationevent",
+      "name": "Navigationevent",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigationevent#1.0.0",
+      "detailsHtml": "<p><strong>Major features of 1.0.0:</strong></p>\n<p>The <code>Navigation Event</code> library is now stable! <code>Navigation Event</code> is the AndroidX library for handling system level interactions such as system-back and predictive back in Android (and other platforms).</p>\n<ul>\n <li>\n  <p>To handle <code>NavigationEvent</code>s, you can implement your own <code>NavigationEventHandler</code> that overrides the desired functions. You then need to add the handler to a <code>NavigationEventDispatcher</code>. Starting with the <a href=\"https://developer.android.com/jetpack/androidxactivity#1.12.0\">Activity <code>1.12.0</code></a> release, <code>ComponentActivity</code> implements the new <code>NavigationEventDispatcherOwner</code> interface, which provides a dispatcher that is ready to use :</p>\n  <div></div>\n  <pre><code><span>// The NavigationEventInfo provides information about a navigation state</span>\n<span>object</span><span> </span><span>CurrentInfo</span><span> </span><span>:</span><span> </span><span>NavigationEventInfo</span><span>()</span>\n\n<span>// you can retrieve this from any component that is a NavigationEventDispatcherOwner</span>\n<span>// or you can instantiate your own custom dispatcher</span>\n<span>val</span><span> </span><span>dispatcher</span><span> </span><span>=</span><span> </span><span>myActivity</span><span>.</span><span>navigationEventDispatcher</span>\n\n<span>val</span><span> </span><span>myHandler</span><span> </span><span>=</span><span> </span><span>object</span><span> </span><span>:</span><span> </span><span>NavigationEventHandler&lt;NavigationEventInfo&gt;</span><span>(</span>\n<span>            </span><span>initialInfo</span><span> </span><span>=</span><span> </span><span>CurrentInfo</span><span>,</span>\n<span>            </span><span>isBackEnabled</span><span> </span><span>=</span><span> </span><span>true</span>\n<span>        </span><span>)</span><span> </span><span>{</span>\n<span>            </span><span>override</span><span> </span><span>fun</span><span> </span><span>onBackStarted</span><span>(</span><span>event</span><span>:</span><span> </span><span>NavigationEvent</span><span>)</span><span> </span><span>{</span>\n<span>                </span><span>// Prepare for the back event</span>\n<span>            </span><span>}</span>\n\n<span>            </span><span>override</span><span> </span><span>fun</span><span> </span><span>onBackProgressed</span><span>(</span><span>event</span><span>:</span><span> </span><span>NavigationEvent</span><span>)</span><span> </span><span>{</span>\n<span>                </span><span>// Use event.progress for predictive animations</span>\n<span>            </span><span>}</span>\n\n<span>            </span><span>// This is the required method for final event handling</span>\n<span>            </span><span>override</span><span> </span><span>fun</span><span> </span><span>onBackCompleted</span><span>()</span><span> </span><span>{</span>\n<span>                </span><span>// Complete the back event</span>\n<span>            </span><span>}</span>\n\n<span>            </span><span>override</span><span> </span><span>fun</span><span> </span><span>onBackCancelled</span><span>()</span><span> </span><span>{</span>\n<span>                </span><span>// Cancel the back event</span>\n<span>            </span><span>}</span>\n<span>        </span><span>}</span>\n\n<span>dispatcher</span><span>.</span><span>addHandler</span><span>(</span><span>myHandler</span><span>)</span>\n</code></pre>\n </li>\n <li>\n  <p>The <code>navigationevent:navigationevent-compose</code> module provides a convenient compose function <code>NavigationBackHandler</code> that automatically hooks up the handler to the closest <code>LocalNavigationEventDispatcherOwner</code>’s <code>NavigationEventDispatcher</code> and allows developers to provide the desired behavior as parameters:</p>\n  <div></div>\n  <pre><code><span>object</span><span> </span><span>CurrentInfo</span><span> </span><span>:</span><span> </span><span>NavigationEventInfo</span><span>()</span>\n<span>object</span><span> </span><span>PreviousInfo</span><span> </span><span>:</span><span> </span><span>NavigationEventInfo</span><span>()</span>\n\n<span>val</span><span> </span><span>navEventState</span><span> </span><span>=</span><span> </span><span>rememberNavigationEventState</span><span>(</span>\n<span>  </span><span>currentInfo</span><span> </span><span>=</span><span> </span><span>CurrentInfo</span><span>,</span>\n<span>  </span><span>backInfo</span><span> </span><span>=</span><span> </span><span>PreviousInfo</span>\n<span>)</span>\n\n<span>// Inside composition</span>\n<span>NavigationBackHandler</span><span>(</span>\n<span>    </span><span>State</span><span> </span><span>=</span><span> </span><span>navEventState</span><span>,</span>\n<span>    </span><span>isBackEnabled</span><span> </span><span>=</span><span> </span><span>true</span><span>,</span>\n<span>    </span><span>// optional</span>\n<span>    </span><span>onBackCancelled</span><span> </span><span>=</span><span> </span><span>{</span><span> </span><span>// Cancel the back event },</span>\n<span>    </span><span>// required</span>\n<span>    </span><span>onBackCompleted</span><span> </span><span>=</span><span> </span><span>{</span><span> </span><span>// Complete the back event } ,</span>\n<span>)</span>\n</code></pre>\n </li>\n</ul>\n<p>Using this pattern in Compose makes it very easy to hoist the <code>NavigationEventState</code> and allow it to be observed by different Composable (i.e. in the case of Navigation3, where you can hoist the state out of the <code>NavDisplay</code>).</p>\n<ul>\n <li>\n  <p>Each <code>NavigationEventDispatcher</code> has the ability to provide a parent dispatcher, for both the compose and non-compose cases. This allows developers to create a hierarchical structure where several dispatchers can be managed by a single parent. Having a parent makes handling groups of dispatchers that might need to be disabled or disposed, relatively simple:</p>\n  <div></div>\n  <pre><code><span>// Non-Compose</span>\n<span>val</span><span> </span><span>parentDispatcher</span><span> </span><span>=</span><span> </span><span>NavigationEventDispatcher</span><span>()</span>\n<span>val</span><span> </span><span>childDispatcher</span><span> </span><span>=</span><span> </span><span>NavigationEventDispatcher</span><span>(</span><span>parent</span><span> </span><span>=</span><span> </span><span>parentDispatcher</span><span>)</span>\n\n<span>// Compose</span>\n<span>val</span><span> </span><span>composeChildDispatcher</span><span> </span><span>=</span><span> </span><span>rememberNavigationEventDispatcher</span><span>(</span>\n<span>    </span><span>// This defaults to `LocalNavigationEventDispatcherOwner.current`</span>\n<span>    </span><span>// Must explicitly provide null to have an unparented dispatcher created here</span>\n<span>    </span><span>parent</span><span> </span><span>=</span><span> </span><span>NavigationEventDispatch</span><span>()</span><span> </span>\n<span>)</span>\n</code></pre>\n </li>\n <li>\n  <p>The library also makes it possible to provide signals directly to the <code>NavigationEventDispatcher</code> via a <code>NavigationEventInput</code>. <code>NavigationEventInput</code>s acts as the \"input\" side of the navigation system, translating platform-specific events (like system back gestures or button clicks) into standardized events that can be sent to a <code>NavigationEventDispatcher</code>. The <code>navigationevent:navigationevent</code> module currently provides 2 <code>NavigationEventInput</code>s: a more generic <code>DirectNavigationEventInput</code> to allow any event to be dispatched and an Android specific <code>OnBackInvokedInput</code> that allows a <code>NavigationEventDispatcher</code> to support system back and the predictive back gesture. If you implement your own dispatcher (instead of using the one provided by <code>ComponentActivity</code>) you must manually add your input:</p>\n  <div></div>\n  <pre><code><span>val</span><span> </span><span>dispatcher</span><span> </span><span>=</span><span> </span><span>NavigationEventDispatcher</span><span>()</span>\n\n<span>dispatcher</span><span>.</span><span>addInput</span><span>(</span><span>DirectNavigationEventInput</span><span>())</span>\n<span>dispatcher</span><span>.</span><span>addInput</span><span>(</span><span>OnBackInvokedDefaultInput</span><span>(</span><span>invoker</span><span>))</span>\n</code></pre>\n </li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/cd41781824511ce4d5c4a05d2df4aaaee669f0bc..a336be7aa59aced2a87c402849988939d848fee3/navigationevent"
+    },
+    {
+      "id": "remotecallback",
+      "name": "Remotecallback",
+      "version": "1.0.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/remotecallback#1.0.0-alpha03",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>The Slices framework has been deprecated, it will not receive any update moving forward. If you are looking for a framework that handles communication across apps, consider using AppSearchManager. (<a href=\"https://android-review.googlesource.com/#/q/Ie09cb59a17bfdffa99551032c3966bc13be0d6c2\">Ie09cb</a>, <a href=\"https://issuetracker.google.com/issues/207128063\">b/207128063</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3979d96937e945201359c48c6d992447ef7ef79c..8000d1fa297fd9b56e9a0e4e13e0ad2f66c080d1/remotecallback"
+    },
+    {
+      "id": "room",
+      "name": "Room",
+      "version": "2.8.4",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.8.4",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Added a prepared statement cache to Room’s connection pool when using a <code>SQLiteDriver</code> that does not internally have a pool, such as the <code>BundledSQLiteDriver</code>. This improves performance on repeated execution of the same SQL statement. (<a href=\"https://android-review.googlesource.com/#/q/5f43bc4fa8ad4e19a1db2f2c9c1e7c5cd09e2c87\">5f43bc</a>, <a href=\"https://issuetracker.google.com/319653917\">b/319653917</a>)</li>\n <li>Fix an issue where the actual / expected error message on schema validation was missing information. (<a href=\"https://android-review.googlesource.com/#/q/8b23da648c05461fb66b3f227db5f93259da417c\">8b23da</a>, <a href=\"https://issuetracker.google.com/454531083\">b/454531083</a>)</li>\n <li>Fix an issue with Room’s Kotlin code generation missing <code>@Transaction</code> DAO functions with type variables. (<a href=\"https://android-review.googlesource.com/#/q/a8365de1779bdc7901f34ab4c6186fffea4acc75\">a8365d</a>, <a href=\"https://issuetracker.google.com/251316420\">b/251316420</a>)</li>\n <li>Improve Room’s <code>SupportSQLite</code> Wrapper performance by avoiding thread hops maintaining the same blocking behaviour as the <code>SupportSQLiteDatabase</code> APIs. (<a href=\"https://android-review.googlesource.com/#/q/fc70e487b804f94e5b5a1296213c14450e5582fb\">fc70e4</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/84011c8ceb69163ef306a69e7f317202675eeb4b..75ef81cced187631f0dd74666188bd9d4cd3358f/room"
+    },
+    {
+      "id": "sqlite",
+      "name": "Sqlite",
+      "version": "2.6.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/sqlite#2.6.2",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Improve <code>BundledSQLiteDriver</code> performance by using <code>@FastNative</code> to improve JNI calls. (<a href=\"https://android-review.googlesource.com/#/q/952b92a57fa36d38a644237dab9da1001655fb42\">952b92</a>, <a href=\"https://issuetracker.google.com/313895287\">b/313895287</a>)</li>\n <li>Enable extended error codes on the <code>SQLite</code> connections created by <code>BundledSQLiteDriver</code>. This means error messages coming from <code>SQLite</code> will have a more detailed code which is useful for diagnosing I/O issues and constraint violations. (<a href=\"https://android-review.googlesource.com/#/q/f1ec6f57459dafc7611c091bd3570a9923905112\">f1ec6f</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3dedecfe17d38214f45bae25dc56ebda7396fd9b..fe30df161d480829efb21f37ff67a9f8cac9c620/sqlite"
+    },
+    {
+      "id": "swiperefreshlayout",
+      "name": "SwipeRefreshLayout",
+      "version": "1.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/swiperefreshlayout#swiperefreshlayout-1.2.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7344269b2d862d014a647efafcd7735f0d53f1da..bc967b3b2ff6a5f5047d4e14f4aedbbe49939161/swiperefreshlayout/swiperefreshlayout"
+    },
+    {
+      "id": "tracing-perfetto",
+      "name": "Tracing Perfetto",
+      "version": "1.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/tracing#perfetto-1.0.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Support for 16KB page sizes (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/f42a711fe12a08550d75e8ca3bb6d6834db7a7dd\">b7a7dd</a>)</li>\n <li>Removed manual outlining of access to new platform APIs since this happens automatically via API modeling when using R8 with AGP 7.3 or later (e.g. R8 version 3.3) and for all builds when using AGP 8.1 or later (e.g. D8 version 8.1). Clients who are not using AGP are advised to update to D8 version 8.1 or later. See <a href=\"https://medium.com/androiddevelopers/mitigating-soft-verification-issues-in-r8-and-d8-7e9e06827dfd\">this article</a> for more details. (<a href=\"https://android-review.googlesource.com/#/q/Ia60e0ab9f0fd613883a772c8aa34e27cc986cae8\">Ia60e0</a>, <a href=\"https://issuetracker.google.com/issues/345472586\">b/345472586</a>)</li>\n <li>Avoid bundling copies of <code>FastNative/CriticalNative</code> in the library, and use the stable platform copies. (<a href=\"https://android-review.googlesource.com/#/q/I8238a3ec6e2f3563ee6262857e4978de1d176768\">I8238a</a>, <a href=\"https://issuetracker.google.com/issues/35664282\">b/35664282</a>, <a href=\"https://issuetracker.google.com/issues/280878596\">b/280878596</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/120ca6e0a3f4f240334c74efe9f9da0038522135..262b8e77a141e4b20a5656688137c1a1a89492b0/tracing"
+    },
+    {
+      "id": "wear-compose",
+      "name": "Wear Compose",
+      "version": "1.6.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-compose#1.6.0-alpha05",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Introduce <code>RotarySnapSensitivity</code> for rotary snap behavior and <code>PagerSensitivity</code> for pager fling behavior, to allow applications to adjust the sensitivity level of rotary and fling behavior, especially for pagers. (<a href=\"https://android-review.googlesource.com/#/q/Ic3a83af628c1a6917cd903b6fe6671ae01564392\">Ic3a83</a>, <a href=\"https://issuetracker.google.com/issues/449949891\">b/449949891</a>)</li>\n <li>Simplified changes to <code>rememberTransformingLazyColumnState</code> that were made with the introduction of reverse layout for <code>TransformingLazyColumn</code>, consolidating to a single function and using a sentinel value to use the default anchor index. (<a href=\"https://android-review.googlesource.com/#/q/I093022d57818322126049a6577a327d6314a2db6\">I09302</a>, <a href=\"https://issuetracker.google.com/issues/453731755\">b/453731755</a>)</li>\n <li>Added a new default <code>GenericFailureIcon</code> to be used in <code>FailureConfirmationDialog</code>, which shows a generic error icon. Renamed existing <code>FailureIcon</code> to <code>ConnectionFailureIcon</code>. (<a href=\"https://android-review.googlesource.com/#/q/I8e965334a1d419481debcf5481fde0b4e560678b\">I8e965</a>, <a href=\"https://issuetracker.google.com/issues/453730430\">b/453730430</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Made <code>TimePicker</code> more robust when parsing complex locale patterns. (<a href=\"https://android-review.googlesource.com/#/q/I7b169fb5fae5c787c6a9d1b486234b1aba288b54\">I7b169</a>, <a href=\"https://issuetracker.google.com/issues/456538838\">b/456538838</a>)</li>\n <li>Fixed the initial <code>TransformingLazyColumn</code> layout when <code>verticalArrangement</code> is <code>Arrangement.Center</code>. (<a href=\"https://android-review.googlesource.com/#/q/Id18ef7cf84654c3cd5996fc100f39a95d8280b1c\">Id18ef</a>, <a href=\"https://issuetracker.google.com/issues/451481233\">b/451481233</a>)</li>\n <li>Aligned <code>TransformingLazyColumnState</code> constructor with <code>rememberTransformingLazyColumnState</code> function (<a href=\"https://android-review.googlesource.com/#/q/I36d6a5fd775f294392bbbf343fb6e4923d1d3e4d\">I36d6a</a>, <a href=\"https://issuetracker.google.com/issues/453731755\">b/453731755</a>)</li>\n <li>Updated the tick icon for <code>CheckboxButton</code> to be rounded. (<a href=\"https://android-review.googlesource.com/#/q/Ie645e402e9778ff54e305a51455411262bfdcbd2\">Ie645e</a>, <a href=\"https://issuetracker.google.com/issues/378645751\">b/378645751</a>)</li>\n <li>Updated the tick icon for <code>SwitchButton</code> to be rounded. (<a href=\"https://android-review.googlesource.com/#/q/I31fbfdb376d27e2c2caf019eef39ae6d2673d816\">I31fbf</a>, <a href=\"https://issuetracker.google.com/issues/378642590\">b/378642590</a>)</li>\n <li>Corrected <code>scrollToItem</code> offset in <code>TransformingLazyColumn</code> which was inverting the scrolling direction. (<a href=\"https://android-review.googlesource.com/#/q/Ib2c930e8f4c207df16c2a1aafa81911827191566\">Ib2c93</a>, <a href=\"https://issuetracker.google.com/issues/451481233\">b/451481233</a>)</li>\n <li>Improved <code>SwitchButton</code> and <code>SplitSwitchButton</code> performance. (<a href=\"https://android-review.googlesource.com/#/q/I708deadaae92927510203479ad9e70d852d27242\">I708de</a>, <a href=\"https://issuetracker.google.com/issues/448781327\">b/448781327</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/46bcdef6281ae0f03c3a2bb2812edfc2c0e66d05..105aaabed738991983882996b606775c33a1a821/wear/compose"
+    },
+    {
+      "id": "webkit",
+      "name": "Webkit",
+      "version": "1.15.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/webkit#1.15.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Add experimental <code>WebViewBuilder</code> APIs (<a href=\"https://android-review.googlesource.com/#/q/I06828bd759fd3db1aef3ae480f000f964d182002\">I06828</a>, <a href=\"https://issuetracker.google.com/issues/409740828\">b/409740828</a>)</li>\n <li>Add <code>UiThreadStartupMode</code> for async startup that stops <code>isMultiProcessEnabled()</code> call from startup up Chromium (<a href=\"https://android-review.googlesource.com/#/q/I524ee59f8aff57b6b614ae2dd3c35ac99751edf2\">I524ee</a>, <a href=\"https://issuetracker.google.com/issues/397372092\">b/397372092</a>)</li>\n <li>Hiding <code>UserAgent</code> form factor until 1.16 release (<a href=\"https://android-review.googlesource.com/#/q/Ibac8af4262df78af948c855c5c081406e084ff45\">Ibac8a</a>, <a href=\"https://issuetracker.google.com/issues/430554841\">b/430554841</a>, <a href=\"https://issuetracker.google.com/issues/454438418\">b/454438418</a>)</li>\n <li>Update navigation API to allow applications to provide <code>NavigationListener</code> instances, which can optionally be configured with a custom Executor for background thread callbacks. Multiple <code>NavigationListener</code> instances can now be added to a single <code>WebView</code>.\n  <br>\n  Additionally, this update also adds timing information to the <code>onFirstContentfulPaint</code> callback, providing the time information from navigation start to the paint event. (<a href=\"https://android-review.googlesource.com/#/q/I6aa8e92eba43e5785309afec4cd2de2cc43d4c32\">I6aa8e</a>, <a href=\"https://issuetracker.google.com/issues/448580228\">b/448580228</a>)</li>\n <li>Adds <code>Profile#addQuicHints</code> which allows apps to tell <code>WebView</code> to prefer QUIC / HTTP3 when connecting to the provided origins. (<a href=\"https://android-review.googlesource.com/#/q/I8e36486c3a7188eae0d3c6d59494a1d00a600003\">I8e364</a>, <a href=\"https://issuetracker.google.com/issues/445339041\">b/445339041</a>)</li>\n <li>Updated feature constants with experimental annotations, and updated library README with more information about experimental APIs. (<a href=\"https://android-review.googlesource.com/#/q/I1b914f362b82a65518cfff78ce0f319b67911054\">I1b914</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Releasing <code>androidx.webkit:webkit:1.15.0-beta01</code> (<a href=\"https://android-review.googlesource.com/#/q/I0b1bdeb1a49baa0dbe7d78beb4d6ce3397977782\">I0b1bd</a>, <a href=\"https://issuetracker.google.com/issues/417241552\">b/417241552</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4350deab5806bf95370a4d012d7eeaa70a10be44..4d752a0684fb1bf991cd0d15ebd3649ee8684ca1/webkit/webkit"
+    },
+    {
+      "id": "window",
+      "name": "Window",
+      "version": "1.6.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/window#1.6.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Add helper methods to construct <code>WindowSizeClassSets</code> in a grid form.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add helper methods to construct <code>WindowSizeClassSets</code> in a grid form. (<a href=\"https://android-review.googlesource.com/#/q/I4d6236961e51ed10b3007941bb777401edaabc39\">I4d623</a>, <a href=\"https://issuetracker.google.com/issues/444174274\">b/444174274</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3b3f055fe2da3f4a8a74003f8640b461b1694954..4d752a0684fb1bf991cd0d15ebd3649ee8684ca1/window"
+    },
+    {
+      "id": "window",
+      "name": "Window",
+      "version": "1.5.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/window#1.5.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixes <code>ClassCastException</code> that occurs on certain devices (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/4d5897960201a8713f0f77e0dbd4b0ec2009fff7\">4d58979</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3b3f055fe2da3f4a8a74003f8640b461b1694954..be8b763fe78ab805aa1c9a3bff09f1ff8081dbb2/window"
+    },
+    {
+      "id": "xr-arcore",
+      "name": "Xr Arcore",
+      "version": "1.0.0-alpha08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/xr-arcore#1.0.0-alpha08",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li><code>ARCore</code> for Jetpack XR now supports devices where Google Play Services for AR is available.</li>\n <li>Added Geospatial APIs for VPS Availability and pose conversion (<a href=\"https://android-review.googlesource.com/#/q/I144dc1fc302ff6fc99046fb318e01762e3344ac0\">I144dc</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2b064a168d829249efe96ad64737eb84d6c23d4e..27075f6aa995822e9eed284abcef9deda5515d58/xr/arcore"
+    },
+    {
+      "id": "projected",
+      "name": "Projected",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/xr-projected#projected-1.0.0-alpha02",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Initial alpha release of the Projected library.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/03fefa290d190d39c7e47025f76847d7b8baaf1c..64e40d162445a8c6c0f233dfc6f8890c439b5d6e/xr/projected/projected"
+    },
+    {
+      "id": "xr-runtime",
+      "name": "Xr Runtime",
+      "version": "1.0.0-alpha08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/xr-runtime#1.0.0-alpha08",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li><code>XrDevice</code> added to provide information about device capabilities. (<a href=\"https://android-review.googlesource.com/#/q/Ic9d1f77990e0e36c9288e3511b4b3bfd9a6c06d9\">Ic9d1f</a>)</li>\n <li>Added new <code>ConfigMode.isSupported</code> API for querying session capabilities. (<a href=\"https://android-review.googlesource.com/#/q/Iff7af12f5cb9eed86fa10882bb08ee90a8b516fb\">Iff7af</a>)</li>\n <li>Added <code>XrDisplay.BlendMode</code> API. (<a href=\"https://android-review.googlesource.com/#/q/I484e4ac1190a4b8c57d6d6ef22a799fc75fdd1f2\">I484e4</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Renamed [XrDevice.getPreferredBlendMode] to [XrDevice.getPreferredDisplayBlendMode]. (<a href=\"https://android-review.googlesource.com/#/q/I7e48f09e7e2a4a6c961bbc53f12746c9e9c6e0a0\">I7e48f</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/f4b7c51c02aefb416a700a23672d7285703a2cb6..df9651766b0beb5e3f80083d32772a6f0efec450/xr/runtime"
+    },
+    {
+      "id": "xr-scenecore",
+      "name": "Xr Scenecore",
+      "version": "1.0.0-alpha09",
+      "url": "https://developer.android.com/jetpack/androidx/releases/xr-scenecore#1.0.0-alpha09",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Adds an API for retrieving a <code>ScenePose</code> that represents the composition of the perception space origin pose and a pose with respect to the perception space origin. (<a href=\"https://android-review.googlesource.com/#/q/I5b50a282fee4e643bbb07487317ea749d216c808\">I5b50a</a>)</li>\n <li>Added <code>getGravityAlignedPose</code> function. The gravity aligned pose ignores the Pitch and Roll of rotation. (<a href=\"https://android-review.googlesource.com/#/q/I5ae218eabe7a2c946bddd297f483f5fa2fd07052\">I5ae21</a>)</li>\n <li><code>AnchorEntity.State</code> constant types have been changed from Ints to State subtypes. (<a href=\"https://android-review.googlesource.com/#/q/Ib0c49642c322348f40ff7205f857d6032a8853bd\">Ib0c49</a>)</li>\n <li>Added <code>getChildren()</code> to Entity interface. Updated <code>MainPanelEntity</code> lifecycle. (<a href=\"https://android-review.googlesource.com/#/q/Ia69d6c7e5cdb7b8fd269f4dddf72cdbc67b34ad5\">Ia69d6</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li><code>PointerCaptureComponent.PointerCaptureState</code> constant types have been changed from Ints to <code>PointerCaptureState</code> subtypes. (<a href=\"https://android-review.googlesource.com/#/q/Ic888a3cf67a7be6fa749b8acfb4156c2d34a49c2\">Ic888a</a>)</li>\n <li><code>Scene.spatialCapabilities</code> is now of type <code>Set&lt;SpatialCapability&gt;</code> instead of an Int field. The <code>SpatialCapability</code> constants have been renamed. (<a href=\"https://android-review.googlesource.com/#/q/I9c1096e70b530c0d7564117d2cccc0c538d4c2cf\">I9c109</a>)</li>\n <li><code>SurfaceEntity</code> constant types have been renamed and changed from Ints to <code>SurfaceEntity</code> subtypes. (<a href=\"https://android-review.googlesource.com/#/q/I419edfac64e41f071e9b01a68b416ad0e06f2424\">I419ed</a>)</li>\n <li><code>SpatializerConstant</code> constant types have been renamed and changed from Ints to <code>SpatializerConstant</code> subtypes. (<a href=\"https://android-review.googlesource.com/#/q/Ia0e184fb23b78420e11fd9048e7ec7082c08c34c\">Ia0e18</a>)</li>\n <li><code>TextureSampler</code> constant types have been renamed and changed from Ints to <code>TextureSampler</code> subtypes. (<a href=\"https://android-review.googlesource.com/#/q/I440787f30a0c7af2a1bf5bf6a3be8eba97a04a83\">I44078</a>)</li>\n <li><code>SpatialVisibility</code> constant types have been changed from Ints to <code>SpatialVisibility</code> subtypes. (<a href=\"https://android-review.googlesource.com/#/q/I70739cc1437f3840ee1321c25ebb1d73926fe781\">I70739</a>)</li>\n <li><code>ResizeEvent.ResizeState</code> constant types have been renamed and changed from Ints to <code>ResizeState</code> subtypes. (<a href=\"https://android-review.googlesource.com/#/q/I384d5e31c6fb29725ec34fbfed8b36e0233708d1\">I384d5</a>)</li>\n <li><code>InputEvent</code> constant types have been renamed and changed from Ints to inherit from their respective enclosing type. (<a href=\"https://android-review.googlesource.com/#/q/I828174001ffe242ca57c2e4ad857c6e7a7af2f32\">I82817</a>)</li>\n <li><code>GltfModelEntity.AnimationState</code> constant types have been changed from Ints to <code>AnimationState</code> subtypes. (<a href=\"https://android-review.googlesource.com/#/q/I24f4e5751e77c08b434d3063c385f37e82ad0997\">I24f4e</a>)</li>\n <li><code>AlphaMode</code> constant types have been renamed and changed from Ints to <code>AlphaMode</code> subtypes. (<a href=\"https://android-review.googlesource.com/#/q/I27b56553658d06d40f00115b32cc60e44f88367c\">I27b56</a>)</li>\n <li><code>Space</code> constant types have been changed from Ints to Space subtypes. (<a href=\"https://android-review.googlesource.com/#/q/I9255bff50a69a154dd58b7304552daa70512b7fc\">I9255b</a>)</li>\n <li><code>ScenePose.hitTest</code> and related methods now return <code>null</code> if no intersection was found, instead of a <code>HitTestResult</code> with a null <code>hitPosition</code>. <code>HitTestResult.hitPosition</code> is no longer nullable. (<a href=\"https://android-review.googlesource.com/#/q/I1400a3daaac70ec50f99a11d5548038474f45de6\">I1400a</a>)</li>\n <li>Changed references of <code>ActivityPose</code> to <code>ScenePose</code>. (<a href=\"https://android-review.googlesource.com/#/q/I7fe43b72793a4597abd2bc5913d3a4bae368c451\">I7fe43</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/fcb8595c5d66b0a2d43ae985efed1ff14fa92da1..2f33cda7973a5fca1f200764ce1adaf32540a7d5/xr/scenecore"
+    }
+  ],
+  "rssUpdated": "2025-11-19T00:00:00Z"
+}

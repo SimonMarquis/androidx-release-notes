@@ -1,0 +1,18 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#november_20_2025",
+  "title": "November 20, 2025",
+  "releasedOn": "2025-11-20",
+  "updated": "2025-11-20T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#november_20_2025",
+  "components": [
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.9.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.9.0-beta01",
+      "detailsHtml": "<p>Use the 1.9.0 <a href=\"https://developer.android.com/jetpack/androidx/releases/media3#1.9.0\">stable version</a>.</p>",
+      "commitsUrl": null
+    }
+  ],
+  "rssUpdated": "2025-11-20T00:00:00Z"
+}
