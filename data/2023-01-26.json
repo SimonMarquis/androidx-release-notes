@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#january_26_2023",
+  "title": "January 26, 2023",
+  "releasedOn": "2023-01-26",
+  "updated": "2023-01-26T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#january_26_2023",
+  "components": [
+    {
+      "id": "compose-material-3",
+      "name": "Compose Material 3",
+      "version": "1.1.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3#1.1.0-alpha05",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li><code>DatePickerDialog</code> and accessibility support</li>\n <li>Added Custom thumb and track to <code>RangeSlider</code>.</li>\n</ul>\n<p><strong>Dependency Updates</strong></p>\n<ul>\n <li><code>Compose UI</code> and <code>Compose Material</code> now depend on <a href=\"https://developer.android.com/jetpack/androidx/releases/lifecycle#2.6.0\">Lifecycle 2.6.0</a>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/adf1c279a86ab3886e1666c08e2c3efba783367b..e5dad1e7d1c225f89f7c2d5a39a7a0de8d637d7b/compose/material3"
+    }
+  ]
+}
