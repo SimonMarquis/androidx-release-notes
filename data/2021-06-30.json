@@ -1,0 +1,233 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#june_30_2021",
+  "title": "June 30, 2021",
+  "releasedOn": "2021-06-30",
+  "updated": "2021-06-30T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#june_30_2021",
+  "components": [
+    {
+      "id": "annotation-experimental",
+      "name": "Annotation-Experimental",
+      "version": "1.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/annotation#annotation-experimental-1.2.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Library is now targeting Java 8 language level</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b3c87f0d84c9d910b5458fe784e71d195d431509..19ae3a88ff0824d615355b492cb56049e16991f2/annotation/annotation-experimental"
+    },
+    {
+      "id": "appcompat",
+      "name": "AppCompat",
+      "version": "1.4.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.4.0-alpha03",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Library is now targeting Java 8 language level</li>\n <li>Add emoji2 support for more TextView subclasses (<code>AppCompatMultiAutoCompleteTextView</code>, <code>AppCompatAutoCompleteTextView</code>, <code>AppCompatRadioButton</code>, <code>AppCompatCheckBox</code>).</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Added an API to configure an InputConnection to use View.performReceiveContent to handle IME calls to InputConnection.commitContent. (<a href=\"https://android-review.googlesource.com/#/q/I3a2ad7604145a6aba74ee7a020075f0bd3ecc266\">I3a2ad</a>)</li>\n <li>Add support for EmojiCompat to <code>AppCompatMultiAutoCompleteTextView</code> (<a href=\"https://android-review.googlesource.com/#/q/Ifece0df417fedeb399f0412e732b2c197315e365\">Ifece0</a>)</li>\n <li>Add support for EmojiCompat to <code>AppCompatAutoCompleteTextView</code> (<a href=\"https://android-review.googlesource.com/#/q/Ia1f4b630270b4ffe4c3feb4e7c28cb4aa58fc821\">Ia1f4b</a>)</li>\n <li>Add support for EmojiCompat to <code>AppCompatRadioButton</code> (<a href=\"https://android-review.googlesource.com/#/q/If08afc3259a96d29713b75eb5066746c1810e8a9\">If08af</a>)</li>\n <li>Add support for EmojiCompat to <code>AppCompatCheckBox</code> (<a href=\"https://android-review.googlesource.com/#/q/I2b3bc191bc2504d5dd83edf4735521cc2197e9d4\">I2b3bc</a>)</li>\n <li>Allow null <code>KeyListener</code> in <code>AppCompatEditText</code>. This reverses the non-null annotation that was added to AppCompatEditText in 1.4-alpha01 and restores the previous behavior when passed null. (<a href=\"https://android-review.googlesource.com/#/q/I214824131c0206349b73471a8c22be38bf5dd0d8\">I21482</a>, <a href=\"https://issuetracker.google.com/issues/189559345\">b/189559345</a>)</li>\n <li>Add <code>PopupMenu.setForceShowIcon</code> for parity with platform APIs (<a href=\"https://android-review.googlesource.com/#/q/I43bb3546cc529051e4b88e14438a9e77e8b1b177\">I43bb3</a>, <a href=\"https://issuetracker.google.com/issues/182789798\">b/182789798</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix bug in AppCompatEditText that will reset the inputType specified in XML to remove variations. This bug was introduced in AppCompat 1.4.0-alpha01. (<a href=\"https://android-review.googlesource.com/#/q/I9df3655f05312806c46875e9d5603fe48154dd8e\">I9df36</a>, <a href=\"https://issuetracker.google.com/issues/191061070\">b/191061070</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/86ff5b4bb956431ec884586ce0aea0127e189ec4..19ae3a88ff0824d615355b492cb56049e16991f2/appcompat"
+    },
+    {
+      "id": "appsearch",
+      "name": "AppSearch",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appsearch#1.0.0-alpha02",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Full support of Chinese/Japanese/Korean/Thai languages</li>\n <li>Reduced size of <code>androidx.appsearch:appsearch-local-storage</code></li>\n <li>Removal of maximum size limit of repeated properties</li>\n <li>Allow reuse of builder classes</li>\n <li>Improvements in <code>toString()</code> of certain objects for easier debugging</li>\n <li>Javadoc documentation improvements</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li><code>SearchResult#getMatches</code> renamed to <code>SearchResult#getMatchInfos</code></li>\n <li><code>@Document.Int64Property</code> renamed to <code>@Document.LongProperty</code></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Improvements and fixes to computation of result snippets</li>\n <li>Fixes to bugs in AppSearchSession initialization</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/43efd2a468468f712e4555faaea12019fdfb06e9..8276b615cf32743aaecf8bca0e294eb2e8eb236b/appsearch"
+    },
+    {
+      "id": "camera",
+      "name": "Camera",
+      "version": "1.1.0-alpha06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#1.1.0-alpha06",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Promote the experimental exposure compensation APIs for camera-core (<a href=\"https://android-review.googlesource.com/#/q/I08ee8d04e3ed4078dd548ca900d887bebd37e18c\">I08ee8</a>)</li>\n <li>Added a API isFocusMeteringSupported in CameraInfo which allows applications to check if the given FocusMeteringAction is supported on current camera or not. (<a href=\"https://android-review.googlesource.com/#/q/Ib45aec3f7da1d614e3e319ba5f239837be382914\">Ib45ae</a>, <a href=\"https://issuetracker.google.com/issues/188606490\">b/188606490</a>)</li>\n <li>Exposed getResolutionInfo API to provide the resolution information for Preview, ImageCapture and ImageAnalysis. (<a href=\"https://android-review.googlesource.com/#/q/I2b61350f38bafa40862c923077d9da2675f16905\">I2b613</a>, <a href=\"https://issuetracker.google.com/issues/188600718\">b/188600718</a>)</li>\n <li>Promoted the following experimental APIs to official APIs: CameraXConfig.Builder#setAvailableCamerasLimiter(), CameraXConfig.Builder#setMinimumLoggingLevel(), CameraXconfig.Builder#setSchedulerHandler(), CameraXConfig#getAvailableCamerasLimiter(), CameraXConfig#getMinimumLoggingLevel(), CameraXConfig#getCameraExecutor(), CameraXConfig#getSchedulerHandler(). (<a href=\"https://android-review.googlesource.com/#/q/I2ade23f6a8d5f0de66828ca3ca963cafc055fd4a\">I2ade2</a>)</li>\n <li>Exposed the CameraProvider interface to provide access to a set of cameras. (<a href=\"https://android-review.googlesource.com/#/q/I1a7b1fc1c026b6c8ce91aabad3bdfa9052bd8b82\">I1a7b1</a>)</li>\n <li>Promote the experimental UseCaseGroup API for camera-core, camera-lifecycle and camera-video. Added <code>ViewPort#getLayoutDirection</code>, <code>ViewPort.Builder#setLayoutDirection</code> and <code>ViewPort.Builder#setScaleType</code> for customizing viewport. (<a href=\"https://android-review.googlesource.com/#/q/I7cee86237511def4bbcd0aab8e32a9592ec78dc3\">I7cee8</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5065c9982754d7b54b8577d64c4ff830375a4b0e..d042a98877f160baa61a8f88718b6a49b7a15d61/camera"
+    },
+    {
+      "id": "camera",
+      "name": "Camera",
+      "version": "1.0.0-alpha26",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#1.0.0-alpha26",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>add a new method <code>CameraController#getTapToFocusState()</code> that exposes the latest tap-to-focus result. (<a href=\"https://android-review.googlesource.com/#/q/Iaccb06143b282c78d78b89c0801f76bc469ed54f\">Iaccb0</a>)</li>\n <li>adding more camera-core features to CameraController: getters/setters for target aspect ratio, target resolution, capture mode, CameraControl and custom executors. (<a href=\"https://android-review.googlesource.com/#/q/Iea8f2b507fa9783e6b63d42ee5f47ec867c5151a\">Iea8f2</a>)</li>\n <li>add a RotationReceiver class that receives Surface rotation changes. This can be used to set the target rotation when the device is in fixed portrait/landscape mode. (<a href=\"https://android-review.googlesource.com/#/q/Ib278f5f6050370e6de8a492a22dd39c861155688\">Ib278f</a>)</li>\n <li>Exposed new getEstimatedCaptureLatencyRange public APIs in ExtensionsManager class. (<a href=\"https://android-review.googlesource.com/#/q/I6a8eccf43124afbec8d12c504b95afb6a60d2009\">I6a8ec</a>)</li>\n <li>Deprecated ExtensionsErrorListener. Currently, this interface is only used to monitor whether a Preview or ImageCapture is lacking when enabling extension modes. CameraX will automatically add an extra Preview or ImageCapture to make the extension functions work well. After that, no error will be reported via this interface. (<a href=\"https://android-review.googlesource.com/#/q/I47d9ecf70d107273ddfd3fb6b73dc7c64d4b2de9\">I47d9e</a>)</li>\n <li>Exposed new ExtensionsManager getInstance, isExtensionAvailable and getExtensionEnabledCameraSelector public APIs and deprecated old <code>&lt;EffectName&gt;&lt;UseCase&gt;Extender</code> classes and related APIs. (<a href=\"https://android-review.googlesource.com/#/q/I329e64b47382cfe973c35f8a2b098932b5755732\">I329e6</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5065c9982754d7b54b8577d64c4ff830375a4b0e..d042a98877f160baa61a8f88718b6a49b7a15d61/camera"
+    },
+    {
+      "id": "core-google-shortcuts",
+      "name": "Core-Google-Shortcuts",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#core-google-shortcuts-1.0.0",
+      "detailsHtml": "<p><strong>Major features of 1.0.0</strong></p>\n<p>Include this module to allow shortcuts saved using <a href=\"https://developer.android.com/reference/androidx/core/content/pm/ShortcutManagerCompat\">ShortcutManagerCompat</a> to also be donated to Google. This will unlock additional features with those shortcuts for users, such as displaying them as suggestions or allowing Google Assistant to fulfill them through voice query. There is no limit to the number of shortcuts that can be donated, and those that are donated this way are saved on-device. For more information, see the full documentation on <a href=\"https://developers.google.com/assistant/app/dynamic-shortcuts\">pushing dynamic shortcuts to Assistant</a>.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ef7e096b90aa07e9f382378bc871febb3c8a70fb..720ae3dd8b52a9505c88d436616c421214a389c3/core/core-google-shortcuts"
+    },
+    {
+      "id": "core-splashscreen",
+      "name": "Core-pip",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#core-splashscreen-1.0.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li><code>core-splashscreen</code> provides backward compatibility for the new <a href=\"https://developer.android.com/about/versions/12/features/splash-screen\">Splash Screen APIs</a>. This first alpha version contains all the new APIs backported down to API 23, with the exception of the icon background.</li>\n <li>See the KDocs in <code>androidx.core.splashscreen</code> for usage information.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "core",
+      "name": "Core",
+      "version": "1.6.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.6.0",
+      "detailsHtml": "<p><strong>Important changes since 1.5.0</strong></p>\n<ul>\n <li>Add support for resolving theme attributes in nested <code>ColorStateList</code>s. (<a href=\"https://android-review.googlesource.com/q/I2e4098d45173a443dda97a23923c02755e83acfb\">I2e409</a> <a href=\"https://issuetracker.google.com/issues/155579892\">b/155579892</a>)</li>\n <li>Backport tintable background and check mark for CheckedTextView (<a href=\"https://android-review.googlesource.com/#/q/I8575c5c23240a14153654ffafd0387fa89f2a3bc\">I8575c</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1929191a5c85958db81053e26e57c676644f6327..0a69de9e5eb38cf444cfc8ccda27044205bf3f50/core"
+    },
+    {
+      "id": "core-core-ktx",
+      "name": "Core Core-Ktx",
+      "version": "1.7.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.7.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added an API to configure an InputConnection to use <code>View.performReceiveContent</code> to handle IME calls to <code>InputConnection.commitContent</code>. (<a href=\"https://android-review.googlesource.com/#/q/I3a2ad7604145a6aba74ee7a020075f0bd3ecc266\">I3a2ad</a>)</li>\n <li>Combined two APIs' functionality into one (<a href=\"https://android-review.googlesource.com/#/q/I261dfbd46527e614a529d9a0dbe66aaa3719c45a\">I261df</a>)</li>\n <li>Modified two APIs' functionality for use with unused app restriction features (e.g. permission revocation, app hibernation) (<a href=\"https://android-review.googlesource.com/#/q/Ic1616627069c0c22facc3312c7dd321132a17c53\">Ic1616</a>)</li>\n <li>Added three APIs for use with unused app restriction features (e.g. permission revocation, app hibernation) (<a href=\"https://android-review.googlesource.com/#/q/I606d713316a76b9be2386b7b0b2d0ae774fb474d\">I606d7</a>)</li>\n <li>Added nullability annotations to several Compat classes (<a href=\"https://android-review.googlesource.com/#/q/I2802ac396ea7eeea0f9d8bf53c5fe6dbc0818541\">I2802a</a>, <a href=\"https://issuetracker.google.com/issues/188452327\">b/188452327</a>, <a href=\"https://issuetracker.google.com/issues/189962089\">b/189962089</a>)</li>\n <li>Added three APIs for use with unused app restriction features (e.g. permission revocation, app hibernation) (<a href=\"https://android-review.googlesource.com/#/q/Icafee958d632200b24b1051dc313181de90c2be4\">Icafee</a>)</li>\n <li>Addressed missing nullability annotation issues in ViewCompat (<a href=\"https://android-review.googlesource.com/#/q/Ic346e32a79f8de1c49fe957ae387b0b88855c2d7\">Ic346e</a>, <a href=\"https://issuetracker.google.com/issues/188453571\">b/188453571</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/86ff5b4bb956431ec884586ce0aea0127e189ec4..19ae3a88ff0824d615355b492cb56049e16991f2/core"
+    },
+    {
+      "id": "datastore",
+      "name": "Datastore",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/datastore#1.0.0-rc01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixes bug where .java file was inadvertently added into final jar (<a href=\"https://android-review.googlesource.com/#/q/I65d96f778bd70d47d0ca6f6516efc8f39619a8f6\">I65d96</a>, <a href=\"https://issuetracker.google.com/issues/188985637\">b/188985637</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ccf79f53033e665475116a4e78ff124df2a52c4b..d820781c3ac6a7414042bafed5ca02affaca48a2/datastore"
+    },
+    {
+      "id": "emoji2",
+      "name": "Emoji2",
+      "version": "1.0.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/emoji2#1.0.0-alpha03",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<p>This release is a bugfix and stabilization release.</p>\n<ol>\n <li>EmojiEditTextHelper now allows <code>null</code> to be passed as a KeyListener. This allows the platform behavior of allowing nulls to be applied to emoji supporting EditText implementations.</li>\n <li>When using EmojiCompatInitializer initial startup delay is improved to trigger after the first Activity resumes. This allows app startup to happen uncontended, and avoids loading the font for app starts that never show a UI. After a short delay, EmojiCompat will create a thread to load the emoji font.</li>\n</ol>\n<ul>\n <li>A new dependency on <code>androidx.lifecycle:lifecycle-process</code> from <code>androidx.emoji2:emoji2</code> is added to implement the delay. This will have negligible APK size impact for apps that already include lifecycle (such as apps with appcompat).</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Allow null KeyListener in AppCompatEditText. This reverses the non-null annotation that was added to AppCompatEditText in 1.4.0-alpha01 and restores the previous behavior when passed null. (<a href=\"https://android-review.googlesource.com/#/q/I214824131c0206349b73471a8c22be38bf5dd0d8\">I21482</a>, <a href=\"https://issuetracker.google.com/issues/189559345\">b/189559345</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Change EmojiCompatInitializer to delay font loading until 500ms after the first <code>Activity.onResume</code>. This allows an activity to perform <code>Application.onCreate</code> and <code>Activity.onCreate</code> uncontended, while still ensuring that the emoji font is loaded shortly after app startup. (<a href=\"https://android-review.googlesource.com/#/q/I4bff7a1b8ae23529be059f5154a8de91ba939861\">I4bff7</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/86ff5b4bb956431ec884586ce0aea0127e189ec4..19ae3a88ff0824d615355b492cb56049e16991f2/emoji2"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.4.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.4.0-alpha04",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>FragmentManager</code> now uses <code>SavedStateRegistry</code> under the hood to save its state. The <code>saveAllState()</code> and <code>restoreSavedState()</code> methods have also been deprecated in <code>FragmentController</code>. If you are using <code>FragmentController</code> to host fragments outside of <code>FragmentActivity</code>, you should have your <code>FragmentHostCallbacks</code> implement <code>SavedStateRegistryOwner</code>. (<a href=\"https://android-review.googlesource.com/#/q/Iba68e71ee9ec0befa79a565a476d25534e86d0e3\">Iba68e</a>, <a href=\"https://issuetracker.google.com/issues/188734238\">b/188734238</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue where the call to <code>saveBackStack()</code> as part of supporting multiple back stacks would fail when done at the same time as running a <code>FragmentTransaction</code> that used <code>replace()</code>. (<a href=\"https://android-review.googlesource.com/#/q/I731372db582f00dc3da4fb05a4f2892378945618\">I73137</a>)</li>\n <li>Fixed a <code>NullPointerException</code> that would occur after manually restoring a saved back stack that contained multiple transactions when using the <code>restoreBackStack()</code> API for multiple back stack support. This also fixed an issue where <code>setReorderingAllowed(true)</code> was not being checked for all transactions. (<a href=\"https://android-review.googlesource.com/#/q/I8c59355e8899ed86c4e54cccc18af5475a78b319\">I8c593</a>)</li>\n <li>Fixed an issue where <code>FragmentManager</code> would incorrectly continue to restore previously saved state of fragments even after those fragments were removed from the <code>FragmentManager</code>, thus causing the saved state to continuously grow over time. (<a href=\"https://android-review.googlesource.com/#/q/I1fb8eb6942bc385794308bc2056f365472e5a47c\">I1fb8e</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ccf79f53033e665475116a4e78ff124df2a52c4b..19ae3a88ff0824d615355b492cb56049e16991f2/fragment"
+    },
+    {
+      "id": "games-activity",
+      "name": "Games-Activity",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/games#games-activity-1.0.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Rename <code>GameActivityInputInfo</code> to <code>GameActivityPointerAxes</code>.</li>\n <li><code>onNativeWindowResized</code> callback now gives width and height of window.</li>\n <li><code>onContentRectChanged</code> callback has been removed.</li>\n <li><code>onLowMemory</code> was renamed to <code>onTrimMemory</code>.</li>\n <li><code>GameActivity_setWindowFormat</code> removed.</li>\n <li>Improved ownership model for <code>GameActivityMotionEvents</code> and <code>GameActivityMotionEvent</code> pointers.</li>\n <li>Improved ownership model of user state in <code>onSaveInstanceState</code> callback.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/opt/gamesdk/+log/c94374d6b144787f79e7202316388a97077c6c34..66204fc44cbcee003287d7a37f98eefd22bca9dc/GameActivity"
+    },
+    {
+      "id": "games-controller",
+      "name": "Games-Controller",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/games#games-controller-1.0.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Functions which returned a boolean for success or failure now return a <code>Paddleboat_Error_Code</code> enum.</li>\n <li><code>Paddleboat_onPause</code> renamed to <code>Paddleboat_onStop</code></li>\n <li><code>Paddleboat_onResume</code> renamed to <code>Paddleboat_onStart</code></li>\n <li>Paddleboat_processGameActivityEvent split into two functions: <code>Paddleboat_processGameActivityKeyInputEvent</code> and <code>Paddleboat_processGameActivityMotionInputEvent</code></li>\n <li>Removed extended controller features that required building against a preview Android S SDK</li>\n <li>Added <code>Paddleboat_getBackButtonConsumed</code> function</li>\n <li>Controller and mouse status callbacks now have an optional parameter of a pointer to user defined data</li>\n <li>Moved controller name string out of device info structure, now accessed via <code>Paddleboat_getControllerName</code> function</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue where a controller that doesn’t initially report itself as a controller, but later on does via an onInputDeviceChanged message, wasn’t being properly detected as a controller connection.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "games-frame-pacing",
+      "name": "Games-Frame-Pacing",
+      "version": "1.7.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/games#games-frame-pacing-1.7.0",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/opt/gamesdk/+log/11d9f8ed1ee4f04f87dd8ab0ef7c0690e63e1078..66204fc44cbcee003287d7a37f98eefd22bca9dc/src/swappy"
+    },
+    {
+      "id": "games-performance-tuner",
+      "name": "Games-Performance-Tuner",
+      "version": "1.1.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/games#games-performance-tuner-1.1.0",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/opt/gamesdk/+log/11d9f8ed1ee4f04f87dd8ab0ef7c0690e63e1078..66204fc44cbcee003287d7a37f98eefd22bca9dc/src/tuningfork"
+    },
+    {
+      "id": "games-text-input",
+      "name": "Games-Text-Input",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/games#games-text-input-1.0.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Improved ownership model of GameTextInputState objects.</li>\n <li>Tidying of types to be consistent with NDK.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/opt/gamesdk/+log/c94374d6b144787f79e7202316388a97077c6c34..66204fc44cbcee003287d7a37f98eefd22bca9dc/GameTextInput"
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "version": "1.4.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media#media-1.4.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6c4d1b95a2dbd4dabd5d15d99b18b691a943d32a..dbd565a0becb2aa026b58af3b04c56b35c554290/media/media"
+    },
+    {
+      "id": "media2",
+      "name": "Media2",
+      "version": "1.2.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media2#1.2.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "resourceinspection",
+      "name": "Resourceinspection",
+      "version": "1.0.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/resourceinspection#1.0.0-alpha03",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix a bug in generated code that prevented the Layout Inspector from reading view attributes. (<a href=\"https://android-review.googlesource.com/#/q/Ic75075f21dafdf5cd12b714eff3a42e0fab17bbc\">Ic7507</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/86ff5b4bb956431ec884586ce0aea0127e189ec4..19ae3a88ff0824d615355b492cb56049e16991f2/resourceinspection"
+    },
+    {
+      "id": "slidingpanelayout",
+      "name": "SlidingPaneLayout",
+      "version": "1.2.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/slidingpanelayout#1.2.0-alpha03",
+      "detailsHtml": "<p><strong>Dependency changes</strong></p>\n<ul>\n <li>SlidingPaneLayout now depends on <a href=\"https://developer.android.com/jetpack/androidx/releases/window#1.0.0-alpha09\">Window <code>1.0.0-alpha09</code></a>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3d6f168394d1dd14e1d6f5b6dc4a0d405cb1a26a..19ae3a88ff0824d615355b492cb56049e16991f2/slidingpanelayout/slidingpanelayout"
+    },
+    {
+      "id": "test",
+      "name": "Test",
+      "version": "1.4.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#1.4.0",
+      "detailsHtml": "<p>This is the stable release of AndroidX Test 1.4.0 + Espresso 3.4.0. It contains updates to the following libraries:</p>\n<ul>\n <li>Core 1.4.0</li>\n <li>Espresso 3.4.0</li>\n <li>Intents 3.4.0</li>\n <li>JUnit 1.1.3</li>\n <li>Monitor 1.4.0</li>\n <li>Orchestrator 1.4.0</li>\n <li>Runner 1.4.0</li>\n <li>Rules 1.4.0</li>\n <li>Truth 1.4.0</li>\n <li>Test Services 1.4.0</li>\n</ul>\n<p>There are no changes since 1.4.0-rc01. Here is a summary of the changes since the 1.3.0 release:</p>\n<p><strong>New Features</strong></p>\n<ul>\n <li>Add Espresso ViewMatcher APIs for negative conditions</li>\n <li>Allow unregistering Loopers from Espresso IdlingRegistry</li>\n <li>Support specifying junit RunListeners via java.util.ServiceLoader</li>\n <li>Introduce Espresso BoundedDiagnosingMatcher base class API that offers better error messaging, and apply it to various Espresso matchers</li>\n <li>Support using UIThreadTest at the class level</li>\n <li>Several utility methods added to ext.truth's LocationSubject</li>\n <li>Add <code>SparseBooleanArraySubject</code> Truth <code>Subject</code> for making assertions about <code>SparseBooleanArray</code></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Improve handling for large stack traces on test failures [#729, #269]\n  <ul>\n   <li>Remove test runner framework related stack frames</li>\n   <li>Truncate stack traces to a max limit of 64KB, to avoid binder limit transaction errors</li>\n  </ul></li>\n <li>Add support for classpath scanning test discovery for multidex instrumentation apks on android APIs &lt; 21.</li>\n <li>Espresso: Improve error messaging when no activity is present</li>\n <li>Improve Instrumentation#runOnMainSync exception error handling</li>\n <li>Improve documentation for -e timeout_msec and AndroidJUnit4.</li>\n <li>Send ActivityOptions to BootstrapActivity [#685]</li>\n <li>Improve ViewMatchers#assertThat error messaging by enabling it to use Matcher.describeMismatch</li>\n <li>Fix the missing desugar ThrowableExtension errors when using espresso remote [issuetracker.google.com/170228109]</li>\n <li>Fix espresso web on &lt; Android API 19 by including the androidx.test.espresso.web.bridge classes</li>\n <li>Unregister ActivityResultWaiter in InstrumentationActivityInvoker if it wasn't already unregistered</li>\n <li>Runner: Reduce TestEventClient 'not primary instr' log message to a warning, as its an expected condition in multi process tests</li>\n <li>Espresso: Update HasSiblingMatcher to only check siblings (not self)</li>\n <li>Fix artifact name for espresso.idling.resource [#809]</li>\n <li>Expose setMasterPolicyTimeoutWhenDebuggerAttached functionality [#814]</li>\n <li>Remove overly verbose ActivityLifecycleMonitorImpl callback logging.</li>\n</ul>\n<p><strong>Dependency Changes</strong></p>\n<ul>\n <li>Update espresso.accessibility and espresso.contrib to depend on the androidx-compatible com.google.android.apps.common.testing.accessibility.framework:accessibility-test-framework:3.1. This release will thus require java8 source/target compatiblity. [#492]</li>\n</ul>\n<p><strong>Known Issues</strong></p>\n<ul>\n <li>Using orchestrator on APIS 30+ requires Studio/AGP 4.2+</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "wear",
+      "name": "Wear",
+      "version": "1.2.0-alpha11",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#wear-1.2.0-alpha11",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed bug where horizontally scrolling RecyclerViews caused <code>WearableDrawerLayout</code> to peek on all interactions. (<a href=\"https://android-review.googlesource.com/#/q/I24c7f3a4afecdad53b2952df11e6dfdab82050d3\">I24c7f</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/86ff5b4bb956431ec884586ce0aea0127e189ec4..19ae3a88ff0824d615355b492cb56049e16991f2/wear/wear"
+    },
+    {
+      "id": "wear-complications-watchface",
+      "name": "Wear Complications & Watchface",
+      "version": "1.0.0-alpha17",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#complications-watchface-1.0.0-alpha17",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>\n  <p>In <code>GlesRenderer</code>, <code>makeUiThreadContextCurrent</code> and <code>makeBackgroundThreadContextCurrent</code> have been replaced by <code>runUiThreadGlCommands</code> and <code>runBackgroundThreadGlCommands</code> which both accept a <code>Runnable</code>. The library ensures that only one GL command runnable is executing at any given time.</p>\n </li>\n <li>\n  <p>To make UiThread initialziaion easier we’ve added <code>CanvasRenderer.uiThreadInit</code> which is called once on the UiThread before any calls to render. We’ve also added <code>onRendererCreated</code> to <code>CanvasComplication</code> which makes it easier for <code>Renderer</code> and <code>CanvasComplication</code> to share state.</p>\n </li>\n <li>\n  <p>For clarity we have renamed <code>Complication</code> to <code>ComplicationSlot</code> and <code>complicationId</code> to either <code>complicationSlotId</code> or <code>complicationInstanceId</code> depending on usage</p>\n </li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>For clarity we have renamed <code>Complication</code> to <code>ComplicationSlot</code> and <code>complicationId</code> to either <code>complicationSlotId</code> or <code>complicationInstanceId</code> depending on usage. Classes using Complication have similarly been renamed e.g. ComplicationsManager is now called ComplicationSlotsManager. (<a href=\"https://android-review.googlesource.com/#/q/I4da44b7a9bf2d720ad241770f2b677a025d7a70e\">I4da44</a>)</li>\n <li>In GlesRenderer <code>makeUiThreadContextCurrent</code> and <code>makeBackgroundThreadContextCurrent</code> have been replaced by <code>runUiThreadGlCommands</code> and <code>runBackgroundThreadGlCommands</code> which both accept a <code>Runnable</code>. These functions are only needed if you need to make GL calls outside of render, <code>runBackgroundThreadGlCommands</code> and <code>onUiThreadGlSurfaceCreated</code>. This is required because there can be multiple GlesRenderers each with their own contexts in the same process, potentially from different watch faces. In addition access to the shared current GL context is now synchronized. (<a href=\"https://android-review.googlesource.com/#/q/I04d5982e80126be3e3dc26423cdf0a5006a79cd2\">I04d59</a>)</li>\n <li>We have added <code>CanvasRenderer.uiThreadInit</code> which is called once on the UiThread before any calls to render. Also for clarity in GlesRenderer we have renamed <code>onGlContextCreated</code> to <code>onBackgroundThreadGlContextCreated</code>, and <code>onGlSurfaceCreated</code> to <code>onUiThreadGlSurfaceCreated</code>. (<a href=\"https://android-review.googlesource.com/#/q/If86d04e0a7faadb7f177716d3b18a8b8c640642f\">If86d0</a>)</li>\n <li><code>HeadlessWatchFaceClient</code> &amp; <code>InteractiveWatchFaceClient</code> <code>getComplicationsSlotState</code> has been renamed to <code>getComplicationSlotsState</code>. In <code>ComplicationSlot</code>: <code>createRoundRectComplicationBuilder</code>, <code>createBackgroundComplicationBuilder</code>, and <code>createEdgeComplicationBuilder</code> have been renamed to <code>createRoundRectComplicationSlotBuilder</code>, <code>createBackgroundComplicationSlotBuilder</code>, and <code>createEdgeComplicationSlotBuilder</code> respectively. (<a href=\"https://android-review.googlesource.com/#/q/Ib9adca0b03b4f27684eb55cd4e8328e98350bd66\">Ib9adc</a>)</li>\n <li>We have added onRendererCreated to CanvasComplication which makes it easier for Renderer and CanvasComplication to share state. (<a href=\"https://android-review.googlesource.com/#/q/I5e1ac34833d9fab1eb54caa8f8f51f49c4d856e3\">I5e1ac</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ccf79f53033e665475116a4e78ff124df2a52c4b..19ae3a88ff0824d615355b492cb56049e16991f2/wear"
+    },
+    {
+      "id": "wear-input",
+      "name": "Wear Input",
+      "version": "1.1.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#input-1.1.0-alpha03",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed bug which caused RemoteInput intents, which had <code>RemoteInput</code>s added to them via <code>RemoteInputHelper.putRemoteInputsExtra</code>, to be rejected.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/66681ad83c328d0dd821b943bb3d375f02c1db61..19ae3a88ff0824d615355b492cb56049e16991f2/wear"
+    },
+    {
+      "id": "wear-phone-interactions",
+      "name": "Wear-Phone-Interactions",
+      "version": "1.0.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#wear-phone-interactions-1.0.0-alpha05",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Documented parameters that should be passed in constructor for <code>BridgingConfig.Builder</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/24330de8135d689b34a31a701181b20549e8db25..19ae3a88ff0824d615355b492cb56049e16991f2/wear/wear-phone-interactions"
+    },
+    {
+      "id": "wear-tiles",
+      "name": "Wear Tiles",
+      "version": "1.0.0-alpha08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-tiles#1.0.0-alpha08",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Spannables now support line_height instead of line_spacing.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add support for line_height in Spannables, remove line_spacing. (<a href=\"https://android-review.googlesource.com/#/q/Ibeb54523224d4514ba5c94d83a0a34d7d4abfb21\">Ibeb54</a>)\n  <ul>\n   <li>Code using line_spacing should be ported to use line_height instead.</li>\n  </ul></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix bug when using proportional dimensions. (<a href=\"https://android-review.googlesource.com/#/q/I37ace9ae4619027467b4593aa798f2ce54611907\">I37ace</a>)</li>\n <li>Fix bug preventing Text elements having content descriptions. (<a href=\"https://android-review.googlesource.com/#/q/Id2c7dcc2cf9fcddb26ed88518b9192ebc1e1a97f\">Id2c7d</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ccf79f53033e665475116a4e78ff124df2a52c4b..19ae3a88ff0824d615355b492cb56049e16991f2/wear/tiles"
+    },
+    {
+      "id": "window",
+      "name": "Window",
+      "version": "1.0.0-alpha09",
+      "url": "https://developer.android.com/jetpack/androidx/releases/window#1.0.0-alpha09",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Change from integer constants to unbounded enums.</li>\n <li>Add a test util to create test folding features.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add helper method to create test display features. (<a href=\"https://android-review.googlesource.com/#/q/I3cf548611ee5838486f817b15c82ede61f442f3d\">I3cf54</a>)\n  <ul>\n   <li>Change from <code>occlusionMode</code> to <code>occlusionType</code>.</li>\n  </ul></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Emit initial value when adding multiple consumers of the data streams.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ccf79f53033e665475116a4e78ff124df2a52c4b..19ae3a88ff0824d615355b492cb56049e16991f2/window"
+    }
+  ]
+}

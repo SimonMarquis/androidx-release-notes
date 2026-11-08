@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#june_17_2021",
+  "title": "June 17, 2021",
+  "releasedOn": "2021-06-17",
+  "updated": "2021-06-17T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#june_17_2021",
+  "components": [
+    {
+      "id": "media",
+      "name": "Media",
+      "version": "1.4.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media#1.4.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>\n  <p>Added a new bundle key <code>METADATA_KEY_SERIES_CONTENT_ID</code> used for the TV series's media content ID in <code>MediaMetadataCompat</code></p>\n </li>\n <li>\n  <p>Added a new bundle key <code>METADATA_KEY_NEXT_EPISODE_CONTENT_ID</code> used for the TV episode’s next episode content ID in <code>MediaMetadataCompat</code></p>\n </li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3d6f168394d1dd14e1d6f5b6dc4a0d405cb1a26a..6c4d1b95a2dbd4dabd5d15d99b18b691a943d32a/media/media"
+    }
+  ]
+}
