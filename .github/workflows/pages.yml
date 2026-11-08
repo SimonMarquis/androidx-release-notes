@@ -1,0 +1,74 @@
+name: 📝 Pages sync
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - data/**
+      - docs/assets/**
+      - scripts/**
+      - .github/actions/screenshot/action.yaml
+      - .github/workflows/pages.yml
+  workflow_dispatch:
+
+concurrency:
+  group: androidx-release-notes-sync
+  cancel-in-progress: false
+  queue: max
+
+permissions:
+  contents: read
+
+jobs:
+  pages-sync:
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          fetch-depth: 0 # needed to diff against ${{ github.event.before }}
+      - uses: ./.github/actions/setup-java
+
+      - run: ./scripts/androidx-release-notes.main.kts build-site
+
+      - name: Capture desktop previews
+        id: previews
+        continue-on-error: true
+        timeout-minutes: 5
+        uses: ./.github/actions/screenshot
+        with:
+          page: docs/index.html
+          output: art
+          devices: desktop
+      - name: Discard partial previews
+        if: steps.previews.outcome == 'failure'
+        run: |
+          echo "::warning::Preview capture failed, keeping the committed previews"
+          git restore -- art
+          git clean -fdq -- art
+
+      - id: github-app
+        uses: SimonMarquis/setup-github-app-as-bot@v1
+        with:
+          client-id: ${{ secrets.APP_CLIENT_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          permission-contents: write
+      - name: Commit and push pages and previews
+        run: |
+          [[ -z "$(git status --porcelain -- docs art)" ]] && exit 0
+          git add docs art
+          git commit -m "🤖 AndroidX release notes"
+          git push origin "HEAD:$GITHUB_REF_NAME"
+
+      - name: Synchronize GitHub releases
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == workflow_dispatch ]]; then
+            ./scripts/androidx-release-notes.main.kts sync-releases
+          elif [[ "$GITHUB_EVENT_NAME" == push ]]; then
+            ./scripts/androidx-release-notes.main.kts sync-releases --changed-from "$BEFORE"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ steps.github-app.outputs.token }}
+          BEFORE: ${{ github.event.before }}

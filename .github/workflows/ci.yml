@@ -1,0 +1,124 @@
+name: 🏗️ CI
+
+on:
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.head.label || github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      index_url: ${{ steps.index.outputs.artifact-url }}
+      latest_url: ${{ steps.latest_html.outputs.artifact-url }}
+      latest_page: ${{ steps.latest.outputs.page }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/setup-java
+
+      - run: ./scripts/androidx-release-notes.main.kts build-site --embedded
+      - name: Upload index.html
+        id: index
+        uses: actions/upload-artifact@v7
+        with:
+          path: docs/index.html
+          archive: false
+          if-no-files-found: error
+      - name: Find latest release notes
+        id: latest
+        shell: bash
+        run: |
+          pages=(docs/????-??-??.html)
+          test -f "${pages[-1]}"
+          echo "page=${pages[-1]}" >> "$GITHUB_OUTPUT"
+      - name: Upload latest release notes
+        id: latest_html
+        uses: actions/upload-artifact@v7
+        with:
+          path: ${{ steps.latest.outputs.page }}
+          archive: false
+          if-no-files-found: error
+
+  screenshots:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      artifact_url: ${{ steps.screenshots.outputs.artifact-url }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          sparse-checkout: .github/actions
+      - name: Download index.html
+        uses: actions/download-artifact@v8
+        with:
+          name: index.html
+          path: docs
+
+      - name: Capture screenshots
+        timeout-minutes: 5
+        uses: ./.github/actions/screenshot
+        with:
+          page: docs/index.html
+          output: screenshots
+      - name: Upload screenshots
+        id: screenshots
+        uses: actions/upload-artifact@v7
+        with:
+          name: screenshots
+          path: screenshots/*.png
+          archive: true
+          if-no-files-found: error
+
+  comment:
+    needs: [build, screenshots]
+    # Still post the build links when screenshots fail; fork PRs cannot read the GitHub App secrets.
+    if: >-
+      !cancelled()
+      && needs.build.result == 'success'
+      && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - id: github-app
+        uses: SimonMarquis/setup-github-app-as-bot@v1
+        with:
+          client-id: ${{ secrets.APP_CLIENT_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          permission-pull-requests: write
+          set-git-user: false
+
+      - name: Post artifact links in PR comment
+        env:
+          GH_TOKEN: ${{ steps.github-app.outputs.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          INDEX_URL: ${{ needs.build.outputs.index_url }}
+          LATEST_URL: ${{ needs.build.outputs.latest_url }}
+          LATEST_PAGE: ${{ needs.build.outputs.latest_page }}
+          SCREENSHOTS: ${{ needs.screenshots.result == 'success' && format('[Download]({0})', needs.screenshots.outputs.artifact_url) || '❌ Failed' }}
+          CI_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        shell: bash
+        run: |
+          gh pr comment "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" \
+            --edit-last --create-if-none --body-file - <<EOF
+          <!-- release-notes-pr -->
+          #### [$GITHUB_WORKFLOW]($CI_RUN_URL)
+
+          | Artifact | Link |
+          | :--- | :--- |
+          | Index | [index.html]($INDEX_URL) |
+          | Latest release notes | [${LATEST_PAGE#docs/}]($LATEST_URL) |
+          | Screenshots | $SCREENSHOTS |
+
+          <sub><em>The artifacts expire after $GITHUB_RETENTION_DAYS days.</em></sub>
+          EOF

@@ -1,0 +1,43 @@
+name: 🔃 RSS sync
+
+on:
+  schedule:
+    # Four equally spaced daily checks (every 6 hours, on the hour)
+    - cron: '0 0,6,12,18 * * *'
+    # Additional Wednesday checks around the frequent RSS update window
+    - cron: '30 16,17,18 * * 3'
+  workflow_dispatch:
+
+concurrency:
+  group: androidx-release-notes-sync
+  cancel-in-progress: false
+  queue: max
+
+permissions:
+  contents: read
+
+jobs:
+  rss-sync:
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/setup-java
+
+      - run: ./scripts/androidx-release-notes.main.kts sync-rss
+
+      - uses: SimonMarquis/setup-github-app-as-bot@v1
+        with:
+          client-id: ${{ secrets.APP_CLIENT_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          permission-contents: write
+
+      - name: Commit and push data
+        run: |
+          [[ -z "$(git status --porcelain -- data)" ]] && exit 0
+          git add data
+          git commit -m "🤖 RSS sync"
+          git push origin "HEAD:$GITHUB_REF_NAME"
