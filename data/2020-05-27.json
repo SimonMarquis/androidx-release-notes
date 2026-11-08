@@ -1,0 +1,81 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#may_27_2020",
+  "title": "May 27, 2020",
+  "releasedOn": "2020-05-27",
+  "updated": "2020-05-27T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#may_27_2020",
+  "components": [
+    {
+      "id": "camera-camera2",
+      "name": "Camera-Camera2",
+      "version": "1.0.0-beta04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-camera2-1.0.0-beta04",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Allowed applications to set any camera2 capture request parameters via <code>Camera2Interop</code> without causing a crash. Please note that if there are issues that arise as a result of overriding parameters. Stability and behaviour are not guaranteed when overriding parameters using Camera2Interop. (<a href=\"https://android-review.googlesource.com/#/q/Ibe5a101775aac7a7d257e4dfcb287ba66dd6df1d\">Ibe5a1</a>, <a href=\"https://issuetracker.google.com/issues/149103700\">b/149103700</a>)</li>\n <li>Auto-initialization is fixed when using an app on a device that is using a pseudo-locale. (<a href=\"https://android-review.googlesource.com/#/q/I3bef307a065f90b1fa1778d353b417ad597aca78\">I3bef3</a>, <a href=\"https://issuetracker.google.com/issues/154767663\">b/154767663</a>)</li>\n <li>Converted error log related to detached use case to a debug log on Camera2CameraImpl. (<a href=\"https://android-review.googlesource.com/#/q/I1a565e55af6e63792287221f8cbd9e7747fd6875\">I1a565</a>, <a href=\"https://issuetracker.google.com/issues/154422490\">b/154422490</a>)</li>\n <li>Fixed issue where image taken is too dark sometimes even though flash is fired. (<a href=\"https://android-review.googlesource.com/#/q/I5d9fa6b387861189dbf666350b7f0ac94793ac06\">I5d9fa</a>, <a href=\"https://issuetracker.google.com/issues/149729613\">b/149729613</a>)</li>\n <li>Fix bug where buffer in <code>ImageProxy</code> from <code>ImageCapture</code> was not rewound (<a href=\"https://android-review.googlesource.com/#/q/I0c45524cdf5cc44e2b0441e82c4cc467d1e611e3\">I0c455</a>, <a href=\"https://issuetracker.google.com/issues/153249512\">b/153249512</a>)</li>\n <li>Fixed the issues where binding ImageCapture only: (1) Failed to take photos with MAX_QUALITY; (2) Generated bad Image quality because auto exposure does not work. (<a href=\"https://android-review.googlesource.com/q/I177820832ae13c8f5b0120c5eb02311302f0104b\">I17782</a>, <a href=\"https://issuetracker.google.com/issues/145326998\">b/145326998</a>)</li>\n <li>Improved reliability of re-opening camera when CameraX is disconnected by another process or codepath stealing the camera (<a href=\"https://android-review.googlesource.com/q/I1fbc374743468bb81ba549b3421e69a92d967022\">I1fbc3</a>, <a href=\"https://issuetracker.google.com/issues/153714651\">b/153714651</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4319ecd6ebdd8a9f8600cc5b3d1aada1f716abac..c4d097f4335fe6b0268ee9a6d53df43615da0d90/camera/camera-camera2"
+    },
+    {
+      "id": "camera-core",
+      "name": "Camera-Core",
+      "version": "1.0.0-beta04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-core-1.0.0-beta04",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Adds an experimental API, <code>CameraXConfig.Builder#setSchedulerHandler()</code> for setting the handler used internally by the CameraX camera stack. This new API along with <code>CameraXConfig.Builder#setCameraExecutor()</code> should allow full control over the threads being used by the CameraX camera stack. (<a href=\"https://android-review.googlesource.com/#/q/I7bf321368947cb1176d89eb311bc3c5586c58bb5\">I7bf32</a>, <a href=\"https://issuetracker.google.com/issues/121160431\">b/121160431</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixes crash in <code>ImageAnalysis</code> where the <code>ImageProxy</code> is accessed after the <code>ImageReaderProxy</code> has been closed. This also makes it so that all <code>ImageProxy</code> received by the <code>Analyzer</code> must be closed before the <code>ImageReaderProxy</code> will be closed. (<a href=\"https://android-review.googlesource.com/#/q/I4b29996bcaf7549df6ababf080ea367326ba0dd3\">I4b299</a>, <a href=\"https://issuetracker.google.com/issues/145956416\">b/145956416</a>, <a href=\"https://issuetracker.google.com/issues/154155377\">b/154155377</a>, <a href=\"https://issuetracker.google.com/issues/156357269\">b/156357269</a>)</li>\n <li>Removed the <code>CameraInfo</code> parameter from <code>PreviewView#createSurfaceProvider()</code>, <code>PreviewView</code> now internally retrieves it from the <code>SurfaceRequest</code>. (<a href=\"https://android-review.googlesource.com/#/q/If18f04ff541eb77ec58b216d201e04802ab14785\">If18f0</a>, <a href=\"https://issuetracker.google.com/issues/154652477\">b/154652477</a>)</li>\n <li>Auto-initialization is fixed when using an app on a device that is using a pseudo-locale. (<a href=\"https://android-review.googlesource.com/#/q/I3bef307a065f90b1fa1778d353b417ad597aca78\">I3bef3</a>, <a href=\"https://issuetracker.google.com/issues/154767663\">b/154767663</a>)</li>\n <li>Fixed issue where image taken is too dark sometimes even though flash is fired. (<a href=\"https://android-review.googlesource.com/#/q/I5d9fa6b387861189dbf666350b7f0ac94793ac06\">I5d9fa</a>, <a href=\"https://issuetracker.google.com/issues/149729613\">b/149729613</a>)</li>\n <li>Fix issue with <code>ImageAnalysis</code> where multiple calls to setAnalyzer/clearAnalyzer resulted in the analyzer not receiving images to analyze. (<a href=\"https://android-review.googlesource.com/#/q/I6169f72de35f48e916b081498137d8f195d82c88\">I6169f</a>, <a href=\"https://issuetracker.google.com/issues/151605317\">b/151605317</a>, <a href=\"https://issuetracker.google.com/issues/153514544\">b/153514544</a>)</li>\n <li>Fix bug where buffer in <code>ImageProxy</code> from <code>ImageCapture</code> was not rewound (<a href=\"https://android-review.googlesource.com/#/q/I0c45524cdf5cc44e2b0441e82c4cc467d1e611e3\">I0c455</a>, <a href=\"https://issuetracker.google.com/issues/153249512\">b/153249512</a>)</li>\n <li>Fixed the issue that the first camera in the supported list from <code>CameraManager</code> is not always selected to use. (<a href=\"https://android-review.googlesource.com/#/q/I4c624a4506c7fa1b01ad5b79864dcb51e9416984\">I4c624</a>, <a href=\"https://issuetracker.google.com/issues/153418028\">b/153418028</a>)</li>\n <li>Fixed intermittent crash caused by setting <code>Preview.SurfaceProvider</code> not releasing the previously requested surface. <code>“java.lang.IllegalStateException: Camera surface session should only fail with request cancellation”</code> (<a href=\"https://android-review.googlesource.com/q/I8e4e7b107cddfb6e47fb58805a100b3af261f95d\">I8e4e7</a>, <a href=\"https://issuetracker.google.com/155936225\">b/155936225</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4319ecd6ebdd8a9f8600cc5b3d1aada1f716abac..c4d097f4335fe6b0268ee9a6d53df43615da0d90/camera/camera-core"
+    },
+    {
+      "id": "camera-extensions",
+      "name": "Camera-Extensions",
+      "version": "1.0.0-alpha11",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-extensions-1.0.0-alpha11",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4319ecd6ebdd8a9f8600cc5b3d1aada1f716abac..c4d097f4335fe6b0268ee9a6d53df43615da0d90/camera/camera-extensions"
+    },
+    {
+      "id": "camera-lifecycle",
+      "name": "Camera-Lifecycle",
+      "version": "1.0.0-beta04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-lifecycle-1.0.0-beta04",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4319ecd6ebdd8a9f8600cc5b3d1aada1f716abac..c4d097f4335fe6b0268ee9a6d53df43615da0d90/camera/camera-lifecycle"
+    },
+    {
+      "id": "camera-view",
+      "name": "Camera-View",
+      "version": "1.0.0-alpha11",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-view-1.0.0-alpha11",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Add <code>PreviewView#getPreviewStreamState</code> API which allows apps to observe if preview is streaming or not. When the PreviewView is in TEXTURE_VIEW mode, the STREAMING state also guarantees the preview image is visible. (<a href=\"https://android-review.googlesource.com/#/q/Ic0906d25aa89b3b1a9abb02ca42e15f676b1c72f\">Ic0906</a>, <a href=\"https://issuetracker.google.com/issues/154652477\">b/154652477</a>)</li>\n <li>Added <code>PreviewView#setDeviceRotationForRemoteDisplayMode()</code> API to provide device rotation for transform calculations if the application is running in remote display mode. (<a href=\"https://android-review.googlesource.com/#/q/I59b95cf5c484d110c1a4f4dd925da43d8d79da2b\">I59b95</a>, <a href=\"https://issuetracker.google.com/issues/153514525\">b/153514525</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed the preview distortion issue on <code>FULL/LIMITED/LEVEL_3</code> cameras running android 7.0 and below. Forced use <code>ImplementationMode#TEXTURE_VIEW</code> mode when the android version is 7.0 or below. (<a href=\"https://android-review.googlesource.com/#/q/I83e303c1beb899d94a21f04b15008671f45b77ae\">I83e30</a>, <a href=\"https://issuetracker.google.com/issues/155085307\">b/155085307</a>)</li>\n <li>Removed the <code>CameraInfo</code> parameter from <code>PreviewView#createSurfaceProvider()</code>, <code>PreviewView</code> now internally retrieves it from the <code>SurfaceRequest</code>. (<a href=\"https://android-review.googlesource.com/#/q/If18f04ff541eb77ec58b216d201e04802ab14785\">If18f0</a>, <a href=\"https://issuetracker.google.com/issues/154652477\">b/154652477</a>)</li>\n <li>Fixed the VideoCapture's default aspect ratio to be 16:9 in CameraView. (<a href=\"https://android-review.googlesource.com/#/q/Ie6a7bf344e6e08b25e47109557288b07187b3f7a\">Ie6a7b</a>, <a href=\"https://issuetracker.google.com/issues/153237864\">b/153237864</a>)</li>\n <li>Fix <code>PreviewView</code> black screen issues when swiped out <code>Preview</code> fragment and then swiped back in ViewPager2. Also fixed the issue when <code>removeView(previewview)</code> and then <code>addView(previewView)</code>. (<a href=\"https://android-review.googlesource.com/#/q/Iab5555fa4bbcca4020ba0dc55135c15009d24908\">Iab555</a>, <a href=\"https://issuetracker.google.com/issues/149877652\">b/149877652</a>, <a href=\"https://issuetracker.google.com/issues/147354615\">b/147354615</a>)</li>\n <li>Update the <code>CameraView#takePicture()</code> API to allow saving images to <code>Uri</code> and <code>OutputStream</code>. Update the test app to use <code>Uri</code> as the canonical example. (<a href=\"https://android-review.googlesource.com/#/q/Ia2459465f2e960ab46409fceda367e5bc2678963\">Ia2459</a>, <a href=\"https://issuetracker.google.com/issues/153607583\">b/153607583</a>)</li>\n <li>You can set PreviewView's scale type from a XML layout by setting the <code>ScaleType</code> attribute. (<a href=\"https://android-review.googlesource.com/#/q/I085654addf7436f1da84a4d1851f1d72ab403a86\">I08565</a>, <a href=\"https://issuetracker.google.com/issues/153015659\">b/153015659</a>)</li>\n <li><code>CameraView.ScaleType</code> has been removed. Instead, use <code>PreviewView.ScaleType</code> to set/get a scale type with CameraView. (<a href=\"https://android-review.googlesource.com/#/q/Ia8974a3c8c271ec1dfd2736c2e02d42b27f531c9\">Ia8974</a>, <a href=\"https://issuetracker.google.com/issues/153014831\">b/153014831</a>)</li>\n <li>Give <code>PreviewView</code> a background color by default if it doesn’t already have one. This prevents content behind it from being visible before the preview stream starts. (<a href=\"https://android-review.googlesource.com/#/q/I09fadd5ca9e187ff24c8195a6cfc7493ea74aabb\">I09fad</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4319ecd6ebdd8a9f8600cc5b3d1aada1f716abac..c4d097f4335fe6b0268ee9a6d53df43615da0d90/camera/camera-view"
+    },
+    {
+      "id": "compose",
+      "name": "Compose",
+      "version": "0.1.0-dev12",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose#0.1.0-dev12",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "core",
+      "name": "Core",
+      "version": "1.3.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.3.0",
+      "detailsHtml": "<p><strong>Major changes since 1.2.0</strong></p>\n<ul>\n <li>New APIs on <code>NestedScrollView</code> to run smooth scrolls with specified duration</li>\n <li>New APIs on <code>ViewCompat</code> to retrieve the original window insets that were dispatched to the view hierarchy</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9c19e5fbcdbbc72e70d2f52971009cc17be53abe..861913d9574541c4e906435a5f5e3ba4711bfc3d/core"
+    },
+    {
+      "id": "ui",
+      "name": "UI",
+      "version": "0.1.0-dev12",
+      "url": "https://developer.android.com/jetpack/androidx/releases/ui#0.1.0-dev12",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "webkit",
+      "name": "Webkit",
+      "version": "1.3.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/webkit#1.3.0-alpha03",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>addWebMessageListener</code> method now receives a <code>Set&lt;String&gt;</code> of allowed origin rules (previously a <code>List&lt;String&gt;</code>).</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b752a10305d7cd58a7f50ad094ed54af4d765f27..c4d097f4335fe6b0268ee9a6d53df43615da0d90/webkit/webkit"
+    }
+  ]
+}

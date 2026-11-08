@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#may_13_2020",
+  "title": "May 13, 2020",
+  "releasedOn": "2020-05-13",
+  "updated": "2020-05-13T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#may_13_2020",
+  "components": [
+    {
+      "id": "constraintlayout",
+      "name": "ConstraintLayout",
+      "version": "2.0.0-beta6",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-2.0.0-beta6",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<p>See the list of closed issues <a href=\"https://androidstudio.googleblog.com/2020/05/constraintlayout-200-beta-6.html\">here</a>. Notable fixes are group visibility handling and derived constraints issues in MotionLayout.</p>",
+      "commitsUrl": null
+    }
+  ]
+}

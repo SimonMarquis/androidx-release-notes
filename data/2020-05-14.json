@@ -1,0 +1,57 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#may_14_2020",
+  "title": "May 14, 2020",
+  "releasedOn": "2020-05-14",
+  "updated": "2020-05-14T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#may_14_2020",
+  "components": [
+    {
+      "id": "annotation",
+      "name": "Annotation",
+      "version": "1.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/annotation#annotation-1.2.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added <code>@ChecksSdkIntAtLeast</code> annotation. This let’s androidx and users annotate methods and fields that represent an <code>SDK_INT</code> check. (<a href=\"https://android-review.googlesource.com/#/q/I89a5407693458796a6f67446ad107a82dbe47329\">I89a54</a>, <a href=\"https://issuetracker.google.com/issues/120255046\">b/120255046</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2f634eec2143acd6a4ea19a375a6e3877cdcc2ed..56da5579c165464d278289e593d73d48571b9510/annotation/annotation"
+    },
+    {
+      "id": "appcompat",
+      "name": "AppCompat",
+      "version": "1.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.2.0-rc01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>AppCompatDelegate.setLocalNightMode</code> has been marked as requiring SDK version 17 or higher due to a platform issue with configuration changes leaking between Activities on earlier SDKs</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>AppCompatDelegate.setLocalNightMode</code> may now be called prior to <code>Activity.attachBaseContext</code></li>\n <li>Fixed <code>ActionBarOverlayLayout</code> inset consumption which was incorrectly using the cached insets</li>\n <li>AppCompat no longer calls <code>onMenuOpened()</code> with a <code>null</code> menu. (<a href=\"https://issuetracker.google.com/issues/142843126\">b/142843126</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6c98d66b901be2eecdf89477ccd70d2490ca6fc2..545321a76241d2243b1c20be27fdfde2a6b507c7/appcompat"
+    },
+    {
+      "id": "compose",
+      "name": "Compose",
+      "version": "0.1.0-dev11",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose#0.1.0-dev11",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "sharetarget",
+      "name": "ShareTarget",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/sharetarget#1.0.0",
+      "detailsHtml": "<p><strong>Major features of 1.0.0</strong></p>\n<p>ShareTarget module provides backward compatibility for providing share targets which are shown in the platform's ShareSheet. This module does not have any public APIs, and apps do not need to directly interact with this module. Instead, <code>ShortcutManagerCompat</code> internally uses this as a utility library when needed. For more information on how to use the ShareTarget module, please refer to the <a href=\"https://developer.android.com/develop/ui/compose/sharing/receive#providing-direct-share-targets\">Providing Direct Share targets guide</a>.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/74353beef24977dfe1748b2f1bc94f6472d725a0..636ec5ea1f23fb6181693b3a9f052311c5bc781c/sharetarget"
+    },
+    {
+      "id": "ui",
+      "name": "UI",
+      "version": "0.1.0-dev11",
+      "url": "https://developer.android.com/jetpack/androidx/releases/ui#0.1.0-dev11",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "wear",
+      "name": "Wear",
+      "version": "1.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#1.1.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b752a10305d7cd58a7f50ad094ed54af4d765f27..7128ce821b832b2f02be65d5cfc4a31b3d3aa04e/wear/wear"
+    }
+  ]
+}

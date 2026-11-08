@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#may_7_2020",
+  "title": "May 7, 2020",
+  "releasedOn": "2020-05-07",
+  "updated": "2020-05-07T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#may_7_2020",
+  "components": [
+    {
+      "id": "constraintlayout",
+      "name": "ConstraintLayout",
+      "version": "2.0.0-beta5",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-2.0.0-beta5",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<p>See the list of closed issues <a href=\"https://androidstudio.googleblog.com/2020/05/constraintlayout-200-beta-5.html\">here</a></p>",
+      "commitsUrl": null
+    }
+  ]
+}
