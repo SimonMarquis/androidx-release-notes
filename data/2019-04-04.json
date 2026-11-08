@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#april_4_2019",
+  "title": "April 4, 2019",
+  "releasedOn": "2019-04-04",
+  "updated": "2019-04-04T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#april_4_2019",
+  "components": [
+    {
+      "id": "test",
+      "name": "Test Espresso Device",
+      "version": "1.2.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#1.2.0-alpha03",
+      "detailsHtml": "<p>This is an alpha release of AndroidX Test 1.2.0. New APIs are subject to change. It contains updates to the following libraries:</p>\n<ul>\n <li>Core 1.2.0-alpha03\n  <ul>\n   <li>Add getState() API to ActivityScenario</li>\n  </ul></li>\n <li>Espresso 3.2.0-alpha03\n  <ul>\n   <li>Convert WithTagKeyMatcher to accept <code>Matcher&lt;?&gt;</code> instead of <code>Matcher&lt;Obj&gt;</code></li>\n   <li>Update link to espresso setup docs</li>\n   <li>Fix debug logging when running in different locales</li>\n  </ul></li>\n <li>Intents 3.2.0-alpha03</li>\n <li>JUnit 1.1.1-alpha03</li>\n <li>Monitor 1.2.0-alpha03\n  <ul>\n   <li>Another attempt at clearing exception handler to prevent memory leaks in Robolectric.</li>\n  </ul></li>\n <li>Orchestrator 1.2.0-alpha03</li>\n <li>Runner 1.2.0-alpha03\n  <ul>\n   <li>Add a tests_regex AJUR option to run tests matching a given regular expression.</li>\n  </ul></li>\n <li>Rules 1.2.0-alpha03</li>\n <li>Truth 1.2.0-alpha03\n  <ul>\n   <li>Expose the ParcelableSubject API</li>\n   <li>Add BundleSubject#longInt</li>\n   <li>Add IntentSubject#hasComponent</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

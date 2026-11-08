@@ -1,0 +1,25 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#april_9_2019",
+  "title": "April 9, 2019",
+  "releasedOn": "2019-04-09",
+  "updated": "2019-04-09T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#april_9_2019",
+  "components": [
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.0.1",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "1.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#1.0.1",
+      "detailsHtml": "<p>Please note that we <em>strongly</em> encourage users to update to WorkManager 2.x, as there will be very few updates to the 1.x branch moving forward. New APIs will also not be released for the 1.x library.</p>",
+      "commitsUrl": null
+    }
+  ]
+}
