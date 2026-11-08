@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#december_1_2023",
+  "title": "December 1, 2023",
+  "releasedOn": "2023-12-01",
+  "updated": "2023-12-01T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#december_1_2023",
+  "components": [
+    {
+      "id": "benchmark",
+      "name": "Benchmark",
+      "version": "1.2.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/benchmark#1.2.2",
+      "detailsHtml": "<p><strong>Baseline Profiles</strong></p>\n<ul>\n <li>Execution logs will show the baseline profile output file path as a local file URI (<a href=\"https://android-review.googlesource.com/2843918\">aosp/2843918</a>, <a href=\"https://android-review.googlesource.com/2853665\">aosp/2853665</a>, <a href=\"https://issuetracker.google.com/issues/313976958\">b/313976958</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/dd28c3e7d9e6ce9ec5ea046c8b09c28d3449656a..72f6955a7392567f82ddbd849864f8d27a358781/benchmark"
+    }
+  ]
+}

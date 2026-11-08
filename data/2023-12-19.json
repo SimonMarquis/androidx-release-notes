@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#december_19_2023",
+  "title": "December 19, 2023",
+  "releasedOn": "2023-12-19",
+  "updated": "2023-12-19T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#december_19_2023",
+  "components": [
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.5.7",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.5.7",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix compose runtime crash when <code>remember()</code> key parameter invokes a Composable function (<a href=\"https://issuetracker.google.com/issues/315855015\">b/315855015</a>)</li>\n <li>Fix Compose runtime crash when <code>return@</code> is used. (<a href=\"https://issuetracker.google.com/issues/315821171\">b/315821171</a>)</li>\n <li>Avoid using absolute paths in memoization keys which allows better build cache utilization. (<a href=\"https://issuetracker.google.com/issues/313937484\">b/313937484</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/756b7ad84884595dc9fae5ab1aa29cd329d89308..f492f14dbbb4d25d9371bd8171f4308ec5f241c8/compose/compiler"
+    }
+  ]
+}

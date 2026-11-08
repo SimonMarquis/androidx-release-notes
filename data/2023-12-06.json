@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#december_6_2023",
+  "title": "December 6, 2023",
+  "releasedOn": "2023-12-06",
+  "updated": "2023-12-06T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#december_6_2023",
+  "components": [
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.5.6",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.5.6",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Support for Kotlin 1.9.21</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Enable intrinsic remember - the compiler transform that inlines remember in Compose compiler plugin and replaces <code>.equals</code> comparisons with int comparisons of the parameter meta for stable params. This results in less slots being used and less comparisons being done at runtime. The option can be disabled by providing compiler plugin argument: -P <code>plugin:androidx.compose.compiler.plugins.kotlin:intrinsicRemember=false</code>. (<a href=\"https://android-review.googlesource.com/#/q/If675f9fc1cd7e197f7fcc6094124b011cca12922\">If675f</a>)</li>\n <li>Fix memoization of adapted function references and inline arguments. (<a href=\"https://issuetracker.google.com/issues/312738720\">b/312738720</a>)</li>\n <li>Realize groups when exiting inline function call (<a href=\"https://issuetracker.google.com/issues/312242547\">b/312242547</a>)</li>\n</ul>\n<p><strong>External Contribution</strong></p>\n<ul>\n <li>Fix k/native and k/wasm runtime crash due to missing return statement in Composable functions when it's the last statement and returns a null const (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/2835716\">aosp/2835716</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1935aef1c3b3c4893c4ed900ed41552093c37e86..756b7ad84884595dc9fae5ab1aa29cd329d89308/compose/compiler"
+    }
+  ]
+}

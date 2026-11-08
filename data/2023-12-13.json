@@ -1,0 +1,273 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#december_13_2023",
+  "title": "December 13, 2023",
+  "releasedOn": "2023-12-13",
+  "updated": "2023-12-13T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#december_13_2023",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.8.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.8.2",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed the extra passed to the Photo Picker Activity Contract's <code>ACTION_SYSTEM_FALLBACK_PICK_IMAGES</code> to correctly pass it the <code>EXTRA_SYSTEM_FALLBACK_PICK_IMAGES_MAX</code> key, rather than using the extra with the key <code>\"com.google.android.gms.provider.extra.PICK_IMAGES_MAX\"</code>. It is strongly recommended if you are an OEM who implements a system fallback Photo Picker to support both extras to ensure the widest compatibility. (<a href=\"https://android-review.googlesource.com/#/q/I96a00ed51416a3ea65705357157127091a24f189\">I96a00</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b9ef80de74ee258455627f176f46da81e48ac3b2..f9666ddb040689f37dc8a7955e26a0669f458da1/activity"
+    },
+    {
+      "id": "annotation",
+      "name": "Annotation",
+      "version": "1.7.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/annotation#1.7.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Use <code>compile</code> scope when inserting default platform dependency. (<a href=\"https://android-review.googlesource.com/q/I4958f8350d788611ab874b3e136c57b1acaaf9f1\">I4958f</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/100ed06ac4f1452198cbd831d614aa479ff8d470..97bb154d62daa2e34d35c8ccb6f5c02b14fd2323"
+    },
+    {
+      "id": "annotation-experimental",
+      "name": "Annotation-Experimental",
+      "version": "1.4.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/annotation#annotation-experimental-1.4.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "camera",
+      "name": "Camera",
+      "version": "1.3.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#1.3.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<p>Improved the <code>ProcessCameraProvider#bindToLifecycle()</code> performance. The major change is to optimize the process of identifying the most suitable size combinations for <code>UseCases</code>. The optimal results vary based on the specific <code>UseCase</code> combinations and the number of supported output sizes for the target devices. (<a href=\"https://android-review.googlesource.com/#/q/I454f2ca19be1d77ed737a651676834f6e431e0b7\">I454f2</a>)</p>\n<p>Here are some reference results for various scenarios:</p>\n<ul>\n <li>\n  <p>Four <code>UseCases</code>: <code>Preview</code> + <code>ImageCapture</code> + <code>ImageAnalysis</code> + <code>VideoCapture</code></p>\n  <ul>\n   <li>Google Pixel 7: Approximately 430 ms to 60 ms</li>\n   <li>Samsung Galaxy S23 Ultra: Approximately 540 ms to 45 ms</li>\n   <li>Samsung A53 5G: Approximately 115 ms to 70 ms</li>\n  </ul>\n </li>\n <li>\n  <p>Three <code>UseCases</code>: <code>Preview</code> + <code>ImageCapture</code> + <code>ImageAnalysis</code></p>\n  <ul>\n   <li>Google Pixel 7: Approximately 9 ms to 7 ms</li>\n   <li>Samsung Galaxy S23 Ultra: Approximately 6 ms to 5 ms</li>\n   <li>Samsung A53 5G: Approximately 32 ms to 12 ms</li>\n  </ul>\n </li>\n <li>\n  <p>Added Snapdragon 480 to the <code>CameraUseInconsistentTimebaseQuirk</code>. This fixes an issue on Android 12 for devices using this chipset where the audio in recordings is offset by the amount of time the device is in a suspended state. (<a href=\"https://android-review.googlesource.com/#/q/I580100cfa2cd3111e687b8d0515f8f02c50205d7\">I58010</a>)</p>\n </li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ef36c63f9e8f6ac59ad44c45496c271d6cb2a3cc..ee5fe2aa34dba21365bb402477c32c593ccbecda/camera"
+    },
+    {
+      "id": "camera",
+      "name": "Camera",
+      "version": "1.4.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#1.4.0-alpha03",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added <code>CameraInfo.mustPlayShutterSound</code> to provide the information of whether a shutter sound must be played in accordance to regional restrictions. (<a href=\"https://android-review.googlesource.com/#/q/Ifda84b6930fd5ab0193140d6f60571f92188d4f1\">Ifda84</a>)</li>\n <li>Added <code>OnImageCapturedCallback.onCaptureStarted</code> and <code>OnImageSavedCallback.onCaptureStarted</code> for notifying when the camera has started exposing a frame. It's recommended to play the shutter sound or the shutter animation at this point. (<a href=\"https://android-review.googlesource.com/#/q/Ic49b3caf6ef91649a48059e0657e017bbe98edaa\">Ic49b3</a>)</li>\n <li>Added Screen Flash feature support in CameraX for front camera image capture. CameraX will take care of the framework-side API handling and sync the timing with application's UI changes as required (e.g. AE precapture trigger after app screen color/brightness change). Apps will only need to add their UI side implementations in the <code>ScreenFlashUiControl</code> interface provided to CameraX. (<a href=\"https://android-review.googlesource.com/#/q/I8ae843fc126c173cb9e2658d72c7a04457264183\">I8ae84</a>)</li>\n <li>Added Screen Flash feature UI-side implementation support in CameraX. Apps will be able to get a basic <code>ImageCapture.ScreenFlashUiControl</code> implementation from <code>PreviewView</code> or the newly added <code>ScreenFlashView</code> which will add a mono-color overlay view and maximize screen brightness during screen flash photo capture. (<a href=\"https://android-review.googlesource.com/#/q/I1810efc37d35478082e995b2bf4a87b31e56b3fa\">I1810e</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Supports new Extensions features(postview and capture process progress): Added <code>ImageCapture#getImageCaptureCapabilities()</code> APIs for apps to query the capabilities of the postview and capture process progress callback. Apps can enable the postview using the <code>ImageCapture.Builder#setPostviewEnabled()</code>. The postview size can be selected using <code>ImageCapture.Builder#setPostviewResolutionSelector()</code>. When invoking <code>takePicture()</code>, <code>onPostviewBitmapAvailable</code> and <code>onCaptureProcessProgressed</code> can be implemented in <code>OnImageSavedCallback</code> or <code>OnImageCapturedCallback</code> to get the postview and process progress notification if supported. (<a href=\"https://android-review.googlesource.com/#/q/I5cd88131d689950ee0d50fa63f9b3e2d2e7b06cb\">I5cd88</a>)</li>\n <li>APIs for calculate coordinates transformation from sensor to the current buffer, with a flag indicating whether the Surface contains the camera orientation info. (<a href=\"https://android-review.googlesource.com/#/q/I59096cca934ee680dc2d57ac52fe2a1a252a29d1\">I59096</a>)</li>\n <li>Expose the API to query <code>PreviewCapabitlity</code> in Preview <code>UseCase</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ie5b6c6c5c194fd12e0e6ce1a7eff2f80ad8f1c49\">Ie5b6c</a>)</li>\n <li>Added APIs to support more qualities for <code>VideoCapture</code>. <code>Recorder.Builder#setVideoCapabilitiesSource(int)</code> can be used with <code>VIDEO_CAPABILITIES_SOURCE_CODEC_CAPABILITIES</code> to create a <code>Recorder</code> instance which supports more qualities than <code>VIDEO_CAPABILITIES_SOURCE_CAMCORDER_PROFILE</code>. A common use case is when the application strives to record UHD video whenever feasible, but the device's <code>CamcorderProfile</code> does not include a UHD settings, even though the codec is capable of recording UHD video. (<a href=\"https://android-review.googlesource.com/#/q/Iedbe2ae048c09a978b345b23d37ab989c000fd7a\">Iedbe2</a>, <a href=\"https://issuetracker.google.com/issues/263961771\">b/263961771</a>)</li>\n <li>Add <code>ImageAnalysis</code> output format getter/setter to <code>CameraController</code>. (<a href=\"https://android-review.googlesource.com/#/q/I9a96ce6cba5835d6c08fa93b95579853714a6d55\">I9a96c</a>, <a href=\"https://issuetracker.google.com/issues/308240643\">b/308240643</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/camera#1.3.1\">Camera <code>1.3.1</code></a>: Improved the <code>ProcessCameraProvider#bindToLifecycle()</code> performance. The major change is to optimize the process of identifying the most suitable size combinations for <code>UseCases</code>. The optimal results vary based on the specific <code>UseCase</code> combinations and the number of supported output sizes for the target devices. (<a href=\"https://android-review.googlesource.com/#/q/I454f2ca19be1d77ed737a651676834f6e431e0b7\">I454f2</a>)</li>\n <li>Allow the use of <code>VideoCapture</code> when Extensions are enabled. (<a href=\"https://android-review.googlesource.com/#/q/I91f32ebab5ba3d39b851d2c151e823775bdf18b5\">I91f32</a>)</li>\n <li>Fixed large captured JPEG image issue on Samsung A71 and M51 series devices. The captured JPEG images contain redundant 0's padding data in the JFIF compressed data segment. It causes the captured images to have extreme file size. Those redundant 0's padding data will be removed to make the captured images have normal image file sizes. (<a href=\"https://android-review.googlesource.com/#/q/I01afc7e5001f42788a66388f5a66e0858e4dcfd5\">I01afc</a>, <a href=\"https://issuetracker.google.com/issues/288828159\">b/288828159</a>)</li>\n <li>Disable <code>ImageAnalysis</code> support on Pixels to avoid the bug on Pixel that returns the non-empty <code>ImageAnalysis</code> supported sizes accidentally. (<a href=\"https://android-review.googlesource.com/#/q/I7ec313868a7d71a50faad6ca5297850a3cc291e6\">I7ec31</a>)</li>\n <li>Fixed performance issue where CPU loading and power consumption increased when Extensions are enabled. (<a href=\"https://android-review.googlesource.com/#/q/Ibdccbeeba9351f1cd7ae5cb525dc4d56708b11a0\">Ibdccb</a>)</li>\n <li>Added Snapdragon 480 to the <code>CameraUseInconsistentTimebaseQuirk</code>. This fixes an issue on Android 12 for devices using this chipset where the audio in recordings is offset by the amount of time the device is in a suspended state. (<a href=\"https://android-review.googlesource.com/#/q/I580100cfa2cd3111e687b8d0515f8f02c50205d7\">I58010</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "car-app",
+      "name": "Car App",
+      "version": "1.4.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/car-app#1.4.0-rc02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Update javadoc on <code>ConversationItem</code> to state that messages should be sorted in order from oldest to newest (<a href=\"https://android-review.googlesource.com/#/q/I77a2ab080485b8abf37d431dea8b7d12cb3ee3bd\">I77a2a</a>)</li>\n <li>Update <code>ListTemplate</code> truncation logic to remove oldest messages from <code>ConversationItem</code> (<a href=\"https://android-review.googlesource.com/#/q/Ie0a614ec809f08106f38fabd3735bfb1e2d927d7\">Ie0a61</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1280f3ae888e7721f7739bda09baae721af398c3..58b48b8bcb6426d3e53ef28caf8ce6717b694223/car/app"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.6.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.6.0-beta03",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Temporarily removed <code>scaleInToFitContainer</code> and <code>scaleOutToFitContainer</code> from <code>AnimatedContentTransitionScope</code> as they require lookahead. They will be available when lookahead is on by default or opted-in in future releases.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/15c82aaef0f1fd0307d6c00061859e5b6c4384c6..b76585a287cbcfdae38c3e16e5acbc6e26e808e2/compose/animation"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.6.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.6.0-beta03",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix crash that impacted very large text measured with infinite constraints. (<a href=\"https://android-review.googlesource.com/#/q/I1a7df0f35e5506b4ca05c4e2091142012a07908f\">I1a7df</a>, <a href=\"https://issuetracker.google.com/issues/312294386\">b/312294386</a>)</li>\n <li><code>PlatformImeOptions</code> is now a concrete class instead of an interface. (<a href=\"https://android-review.googlesource.com/#/q/If40a4c3e832e7852f214e18af469f5ce68e798b7\">If40a4</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/15c82aaef0f1fd0307d6c00061859e5b6c4384c6..b76585a287cbcfdae38c3e16e5acbc6e26e808e2/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.6.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.6.0-beta03",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/15c82aaef0f1fd0307d6c00061859e5b6c4384c6..b76585a287cbcfdae38c3e16e5acbc6e26e808e2/compose/material"
+    },
+    {
+      "id": "compose-material-3",
+      "name": "Compose Material 3",
+      "version": "1.2.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3#1.2.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Mark <code>TabIndicatorScope</code> as experimental. (<a href=\"https://android-review.googlesource.com/#/q/I45c88927d22d78743fe50f332addc9433454292a\">I45c88</a>)</li>\n <li>Removing deprecated experimental APIs for tooltip. (<a href=\"https://android-review.googlesource.com/#/q/I438cbd0987e03da47d55eca56c8617c0c7b6f941\">I438cb</a>)</li>\n <li>Change new <code>TabRow</code> overloads to not use subcompositions. This results in a different way to build the <code>TabRow</code> indicators with custom modifiers provided. (<a href=\"https://android-review.googlesource.com/#/q/Ife741ac95e65785e0f0673ab65414b7f74971d6d\">Ife741</a>)</li>\n <li>Deprecate <code>DismissDirection</code> and <code>DismissValue</code> API's. These have been merged to <code>SwipeToDismissValue</code>, whose values indicate both position and direction of <code>SwipeToDismissBox</code>. <code>DismissState.progress</code> is now marked as a <code>FloatRange</code> between <code>0.0</code> and <code>1.0</code>. <code>DismissState</code> deprecated Saver and Constructor have now been removed. <code>SwipeToDismiss</code> component, state and defaults object have been remarked as experimental. (<a href=\"https://android-review.googlesource.com/#/q/Ib54f2c6707fdf2fa10fb5c19166c583f24c2bc6f\">Ib54f2</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>The default indicator for <code>PullToRefresh</code> is now an open arrowhead instead of a solid triangle. (<a href=\"https://android-review.googlesource.com/#/q/I67be3e670a96c3aa42d9c760fe318739dfb45650\">I67be3</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/064f85294a9be2e86650737b91db1bff868926e2..f4aac2ed38164890551d06cae49210b2afb31336/compose/material3"
+    },
+    {
+      "id": "compose-material-3-adaptive",
+      "name": "Compose Material 3 Adaptive",
+      "version": "1.0.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3#adaptive-1.0.0-alpha03",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Change scaffold roles to aliases of <code>ThreePaneScaffoldRole</code>. (<a href=\"https://android-review.googlesource.com/#/q/I65bd1795bf03c17f229d983f87c4ce20ee9ca93a\">I65bd1</a>)</li>\n <li>Create a base class for scaffold roles (<a href=\"https://android-review.googlesource.com/#/q/I4784d97d30a1488414f5a0b40de72b82124e61eb\">I4784d</a>)</li>\n <li>Remove unnecessary parameter from <code>AnimatedPane</code>'s content (<a href=\"https://android-review.googlesource.com/#/q/Ibc73b4428c62d07879064adb054716b83e1b8ce2\">Ibc73b</a>)</li>\n <li>Renames <code>collectWindowSizeAsState</code> and returns raw values instead (<a href=\"https://android-review.googlesource.com/#/q/I480f4cc3371be856221bd738fb0b39383b0244fd\">I480f4</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/064f85294a9be2e86650737b91db1bff868926e2..6e1356c0137f362794c44812fa4f1c51dc46635f/compose/material3/material3-adaptive"
+    },
+    {
+      "id": "compose-material-3-adaptive-navigation",
+      "name": "Compose Material3",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3#adaptive-navigation-1.0.0-alpha02",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Add a 'None' <code>NavigationSuiteType</code> (<a href=\"https://android-review.googlesource.com/#/q/If8cb157e6e26784fbc32ee7d3938d4e94b5930da\">If8cb1</a>, <a href=\"https://issuetracker.google.com/issues/313688598\">b/313688598</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix navigation component filling entire screen when root surface has <code>modifier.fillMaxSize</code>. (<a href=\"https://android-review.googlesource.com/#/q/c9cf25062fed6a75c01e6fb7bad692ad6320a6e9\">c9cf250</a>, <a href=\"https://issuetracker.google.com/issues/312664933\">b/312664933</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/03b3b94c9895b338f1b3eeec7c39f44cc72b9b89..6e1356c0137f362794c44812fa4f1c51dc46635f/compose/material3/material3-adaptive-navigation-suite"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.6.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.6.0-beta03",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/15c82aaef0f1fd0307d6c00061859e5b6c4384c6..fc038a4bc84de9ab20493d6efa8d26f4a70214ae/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.6.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.6.0-beta03",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>It is now possible for a <code>LayoutCoordinates</code> to be detached without the node being detached. Guard against that in the compose Layout Inspector (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/d194e75af4fb7b01a66bd7bb2dac8ebfd5b80405\">If693</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>PlatformImeOptions</code> is now a concrete class instead of an interface. (<a href=\"https://android-review.googlesource.com/#/q/If40a4c3e832e7852f214e18af469f5ce68e798b7\">If40a4</a>)</li>\n <li>Fixed extra downstream recompositions caused by <code>LocalSoftwareKeyboardController</code> and <code>LocalTextInputService</code> being provided new values every time a root recomposed. (<a href=\"https://android-review.googlesource.com/#/q/I421902984824a99a7d753bc3e515d8bbfd142032\">I42190</a>, <a href=\"https://issuetracker.google.com/issues/310510985\">b/310510985</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/15c82aaef0f1fd0307d6c00061859e5b6c4384c6..b76585a287cbcfdae38c3e16e5acbc6e26e808e2/compose/ui"
+    },
+    {
+      "id": "core-performance-core-performance-play-services-core-performance-testing",
+      "name": "Core-location-altitude Core-location-altitude-external-protobuf Core-location-altitude-proto",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.0.0-rc01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Core Performance - Updated library implementation. (<code>DevicePerformance</code> generic implementation).</li>\n <li>Core Performance Play Services - Initial library implementation. (Google specific <code>DevicePerformance</code> implementation).</li>\n <li>Core Performance Testing - Initial library implementation. (contains test doubles for Core Performance).</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Initial RC release of <code>DevicePerformance</code> specific API.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1f7407d4293384a1b91bc142880e3525048b3443..9c6f4fc030b2419567fea6628122e1f39432d1a3/core"
+    },
+    {
+      "id": "credentials",
+      "name": "Credentials",
+      "version": "1.3.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/credentials#1.3.0-alpha01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>The minimum APK version needed for Google Play services is now 2023 v08.23 (APK version APK version 230815045), and this check is baked into the library. (<a href=\"https://android.googlesource.com/c/platform/frameworks/support/+/2856137\">aosp/2856137</a>)</li>\n <li>Fix the already-resume error caused by race condition of multiple in-flight requests (<a href=\"https://android-review.googlesource.com/#/q/Ic3567e1c159b45d1a63cf86ce8ee2f07a9415975\">Ic3567</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1b17367013411d8043b8de6ee9d7791a2a04b4f2..9174577f8a57ba4ae4958cc31787ea4db3b2b44a/credentials"
+    },
+    {
+      "id": "emoji2",
+      "name": "Emoji2",
+      "version": "1.5.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/emoji2#1.5.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li><code>emoji2-bundled</code> contains an updated emoji font to support Emoji 15.1.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add executors to control the callback thread for <code>InitCallback</code>. (<a href=\"https://android-review.googlesource.com/#/q/I32b67d1932dd1b37cbe96d81fea1d1722fc371a2\">I32b67</a>)</li>\n <li><code>BundledEmojiCompatConfig</code> now takes an executor to control loading threads. (<a href=\"https://android-review.googlesource.com/#/q/I00e81d20bde02b82e2af919d182c165080526213\">I00e81</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2d25c5e925564cf1f52fb6d2f88088d2dd5becfe..9174577f8a57ba4ae4958cc31787ea4db3b2b44a/emoji2"
+    },
+    {
+      "id": "exifinterface",
+      "name": "Exifinterface",
+      "version": "1.3.7",
+      "url": "https://developer.android.com/jetpack/androidx/releases/exifinterface#1.3.7",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Throw an exception from <code>ExifInterface.saveAttributes()</code> when trying to write a JPEG APP1 segment that's too large (previously we would write an invalid APP1 segment with an incorrect, truncated, length:(<a href=\"https://issuetracker.google.com/263747161\">b/263747161</a>)). Continue parsing after encountering an invalid IFD offset (previously parsing would halt immediately, which could result in incorrect values being returned: (<a href=\"https://issuetracker.google.com/264729367\">b/264729367</a>)).</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/00bc5313008ea35c4c78635d300238697527b76b..90d685e3591d448bbd5ebdaab90653d87ae3d91e/exifinterface/exifinterface"
+    },
+    {
+      "id": "graphics-core",
+      "name": "Graphics-Core",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/graphics#graphics-core-1.0.0-beta01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Introduced a new <code>LowLatencyCanvasView</code> API to support low latency rendering with Android’s 2d graphics APIs (Canvas + Paint) within the View hierarchy.</li>\n <li>Introduced <code>CanvasBufferedRenderer</code> API to support hardware accelerated Canvas rendering to a <code>HardwareBuffer</code>. This can be used to draw a portion of a user interface into a buffer that can be converted to a Bitmap using the <code>Bitmap.wrapHardwareBuffer</code> API.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Updated <code>CanvasBufferRenderer#releaseBuffer</code> API to have an optional fence parameter. Updated documentation to describe when <code>RenderResult#fence</code> is returned. (<a href=\"https://android-review.googlesource.com/#/q/If1ea7aea45c9770725ba8d33c24f1bf30e4a2cc8\">If1ea7</a>)</li>\n <li>Add <code>draw</code> method to <code>RenderRequest</code> to support leveraging coroutines to schedule draw requests. Renamed the previous draw method that consumed an executor to <code>drawAsync</code>. Refactored <code>isClosed()</code> method to a property. (<a href=\"https://android-review.googlesource.com/#/q/I5bff6e5cfb2591600258d9dcd2cee49c7a5d114b\">I5bff6</a>)</li>\n <li>Exposed buffer format parameter to <code>CanvasFrontBufferRenderer</code> to map directly to <code>CanvasBufferedRenderer.Builder#setBufferFormat</code> (<a href=\"https://android-review.googlesource.com/#/q/I0f2729fcf92515273855b261dc81ee1fdfde08ef\">I0f272</a>)</li>\n <li>Created <code>CanvasBufferedRenderer</code> API to handle hardware accelerated canvas rendering into a <code>HardwareBuffer</code>. This provides a backported implementation to Android Q alongside configuration of a swapchain depth of <code>HardwareBuffers</code>. <code>ColorSpace</code> configuration is still limited to Android U+ however the compat implementation provides no-op behavior on the developers' behalf. (<a href=\"https://android-review.googlesource.com/#/q/I9b1d889595b72e32418344e298a0017394fdc6e6\">I9b1d8</a>)</li>\n <li>Add <code>setFrameRate</code>/<code>clearFrameRate</code> APIs to <code>SurfaceControlCompat.Transaction</code> in order to control the frame rate alongside the change strategy for seamless or default transitions. (<a href=\"https://android-review.googlesource.com/#/q/I6045cfe9bba4247fe93f7eb6cdc67e61d65dbf29\">I6045c</a>)</li>\n <li>Lowered required API level for <code>setDataSpace</code> to Android Q from Android T. (<a href=\"https://android-review.googlesource.com/#/q/I59c347a7a669819b1df48ed2758ad0d0e9248979\">I59c34</a>)</li>\n <li>Added <code>onBufferReleased</code> callback to <code>GLFrameBufferRenderer</code> API to give consumers the opportunity to clean up state when a buffer is no longer being presented (<a href=\"https://android-review.googlesource.com/#/q/I8a4e238a07ec32e39e2d67fb7f7093dcdb9752f4\">I8a4e2</a>)</li>\n <li>Create <code>LowLatencyCanvasView</code> to support a simple use case of rendering content with low latency that gets synchronized with the View hierarchy rendering. This mitigates the complexities associated with <code>SurfaceView</code> management by internally managing the <code>SurfaceView</code> instance that gets translated off/on screen for synchronized and low latency rendering respectively. (<a href=\"https://android-review.googlesource.com/#/q/I9253bd3e42cfd24e5396a9d1117868cfd91d1909\">I9253b</a>)</li>\n <li>Added colorspace configuration support to <code>CanvasFrontBufferedRenderer</code> API. Updated multibuffered callbacks to also include the back buffered <code>SurfaceControl</code> (<a href=\"https://android-review.googlesource.com/#/q/I24bd949fd100317663346bf12c866a358011f38c\">I24bd9</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9ce75ea1baa2af10dda8f787f69c40c6654bcac1..9174577f8a57ba4ae4958cc31787ea4db3b2b44a/graphics/graphics-core"
+    },
+    {
+      "id": "graphics-shapes-graphics-shapes-android-graphics-shapes-desktop",
+      "name": "Graphics-Shapes Graphics-Shapes-Android Graphics-Shapes-Desktop",
+      "version": "1.0.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/graphics#graphics-shapes-1.0.0-alpha04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>This release contains several API changes, as well as bug fixes.</li>\n <li>Many of the API changes make the Shapes library KMP-friendly. This makes it easier to call from non-Android code (such as Android-agnostic Compose code). For example, there are no Android types in the API, such as the previous PointF, Matrix, and Path types.</li>\n <li>There were also several changes made to APIs and implementation for performance reasons, specifically to minimize object allocation (and collection). For example, the move from PointF to separate Float parameters avoids allocating many temporary PointF structures to hold those vertices.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Replaced <code>Morph.asMutableCubics</code> with a function to iterate over the <code>MutableCubics</code>. Changed <code>PointTransformer</code> functional interface, now it takes x and y coordinates of a <code>Point</code> and returns a <code>TransformedResult</code> (which is constructed with the transformed x &amp; y coordinates) (<a href=\"https://android-review.googlesource.com/#/q/I6719eabfd9b8a56befee35ac810747fda38bd7fd\">I6719e</a>)</li>\n <li>Removed the public <code>Cubic</code> constructor and made it a factory function. (<a href=\"https://android-review.googlesource.com/#/q/I409ce4d6154b21e511d96b288a057b61e30d62e0\">I409ce</a>)</li>\n <li>Adding Android-specific transform and drawing APIs (<a href=\"https://android-review.googlesource.com/#/q/I079f6f0cbfef6d4496bff858fb659be206d78988\">I079f6</a>, <a href=\"https://issuetracker.google.com/issues/292289543\">b/292289543</a>)</li>\n <li>Eliminate android dependencies (<a href=\"https://android-review.googlesource.com/#/q/Iadc1c32dfc40a3e88e4c8516c59b21e71366e019\">Iadc1c</a>, <a href=\"https://issuetracker.google.com/issues/292289543\">b/292289543</a>)</li>\n <li>Anchor and control property names are more sensible now (<a href=\"https://android-review.googlesource.com/#/q/If13bd96434d8d6871c7cd82f99558ab863ebf754\">If13bd</a>, <a href=\"https://issuetracker.google.com/issues/294562941\">b/294562941</a>)</li>\n <li><code>PointF</code> parameters changed to <code>Float</code> pairs (<a href=\"https://android-review.googlesource.com/#/q/Id4705d27c7be31b26ade8186b99fffe2e2f8450e\">Id4705</a>, <a href=\"https://issuetracker.google.com/issues/276466399\">b/276466399</a>, <a href=\"https://issuetracker.google.com/issues/290254314\">b/290254314</a>)</li>\n <li><code>progress</code> is now passed to <code>Morph</code> drawing commands directly (<a href=\"https://android-review.googlesource.com/#/q/Icdca2f2ced00bd7957fc5dc318298fd083a74586\">Icdca2</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed bug when creating big shapes. (<a href=\"https://android-review.googlesource.com/#/q/I4fd6696643cc3725425cf7b55536a1242fa896c6\">I4fd66</a>, <a href=\"https://issuetracker.google.com/issues/313497325\">b/313497325</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "health-services-client",
+      "name": "Health-Services-Client",
+      "version": "1.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/health#health-services-client-1.1.0-alpha02",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "hilt",
+      "name": "Hilt",
+      "version": "1.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/hilt#1.2.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Add overloaded <code>hiltViewModel()</code> and <code>hiltNavGraphViewModels()</code> functions for assisted injection support. (<a href=\"https://android-review.googlesource.com/#/q/Ieb98de57810a71fecc58ceeb8fd674de1eba5c8f\">Ieb98d</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/60e349522e1cd1c1f6e4b2a79592dd8b130c36c7..9174577f8a57ba4ae4958cc31787ea4db3b2b44a/hilt"
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.7.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.7.0-rc02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue where <code>SavedStateHandle</code> would not properly restore custom <code>Parcelable</code> classes after process death and recreation. Due to type information that is lost by the Android framework, arrays of custom Parcelables require additional work (manually creating a typed array of the right type) and the documentation on <code>get</code>, <code>getLiveData</code>, and <code>getStateFlow</code> now specifically calls this limitation out. (<a href=\"https://android-review.googlesource.com/#/q/I0b55ab44b636a5d0e5b33cdc21821310e2d18b9d\">I0b55a</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/13d5e2efb6ca3077b4bd3f6040c5a15b504397d3..58bcc943758bd4e82932a5190d9e5cf6aaedd3e4/lifecycle"
+    },
+    {
+      "id": "media2",
+      "name": "Media2",
+      "version": "1.3.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media2#1.3.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.7.6",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.7.6",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>The <code>NavGraph</code> <code>equals()</code> function now correctly considers the nodes of the other graph instead of just the calling one. This will ensure that graphs that have nodes with different ids will no longer be considered equal (<a href=\"https://android-review.googlesource.com/#/q/I401cb2f6f71d0bc914afeea6057e0d8c34dfc840\">I401cb</a>, <a href=\"https://issuetracker.google.com/issues/311414915\">b/311414915</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/93793630001ce27b6709c8bb6b73711313cc9d5d..0d7cf764d03cdb757f2b9eba55d0871a61833fbb/navigation"
+    },
+    {
+      "id": "security-app-authenticator",
+      "name": "Security-state-provider",
+      "version": "1.0.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/security#security-app-authenticator-1.0.0-alpha03",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added support for use cases where the UID / PID of the package to be verified is not available; the APIs now support cases such as <code>startActivityForResult</code> and activities / receivers where the calling app's identity is shared via <code>[Activity|Broadcast]Options#setShareIdentityEnabled</code>.</li>\n <li>The behavior of <code>[check|enforce]CallingAppIdentity(String, String)</code> has been updated to support these new use cases; these methods will no longer default to using <code>Binder#getCalling[Uid|Pid]</code> but will instead skip verification of the calling package's UID if it is not explicitly provided. (<a href=\"https://android-review.googlesource.com/#/q/I1851bd20049e5be1d208a24633423080c5e38f7c\">I1851b</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/86ff5b4bb956431ec884586ce0aea0127e189ec4..9174577f8a57ba4ae4958cc31787ea4db3b2b44a/security/security-app-authenticator"
+    },
+    {
+      "id": "security-app-authenticator-testing",
+      "name": "Security-state-provider",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/security#security-app-authenticator-testing-1.0.0-alpha02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Updated test for new API behavior that no longer assumes <code>Binder#getCalling[Uid|Pid]</code> when not provided to the <code>[check|enforce]CallingAppIdentity</code> APIs. (<a href=\"https://android-review.googlesource.com/#/q/I1851bd20049e5be1d208a24633423080c5e38f7c\">I1851b</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/86ff5b4bb956431ec884586ce0aea0127e189ec4..9174577f8a57ba4ae4958cc31787ea4db3b2b44a/security/security-app-authenticator-testing"
+    },
+    {
+      "id": "test-uiautomator",
+      "name": "Test Uiautomator",
+      "version": "2.3.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test-uiautomator#2.3.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Renamed the <code>UiObject2</code> percentage-based margin methods to <code>setGestureMarginPercentage</code> and <code>setGestureMarginsPercentage</code> for consistency (<a href=\"https://android-review.googlesource.com/#/q/I244356db7a2e61a5b2eb43664004119d07a0a7b4\">I24435</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Improved the error thrown when a secondary display is not found or not accessible (<a href=\"https://android-review.googlesource.com/#/q/116b230aefac90c63225a14468706537b152e58c\">116b23</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/e3ffd7948030a769c857b8c629e0079c54b730ad..2a18d2fb964100da245733f3af716c8967387769/test/uiautomator/uiautomator"
+    },
+    {
+      "id": "versionedparcelable",
+      "name": "VersionedParcelable",
+      "version": "1.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/versionedparcelable#versionedparcelable-1.2.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "wear-compose",
+      "name": "Wear Compose",
+      "version": "1.3.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-compose#1.3.0-beta02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>We have restored the intended swipe motion in <code>BasicSwipeToDismissBox</code>. This had been altered in a previous release, such that the slide part of the transition occurred while the finger was touching the screen. (<a href=\"https://android-review.googlesource.com/#/q/Id8e765f2b14ece5e4b38a89a61b3fc8707a80e53\">Id8e76</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/a8915c4ac4e4bfead52d6b42aaffaa87966ab38b..b76585a287cbcfdae38c3e16e5acbc6e26e808e2/wear/compose"
+    },
+    {
+      "id": "wear-protolayout",
+      "name": "Wear ProtoLayout",
+      "version": "1.1.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-protolayout#1.1.0-alpha04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li><code>VersionInfo</code> class not implements the <code>Comparable</code> interface. (<a href=\"https://android-review.googlesource.com/#/q/I8d13c23e60d8e7b562a3c422859120883983e942\">I8d13c</a>)</li>\n <li>Renderer now supports <code>TEXT_OVERFLOW_ELLIPSIZE</code> option. (<a href=\"https://android-review.googlesource.com/#/q/I7f085fb841240511cd136c1e095d9c2ff0d60205\">I7f085</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Text overflow option <code>TEXT_OVERFLOW_ELLIPSIZE_END</code> is now deprecated. Please use the new API <code>TEXT_OVERFLOW_ELLIPSIZE</code> with very similar behavior. (<a href=\"https://android-review.googlesource.com/#/q/I822d8a88c003c79d6c0e93f9294bbb3933cda8f1\">I822d8</a>)</li>\n <li>Following other Material components and Compose initiatives, we have now turned off font padding by default on all Text elements. Additionally, <code>AndroidTextStyle</code> and related setters have been removed from the public API. (<a href=\"https://android-review.googlesource.com/#/q/I790940f33bd42f023182d4e3a467ee66f4329bce\">I79094</a>, <a href=\"https://android-review.googlesource.com/#/q/Ib0b035f942641f3d1dbbd6ba2254a0720e1b7951\">Ib0b03</a>, <a href=\"https://android-review.googlesource.com/#/q/I329598c92ed34d0ee80ce2db7d2d7f021d2c6883\">I32959</a>, <a href=\"https://android-review.googlesource.com/#/q/Iaf7d5d0b44de4aee42461b1d2d6a3a54bbb978c9\">Iaf7d5</a>, <a href=\"https://android-review.googlesource.com/#/q/Ifa298973d6e9df7431d07749b04b4dffb764dcac\">Ifa298</a>, <a href=\"https://android-review.googlesource.com/#/q/I0a4ae3f8afc6acaa220a6beec029e783cd2910d0\">I0a4ae</a>, <a href=\"https://android-review.googlesource.com/#/q/Ida9d3572ccee63386d6b12c6c475e8b2e9647a9c\">Ida9d3</a>)</li>\n <li><code>Modifier.hidden</code> is replaced with <code>Modifier.visible</code> (<a href=\"https://android-review.googlesource.com/#/q/I569023c9beaf2e2a0b1a99e6d7cb982432d9538a\">I56902</a>)</li>\n <li><code>FontStyle#setSizes</code> now accepts int instead of <code>SpProp</code> arguments. (<a href=\"https://android-review.googlesource.com/#/q/I02b37ecda691c52a664e5e8f251be0758bbf9a59\">I02b37</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Throw an exception when encountering an Undefined or Unrecognized enum value. (<a href=\"https://android-review.googlesource.com/#/q/I9d2cf9b006cbcb2769c70218a1c16e0b97a20b6d\">I9d2cf</a>)</li>\n <li>Refactor <code>DynamicTypeBindingRequest</code>. (<a href=\"https://android-review.googlesource.com/#/q/I27b579480071330a12f6655d1d8396e25ef97dab\">I27b57</a>)</li>\n <li>Invalidate the result of an expression when it yields an invalid numeric value (NaN or infinite) or throws an <code>ArithmeticException</code>. (<a href=\"https://android-review.googlesource.com/#/q/I681ae666cda14e9f9dbccd8f561ea94b6170b9f3\">I681ae</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b5166f9a1e9c047162d1215884c3e2cd41a4a74a..9174577f8a57ba4ae4958cc31787ea4db3b2b44a/wear/protolayout"
+    },
+    {
+      "id": "wear-tiles",
+      "name": "Wear Tiles",
+      "version": "1.3.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-tiles#1.3.0-alpha04",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b5166f9a1e9c047162d1215884c3e2cd41a4a74a..9174577f8a57ba4ae4958cc31787ea4db3b2b44a/wear/tiles"
+    },
+    {
+      "id": "webkit",
+      "name": "Webkit",
+      "version": "1.10.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/webkit#1.10.0-beta01",
+      "detailsHtml": "<ul>\n <li>No functional changes from <code>1.10.0-alpha01</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b5166f9a1e9c047162d1215884c3e2cd41a4a74a..9174577f8a57ba4ae4958cc31787ea4db3b2b44a/webkit/webkit"
+    }
+  ]
+}
