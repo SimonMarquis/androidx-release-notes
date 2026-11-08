@@ -1,0 +1,73 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#march_21_2023",
+  "title": "March 21, 2023",
+  "releasedOn": "2023-03-21",
+  "updated": "2023-03-21T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#march_21_2023",
+  "components": [
+    {
+      "id": "test-annotation",
+      "name": "Test Annotation",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#annotation-1.1.0-alpha01",
+      "detailsHtml": "<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Update to kotlin stdlib 1.7.22</li>\n <li>Major release toolchain update: now compiled to java8 bytecode</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-runner",
+      "name": "Test Runner",
+      "version": "1.6.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#runner-1.6.0-alpha01",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Improve error reporting when there is a junit class mismatch due to a custom classloader</li>\n <li>Fix reporting in logOnly mode for @Ignore-d classes</li>\n <li>Move instantiation of InstrumentationResultPrinter to after multidex is loaded</li>\n <li>Register TestStorage before using it in RunnerArgs parsing</li>\n <li>Execute test classes in order provided to TestRequestBuilder.</li>\n</ul>\n<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Update to androidx.test:monitor:1.7.0-alpha01</li>\n <li>Major release toolchain update:\n  <ul>\n   <li>classes are now compiled to java8 bytecode</li>\n   <li>javac compiler switched to OpenJDK 11.</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-rules",
+      "name": "Test Rules",
+      "version": "1.6.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#rules-1.5.0-alpha01",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-monitor",
+      "name": "Test Monitor",
+      "version": "1.7.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#monitor-1.7.0-alpha01",
+      "detailsHtml": "<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Update to kotlin stdlib 1.7.22</li>\n <li>Major release toolchain update: now compiled to java8 bytecode</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-espresso",
+      "name": "Test Espresso",
+      "version": "3.6.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#espresso-3.6.0-alpha01",
+      "detailsHtml": "<p>The following artifacts were released:</p>\n<ul>\n <li><code>androidx.test.espresso:espresso-accessibility:3.6.0-alpha01</code></li>\n <li><code>androidx.test.espresso:espresso-core:3.6.0-alpha01</code></li>\n <li><code>androidx.test.espresso:espresso-contrib:3.6.0-alpha01</code></li>\n <li><code>androidx.test.espresso:espresso-idling-resource:3.6.0-alpha01</code></li>\n <li><code>androidx.test.espresso:espresso-intents:3.6.0-alpha01</code></li>\n <li><code>androidx.test.espresso:espresso-remote:3.6.0-alpha01</code></li>\n <li><code>androidx.test.espresso:espresso-web:3.6.0-alpha01</code></li>\n <li><code>androidx.test.espresso.idling:idling-concurrent:3.6.0-alpha01</code></li>\n <li><code>androidx.test.espresso.idling:idling-net:3.6.0-alpha01</code></li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Deprecate EspressoOptional in favor of @Nullable.</li>\n <li>Allow customizing espresso's default failure handler to disable screenshots on failures</li>\n</ul>\n<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Update to androidx.test:monitor:1.7.0-alpha01, androidx.test:core:1.6.0-alpha01 and androidx.test:runner:1.6.0-alpha01</li>\n <li>Update to kotlin stdlib 1.7.22</li>\n <li>Major release toolchain update:\n  <ul>\n   <li>classes are now compiled to java8 bytecode</li>\n   <li>javac compiler switched to OpenJDK 11. This should resolve IncompatibleClassChangeErrors (https://github.com/android/android-test/issues/1642)</li>\n   <li>remove internal guava usage with kotlin stdlib, which resulted in a binary size reduction</li>\n   <li>release aars are no longer proguarded</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-core",
+      "name": "Test Core",
+      "version": "1.6.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#core-1.6.0-alpha01",
+      "detailsHtml": "<p><strong>Features</strong> * Preliminary support for robolectric was added to ViewCapture.captureToBitmap</p>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fix captureToBitmap for DecorView's</li>\n <li>Attempt to improve reliability of DeviceCapture by retrying takeScreenshot</li>\n</ul>\n<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Update to kotlin stdlib 1.7.22</li>\n <li>Major release toolchain update: now compiled to java8 bytecode</li>\n <li>Update to androidx.test:monitor:1.70-alpha01</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-ext-junit",
+      "name": "Test Espresso Device",
+      "version": "1.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#ext.junit-1.2.0-alpha01",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li>Create DeleteFilesRule: an&nbsp;API for removing files between test case execution</li>\n</ul>\n<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Update to androidx.test:monitor:1.7.0-alpha01, androidx.test:core:1.6.0-alpha01, androidx.test.services:storage:1.5.0-alpha01</li>\n <li>Update to kotlin stdlib 1.7.22</li>\n <li>Major release toolchain update:\n  <ul>\n   <li>classes are now compiled to java8 bytecode</li>\n   <li>javac compiler switched to OpenJDK 11.</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-ext-truth",
+      "name": "Test Ext Truth",
+      "version": "1.6.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#ext.truth-1.6.0-alpha01",
+      "detailsHtml": "<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Update to androidx.test:core:1.6.0-alpha01</li>\n <li>Update to kotlin stdlib 1.7.22</li>\n <li>Major release toolchain update:\n  <ul>\n   <li>classes are now compiled to java8 bytecode</li>\n   <li>javac compiler switched to OpenJDK 11.</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

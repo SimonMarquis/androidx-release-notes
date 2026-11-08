@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#march_2_2023",
+  "title": "March 2, 2023",
+  "releasedOn": "2023-03-02",
+  "updated": "2023-03-02T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#march_2_2023",
+  "components": [
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.0.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.0.0-rc02",
+      "detailsHtml": "<p>This release corresponds to the <a href=\"https://github.com/google/ExoPlayer/releases/tag/r2.18.4\">ExoPlayer 2.18.4 release</a>.</p>\n<ul>\n <li>Core library:\n  <ul>\n   <li>Fix network type detection on API 33 (<a href=\"https://github.com/google/ExoPlayer/issues/10970\">#10970</a>).</li>\n   <li>Fix <code>NullPointerException</code> when calling <code>ExoPlayer.isTunnelingEnabled</code> (<a href=\"https://github.com/google/ExoPlayer/issues/10977\">#10977</a>).</li>\n  </ul></li>\n <li>Downloads:\n  <ul>\n   <li>Make the maximum difference of the start time of two segments to be merged configurable in <code>SegmentDownloader</code> and subclasses (<a href=\"https://github.com/androidx/media/pull/248\">#248</a>).</li>\n  </ul></li>\n <li>Audio:\n  <ul>\n   <li>Fix broken gapless MP3 playback on Samsung devices (<a href=\"https://github.com/google/ExoPlayer/issues/8594\">#8594</a>).</li>\n   <li>Fix bug where playback speeds set immediately after disabling audio may be overridden by a previous speed change (<a href=\"https://github.com/google/ExoPlayer/issues/10882\">#10882</a>).</li>\n  </ul></li>\n <li>Video:\n  <ul>\n   <li>Map HEVC HDR10 format to <code>HEVCProfileMain10HDR10</code> instead of <code>HEVCProfileMain10</code>.</li>\n   <li>Add workaround for a device issue on Chromecast with Google TV and Lenovo M10 FHD Plus that causes 60fps AVC streams to be marked as unsupported (<a href=\"https://github.com/google/ExoPlayer/issues/10898\">#10898</a>).</li>\n   <li>Fix frame release performance issues when playing media with a frame rate far higher than the screen refresh rate.</li>\n  </ul></li>\n <li>Cast:\n  <ul>\n   <li>Fix transient <code>STATE_IDLE</code> when transitioning between media items (<a href=\"https://github.com/androidx/media/issues/245\">#245</a>).</li>\n  </ul></li>\n <li>RTSP:\n  <ul>\n   <li>Catch the IllegalArgumentException thrown in parsing of invalid RTSP Describe response messages (<a href=\"https://github.com/google/ExoPlayer/issues/10971\">#10971</a>).</li>\n  </ul></li>\n <li>Session:\n  <ul>\n   <li>Fix a bug where notification play/pause button doesn't update with player state (<a href=\"https://github.com/androidx/media/issues/192\">#192</a>).</li>\n  </ul></li>\n <li>IMA extension:\n  <ul>\n   <li>Fix a bug which prevented DAI streams without any ads from starting because the first (and in the case without ads the only) <code>LOADED</code> event wasn't received.</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": "https://github.com/androidx/media/commits/1.0.0-rc02"
+    }
+  ]
+}
