@@ -1,0 +1,105 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#september_18_2019",
+  "title": "September 18, 2019",
+  "releasedOn": "2019-09-18",
+  "updated": "2019-09-18T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#september_18_2019",
+  "components": [
+    {
+      "id": "ads",
+      "name": "Ads",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/ads#1.0.0-alpha02",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li>Changed the return type of <code>AdvertisingIdUtils.getAdvertisingIdProviderServices()</code> from <code>List&lt;ResolveInfo&gt;</code> to <code>List&lt;ServiceInfo&gt;</code></li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Changed the <code>AdvertisingIdNotAvailableException</code> message to more accurately read \"No compatible AndroidX Advertising ID Provider available.\"</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/886c5f552be88f0d404fbae205244e074a75bb03..561afade39b67853e2b54301e6b0cd16d19ce0a7/ads"
+    },
+    {
+      "id": "annotation-experimental",
+      "name": "Annotation-Experimental",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/annotation#experimental-1.0.0-alpha01",
+      "detailsHtml": "<strong>Note:</strong><span> This version is dependent on the Java 8 programming language. Please read <a href=\"https://developer.android.com/studio/write/java8-support\">Use Java 8 language features</a> to learn how to use it in your project.</span> \n<p><strong>New features</strong></p>\n<ul>\n <li>\n  <p>The Jetpack Experimental annotation library provides a Java-compatible implementation of Kotlin’s <a href=\"https://kotlinlang.org/docs/reference/experimental.html\">experimental API markers</a>. The <code>-lint</code> artifact provides a Lint-based implementation of experimental usage restrictions and enforces restrictions on Java usages of Kotlin’s native experimental API markers.</p>\n </li>\n <li>\n  <p>When using the <code>annotation-experimental</code> artifact as a dependency, the Lint rules provided by the <code>annotation-experimental-lint</code> artifact will be enforced automatically.</p>\n </li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/571d7a890c8b1e90e9f4db8f783380a928da3624..cd1aae0250ae03f6383bf4fd28a60036778bb509/annotation/annotation-experimental"
+    },
+    {
+      "id": "autofill",
+      "name": "Autofill",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/autofill#1.0.0-beta01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Added support for annotating One Time Password (OTP) fields which can be filled by reading the code from an SMS.</li>\n <li>Generator function added to get hint constants for single character OTP fields.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/a290bf422772729760cd49aa80450826768d5a45..391dc4bc729d2973a6e6e57916d3008c58026e56/autofill"
+    },
+    {
+      "id": "benchmark",
+      "name": "Benchmark",
+      "version": "1.0.0-alpha06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/benchmark#1.0.0-alpha06",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Added a check for incorrectly using the old package for the test runner, which now provides a more-helpful error message</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>The experimental annotation <code>ExperimentalAnnotationReport</code> is now correctly public. Usage of the experimental <a href=\"https://developer.android.com/reference/kotlin/androidx/benchmark/BenchmarkState#report\">BenchmarkState#report</a> API now requires this annotation</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/befedb9611cf6cd7fbf5f0d3e18f60c5facc1d31..7ccc99ac1b0e06dbae4c0f30bbc06a6bae1889f6/benchmark"
+    },
+    {
+      "id": "biometric",
+      "name": "Biometric",
+      "version": "1.0.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/biometric#1.0.0-beta02",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed issues with device credential support in version <code>1.0.0-beta01</code></li>\n <li>Removed Java 8 dependencies and switched to depending on Java 7 (<a href=\"https://issuetracker.google.com/issues/140508526\">b/140508526</a>)</li>\n <li><code>FingerprintHelperFragment</code> now correctly throws <code>ERROR_HW_NOT_PRESENT</code> when no fingerprint hardware is detected (<a href=\"https://issuetracker.google.com/issues/140427586\">b/140427586</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/a3b34e760b913aaf27b25e76cc171bdd86ec3d3b..2606d2aabf9da268b7680e9bcd791e4797425dbd/biometric"
+    },
+    {
+      "id": "browser",
+      "name": "Browser",
+      "version": "1.2.0-alpha08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/browser#1.2.0-alpha08",
+      "detailsHtml": "<strong>Note:</strong><span> This version is dependent on the Java 8 programming language. Please read <a href=\"https://developer.android.com/studio/write/java8-support\">Use Java 8 language features</a> to learn how to use it in your project.</span> \n<p><strong>New features</strong></p>\n<ul>\n <li>Introduced new Share Target APIs for Trusted Web Activities. Apps that use Trusted Web Activities can now send data to their Web Share Target, defined by the protocol https://wicg.github.io/web-share-target/level-2/ (<a href=\"https://android-review.googlesource.com/#/q/I47b938f8d5844023ea65c108f974d5c31a49d61a\">aosp/I47b93</a>, <a href=\"https://android-review.googlesource.com/#/q/I0ec3eec2207fa1544c626e2e1da6268ead18f107\">aosp/I0ec3e</a>)</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Added the callback <code>extraCallbackWithResult</code> to <code>ICustomTabsCallback</code> (<a href=\"https://android-review.googlesource.com/#/q/Ic2cc2ec9e99c81505b0db255a9abb45aa46e630f\">aosp/Ic2cc2</a>)</li>\n <li>Marked some <code>CustomTabsSession</code> method parameters as Nullable or NonNull (<a href=\"https://android-review.googlesource.com/#/q/Iec46074608a642e069869a65fd867788ccbe2f8c\">aosp/Iec460</a>)</li>\n <li><code>TrustedWebActivityIntentBuilder</code> now builds a <code>TrustedWebActivityIntent</code> instead of a raw intent (<a href=\"https://android-review.googlesource.com/#/q/I03fb621220dd24cd59095ded8c55bba70305f6d3\">aosp/I03fb6</a>)</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li><code>CustomTabsClient</code> now uses the legacy <code>requestPostMessageChannel</code> if needed (<a href=\"https://android-review.googlesource.com/#/q/Ibb3240646c931197a5a0ea16e3d3178b1f3f129d\">aosp/Ibb324</a>)</li>\n <li>Fixed <code>CustomTabsSessionToken#equals</code> (<a href=\"https://android-review.googlesource.com/#/q/I7f24900ab94725bb8e31faf0c3cd93561f2709d6\">aosp/I7f249</a>)</li>\n <li><code>CustomTabsClient</code> now uses the legacy <code>newSession</code> if possible (<a href=\"https://android-review.googlesource.com/#/q/Ie27dc5443050cc14b5509d1486e56dc73654eae4\">aosp/Ie27dc</a>)</li>\n</ul>\n<p><strong>External contribution</strong></p>\n<ul>\n <li>API lint check for the MinMaxConstant is enabled for androidx (<a href=\"https://android-review.googlesource.com/#/q/I29b78a0a024984113ca37145f1cb2a31a82c7b25\">aosp/I29b78</a>) (<a href=\"https://issuetracker.google.com/issues/138602561\">b/138602561</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/aa4d9f606c70daf3cbd6033de426e84d21930733..dfdbbcb30249aa226e33ebb323f7d12ad692297a/browser"
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/enterprise#1.0.0-beta01",
+      "detailsHtml": "<strong>Note:</strong><span> This version is dependent on the Java 8 programming language. Please read <a href=\"https://developer.android.com/studio/write/java8-support\">Use Java 8 language features</a> to learn how to use it in your project.</span>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/254b8b88f073fddd0c1e30b0f9e9893cbf27f4b5..64f11e5722d8a574ccb72bfb042fa89f51129c68/enterprise"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.2.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.2.0-alpha04",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li>The <code>getFragmentManager()</code> and <code>requireFragmentManager()</code> methods on <code>Fragment</code> have been deprecated and replaced with a single <code>getParentFragmentManager()</code> method, which returns the non-null <code>FragmentManager</code> the Fragment is added to (you can use <code>isAdded()</code> to determine if it is safe to call). (<a href=\"https://issuetracker.google.com/issues/140574496\">b/140574496</a>)</li>\n <li>The static <code>FragmentManager.enableDebugLogging</code> method has been deprecated. FragmentManager now respects <a href=\"https://developer.android.com/reference/android/util/Log#isLoggable(java.lang.String,%20int)\"><code>Log.isLoggable()</code></a> for the tag <code>FragmentManager</code>, allowing you to enable either <code>DEBUG</code> or <code>VERBOSE</code> logging without re-compiling your app. (<a href=\"https://android-review.googlesource.com/1116591\">aosp/1116591</a>)</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fragments are now properly destroyed while exit animations on other fragments are running. (<a href=\"https://issuetracker.google.com/issues/140574199\">b/140574199</a>)</li>\n <li>Fixed an issue where Fragments would call <code>Activity.findViewById()</code> where before it did not. (<a href=\"https://android-review.googlesource.com/1116431\">aosp/1116431</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/8e4aaeee0302e90400b8aa995dbbc220aa5dfe21..6e3bf267861f1dffb15c0ceff82f553a658c9972/fragment"
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.2.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.2.0-alpha05",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed a race condition in coroutine livedata builder. <a href=\"http://issuetracker.google.com/140249349\">b/140249349</a></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/44b591fe64e859b4b4e34b2590a5257c255c638c..af12e75e6b4110f48e44ca121466943909de8f06/lifecycle"
+    },
+    {
+      "id": "viewmodel-savedstate",
+      "name": "ViewModel-SavedState",
+      "version": "1.0.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#viewmodel-savedstate-1.0.0-alpha05",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li><code>SavedStateViewModelFactory</code> no longer extends <code>AbstractSavedStateViewModelFactory</code> and <code>SavedStateHandle</code> is created only for ViewModels that requested have it (<a href=\"https://android-review.googlesource.com/1113593\">aosp/1113593</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/44b591fe64e859b4b4e34b2590a5257c255c638c..391dc4bc729d2973a6e6e57916d3008c58026e56/lifecycle/lifecycle-viewmodel-savedstate"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.2.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.2.0-alpha03",
+      "detailsHtml": "<p><strong>Behavior changes</strong></p>\n<ul>\n <li>Calling <code>setViewModelStore()</code> after calling <code>setGraph</code> now results in an <code>IllegalStateException</code>. This should always be set by the <code>NavHost</code> as part of the initial setup to ensure that all <code>NavBackStackEntry</code> instances have a consistent storage for <code>ViewModel</code> instances. (<a href=\"https://android-review.googlesource.com/1111821\">aosp/1111821</a>)</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed a <code>ConcurrentModificationException</code> when using <code>ViewModel</code> instances attached to multiple different navigation graph scoped <code>ViewModelStore</code> instances. (<a href=\"https://android-review.googlesource.com/1112257\">aosp/1112257</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2d0a22f1ddeb3b7e9d0002f0e089a25b7ef64f1c..391dc4bc729d2973a6e6e57916d3008c58026e56/navigation"
+    },
+    {
+      "id": "jetifier",
+      "name": "Jetifier",
+      "version": "1.0.0-beta07",
+      "url": "https://developer.android.com/jetpack/androidx/releases/jetifier#1.0.0-beta07",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed the mappings of the <code>androidx.navigation</code> library</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/af05c08e2a2f721b3f7411affca883f6a3336513..d9761c71f9eacfa0abb8f0bc3e2305c8b229d75a/jetifier"
+    }
+  ]
+}
