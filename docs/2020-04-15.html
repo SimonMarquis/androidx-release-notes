@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>April 15, 2020 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for April 15, 2020: Camera-Camera2 1.0.0-beta03, Camera-Core 1.0.0-beta03, Camera-Extensions 1.0.0-alpha10, and more.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2020-04-15.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="april-15-2020">
+            <div class="date-divider"><a href="./#april-15-2020" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">April 15, 2020</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="beta" data-search="camera-camera2 1.0.0-beta03 2020-04-15 april 15, 2020" id="april-15-2020-camera-camera2-1-0-0-beta03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/camera">Camera-Camera2</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/6c98d66b901be2eecdf89477ccd70d2490ca6fc2..0e54727f73afedc58cfdda00fb123d6b50d3459d/camera/camera-camera2" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/camera#camera-camera2-1.0.0-beta03" class="badge beta">1.0.0-beta03</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixes to support the release of <code>camera-core</code></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="camera-core 1.0.0-beta03 2020-04-15 april 15, 2020" id="april-15-2020-camera-core-1-0-0-beta03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/camera">Camera-Core</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/6c98d66b901be2eecdf89477ccd70d2490ca6fc2..0e54727f73afedc58cfdda00fb123d6b50d3459d/camera/camera-core" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/camera#camera-core-1.0.0-beta03" class="badge beta">1.0.0-beta03</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixed regression from beta03 where calling <code>bindToLifecycle()</code> with zero <code>UseCase</code>s would cause a thrown exception. This prevented retrieval of a <code>Camera</code> without binding a <code>UseCase</code>.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="camera-extensions 1.0.0-alpha10 2020-04-15 april 15, 2020" id="april-15-2020-camera-extensions-1-0-0-alpha10">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/camera">Camera-Extensions</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/6c98d66b901be2eecdf89477ccd70d2490ca6fc2..0e54727f73afedc58cfdda00fb123d6b50d3459d/camera/camera-extensions" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/camera#camera-extensions-1.0.0-alpha10" class="badge alpha">1.0.0-alpha10</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixes to support the release of Camera-Core</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="camera-lifecycle 1.0.0-beta03 2020-04-15 april 15, 2020" id="april-15-2020-camera-lifecycle-1-0-0-beta03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/camera">Camera-Lifecycle</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/6c98d66b901be2eecdf89477ccd70d2490ca6fc2..0e54727f73afedc58cfdda00fb123d6b50d3459d/camera/camera-lifecycle" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/camera#camera-lifecycle-1.0.0-beta03" class="badge beta">1.0.0-beta03</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixed regression from beta03 where calling <code>bindToLifecycle()</code> with zero <code>UseCase</code>s would cause a thrown exception. This prevented retrieval of a <code>Camera</code> without binding a <code>UseCase</code>.</li><li>Fixes to support the release of <code>camera-core</code></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="camera-view 1.0.0-alpha10 2020-04-15 april 15, 2020" id="april-15-2020-camera-view-1-0-0-alpha10">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/camera">Camera-View</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/6c98d66b901be2eecdf89477ccd70d2490ca6fc2..0e54727f73afedc58cfdda00fb123d6b50d3459d/camera/camera-view" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/camera#camera-view-1.0.0-alpha10" class="badge alpha">1.0.0-alpha10</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixes a previous known issue where <code>PreviewView</code>'s surfaceView implementation wasn't working well on certain devices, and would cause the app to crash after resuming preview. <a href="https://android-review.googlesource.com/#/q/I5ed6b7d6ee6a4d9aeb6643e06440597f9674191c" title="I5ed6b" class="ref ref-gerrit">I5ed6b</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="compose 0.1.0-dev09 2020-04-15 april 15, 2020" id="april-15-2020-compose-0-1-0-dev09">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose">Compose</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/compose#0.1.0-dev09" class="badge stable">0.1.0-dev09</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="core 1.3.0-rc01 2020-04-15 april 15, 2020" id="april-15-2020-core-1-3-0-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/core">Core</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/6c98d66b901be2eecdf89477ccd70d2490ca6fc2..9c19e5fbcdbbc72e70d2f52971009cc17be53abe/core" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/core#1.3.0-rc01" class="badge rc">1.3.0-rc01</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li><code>WindowInsetsCompat</code> now properly implements <code>hashCode()</code> and <code>equals()</code> on all supported API levels.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="core-pip 1.0.0-alpha01 2020-04-15 april 15, 2020" id="april-15-2020-core-animation-1-0-0-alpha01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/core">Core-pip</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/core#core-animation-1.0.0-alpha01" class="badge alpha">1.0.0-alpha01</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><p><code>androidx.core:core-animation</code> is a backport of the Animator API including all the features added to the platform since API Level 14. Some of the notable features are:</p><ul><li><code>ValueAnimator#pause</code>, <code>ValueAnimator#resume</code> (API Level 19)</li><li><code>ObjectAnimator.ofMultiInt</code>, <code>ObjectAnimator.ofMultiFloat</code> (API Level 21)</li><li><code>ValueAnimator#setCurrentFraction</code> (API Level 22)</li><li><code>AnimatorSet#setCurrentPlayTime</code> (API Level 26)</li><li><code>androidx.core:core-animation-testing</code> allows developers to test animators in a deterministic manner. See <a href="https://developer.android.com/reference/androidx/core/animation/AnimatorTestRule">AnimatorTestRule</a> for the details.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="core-role 1.0.0-rc01 2020-04-15 april 15, 2020" id="april-15-2020-core-role-1-0-0-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/core">Core-Role</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/b3acda6aadff279fb002c49e9d0d4bd5b21f0566..d1e4253a0dc3148439148c0c687698b243475326/core/core-role" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/core#core-role-1.0.0-rc01" class="badge rc">1.0.0-rc01</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="core-telecom 1.1.0-alpha01 2020-04-15 april 15, 2020" id="april-15-2020-core-role-1-1-0-alpha01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/core">Core-Telecom</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/b3acda6aadff279fb002c49e9d0d4bd5b21f0566..24daa503442fcd3e44ada60cf1da41df2815c045/core/core-role" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/core#core-role-1.1.0-alpha01" class="badge alpha">1.1.0-alpha01</a></div>
+              </div>
+              <div class="notes"><p><strong>API Changes</strong></p><ul><li>Added role name for system gallery.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="media 1.2.0-alpha02 2020-04-15 april 15, 2020" id="april-15-2020-media-1-2-0-alpha02">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media">Media</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/f14ad350142290622d1645e1d0e280cbe8ca4c2f..24daa503442fcd3e44ada60cf1da41df2815c045/media/media" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media#media-1.2.0-alpha02" class="badge alpha">1.2.0-alpha02</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Prevent modifications of VersionedParcelable classes</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="mediarouter 1.2.0-alpha01 2020-04-15 april 15, 2020" id="april-15-2020-mediarouter-1-2-0-alpha01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/mediarouter">Mediarouter</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/acf26b9b01f4429d77435f3c20d46e01cc03ca9a..24daa503442fcd3e44ada60cf1da41df2815c045/mediarouter/mediarouter" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/mediarouter#1.2.0-alpha01" class="badge alpha">1.2.0-alpha01</a></div>
+              </div>
+              <div class="notes"><p><strong>API Changes</strong></p><ul><li>Prevent tentative usages of internal use only methods with <code>@RestrictTo(LIBRARY)</code></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Resolved talkback on cast dialog issue</li><li>Guard DynamicGroupRouterController’s listener with a Lock</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="navigation 2.2.2 2020-04-15 april 15, 2020" id="april-15-2020-navigation-2-2-2">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/navigation">Navigation</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/3758a176b024534e6af6095fbd2f966627453d36..283af54f404f00bb16e7cbb90354681924d21ded/navigation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/navigation#2.2.2" class="badge stable">2.2.2</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixed an <code>IllegalStateException</code> when deep linking to the start destination of your graph when you have multiple <code>NavHostFragment</code> instances in your Activity. <a href="https://issuetracker.google.com/issues/147378752" title="b/147378752" class="ref ref-issue">b/147378752</a></li><li><code>NavigationUI</code> no longer ignores empty labels (i.e., a destination with <code>android:label=””</code>) and now correctly sets the title to an empty string. This was previously released in <a href="https://developer.android.com/androidx/releases/navigation#2.3.0-alpha04">Navigation 2.3.0-alpha04</a>. <a href="https://issuetracker.google.com/issues/148679860" title="b/148679860" class="ref ref-issue">b/148679860</a></li><li>The <code>navigation-common-ktx</code> ProGuard rules now correctly only keep the <code>NavArgs</code> classes that are used rather than all <code>NavArgs</code> instances. This was previously released in <a href="https://developer.android.com/androidx/releases/navigation#2.3.0-alpha03">Navigation 2.3.0-alpha03</a>. (<a href="https://issuetracker.google.com/issues/150213558" title="b/150213558" class="ref ref-issue">b/150213558</a></li></ul><p><strong>Dependency updates</strong></p><ul><li>Navigation now depends on <a href="https://developer.android.com/jetpack/androidx/releases/fragment#1.2.4">Fragment <code>1.2.4</code></a>. <a href="https://android-review.googlesource.com/1277325" title="aosp/1277325" class="ref ref-gerrit">aosp/1277325</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="navigation 2.3.0-alpha05 2020-04-15 april 15, 2020" id="april-15-2020-navigation-2-3-0-alpha05">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/navigation">Navigation</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/8744680798c115f612a99148c5a5c3ad4bd6fbf5..24daa503442fcd3e44ada60cf1da41df2815c045/navigation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/navigation#2.3.0-alpha05" class="badge alpha">2.3.0-alpha05</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>For <a href="https://developer.android.com/guide/navigation/navigation-dynamic#included">dynamic graph includes</a> using <code>&lt;include-dynamic&gt;</code>, you no longer need to specify <code>app:graphPackage</code> and a default one will be used by adding <code>moduleName</code> suffix to the <code>applicationId</code> after a dot. If you do need to customize your <code>graphPackage</code>, an <code>${applicationId}</code> placeholder is now supported. <a href="https://issuetracker.google.com/issues/152696768" title="b/152696768" class="ref ref-issue">b/152696768</a></li><li>The Navigation Graph Kotlin DSL now exposes a <code>defaultArguments</code> <code>Map</code> for actions, mirroring the ability to set default values on <code>&lt;action&gt;</code> elements in Navigation XML files. <a href="https://issuetracker.google.com/issues/150345605" title="b/150345605" class="ref ref-issue">b/150345605</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li>From <a href="https://developer.android.com/androidx/releases/navigation#2.2.2">Navigation 2.2.2</a>: Fixed an <code>IllegalStateException</code> when deep linking to the start destination of your graph when you have multiple <code>NavHostFragment</code> instances in your Activity. <a href="https://issuetracker.google.com/issues/147378752" title="b/147378752" class="ref ref-issue">b/147378752</a></li></ul><p><strong>Dependency updates</strong></p><ul><li>Navigation now depends on <a href="https://developer.android.com/jetpack/androidx/releases/fragment#1.2.4">Fragment <code>1.2.4</code></a>. <a href="https://android-review.googlesource.com/1277325" title="aosp/1277325" class="ref ref-gerrit">aosp/1277325</a></li><li>Dynamic Navigation now depends on <a href="https://developer.android.com/reference/com/google/android/play/core/release-notes#1-7-2">Play Core <code>1.7.2</code></a>. <a href="https://android-review.googlesource.com/1282257" title="aosp/1282257" class="ref ref-gerrit">aosp/1282257</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="preference 1.1.1 2020-04-15 april 15, 2020" id="april-15-2020-preference-1-1-1">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/preference">Preference</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/41ca691cb0eed48244912c1a1f7e9a253174e48b..f448aa7c34aae443fab98c12399bb8e848e3bbdb/preference" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/preference#1.1.1" class="badge stable">1.1.1</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li><code>PreferenceDialogFragmentCompat</code> will no longer throw an <code>IllegalStateException</code> when inflating a <code>FragmentContainerView</code> from xml. <a href="https://issuetracker.google.com/issues/150051716" title="b/150051716" class="ref ref-issue">b/150051716</a></li></ul><p><strong>Dependency updates</strong></p><ul><li>Preference now depends on <a href="https://developer.android.com/jetpack/androidx/releases/fragment#1.2.4">Fragment <code>1.2.4</code></a>. <a href="https://android-review.googlesource.com/1277317" title="aosp/1277317" class="ref ref-gerrit">aosp/1277317</a></li><li>The <code>preference-ktx</code> dependency now depends on <code>androidx.core:core-ktx:1.1.0</code> and <code>androidx.fragment:fragment-ktx:1.2.4</code>, mirroring the dependencies of the main <code>preference</code> artifact and ensuring that upgrading <code>preference-ktx</code> updates both the main and <code>-ktx</code> artifacts of transitive dependencies. <a href="https://android-review.googlesource.com/1277319" title="aosp/1277319" class="ref ref-gerrit">aosp/1277319</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="security 1.0.0-rc01 2020-04-15 april 15, 2020" id="april-15-2020-security-crypto-1-0-0-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/security">Security</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/security#1.0.0-rc01" class="badge rc">1.0.0-rc01</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="swiperefreshlayout 1.1.0-rc01 2020-04-15 april 15, 2020" id="april-15-2020-swiperefreshlayout-1-1-0-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/swiperefreshlayout">Swiperefreshlayout</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/666ae665acfcfa2a20eccc18e4494808169742f4..6563b7854e79a3f7182efe27ee726867a091b603/swiperefreshlayout/swiperefreshlayout" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/swiperefreshlayout#1.1.0-rc01" class="badge rc">1.1.0-rc01</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="ui 0.1.0-dev09 2020-04-15 april 15, 2020" id="april-15-2020-ui-0-1-0-dev09">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/ui">UI</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/ui#0.1.0-dev09" class="badge stable">0.1.0-dev09</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="vectordrawable 1.2.0-alpha01 2020-04-15 april 15, 2020" id="april-15-2020-vectordrawable-1-2-0-alpha01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/vectordrawable">Vectordrawable</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/7e8073001f8db1bc9e0ff39615c67f390a6a6420..24daa503442fcd3e44ada60cf1da41df2815c045/vectordrawable/vectordrawable" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/vectordrawable#vectordrawable-1.2.0-alpha01" class="badge alpha">1.2.0-alpha01</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>This release does not have any new public features. It is a necessary dependency when you use <code>androidx.vectordrawable:vectordrawable-seekable-1.0.0-alpha01</code>.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="vectordrawable-seekable 1.0.0-alpha01 2020-04-15 april 15, 2020" id="april-15-2020-vectordrawable-seekable-1-0-0-alpha01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/vectordrawable">Vectordrawable-Seekable</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/vectordrawable#vectordrawable-seekable-1.0.0-alpha01" class="badge alpha">1.0.0-alpha01</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><p><code>androidx.vectordrawable:vectordrawable-seekable</code> is a seekable alternative for <code>androidx.vectordrawable:vectordrawable-animated</code> with some additional features. It supports the same XML format as AnimatedVectorDrawable.</p><ul><li>Pause and resume</li><li>Seek (setCurrentPlayTime)</li><li>Enhanced callbacks</li></ul><p>See <a href="https://developer.android.com/reference/androidx/vectordrawable/graphics/drawable/SeekableAnimatedVectorDrawable">SeekableAnimatedVectorDrawable</a> for the details.</p></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="versionedparcelable 1.1.1 2020-04-15 april 15, 2020" id="april-15-2020-versionedparcelable-1-1-1">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/versionedparcelable">Versionedparcelable</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/e9fe1bb5aab6c2f410f8992bfe340768e0c74abd..9fd278801e06c07a5d230fd7edbb97e16c322949/versionedparcelable" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/versionedparcelable#1.1.1" class="badge stable">1.1.1</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Updated ProGuard rules to keep all classes that implement <code>VersionedParcelable</code>, including non-public classes <a href="https://android-review.googlesource.com/q/I480bf84ca20b79f83ea4d6c74af45ea55a3b8e9a" title="I480bf8" class="ref ref-gerrit">I480bf8</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="wear 1.1.0-alpha01 2020-04-15 april 15, 2020" id="april-15-2020-wear-1-1-0-alpha01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/wear">Wear</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/50a39caa72955aae0c75225fd9805ab537cbf049..24daa503442fcd3e44ada60cf1da41df2815c045/wear/wear" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/wear#1.1.0-alpha01" class="badge alpha">1.1.0-alpha01</a></div>
+              </div>
+              <div class="notes"><p><strong>API Changes</strong></p><ul><li>Added optional <code>EXTRA_ANIMATION_DURATION_MILLIS</code> to <code>ConfirmationActivity</code> to allow for the duration that the confirmation dialog is displayed. <a href="https://android.googlesource.com/platform/frameworks/support/+/adb83ce3ab9c842b802587107e138253e28ce4f6" title="adb83ce" class="ref ref-gerrit">adb83ce</a> <a href="https://android.googlesource.com/platform/frameworks/support/+/134523c449b103383fc030ac033cd9a6282b287e" title="134523c" class="ref ref-gerrit">134523c</a> <a href="https://issuetracker.google.com/143356547" title="b/143356547" class="ref ref-issue">b/143356547</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Updated <code>WearableActionDrawView</code>to delay action drawer inflation until the drawer is opened for the first time. <a href="https://android.googlesource.com/platform/frameworks/support/+/5cd32f7c870ad9b01428b9e51224992599e9e5fb" title="5cd32f7" class="ref ref-gerrit">5cd32f7</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="webkit 1.3.0-alpha01 2020-04-15 april 15, 2020" id="april-15-2020-webkit-1-3-0-alpha01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/webkit">Webkit</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/1dcd3c1b8b7ba53451552c68d4deaa0d60958634..24daa503442fcd3e44ada60cf1da41df2815c045/webkit/webkit" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/webkit#1.3.0-alpha01" class="badge alpha">1.3.0-alpha01</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li><code>ForceDarkStrategy</code> API to control <code>WebView</code> darkening (CSS/web content darkening versus auto darkening).</li><li><code>WebMessageListener</code> APIs provide a simple and secure mechanism to establish communication between web contents and the WebView embedder app.</li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
