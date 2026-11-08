@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#december_20_2024",
+  "title": "December 20, 2024",
+  "releasedOn": "2024-12-20",
+  "updated": "2024-12-20T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#december_20_2024",
+  "components": [
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.6.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.6.0-alpha01",
+      "detailsHtml": "<p>Use the 1.6.0 <a href=\"https://developer.android.com/jetpack/androidx/releases/media3#1.6.0\">stable version</a>.</p>",
+      "commitsUrl": null
+    }
+  ]
+}
