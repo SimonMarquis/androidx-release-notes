@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>December 6, 2023 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for December 6, 2023: Compose Compiler 1.5.6.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2023-12-06.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="december-6-2023">
+            <div class="date-divider"><a href="./#december-6-2023" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">December 6, 2023</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="stable" data-search="compose compiler 1.5.6 2023-12-06 december 6, 2023" id="december-6-2023-compose-compiler-1-5-6">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-compiler">Compose Compiler</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/1935aef1c3b3c4893c4ed900ed41552093c37e86..756b7ad84884595dc9fae5ab1aa29cd329d89308/compose/compiler" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.5.6" class="badge stable">1.5.6</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>Support for Kotlin 1.9.21</li></ul><p><strong>Bug Fixes</strong></p><ul><li>Enable intrinsic remember - the compiler transform that inlines remember in Compose compiler plugin and replaces <code>.equals</code> comparisons with int comparisons of the parameter meta for stable params. This results in less slots being used and less comparisons being done at runtime. The option can be disabled by providing compiler plugin argument: -P <code>plugin:androidx.compose.compiler.plugins.kotlin:intrinsicRemember=false</code>. <a href="https://android-review.googlesource.com/#/q/If675f9fc1cd7e197f7fcc6094124b011cca12922" title="If675f" class="ref ref-gerrit">If675f</a></li><li>Fix memoization of adapted function references and inline arguments. <a href="https://issuetracker.google.com/issues/312738720" title="b/312738720" class="ref ref-issue">b/312738720</a></li><li>Realize groups when exiting inline function call <a href="https://issuetracker.google.com/issues/312242547" title="b/312242547" class="ref ref-issue">b/312242547</a></li></ul><p><strong>External Contribution</strong></p><ul><li>Fix k/native and k/wasm runtime crash due to missing return statement in Composable functions when it's the last statement and returns a null const <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/2835716" title="aosp/2835716" class="ref ref-gerrit">aosp/2835716</a></li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
