@@ -1,0 +1,25 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#november_7_2018",
+  "title": "November 7, 2018",
+  "releasedOn": "2018-11-07",
+  "updated": "2018-11-07T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#november_7_2018",
+  "components": [
+    {
+      "id": "core",
+      "name": "Core",
+      "version": "1.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.0.1",
+      "detailsHtml": "<p>Bugfix release of <code>core-1.0.1</code> and <code>appcompat-1.0.2</code>.</p>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed bug where <code>PrecomputedTextCompat</code> would crash when used with RTL <code>AppCompatTextView</code>. <a href=\"https://issuetracker.google.com/113070424\">b/113070424</a></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "appcompat",
+      "name": "AppCompat",
+      "version": "1.0.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.0.2",
+      "detailsHtml": "<p>Bugfix release of <code>core-1.0.1</code> and <code>appcompat-1.0.2</code>.</p>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed bug where <code>PrecomputedTextCompat</code> would crash when used with RTL <code>AppCompatTextView</code>. <a href=\"https://issuetracker.google.com/113070424\">b/113070424</a></li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

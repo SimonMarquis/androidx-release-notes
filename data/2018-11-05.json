@@ -1,0 +1,57 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#november_5_2018",
+  "title": "November 5, 2018",
+  "releasedOn": "2018-11-05",
+  "updated": "2018-11-05T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#november_5_2018",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.0.0-alpha01",
+      "detailsHtml": "<p><code>androidx.activity 1.0.0-alpha01</code> introduces <code>ComponentActivity</code>, a new base class of the existing <code>FragmentActivity</code> and <code>AppCompatActivity</code>.</p>\n<p><strong>New features</strong></p>\n<ul>\n <li>You can now register an <code>OnBackPressedCallback</code> via <code>addOnBackPressedCallback</code> to receive <code>onBackPressed()</code> callbacks without needing to override the method in your activity.</li>\n <li>Added a new <code>by viewModels()</code> Kotlin property delegate for retrieving <code>ViewModel</code>s from a <code>ComponentActivity</code>.</li>\n <li>Pending input events (such as clicks) are now canceled in <code>onStop()</code>.</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>The implementation of <code>LifecycleOwner</code> and <code>ViewModelStoreOwner</code> have been moved from <code>FragmentActivity</code> to <code>ComponentActivity</code>.</li>\n <li><code>onRetainCustomNonConfigurationInstance</code> has been deprecated. Use a <code>ViewModel</code> for storing objects that need to survive configuration changes.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "core",
+      "name": "Core-Telecom",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>New features and API changes</strong></p>\n<ul>\n <li>NestedScrollingChild3 and NestedScrollingParent3 add the ‘consumed’ parameter to the overloaded dispatchNestedScroll and * onNestedScroll methods so that the view that drives nested scrolling can be better informed about how much scroll distance was * consumed by parents in each nested scroll pass.</li>\n <li>NestedScrollView now implements NestedScrollingChild3 and NestedScrollingParent3, and therefore, the NestedScrollingChild2 and * NestedScrollingParent2 implementations of dispatchNestedScroll and onNestedScroll are not guaranteed to be called. Developers * counting on either being called should also override the new nested scrolling 3 version of dispatchNestedScroll and onNestedScroll.</li>\n <li>ShortcutInfoCompat has the following new fields: Persons, categories and isLongLived. Done to advertise it can accept various types * of content.</li>\n <li>Renamed SupportActivity to ComponentActivity. See androidx.activity for more info.</li>\n <li>Added getMainExecutor() method, which returns an Executor link that will run enqueued tasks on the main thread associated with that * context.</li>\n <li>Added compatibility implementation of Resources.getFloat.</li>\n <li>Added Results Source to compat RemoteInput. This allows apps to distinguish direct and smart replies for logging purposes.</li>\n <li>Added Kotlin extension functions for TextView TextWatcher actions.</li>\n <li>Deprecated AccessibilityNodeInfo capability and flag setters; use actions instead.</li>\n <li>Added AccessibilityPane to ViewCompat.</li>\n <li>Exposed ClickableSpans on pre-O devices through the addition of AccessibilityClickableSpanCompat.</li>\n <li>Deprecated <code>AccessibilityNodeInfoCompat.setFocusable()</code>, <code>setClickable()</code>, <code>setLongClickable()</code>, <code>setScrollable()</code>, and <code>setContextClickable()</code>. Added <code>AccessibilityAction</code>s instead.</li>\n <li>Added <code>ViewCompat.setAccessibilityPaneTitle()</code>, <code>getAccessibilityPaneTitle()</code>, <code>setScreenReaderFocusable()</code>, <code>isScreenReaderFocusable()</code>, <code>setAccessibilityHeading()</code>, and <code>isAccessibilityHeading()</code>, to backport this <code>View</code> accessibility functionality through API 19.</li>\n <li>Added <code>ViewCompat.enableAccessibleClickableSpanSupport()</code> to allow developers to make non-URL <code>ClickableSpan</code>s accessible back through API 19.</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed bug that caused <code>ResourcesCompat.getFont()</code> crash when the network fails, when using downloadable fonts.</li>\n <li>Fixed Null Pointer Exception in TypefaceCompatApi21 that occurred when <code>ContentResolver</code> returned null.</li>\n <li>Fixed type error in Array Utils where it expected ColorStateList but got raw colors.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "core-ktx",
+      "name": "Core",
+      "version": "1.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#core-ktx-1.0.1",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.1.0-alpha01",
+      "detailsHtml": "<p>This is the first release of the <code>fragment-testing</code> artifact and <code>FragmentScenario</code> which is built on top of the androidx.test:core APIs. See the <a href=\"https://developer.android.com/training/basics/fragments/testing\">Fragment testing documentation</a> for more details.</p>\n<p><strong>New features</strong></p>\n<ul>\n <li>New FragmentScenario class for testing Fragments in isolation.</li>\n <li>You can now set a <code>FragmentFactory</code> on any <code>FragmentManager</code> to control how new Fragment instances are instantiated.</li>\n <li>Added a new <code>by viewModels()</code> Kotlin property delegate for retrieving ViewModels from a Fragment.</li>\n <li>Pending input events (such as clicks) are now canceled in a Fragment’s <code>onStop()</code>.</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Significantly expanded the nullability annotations across the Fragment API surface.</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fix an issue which caused Fragment operations to fail from within LiveData <a href=\"https://issuetracker.google.com/issues/77944637\">(b/77944637)</a></li>\n</ul>\n<p><strong>Known issues</strong></p>\n<ul>\n <li>Target Fragments cannot be accessed after a Fragment has been removed from the FragmentManager.</li>\n <li><code>fragment-testing</code> depends on <code>androidx.test:core:1.0.0-beta01</code> instead of the correct <code>androidx.test:core:1.0.0</code>.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "preference",
+      "name": "Preference",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/preference#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>You can now set a SummaryProvider on a Preference to dynamically configure its summary whenever the Preference is updated, or becomes visible to the user.</li>\n <li>Added default SummaryProvider implementations for ListPreference and EditTextPreference, which when set will automatically update the summary of the Preference to reflect its saved value, or ‘Not Set’ if no value has been saved. These can be set with app:useSimpleSummaryProvider=”true”</li>\n <li>Added PreferenceGroup#removePreferenceRecursively which recursively finds and removes a Preference from the group, or a nested group lower down in the hierarchy.</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>PreferenceFragment and other classes using framework Fragments have been deprecated - you should use PreferenceFragmentCompat and other compat classes instead.</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed iconSpaceReserved not working correctly with PreferenceCategories.</li>\n <li>Fixed PreferenceCategories not using colorAccent for their title’s color below API 21.</li>\n <li>Fixed some SeekBarPreference layout inconsistencies below API 21.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "versionedparcelable",
+      "name": "VersionedParcelable",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/versionedparcelable#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Added support for CharSequence in all classes except VersionedParcelStream.</li>\n <li>Added support for SuperClass, Set, and Map.</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed a bug with checking IDs in inherited classes.</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}
