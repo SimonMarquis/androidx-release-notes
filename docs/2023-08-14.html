@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>August 14, 2023 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for August 14, 2023: Media3 1.1.1.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2023-08-14.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="august-14-2023">
+            <div class="date-divider"><a href="./#august-14-2023" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">August 14, 2023</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="stable" data-search="media3 1.1.1 2023-08-14 august 14, 2023" id="august-14-2023-media3-1-1-1">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.1.1" class="badge stable">1.1.1</a></div>
+              </div>
+              <div class="notes"><ul><li>Common Library:
+  <ul><li>Remove accidentally added <code>multidex</code> dependency from all modules <a href="https://github.com/androidx/media/issues/499" title="#499" class="ref ref-github">#499</a>.</li></ul></li><li>ExoPlayer:
+  <ul><li>Fix issue in <code>PlaybackStatsListener</code> where spurious <code>PlaybackStats</code> are created after the playlist is cleared.</li><li>Add additional fields to Common Media Client Data (CMCD) logging: streaming format (sf), stream type (st), version (v), top birate (tb), object duration (d), measured throughput (mtp) and object type (ot) <a href="https://github.com/google/ExoPlayer/issues/8699" title="#8699" class="ref ref-github">#8699</a>.</li></ul></li><li>Audio:
+  <ul><li>Fix a bug where <code>Player.getState()</code> never transitioned to <code>STATE_ENDED</code> when playing very short files <a href="https://github.com/androidx/media/issues/538" title="#538" class="ref ref-github">#538</a>.</li></ul></li><li>Audio Offload:
+  <ul><li>Prepend Ogg ID Header and Comment Header Pages to bitstream for offloaded Opus playback in accordance with RFC 7845.</li></ul></li><li>Video:
+  <ul><li>H.265/HEVC: Fix parsing SPS short and long term reference picture info.</li></ul></li><li>Text:
+  <ul><li>CEA-608: Change cue truncation logic to only consider visible text. Previously indent and tab offset were included when limiting the cue length to 32 characters (which was technically correct by the spec) <a href="https://github.com/google/ExoPlayer/issues/11019" title="#11019" class="ref ref-github">#11019</a>.</li></ul></li><li>IMA extension:
+  <ul><li>Bump IMA SDK version to 3.30.3.</li></ul></li><li>Session:
+  <ul><li>Add custom layout to the state of the controller and provide a getter to access it. When the custom layout changes, <code>MediaController.Listener.onCustomLayoutChanged</code> is called. Apps that want to send different custom layouts to different Media3 controller can do this in <code>MediaSession.Callback.onConnect</code> by using an <code>AcceptedResultBuilder</code> to make sure the custom layout is available to the controller when connection completes.</li><li>Fix cases where <code>MediaLibraryServiceLegacyStub</code> sent an error to a <code>Result</code> that didn't support this which produced an <code>UnsupportedOperationException</code> <a href="https://github.com/androidx/media/issues/78" title="#78" class="ref ref-github">#78</a>.</li><li>Fix the way <code>PlayerWrapper</code> creates a <code>VolumeProviderCompat</code> by determining <code>volumeControlType</code> through both legacy commands (<code>COMMAND_ADJUST_DEVICE_VOLUME</code> and <code>COMMAND_SET_DEVICE_VOLUME</code>) and new commands (<code>COMMAND_ADJUST_DEVICE_VOLUME_WITH_FLAGS</code> and <code>COMMAND_SET_DEVICE_VOLUME_WITH_FLAGS</code>) <a href="https://github.com/androidx/media/issues/554" title="#554" class="ref ref-github">#554</a>.</li></ul></li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
