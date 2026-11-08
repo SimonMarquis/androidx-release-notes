@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#july_7_2020",
+  "title": "July 7, 2020",
+  "releasedOn": "2020-07-07",
+  "updated": "2020-07-07T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#july_7_2020",
+  "components": [
+    {
+      "id": "constraintlayout",
+      "name": "ConstraintLayout",
+      "version": "2.0.0-beta8",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-2.0.0-beta8",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<p>See the list of closed issues <a href=\"https://androidstudio.googleblog.com/2020/07/constraintlayout-200-beta-8.html\">here</a>.</p>\n<p>Notable fixes are:</p>\n<ul>\n <li>Placeholder behavior</li>\n <li>Layer visibility</li>\n <li>Flow, Barrier fixes</li>\n <li>TransitionListener fixes</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}
