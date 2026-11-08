@@ -1,0 +1,25 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#january_13_2022",
+  "title": "January 13, 2022",
+  "releasedOn": "2022-01-13",
+  "updated": "2022-01-13T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#january_13_2022",
+  "components": [
+    {
+      "id": "constraintlayout",
+      "name": "ConstraintLayout",
+      "version": "2.1.3",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-2.1.3",
+      "detailsHtml": "<p>For more information, see the GitHub article <a href=\"https://github.com/androidx/constraintlayout/wiki/What's-New-in-2.1\">What's New in 2.1</a>.</p>",
+      "commitsUrl": null
+    },
+    {
+      "id": "compose-constraintlayout",
+      "name": "Compose ConstraintLayout",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-compose-1.0.0",
+      "detailsHtml": "<p>Please note MotionLayout api is now experimental and requires opt in.</p>\n<p>For more information, see the GitHub article <a href=\"https://github.com/androidx/constraintlayout/wiki/What's-New-in-1.0-(Compose)\">What's New in 1.0 (Compose)</a>.</p>",
+      "commitsUrl": null
+    }
+  ]
+}
