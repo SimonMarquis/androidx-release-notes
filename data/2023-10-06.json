@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#october_6_2023",
+  "title": "October 6, 2023",
+  "releasedOn": "2023-10-06",
+  "updated": "2023-10-06T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#october_6_2023",
+  "components": [
+    {
+      "id": "benchmark",
+      "name": "Benchmark",
+      "version": "1.2.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/benchmark#1.2.0-rc02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix Benchmark file output to no longer break <code>BaselineProfile</code> Plugin file copying. Files were generated and copied off device, but had been renamed such that the gradle plugin wouldn't see them. (<a href=\"https://android-review.googlesource.com/#/q/I8dbccc5a11b4c391169cff6dfbd2a0001fd41001\">I8dbcc</a>, <a href=\"https://issuetracker.google.com/issues/303034735\">b/303034735</a>, <a href=\"https://issuetracker.google.com/issues/296453339\">b/296453339</a>)</li>\n <li>Clarified <code>tracing-perfetto</code> loading error messages when injecting from macrobenchmark module into target application.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/fc9d0ceb0cf1daabde110d9965d3dd87319b575c..c65e8e30c0edf5bb898c705ceab72d04ffbc0de7/benchmark"
+    }
+  ]
+}
