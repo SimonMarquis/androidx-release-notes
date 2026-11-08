@@ -1,0 +1,18 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#june_24_2026",
+  "title": "June 24, 2026",
+  "releasedOn": "2026-06-24",
+  "updated": "2026-06-24T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#june_24_2026",
+  "components": [
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.11.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.11.0-alpha01",
+      "detailsHtml": "<p>Use the 1.11.0 <a href=\"https://developer.android.com/jetpack/androidx/releases/media3#1.11.0\">stable version</a>.</p>",
+      "commitsUrl": null
+    }
+  ],
+  "rssUpdated": "2026-06-24T00:00:00Z"
+}

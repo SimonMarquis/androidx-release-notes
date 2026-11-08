@@ -1,0 +1,18 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#june_23_2026",
+  "title": "June 23, 2026",
+  "releasedOn": "2026-06-23",
+  "updated": "2026-06-23T20:30:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#june_23_2026",
+  "components": [
+    {
+      "id": "tracing",
+      "name": "Tracing",
+      "version": "2.0.0-alpha09",
+      "url": "https://developer.android.com/jetpack/androidx/releases/tracing#2.0.0-alpha09",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Minor API change in <code>Tracer</code> to diambiguate between <code>instant(...)</code> and <code>writeInstant(...)</code>. (<a href=\"https://android-review.googlesource.com/#/q/I0935a1832723ddc85b0798c51545782db9762cf5\">I0935a</a>)</li>\n <li>Add support for propagation tokens in instant events. (<a href=\"https://android-review.googlesource.com/#/q/I99f81e73bd26b0287c5d41e414ad1678e7f31092\">I99f81</a>)</li>\n <li>Allow full usage of Perfetto flows in the experimental manual context propagation API. (<a href=\"https://android-review.googlesource.com/#/q/I20cb6d7f4c99b9e29760ca9efd336ed0e25136d8\">I20cb6</a>)</li>\n <li>Defer creation of the <code>BufferedSink</code> and <code>ProtoWriter</code> in <code>TraceSink</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ibd098a1dc6d115863edaf64f85c1e5750617c04e\">Ibd098</a>)</li>\n <li>Make <code>Tracer</code> discovery simple and pluggable for both Java and Android Libraries. (<a href=\"https://android-review.googlesource.com/#/q/I9911157291453ab72a37b2a91a0d59d14eb907f8\">I99111</a>)</li>\n <li>Make it easy for library developers to discover an instance of <code>TraceDriver</code> that can be used for in-process tracing. (<a href=\"https://android-review.googlesource.com/#/q/Ia503e1bfdd00e81150422c8aed98f600f392cba1\">Ia503e</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d183e19c77ddcd420f939c1a21cd82c038237f28..65732fbdb79496ec54ef16ed4ce396304774e8d0/tracing"
+    }
+  ],
+  "rssUpdated": "2026-06-23T20:30:00Z"
+}
