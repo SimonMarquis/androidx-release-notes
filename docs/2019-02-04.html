@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>February 4, 2019 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for February 4, 2019: Navigation 1.0.0-beta01, WorkManager 1.0.0-beta04.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2019-02-04.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="february-4-2019">
+            <div class="date-divider"><a href="./#february-4-2019" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">February 4, 2019</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="beta" data-search="navigation 1.0.0-beta01 2019-02-04 february 4, 2019" id="february-4-2019-navigation-1-0-0-beta01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/navigation">Navigation</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/navigation#1.0.0-beta01" class="badge beta">1.0.0-beta01</a></div>
+              </div>
+              <div class="notes"><p>This is the first beta release of Navigation; moving forward, the Navigation API is expected to stay stable until the next version unless there is a critical problem. This release contains some bug fixes and behavior changes.</p><p><strong>Behavior changes</strong></p><ul><li>Navigation now ensures that argument default values are treated identically at runtime and through Safe Args. As a consequence, only arguments with an <code>app:argType="reference"</code> can have a default value point to another resource (for example, <code>@color/colorPrimary</code>). Attempting to use a reference default value with a different <code>app:argType</code> will result in an exception when parsing the navigation XML. <a href="https://issuetracker.google.com/123551990" title="b/123551990" class="ref ref-issue">b/123551990</a></li><li>Safe Args now depends on Android Gradle Plugin 3.3.0 <a href="https://android-review.googlesource.com/888413" title="aosp/888413" class="ref ref-gerrit">aosp/888413</a></li><li>Safe Args now depends on Kotlin 1.3.20 <a href="https://android-review.googlesource.com/888414" title="aosp/888414" class="ref ref-gerrit">aosp/888414</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Safe Args can now be used in library and feature modules on all versions of the Android Gradle Plugin. <a href="https://issuetracker.google.com/121304903" title="b/121304903" class="ref ref-issue">b/121304903</a></li><li>Fixed a regression that would cause a single <code>popBackStack()</code> operation to pop all copies of a destination off the top of the back stack, rather than just a single destination at a time. <a href="https://issuetracker.google.com/123552990" title="b/123552990" class="ref ref-issue">b/123552990</a></li><li>Fixed an issue where the <code>FragmentNavigator</code> state would desynchronize with the <code>NavController</code>'s state, causing an <code>IllegalStateException</code> when attempting to restore the back stack. <a href="https://issuetracker.google.com/123803044" title="b/123803044" class="ref ref-issue">b/123803044</a></li><li>Fixed an issue where the <code>NavigationUI</code> handled back arrow would not appear when using ProGuard with obfuscation. <a href="https://issuetracker.google.com/123449431" title="b/123449431" class="ref ref-issue">b/123449431</a></li><li>The code generated by Safe Args now properly handles using an <code>app:argType</code> pointing to a static inner class in the format <code>.OuterClass$InnerClass</code>. <a href="https://issuetracker.google.com/123736741" title="b/123736741" class="ref ref-issue">b/123736741</a></li><li>The Java code generated by Safe Args now properly handles global actions and deeply nested destinations. <a href="https://issuetracker.google.com/123347762" title="b/123347762" class="ref ref-issue">b/123347762</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="workmanager 1.0.0-beta04 2019-02-04 february 4, 2019" id="february-4-2019-workmanager-1-0-0-beta04">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/work">WorkManager</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/work#1.0.0-beta04" class="badge beta">1.0.0-beta04</a></div>
+              </div>
+              <div class="notes"><p>This release contains some bug fixes.</p><p><strong>Bug Fixes</strong></p><ul><li>Improved scheduling of PeriodicWork for the AlarmManager based implementation.</li><li>Fixed a case where WorkManager failed to correctly track constraints when using the AlarmManager based implementation. <a href="https://issuetracker.google.com/123379508" title="b/123379508" class="ref ref-issue">b/123379508</a></li><li>Fixed a case when WorkManager failed to retry work on process death when using the AlarmManager based implementation. <a href="https://issuetracker.google.com/123329850" title="b/123329850" class="ref ref-issue">b/123329850</a></li><li>Fixed a case which would cause WorkManager to leak Wakelocks when using the AlarmManager based implementation.</li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>

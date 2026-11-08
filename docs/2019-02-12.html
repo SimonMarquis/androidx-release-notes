@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>February 12, 2019 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for February 12, 2019: Navigation 1.0.0-beta02.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2019-02-12.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="february-12-2019">
+            <div class="date-divider"><a href="./#february-12-2019" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">February 12, 2019</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="beta" data-search="navigation 1.0.0-beta02 2019-02-12 february 12, 2019" id="february-12-2019-navigation-1-0-0-beta02">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/navigation">Navigation</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/navigation#1.0.0-beta02" class="badge beta">1.0.0-beta02</a></div>
+              </div>
+              <div class="notes"><p>This release includes a number of minor improvements and important bug fixes.</p><p><strong>New Features</strong></p><ul><li>You can now use <code>0</code> as an <code>android:defaultValue</code> for <code>reference</code> arguments. <a href="https://issuetracker.google.com/124248602" title="b/124248602" class="ref ref-issue">b/124248602</a></li></ul><p><strong>Behavior changes</strong></p><ul><li>Exact deep link matches are now prioritized over deep links with <code>.*</code> or argument matches. <a href="https://issuetracker.google.com/123969518" title="b/123969518" class="ref ref-issue">b/123969518</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li><code>popBackStack()</code> and <code>navigateUp</code> now correctly return <code>false</code> when popping the last destination on the back stack, fixing a regression introduced in <code>1.0.0-beta01</code>. <a href="https://issuetracker.google.com/123933201" title="b/123933201" class="ref ref-issue">b/123933201</a></li><li>Navigation now correctly sets the <code>ClassLoader</code> during restoration of saved instance state, avoiding issues when using custom classes in <code>Navigator</code> saved state or in arguments sent to a <code>NavDestination</code>. <a href="https://issuetracker.google.com/123893858" title="b/123893858" class="ref ref-issue">b/123893858</a></li><li>Safe Args generated NavArgs classes no longer crash when restoring a <code>Parcelable[]</code> argument from saved instance state. <a href="https://issuetracker.google.com/123963545" title="b/123963545" class="ref ref-issue">b/123963545</a></li><li>Safe Args now properly cleans up unnecessary generated Kotlin classes. <a href="https://issuetracker.google.com/124120883" title="b/124120883" class="ref ref-issue">b/124120883</a></li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
