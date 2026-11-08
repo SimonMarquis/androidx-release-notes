@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>September 1, 2021 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for September 1, 2021: Activity 1.4.0-alpha01, Benchmark 1.1.0-alpha07, Car App 1.1.0-beta01, Compose Animation 1.0.2, and more.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2021-09-01.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="september-1-2021">
+            <div class="date-divider"><a href="./#september-1-2021" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">September 1, 2021</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="alpha" data-search="activity 1.4.0-alpha01 2021-09-01 september 1, 2021" id="september-1-2021-activity-1-4-0-alpha01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/activity">Activity</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/c076d3eb651533329571facecfb54dc72e1b0fc4..47e81d1c497b8a57534a460c277855db1b0257ae/activity" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/activity#1.4.0-alpha01" class="badge alpha">1.4.0-alpha01</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>AndroidX <code>ComponentActivity</code> now implements the <code>MenuHost</code> interface.. This allows any component to add menu items to the <code>ActionBar</code> by adding a <code>MenuProvider</code> instance to the activity. Each <code>MenuProvider</code> can optionally be added with a <code>Lifecycle</code> that will automatically control the visibility of those menu items based on the <code>Lifecycle</code> state and handle the removal of the <code>MenuProvider</code> when the <code>Lifecycle</code> is destroyed. <a href="https://android-review.googlesource.com/#/q/I3b6081516403543ea61a8dc0dbcfd226f81fae6d" title="I3b608" class="ref ref-gerrit">I3b608</a>:</li></ul><div></div><pre><code><span>/**</span>
+<span>  * Using the addMenuProvider() API directly in your Activity</span>
+<span>  **/</span>
+<span>class</span><span> </span><span>ExampleActivity</span><span> </span><span>:</span><span> </span><span>ComponentActivity</span><span>(</span><span>R</span><span>.</span><span>layout</span><span>.</span><span>activity_example</span><span>)</span><span> </span><span>{</span>
+
+<span>  </span><span>override</span><span> </span><span>fun</span><span> </span><span>onCreate</span><span>(</span><span>savedInstanceState</span><span>:</span><span> </span><span>Bundle?)</span><span> </span><span>{</span>
+<span>    </span><span>super</span><span>.</span><span>onCreate</span><span>(</span><span>savedInstanceState</span><span>)</span>
+
+<span>    </span><span>// Add menu items without overriding methods in the Activity</span>
+<span>   </span><span>addMenuProvider</span><span>(</span><span>object</span><span> </span><span>:</span><span> </span><span>MenuProvider</span><span> </span><span>{</span>
+<span>      </span><span>override</span><span> </span><span>fun</span><span> </span><span>onCreateMenu</span><span>(</span><span>menu</span><span>:</span><span> </span><span>Menu</span><span>,</span><span> </span><span>menuInflater</span><span>:</span><span> </span><span>MenuInflater</span><span>)</span><span> </span><span>{</span>
+<span>        </span><span>// Add menu items here</span>
+<span>        </span><span>menuInflater</span><span>.</span><span>inflate</span><span>(</span><span>R</span><span>.</span><span>menu</span><span>.</span><span>example_menu</span><span>,</span><span> </span><span>menu</span><span>)</span>
+<span>      </span><span>}</span>
+
+<span>      </span><span>override</span><span> </span><span>fun</span><span> </span><span>onMenuItemSelected</span><span>(</span><span>menuItem</span><span>:</span><span> </span><span>MenuItem</span><span>):</span><span> </span><span>Boolean</span><span> </span><span>{</span>
+<span>        </span><span>// Handle the menu selection</span>
+<span>        </span><span>return</span><span> </span><span>true</span>
+<span>      </span><span>}</span>
+<span>    </span><span>})</span>
+<span>  </span><span>}</span>
+<span>}</span>
+
+<span>/**</span>
+<span>  * Using the addMenuProvider() API in a Fragment</span>
+<span>  **/</span>
+<span>class</span><span> </span><span>ExampleFragment</span><span> </span><span>:</span><span> </span><span>Fragment</span><span>(</span><span>R</span><span>.</span><span>layout</span><span>.</span><span>fragment_example</span><span>)</span><span> </span><span>{</span>
+
+<span>  </span><span>override</span><span> </span><span>fun</span><span> </span><span>onViewCreated</span><span>(</span><span>view</span><span>:</span><span> </span><span>View</span><span>,</span><span> </span><span>savedInstanceState</span><span>:</span><span> </span><span>Bundle?)</span><span> </span><span>{</span>
+<span>    </span><span>// The usage of an interface lets you inject your own implementation</span>
+<span>    </span><span>val</span><span> </span><span>menuHost</span><span>:</span><span> </span><span>MenuHost</span><span> </span><span>=</span><span> </span><span>requireActivity</span><span>()</span>
+<span>  </span>
+<span>    </span><span>// Add menu items without using the Fragment Menu APIs</span>
+<span>    </span><span>// Note how we can tie the MenuProvider to the viewLifecycleOwner</span>
+<span>    </span><span>// and an optional Lifecycle.State (here, RESUMED) to indicate when</span>
+<span>    </span><span>// the menu should be visible</span>
+<span>    </span><span>menuHost</span><span>.</span><span>addMenuProvider</span><span>(</span><span>object</span><span> </span><span>:</span><span> </span><span>MenuProvider</span><span> </span><span>{</span>
+<span>      </span><span>override</span><span> </span><span>fun</span><span> </span><span>onCreateMenu</span><span>(</span><span>menu</span><span>:</span><span> </span><span>Menu</span><span>,</span><span> </span><span>menuInflater</span><span>:</span><span> </span><span>MenuInflater</span><span>)</span><span> </span><span>{</span>
+<span>        </span><span>// Add menu items here</span>
+<span>        </span><span>menuInflater</span><span>.</span><span>inflate</span><span>(</span><span>R</span><span>.</span><span>menu</span><span>.</span><span>example_menu</span><span>,</span><span> </span><span>menu</span><span>)</span>
+<span>      </span><span>}</span>
+
+<span>      </span><span>override</span><span> </span><span>fun</span><span> </span><span>onMenuItemSelected</span><span>(</span><span>menuItem</span><span>:</span><span> </span><span>MenuItem</span><span>):</span><span> </span><span>Boolean</span><span> </span><span>{</span>
+<span>        </span><span>// Handle the menu selection</span>
+<span>        </span><span>return</span><span> </span><span>true</span>
+<span>      </span><span>}</span>
+<span>    </span><span>},</span><span> </span><span>viewLifecycleOwner</span><span>,</span><span> </span><span>Lifecycle</span><span>.</span><span>State</span><span>.</span><span>RESUMED</span><span>)</span>
+<span>  </span><span>}</span>
+</code></pre><p><strong>Behavior Changes</strong></p><ul><li>The <code>ActivityResultRegistry</code> will now throw an <code>IllegalStateException</code> when attempting to call <code>launch()</code> on an <code>ActivityResultLauncher</code> that has not be registered or that has been unregistered. <a href="https://android-review.googlesource.com/#/q/Ida75dca1c2947d74376c453f6e3b65c1adf1684d" title="Ida75d" class="ref ref-gerrit">Ida75d</a> <a href="https://issuetracker.google.com/issues/192567522" title="b/192567522" class="ref ref-issue">b/192567522</a></li></ul><p><strong>External Contribution</strong></p><ul><li>Thanks <a href="https://github.com/dmitrilc">dmitrilc</a> for fixing a typo in the <code>ActivityResult</code> documentation. <a href="https://github.com/androidx/androidx/pull/221" title="#221" class="ref ref-github">#221</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="benchmark 1.1.0-alpha07 2021-09-01 september 1, 2021" id="september-1-2021-benchmark-1-1-0-alpha07">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/benchmark">Benchmark</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc..47e81d1c497b8a57534a460c277855db1b0257ae/benchmark" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/benchmark#1.1.0-alpha07" class="badge alpha">1.1.0-alpha07</a></div>
+              </div>
+              <div class="notes"><p><strong>API Changes</strong></p><ul><li>Raised min API to 21 to reflect the intended lowest API level to be supported in the future. Current min API supported continues to be conveyed via RequiredApi(), and is currently 29 <a href="https://android-review.googlesource.com/#/q/I440d67683d41150fc9dd84d4f0a7100f2c9f32bd" title="I440d6" class="ref ref-gerrit">I440d6</a> <a href="https://issuetracker.google.com/issues/183129298" title="b/183129298" class="ref ref-issue">b/183129298</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Fixes <code>ProfileInstaller</code> to make it easier for apps using baseline profiles to run MacroBenchmarks using <code>CompilationMode.BaselineProfile</code>. <a href="https://android-review.googlesource.com/#/q/I426579600594e238b5b46adc20a6d4b33da3bab5" title="I42657" class="ref ref-gerrit">I42657</a> <a href="https://issuetracker.google.com/issues/196074999" title="b/196074999" class="ref ref-issue">b/196074999</a> NOTE: requires also updating to <code>androidx.profileinstaller:profileinstaller:1.1.0-alpha04</code> or greater.</li><li><code>StartupMode.COLD</code> + <code>CompilationMode.None</code> benchmarks are now more stable. <a href="https://android-review.googlesource.com/#/q/I770cd76def3add73a14bee1b6acb1deea8900e93" title="I770cd" class="ref ref-gerrit">I770cd</a> <a href="https://issuetracker.google.com/issues/196074999" title="b/196074999" class="ref ref-issue">b/196074999</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="car app 1.1.0-beta01 2021-09-01 september 1, 2021" id="september-1-2021-car-app-1-1-0-beta01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/car-app">Car App</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/97264aa4532db7f7db1ffb3f42f3a9204971dbfc..ef3b5fed8cbec46a41f2d3b8cf11551fb19f282c/car/app" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/car-app#1.1.0-beta01" class="badge beta">1.1.0-beta01</a></div>
+              </div>
+              <div class="notes"><p>All <code>v1.1.0</code> features (API 2+) are fully compatible with Android Auto 6.7 and above. Refer to the <a href="https://developer.android.com/training/cars/apps">development guide</a> for more details.</p><p><strong>API Changes</strong></p><ul><li>Removed <code>Manager</code> as a public interface <a href="https://android-review.googlesource.com/#/q/Ie381b8d63a1e73ef0a145d047c5bd5b1456ac074" title="Ie381b" class="ref ref-gerrit">Ie381b</a></li><li>Added ability to set a custom branded background for permission request <a href="https://android-review.googlesource.com/#/q/I74b767b7d5f04928c0210a8685e486330e8df870" title="I74b76" class="ref ref-gerrit">I74b76</a></li><li>Added <code>ScreenManager.getStackSize</code> <a href="https://android-review.googlesource.com/#/q/I0b16a8aa29a89b2244ba41a3ccfa8082669c0e98" title="I0b16a" class="ref ref-gerrit">I0b16a</a></li><li>Removed <code>ScreenController</code> constructor that explicit takes <code>TestCarContext</code> <a href="https://android-review.googlesource.com/#/q/Iefebcd8154b8437a4db7cc82401ed30a72b0d95d" title="Iefebc" class="ref ref-gerrit">Iefebc</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Added API level check when creating <code>CarHardwareManager</code> <a href="https://android-review.googlesource.com/#/q/I48f9be001f5e55ed7a125102c7535a94e664b88e" title="I48f9b" class="ref ref-gerrit">I48f9b</a></li><li>Added checks for invalid <code>CarSpan</code> usage across the API <a href="https://android-review.googlesource.com/#/q/I65ae657b8b0e9e0243e993bfd5743e55d271e1b1" title="I65ae6" class="ref ref-gerrit">I65ae6</a></li><li>Fixed an issue where if a <code>Screen</code> is marked as finished during its creation, it would leave the stack in a broken state <a href="https://android-review.googlesource.com/#/q/I81b13909a2342846ec46157dc1a2a529b85e6e30" title="I81b13" class="ref ref-gerrit">I81b13</a></li><li>Fix an issue where <code>CarNotificationManager.notify</code> would log an error for AutomotiveOS if there were actions with icons in the <code>CarAppExtender</code> <a href="https://android-review.googlesource.com/#/q/I3633d343d2c9d706828a5fb747ddcc49914a0802" title="I3633d" class="ref ref-gerrit">I3633d</a></li><li>Added a handshake method for app and host to establish an API version <a href="https://android-review.googlesource.com/#/q/I7d6f816dffd54e30ec14dff70c2c7499f6838d55" title="I7d6f8" class="ref ref-gerrit">I7d6f8</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="compose animation 1.0.2 2021-09-01 september 1, 2021" id="september-1-2021-compose-animation-1-0-2">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-animation">Compose Animation</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/c076d3eb651533329571facecfb54dc72e1b0fc4..9c1876203334d14761d2c11e47c8191ef9107989/compose/animation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-animation#1.0.2" class="badge stable">1.0.2</a></div>
+              </div>
+              <div class="notes"><p>Updated to support the Compose <code>1.0.2</code> release. Compose <code>1.0.2</code> is still compatible with Kotlin <code>1.5.21</code>.</p></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="compose animation 1.1.0-alpha03 2021-09-01 september 1, 2021" id="september-1-2021-compose-animation-1-1-0-alpha03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-animation">Compose Animation</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc..bf63d633b292368932b7ea1994e4116f95a94b5c/compose/animation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-animation#1.1.0-alpha03" class="badge alpha">1.1.0-alpha03</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>Updated Compose <code>1.1.0-alpha03</code> to depend on Kotlin <code>1.5.30</code>. <a href="https://android-review.googlesource.com/#/q/I74545c317093029a2a46707b9024ad3385854ecb" title="I74545" class="ref ref-gerrit">I74545</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="compose compiler 1.0.2 2021-09-01 september 1, 2021" id="september-1-2021-compose-compiler-1-0-2">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-compiler">Compose Compiler</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/c076d3eb651533329571facecfb54dc72e1b0fc4..9c1876203334d14761d2c11e47c8191ef9107989/compose/compiler/compiler-hosted" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.0.2" class="badge stable">1.0.2</a></div>
+              </div>
+              <div class="notes"><p>Updated to support the Compose <code>1.0.2</code> release. Compose <code>1.0.2</code> is still compatible with Kotlin <code>1.5.21</code>.</p></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="compose compiler 1.1.0-alpha03 2021-09-01 september 1, 2021" id="september-1-2021-compose-compiler-1-1-0-alpha03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-compiler">Compose Compiler</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc..bf63d633b292368932b7ea1994e4116f95a94b5c/compose/compiler/compiler-hosted" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.1.0-alpha03" class="badge alpha">1.1.0-alpha03</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>The Compose Compiler now supports older versions of the Compose Runtime (1.0). Prior to this change, the Compose Compiler was only compatible with the Compose Runtime of the same version or later. After this change, the Compose Compiler is compatible with an older version of the Compose Runtime (1.0). <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/1796968" title="aosp/1796968" class="ref ref-gerrit">aosp/1796968</a></li><li>Updated Compose <code>1.1.0-alpha03</code> to depend on Kotlin <code>1.5.30</code>. <a href="https://android-review.googlesource.com/#/q/I74545c317093029a2a46707b9024ad3385854ecb" title="I74545" class="ref ref-gerrit">I74545</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="compose foundation 1.0.2 2021-09-01 september 1, 2021" id="september-1-2021-compose-foundation-1-0-2">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-foundation">Compose Foundation</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/c076d3eb651533329571facecfb54dc72e1b0fc4..9c1876203334d14761d2c11e47c8191ef9107989/compose/foundation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.0.2" class="badge stable">1.0.2</a></div>
+              </div>
+              <div class="notes"><p>Updated to support the Compose <code>1.0.2</code> release. Compose <code>1.0.2</code> is still compatible with Kotlin <code>1.5.21</code>.</p></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="compose foundation 1.1.0-alpha03 2021-09-01 september 1, 2021" id="september-1-2021-compose-foundation-1-1-0-alpha03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-foundation">Compose Foundation</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc..bf63d633b292368932b7ea1994e4116f95a94b5c/compose/foundation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.1.0-alpha03" class="badge alpha">1.1.0-alpha03</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>Updated Compose <code>1.1.0-alpha03</code> to depend on Kotlin <code>1.5.30</code>. <a href="https://android-review.googlesource.com/#/q/I74545c317093029a2a46707b9024ad3385854ecb" title="I74545" class="ref ref-gerrit">I74545</a></li></ul><p><strong>API Changes</strong></p><ul><li>Glow effect for scroll has been added. New experimental OverScrollConfiguration API has been added to allow for configuration of the overscroll visual effect. Provide null to turn off the overscroll effect. <a href="https://android-review.googlesource.com/#/q/I0c3042f89365408e92f657330ed3164e6f3e12f8" title="I0c304" class="ref ref-gerrit">I0c304</a> <a href="https://issuetracker.google.com/issues/171682480" title="b/171682480" class="ref ref-issue">b/171682480</a></li><li>AwaitPointerEventScope now has withTimeout() and withTimeoutOrNull() <a href="https://android-review.googlesource.com/#/q/I507f0e696311ac0504126681c376f73beaa021fb" title="I507f0" class="ref ref-gerrit">I507f0</a> <a href="https://issuetracker.google.com/issues/179239764" title="b/179239764" class="ref ref-issue">b/179239764</a> <a href="https://issuetracker.google.com/issues/182397793" title="b/182397793" class="ref ref-issue">b/182397793</a></li><li>Added test method to get the clipped bounds. <a href="https://android-review.googlesource.com/#/q/I6b28e437d6893a63be65c8a451a84bcb21bce906" title="I6b28e" class="ref ref-gerrit">I6b28e</a></li><li>Added minimum touch target size to ViewConfiguration for use in semantics and pointer input to ensure accessibility. <a href="https://android-review.googlesource.com/#/q/Ie861ca1fcdbfcc9455352fc3a459d5734d5d57cc" title="Ie861c" class="ref ref-gerrit">Ie861c</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="compose material 1.0.2 2021-09-01 september 1, 2021" id="september-1-2021-compose-material-1-0-2">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-material">Compose Material</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/c076d3eb651533329571facecfb54dc72e1b0fc4..9c1876203334d14761d2c11e47c8191ef9107989/compose/material" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-material#1.0.2" class="badge stable">1.0.2</a></div>
+              </div>
+              <div class="notes"><p>Updated to support the Compose <code>1.0.2</code> release. Compose <code>1.0.2</code> is still compatible with Kotlin <code>1.5.21</code>.</p></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="compose material 1.1.0-alpha03 2021-09-01 september 1, 2021" id="september-1-2021-compose-material-1-1-0-alpha03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-material">Compose Material</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc..bf63d633b292368932b7ea1994e4116f95a94b5c/compose/material" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-material#1.1.0-alpha03" class="badge alpha">1.1.0-alpha03</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>Updated Compose <code>1.1.0-alpha03</code> to depend on Kotlin <code>1.5.30</code>. <a href="https://android-review.googlesource.com/#/q/I74545c317093029a2a46707b9024ad3385854ecb" title="I74545" class="ref ref-gerrit">I74545</a></li></ul><p><strong>API Changes</strong></p><ul><li>Added test method to get the clipped bounds. <a href="https://android-review.googlesource.com/#/q/I6b28e437d6893a63be65c8a451a84bcb21bce906" title="I6b28e" class="ref ref-gerrit">I6b28e</a></li><li>Added minimum touch target size to ViewConfiguration for use in semantics and pointer input to ensure accessibility. <a href="https://android-review.googlesource.com/#/q/Ie861ca1fcdbfcc9455352fc3a459d5734d5d57cc" title="Ie861c" class="ref ref-gerrit">Ie861c</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="compose runtime 1.0.2 2021-09-01 september 1, 2021" id="september-1-2021-compose-runtime-1-0-2">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-runtime">Compose Runtime</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/c076d3eb651533329571facecfb54dc72e1b0fc4..9c1876203334d14761d2c11e47c8191ef9107989/compose/runtime" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.0.2" class="badge stable">1.0.2</a></div>
+              </div>
+              <div class="notes"><p>Updated to support the Compose <code>1.0.2</code> release. Compose <code>1.0.2</code> is still compatible with Kotlin <code>1.5.21</code>.</p></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="compose runtime 1.1.0-alpha03 2021-09-01 september 1, 2021" id="september-1-2021-compose-runtime-1-1-0-alpha03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-runtime">Compose Runtime</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc..bf63d633b292368932b7ea1994e4116f95a94b5c/compose/runtime" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.1.0-alpha03" class="badge alpha">1.1.0-alpha03</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>The Compose Compiler now supports older versions of the Compose Runtime (1.0). Prior to this change, the Compose Compiler was only compatible with the Compose Runtime of the same version or later. After this change, the Compose Compiler is compatible with an older version of the Compose Runtime (1.0). <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/1796968" title="aosp/1796968" class="ref ref-gerrit">aosp/1796968</a></li><li>Updated Compose <code>1.1.0-alpha03</code> to depend on Kotlin <code>1.5.30</code>. <a href="https://android-review.googlesource.com/#/q/I74545c317093029a2a46707b9024ad3385854ecb" title="I74545" class="ref ref-gerrit">I74545</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="compose ui 1.0.2 2021-09-01 september 1, 2021" id="september-1-2021-compose-ui-1-0-2">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-ui">Compose UI</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/c076d3eb651533329571facecfb54dc72e1b0fc4..9c1876203334d14761d2c11e47c8191ef9107989/compose/ui" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-ui#1.0.2" class="badge stable">1.0.2</a></div>
+              </div>
+              <div class="notes"><p>Updated to support the Compose <code>1.0.2</code> release. Compose <code>1.0.2</code> is still compatible with Kotlin <code>1.5.21</code>.</p></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="compose ui 1.1.0-alpha03 2021-09-01 september 1, 2021" id="september-1-2021-compose-ui-1-1-0-alpha03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-ui">Compose UI</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc..bf63d633b292368932b7ea1994e4116f95a94b5c/compose/ui" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-ui#1.1.0-alpha03" class="badge alpha">1.1.0-alpha03</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>Updated Compose <code>1.1.0-alpha03</code> to depend on Kotlin <code>1.5.30</code>. <a href="https://android-review.googlesource.com/#/q/I74545c317093029a2a46707b9024ad3385854ecb" title="I74545" class="ref ref-gerrit">I74545</a></li></ul><p><strong>API Changes</strong></p><ul><li>Added <code>Modifier.inspectable</code> for wrapping other modifiers. <a href="https://android-review.googlesource.com/#/q/I1909b068b72041b8363c04c7ec619fcf26702da4" title="I1909b" class="ref ref-gerrit">I1909b</a> <a href="https://issuetracker.google.com/issues/191017532" title="b/191017532" class="ref ref-issue">b/191017532</a></li><li>Added <code>BlurredEdgeTreatment</code> API to simplify blur use cases into more commonly used combinations of clip flags and TileModes. Most use cases involve either letting blurred content render outside the original content bounds and blurring regions outside these bounds with transparent black, or clipping content to content bounds sampling the closest edge for blur kernels that extend beyond content bounds. <a href="https://android-review.googlesource.com/#/q/I6b4b7966920855374275ae7ea950b310fa28efd0" title="I6b4b7" class="ref ref-gerrit">I6b4b7</a> <a href="https://issuetracker.google.com/issues/166927547" title="b/166927547" class="ref ref-issue">b/166927547</a></li><li>Added support for RenderEffect in compose desktop. Introduced OffsetEffect as well as the blur modifier as a simple way to introduce blur visual effects to a portion of the composition hierarchy. <a href="https://android-review.googlesource.com/#/q/I0f6aa293db2bf34f5ed2aa7499a97332dacf73fc" title="I0f6aa" class="ref ref-gerrit">I0f6aa</a> <a href="https://issuetracker.google.com/issues/166927547" title="b/166927547" class="ref ref-issue">b/166927547</a></li><li>Introduced RenderEffect API that can be optionally configured on a <code>Modifier.graphicsLayer</code> to alter the contents of the layer itself. This can be used to blur contents of a composable and child composables within a composition hierarchy. <a href="https://android-review.googlesource.com/#/q/I47c4d5ecc801f35e632d2062e03c756f564a2db5" title="I47c4d" class="ref ref-gerrit">I47c4d</a> <a href="https://issuetracker.google.com/issues/166927547" title="b/166927547" class="ref ref-issue">b/166927547</a></li><li>AwaitPointerEventScope now has withTimeout() and withTimeoutOrNull() <a href="https://android-review.googlesource.com/#/q/I507f0e696311ac0504126681c376f73beaa021fb" title="I507f0" class="ref ref-gerrit">I507f0</a> <a href="https://issuetracker.google.com/issues/179239764" title="b/179239764" class="ref ref-issue">b/179239764</a> <a href="https://issuetracker.google.com/issues/182397793" title="b/182397793" class="ref ref-issue">b/182397793</a></li><li>Added minimum touch target size to ViewConfiguration for use in semantics and pointer input to ensure accessibility. <a href="https://android-review.googlesource.com/#/q/Ie861ca1fcdbfcc9455352fc3a459d5734d5d57cc" title="Ie861c" class="ref ref-gerrit">Ie861c</a></li><li>Add TileMode.Decal support which is useful in defining edge behavior for blur based RenderEffects. <a href="https://android-review.googlesource.com/#/q/I7e8ed0c4eb2490ef3cd0032b5952d0962f489354" title="I7e8ed" class="ref ref-gerrit">I7e8ed</a> <a href="https://issuetracker.google.com/issues/166927547" title="b/166927547" class="ref ref-issue">b/166927547</a></li><li><code>performScrollToIndex</code>, <code>performScrollToKey</code>, <code>hasScrollToIndexAction</code> and <code>hasScrollToKeyAction</code> are now stable API <a href="https://android-review.googlesource.com/#/q/I142aefdd8455195d30a6b029b76255f1f737939f" title="I142ae" class="ref ref-gerrit">I142ae</a> <a href="https://issuetracker.google.com/issues/178483889" title="b/178483889" class="ref ref-issue">b/178483889</a></li><li>Added test method to get the clipped bounds. <a href="https://android-review.googlesource.com/#/q/I6b28e437d6893a63be65c8a451a84bcb21bce906" title="I6b28e" class="ref ref-gerrit">I6b28e</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Removed isBounded method from BlurredEdgeTreatment in favor of explicitly checking if the shape parameter is null. <a href="https://android-review.googlesource.com/#/q/I85d687c2591770875dbfcc0fb893a8a377efefc4" title="I85d68" class="ref ref-gerrit">I85d68</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="core core-ktx 1.7.0-alpha02 2021-09-01 september 1, 2021" id="september-1-2021-core-core-ktx-1-7-0-alpha02">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/core">Core Core-Ktx</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/19ae3a88ff0824d615355b492cb56049e16991f2..47e81d1c497b8a57534a460c277855db1b0257ae/core" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/core#1.7.0-alpha02" class="badge alpha">1.7.0-alpha02</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>Streamlining and unification of how lifecycle-aware menus are managed, see MenuProvider for more details.</li></ul><p><strong>API Changes</strong></p><ul><li>Added <code>MenuHost</code> interface for components that manage <code>MenuProvider</code>s. <a href="https://android-review.googlesource.com/#/q/I83f23a17b112d2bdc85d1732fa6efcf32eb67ddd" title="I83f23" class="ref ref-gerrit">I83f23</a></li><li>Added <code>MenuProvider</code> interface that can be used to indicate that a component is supplying menu items. <a href="https://android-review.googlesource.com/#/q/If8a40bc3edd37897cfaa1eed78c1c288b80c13c3" title="If8a40" class="ref ref-gerrit">If8a40</a></li><li>Added <code>MenuHostHelper</code> to simplify implementing <code>MenuHost</code> in a component. <a href="https://android-review.googlesource.com/#/q/I74f4ae6ab5ef63c51b4f982b6a334bba5bb0dfc2" title="I74f4a" class="ref ref-gerrit">I74f4a</a></li><li>Added <code>LocationRequestCompat.toLocationRequest()</code> for converting to platform class. <a href="https://android-review.googlesource.com/#/q/I71e7543c4d764487fe362df5d605097d3a295b33" title="I71e75" class="ref ref-gerrit">I71e75</a></li><li>Added <code>DocumentsContractCompat</code> class for parity with platform APIs. <a href="https://android-review.googlesource.com/#/q/Ia9e913676b58653492ca6897473d1a74d1fb4e5e" title="Ia9e91" class="ref ref-gerrit">Ia9e91</a></li><li>Added <code>NotificationCompat.BigPictureStyle.showBigPictureWhenCollapsed(boolean)</code> for parity with platform APIs. <a href="https://android-review.googlesource.com/#/q/I8cd88f42564e08fbad3bf8ae0c194ef872e62cbd" title="I8cd88" class="ref ref-gerrit">I8cd88</a></li><li>Fixed an issue where <code>checkSelfPermission</code> from <code>PermissionChecker</code> would show mic/cam indicators. <a href="https://android-review.googlesource.com/#/q/I572a9c6e2c86d435ba22b42db888c021abcd888f" title="I572a9" class="ref ref-gerrit">I572a9</a></li><li>Added explicit threading annotation for <code>setImportantForAccessibility</code>. <a href="https://android-review.googlesource.com/#/q/I990faac25c6136591f97c8d4cdea0b3372f51af2" title="I990fa" class="ref ref-gerrit">I990fa</a></li><li>Updated <code>getUnusedAppRestrictionsStatus</code> to conform to API guidelines. <a href="https://android-review.googlesource.com/#/q/I28a1880547ccc73f04d1bb255b5e15bc841cd239" title="I28a18" class="ref ref-gerrit">I28a18</a></li><li>Completed functionality for <code>getUnusedAppRestrictionsStatus</code>. <a href="https://android-review.googlesource.com/#/q/I7c2d63bb73588c8db98fdde4b13be652df699b4a" title="I7c2d6" class="ref ref-gerrit">I7c2d6</a></li><li>Added support to <code>LocationCompat</code> for vertical accuracy, speed accuracy, and bearing accuracy. <a href="https://android-review.googlesource.com/#/q/I1d3e9ee37addf2c51fad17afb13c35fc46c4402e" title="I1d3e9" class="ref ref-gerrit">I1d3e9</a></li><li>Added math compat functions to <code>MathUtils</code>. <a href="https://android-review.googlesource.com/#/q/Idb590f4b897a3cdeadbc6e84b3386d0c6031bdf6" title="Idb590" class="ref ref-gerrit">Idb590</a></li><li>Integrated <code>OnReceiveContentListener</code>into compat APIs. <a href="https://android-review.googlesource.com/#/q/Ic6914c23688b4165c81ffa19a7dbce89d52bffcd" title="Ic6914" class="ref ref-gerrit">Ic6914</a> <a href="https://issuetracker.google.com/issues/173814913" title="b/173814913" class="ref ref-issue">b/173814913</a></li><li>Added <code>ActivityCompat#isLaunchedFromBubble</code> for platform parity. <a href="https://android-review.googlesource.com/#/q/I6961ad810fdaf5b656647198f3026dffeee84de5" title="I6961a" class="ref ref-gerrit">I6961a</a></li><li>Added <code>LocationRequest</code> and <code>LocationManager.hasProvider()</code> for platform parity. <a href="https://android-review.googlesource.com/#/q/I4f3e488fa561d8182485a264829e55f088a0b02b" title="I4f3e4" class="ref ref-gerrit">I4f3e4</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Removed the use of lambdas in <code>PackageManagerCompat</code> to avoid <code>LambdaDesugaring</code> bug. <a href="https://android-review.googlesource.com/#/q/I36c875108090468d2e66cc4d8a54402eb0d905f9" title="I36c87" class="ref ref-gerrit">I36c87</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="fragment 1.4.0-alpha08 2021-09-01 september 1, 2021" id="september-1-2021-fragment-1-4-0-alpha08">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/fragment">Fragment</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc..47e81d1c497b8a57534a460c277855db1b0257ae/fragment" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/fragment#1.4.0-alpha08" class="badge alpha">1.4.0-alpha08</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Improved the <code>UseRequireInsteadOfGet</code> Lint check to better handle redundant parenthesis. <a href="https://android-review.googlesource.com/#/q/I2d86527576efa558ea06c270edfd7f34de1a8f5c" title="I2d865" class="ref ref-gerrit">I2d865</a></li><li>Improved the <code>UseGetLayoutInflater</code> Lint check to handle additional edge cases. <a href="https://android-review.googlesource.com/#/q/Ie54235d4169c5042441f3e9608296ae4de670850" title="Ie5423" class="ref ref-gerrit">Ie5423</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="media2 1.2.0-rc01 2021-09-01 september 1, 2021" id="september-1-2021-media2-1-2-0-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media2">Media2</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/media2#1.2.0-rc01" class="badge rc">1.2.0-rc01</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="mediarouter 1.2.5 2021-09-01 september 1, 2021" id="september-1-2021-mediarouter-1-2-5">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/mediarouter">Mediarouter</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/638ef4da0b4dd777b42374e6e17e4d64ee787d4d..94e8a6b7a1769388b24b77e3920b06019071cc2d/mediarouter/mediarouter" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/mediarouter#1.2.5" class="badge stable">1.2.5</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Hide the media route button in the Output switcher when there is no routes to transfer.</li><li>Fix issues of controlling the volume of group member routes.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="navigation 2.4.0-alpha08 2021-09-01 september 1, 2021" id="september-1-2021-navigation-2-4-0-alpha08">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/navigation">Navigation</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc..47e81d1c497b8a57534a460c277855db1b0257ae/navigation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/navigation#2.4.0-alpha08" class="badge alpha">2.4.0-alpha08</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>It is now possible to extend the <code>NavType</code> class to create custom NavTypes. Custom types are supported only when building your navigation graph programmatically, such as via the <a href="https://developer.android.com/guide/navigation/navigation-kotlin-dsl">Navigation Graph Kotlin DSL</a>. <a href="https://android-review.googlesource.com/#/q/I78440758311840441dd785cfaed6795fff2b56da" title="I78440" class="ref ref-gerrit">I78440</a> <a href="https://issuetracker.google.com/issues/196871885" title="b/196871885" class="ref ref-issue">b/196871885</a></li></ul><p><strong>Behavior Changes</strong></p><ul><li>When generating actions, Kotlin code generated from Safe Args now puts arguments without default values before those with default values as parameters. <a href="https://android-review.googlesource.com/#/q/Idb69783a3b0efe53de8f3e04a978dd6b979a0e04" title="Idb697" class="ref ref-gerrit">Idb697</a> <a href="https://issuetracker.google.com/issues/188855904" title="b/188855904" class="ref ref-issue">b/188855904</a></li><li>Deep links now verify that all required arguments (those without default values) are present in the <code>Uri</code>. <a href="https://github.com/androidx/androidx/pull/204" title="#204" class="ref ref-github">#204</a> <a href="https://issuetracker.google.com/issues/185527157" title="b/185527157" class="ref ref-issue">b/185527157</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Using <code>getBackStackEntry</code> and <code>previousBackStackEntry</code> inside composable(), in conjunction with <code>remember()</code>, will no longer cause an exception for no destination being on the back stack. <a href="https://android-review.googlesource.com/#/q/I75138d24d27dac83b5301507161578ac811454e3" title="I75138" class="ref ref-gerrit">I75138</a> <a href="https://issuetracker.google.com/issues/194313238" title="b/194313238" class="ref ref-issue">b/194313238</a></li><li>Navigation Compose now properly recomposes when changing back stack arguments and using <code>launchSingleTop=true</code>. <a href="https://android-review.googlesource.com/#/q/Iebd698c9e310ad84ce65238c8a5a33db86a9f1f7" title="Iebd69" class="ref ref-gerrit">Iebd69</a> <a href="https://issuetracker.google.com/issues/186392337" title="b/186392337" class="ref ref-issue">b/186392337</a></li><li>There will no longer be an <code>ArrayIndexOutOfBoundsException</code> when calling <code>setGraph</code> with a graph with 13 or 29 destinations. <a href="https://android-review.googlesource.com/#/q/I1a9f17c4616bc38dd3dd89cb1da29814c3dfd512" title="I1a9f1" class="ref ref-gerrit">I1a9f1</a> <a href="https://issuetracker.google.com/issues/195171984" title="b/195171984" class="ref ref-issue">b/195171984</a></li><li>The SafeArgs java generator should no longer cause lint warnings when generating Args classes. <a href="https://android-review.googlesource.com/#/q/I1a6661b10b8e380aaa9fcfd1fc710c35b047bd6d" title="I1a666" class="ref ref-gerrit">I1a666</a> <a href="https://issuetracker.google.com/issues/185843837" title="b/185843837" class="ref ref-issue">b/185843837</a></li></ul><p><strong>External Contribution</strong></p><ul><li>Thanks <a href="https://github.com/osipxd">ospixd</a> for ensuring that deep links verify that all required arguments (those without default values) are present in the <code>Uri</code>. <a href="https://github.com/androidx/androidx/pull/204" title="#204" class="ref ref-github">#204</a> <a href="https://issuetracker.google.com/issues/185527157" title="b/185527157" class="ref ref-issue">b/185527157</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="profileinstaller 1.0.2 2021-09-01 september 1, 2021" id="september-1-2021-profileinstaller-1-0-2">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/profileinstaller">ProfileInstaller</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/c076d3eb651533329571facecfb54dc72e1b0fc4..9c1876203334d14761d2c11e47c8191ef9107989/profileinstaller/profileinstaller" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/profileinstaller#1.0.2" class="badge stable">1.0.2</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Added profile transcoding for P, Q, R devices. This change means that these devices will transcode the profile, ensuring that the written profile is always usable by ART. Previously transcoding would be skipped on these platforms, which sometimes lead ART to be unable to process the source profile. No changes to developer APIs.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="profileinstaller 1.1.0-alpha04 2021-09-01 september 1, 2021" id="september-1-2021-profileinstaller-1-1-0-alpha04">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/profileinstaller">ProfileInstaller</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc..47e81d1c497b8a57534a460c277855db1b0257ae/profileinstaller/profileinstaller" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/profileinstaller#1.1.0-alpha04" class="badge alpha">1.1.0-alpha04</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fix <code>ProfileInstaller</code> to make it easier for apps using baseline profiles to run MacroBenchmarks using <code>CompilationMode.BaselineProfile</code>. <a href="https://android-review.googlesource.com/#/q/I426579600594e238b5b46adc20a6d4b33da3bab5" title="I42657" class="ref ref-gerrit">I42657</a> <a href="https://issuetracker.google.com/issues/196074999" title="b/196074999" class="ref ref-issue">b/196074999</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="security-state-provider 1.0.0-alpha03 2021-09-01 september 1, 2021" id="september-1-2021-security-identity-credential-1-0-0-alpha03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/security">Security-state-provider</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/5c90131a69042a6a3e13952e1da9e7ffc571c31d..47e81d1c497b8a57534a460c277855db1b0257ae/security/security-identity-credential" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/security#security-identity-credential-1.0.0-alpha03" class="badge alpha">1.0.0-alpha03</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>Added support for hardware-backed Identity Credential features in Android 12.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="sharetarget 1.2.0-beta01 2021-09-01 september 1, 2021" id="september-1-2021-sharetarget-1-2-0-beta01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/sharetarget">ShareTarget</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/11d2376b4247b10f75e08c7fcfd67dbf1994a6c1..4428a02d484bb23d7e516c6f55579cf9130f086f/sharetarget/sharetarget" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/sharetarget#1.2.0-beta01" class="badge beta">1.2.0-beta01</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="slidingpanelayout 1.2.0-beta01 2021-09-01 september 1, 2021" id="september-1-2021-slidingpanelayout-1-2-0-beta01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/slidingpanelayout">SlidingPaneLayout</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/7da80dd5f7c0c44d669ccb882c1aa6f81569254d..47e81d1c497b8a57534a460c277855db1b0257ae/slidingpanelayout/slidingpanelayout" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/slidingpanelayout#1.2.0-beta01" class="badge beta">1.2.0-beta01</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="wear complications &amp; watchface 1.0.0-alpha21 2021-09-01 september 1, 2021" id="september-1-2021-wear-complications-watchface-1-0-0-alpha21">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/wear">Wear Complications &amp; Watchface</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc..47e81d1c497b8a57534a460c277855db1b0257ae/wear" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/wear#complications-watchface-1.0.0-alpha21" class="badge alpha">1.0.0-alpha21</a></div>
+              </div>
+              <div class="notes"><p><strong>API Changes</strong></p><ul><li>All public watch face, client, editor and complication APIs now use java.time.Instant for times rather than a Long, as a consequence the minimum API level has increased to 26. <a href="https://android-review.googlesource.com/#/q/I3cd482ea3c80e6b88d28f9e33368b8f0e8e651c8" title="I3cd48" class="ref ref-gerrit">I3cd48</a></li><li>The watchface and complication APIs now use the immutable ZonedDateTime instead of Calendar. <a href="https://android-review.googlesource.com/#/q/I25cf828b22577fe838a8baf8eab591febb90c284" title="I25cf8" class="ref ref-gerrit">I25cf8</a></li><li>ComplicationSlots are now initialized with NoDataComplicationData, ComplicationSlot.complicationData now always has a value and CanvasComplicationDrawable.complicationData is no longer nullable. <a href="https://android-review.googlesource.com/#/q/I4dfd6e996b84f3d6d664fce98bc8e6601d9298cd" title="I4dfd6" class="ref ref-gerrit">I4dfd6</a> This reduces (but doesn’t eliminate) complication flickering when switching between watch faces.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="wear-remote-interactions 1.2.0-rc01 2021-09-01 september 1, 2021" id="september-1-2021-wear-1-2-0-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/wear">Wear-remote-interactions</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc..da0944806932662865db1602128f5be25f81a5fa/wear/wear" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/wear#1.2.0-rc01" class="badge rc">1.2.0-rc01</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="wear-core 1.0.0 2021-09-01 september 1, 2021" id="september-1-2021-wear-ongoing-1-0-0">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/wear">Wear-core</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/0cdc4fd8c6d04f740cd6224042b7b173e0d38721..e29ee7ab92601af2140abdabaabf4960517e49f2/wear/wear-ongoing" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/wear#wear-ongoing-1.0.0" class="badge stable">1.0.0</a></div>
+              </div>
+              <div class="notes"><p><strong>Major features of 1.0.0</strong></p><ul><li>The Wear Ongoing Activities API is an API for developers, including third party developers, used to mark their activity as an “Ongoing Activity”, and provide the needed information.</li><li>Ongoing Activities refer to activities that could be running in the background of the watch (e.g. workouts, calls and media). On Wear 3, an activity declared as ongoing will be made more prominent through a dedicated overlay icon on the watchface and a different rendering in the app launcher.</li><li>For more information, see the <a href="https://developer.android.com/training/wearables/ongoing-activity">Wear Ongoing Activity Guide</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="wear-core 1.0.0-rc01 2021-09-01 september 1, 2021" id="september-1-2021-wear-phone-interactions-wear-remote-interactions-1-0-0-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/wear">Wear-core</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/234e23e470a5e7f81291f6acd12d538146dc010b..ecf1b5888d9d003cacb3edb9c2fff198d3437d70/NULL" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/wear#1.0.0-rc01" class="badge rc">1.0.0-rc01</a></div>
+              </div>
+              <div class="notes"><p>This release is identical to <code>1.0.0-beta01</code>.</p></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="wear compose 1.0.0-alpha05 2021-09-01 september 1, 2021" id="september-1-2021-wear-compose-1-0-0-alpha05">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/wear-compose">Wear Compose</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/1e0ab9e58c3c2ebe8152b7507938aef7e9c1acdc..bf63d633b292368932b7ea1994e4116f95a94b5c/wear/compose" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/wear-compose#1.0.0-alpha05" class="badge alpha">1.0.0-alpha05</a></div>
+              </div>
+              <div class="notes"><p><strong>API Changes</strong></p><ul><li>Mark ArcPaddingValues as @Stable <a href="https://android-review.googlesource.com/#/q/I57deba17572c7df792ed5db80eb70f0915e6fc3d" title="I57deb" class="ref ref-gerrit">I57deb</a></li><li>ScalingLazyColumnState now implements the ScrollableState interface giving developers programmatic access to scroll the component. <a href="https://android-review.googlesource.com/#/q/I47dbcd941fd5b9c70f297245d2f4e5bd4eb81c96" title="I47dbc" class="ref ref-gerrit">I47dbc</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li>We have reduced the spacing between Icon and Text in Chip and ToggleChip to bring them in line with updates to the UX Spec. <a href="https://android-review.googlesource.com/#/q/I838026ae034d9e8b9a2c302647cc9d3d19ce653a" title="I83802" class="ref ref-gerrit">I83802</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="wear tiles 1.0.0-alpha11 2021-09-01 september 1, 2021" id="september-1-2021-wear-tiles-1-0-0-alpha11">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/wear-tiles">Wear Tiles</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/wear-tiles#1.0.0-alpha11" class="badge alpha">1.0.0-alpha11</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>Added and released a testing library, androidx.wear.tiles:tiles-testing library to enable developers to test their tiles more easily. <a href="https://android-review.googlesource.com/#/q/Iedb6b68e14e7bf0a7e68379f5baf5e9bdcbdfa3b" title="Iedb6b" class="ref ref-gerrit">Iedb6b</a></li></ul><p><strong>API Changes</strong></p><ul><li>Renamed TileProviderService to TileService. <a href="https://android-review.googlesource.com/#/q/I1ad2c33119a4e098a458c4791d27409b3f5fc1a9" title="I1ad2c" class="ref ref-gerrit">I1ad2c</a></li><li>Tiles builders updated; static <code>.builder()</code> methods have been deprecated in favour of calling <code>new Foo.Builder()</code>, and setter overloads which accepted a <code>Builder</code> instance have been removed. <a href="https://android-review.googlesource.com/#/q/Ia9606d0f656fde599851bc2b8a0140a0256cccaa" title="Ia9606" class="ref ref-gerrit">Ia9606</a></li><li>TileRenderer should now use a UI context, instead of the application context. <a href="https://android-review.googlesource.com/#/q/I84b6186474f9bc4c02fe3621a7956e345aacd364" title="I84b61" class="ref ref-gerrit">I84b61</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Fix bug causing multiple underlines to be applied in certain situations. <a href="https://android-review.googlesource.com/#/q/Ib6712e68987be272f471e8c229840f57cd6f3845" title="Ib6712" class="ref ref-gerrit">Ib6712</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="window 1.0.0-beta02 2021-09-01 september 1, 2021" id="september-1-2021-window-1-0-0-beta02">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/window">Window</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/f659ade9a1989a7e7f26d1e7f66b19d832ce1cb5..47e81d1c497b8a57534a460c277855db1b0257ae/window" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/window#1.0.0-beta02" class="badge beta">1.0.0-beta02</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>Add an experimental annotation to annotate experimental APIs. <a href="https://android-review.googlesource.com/#/q/I9f1b65a2ed713e5334ef8334a0173fc8794f4d35" title="I9f1b6" class="ref ref-gerrit">I9f1b6</a></li><li>Add a test method to create a test FoldingFeature that accepts a Rect. This will make it easie to test when using Robolectric as opposed to an actual Activity. <a href="https://android-review.googlesource.com/#/q/Id1cca363c9967bfa560a700e978670472284410f" title="Id1cca" class="ref ref-gerrit">Id1cca</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="workmanager 2.7.0-beta01 2021-09-01 september 1, 2021" id="september-1-2021-workmanager-2-7-0-beta01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/work">WorkManager</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/ed683bd5038dd4cdcc7440896b7949d6917b0c8a..74cf577caf9b6557a015ebd82996fc5fa907a219/work" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/work#2.7.0-beta01" class="badge beta">2.7.0-beta01</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>Reduce multi-process SQLite contention when initializing WorkManager.</li></ul><p><strong>API Changes</strong></p><ul><li>Remove <code>@ExperimentalExpeditedWork</code> APIs given the underlying platform APIs for Android 12 (S) are stable. <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/1792806" title="aosp/1792806" class="ref ref-gerrit">aosp/1792806</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Provide a better error message for expedited workers that do not implement <code>getForegroundInfoAsync()</code>. <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/1809376" title="aosp/1809376" class="ref ref-gerrit">aosp/1809376</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="workmanager 2.6.0 2021-09-01 september 1, 2021" id="september-1-2021-workmanager-2-6-0">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/work">WorkManager</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/fb4befebd5dfb03c14a0593799f68f1567993e6b..554afbcb0b3fba9fd022029713d72b2f376411b6/work" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/work#2.6.0" class="badge stable">2.6.0</a></div>
+              </div>
+              <div class="notes"><strong>Note:</strong><span> WorkManager Version <code>2.6.0</code> is not compatible for apps targeting Android 12 (S). You should be using version <code>2.7.0</code> instead.</span> 
+<p><strong>Important changes since 2.5.0</strong></p><ul><li><p>WorkManager now uses <code>androidx.startup</code> to initialize WorkManager. If you used <code>tools:node="remove"</code> the <code>ContentProvider</code> being used to initialize WorkManager in the past, then you need to do the following instead.</p><div></div><pre><code>&lt;provider
+<span>    </span>android:name="androidx.startup.InitializationProvider"
+<span>    </span>android:authorities=\"${applicationId}.androidx-startup"
+<span>    </span>android:exported="false"
+<span>    </span>tools:node=\"merge"&gt;
+<span>    </span>&lt;!--<span> </span>If<span> </span>you<span> </span>are<span> </span>using<span> </span>androidx.startup<span> </span>to<span> </span>initialize<span> </span>other<span> </span>components<span> </span>--&gt;
+<span>    </span>&lt;meta-data
+<span>        </span>android:name="androidx.work.WorkManagerInitializer"
+<span>        </span>android:value="androidx.startup"
+<span>        </span>tools:node="remove"<span> </span>/&gt;
+<span> </span>&lt;/provider&gt;
+</code></pre><div></div><pre><code>&lt;!--<span> </span>If<span> </span>you<span> </span>want<span> </span>to<span> </span>disable<span> </span>android.startup<span> </span>completely.<span> </span>--&gt;
+<span> </span>&lt;provider
+<span>            </span>android:name="androidx.startup.InitializationProvider"
+<span>            </span>android:authorities="${applicationId}.androidx-startup"
+<span>            </span>tools:node="remove"<span> </span>/&gt;
+</code></pre></li><li><p>Added support for Workers that can run in any process. <a href="https://android-review.googlesource.com/#/q/Iaf2009914abca579d6d3e5786011a79d6b99f8fa" title="Iaf200" class="ref ref-gerrit">Iaf200</a></p></li><li><p>Added a <code>RemoteCoroutineWorker</code> which is an implementation of RemoteListenableWorker that can bind to a remote process. <a href="https://android-review.googlesource.com/#/q/I30578ea87b8bbff82f8d5b70c6cf97a105b387f9" title="I30578" class="ref ref-gerrit">I30578</a></p></li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
