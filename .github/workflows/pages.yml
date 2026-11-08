@@ -33,7 +33,7 @@ jobs:
 
       - run: ./scripts/androidx-release-notes.main.kts build-site
 
-      - name: Capture desktop previews
+      - name: Capture previews
         id: previews
         continue-on-error: true
         timeout-minutes: 5
@@ -41,7 +41,6 @@ jobs:
         with:
           page: docs/index.html
           output: art
-          devices: desktop
       - name: Discard partial previews
         if: steps.previews.outcome == 'failure'
         run: |
