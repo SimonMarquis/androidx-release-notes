@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#august_29_2019",
+  "title": "August 29, 2019",
+  "releasedOn": "2019-08-29",
+  "updated": "2019-08-29T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#august_29_2019",
+  "components": [
+    {
+      "id": "biometric",
+      "name": "Biometric",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/biometric#1.0.0-beta01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<p>We’ve introduced a second constructor for BiometricPrompt that allows it to be hosted in a Fragment (as opposed to the existing constructor, which requires a FragmentActivity).</p>\n<p>We’re also excited to bring the following functionality from Android 10 to the AndroidX Biometric library:</p>\n<ol>\n <li><code>BiometricManager#canAuthenticate</code></li>\n <li><code>BiometricPrompt.PromptInfo#setConfirmationRequired</code></li>\n <li><code>BiometricPrompt.PromptInfo#setDeviceCredentialAllowed</code></li>\n</ol>\n<p>On Android 10, the library will invoke the corresponding methods from the platform API. On older API levels, the library will emulate the behavior.</p>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Added fragment-specific constructor for biometric prompt (<a href=\"https://issuetracker.google.com/issues/131980596\">b/131980596</a>)</li>\n <li>See the “New features” section above.</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Add BiometricPrompt device credential support for L+</li>\n <li>Fixed BiometricPrompt to use public error constants (<a href=\"https://issuetracker.google.com/issues/137788194\">b/137788194</a>)</li>\n <li>Fix <code>NullPointerException</code> in <code>BiometricPrompt.onAttach()</code> (<a href=\"https://issuetracker.google.com/issues/136103103\">b/136103103</a>)</li>\n <li>Changed behavior to not allow BiometricPrompt to be cancelled by a touch event outside the prompt (<a href=\"https://issuetracker.google.com/issues/135684487\">b/135684487</a>)</li>\n <li>Fixed onAuthenticationError crash when a null error value is returned in Kotlin (<a href=\"https://issuetracker.google.com/issues/128350861\">b/128350861</a>)</li>\n <li>FingerprintDialogFragment is now style-able (<a href=\"https://issuetracker.google.com/issues/127878106\">b/127878106</a>)</li>\n <li>FingerprintDialog is now scrollable (<a href=\"https://issuetracker.google.com/issues/126367887\">b/126367887</a>)</li>\n <li>Fixed bug where rotating the biometric dialog raises an <code>IllegalStateException</code> (<a href=\"https://issuetracker.google.com/issues/124153656\">b/124153656</a>), (<a href=\"https://issuetracker.google.com/issues/123811924\">b/123811924</a>)</li>\n <li>Fixed inconsistent behavior on API Levels 23 to 27. (<a href=\"https://issuetracker.google.com/issues/124066957\">b/124066957</a>)</li>\n <li>Fixed issue where Fingerprint Login Dialog read incorrect text using Talkback. (<a href=\"https://issuetracker.google.com/issues/123572331\">b/123572331</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b8de83833a365a0342a01630807c96f42e64782b..a3b34e760b913aaf27b25e76cc171bdd86ec3d3b/biometric"
+    }
+  ]
+}
