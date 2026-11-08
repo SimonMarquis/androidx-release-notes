@@ -1,0 +1,33 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#september_18_2023",
+  "title": "September 18, 2023",
+  "releasedOn": "2023-09-18",
+  "updated": "2023-09-18T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#september_18_2023",
+  "components": [
+    {
+      "id": "test-core",
+      "name": "Test Core",
+      "version": "1.6.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#core-1.6.0-alpha02",
+      "detailsHtml": "<p><strong>Features</strong> * Updates ViewCapture to accept an optional Rect so that it can work for Compose.</p>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fix issue where Activity#isChangingConfigurations is incorrectly false during ActivityScenario#recreate</li>\n <li>Move UiAutomation#takeScreenshot call off main thread.</li>\n <li>Fix captureToBitmap for Views inside a Dialog on APIs &gt;= 26.</li>\n</ul>\n<p><strong>Dependency changes</strong> * minSdkVersion is now 19</p>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-espresso-device",
+      "name": "Test Espresso Device",
+      "version": "1.0.0-alpha06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#espresso-device-1.0.0-alpha06",
+      "detailsHtml": "<p>The following artifacts were released:</p>\n<ul>\n <li><code>androidx.test.espresso:espresso-device:1.0.0-alpha06</code></li>\n</ul>\n<p><strong>API changes</strong> * Support setting screen orientation on physical devices that are open * Remove ActionContext interface</p>\n<p><strong>Dependency changes</strong> * minSdkVersion is now 19</p>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-monitor",
+      "name": "Test Monitor",
+      "version": "1.7.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#monitor-1.7.0-alpha02",
+      "detailsHtml": "<p><strong>API change</strong> * Add AppComponentFactory Rule</p>\n<p><strong>Features</strong> * Dump thread states when idling resources time out</p>\n<p><strong>Bug fixes</strong> * Fix captureToBitmap for Views inside a Dialog on APIs &gt;= 26.</p>\n<p><strong>Dependency changes</strong> * minSdkVersion is now 19</p>",
+      "commitsUrl": null
+    }
+  ]
+}

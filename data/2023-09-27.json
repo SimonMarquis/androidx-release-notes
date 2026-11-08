@@ -1,0 +1,49 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#september_27_2023",
+  "title": "September 27, 2023",
+  "releasedOn": "2023-09-27",
+  "updated": "2023-09-27T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#september_27_2023",
+  "components": [
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.5.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.5.2",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/0a2cac855f7723e1e485c20ac68d34dc8bb68d1e..2bc777611812ef8ef7329a332fbaf8348af05ec7/compose/animation"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.5.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.5.2",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a bug in text that led to crashes in certain circumstances when semantics were invalidated.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/0a2cac855f7723e1e485c20ac68d34dc8bb68d1e..2bc777611812ef8ef7329a332fbaf8348af05ec7/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.5.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.5.2",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/0a2cac855f7723e1e485c20ac68d34dc8bb68d1e..2bc777611812ef8ef7329a332fbaf8348af05ec7/compose/material"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.5.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.5.2",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/0a2cac855f7723e1e485c20ac68d34dc8bb68d1e..2bc777611812ef8ef7329a332fbaf8348af05ec7/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.5.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.5.2",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Added workaround for crashes when accessibility scroll API was accessed from background thread.</li>\n <li>Fix unattached nodes being added to the semantics tree.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/0a2cac855f7723e1e485c20ac68d34dc8bb68d1e..2bc777611812ef8ef7329a332fbaf8348af05ec7/compose/ui"
+    }
+  ]
+}
