@@ -1,0 +1,41 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#april_12_2023",
+  "title": "April 12, 2023",
+  "releasedOn": "2023-04-12",
+  "updated": "2023-04-12T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#april_12_2023",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.8.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.8.0-alpha03",
+      "detailsHtml": "<strong>Note:</strong><span> This version will only compile against the <a href=\"https://developer.android.com/about/versions/14#beta-1\">Android 14 (Upside Down Cake) Beta 1 SDK</a>.</span> \n<p><strong>New Features</strong></p>\n<ul>\n <li>Added <code>ComponentActivity.setUpEdgeToEdge()</code> to easily set up the edge-to-edge display in a backward-compatible manner.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li><code>ComponentActivity.onBackPressed()</code> has now been deprecated in favor of the APIs for handling back. Developers should now utilize the <code>OnBackPressedDispatcher</code>, rather than overriding this method. (<a href=\"https://android-review.googlesource.com/#/q/Ibce2f664a8d73cb1df06c20918752fb3dfb44e0c\">Ibce2f</a>, <a href=\"https://issuetracker.google.com/271596918\">b/271596918</a>)</li>\n <li><code>ComponentDialog</code> and <code>ComponentActivity</code> now contain public API <code>initViewTreeOwners()</code> to be used to initialize all view tree owners before setting the content view. (<a href=\"https://android-review.googlesource.com/#/q/Ibdce0a994b0daddc090e4ff58583ccba71612870\">Ibdce0</a>, <a href=\"https://issuetracker.google.com/261314581\">b/261314581</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue where Fragments were incorrectly invalidating MenuHosts and causing other menus in the Activity to have unexpected behavior. (<a href=\"https://android-review.googlesource.com/#/q/I9404ee9fcc9ce6b80d70a93bea720fe4ccf583a0\">I9404e</a>, <a href=\"https://issuetracker.google.com/244336571\">b/244336571</a>)</li>\n</ul>\n<p><strong>Other Changes</strong></p>\n<ul>\n <li>The <code>ActivityResultRegister</code> now uses Kotlin <code>Random</code> instead of Java. (<a href=\"https://android-review.googlesource.com/#/q/I4d98f4bc5a36b35fea026f716db45efa74078af8\">I4d98f</a>, <a href=\"https://issuetracker.google.com/272096025\">b/272096025</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "core-core-ktx-core-testing",
+      "name": "Core Core-Ktx Core-Testing",
+      "version": "1.12.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.12.0-alpha03",
+      "detailsHtml": "<strong>Note:</strong><span> This version will only compile against the Android 14 Beta 1 SDK.</span> \n<p><strong>API Changes</strong></p>\n<ul>\n <li>Unhides <code>NotificationCompat.TvExtender</code> (aosp/01c67677e9310b2cf4c536d7e951e117d6cce64a)</li>\n <li>Added public methods to access M3HCT parameters and turn M3HCT values into ARGB (aosp/06810598aa94bee731bbe0d277933b8b9614934e)</li>\n <li>Added <code>NotificationManager.getCurrentInterruptionFilter</code> (aosp/b0c6940639e35371d212a7ebd7dbf01c14fc7710)</li>\n <li>Added <code>getCurrentInterruptionFilter</code> to <code>NotifManagerCompat</code> (aosp/516143e05f824ff49bde3c0c97344a2924867d30)</li>\n <li>Deprecated <code>app.BundleCompat</code> in favor of <code>os.BundleCompat</code> (aosp/bf6169fe9ee1113065d0cf380bd2e09f31ce0a40)</li>\n <li>Added <code>TestConsumer</code> so developers can record values in a test. (aosp/f75a4913940e710842168c832a7f57c2dcae4fdf)</li>\n <li>Added <code>TestConsumer</code> so developers can record values in a test.(aosp/67ad4e2c6488772b7c9a061ee6ca01bba23649f7)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a bug where <code>unregisterGnssMeasurementsCallback()</code> does not work properly below Android R. (aosp/c5a97c4ee956f87d229ec892f2b8849f392e956c)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "credentials",
+      "name": "Credentials",
+      "version": "1.2.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/credentials#1.2.0-alpha03",
+      "detailsHtml": "<strong>Note:</strong><span> This version will only compile against the Android 14 Beta 1 SDK.</span>",
+      "commitsUrl": null
+    },
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.4.5",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.4.5",
+      "detailsHtml": "<p><strong>NOTE</strong> This build of Compose Compiler requires your build environment to use Java 17+. Based on user feedback, we will drop this requirement back to Java 11 and follow-up with another release (1.4.6) to better support users who are using older Java versions.</p>\n<p><strong>New Features</strong></p>\n<p>Support for Kotlin 1.8.20</p>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Propagate requirement of composable invoke operator override to classes and interfaces that are extending lambda interfaces with corresponding annotations.<a href=\"https://android.googlesource.com/platform/frameworks/support/+/f8f2f78a1a769c2373201027f12700e772e4e97e\">f8f2f78a1a769c2373201027f12700e772e4e97e</a></li>\n <li>Allows usage of <code>@Composable</code> annotation on <code>getValue</code> operator and marks generated getter for delegate as composable in IR to ensure it is correctly transformed later. <a href=\"https://android.googlesource.com/platform/frameworks/support/+/f174f6ee60ca957d5cb6d19a5bd02a88267cdf40\">f174f6ee60ca957d5cb6d19a5bd02a88267cdf40</a></li>\n <li>Fix internal compose runtime error (Expected <code>applyChanges()</code> to have been called) for inline functions.<a href=\"https://issuetracker.google.com/issues/274786923\">b/274786923</a></li>\n <li>Avoid capturing <code>ProcessCancelledException</code> as it has a special meaning in the IDE.<a href=\"https://issuetracker.google.com/issues/274725600\">b/274725600</a></li>\n</ul>\n<p><strong>External Contribution</strong></p>\n<ul>\n <li>Improved support for Composable functions in Kotlin/Native.<a href=\"https://android.googlesource.com/platform/frameworks/support/+/f52b6aeed22400dd4f4a4f05559a9aa42642402c\">f52b6aeed22400dd4f4a4f05559a9aa42642402c</a></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b503ebce2f56c805dbbb22c3f88cd6c633a2e102..3cde0d90f0756a2f75099eb822fba35ceb9dc06c/compose/compiler"
+    }
+  ]
+}
