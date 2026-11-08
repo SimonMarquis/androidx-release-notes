@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>July 10, 2024 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for July 10, 2024: Benchmark 1.3.0-beta02, Collection 1.4.1, Compose Animation 1.7.0-beta05, Compose Foundation 1.7.0-beta05, and more.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2024-07-10.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="july-10-2024">
+            <div class="date-divider"><a href="./#july-10-2024" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">July 10, 2024</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="beta" data-search="benchmark 1.3.0-beta02 2024-07-10 july 10, 2024" id="july-10-2024-benchmark-1-3-0-beta02">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/benchmark">Benchmark</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/e688db5c82e85000364f92965558ef1e2236c5a0..56579bc30499ce39f0d7a6713a065b00c6194206/benchmark" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/benchmark#1.3.0-beta02" class="badge beta">1.3.0-beta02</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Gracefully handle EXITCODE <code>2</code> when starting Perfetto to log a warning, but proceed.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="collection 1.4.1 2024-07-10 july 10, 2024" id="july-10-2024-collection-1-4-1">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/collection">Collection</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/6bb3d4c5410cf394070cca4ff347d46454194480..dba39e49c503b546475a23652716b80581e1c7b5/collection" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/collection#1.4.1" class="badge stable">1.4.1</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Remove deleted tombstones from Map/Set when resizing. <a href="https://android-review.googlesource.com/#/q/Ic72352b3209e463de8de2278896a4b1bf10bd832" title="7a996c5" class="ref ref-gerrit">7a996c5</a> <a href="https://issuetracker.google.com/issues/345960092" title="b/345960092" class="ref ref-issue">b/345960092</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="compose animation 1.7.0-beta05 2024-07-10 july 10, 2024" id="july-10-2024-compose-animation-1-7-0-beta05">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-animation">Compose Animation</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/487d2b07dba29c903cfd87a8dc7f99483084ebb6..8346df8de9f86a546fc9c316113bd4a3cc82ede9/compose/animation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-animation#1.7.0-beta05" class="badge beta">1.7.0-beta05</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>The Transition property <code>totalDurationNanos</code> now can be properly read within a <code>snapshotFlow</code>.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="compose foundation 1.7.0-beta05 2024-07-10 july 10, 2024" id="july-10-2024-compose-foundation-1-7-0-beta05">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-foundation">Compose Foundation</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/487d2b07dba29c903cfd87a8dc7f99483084ebb6..8346df8de9f86a546fc9c316113bd4a3cc82ede9/compose/foundation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.7.0-beta05" class="badge beta">1.7.0-beta05</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fix for treatment of Nan values in <code>SnapFlingBehavior</code> and Pager.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="compose material 1.7.0-beta05 2024-07-10 july 10, 2024" id="july-10-2024-compose-material-1-7-0-beta05">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-material">Compose Material</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/487d2b07dba29c903cfd87a8dc7f99483084ebb6..8346df8de9f86a546fc9c316113bd4a3cc82ede9/compose/material" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-material#1.7.0-beta05" class="badge beta">1.7.0-beta05</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="compose runtime 1.7.0-beta05 2024-07-10 july 10, 2024" id="july-10-2024-compose-runtime-1-7-0-beta05">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-runtime">Compose Runtime</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/487d2b07dba29c903cfd87a8dc7f99483084ebb6..8346df8de9f86a546fc9c316113bd4a3cc82ede9/compose/runtime" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.7.0-beta05" class="badge beta">1.7.0-beta05</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="compose ui 1.7.0-beta05 2024-07-10 july 10, 2024" id="july-10-2024-compose-ui-1-7-0-beta05">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-ui">Compose UI</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/487d2b07dba29c903cfd87a8dc7f99483084ebb6..8346df8de9f86a546fc9c316113bd4a3cc82ede9/compose/ui" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-ui#1.7.0-beta05" class="badge beta">1.7.0-beta05</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixed a bug where changing the software keyboard would cause <code>TextField</code> to not accept input from the new keyboard until the focus is lost and regained.</li><li>Fixed an issue where attempts to persist layer contents would cause unintended side effects when rendering with <code>SurfaceView</code> content.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="credentials 1.3.0-rc01 2024-07-10 july 10, 2024" id="july-10-2024-credentials-1-3-0-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/credentials">Credentials</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/f5541f29d045c6ba9734689ec67891f8d667412b..baedf2c9e120baecebea61b8f86ce43e1237b790/credentials" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/credentials#1.3.0-rc01" class="badge rc">1.3.0-rc01</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>A version bump release along with small implementation updates.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="emoji2 1.5.0-beta01 2024-07-10 july 10, 2024" id="july-10-2024-emoji2-1-5-0-beta01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/emoji2">Emoji2</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/9174577f8a57ba4ae4958cc31787ea4db3b2b44a..56579bc30499ce39f0d7a6713a065b00c6194206/emoji2" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/emoji2#1.5.0-beta01" class="badge beta">1.5.0-beta01</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>Support emoji 15.1 and bidirectional emoji selection UI.</li><li>Support multi-skintone selection redesign.</li></ul><p><strong>Bug Fixes</strong></p><ul><li><code>EmojiPickerView</code>’s tab selection and indicator updates one click behind. <a href="https://android-review.googlesource.com/#/q/146b021cc44151e8a69e26fc8c7f54bb7a92e892" title="146b02" class="ref ref-gerrit">146b02</a> <a href="https://issuetracker.google.com/issues/288261054" title="b/288261054" class="ref ref-issue">b/288261054</a></li><li><code>EmojiPickerView</code>’s tab selection and indicator is broken. <a href="https://android-review.googlesource.com/#/q/5e1f1404b5689979eeb0cd0b36e509631bd274a1" title="5e1f14" class="ref ref-gerrit">5e1f14</a> <a href="https://issuetracker.google.com/issues/273883688" title="b/273883688" class="ref ref-issue">b/273883688</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="games-activity 3.0.4 2024-07-10 july 10, 2024" id="july-10-2024-games-activity-3-0-4">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/games">Games-Activity</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/opt/gamesdk/+log/287affdc5739c47077aab122c623606ec4f1aca8..e05ad224fd2ea838d44f48830e5b49f6dfe5dae3/game-activity" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/games#games-activity-3.0.4" class="badge stable">3.0.4</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixed handling of null pointers.</li><li>Fixed missing state updates for some states in <code>onConfiguration()</code> callback.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="games-frame-pacing 2.1.1 2024-07-10 july 10, 2024" id="july-10-2024-games-frame-pacing-2-1-1">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/games">Games-Frame-Pacing</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/opt/gamesdk/+log/4880f53064c0abc7f2adaa4895e0c9e1c0ade08b..394f81c696e264c403a8491dd6e37aa89e3da00d/games-frame-pacing" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/games#games-frame-pacing-2.1.1" class="badge stable">2.1.1</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Properly unregister display listener from swappy to avoid a hang.</li><li>Fix a crash in <code>ChoreographerFilter::onSettingsChanged</code> using destroyed mutex.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="media3 1.4.0-rc01 2024-07-10 july 10, 2024" id="july-10-2024-media3-1-4-0-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.4.0-rc01" class="badge rc">1.4.0-rc01</a></div>
+              </div>
+              <div class="notes"><p>Use the 1.4.0 <a href="https://developer.android.com/jetpack/androidx/releases/media3#1.4.0">stable version</a>.</p></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="navigation 2.8.0-beta05 2024-07-10 july 10, 2024" id="july-10-2024-navigation-2-8-0-beta05">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/navigation">Navigation</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/5299742c3cf8497f1690c2399056af490673d29e..56579bc30499ce39f0d7a6713a065b00c6194206/navigation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/navigation#2.8.0-beta05" class="badge beta">2.8.0-beta05</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fix <code>singleTop</code> navigation crash when nested <code>NavGraphs</code> share the same <code>startDestination</code> route. <a href="https://android-review.googlesource.com/#/q/I17b9466ce3411e0113d1f9a56faa8706577abc72" title="I17b94" class="ref ref-gerrit">I17b94</a> <a href="https://issuetracker.google.com/issues/294408596" title="b/294408596" class="ref ref-issue">b/294408596</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="privacysandbox ads 1.1.0-beta09 2024-07-10 july 10, 2024" id="july-10-2024-privacysandbox-ads-1-1-0-beta09">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/privacysandbox-ads">Privacysandbox Ads</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/948119be341fa4affc055418e695d8c4c7e5e2e4..56579bc30499ce39f0d7a6713a065b00c6194206/privacysandbox/ads" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/privacysandbox-ads#1.1.0-beta09" class="badge beta">1.1.0-beta09</a></div>
+              </div>
+              <div class="notes"><p><strong>API Changes</strong></p><ul><li>Add missing Java constructor overloads for <code>GetAdSelectionDataRequest</code> Experimental API. <a href="https://android-review.googlesource.com/#/q/Ifbf88b1b7a189585e15c04c8a111594c74ec6278" title="Ifbf88" class="ref ref-gerrit">Ifbf88</a>.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="room 2.7.0-alpha05 2024-07-10 july 10, 2024" id="july-10-2024-room-2-7-0-alpha05">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/room">Room</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/f5541f29d045c6ba9734689ec67891f8d667412b..56579bc30499ce39f0d7a6713a065b00c6194206/room" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/room#2.7.0-alpha05" class="badge alpha">2.7.0-alpha05</a></div>
+              </div>
+              <div class="notes"><p><strong>API Changes</strong></p><ul><li>Renamed <code>SQLiteKt</code> to <code>SQLite</code> and <code>BundledSQLiteKt</code> to <code>BundledSQLite</code>. <a href="https://android-review.googlesource.com/#/q/I8b5016b9769244342bab288bab976ebe9fe5d11d" title="I8b501" class="ref ref-gerrit">I8b501</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Fixed a bug where a <code>RoomDatabase</code> would deadlock or error out with a connection timeout when using the <code>AndroidSQLiteDriver</code>.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="security-state-provider 1.0.0-alpha03 2024-07-10 july 10, 2024" id="july-10-2024-security-state-1-0-0-alpha03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/security">Security-state-provider</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/948119be341fa4affc055418e695d8c4c7e5e2e4..56579bc30499ce39f0d7a6713a065b00c6194206/security/security-state" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/security#security-state-1.0.0-alpha03" class="badge alpha">1.0.0-alpha03</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixing ASB-A- pattern for Android security bulletin bugs, JSON parsing for additional components, and <code>Webview</code> packaged retrieval. <a href="https://android-review.googlesource.com/#/q/Ide86ae11b67041db6aeca40ea1c54a08d3b8109d" title="Ide86a" class="ref ref-gerrit">Ide86a</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="sqlite 2.5.0-alpha05 2024-07-10 july 10, 2024" id="july-10-2024-sqlite-2-5-0-alpha05">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/sqlite">Sqlite</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/f5541f29d045c6ba9734689ec67891f8d667412b..56579bc30499ce39f0d7a6713a065b00c6194206/sqlite" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/sqlite#2.5.0-alpha05" class="badge alpha">2.5.0-alpha05</a></div>
+              </div>
+              <div class="notes"><p><strong>API Changes</strong></p><ul><li>Renamed <code>SQLiteKt</code> to <code>SQLite</code> and <code>BundledSQLiteKt</code> to <code>BundledSQLite</code>. <a href="https://android-review.googlesource.com/#/q/I8b5016b9769244342bab288bab976ebe9fe5d11d" title="I8b501" class="ref ref-gerrit">I8b501</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="tv-foundation 1.0.0-alpha11 2024-07-10 july 10, 2024" id="july-10-2024-tv-foundation-1-0-0-alpha11">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/tv">Tv-Foundation</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/1f7407d4293384a1b91bc142880e3525048b3443..56579bc30499ce39f0d7a6713a065b00c6194206/tv/tv-foundation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/tv#tv-foundation-1.0.0-alpha11" class="badge alpha">1.0.0-alpha11</a></div>
+              </div>
+              <div class="notes"><p><strong>API Changes</strong></p><ul><li>Tv Lazy Layouts have been deprecated from tv-foundation library. Refer to <a href="https://issuetracker.google.com/issues/348896032" title="this ticket" class="ref ref-issue">this ticket</a> to learn how to migrate away from the tv lazy layouts. <a href="https://android-review.googlesource.com/#/q/I0855f36b41cf8bc374e8e69ac5faeabfefc97aa9" title="I0855f" class="ref ref-gerrit">I0855f</a> <a href="https://issuetracker.google.com/issues/332674072" title="b/332674072" class="ref ref-issue">b/332674072</a></li><li><code>PlatformImeOptions</code> is now a concrete class instead of an interface. <a href="https://android-review.googlesource.com/#/q/If40a4c3e832e7852f214e18af469f5ce68e798b7" title="If40a4" class="ref ref-gerrit">If40a4</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="tv-foundation 1.0.0-rc01 2024-07-10 july 10, 2024" id="july-10-2024-tv-material-1-0-0-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/tv">Tv-foundation</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/fbd1ac175922f44c69a13545d194066ee428b342..4237f41666396b1ff39ffba3563807151fed2313/tv/tv-material" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/tv#tv-material-1.0.0-rc01" class="badge rc">1.0.0-rc01</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="wear protolayout 1.2.0-beta01 2024-07-10 july 10, 2024" id="july-10-2024-wear-protolayout-1-2-0-beta01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/wear-protolayout">Wear ProtoLayout</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/948119be341fa4affc055418e695d8c4c7e5e2e4..56579bc30499ce39f0d7a6713a065b00c6194206/wear/protolayout" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/wear-protolayout#1.2.0-beta01" class="badge beta">1.2.0-beta01</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><p>The 1.2.0-beta01 release of Wear ProtoLayout indicates that this release of the library is feature complete and the API is locked (except where marked as experimental). Wear ProtoLayout 1.2 includes the following new functionalities and APIs:</p><ul><li><code>FontStyle</code> has been updated to have additional font support as following:
+  <ul><li>Setting different font variation setting such as <code>FontSetting.weight</code> and <code>FontSetting.width</code></li><li>Setting the same width for all numeric characters - tabular numerals (<code>FontSetting.tnum</code> font feature setting)</li><li>Improved font selection APIs to support the upcoming flex fonts by specifying preferred font family names to be used.</li></ul></li><li>Extended <code>Corner</code> modifier to support specifying each <code>CornerRadius</code> with a separate horizontal and vertical values to allow building elements with asymmetric corners.</li><li>Added a new <code>Transformation</code> modifier offering translation, rotation and scaling of <code>LayoutElement</code>. These transformations can be animated by using dynamic values.</li><li>Added <code>setArcDirection</code> with <code>Clockwise</code>, <code>CounterClockwise</code> and <code>Normal</code> options to all arc elements (<code>Arc</code>, <code>ArcLine</code> and <code>ArcText</code>) for better support in different layout directions (such as LTR and RTL).</li><li>Improved accessibility of all touch targets by extending the tappable area of any element that uses <code>Clickable</code> modifier to be at least <code>48dp</code> by <code>48dp</code>.</li><li>Improved <code>PrimaryLayout</code> and <code>EdgeContentLayout</code> by adding <code>setResponsiveContentInsetEnabled</code> to better support responsive behavior of these layouts across different screen sizes and improve Tiles consistency. Added linter warning to suggest usage of these APIs with a quick fix.</li><li>Improved scaling/non-scaling of the Material <code>Text</code> for Android 14's non-linear font scaling.</li></ul><p><strong>API Changes</strong></p><ul><li>Default font family name (<code>DEFAULT_SYSTEM_FONT</code>) is removed as it is implied by not using the <code>preferredFontFamilies</code> API. <a href="https://android-review.googlesource.com/#/q/I39dab419cb0ae1461136d8f1a6181ba04ab80985" title="I39dab" class="ref ref-gerrit">I39dab</a></li><li>Parameter passed in to the <code>FontSetting.width</code> should be positive. <a href="https://android-review.googlesource.com/#/q/I1266f60f35a6bd94e8159fd40e2f1f2ca0b0a8f6" title="I1266f" class="ref ref-gerrit">I1266f</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="wear tiles 1.4.0-beta01 2024-07-10 july 10, 2024" id="july-10-2024-wear-tiles-1-4-0-beta01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/wear-tiles">Wear Tiles</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/948119be341fa4affc055418e695d8c4c7e5e2e4..56579bc30499ce39f0d7a6713a065b00c6194206/wear/tiles" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/wear-tiles#1.4.0-beta01" class="badge beta">1.4.0-beta01</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><p>The 1.4.0-beta01 release of Wear Tiles indicates that this release of the library is feature complete and the API is locked (except where marked as experimental). Wear Tiles 1.4 includes the following new functionalities and APIs:</p><ul><li>Tooling support for specifying custom platform data for Tiles previews in Android Studio.</li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
