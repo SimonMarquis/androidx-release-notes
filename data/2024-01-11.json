@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#january_11_2024",
+  "title": "January 11, 2024",
+  "releasedOn": "2024-01-11",
+  "updated": "2024-01-11T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#january_11_2024",
+  "components": [
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.2.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.2.1",
+      "detailsHtml": "",
+      "commitsUrl": null
+    }
+  ]
+}
