@@ -1,0 +1,65 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#august_26_2020",
+  "title": "August 26, 2020",
+  "releasedOn": "2020-08-26",
+  "updated": "2020-08-26T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#august_26_2020",
+  "components": [
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose#compose-compiler-1.0.0-alpha01",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.0.0-alpha01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/96eb302ee1740ba656c90c9fb27df3723a1a89c1..c93ac38a59f31e5db0eab67687532a4ba61913d5/ui"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.0.0-alpha01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/96eb302ee1740ba656c90c9fb27df3723a1a89c1..c93ac38a59f31e5db0eab67687532a4ba61913d5/ui"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.0.0-alpha01",
+      "detailsHtml": "<p><strong>Known Issue</strong></p>\n<p>= The first character in a material <code>TextField</code> cannot be removed using a backspace (<a href=\"https://issuetracker.google.com/165956313\">b/165956313</a>)</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/96eb302ee1740ba656c90c9fb27df3723a1a89c1..c93ac38a59f31e5db0eab67687532a4ba61913d5/ui/ui-material"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.0.0-alpha01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/96eb302ee1740ba656c90c9fb27df3723a1a89c1..c93ac38a59f31e5db0eab67687532a4ba61913d5/compose"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.0.0-alpha01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/96eb302ee1740ba656c90c9fb27df3723a1a89c1..c93ac38a59f31e5db0eab67687532a4ba61913d5/ui"
+    },
+    {
+      "id": "ui",
+      "name": "UI",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/ui#1.0.0-alpha01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/96eb302ee1740ba656c90c9fb27df3723a1a89c1..c93ac38a59f31e5db0eab67687532a4ba61913d5/ui"
+    }
+  ]
+}

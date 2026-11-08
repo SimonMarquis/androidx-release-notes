@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#august_12_2020",
+  "title": "August 12, 2020",
+  "releasedOn": "2020-08-12",
+  "updated": "2020-08-12T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#august_12_2020",
+  "components": [
+    {
+      "id": "games",
+      "name": "Games",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/games#1.0.0-alpha02",
+      "detailsHtml": "",
+      "commitsUrl": null
+    }
+  ]
+}

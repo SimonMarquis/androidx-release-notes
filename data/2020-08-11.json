@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#august_11_2020",
+  "title": "August 11, 2020",
+  "releasedOn": "2020-08-11",
+  "updated": "2020-08-11T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#august_11_2020",
+  "components": [
+    {
+      "id": "leanback",
+      "name": "Leanback",
+      "version": "1.1.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/leanback#1.1.0-alpha04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>The LeanbackTabLayout provides the top navigation (typically displayed horizontally across the top of the app) in the <a href=\"https://developer.android.com/training/tv/playback/browse\">browse experience</a>.</li>\n <li>Paging for Leanback simplifies adding paging support to a <a href=\"https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.Adapter\">RecyclerView.Adapter</a>.</li>\n <li>Added appcompat themes for leanback that will simplify the creation of a single code base between mobile and TV.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Added adapter based on asyncpagingdatadiffer for leanback widgets (<a href=\"https://android-review.googlesource.com/#/q/If0dfed7c38fd4a20271e9a12d45ab71d3eba0c26\">If0dfe</a>)</li>\n <li>Adding a customized TabLayout to be used as the top navigation bar in leanback (<a href=\"https://android-review.googlesource.com/#/q/I1e3048d300106ad0b0f9ef55f14e7070793a579a\">I1e304</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/740cde70237dd276f8ad66dfe9528b1cdb5d54bb..b1ae31bb42f205dd2c4cf3c1aaf6d6e00ae84038/leanback"
+    }
+  ]
+}
