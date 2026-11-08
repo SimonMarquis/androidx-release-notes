@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#december_17_2020",
+  "title": "December 17, 2020",
+  "releasedOn": "2020-12-17",
+  "updated": "2020-12-17T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#december_17_2020",
+  "components": [
+    {
+      "id": "constraintlayout",
+      "name": "ConstraintLayout",
+      "version": "2.1.0-alpha2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-2.1.0-alpha2",
+      "detailsHtml": "<p>This second alpha adds several new features:</p>\n<p><strong>ConstraintLayout</strong></p>\n<ul>\n <li>android:layout_width and android:layout_height are now optional, with wrap_content as default behavior</li>\n <li>new layout_constraintWidth and layout_constraintHeight attributes for expressing dimension constraints</li>\n <li>supports negative margins for constraints</li>\n <li>supports baseline to top and baseline to bottom constraints</li>\n <li>supports baseline margin constraints</li>\n <li>SharedValues allow to inject external values into ConstraintLayout</li>\n</ul>\n<p><strong>MotionLayout</strong></p>\n<ul>\n <li>Support for overshoot interpolators (anticipate, overshoot)</li>\n <li>Enhanced MotionHelper support</li>\n <li>Add animated update of ConstraintSet to MotionLayout updateStateAnimate(id,cset,duration);</li>\n <li>Shared value based ViewTransition</li>\n <li>scheduleTransitonTo allow you to que a transition to run at the completion of the current transition.</li>\n</ul>\n<p><strong>Helpers</strong></p>\n<ul>\n <li>Carousel now supports an infinite (wrap-around) mode</li>\n <li>ReactiveGuide : A guideline that position itself automatically when a SharedValue changes</li>\n <li>MotionEffect : inject Keyframes to referenced views moving in a given direction</li>\n <li>MotionLabel - A View for animating single line text</li>\n</ul>\n<p>See additional information on this release <a href=\"https://github.com/androidx/constraintlayout/wiki/What's-New-in-2.1\">here</a>.</p>",
+      "commitsUrl": null
+    }
+  ]
+}
