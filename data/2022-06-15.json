@@ -1,0 +1,185 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#june_15_2022",
+  "title": "June 15, 2022",
+  "releasedOn": "2022-06-15",
+  "updated": "2022-06-15T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#june_15_2022",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.6.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.6.0-alpha05",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>minCompileSdk</code> is now 33 to align with Tiramisu Beta 3 SDK</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed crash on older devices when doing SDK extension check for the <code>PickVisualMedia</code> <code>ActivityResultContract</code> so that it should now work with <code>ACTION_OPEN_DOCUMENT</code> on devices running Android 10 and lower.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "annotation",
+      "name": "Annotation",
+      "version": "1.4.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/annotation#annotation-1.4.0",
+      "detailsHtml": "<p><strong>Important changes since 1.3.0</strong></p>\n<ul>\n <li><code>@RestrictTo</code> has been migrated to Kotlin sources and now supports <code>@file</code> usage site. As a result, the Annotation library now depends on the Kotlin standard library.</li>\n <li><code>@ReturnThis</code> (b/140249763): Ensures that overriding methods of this method must return the same instance (intended for builders etc)</li>\n <li><code>@OpenForTesting</code> (b/141539024): Kotlin classes and methods marked \"open\" can be annotated with this annotation, and lint will make sure that this class is only subclassed (and methods only overridden) from unit tests</li>\n <li><code>@DeprecatedSinceApi</code> (b/37116481): Indicates that the annotated method (or class or field) is part of a backport library for a platform API, which is no longer needed as of the given API level.</li>\n <li><code>@EmptySuper</code>: Indicates that this method is defined to be empty, so when overriding you do not need to call it (and in fact you shouldn't; for example, it can contain backwards compatibility checking.)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c8fdb47aa3e1bb0f108b7e8dabb71ea66d06f2f9..d0a827d2d2415ef04c0c9538af087321d1fc58d8/annotation/annotation"
+    },
+    {
+      "id": "appcompat-appcompat-resources",
+      "name": "AppCompat AppCompat-Resources",
+      "version": "1.6.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.6.0-alpha05",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Nullability updates to align with finalized API surface in Tiramisu Beta 3 SDK</li>\n <li><code>minCompileSdk</code> is now 33 to align with Tiramisu Beta 3 SDK</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "appsearch",
+      "name": "AppSearch",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appsearch#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>All methods returning <code>ListenableFuture</code> have been renamed to have the Async suffix. For example, <code>getSchema</code> has been renamed to <code>getSchemaAsync</code>. The previous versions have been deprecated and will be removed in a future release.</li>\n</ul>\n<p><strong>New Features</strong></p>\n<ul>\n <li>First release of appsearch-builtin-types. This project contains some builtin types based on schema.org which clients may find convenient to use instead of defining their own types for common objects. More types will be added in future releases.</li>\n <li>Ability to use <code>ShortcutAdapter</code> to convert an <code>AppSearch</code> Document into a <code>ShortcutInfoCompat</code>. This gives clients a way to share <code>AppSearch</code> documents to Google using the core-google-shortcuts library</li>\n <li>Ability to use inheritance with <code>@Document</code> classes. Fields cannot be replaced or modified, but new fields can be added by extending a class annotated with <code>@Document</code>.</li>\n <li>New Observer API which allows clients to register for notifications when types they have access to have changed or when documents of those types are added, modified or removed. IMPORTANT: The current implementation delivers notifications only when your app is running. There is currently no way to inspect changes that have occurred while your app was stopped. Accordingly you should not rely on this API for completeness.</li>\n <li>Property parser API which allows you to fully handle and inspect property paths returned by <code>MatchInfo#getPropertyPath</code>.</li>\n <li>Global <code>getById</code> and global <code>getSchema</code> API for retrieving documents and schemas from other apps which have granted you visibility.</li>\n <li>Ability to retrieve visibility information in <code>getSchema</code> for data you have access to</li>\n <li>Ability to grant visibility to apps holding a certain Android permission (restricted to a narrow set of allowlisted permissions)</li>\n <li>Support <code>isFoo()</code>-style getters for boolean fields in the annotation processor, in addition to the previous supported style <code>hasFoo()</code></li>\n <li>Support for new features guarded behind <code>@RequiresFeature</code>. Use <code>AppSearchSession#getFeatures</code> to determine what the current backend supports.</li>\n <li>Remove the ~13k token limit on individual documents</li>\n <li>Allow matching on non-ascii+non-alphanumeric characters, such as emojis</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix bug that would fail <code>SetSchema</code> when overriding a nested incompatible type.</li>\n <li>Fixes to fully support <code>@AutoValue</code>-annotated classes being used as AppSearch <code>@Document</code> classes</li>\n <li>Fixes for some crashes related to repeated lists of Document classes and other issues</li>\n <li>Fix for bug that would crash prefix search under certain circumstances</li>\n <li>Fix minor bug in <code>GetStorageInfo</code> that would return incorrect values when encountering IO failures</li>\n <li>Fix <code>BUSADDERR</code> issues when reading a document</li>\n <li>Fix logcat corruption caused by printing unformatted fingerprint</li>\n <li>Fix NPE caused by IO failures</li>\n <li>Fix memory leak in <code>GetSchemaType</code>, <code>Get</code>, <code>Delete</code>, <code>DeleteByNamespace</code> and <code>DeleteBySchemaType</code></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "benchmark",
+      "name": "Benchmark",
+      "version": "1.1.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/benchmark#1.1.0",
+      "detailsHtml": "<ul>\n <li>This version is identical to <code>androidx.benchmark:benchmark-*:1.1.0-rc03</code>.</li>\n</ul>\n<p><strong>Important changes since 1.0.0</strong></p>\n<ul>\n <li>\n  <p>Support for Jetpack Macrobenchmarks, which allows you to measure whole-app interactions like <a href=\"https://developer.android.com/reference/androidx/benchmark/macro/StartupTimingMetric\">startup</a> and <a href=\"https://developer.android.com/reference/androidx/benchmark/macro/FrameTimingMetric\">scrolling</a>, provides the <a href=\"https://developer.android.com/topic/performance/benchmarking/macrobenchmark-metrics\">ability to capture traces</a> &amp; <a href=\"https://developer.android.com/topic/performance/benchmarking/macrobenchmark-metrics#trace-section\">measure trace sections</a>.</p>\n </li>\n <li>\n  <p>Support for <a href=\"https://d.android.com/baselineprofiles\">Baseline Profiles</a></p>\n  <ul>\n   <li><a href=\"https://developer.android.com/reference/kotlin/androidx/benchmark/macro/CompilationMode.Partial\"><code>CompilationMode.Partial</code></a> to measure the effectiveness of Baseline Profiles.</li>\n   <li><a href=\"https://developer.android.com/reference/androidx/benchmark/macro/junit4/BaselineProfileRule\"><code>@BaselineProfileRule</code></a> to automatically generate Baseline profiles for a given critical user journey.</li>\n  </ul>\n </li>\n <li>\n  <p>Support for Allocation metrics &amp; <a href=\"https://developer.android.com/benchmark#profiling\">profiling</a> during Microbenchmark runs.</p>\n </li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/0456df6ed2f0c42f907084cc9796b95f3ef525e4..69956fa74719518e58b93b55aab2f87546412ec4/benchmark"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.2.0-rc01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Interfaces in compose libraries are now built using jdk8 default interface methods (<a href=\"https://android-review.googlesource.com/#/q/I5bcf197603f66ec66177c98c01c3fe4868d60997\">I5bcf1</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5973fd35e79471563d11a6776b6a1816b1e33409..2d8badfd263991345376562fc0f247bc76ca6312/compose/animation"
+    },
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.2.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5973fd35e79471563d11a6776b6a1816b1e33409..2d8badfd263991345376562fc0f247bc76ca6312/compose/compiler"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.2.0-rc01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>An experimental <code>OverscrollEffect</code> has been introduced to allow for custom overscroll effects, alongside the <code>Modifier.scrollable</code> overloads that accept it.</li>\n <li>Experimental <code>LocalOverScrollConfiguration</code> has been moved from <code>foundation.gesture</code> to foundation package and renamed to <code>LocalOverscrollConfiguration</code> (<a href=\"https://android-review.googlesource.com/#/q/If19fb8063922eddf1ffcb020ec6a8fbe48471ccf\">If19fb</a>, <a href=\"https://issuetracker.google.com/issues/204650733\">b/204650733</a>)</li>\n <li>Interfaces in compose libraries are now built using jdk8 default interface methods (<a href=\"https://android-review.googlesource.com/#/q/I5bcf197603f66ec66177c98c01c3fe4868d60997\">I5bcf1</a>)</li>\n <li>Introduced an experimental api <code>checkScrollableContainerConstraints()</code> which allows to check that we do not nest scrollable containers. You can use it when create your own scrollable lazy layouts via <code>LazyLayout</code>. (<a href=\"https://android-review.googlesource.com/#/q/Id6fabde2877f20155be3d9642c2e74e0e7d4dab0\">Id6fab</a>, <a href=\"https://issuetracker.google.com/issues/233352497\">b/233352497</a>)</li>\n <li>Removed deprecated <code>LazyVerticalGrid</code> from <code>androidx.compose.foundation.lazy</code> package. The new stable api is located in <code>androidx.compose.foundation.lazy.grid</code> (<a href=\"https://android-review.googlesource.com/#/q/I73c76e02e0b95692dbceeae372b1e15f33aa57d7\">I73c76</a>, <a href=\"https://issuetracker.google.com/issues/225192009\">b/225192009</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5973fd35e79471563d11a6776b6a1816b1e33409..2d8badfd263991345376562fc0f247bc76ca6312/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.2.0-rc01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Interfaces in compose libraries are now built using jdk8 default interface methods (<a href=\"https://android-review.googlesource.com/#/q/I5bcf197603f66ec66177c98c01c3fe4868d60997\">I5bcf1</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Updates badge with leading icon tab to affix badge to the label instead of the icon. (<a href=\"https://android-review.googlesource.com/#/q/I90993b49d4804875e9e3dfe95b5ff715825063a5\">I90993</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5973fd35e79471563d11a6776b6a1816b1e33409..2d8badfd263991345376562fc0f247bc76ca6312/compose/material"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.2.0-rc01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Interfaces in compose libraries are now built using jdk8 default interface methods (<a href=\"https://android-review.googlesource.com/#/q/I5bcf197603f66ec66177c98c01c3fe4868d60997\">I5bcf1</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5973fd35e79471563d11a6776b6a1816b1e33409..2d8badfd263991345376562fc0f247bc76ca6312/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.2.0-rc01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Interfaces in compose libraries are now built using jdk8 default interface methods (<a href=\"https://android-review.googlesource.com/#/q/I5bcf197603f66ec66177c98c01c3fe4868d60997\">I5bcf1</a>)</li>\n <li>Added higher-order functions to <code>KeyInjectionScope</code> for injecting key presses while other keys are held down or toggled on. These functions include <code>withKeysDown</code>, <code>withKeysToggled</code> etc. Also added properties for checking if a particular meta key is down, for example, <code>isCtrlDown</code> to check if either control key is depressed. Refer to <code>KeyInjectionScope</code> for documentation on each function. (<a href=\"https://android-review.googlesource.com/#/q/I9f6cdab059c04f4af089a28f99dd267747c723de\">I9f6cd</a>, <a href=\"https://issuetracker.google.com/issues/229831515\">b/229831515</a>)</li>\n <li>An experimental <code>OverscrollEffect</code> has been introduced to allow for custom overscroll effects, alongside the <code>Modifier.scrollable</code> overloads that accept it.</li>\n <li>Experimental <code>LocalOverScrollConfiguration</code> has been moved from <code>foundation.gesture</code> to foundation package and renamed to <code>LocalOverscrollConfiguration</code> (<a href=\"https://android-review.googlesource.com/#/q/If19fb8063922eddf1ffcb020ec6a8fbe48471ccf\">If19fb</a>, <a href=\"https://issuetracker.google.com/issues/204650733\">b/204650733</a>)</li>\n <li>Rename <code>runComposeUiTestWithoutActivity {}</code> to <code>runEmptyComposeUiTest {}</code>, which aligns it with <code>createEmptyComposeRule()</code> (<a href=\"https://android-review.googlesource.com/#/q/I6fed7b344350260084cb2776367e68b9112298c4\">I6fed7</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5973fd35e79471563d11a6776b6a1816b1e33409..2d8badfd263991345376562fc0f247bc76ca6312/compose/ui"
+    },
+    {
+      "id": "core-core-ktx",
+      "name": "Core Core-Ktx",
+      "version": "1.9.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.9.0-alpha05",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Nullability updates to align with finalized API surface in Tiramisu Beta 3 SDK</li>\n <li><code>minCompileSdk</code> is now 33 to align with Tiramisu Beta 3 SDK</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "core-uwb",
+      "name": "Core Uwb",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core-uwb#1.0.0-alpha02",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Introducing a java interoperable artifact for the uwb module. The new artifact depends on rxjava3 and will be consumable for java clients.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "customview-poolingcontainer",
+      "name": "CustomView-Poolingcontainer",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/customview#customview-poolingcontainer-1.0.0-rc01",
+      "detailsHtml": "<ul>\n <li>This version is identical to <code>androidx.customview:customview-poolingcontainer:1.0.0-beta02</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6266a22ad9adaed6fa88fe98aa8adaa46eb96ccc..34fb17f767bcd64ac3bdd1f7ba6dda530791a9fe/"
+    },
+    {
+      "id": "games-activity",
+      "name": "Games-Activity",
+      "version": "1.2.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/games#games-activity-1.2.0",
+      "detailsHtml": "<p><strong>Important changes since 1.1.0</strong></p>\n<ul>\n <li>Allow derived classes of GameActivity to handle native library loading.</li>\n <li>Always load the native library in GameActivity.onCreate.</li>\n <li>Fallback to loading library with name \"main\" if no other library found.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/opt/gamesdk/+log/ac44a0dd8d5c0a5919346be5df11d473fdb87151../GameActivity"
+    },
+    {
+      "id": "games-frame-pacing",
+      "name": "Games-Frame-Pacing",
+      "version": "1.10.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/games#games-frame-pacing-1.10.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix for swappy not building with ndk &lt;23 and &gt;17.</li>\n <li>Exposed API to retrieve the refresh rates supported by the display.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/opt/gamesdk/+log/ac44a0dd8d5c0a5919346be5df11d473fdb87151../src/swappy"
+    },
+    {
+      "id": "games-performance-tuner",
+      "name": "Games-Performance-Tuner",
+      "version": "1.6.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/games#games-performance-tuner-1.6.0",
+      "detailsHtml": "<p><strong>Important changes since 1.5.0</strong></p>\n<ul>\n <li>Fixed getpid returning 0 while trying to get memory telemetry.</li>\n <li>Stopped StopLoadingGroup from executing without an active loading group.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/opt/gamesdk/+log/4f851ef851998ea2cb65dad519f595377fd73fcf../src/tuningfork"
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.5.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.5.0-rc02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>ViewModelProvider</code> will no longer crash when mixing previous versions of compileOnly Lifecycle dependencies with versions 2.5+. (<a href=\"https://android-review.googlesource.com/#/q/I81a66ddfc4bc1fb9a98fa8fa526176a8506e1ed8\">I81a66</a>, <a href=\"https://issuetracker.google.com/issues/230454566\">b/230454566</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/916417e4f9a7ec087578a0a8ddc43be1eef606d8..487a289e6247cbd34f8b4d61cd4d06d77dd97fd3/lifecycle"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.5.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.5.0-rc02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a crash caused by fast switching between bottom destinations when using the Navigation Compose <code>NavHost</code>. (<a href=\"https://android-review.googlesource.com/#/q/I3979acdda0b6715fcf96bb1948ad6f5e6ba87388\">I3979a</a>, <a href=\"https://issuetracker.google.com/issues/234054916\">b/234054916</a>)</li>\n <li><code>Navigation SafeArgs</code> will no longer crash when using an <code>applicationIdSuffix</code> and namespace with either no <code>applicationId</code> present, or when the <code>applicationId</code> and namespace differ. (<a href=\"https://android-review.googlesource.com/#/q/I754b1fffe44bdb142ae818187cad6cd7fdc9080a\">I754b1</a>, <a href=\"https://issuetracker.google.com/issues/233119646\">b/233119646</a>)</li>\n <li><code>NavArgument</code> now has a custom <code>toString()</code> function to show the internal values of the argument. (<a href=\"https://android-review.googlesource.com/#/q/I900a8f28b0c801109522634d00aaab16de057e83\">I900a8</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c5a5a93e0561b4cdac8767f117afae230c0a3a8f..d4d9ac459e2261cd015398c13a79548e4d10f5bf/navigation"
+    },
+    {
+      "id": "profileinstaller",
+      "name": "ProfileInstaller",
+      "version": "1.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/profileinstaller#1.2.0-rc01",
+      "detailsHtml": "<ul>\n <li>This version is identical to <code>androidx.profileinstaller:profileinstaller:1.2.0-beta03</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7cbb37cc779160b89644d03e042c129d0ce025d2..34fb17f767bcd64ac3bdd1f7ba6dda530791a9fe/profileinstaller/profileinstaller"
+    },
+    {
+      "id": "wear-compose",
+      "name": "Wear Compose",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-compose#1.0.0-rc01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Interfaces in compose libraries are now built using jdk8 default interface methods (<a href=\"https://android-review.googlesource.com/#/q/I5bcf197603f66ec66177c98c01c3fe4868d60997\">I5bcf1</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>We have removed the explicit call to <code>fillMaxWidth()</code> on list header as it is not needed and can result in problems if a <code>ScalinglazyColumn</code> has a mixture of <code>ListHeader()</code> and <code>Chip()</code> components as the width will tend to grow/shrink as <code>ListHeader</code> items are scrolled in/out of view. (<a href=\"https://android-review.googlesource.com/#/q/I3714408eac2c75cd8168162ec94a600b0b87f024\">I37144</a>, <a href=\"https://issuetracker.google.com/issues/235074035\">b/235074035</a>)</li>\n <li>We have fixed a bug in the <code>ScalingLazyColumn</code> that could result in the list items not drawing correctly until scrolled if the 0th list item was large enough (including padding) (<a href=\"https://android-review.googlesource.com/#/q/Ic6159b18937d97f9bb580cf59810880288ad6d4e\">Ic6159</a>, <a href=\"https://issuetracker.google.com/issues/234328517\">b/234328517</a>)</li>\n <li>We have made a small adjustment in the <code>ScalingLazyColumn</code> easing as items reach the edge of the screen to match UX spec updates. Old values <code>CubicBezierEasing(0.25f, 0.00f, 0.75f, 1.00f)</code> -&gt; new values <code>CubicBezierEasing(0.3f, 0f, 0.7f, 1f)</code>. To keep the old behavior you can override the <code>scalingParams</code> of <code>ScalingLazyColumn</code> (<a href=\"https://android-review.googlesource.com/#/q/Ie375ca83655ae09293b6565174787eac1e6b2e3e\">Ie375c</a>)</li>\n <li>We have added padding to the <code>CompactChip</code> in order to ensure that its tap target size is at least 48.dp high to meet the Material accessibility guidelines. This might impact any layouts you have using <code>CompactChips</code> as they will be taking up additional space. (<a href=\"https://android-review.googlesource.com/#/q/I3d57caebc66e5d4c867f2ce19b4d0d9b5ebc9998\">I3d57c</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7cbb37cc779160b89644d03e042c129d0ce025d2..aa660d501ab7cf1ffb63464e855e86e650838fb6/wear/compose"
+    },
+    {
+      "id": "wear-watchface",
+      "name": "Wear Watchface",
+      "version": "1.1.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-watchface#1.1.0",
+      "detailsHtml": "<p><strong>Important changes since 1.0.0</strong></p>\n<p>Improved Editing:</p>\n<ul>\n <li>We added support for hierarchical schemas, which allows a hierarchy of styles to be scribed by editor UIs. You can now specify separate icons for use by on watch face and companion editors.</li>\n <li>There is opt-in support for multiple instances of a watch face, each instance has a unique ID available across all API surfaces.</li>\n <li>You can now specify human readable names for <code>ComplicationSlots</code> for use in editors.</li>\n <li>Experimental support for styling “flavors”, a curated selection of styles which will be visible from the companion editor.</li>\n <li>When editing two instances of the watchface are loaded, it’s now possible for watchface instances to share resources, saving memory</li>\n <li>When picking a complication in the on watch face editor, the current provider is now preselected.</li>\n</ul>\n<p>Improved Complications:</p>\n<ul>\n <li>You can now specify the <code>ComplicationType</code> for the primary and secondary data sources, giving developers more flexibility for the out of box experience.</li>\n <li>We added <code>ComplicationDataTimeline</code> which provides a sequence of time-gated data to be delivered to the watch face which can be cached and updated automatically. For example, today's weather forecast at various times or multiple upcoming calendar events.</li>\n <li>The <code>ComponentName</code> of the complication provider is part of the <code>ComplicationData</code>.</li>\n <li>Complications are now cached which provides a better experience when switching between watch faces.</li>\n</ul>\n<p>Other changes:</p>\n<ul>\n <li>The <code>UserStyleSchema</code> and <code>ComplicationSlots</code> can now be defined in XML. This simplifies watch face construction and allows for faster metadata queries from the system.</li>\n <li>Watch faces can now influence the colors used for rendering the system overlay.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/947b9ceb775ff5ace7ed32e57bb398c964bf5db3..0412edaeb003a9619a2239e48e5b208f0398221b/wear/watchface"
+    }
+  ]
+}

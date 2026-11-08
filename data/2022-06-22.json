@@ -1,0 +1,65 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#june_22_2022",
+  "title": "June 22, 2022",
+  "releasedOn": "2022-06-22",
+  "updated": "2022-06-22T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#june_22_2022",
+  "components": [
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.2.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.2.0-rc02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Removed <code>ExperimentalEasingApi</code> annotation on Easing functions (<a href=\"https://android-review.googlesource.com/#/q/Ied4417b953ec8b423e06ae0efeef909f0f150e98\">Ied441</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2d8badfd263991345376562fc0f247bc76ca6312..8328bd32e5ca96bc5a53d6369130e856cd2ca80b/compose/animation"
+    },
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.2.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.2.0-rc02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Removed composable Trace Event code generation (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/2127922\">aosp/2127922</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2d8badfd263991345376562fc0f247bc76ca6312..8328bd32e5ca96bc5a53d6369130e856cd2ca80b/compose/compiler"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.2.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.2.0-rc02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2d8badfd263991345376562fc0f247bc76ca6312..8328bd32e5ca96bc5a53d6369130e856cd2ca80b/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.2.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.2.0-rc02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2d8badfd263991345376562fc0f247bc76ca6312..8328bd32e5ca96bc5a53d6369130e856cd2ca80b/compose/material"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.2.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.2.0-rc02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2d8badfd263991345376562fc0f247bc76ca6312..8328bd32e5ca96bc5a53d6369130e856cd2ca80b/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.2.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.2.0-rc02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2d8badfd263991345376562fc0f247bc76ca6312..8328bd32e5ca96bc5a53d6369130e856cd2ca80b/compose/ui"
+    },
+    {
+      "id": "wear-compose",
+      "name": "Wear Compose",
+      "version": "1.0.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-compose#1.0.0-rc02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>We have corrected the direction of the gradient for Cards in right to left (RTL) mode. It was top left-&gt;bottom right, and it is now top right-&gt;bottom left. (<a href=\"https://android-review.googlesource.com/#/q/Ic2e77f4712f21f6b57cb7bbde63136b70769523e\">Ic2e77</a>)</li>\n <li>We have updated the default gradients for <code>Chip/ToggleChip/Card</code> to bring them in line with the latest UX spec. <code>ChipDefaults.gradientBackgroundChipColors</code> has been updated to start from 50% of primary rather than 32.5%. <code>CardDefaults.cardBackgroundPainter</code> has been updated to start from 30% of primary and end at 20% of <code>onSurfaceVariant</code> (was previously 20% to 10% onSurfaceVariant). <code>ToggleChip.toggleChipColors</code> changes from a linear gradient of 75% surface to 32.5% primary to 0% surface to 50% primary. (<a href=\"https://android-review.googlesource.com/#/q/I43bbd9804f53013ea65f570bfdd91f9c5d2016f3\">I43bbd</a>)</li>\n <li>We have added a background color (<code>MaterialTheme.color.surface</code>) behind <code>Chip/ToggleChips</code> that have gradient backgrounds in order to ensure that they are properly visible in the unlikely event that a light color is used behind them. (<a href=\"https://android-review.googlesource.com/#/q/Ibe1a442812a48a6d39912b4bbf399a2f4b11ae5b\">Ibe1a4</a>, <a href=\"https://issuetracker.google.com/issues/235937657\">b/235937657</a>)</li>\n <li>We have updated the baseline profile rules packaged with the Wear Compose library (<a href=\"https://android-review.googlesource.com/#/q/I9c69474e05395bb28ec62355714700b58923ba07\">I9c694</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/aa660d501ab7cf1ffb63464e855e86e650838fb6..baff514f1bfb244558d5b134ffe4f2eb582533f5/wear/compose"
+    }
+  ]
+}
