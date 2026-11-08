@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#june_27_2019",
+  "title": "June 27, 2019",
+  "releasedOn": "2019-06-27",
+  "updated": "2019-06-27T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#june_27_2019",
+  "components": [
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.1.0-rc01",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed a bug which would cause an application to crash when executing jobs with <code>JobScheduler</code> while a backup was in progress <a href=\"https://issuetracker.google.com/135858602\">b/135858602</a>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/0dfc7dae1875b1c0463d279bf6fd557447b99caf..5f859f4f6909b055eac53ac7fe918a9f65e489c5/work"
+    }
+  ]
+}

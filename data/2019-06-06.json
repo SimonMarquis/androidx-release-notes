@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#june_6_2019",
+  "title": "June 6, 2019",
+  "releasedOn": "2019-06-06",
+  "updated": "2019-06-06T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#june_6_2019",
+  "components": [
+    {
+      "id": "benchmark",
+      "name": "Benchmark",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/benchmark#1.0.0-alpha02",
+      "detailsHtml": "<p>Note that we are treating the JSON schema as an API. We plan to follow the same stability constraints as other APIs: stable (with very rare exceptions) once in beta, and fixed in final release, with only additions in minor releases and changes/removals in major releases.</p>\n<p><strong>API changes</strong></p>\n<ul>\n <li>\n  <p>Overhauled JSON schema. Further changes to the JSON schema are likely to be limited to additions:</p>\n  <ul>\n   <li>Reorganized the result object structure to support additional metric groups in the future (<a href=\"https://issuetracker.google.com/issues/132713021\">b/132713021</a>)</li>\n   <li>Added test run context information, such as device and build info and whether clocks are locked, to the top-level object (<a href=\"https://issuetracker.google.com/issues/132711920\">b/132711920</a>)</li>\n   <li>Time metric names now have ‘ns’ in their name (<a href=\"https://issuetracker.google.com/issues/132714527\">b/132714527</a>)</li>\n   <li>Additional stats added per reported metric (maximum, median, minimum), and removed simplified 'nanos' summary stat (<a href=\"https://issuetracker.google.com/issues/132713851\">b/132713851</a>)</li>\n  </ul>\n </li>\n <li>\n  <p>Removed XML output (<a href=\"https://issuetracker.google.com/issues/132714414\">b/132714414</a>)</p>\n </li>\n <li>\n  <p>Thermal throttle detection removed from <code>BenchmarkState.reportData</code> API (<a href=\"https://issuetracker.google.com/issues/132887006\">b/132887006</a>)</p>\n </li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed <code>./gradlew lockClocks</code> not sticking on some recent OS devices (<a href=\"https://issuetracker.google.com/issues/133424037\">b/133424037</a>)</li>\n <li>Throttling detection disabled for emulator (<a href=\"https://issuetracker.google.com/issues/132880807\">b/132880807</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/a04120000a63645245f046b0aa7773cb2c6d9768..a1664e857bbcb746318a95abefa845edd9c88bf8/benchmark"
+    }
+  ]
+}

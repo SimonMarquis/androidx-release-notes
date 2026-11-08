@@ -1,0 +1,25 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#june_18_2019",
+  "title": "June 18, 2019",
+  "releasedOn": "2019-06-18",
+  "updated": "2019-06-18T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#june_18_2019",
+  "components": [
+    {
+      "id": "jetifier",
+      "name": "Jetifier",
+      "version": "1.0.0-beta05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/jetifier#1.0.0-beta05",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Adds mappings for Navigation and WorkManager.</li>\n <li>Jetifier can now skip libraries containing AndroidX references (<a href=\"https://issuetracker.google.com/119135578\">b/119135578</a>)</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Close stream when loading config in jetifier (<a href=\"https://issuetracker.google.com/120277395\">b/120277395</a></li>\n <li>Fix for incorrectly migrated Bundle key strings</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/0010058fd49253b84e622b2a74ec348e23f5af7f..c7ff6518ef8c45a3ce775f9a3dde4fbc77854e7a/jetifier"
+    },
+    {
+      "id": "media2",
+      "name": "Media2",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media2#1.0.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": null
+    }
+  ]
+}

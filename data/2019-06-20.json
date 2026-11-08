@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#june_20_2019",
+  "title": "June 20, 2019",
+  "releasedOn": "2019-06-20",
+  "updated": "2019-06-20T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#june_20_2019",
+  "components": [
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.1.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.1.0-beta02",
+      "detailsHtml": "<strong>Note:</strong><span> This version is dependent on the Java 8 programming language. Please read <a href=\"https://developer.android.com/studio/write/java8-support\">Use Java 8 language features</a> to learn how to use it in your project.</span> \n<p><strong>Bug fixes</strong></p>\n<ul>\n <li><code>TestListenableWorkerBuilder</code> now uses the correct <code>WorkerFactory</code> when creating instances of <code>ListenableWorker</code>. <a href=\"https://issuetracker.google.com/135275844\">b/135275844</a></li>\n <li>Fixed a bug which caused drifts in the execution windows for <code>WorkRequest</code>s due to process death. <a href=\"https://issuetracker.google.com/135272196\">b/135272196</a></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3aa279901a440d8a3a16c07c7e49361991097939..eae198ee097b359f70989d2c5c0f5ff6f6b72ead/work"
+    }
+  ]
+}

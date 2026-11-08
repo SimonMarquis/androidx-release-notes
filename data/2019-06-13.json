@@ -1,0 +1,65 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#june_13_2019",
+  "title": "June 13, 2019",
+  "releasedOn": "2019-06-13",
+  "updated": "2019-06-13T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#june_13_2019",
+  "components": [
+    {
+      "id": "core",
+      "name": "Core",
+      "version": "1.2.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.2.0-alpha02",
+      "detailsHtml": "<strong>Note:</strong><span> This version is dependent on the Java 8 programming language. Please read <a href=\"https://developer.android.com/studio/write/java8-support\">Use Java 8 language features</a> to learn how to use it in your project.</span> \n<p><strong>API changes</strong></p>\n<ul>\n <li>Added WindowInsetsCompat.wrap() and unwrap(), to be able to wrap and unwrap WindowInsets instances</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/f6d94c8b8adaf0edaff495c1e88e8ddc96060317..cd16b09b10c939184a8a47a3f85b758f16c08e85/core"
+    },
+    {
+      "id": "customview",
+      "name": "CustomView",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/customview#1.1.0-alpha01",
+      "detailsHtml": "<strong>Note:</strong><span> This version is dependent on the Java 8 programming language. Please read <a href=\"https://developer.android.com/studio/write/java8-support\">Use Java 8 language features</a> to learn how to use it in your project.</span> \n<p><strong>API changes</strong></p>\n<ul>\n <li>Added new APIs to <a href=\"https://developer.android.com/reference/androidx/customview/widget/ViewDragHelper\">ViewDragHelper</a> to support changing its <a href=\"https://developer.android.com/reference/androidx/customview/widget/ViewDragHelper#getEdgeSize()\">edge size</a></li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed some small bugs in <code>ExploreByTouchHelper</code> ((<a href=\"https://android-review.googlesource.com/c/957741\">aosp/957741</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/50a39caa72955aae0c75225fd9805ab537cbf049..f464859d02d59b7975f89c519a9da51d9b8a41d9/customview"
+    },
+    {
+      "id": "drawerlayout",
+      "name": "DrawerLayout",
+      "version": "1.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/drawerlayout#1.1.0-alpha02",
+      "detailsHtml": "<strong>Note:</strong><span> This version is dependent on the Java 8 programming language. Please read <a href=\"https://developer.android.com/studio/write/java8-support\">Use Java 8 language features</a> to learn how to use it in your project.</span> \n<p><strong>New features</strong></p>\n<ul>\n <li>Can now set default style using new <code>drawerLayoutStyle</code> theme attribute.</li>\n <li>Removed deprecated behavior when used with gesture navigation on Android 10. Drawers are now swiped open using a long press and swipe</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/36911a611ba90ce46111bdae943108297ee998a1..4b4213f254744094416b5c3e0a6779783ddae7f7/drawerlayout"
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "version": "1.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media#1.1.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/032065fa1470140b8cc92df73ebaac6479d2e2a6..592463aebbf62f711611f85522f69023d72ced1e/media"
+    },
+    {
+      "id": "mediarouter",
+      "name": "MediaRouter",
+      "version": "1.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/mediarouter#1.1.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/75e93a025020288fd9cd22580aabbcd7b11b4fd9..de87d1aef00e890a6117a03ca8af2168b2227bc5/mediarouter"
+    },
+    {
+      "id": "room",
+      "name": "Room",
+      "version": "2.1.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.1.0",
+      "detailsHtml": "<p><strong>Important changes since 2.0.0</strong></p>\n<ul>\n <li><strong>FTS</strong>: Room now supports entities with a mapping <a href=\"https://www.sqlite.org/fts3.html\">FTS3 or FTS4</a> table. Classes annotated with <code>@Entity</code> can now be additionally annotated with <code>@Fts3</code> or <code>@Fts4</code> to declare a class with a mapping full-text search table. FTS options for further customization are available via the annotation’s methods.</li>\n <li><strong>Views</strong>: Room now supports declaring a class as a stored query, also known as a <a href=\"https://www.sqlite.org/lang_createview.html\">view</a>, using the <code>@DatabaseView</code> annotation.</li>\n <li><strong>Couroutines</strong>: DAO methods can now be suspend functions. Include <code>room-ktx</code> in your dependencies to take advantage of this functionality. The ktx artifact also provides the extension function <code>RoomDatabase.withTransaction</code> for performing database transactions within a coroutine.</li>\n <li><strong>Auto Value</strong>: Room now supports declaring <a href=\"https://github.com/google/auto/blob/master/value/userguide/index.md\">AutoValue</a> annotated classes as entities and POJOs. The Room annotations <code>@PrimaryKey</code>, <code>@ColumnInfo</code>, <code>@Embedded</code> and <code>@Relation</code> can now be declared in an auto value annotated class’s abstract methods. Note that these annotation must also be accompanied by <code>@CopyAnnotations</code> for Room to properly understand them.</li>\n <li><strong>Additional Async Support</strong>: DAO methods annotated with <code>@Insert</code>, <code>@Delete</code> or <code>@Update</code>, along with <code>@Query</code> containing <code>INSERT</code>, <code>DELETE</code> or <code>UPDATE</code> statements, now support Rx return types <code>Completable</code>, <code>Single</code>, <code>Maybe</code>, and Guava's return type <code>ListenableFuture</code>, and they can also be suspend functions.</li>\n <li><code>enableMultiInstanceInvalidation</code> is a new API in <code>RoomDatabase.Builder</code> to enable invalidation across multiple instances of RoomDatabase using the same database file.</li>\n <li><code>fallbackToDestructiveMigrationOnDowngrade</code> is a new API in <code>RoomDatabase.Builder</code> to automatically re-create the database if a downgrade happens.</li>\n <li><code>ignoredColumns</code> is a new API in the <code>@Entity</code> annotation that can be used to list ignored fields by name.</li>\n <li>Room will now properly use Kotlin’s primary constructor in data classes avoiding the need to declare the properties as <code>vars</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c335f0223fafd3f8ce8658a472bc249d25992ff1..a0ad74d00bf98712b6d07b70214cac23154ff49c/room"
+    },
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.1.0-beta01",
+      "detailsHtml": "<strong>Note:</strong><span> This version is dependent on the Java 8 programming language. Please read <a href=\"https://developer.android.com/studio/write/java8-support\">Use Java 8 language features</a> to learn how to use it in your project.</span> \n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>WorkManager now depends on <code>Room 2.1.0</code>, which should fix some database issues.</li>\n <li>Removed some startup disk I/O on the main thread.</li>\n <li>Fixed a potential deadlock in constraint tracking. <a href=\"https://issuetracker.google.com/134361006\">b/134361006</a></li>\n <li>Preemptively cancelled invalid jobs attributed to WorkManager. <a href=\"https://issuetracker.google.com/134058261\">b/134058261</a></li>\n <li>Added some defensive calls to JobScheduler APIs for misbehaving devices.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5243b462794554b6dcc3f51793c5ef22531bb6ec..3aa279901a440d8a3a16c07c7e49361991097939/work"
+    }
+  ]
+}
