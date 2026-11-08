@@ -1,0 +1,153 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#april_1_2020",
+  "title": "April 1, 2020",
+  "releasedOn": "2020-04-01",
+  "updated": "2020-04-01T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#april_1_2020",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.2.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.2.0-alpha03",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added the <code>TakeVideo</code>, <code>PickContact</code>, <code>GetContent</code>, <code>GetContents</code>, <code>OpenDocument</code>, <code>OpenDocuments</code>, <code>OpenDocumentTree</code>, and <code>CreateDocument</code> contracts to the set of pre-built contracts provided by <a href=\"https://developer.android.com/reference/androidx/activity/result/contract/ActivityResultContracts\"><code>ActivityResultContracts</code></a>. (<a href=\"https://android-review.googlesource.com/1262482\">aosp/1262482</a>, <a href=\"https://android-review.googlesource.com/1266916\">aosp/1266916</a>, <a href=\"https://android-review.googlesource.com/1268960\">aosp/1268960</a>)</li>\n <li>The Activity Result APIs now support launching an activity for result with an optional <code>ActivityOptionsCompat</code>. (<a href=\"https://issuetracker.google.com/issues/151860054\">b/151860054</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>The <code>TakePicture</code> contract now takes a <code>Uri</code> input for where the image should be stored. The previous contract that does not take any input has been renamed to <code>TakePicturePreview</code>. (<a href=\"https://android-review.googlesource.com/1262482\">aosp/1262482</a>)</li>\n <li>The <code>registerActivityResultCallback()</code> method on <code>ActivityResultRegistry</code> has been renamed to <code>register()</code>. (<a href=\"https://android-review.googlesource.com/1267621\">aosp/1267621</a>)</li>\n <li>The <code>dispose()</code> method on <code>ActivityResultLauncher</code> has been renamed to <code>unregister()</code> and the <code>unregisterResultCallback()</code> on <code>ActivityResultRegistry</code> has been removed. (<a href=\"https://android-review.googlesource.com/1267621\">aosp/1267621</a>)</li>\n <li>The <code>createIntent()</code> method of <code>ActivityResultContact</code> now takes a <code>Context</code> in addition to the input to make it possible to create explicit Intents. (<a href=\"https://android-review.googlesource.com/1238800\">aosp/1238800</a>)</li>\n <li>An <code>ActivityResultContract</code> can now override <code>getSynchronousResult()</code> to deliver a result without calling <code>startActivityForResult</code>. This is used by the <code>RequestPermission</code> and <code>RequestPermissions</code> contracts to correctly deliver a ‘granted’ status if the requested permissions are already granted. (<a href=\"https://issuetracker.google.com/issues/151110799\">b/151110799</a>)</li>\n <li>The previously available <code>Dial</code> contract has been removed as that <code>Intent</code> is not meant to be used with <code>startActivityForResult()</code>. (<a href=\"https://android-review.googlesource.com/1266916\">aosp/1266916</a>)</li>\n <li>Many of the Activity Result APIs not meant to be extended are now <code>final</code>. This includes <code>getActivityResultRegistry()</code>, the <code>prepareCall()</code> methods, all methods of <code>ActivityResultRegistry</code> except <code>invoke()</code>, and a number of the default contracts that do not support optional extras. (<a href=\"https://issuetracker.google.com/issues/152439361\">b/152439361</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a <code>NullPointerException</code> in <code>ActivityResultRegistry</code> when attempting to deliver results to a callback that has not yet been re-registered after a configuration change; <code>ActivityResultRegistry</code> now holds onto these pending results and delivers them when the callback is re-registered. (<a href=\"https://issuetracker.google.com/issues/152137004\">b/152137004</a>)</li>\n</ul>\n<strong>Note:</strong><span> when upgrading to Activity <code>1.2.0-alpha03</code>, you <strong>must</strong> upgrade to <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.3.0-alpha03\">Fragment <code>1.3.0-alpha03</code></a> if you were previously using Fragment <code>1.3.0-alpha02</code> or if you want to use the <code>RequestPermission</code> or <code>RequestPermissions</code> contracts.</span>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1e0ba6efec9a86f20ddc75c8c2b132e009cfb6b1..6c98d66b901be2eecdf89477ccd70d2490ca6fc2/activity"
+    },
+    {
+      "id": "appcompat",
+      "name": "AppCompat",
+      "version": "1.2.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.2.0-beta01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added the following new lint rules that will flag incorrect usages of AppCompat in the following scenarios:\n  <ul>\n   <li>Loading color state lists: suggests using <code>ContextCompat</code> and <code>AppCompatResources</code> APIs for backward compatibility</li>\n   <li>Loading drawables: suggests using <code>ContextCompat</code> and <code>ResourcesCompat</code> APIs for backward compatibility</li>\n   <li>Using color state lists with alpha attribute: flags missing <code>android:alpha</code> attribute that will lead to incorrect appearance on some platform versions</li>\n   <li>Tinting image views: flags not using <code>app:tint</code> that will lead to incorrect appearance on older platform versions</li>\n   <li>Using compound drawables and tinting on text views: suggests using compat attributes and APIs for backward compatibility</li>\n  </ul></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue where <code>ActionBarOverlayLayout</code> (window decor action) was not dispatching WindowInsets correctly.</li>\n <li>Fixed issues in tinting drawables and text appearance on older versions of the platform</li>\n <li>Fixed an issue where <code>androidx.appcompat:appcompat:1.1.0</code> crashes webview when webview is long pressed (<a href=\"https://issuetracker.google.com/issues/141351441\">b/141351441</a>)</li>\n <li>Implemented fixes for issues with base context manipulation and retrieving system services during activity start up</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/666ae665acfcfa2a20eccc18e4494808169742f4..6c98d66b901be2eecdf89477ccd70d2490ca6fc2/appcompat"
+    },
+    {
+      "id": "camera-camera2",
+      "name": "Camera-Camera2",
+      "version": "1.0.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-camera2-1.0.0-beta02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed the <code>ImageInfo.getRotationDegrees()</code> from the <code>ImageProxy</code> produced by <code>ImageCapture</code> so that it matches the EXIF orientation rotational value. (<a href=\"https://android-review.googlesource.com/#/q/Id4281f3a168b710eafef120ea9d12800a6d8d98d\">Id4281</a>, <a href=\"https://issuetracker.google.com/issues/150802561\">b/150802561</a>)</li>\n <li>Explicit ordering of CameraX dependencies within <code>build.gradle</code> is no longer required to use the default CameraX/Camera2 implementation. For cases where declaring strict dependencies is required, all CameraX dependencies can now be included in the build file. (<a href=\"https://android-review.googlesource.com/#/q/I46e888ee4450689ed5950b4f153b1592ff5c7fff\">I46e88</a>)</li>\n <li>Fixed the <code>IllegalArgumentException</code> issue happening on the devices where the display size is smaller than 640x480. (<a href=\"https://android-review.googlesource.com/#/q/Ife3f24876122fc0897ee8c2985a4309a55556479\">Ife3f2</a>, <a href=\"https://issuetracker.google.com/issues/150506192\">b/150506192</a>)</li>\n <li>Fixed <code>bindToLifecycle</code> so that it only modifies the UseCase if it successfully binds. Previously when calling <code>bindToLifecycle</code> in order to do resolution calculations the UseCase is updated. Now it no longer needs to update the UseCase to do the calculations (<a href=\"https://android-review.googlesource.com/#/q/I78d9ec96d30e2a2487ff43119f8b2067c8b92a03\">I78d9e</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/401dc9727e2eb1b5b89c0fbc4b7e1df77b2df75e..6c98d66b901be2eecdf89477ccd70d2490ca6fc2/camera/camera-camera2"
+    },
+    {
+      "id": "camera-core",
+      "name": "Camera-Core",
+      "version": "1.0.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-core-1.0.0-beta02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed the <code>ImageInfo.getRotationDegrees()</code> from the <code>ImageProxy</code> produced by <code>ImageCapture</code> so that it matches the EXIF orientation rotational value. (<a href=\"https://android-review.googlesource.com/#/q/Id4281f3a168b710eafef120ea9d12800a6d8d98d\">Id4281</a>, <a href=\"https://issuetracker.google.com/issues/150802561\">b/150802561</a>)</li>\n <li>Fixed <code>bindToLifecycle</code> so that it only modifies the UseCase if it successfully binds. Previously when calling <code>bindToLifecycle</code> in order to do resolution calculations the UseCase is updated. Now it no longer needs to update the UseCase to do the calculations (<a href=\"https://android-review.googlesource.com/#/q/I78d9ec96d30e2a2487ff43119f8b2067c8b92a03\">I78d9e</a>)</li>\n <li>Fixed an issue where the <code>Preview</code> use case's capture session wasn't being updated when the preview surface changed after calling <code>Preview.setSurfaceProvider()</code> more than once.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/401dc9727e2eb1b5b89c0fbc4b7e1df77b2df75e..6c98d66b901be2eecdf89477ccd70d2490ca6fc2/camera/camera-core"
+    },
+    {
+      "id": "camera-extensions",
+      "name": "Camera-Extensions",
+      "version": "1.0.0-alpha09",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-extensions-1.0.0-alpha09",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Updated to support the bug fixes in the <code>camera-camera2:1.0.0-beta02</code>, <code>camera-core:1.0.0-beta02</code>, and <code>camera-lifecycle:1.0.0-beta02</code> artifacts</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/401dc9727e2eb1b5b89c0fbc4b7e1df77b2df75e..6c98d66b901be2eecdf89477ccd70d2490ca6fc2/camera/camera-extensions"
+    },
+    {
+      "id": "camera-lifecycle",
+      "name": "Camera-Lifecycle",
+      "version": "1.0.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-lifecycle-1.0.0-beta02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Updated to support the bug fixes in the <code>camera-camera2:1.0.0-beta02</code> and <code>camera-core:1.0.0-beta02</code> artifacts.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/401dc9727e2eb1b5b89c0fbc4b7e1df77b2df75e..6c98d66b901be2eecdf89477ccd70d2490ca6fc2/camera/camera-lifecycle"
+    },
+    {
+      "id": "camera-view",
+      "name": "Camera-View",
+      "version": "1.0.0-alpha09",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-view-1.0.0-alpha09",
+      "detailsHtml": "<p><strong>Known Issues</strong></p>\n<ul>\n <li>Using <code>ImplementationMode.SURFACE_VIEW</code> with <code>PreviewView</code> may not work well on certain devices, this is because the <code>SurfaceView</code> used for preview invalidates its surface when the lifecycle of the window it's in is stopped, when it restarts, the camera is reopened and may attempt to resume preview before the <code>SurfaceView</code>'s surface is valid again. For now, you should use <code>ImplementationMode.TEXTURE_VIEW</code>.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Renamed <code>PreviewView.setImplementationMode()</code> to <code>PreviewView.setPreferredImplementationMode()</code>.</li>\n <li>Renamed <code>PreviewView.getImplementationMode()</code> to <code>PreviewView.getPreferredImplementationMode()</code>.</li>\n <li>Replaced <code>PreviewView.getSurfaceProvider()</code> by <code>PreviewView.createSurfaceProvider(CameraInfo)</code>, which takes a nullable <code>CameraInfo</code> instance used to optimize preview by using <code>ImplementationMode.SURFACE_VIEW</code> whenever possible. If a null instance is passed, or if you set the preferred implementation mode to <code>ImplementationMode.TEXTURE_VIEW</code>, <code>ImplementationMode.TEXTURE_VIEW</code> is used internally.</li>\n <li>\n  <p>The following code sample shows how a preview use case used to previously be used with PreviewView.</p>\n  <div></div>\n  <pre><code><span>preview</span><span>.</span><span>setSurfaceProvider</span><span>(</span><span>previewView</span><span>.</span><span>previewSurfaceProvider</span><span>)</span>\n<span>cameraProvider</span><span>.</span><span>bindToLifecycle</span><span>(</span><span>lifecycleOwner</span><span>,</span><span> </span><span>cameraSelector</span><span>,</span><span> </span><span>preview</span><span>)</span>\n</code></pre>\n  <p>Right now, you can write the following:</p>\n  <div></div>\n  <pre><code><span>val</span><span> </span><span>camera</span><span> </span><span>=</span><span> </span><span>cameraProvider</span><span>.</span><span>bindToLifecycle</span><span>(</span><span>lifecycleOwner</span><span>,</span><span> </span><span>cameraSelector</span><span>,</span><span> </span><span>preview</span><span>)</span>\n<span>previewView</span><span>.</span><span>preferredImplementationMode</span><span> </span><span>=</span><span> </span><span>ImplementationMode</span><span>.</span><span>TEXTURE_VIEW</span>\n<span>preview</span><span>.</span><span>setSurfaceProvider</span><span>(</span><span>previewView</span><span>.</span><span>createSurfaceProvider</span><span>(</span><span>camera</span><span>.</span><span>cameraInfo</span><span>))</span>\n</code></pre>\n </li>\n <li>\n  <p>The <code>@UiThread</code> annotation has been added to <code>PreviewView.getSurfaceProvider()</code>, meaning it must be called from the main thread. (<a href=\"https://android-review.googlesource.com/#/q/I192f3e4f57c2ddf64c2d56302b19dd3b8c9aa34d\">I192f3</a>)</p>\n </li>\n <li>\n  <p>Added <code>PreviewView.setScaleType()</code> which allows to set the scale type of the preview. It accepts one of the values in <code>PreviewView.ScaleType</code>, and defaults to <code>PreviewView.ScaleType.FILL_CENTER</code>.</p>\n </li>\n <li>\n  <p>Added <code>PreviewView.getScaleType()</code>.</p>\n </li>\n <li>\n  <p>Removed support for setting the implementation mode for <code>PreviewView</code> in a XML layout using the <code>implementationMode</code> attribute.</p>\n </li>\n <li>\n  <p>Add <code>createMeteringPointFactory()</code> API to PreviewView to support converting (x, y) in <code>PreviewView</code> to <code>MeteringPoint</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ib36d78607ffcea891b5ec24b20f66e5e0eb42fc0\">Ib36d7</a>)</p>\n </li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed cases where an incorrect preview is displayed after <code>PreviewView</code>'s size changes. (<a href=\"https://android-review.googlesource.com/#/q/I711010b55949fb8cedb28458375954aff87f6149\">I71101</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/401dc9727e2eb1b5b89c0fbc4b7e1df77b2df75e..6c98d66b901be2eecdf89477ccd70d2490ca6fc2/camera/camera-view"
+    },
+    {
+      "id": "core",
+      "name": "Core",
+      "version": "1.3.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#core-1.3.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/666ae665acfcfa2a20eccc18e4494808169742f4..6c98d66b901be2eecdf89477ccd70d2490ca6fc2/core/core"
+    },
+    {
+      "id": "customview",
+      "name": "CustomView",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/customview#1.1.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/666ae665acfcfa2a20eccc18e4494808169742f4..6c98d66b901be2eecdf89477ccd70d2490ca6fc2/customview/customview"
+    },
+    {
+      "id": "drawerlayout",
+      "name": "DrawerLayout",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/drawerlayout#1.1.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/666ae665acfcfa2a20eccc18e4494808169742f4..6c98d66b901be2eecdf89477ccd70d2490ca6fc2/drawerlayout/drawerlayout"
+    },
+    {
+      "id": "emoji",
+      "name": "Emoji",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/emoji#1.1.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9cee7f8bcabb66e4b85ebc003b507c4582f9df97..6c98d66b901be2eecdf89477ccd70d2490ca6fc2/emoji"
+    },
+    {
+      "id": "exifinterface",
+      "name": "ExifInterface",
+      "version": "1.2.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/exifinterface#1.2.0",
+      "detailsHtml": "<p><strong>Major changes since 1.1.0</strong></p>\n<ul>\n <li>Added support for adding EXIF to PNG files</li>\n <li>Added support for WebP files and EXIF data only stream</li>\n <li>Added an API to check if the specified mime type is supported</li>\n <li>Added more tags for offset time: <code>TAG_OFFSET_TIME</code>, <code>TAF_OFFSET_TIME_DIGITIZED</code>, and <code>TAG_OFFSET_TIME_ORIGINAL</code></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/986ebacc6810b886802b3e4175bb0b96c64f5d0b..c9821580a88632050c4599dcb02f6cf8e231f7e3/exifinterface/exifinterface"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.2.4",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.2.4",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Updated the Fragment ProGuard rules to allow obfuscation of kept fragments. (<a href=\"https://issuetracker.google.com/issues/151605338\">b/151605338</a>)</li>\n <li>Disabled the <code>FragmentLiveDataObserve</code> Lint rule on <code>DialogFragment</code> classes as their lifecycle and view lifecycle are always in sync, making it safe to use either <code>this</code> or <code>viewLifecycleOwner</code> when calling <code>observe</code>. (<a href=\"https://issuetracker.google.com/issues/151765086\">b/151765086</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/bb33dc2112f153d6d7ae15a267d2acd7ac53dabb..1f1113dbc41d1678cef9a13711434b9640729ccd/fragment"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.3.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.3.0-alpha03",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>The <code>prepareCall</code> methods on <code>Fragment</code> are now <code>final</code>. (<a href=\"https://issuetracker.google.com/issues/152439361\">b/152439361</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a regression introduced in <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.3.0-alpha02\">Fragment <code>1.3.0-alpha02</code></a> when using <code>BottomSheetDialogFragment</code>. (<a href=\"https://issuetracker.google.com/issues/151652127\">b/151652127</a>, <a href=\"https://android-review.googlesource.com/1263328\">aosp/1263328</a>, <a href=\"https://android-review.googlesource.com/1265163\">aosp/1265163</a>)</li>\n <li>Fixed a crash when using <code>prepareCall</code> from a fragment after a configuration change. (<a href=\"https://issuetracker.google.com/issues/152137004\">b/152137004</a>)</li>\n <li>Fixed an issue where shared element and exit transitions are ignored when using <code>setTargetFragment()</code>. (<a href=\"https://issuetracker.google.com/issues/152023196\">b/152023196</a>)</li>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.2.4\">Fragment <code>1.2.4</code></a>: Updated the Fragment ProGuard rules to allow obfuscation of kept fragments. (<a href=\"https://issuetracker.google.com/issues/151605338\">b/151605338</a>)</li>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.2.4\">Fragment <code>1.2.4</code></a>: Disabled the <code>FragmentLiveDataObserve</code> Lint rule on <code>DialogFragment</code> classes as their lifecycle and view lifecycle are always in sync, making it safe to use either <code>this</code> or <code>viewLifecycleOwner</code> when calling <code>observe</code>. (<a href=\"https://issuetracker.google.com/issues/151765086\">b/151765086</a>)</li>\n</ul>\n<p><strong>Dependency Changes</strong></p>\n<ul>\n <li>Fragments depend on <a href=\"https://developer.android.com/jetpack/androidx/releases/activity#1.2.0-alpha03\">Activity <code>1.2.0-alpha03</code></a>, which had significant improvements to the Activity Result API introduced in Activity <code>1.2.0-alpha02</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1e0ba6efec9a86f20ddc75c8c2b132e009cfb6b1..6c98d66b901be2eecdf89477ccd70d2490ca6fc2/fragment"
+    },
+    {
+      "id": "recyclerview",
+      "name": "RecyclerView",
+      "version": "1.2.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/recyclerview#recyclerview-1.2.0-alpha02",
+      "detailsHtml": "<p>This and higher versions of RecyclerView are not compatible with lower versions of ViewPager2. If you are currently using <code>androidx.viewpager2:viewpager2:1.0.0</code> or lower, make sure to update to <a href=\"https://developer.android.com/jetpack/androidx/releases/viewpager2#1.1.0-alpha01\"><code>androidx.viewpager2:viewpager2:1.1.0-alpha01</code></a>.</p>\n<p><strong>New Features</strong></p>\n<ul>\n <li>\n  <p><strong>MergeAdapter</strong></p>\n  <ul>\n   <li><a href=\"https://developer.android.com/reference/androidx/recyclerview/widget/MergeAdapter\">MergeAdapter</a>: A new RecyclerView Adapter that can combine multiple adapters linearly.</li>\n  </ul>\n  <div></div>\n  <pre><code><span>MyAdapter</span><span> </span><span>adapter1</span><span> </span><span>=</span><span> </span><span>...;</span>\n<span>AnotherAdapter</span><span> </span><span>adapter2</span><span> </span><span>=</span><span> </span><span>...;</span>\n<span>MergeAdapter</span><span> </span><span>merged</span><span> </span><span>=</span><span> </span><span>new</span><span> </span><span>MergeAdapter</span><span>(</span><span>adapter1</span><span>,</span><span> </span><span>adapter2</span><span>);</span>\n<span>recyclerView</span><span>.</span><span>setAdapter</span><span>(</span><span>mergedAdapter</span><span>);</span>\n</code></pre>\n  <p>For the sample above, MergeAdapter will present items from <code>adapter1</code> followed by <code>adapter2</code>.</p>\n </li>\n <li>\n  <p><strong><code>RecyclerView.Adapter</code> lazy state restoration</strong>:</p>\n  <ul>\n   <li>\n    <p>Added a new API to the <code>RecyclerView.Adapter</code> class which allows Adapter to control when the layout state should be restored.</p>\n   </li>\n   <li>\n    <p>For example, you can call:</p>\n   </li>\n  </ul>\n  <div></div>\n  <pre><code><span>myAdapter</span><span>.</span><span>setStateRestorationStrategy</span><span>(</span><span>StateRestorationStrategy</span><span>.</span><span>WHEN_NOT_EMPTY</span><span>);</span>\n</code></pre>\n  <p>to make RecyclerView wait until Adapter is not empty before restoring the scroll position.</p>\n </li>\n <li>\n  <p><strong>CollectionInfo and CollectionItemInfo will no longer be populated by default.</strong></p>\n  <ul>\n   <li>\n    <p>If you would like Accessibility Services (Talkback for example) to continue indicating count and item index to the user, you will need to populate CollectionInfo and CollectionItemInfo yourself.</p>\n   </li>\n   <li>\n    <p>These objects are no longer populated in the framework because the framework can’t determine the count of items as perceived by the user (such as separators, headers, or RecyclerView items that represent multiple perceived items).</p>\n   </li>\n  </ul>\n </li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>RecyclerView now avoids anchoring on Views outside the viewport when the viewport size has changed</li>\n <li>Fixed a bug in DiffUtil where it might compute the diff wrong when an original item in the first list is duplicated multiple times in the second list. (<a href=\"https://issuetracker.google.com/issues/123376278\">b/123376278</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/740cde70237dd276f8ad66dfe9528b1cdb5d54bb..6c98d66b901be2eecdf89477ccd70d2490ca6fc2/recyclerview/recyclerview"
+    },
+    {
+      "id": "slidingpanelayout",
+      "name": "SlidingPaneLayout",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/slidingpanelayout#1.1.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/8744680798c115f612a99148c5a5c3ad4bd6fbf5..6c98d66b901be2eecdf89477ccd70d2490ca6fc2/slidingpanelayout/slidingpanelayout"
+    },
+    {
+      "id": "viewpager2",
+      "name": "ViewPager2",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/viewpager2#1.1.0-alpha01",
+      "detailsHtml": "<p>This release accompanies a change in <a href=\"https://developer.android.com/jetpack/androidx/releases/recyclerview#recyclerview-1.2.0-alpha02\">RecyclerView 1.2.0-alpha02</a> by populating <code>CollectionInfo</code> and <code>CollectionItemInfo</code> that <code>RecyclerView</code> no longer provides by default. When updating to <code>RecyclerView 1.2.0-alpha02</code> also update <code>ViewPager2</code> to prevent Accessibility regressions.</p>\n<p><strong>New Features</strong></p>\n<ul>\n <li>Added <code>FragmentTransactionCallback</code> interface for listening to fragment lifecycle changes that happen inside <code>FragmentStateAdapter</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ibda7755413ee86f0257b2464a8027187f134ab6e\">Ibda77</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed <code>FragmentStateAdapter</code> issue with initial fragment menu visibility when adding a fragment to the <code>FragmentManager</code>. (<a href=\"https://android-review.googlesource.com/#/q/I9d2ffa0efcb03b63eeca25f2d4e74c81446a5774\">I9d2ff</a>, <a href=\"https://issuetracker.google.com/issues/144442240\">b/144442240</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c4c5f5340c2250ff0b4709448ca82abc915ef6b4..6c98d66b901be2eecdf89477ccd70d2490ca6fc2/viewpager2/viewpager2"
+    },
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.4.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.4.0-alpha02",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added a new Lint rule that warns when <code>WorkRequest</code>s requires both <code>Constraints.setRequiresCharging(...)</code> and <code>Constraints.setRequiresDeviceIdle(...)</code>. Some devices are never charging and idle at the same time. So such requests would run less frequently than expected. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1253840\">aosp/1253840</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>\n  <p>Added the ability to query for <code>WorkInfo</code>s by using a <code>WorkQuery</code>. This is useful when developers want to query <code>WorkInfo</code>s by a combination of multiple attributes. For more information look at <code>WorkQuery.Builder withStates(...)</code>, <code>WorkQuery.Builder withTags(...)</code> or <code>WorkQuery.Builder withUniqueWorkNames(...)</code>. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1253230\">aosp/1253230</a>, <a href=\"https://issuetracker.google.com/issues/143847546\">b/143847546</a>)</p>\n </li>\n <li>\n  <p>Calls to <code>setForegroundAsync()</code> that do not complete before completion of a <code>ListenableWorker</code> will now be signalled via an <code>IllegalStateException</code> on the returned <code>ListenableFuture</code>. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1262743\">aosp/1262743</a>)</p>\n </li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed the lint rule that checks for invalid interval durations for <code>PeriodicWorkRequest</code>s. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1254846\">aosp/1254846</a>, <a href=\"https://issuetracker.google.com/issues/152606442\">b/152606442</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2fd74387bd35dc4acb471992654788fab3244b35..6c98d66b901be2eecdf89477ccd70d2490ca6fc2/work"
+    }
+  ]
+}

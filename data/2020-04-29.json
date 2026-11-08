@@ -1,0 +1,97 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#april_29_2020",
+  "title": "April 29, 2020",
+  "releasedOn": "2020-04-29",
+  "updated": "2020-04-29T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#april_29_2020",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.2.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.2.0-alpha04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added a contract that can call startIntentSenderForResult to the ActivityResult APIs. (<a href=\"https://issuetracker.google.com/issues/153007517\">b/153007517</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>The <code>prepareCall()</code> method has been renamed to <code>registerForActivityResult()</code>, both on <code>ComponentActivity</code> here and in <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.3.0-alpha04\">Fragment <code>1.3.0-alpha04</code></a>. (<a href=\"https://android-review.googlesource.com/1278717\">aosp/1278717</a>)</li>\n <li>The <code>GetContents</code>, <code>OpenDocuments</code>, and <code>RequestPermissions</code> contracts have been renamed to <code>GetMultipleContents</code>, <code>OpenMultipleDocuments</code>, and <code>RequestMultiplePermissions</code>, respectively. (<a href=\"https://android-review.googlesource.com/1280161\">aosp/1280161</a>)</li>\n <li><code>ComponentActivity</code> now implements the <code>ActivityResultRegisteryOwner</code> interface. (<a href=\"https://android-review.googlesource.com/1290888\">aosp/1290888</a>)</li>\n <li>- The <code>startActivityForResult()</code>/<code>onActivityResult()</code> and <code>onRequestPermissionsResult()</code> APIs on <code>ComponentActivity</code> have been deprecated. Please use the <a href=\"https://developer.android.com/training/basics/intents/result\">Activity Result APIs</a>. (<a href=\"https://issuetracker.google.com/issues/154751887\">b/154751887</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>When using the <code>GetMultipleContents</code> and <code>OpenMultipleDocuments</code> contracts and selecting a single item, it is now correctly returned to your callback. (<a href=\"https://issuetracker.google.com/issues/152941153\">b/152941153</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6c98d66b901be2eecdf89477ccd70d2490ca6fc2..942518f415d35ff9f2ff78f312c076c673468877/activity"
+    },
+    {
+      "id": "compose",
+      "name": "Compose",
+      "version": "0.1.0-dev10",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose#0.1.0-dev10",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "emoji",
+      "name": "Emoji",
+      "version": "1.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/emoji#1.1.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6c98d66b901be2eecdf89477ccd70d2490ca6fc2..b878bf9d7ec27f04fbda7bac038b5e8863b467c4/emoji"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.3.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.3.0-alpha04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added support for passing results between two Fragments via new APIs on <code>FragmentManager</code>. This works for hierarchy fragments (parent/child), DialogFragments, and fragments in Navigation and ensures that results are only sent to your Fragment while it is at least <code>STARTED</code>. (<a href=\"https://issuetracker.google.com/issues/149787344\">b/149787344</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>The target fragment APIs have been deprecated. To pass data between fragments the new Fragment Result APIs should be used instead. (<a href=\"https://issuetracker.google.com/issues/149787344\">b/149787344</a>)</li>\n <li>The <code>startActivityForResult()</code>/<code>onActivityResult()</code> and <code>requestPermissions()</code>/<code>onRequestPermissionsResult()</code> APIs on Fragment have been deprecated. Please use the <a href=\"https://developer.android.com/training/basics/intents/result\">Activity Result APIs</a>. (<a href=\"https://android-review.googlesource.com/1290887\">aosp/1290887</a>)</li>\n <li><strong>Breaking change</strong> from <a href=\"https://developer.android.com/jetpack/androidx/releases/activity#1.2.0-alpha04\">Activity <code>1.2.0-alpha04</code></a>: the <code>prepareCall()</code> method has been renamed to <code>registerForActivityResult()</code>. (<a href=\"https://android-review.googlesource.com/1278717\">aosp/1278717</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>The fragment’s <code>getViewLifecycleOwner()</code> is now stopped before <code>onSaveInstanceState()</code> is called, mirroring the behavior of the fragment’s lifecycle. (<a href=\"https://issuetracker.google.com/issues/154645875\">b/154645875</a>)</li>\n <li>Calling <code>setMenuVisibility(false)</code> on a fragment now correctly changes the visibility of menus provided by its child fragments. (<a href=\"https://issuetracker.google.com/issues/153593580\">b/153593580</a>)</li>\n <li>Fixed an <code>illegalStateException</code> when adding a fragment to a <code>DialogFragment</code>’s view hierarchy with <code>FragmentContainerView</code>. (<a href=\"https://issuetracker.google.com/issues/154366601\">b/154366601</a>)</li>\n <li>The <code>getDefaultViewModelProviderFactory()</code> method on fragments no longer crashes when hosting your fragments outside of an activity. (<a href=\"https://issuetracker.google.com/issues/153762914\">b/153762914</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6c98d66b901be2eecdf89477ccd70d2490ca6fc2..942518f415d35ff9f2ff78f312c076c673468877/fragment"
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.3.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.3.0-alpha02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>SavedStateViewModelFactory</code> now allows you to pass a null <code>Application</code> to its constructor to better support cases where one is not readily available and support for <code>AndroidViewModel</code> is not needed. (<a href=\"https://android-review.googlesource.com/1285740\">aosp/1285740</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Improved cold start performance by avoiding class verification failure on API 28 and lower devices. (<a href=\"https://android-review.googlesource.com/1282118\">aosp/1282118</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/666ae665acfcfa2a20eccc18e4494808169742f4..b752a10305d7cd58a7f50ad094ed54af4d765f27/lifecycle"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.3.0-alpha06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.3.0-alpha06",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Deep linking has been expanded to support <code>app:action</code> and <code>app:mimeType</code> in addition to the <code>app:uri</code> previously available. NavController now supports navigating by any combination of these fields via the new <code>NavDeepLinkRequest</code> class. (<a href=\"https://issuetracker.google.com/issues/136573074\">b/136573074</a>, <a href=\"https://issuetracker.google.com/issues/135334841\">b/135334841</a>)</li>\n</ul>\n<strong>Note:</strong><span> Support for deep link actions and mime types is not yet available in Android Studio or in <a href=\"https://issuetracker.google.com/issues/154166825\">Manifest Merger</a>. Until those are completed, you won't see the new attributes in the visual editor and any generated <code>&lt;intent-filter&gt;</code> elements won't include your mime type in its <code>&lt;data&gt;</code> element or your custom <code>&lt;action&gt;</code>. You can add the attributes manually to the <code>&lt;deeplink&gt;</code> element in XML and manually add an <code>&lt;intent-filter&gt;</code> to your manifest, respectively.</span> \n<p><strong>API Changes</strong></p>\n<ul>\n <li>Greatly expanded the Kotlin DSL support for Dynamic Navigation destinations. (<a href=\"https://issuetracker.google.com/issues/148969800\">b/148969800</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue where deep link Intents would be ignored when using a nested start destination. (<a href=\"https://issuetracker.google.com/issues/154532067\">b/154532067</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/24daa503442fcd3e44ada60cf1da41df2815c045..942518f415d35ff9f2ff78f312c076c673468877/navigation"
+    },
+    {
+      "id": "recyclerview",
+      "name": "RecyclerView",
+      "version": "1.2.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/recyclerview#recyclerview-1.2.0-alpha03",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>RecyclerView now has a <code>nestedScrollBy</code> method that allows programmatic scrolling that cooperates with nested scrolling: (<a href=\"https://android-review.googlesource.com/#/q/Ibaa58076fb521bc75b16f071b426038c1d2b59b5\">Ibaa58</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6c98d66b901be2eecdf89477ccd70d2490ca6fc2..b752a10305d7cd58a7f50ad094ed54af4d765f27/recyclerview/recyclerview"
+    },
+    {
+      "id": "ui",
+      "name": "UI",
+      "version": "0.1.0-dev10",
+      "url": "https://developer.android.com/jetpack/androidx/releases/ui#0.1.0-dev10",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "wear",
+      "name": "Wear-core",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#1.1.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/24daa503442fcd3e44ada60cf1da41df2815c045..b752a10305d7cd58a7f50ad094ed54af4d765f27/webkit/webkit"
+    },
+    {
+      "id": "webkit",
+      "name": "Webkit",
+      "version": "1.3.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/webkit#1.3.0-alpha02",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>MultiProcessEnabled API to check if WebView is running in multi process mode.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>All dark strategy constants are now prefixed with <code>DARK_STRATEGY</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/24daa503442fcd3e44ada60cf1da41df2815c045..b752a10305d7cd58a7f50ad094ed54af4d765f27/webkit/webkit"
+    },
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.4.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.4.0-alpha03",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>WorkManager now supports RxJava 3. To use RxJava 3, you should include the following dependency: <code>implementation \"androidx.work:work-rxjava3:2.4.0-alpha03\"</code>. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1277904\">aosp/1277904</a>)</li>\n <li>Added a new lint rule that ensures that <code>ListenableWorker</code>implementations are now <code>public</code> when using the default <code>WorkerFactory</code>. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1291262\">aosp/1291262</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Calling <code>setProgressAsync()</code> after a <code>ListenableWorker</code> has finished execution will now signal an <code>Exception</code> via the <code>ListenableFuture</code>. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1285494\">aosp/1285494</a>)</li>\n <li><code>WorkQuery.Builder</code> is now marked <code>final</code>. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1275037\">aosp/1275037</a>)</li>\n <li><code>WorkQuery.Builder</code> factory methods <code>withStates</code>, <code>withTags</code> and <code>withUniqueWorkNames</code> have been renamed to <code>fromStates</code>, <code>fromTags</code> and <code>fromUniqueWorkNames</code> respectively. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1280287\">aosp/1280287</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Ignore <code>SecurityException</code>s when tracking network state of a device. (<a href=\"https://issuetracker.google.com/issues/153246136\">b/153246136</a>, <a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1280813\">aosp/1280813</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6c98d66b901be2eecdf89477ccd70d2490ca6fc2..b752a10305d7cd58a7f50ad094ed54af4d765f27/work"
+    }
+  ]
+}
