@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#september_10_2026",
+  "title": "September 10, 2026",
+  "releasedOn": "2026-09-10",
+  "updated": "2026-09-10T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#september_10_2026",
+  "components": [
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.11.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.11.1",
+      "detailsHtml": "",
+      "commitsUrl": null
+    }
+  ]
+}
