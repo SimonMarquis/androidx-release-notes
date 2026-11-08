@@ -1,0 +1,18 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#may_16_2026",
+  "title": "May 16, 2026",
+  "releasedOn": "2026-05-16",
+  "updated": "2026-05-16T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#may_16_2026",
+  "components": [
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.9.4",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.9.4",
+      "detailsHtml": "<ul>\n <li>Effect:\n  <ul>\n   <li>Explicitly set <code>GL_DRAW_BUFFER</code> and <code>GL_READ_BUFFER</code> when transitioning from surfaceless context.</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": "https://github.com/androidx/media/commits/1.9.4"
+    }
+  ],
+  "rssUpdated": "2026-05-16T00:00:00Z"
+}
