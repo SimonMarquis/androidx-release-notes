@@ -1,0 +1,97 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#november_20_2019",
+  "title": "November 20, 2019",
+  "releasedOn": "2019-11-20",
+  "updated": "2019-11-20T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#november_20_2019",
+  "components": [
+    {
+      "id": "ads",
+      "name": "Ads",
+      "version": "1.0.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/ads#1.0.0-alpha03",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Removed dependency on the Java 8 programming language. This library now targets the Java 7 programming language.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/561afade39b67853e2b54301e6b0cd16d19ce0a7..73974afa0b122e423606439e6d8e249da523534e/ads"
+    },
+    {
+      "id": "benchmark",
+      "name": "Benchmark",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/benchmark#1.0.0",
+      "detailsHtml": "<p><strong>Major features of 1.0.0</strong></p>\n<p>The Benchmark library allows you to write performance benchmarks of app code and get results quickly.</p>\n<p>It prevents build and runtime configuration issues and stabilizes device performance to ensure that measurements are accurate and consistent. Run the benchmarks <a href=\"https://developer.android.com/studio/profile/benchmark#run-benchmark\">directly in Android Studio</a>, or <a href=\"https://developer.android.com/studio/profile/run-benchmarks-in-ci\">in Continuous Integration</a> to observe code performance over time, and to prevent regressions.</p>\n<p>Major features include:</p>\n<ul>\n <li><a href=\"https://developer.android.com/studio/profile/benchmark#clock-stability\">Clock stabilization</a></li>\n <li>Automatic thread prioritization</li>\n <li>Support for UI performance testing, such as in the <a href=\"https://github.com/android/performance-samples/tree/main/MicrobenchmarkSample\">RecyclerView Sample</a></li>\n <li>JIT-aware warmup and looping</li>\n <li>JSON benchmark output for post-processing</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/12751d3bc911509ac8f983745088c152fc999978..e4841066bef97212f3eeb84f894d36dc5a25f756/benchmark"
+    },
+    {
+      "id": "browser",
+      "name": "Browser",
+      "version": "1.2.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/browser#1.2.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5ce6d3ab9df61dc34670503ed762053d336a09c0..134a51a9d15b3760a26431637d27019816a8b4d5/browser"
+    },
+    {
+      "id": "core",
+      "name": "Core",
+      "version": "1.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.2.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/0bf4cab5211a3f32314c415816c1fe93e53e52ea..2eeb7cf736688188564be5ff2be9cc7a4f3bb3e0/core"
+    },
+    {
+      "id": "core-role",
+      "name": "Core-Role",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#core-role-1.0.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1b57674a04707e1adc076536377f967f62d2b68b..b3acda6aadff279fb002c49e9d0d4bd5b21f0566/core/core-role"
+    },
+    {
+      "id": "exifinterface",
+      "name": "Exifinterface",
+      "version": "1.1.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/exifinterface#1.1.0",
+      "detailsHtml": "<p><strong>Important changes since 1.0.0</strong></p>\n<ul>\n <li>Support for HEIF format and more XMP tags</li>\n <li>Added support for constructing an <code>ExifInterface</code> object from a <code>File</code> or <code>FileDescriptor</code></li>\n <li>Added more methods for getting attribute: <code>hasAttribute</code>, <code>getAttributeBytes</code>, and <code>getAttributesRange</code></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c4b30ffe0c8946d8a2e37d6a977dd2108c45d3e1..f7d68d8a9811421537d90837f94eed93cc732754/exifinterface"
+    },
+    {
+      "id": "jetifier",
+      "name": "Jetifier",
+      "version": "1.0.0-beta08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/jetifier#1.0.0-beta08",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed a ProGuard parsing error (<a href=\"http://issuetracker.google.com/134100420\">b/134100420</a>)</li>\n <li>Fixed a signature error that occurred on unmodified archives (<a href=\"http://issuetracker.google.com/142580430\">b/142580430</a>)</li>\n <li>Removed an unnecessary warning that displayed when modifying single files (<a href=\"http://issuetracker.google.com/143609228\">b/143609228</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d9761c71f9eacfa0abb8f0bc3e2305c8b229d75a..b062e6d3d53790823deac02cc553aa21461a4079/jetifier/jetifier"
+    },
+    {
+      "id": "recyclerview",
+      "name": "Recyclerview",
+      "version": "1.1.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/recyclerview#1.1.0",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "room",
+      "name": "Room",
+      "version": "2.2.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.2.2",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed a bug where collecting a one-to-one relationship with more than 999 rows would cause Room to return null relating items. (<a href=\"http://issuetracker.google.com/143105450\">b/143105450</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/33f1d55259b216abd7f9f5a8bcb2a363f8a0070c..a04145cf715ff88c1aa0dd36f3447be35a5c3e62/room"
+    },
+    {
+      "id": "viewpager2",
+      "name": "ViewPager2",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/viewpager2#1.0.0",
+      "detailsHtml": "<p><strong>Major features of 1.0.0</strong></p>\n<ul>\n <li>Improvements from the previous <a href=\"https://developer.android.com/reference/androidx/viewpager/widget/ViewPager\">ViewPager</a> implementation:\n  <ul>\n   <li>RTL (right-to-left) layout support</li>\n   <li>Vertical orientation support</li>\n   <li>Reliable <code>Fragment</code> support (including handling changes to the underlying <code>Fragment</code> collection)</li>\n   <li>Dataset change animations (including <code>DiffUtil</code> support)</li>\n  </ul></li>\n <li>Easy migration from the previous <code>ViewPager</code> implementation (API parity where possible). See the <a href=\"https://developer.android.com/training/animation/vp2-migration\">migration guide</a> and the <a href=\"http://goo.gle/viewpager2-sample\">sample app</a>.</li>\n</ul>\n<p>See the <a href=\"https://developer.android.com/training/animation/screen-slide-2\">guide</a> on using ViewPager2 to slide between Fragments.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/743e7f1c517cfe59c2e2e4149c655888670508d4..c4c5f5340c2250ff0b4709448ca82abc915ef6b4/viewpager2"
+    },
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.3.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.3.0-beta01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Added a new lint rule which prevents developer errors due to incorrect implementation of <code>androidx.work.Configuration.Provider</code> when using on-demand initialization. <a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1164559\">aosp/1164559</a></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/bc0450b5cd9c18270bfc4ce5068140e0b76d52c9..0042c0019bb455afc79ddfec9bf2993d018f70ce/work"
+    }
+  ]
+}
