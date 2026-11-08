@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>September 18, 2019 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for September 18, 2019: Ads 1.0.0-alpha02, Annotation-Experimental 1.0.0-alpha01, Autofill 1.0.0-beta01, and more.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2019-09-18.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="september-18-2019">
+            <div class="date-divider"><a href="./#september-18-2019" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">September 18, 2019</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="alpha" data-search="ads 1.0.0-alpha02 2019-09-18 september 18, 2019" id="september-18-2019-ads-1-0-0-alpha02">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/ads">Ads</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/886c5f552be88f0d404fbae205244e074a75bb03..561afade39b67853e2b54301e6b0cd16d19ce0a7/ads" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/ads#1.0.0-alpha02" class="badge alpha">1.0.0-alpha02</a></div>
+              </div>
+              <div class="notes"><p><strong>API changes</strong></p><ul><li>Changed the return type of <code>AdvertisingIdUtils.getAdvertisingIdProviderServices()</code> from <code>List&lt;ResolveInfo&gt;</code> to <code>List&lt;ServiceInfo&gt;</code></li></ul><p><strong>Bug fixes</strong></p><ul><li>Changed the <code>AdvertisingIdNotAvailableException</code> message to more accurately read "No compatible AndroidX Advertising ID Provider available."</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="annotation-experimental 1.0.0-alpha01 2019-09-18 september 18, 2019" id="september-18-2019-annotation-experimental-1-0-0-alpha01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/annotation">Annotation-Experimental</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/571d7a890c8b1e90e9f4db8f783380a928da3624..cd1aae0250ae03f6383bf4fd28a60036778bb509/annotation/annotation-experimental" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/annotation#experimental-1.0.0-alpha01" class="badge alpha">1.0.0-alpha01</a></div>
+              </div>
+              <div class="notes"><strong>Note:</strong><span> This version is dependent on the Java 8 programming language. Please read <a href="https://developer.android.com/studio/write/java8-support">Use Java 8 language features</a> to learn how to use it in your project.</span> 
+<p><strong>New features</strong></p><ul><li><p>The Jetpack Experimental annotation library provides a Java-compatible implementation of Kotlin’s <a href="https://kotlinlang.org/docs/reference/experimental.html">experimental API markers</a>. The <code>-lint</code> artifact provides a Lint-based implementation of experimental usage restrictions and enforces restrictions on Java usages of Kotlin’s native experimental API markers.</p></li><li><p>When using the <code>annotation-experimental</code> artifact as a dependency, the Lint rules provided by the <code>annotation-experimental-lint</code> artifact will be enforced automatically.</p></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="autofill 1.0.0-beta01 2019-09-18 september 18, 2019" id="september-18-2019-autofill-1-0-0-beta01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/autofill">Autofill</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/a290bf422772729760cd49aa80450826768d5a45..391dc4bc729d2973a6e6e57916d3008c58026e56/autofill" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/autofill#1.0.0-beta01" class="badge beta">1.0.0-beta01</a></div>
+              </div>
+              <div class="notes"><p><strong>New features</strong></p><ul><li>Added support for annotating One Time Password (OTP) fields which can be filled by reading the code from an SMS.</li><li>Generator function added to get hint constants for single character OTP fields.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="benchmark 1.0.0-alpha06 2019-09-18 september 18, 2019" id="september-18-2019-benchmark-1-0-0-alpha06">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/benchmark">Benchmark</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/befedb9611cf6cd7fbf5f0d3e18f60c5facc1d31..7ccc99ac1b0e06dbae4c0f30bbc06a6bae1889f6/benchmark" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/benchmark#1.0.0-alpha06" class="badge alpha">1.0.0-alpha06</a></div>
+              </div>
+              <div class="notes"><p><strong>New features</strong></p><ul><li>Added a check for incorrectly using the old package for the test runner, which now provides a more-helpful error message</li></ul><p><strong>API changes</strong></p><ul><li>The experimental annotation <code>ExperimentalAnnotationReport</code> is now correctly public. Usage of the experimental <a href="https://developer.android.com/reference/kotlin/androidx/benchmark/BenchmarkState#report">BenchmarkState#report</a> API now requires this annotation</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="biometric 1.0.0-beta02 2019-09-18 september 18, 2019" id="september-18-2019-biometric-1-0-0-beta02">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/biometric">Biometric</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/a3b34e760b913aaf27b25e76cc171bdd86ec3d3b..2606d2aabf9da268b7680e9bcd791e4797425dbd/biometric" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/biometric#1.0.0-beta02" class="badge beta">1.0.0-beta02</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug fixes</strong></p><ul><li>Fixed issues with device credential support in version <code>1.0.0-beta01</code></li><li>Removed Java 8 dependencies and switched to depending on Java 7 <a href="https://issuetracker.google.com/issues/140508526" title="b/140508526" class="ref ref-issue">b/140508526</a></li><li><code>FingerprintHelperFragment</code> now correctly throws <code>ERROR_HW_NOT_PRESENT</code> when no fingerprint hardware is detected <a href="https://issuetracker.google.com/issues/140427586" title="b/140427586" class="ref ref-issue">b/140427586</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="browser 1.2.0-alpha08 2019-09-18 september 18, 2019" id="september-18-2019-browser-1-2-0-alpha08">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/browser">Browser</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/aa4d9f606c70daf3cbd6033de426e84d21930733..dfdbbcb30249aa226e33ebb323f7d12ad692297a/browser" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/browser#1.2.0-alpha08" class="badge alpha">1.2.0-alpha08</a></div>
+              </div>
+              <div class="notes"><strong>Note:</strong><span> This version is dependent on the Java 8 programming language. Please read <a href="https://developer.android.com/studio/write/java8-support">Use Java 8 language features</a> to learn how to use it in your project.</span> 
+<p><strong>New features</strong></p><ul><li>Introduced new Share Target APIs for Trusted Web Activities. Apps that use Trusted Web Activities can now send data to their Web Share Target, defined by the protocol https://wicg.github.io/web-share-target/level-2/ <a href="https://android-review.googlesource.com/#/q/I47b938f8d5844023ea65c108f974d5c31a49d61a" title="aosp/I47b93" class="ref ref-gerrit">aosp/I47b93</a> <a href="https://android-review.googlesource.com/#/q/I0ec3eec2207fa1544c626e2e1da6268ead18f107" title="aosp/I0ec3e" class="ref ref-gerrit">aosp/I0ec3e</a></li></ul><p><strong>API changes</strong></p><ul><li>Added the callback <code>extraCallbackWithResult</code> to <code>ICustomTabsCallback</code> <a href="https://android-review.googlesource.com/#/q/Ic2cc2ec9e99c81505b0db255a9abb45aa46e630f" title="aosp/Ic2cc2" class="ref ref-gerrit">aosp/Ic2cc2</a></li><li>Marked some <code>CustomTabsSession</code> method parameters as Nullable or NonNull <a href="https://android-review.googlesource.com/#/q/Iec46074608a642e069869a65fd867788ccbe2f8c" title="aosp/Iec460" class="ref ref-gerrit">aosp/Iec460</a></li><li><code>TrustedWebActivityIntentBuilder</code> now builds a <code>TrustedWebActivityIntent</code> instead of a raw intent <a href="https://android-review.googlesource.com/#/q/I03fb621220dd24cd59095ded8c55bba70305f6d3" title="aosp/I03fb6" class="ref ref-gerrit">aosp/I03fb6</a></li></ul><p><strong>Bug fixes</strong></p><ul><li><code>CustomTabsClient</code> now uses the legacy <code>requestPostMessageChannel</code> if needed <a href="https://android-review.googlesource.com/#/q/Ibb3240646c931197a5a0ea16e3d3178b1f3f129d" title="aosp/Ibb324" class="ref ref-gerrit">aosp/Ibb324</a></li><li>Fixed <code>CustomTabsSessionToken#equals</code> <a href="https://android-review.googlesource.com/#/q/I7f24900ab94725bb8e31faf0c3cd93561f2709d6" title="aosp/I7f249" class="ref ref-gerrit">aosp/I7f249</a></li><li><code>CustomTabsClient</code> now uses the legacy <code>newSession</code> if possible <a href="https://android-review.googlesource.com/#/q/Ie27dc5443050cc14b5509d1486e56dc73654eae4" title="aosp/Ie27dc" class="ref ref-gerrit">aosp/Ie27dc</a></li></ul><p><strong>External contribution</strong></p><ul><li>API lint check for the MinMaxConstant is enabled for androidx <a href="https://android-review.googlesource.com/#/q/I29b78a0a024984113ca37145f1cb2a31a82c7b25" title="aosp/I29b78" class="ref ref-gerrit">aosp/I29b78</a> <a href="https://issuetracker.google.com/issues/138602561" title="b/138602561" class="ref ref-issue">b/138602561</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="enterprise 1.0.0-beta01 2019-09-18 september 18, 2019" id="september-18-2019-enterprise-1-0-0-beta01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/enterprise">Enterprise</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/254b8b88f073fddd0c1e30b0f9e9893cbf27f4b5..64f11e5722d8a574ccb72bfb042fa89f51129c68/enterprise" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/enterprise#1.0.0-beta01" class="badge beta">1.0.0-beta01</a></div>
+              </div>
+              <div class="notes"><strong>Note:</strong><span> This version is dependent on the Java 8 programming language. Please read <a href="https://developer.android.com/studio/write/java8-support">Use Java 8 language features</a> to learn how to use it in your project.</span></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="fragment 1.2.0-alpha04 2019-09-18 september 18, 2019" id="september-18-2019-fragment-1-2-0-alpha04">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/fragment">Fragment</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/8e4aaeee0302e90400b8aa995dbbc220aa5dfe21..6e3bf267861f1dffb15c0ceff82f553a658c9972/fragment" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/fragment#1.2.0-alpha04" class="badge alpha">1.2.0-alpha04</a></div>
+              </div>
+              <div class="notes"><p><strong>API changes</strong></p><ul><li>The <code>getFragmentManager()</code> and <code>requireFragmentManager()</code> methods on <code>Fragment</code> have been deprecated and replaced with a single <code>getParentFragmentManager()</code> method, which returns the non-null <code>FragmentManager</code> the Fragment is added to (you can use <code>isAdded()</code> to determine if it is safe to call). <a href="https://issuetracker.google.com/issues/140574496" title="b/140574496" class="ref ref-issue">b/140574496</a></li><li>The static <code>FragmentManager.enableDebugLogging</code> method has been deprecated. FragmentManager now respects <a href="https://developer.android.com/reference/android/util/Log#isLoggable(java.lang.String,%20int)"><code>Log.isLoggable()</code></a> for the tag <code>FragmentManager</code>, allowing you to enable either <code>DEBUG</code> or <code>VERBOSE</code> logging without re-compiling your app. <a href="https://android-review.googlesource.com/1116591" title="aosp/1116591" class="ref ref-gerrit">aosp/1116591</a></li></ul><p><strong>Bug fixes</strong></p><ul><li>Fragments are now properly destroyed while exit animations on other fragments are running. <a href="https://issuetracker.google.com/issues/140574199" title="b/140574199" class="ref ref-issue">b/140574199</a></li><li>Fixed an issue where Fragments would call <code>Activity.findViewById()</code> where before it did not. <a href="https://android-review.googlesource.com/1116431" title="aosp/1116431" class="ref ref-gerrit">aosp/1116431</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="lifecycle 2.2.0-alpha05 2019-09-18 september 18, 2019" id="september-18-2019-lifecycle-2-2-0-alpha05">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/lifecycle">Lifecycle</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/44b591fe64e859b4b4e34b2590a5257c255c638c..af12e75e6b4110f48e44ca121466943909de8f06/lifecycle" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/lifecycle#2.2.0-alpha05" class="badge alpha">2.2.0-alpha05</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug fixes</strong></p><ul><li>Fixed a race condition in coroutine livedata builder. <a href="http://issuetracker.google.com/140249349" title="b/140249349" class="ref ref-issue">b/140249349</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="viewmodel-savedstate 1.0.0-alpha05 2019-09-18 september 18, 2019" id="september-18-2019-viewmodel-savedstate-1-0-0-alpha05">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/lifecycle">ViewModel-SavedState</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/44b591fe64e859b4b4e34b2590a5257c255c638c..391dc4bc729d2973a6e6e57916d3008c58026e56/lifecycle/lifecycle-viewmodel-savedstate" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/lifecycle#viewmodel-savedstate-1.0.0-alpha05" class="badge alpha">1.0.0-alpha05</a></div>
+              </div>
+              <div class="notes"><p><strong>API changes</strong></p><ul><li><code>SavedStateViewModelFactory</code> no longer extends <code>AbstractSavedStateViewModelFactory</code> and <code>SavedStateHandle</code> is created only for ViewModels that requested have it <a href="https://android-review.googlesource.com/1113593" title="aosp/1113593" class="ref ref-gerrit">aosp/1113593</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="navigation 2.2.0-alpha03 2019-09-18 september 18, 2019" id="september-18-2019-navigation-2-2-0-alpha03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/navigation">Navigation</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/2d0a22f1ddeb3b7e9d0002f0e089a25b7ef64f1c..391dc4bc729d2973a6e6e57916d3008c58026e56/navigation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/navigation#2.2.0-alpha03" class="badge alpha">2.2.0-alpha03</a></div>
+              </div>
+              <div class="notes"><p><strong>Behavior changes</strong></p><ul><li>Calling <code>setViewModelStore()</code> after calling <code>setGraph</code> now results in an <code>IllegalStateException</code>. This should always be set by the <code>NavHost</code> as part of the initial setup to ensure that all <code>NavBackStackEntry</code> instances have a consistent storage for <code>ViewModel</code> instances. <a href="https://android-review.googlesource.com/1111821" title="aosp/1111821" class="ref ref-gerrit">aosp/1111821</a></li></ul><p><strong>Bug fixes</strong></p><ul><li>Fixed a <code>ConcurrentModificationException</code> when using <code>ViewModel</code> instances attached to multiple different navigation graph scoped <code>ViewModelStore</code> instances. <a href="https://android-review.googlesource.com/1112257" title="aosp/1112257" class="ref ref-gerrit">aosp/1112257</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="jetifier 1.0.0-beta07 2019-09-18 september 18, 2019" id="september-18-2019-jetifier-1-0-0-beta07">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/jetifier">Jetifier</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/af05c08e2a2f721b3f7411affca883f6a3336513..d9761c71f9eacfa0abb8f0bc3e2305c8b229d75a/jetifier" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/jetifier#1.0.0-beta07" class="badge beta">1.0.0-beta07</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug fixes</strong></p><ul><li>Fixed the mappings of the <code>androidx.navigation</code> library</li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
