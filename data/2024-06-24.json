@@ -1,0 +1,89 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#june_24_2024",
+  "title": "June 24, 2024",
+  "releasedOn": "2024-06-24",
+  "updated": "2024-06-24T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#june_24_2024",
+  "components": [
+    {
+      "id": "test-core",
+      "name": "Test Core",
+      "version": "1.6.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#core-1.6.0",
+      "detailsHtml": "<p>Changes since last stable release 1.5.0 include:</p>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Added ApplicationInfoBuilder.setFlags(int)</li>\n <li>Add new lower level screenshot APIs View.captureToBitmap, WindowCapture.captureToBitmap, Bitmap.writeToTestStorage and DeviceCapture.takeScreenshot screenshots.</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Remove unused androidx.test.annotation dependency</li>\n <li>Fix using ActivityScenario#launchActivityForResult with an implicit Intent</li>\n <li>Update Activity Scenario reference documentation to fix missing links</li>\n <li>Remove all support for Android SDKs &lt; 19. Minimum is API 19 (Android Kit Kat 4.4)</li>\n <li>Reference doc cleanup - document previously missing parameters, fix links, etc</li>\n <li>Activity starts are automatically opted in to allow background activity launches when targetSdk &gt;= 34</li>\n <li>Fix issue where Activity#isChangingConfigurations is incorrectly false during ActivityScenario#recreate</li>\n</ul>\n<p><strong>New Features</strong></p>\n<ul>\n <li>Artifacts are now signed. See <a href=\"https://developer.android.com/jetpack/getting-started#verify_dependencies\">verify dependencies</a> for more details.</li>\n <li>Major release toolchain update: now compiled to java8 bytecode</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-espresso",
+      "name": "Test Espresso",
+      "version": "3.6.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#espresso-3.6.0",
+      "detailsHtml": "<p>The following artifacts were released:</p>\n<ul>\n <li><code>androidx.test.espresso:espresso-accessibility:3.6.0</code></li>\n <li><code>androidx.test.espresso:espresso-core:3.6.0</code></li>\n <li><code>androidx.test.espresso:espresso-contrib:3.6.0</code></li>\n <li><code>androidx.test.espresso:espresso-idling-resource:3.6.0</code></li>\n <li><code>androidx.test.espresso:espresso-intents:3.6.0</code></li>\n <li><code>androidx.test.espresso:espresso-remote:3.6.0</code></li>\n <li><code>androidx.test.espresso:espresso-web:3.6.0</code></li>\n <li><code>androidx.test.espresso.idling:idling-concurrent:3.6.0</code></li>\n <li><code>androidx.test.espresso.idling:idling-net:3.6.0</code></li>\n</ul>\n<p>Changes since last stable release 3.5.1 include:</p>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Remove unused androidx.test.annotation dependency</li>\n <li>Fix slow inRoot operations in Robolectric</li>\n <li>Use PlatformTestStorageRegistry.getInstance consistently instead of passing a reference around</li>\n <li>Remove TODO from InteractionResponse public ref docs</li>\n <li>Fix typo in AdapterDataLoaderAction error message</li>\n <li>Replace use of guava with Java collections and inlining</li>\n <li>Reference doc cleanup - document previously missing parameters, fix links, etc</li>\n <li>Remove all support for Android SDKs &lt; 19. Minimum is API 19 (Android Kit Kat 4.4)</li>\n <li>Stop posting empty tasks to background threads when running in non-remote mode</li>\n <li>Better handle exceptions that may occur in DefaultFailureHandler's hierarchy capture and screenshot process.</li>\n <li>Fix the description of IsPlatformPopup to match the behavior.</li>\n <li>Fix deprecated obtainMovement impl that used the wrong coordinates.</li>\n <li>Replace broken links to junit.org javadoc with @link.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add ViewActions.captureToBitmap</li>\n <li>Add waitForClose to DrawerActions.</li>\n <li>Mark generated IInteractionExecutionStatus class as RestrictTo LIBRARY_GROUP</li>\n <li>Remove ExperimentalTestApi from RuntimePermissionStubber</li>\n <li>Adding a new IsActivatedMatcher to verify if it is activated or not.</li>\n <li>Makes Espresso.onIdle() work on the main thread to allow for draining the main thread from the main thread.</li>\n <li>minSdkVersion is now 19, targetSdkVersion is now 34</li>\n <li>Add scrollTo variant that allows scrolling to 90+% displayed views</li>\n <li>Deprecate EspressoOptional in favor of @Nullable.</li>\n <li>Allow customizing espresso's default failure handler to disable screenshots on failures</li>\n</ul>\n<p><strong>New Features</strong></p>\n<ul>\n <li>Artifacts are now signed. See <a href=\"https://developer.android.com/jetpack/getting-started#verify_dependencies\">verify dependencies</a> for more details.</li>\n <li>Major release toolchain update:\n  <ul>\n   <li>classes are now compiled to java8 bytecode</li>\n   <li>javac compiler switched to OpenJDK 17. This should resolve IncompatibleClassChangeErrors (https://github.com/android/android-test/issues/1642)</li>\n   <li>remove internal guava usage, which resulted in a binary size reduction</li>\n   <li>release aars are no longer proguarded</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-espresso-device",
+      "name": "Test Espresso Device",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#espresso_device-1.0.0",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-junit-extensions",
+      "name": "Test JUnit Extensions",
+      "version": "1.2.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#junit-1.2.0",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-truth-extensions",
+      "name": "Test Truth Extensions",
+      "version": "1.6.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#truth-1.6.0",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-monitor",
+      "name": "Test Monitor",
+      "version": "1.7.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#monitor-1.7.0",
+      "detailsHtml": "<p>Changes since last stable release 1.6.1 include:</p>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Make DeviceController a public API</li>\n <li>Move PlatformTestStorage to a public API</li>\n <li>Add internal ControlledLooper#isDrawCallbacksSupported.</li>\n <li>Remove all support for Android SDKs &lt; 19. Minimum is API 19 (Android Kit Kat 4.4)</li>\n <li>minSdkVersion is now 19, targetSdkVersion is now 34</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Remove unused androidx.test.annotation dependency</li>\n <li>Fix synchronization in IntentMonitorImpl callbacks</li>\n</ul>\n<p><strong>New Features</strong></p>\n<ul>\n <li>Artifacts are now signed. See <a href=\"https://developer.android.com/jetpack/getting-started#verify_dependencies\">verify dependencies</a> for more details.</li>\n <li>Major release toolchain update: now compiled to java8 bytecode</li>\n</ul>\n<p><strong>Known issues</strong></p>\n<ul>\n <li>monitor has a dependency on androidx.tracing:1.1.0. Depending on configuration, gradle may downgrade this to 1.0.0 at runtime causing 'No static method forceEnableAppTracing' errors. As a workaround, add an explicit 'implementation androidx.tracing:1.1.0' dependency. See https://github.com/android/android-test/issues/1755</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-orchestrator",
+      "name": "Test Orchestrator",
+      "version": "1.5.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#orchestrator-1.5.0",
+      "detailsHtml": "<p>Changes since last stable release 1.4.2 include:</p>\n<p><strong>New Features</strong></p>\n<ul>\n <li>Introduce Instrumentation Params Proxying which allows the user to proxy instrumentation arguments to the APK under test (eg: --no-hidden-api-checks).</li>\n <li>Major release toolchain update. APK is now signed with a different key and you will need to uninstal any previous orchestrator ('adb uninstall androidx.test.orchestrator')</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>minSdkVersion is now 19</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix crash when test name is too long</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-runner",
+      "name": "Test Runner",
+      "version": "1.6.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#runner-1.6.0",
+      "detailsHtml": "<p>Changes since last stable release 1.5.2 include:</p>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Mark androidx.test.services.** as RestrictTo LIBRARY_GROUP</li>\n <li>Add CustomFilter API</li>\n <li>Add PackagePrefixClasspathSuite API</li>\n <li>Mark PermissionRequester as RestrictTo LIBRARY_GROUP instead of ExperimentalTestApi</li>\n <li>minSdkVersion is now 19</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Remove unused androidx.test.annotation dependency</li>\n <li>When logging test exceptions, use Log's built-in support for throwables to avoid stack truncation</li>\n <li>Internal changes to support GrantPermissionRule using UiAutomation#grantRuntimePermissions</li>\n <li>Attempt to clarify limitations and deprecation reasons in RequiresDevice documentation</li>\n <li>Remove all support for Android SDKs &lt; 19. Minimum is API 19 (Android Kit Kat 4.4)</li>\n <li>Fix that \"-e class\" and \"-e notClass\" on the same class/method should perform the same result (no tests run)</li>\n <li><code>TestDiscoveryEventServiceConnection.send()</code> will correctly fail the test instead of hanging if the instrumentation throws a RuntimeException.</li>\n <li>Stop reparsing all args for every AndroidJUnit4 test class. This should address initialization errors like in #1948.</li>\n <li>Force initialization of instrumentationRunListener, to prevent NPEs when instrumenting system server process.</li>\n <li>Attempt to avoid outputting a test result summary which exceeds binder transaction limit.</li>\n <li>Wait up to 2 seconds for activity finisher to run, to prevent situations where it finishes activities mid-test</li>\n <li>Improve error reporting when there is a junit class mismatch due to a custom classloader</li>\n <li>Fix reporting in logOnly mode for @Ignore-d classes</li>\n <li>Move instantiation of InstrumentationResultPrinter to after multidex is loaded</li>\n <li>Register TestStorage before using it in RunnerArgs parsing</li>\n <li>Execute test classes in order provided to TestRequestBuilder.</li>\n</ul>\n<p><strong>New Features</strong></p>\n<ul>\n <li>Artifacts are now signed. See <a href=\"https://developer.android.com/jetpack/getting-started#verify_dependencies\">verify dependencies</a> for more details.</li>\n <li>Major release toolchain update:\n  <ul>\n   <li>classes are now compiled to java8 bytecode</li>\n   <li>javac compiler switched to OpenJDK 17.</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-rules",
+      "name": "Test Rules",
+      "version": "1.6.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#rules-1.6.0",
+      "detailsHtml": "<p>Changes since last stable release 1.5.0 include:</p>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>minSdkVersion is now 19, targetSdkVersion is now 34</li>\n <li>Recommend use of UiAutomation#grantRuntimePermissions instead of GrantPermissionRule</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Replace broken links to junit.org javadoc with @link.</li>\n <li>Make GrantPermissionRule use UiAutomation to grant permissions on APIs &gt; =28 to fix issues running on automotive.</li>\n</ul>\n<p><strong>New Features</strong></p>\n<ul>\n <li>Artifacts are now signed. See <a href=\"https://developer.android.com/jetpack/getting-started#verify_dependencies\">verify dependencies</a> for more details.</li>\n <li>Major release toolchain update:\n  <ul>\n   <li>classes are now compiled to java8 bytecode</li>\n   <li>javac compiler switched to OpenJDK 17.</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-services",
+      "name": "Test Services",
+      "version": "1.5.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#services-1.5.0",
+      "detailsHtml": "<p>Changes since last stable 1.4.2 release include:</p>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Make TestStorage an internal API from experimental</li>\n <li>minSdkVersion is now 19, targetSdkVersion is now 34</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Reduce HostedFile log spam</li>\n <li>Remove unused androidx.test.annotation dependency</li>\n <li>TestStorage: use local cache dir to store output files when running as non system user</li>\n <li>When files are opened for writing, TestStorage now truncates the file unless it is explicitly opened for appending. This prevents bytes from a prior write to the file from remaining at the end of the file.</li>\n <li>Remove all support for Android SDKs &lt; 19. Minimum is API 19 (Android Kit Kat 4.4)</li>\n</ul>\n<p><strong>New Features</strong></p>\n<ul>\n <li>Major release toolchain update:\n  <ul>\n   <li>classes are now compiled to java8 bytecode</li>\n   <li>javac compiler switched to OpenJDK 17.</li>\n   <li>APK is now signed with a different key and you will need to uninstall any previous APK ('adb uninstall androidx.test.services')</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

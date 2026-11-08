@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#june_7_2024",
+  "title": "June 7, 2024",
+  "releasedOn": "2024-06-07",
+  "updated": "2024-06-07T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#june_07_2024",
+  "components": [
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.4.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.4.0-alpha02",
+      "detailsHtml": "<p>Use the 1.4.0 <a href=\"https://developer.android.com/jetpack/androidx/releases/media3#1.4.0\">stable version</a>.</p>",
+      "commitsUrl": null
+    }
+  ]
+}

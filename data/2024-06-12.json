@@ -1,0 +1,273 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#june_12_2024",
+  "title": "June 12, 2024",
+  "releasedOn": "2024-06-12",
+  "updated": "2024-06-12T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#june_12_2024",
+  "components": [
+    {
+      "id": "benchmark",
+      "name": "Benchmark",
+      "version": "1.3.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/benchmark#1.3.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Renamed <code>MethodTracing.affectsMeasurementOnThisDevice</code> to <code>AFFECTS_MEASUREMENT_ON_THIS_DEVICE</code> for consistency. (<a href=\"https://android-review.googlesource.com/#/q/I1bdfa9acbd481f837649a2444fee46185d49bd61\">I1bdfa</a>)</li>\n <li>Added experimental <code>BlackHole.consume()</code> api to prevent dead code elimination in microbenchmarks. (<a href=\"https://android-review.googlesource.com/#/q/If681208c4e5ad5d054117c2320b4fd56b86f4ff5\">If6812</a>, <a href=\"https://issuetracker.google.com/issues/286091643\">b/286091643</a>)</li>\n <li>Microbenchmark will now correctly throw to prevent method tracing from interfering with measurements. This occurs on certain devices when method tracing is forced on (via instrumentation args or <code>MicrobenchmarkConfig</code>), and if a measurement is attempted after a method trace. Affected devices are running API 26-30 or certain ART mainline module versions affected by this interference, and can be detected at runtime via <code>ProfilerConfig.MethodTracing.affectsMeasurementOnThisDevice</code>. (<a href=\"https://android-review.googlesource.com/#/q/Iafb92c47c76bf257c047634b61401d873ce85cc5\">Iafb92</a>, <a href=\"https://issuetracker.google.com/issues/303660864\">b/303660864</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Bumped max agp version recommended to 9.0.0-alpha01. (<a href=\"https://android-review.googlesource.com/#/q/I5bbb0401cf54f7f5394e7462235947d61be20ee2\">I5bbb0</a>)</li>\n <li>Added compilation mode to benchmark context (<a href=\"https://android-review.googlesource.com/#/q/If5612552a718b459e95cd96dc721e92a88e3fa8a\">If5612</a>, <a href=\"https://issuetracker.google.com/issues/325512900\">b/325512900</a>)</li>\n <li>Enable AIDL tracing by default (requires API 28) (<a href=\"https://android-review.googlesource.com/#/q/Ia0af2a55ac2635db68427845860dc96d93994220\">Ia0af2</a>, <a href=\"https://issuetracker.google.com/issues/341852305\">b/341852305</a>)</li>\n <li>Added additional information in benchmark context in JSON output:\n  <ul>\n   <li><code>context.artMainlineVersion</code> - integer version of Art mainline module (if present on device, -1 otherwise)</li>\n   <li><code>context.build.id</code> - Equals <code>android.os.Build.ID</code></li>\n   <li><code>context.build.version.codename</code> - Equals <code>android.os.Build.VERSION.CODENAME</code></li>\n   <li><code>context.build.version.abbreviatedCodename</code> - corresponds to first letter of pre-release codename (even on release builds) (<a href=\"https://android-review.googlesource.com/#/q/Ie502065af175c2a8054bbe85716f15f4ff38b822\">Ie5020</a>)</li>\n  </ul></li>\n <li>Fixes <code>StackSampling</code> to respect <code>androidx.benchmark.profiling.sampleDurationSeconds</code> (<a href=\"https://android-review.googlesource.com/#/q/Ib1d5318442eb4bb586d6d5c06ce57bb929e1d996\">Ib1d53</a>)</li>\n <li>Change macro-&gt;common dependency to be <code>api()</code>, so it's easier to use e.g. <code>PerfettoTrace</code> and <code>PerfettoConfig</code>. (<a href=\"https://android-review.googlesource.com/#/q/Icdae394628d71131e556c6a02840c6c894f82957\">Icdae3</a>, <a href=\"https://issuetracker.google.com/issues/341851833\">b/341851833</a>)</li>\n <li>Ensure <code>mergeArtProfile</code> and <code>mergeStartupProfile</code> tasks always wait for baseline profile generation. (<a href=\"https://android-review.googlesource.com/q/I623d65b8fedc7abb1d22fb2ca016582703f51176\">I623d6</a>, <a href=\"https://issuetracker.google.com/issues/343086054\">b/343086054</a>)</li>\n <li>Consider variant enable state when deciding whether variant should be enabled. (<a href=\"https://android-review.googlesource.com/q/I5d19e3040d28243857fab9b9a679057d6ad46c1b\">I5d19e</a>, <a href=\"https://issuetracker.google.com/issues/343249144\">b/343249144</a>)</li>\n <li>Increased default start timeout for perfetto trace processor. (<a href=\"https://android-review.googlesource.com/q/I87e8c9ec3472db0aafb908b590a9a91f6e9e5ed8\">I87e8c</a>, <a href=\"https://issuetracker.google.com/issues/329145808\">b/329145808</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6a69101fd0edc8d02aa316df1f43e0552fd2d7c4..e688db5c82e85000364f92965558ef1e2236c5a0/benchmark"
+    },
+    {
+      "id": "camera",
+      "name": "Camera",
+      "version": "1.3.4",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#1.3.4",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed the issue where <code>getZoomRatio</code> incorrectly returned a decreased value when applying an increasing zoom ratio. (<a href=\"https://android-review.googlesource.com/#/q/I4aa0df75c6b6382e1e3f4b7905459acdbc6b4d3c\">I4aa0d</a>, <a href=\"https://issuetracker.google.com/issues/317543616\">b/317543616</a>)</li>\n <li>Fixed still capture/tap-to-focus not using the repeating request FPS/stabilization mode values which may re-create capture session and cause latency issues or Preview freeze in some devices. (<a href=\"https://android-review.googlesource.com/#/q/I7dc0b1de12c35acbf08a078973a42512ef1f2b45\">I7dc0b</a>)</li>\n <li>Fixed the issue that the frame rate is set to a lower value when calling <code>setTargetFrameRate</code> with <code>FRAME_RATE_RANGE_UNSPECIFIED</code>. (<a href=\"https://android-review.googlesource.com/#/q/I78c617b40e383d48b117e6ea7d8849847ce906d9\">I78c61</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1fb89fe455e3527cadfdca47bfb353829dba6be4..fc680027273b2ecace66751e7a2f4f97b0ef2430/camera"
+    },
+    {
+      "id": "camera",
+      "name": "Camera",
+      "version": "1.4.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#1.4.0-beta02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Similar to <code>VideoCapture</code>, add <code>setMirrorMode</code> for Preview use case. It will support mirror mode ON and OFF for Preview stream via <code>OutputConfiguration.setMirrorMode</code> from API 33 and above, for older APIs, it will be no-op. (<a href=\"https://android-review.googlesource.com/#/q/I821f466c4d5851468d02748483a68268e13023e6\">I821f4</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed the issue that apps can't take pictures successfully on Samsung Tab A8 when <code>ImageCapture</code> selects 1920x1080 under <code>Preview</code> + <code>VideoCapture</code> + <code>ImageCapture</code> <code>UseCase</code> combination. (<a href=\"https://android-review.googlesource.com/#/q/I5a463a7d42f5adda71c5ce34e934b93fa9969764\">I5a463</a>, <a href=\"https://issuetracker.google.com/issues/336925549\">b/336925549</a>)</li>\n <li>Fixed persistent recording may fail to continue recording after switching camera. (<a href=\"https://android-review.googlesource.com/#/q/Icb0a12559d0f7e6b144ea3f2f498de95ca2d95eb\">Icb0a1</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c7d2a9b0f7f27c85a187b05044b5fb8f1281a191..97ce0972adadb34722870dfe4d0a6bb0540d13e7/camera"
+    },
+    {
+      "id": "camera-viewfinder",
+      "name": "Camera Viewfinder",
+      "version": "1.4.0-alpha07",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#viewfinder-1.4.0-alpha07",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c7d2a9b0f7f27c85a187b05044b5fb8f1281a191..97ce0972adadb34722870dfe4d0a6bb0540d13e7/camera"
+    },
+    {
+      "id": "camera-viewfinder-compose",
+      "name": "Camera Viewfinder Compose",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#viewfinder-compose-1.0.0-alpha02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c7d2a9b0f7f27c85a187b05044b5fb8f1281a191..97ce0972adadb34722870dfe4d0a6bb0540d13e7/camera/camera-viewfinder-compose"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.7.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.7.0-beta03",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1a123f646cfea1599f9efead6da546b0c26063fa..c29f7383c14ede0af9cb64be9f3eee63714bc73c/compose/animation"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.6.8",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.6.8",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9a13a0e3b1197d66bfc19b9051576bc705f2c337..9dbbab668fd22cd643de4651197354a828aaa7b9/compose/animation"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.7.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.7.0-beta03",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1a123f646cfea1599f9efead6da546b0c26063fa..c29f7383c14ede0af9cb64be9f3eee63714bc73c/compose/foundation"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.6.8",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.6.8",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9a13a0e3b1197d66bfc19b9051576bc705f2c337..9dbbab668fd22cd643de4651197354a828aaa7b9/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.7.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.7.0-beta03",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1a123f646cfea1599f9efead6da546b0c26063fa..3bb7e8ef41a5a1cec16efda4248c7865d2da51c4/compose/material"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.6.8",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.6.8",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9a13a0e3b1197d66bfc19b9051576bc705f2c337..9dbbab668fd22cd643de4651197354a828aaa7b9/compose/material"
+    },
+    {
+      "id": "compose-material-3",
+      "name": "Compose Material 3",
+      "version": "1.3.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3#1.3.0-beta03",
+      "detailsHtml": "<p><strong>External Contribution</strong></p>\n<ul>\n <li>Make <code>androidx.compose.material3.DropdownMenu</code> available from common source set. (<a href=\"https://android-review.googlesource.com/#/q/If62c08a313c09acf91de71950c9405e3e5968f89\">If62c0</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/473554f275109d78164adca6b6cea539aed8b68b..f5541f29d045c6ba9734689ec67891f8d667412b/compose/material3"
+    },
+    {
+      "id": "compose-material3-adaptive",
+      "name": "Compose Material3 Adaptive",
+      "version": "1.0.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3-adaptive#1.0.0-beta03",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixes crashes caused by incorrect dependency resolution in beta02.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/473554f275109d78164adca6b6cea539aed8b68b..f5541f29d045c6ba9734689ec67891f8d667412b/compose/material3/adaptive"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.7.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.7.0-beta03",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1a123f646cfea1599f9efead6da546b0c26063fa..c29f7383c14ede0af9cb64be9f3eee63714bc73c/compose/runtime"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.6.8",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.6.8",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9a13a0e3b1197d66bfc19b9051576bc705f2c337..9dbbab668fd22cd643de4651197354a828aaa7b9/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.7.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.7.0-beta03",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1a123f646cfea1599f9efead6da546b0c26063fa..c29f7383c14ede0af9cb64be9f3eee63714bc73c/compose/ui"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.6.8",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.6.8",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed inconsistencies in font scaling when the font scale is less than the lowest defined table. In this case, we now interpolate between the linear 1x scale and the lowest defined table, so that the font size is monotonically increasing as scales increase. (<a href=\"https://android-review.googlesource.com/#/q/Icbae34e19e771ec2f55e74badcca3b4c90d55d25\">Icbae3</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9a13a0e3b1197d66bfc19b9051576bc705f2c337..9dbbab668fd22cd643de4651197354a828aaa7b9/compose/ui"
+    },
+    {
+      "id": "concurrent",
+      "name": "Concurrent",
+      "version": "1.2.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/concurrent#1.2.0",
+      "detailsHtml": "<p><strong>Important changes since 1.1.0</strong></p>\n<ul>\n <li>Added <a href=\"https://developer.android.com/reference/kotlin/androidx/concurrent/futures/SuspendToFutureAdapter\"><code>SuspendToFutureAdapter</code></a> for translating a call to a suspending API into a <code>ListenableFuture</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/981a26f286d763f3ebe90ef825c12873ae8fd171..f3f60b391b39a0d5c6bbb3bb9f83f227a0c8a72b/concurrent"
+    },
+    {
+      "id": "core-core-ktx-core-testing",
+      "name": "Core Core-Ktx Core-Testing",
+      "version": "1.15.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.15.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Various updates to compatibility classes for parity with Android 15 SDK.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "core-remoteviews",
+      "name": "Core-RemoteViews",
+      "version": "1.1.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#core-remoteviews-1.1.0",
+      "detailsHtml": "<p><strong>Important changes since 1.0.0</strong></p>\n<ul>\n <li>Core <code>RemoteViews</code> moves to 1.1.0 stable.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/16fcdbc19dd53423937bad83094a24f4e901e57e..c9ba94cdd70f8dc09ace9bb042e815e7a6f77703/core/core-remoteviews"
+    },
+    {
+      "id": "core-location-altitude-core-location-altitude-external-protobuf-core-location-altitude-proto",
+      "name": "Core-pip",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#core-location-altitude-1.0.0-alpha02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixes proguard failure caused by the repackaging of proto libraries.</li>\n</ul>\n<p><strong>External Contribution</strong></p>\n<ul>\n <li>Bug fix above provided by andrekir@pm.me</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "credentials",
+      "name": "Credentials",
+      "version": "1.5.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/credentials#1.5.0-alpha02",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>The ability for <code>CredentialManager</code> to directly imbue a <code>BiometricPrompt</code> within the credential creation and retrieval flows is now available for use through Jetpack for providers.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Added the <code>BiometricPromptData</code> to the API surface to allow utilizing the new imbued <code>BiometricPrompt</code> flow through <code>CredentialManager</code> (<a href=\"https://android-review.googlesource.com/q/I3b1595a588645d3628fb3051660a2f628a1c6f0a\">I3b159</a>)</li>\n <li>Modified all entry classes and subclasses across <code>CreateEntry</code> and <code>CredentialEntry</code> to gain the utility of the <code>BiometricPromptData</code> for Providers. (<a href=\"https://android-review.googlesource.com/q/I16936d64cf2fbba47294a112173aebe25d3ccdb9\">I16936</a>, <a href=\"https://android-review.googlesource.com/q/I8e5bc104b7337850ca6c49064502044d29c1308b\">I8e5bc</a>)</li>\n <li>Added the types needed to encode the error and results from the imbued <code>BiometricPrompt</code> flows with <code>CredentialManager</code>. (<a href=\"https://android-review.googlesource.com/q/I8e5bc104b7337850ca6c49064502044d29c1308b\">I8e5bc</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "credentials",
+      "name": "Credentials",
+      "version": "1.3.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/credentials#1.3.0-beta02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed logic to correctly check for <code>NOT_ALLOWED_ERR</code> instead of <code>CONSTRAINT_ERR</code> in public key credential flows that contain an error on pre-U devices (<a href=\"https://android-review.googlesource.com/q/I31b3798bf9eabe17c927fe25dd01dd82816edd09\">I31b37</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/473554f275109d78164adca6b6cea539aed8b68b..f5541f29d045c6ba9734689ec67891f8d667412b/credentials"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.8.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.8.0",
+      "detailsHtml": "<p><strong>Important changes since 1.7.0</strong></p>\n<ul>\n <li>The <code>fragment-compose</code> artifact now contains an <code>AndroidFragment</code> <code>Composable</code> that allows adding fragments into the Compose hierarchy via the fragment class name. It automatically handles the saving and restoring of the Fragment’s state. This should be used as a direct replacement for the previously recommended approach of using <code>AndroidViewBinding</code> to inflate a Fragment.</li>\n <li>The <code>onBackStackChangeCancelled</code> callback on the <code>FragmentManager</code>’s <code>OnBackStackChangedListener</code> interface now fires as part of executing operations in <code>FragmentManager</code>, moving it closer in line with the timing of the <code>onBackStackChangeCommitted</code> callback.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b9b27a2972eeb4612cbea0f230f514ffb142a5ee..4cb33e7274271da73c61e9231b4d372300cecec4/fragment"
+    },
+    {
+      "id": "games-controller",
+      "name": "Games-Controller",
+      "version": "2.0.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/games#games-controller-2.0.2",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed issue where controller connected callbacks were not firing for controllers already connected before <code>Paddleboat_init</code>.</li>\n <li>Fixed issue where game controller touchpads were not registering touchpad presses in <code>Paddleboat_processGameActivityMotionInputEvent</code> without manually enabling the pressure axis.</li>\n <li>Fixed issue where game controller touchpad events were not being marked as consumed by <code>Paddleboat_processGameActivityMotionInputEvent</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/opt/gamesdk/+log/f1ebe620d10210d1ec538e250b6066c487a7f42b..b832f08a5a2c2785f393ae99ad9af81922c2a337/games-controller"
+    },
+    {
+      "id": "glance",
+      "name": "Glance",
+      "version": "1.1.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/glance#1.1.0",
+      "detailsHtml": "<p><strong>Important changes since 1.0.0</strong></p>\n<ul>\n <li>Moves Glance to 1.1.0 stable.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9bf02c72eae9ac630e994275470e66a612bcef56..c19aed31b001308c51b4f54c1690e43170516216/glance"
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.8.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.8.2",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed <code>CompositionLocal LocalLifecycleOwner not present</code> errors when using Lifecycle 2.8.X with Compose 1.6.X or earlier - you can now use Lifecycle 2.8.2 with any version of Compose without any workarounds required. (<a href=\"https://android-review.googlesource.com/3105647\">aosp/3105647</a>, <a href=\"https://issuetracker.google.com/336842920\">b/336842920</a>)</li>\n <li><code>ViewModelProvider</code> will no longer crash when mixing previous versions of <code>compileOnly</code> Lifecycle dependencies with versions 2.8+, fixing issues with libraries such as LeakCanary. (<a href=\"https://android-review.googlesource.com/#/q/I803839b1c34bc8c70d6ebeb9ba90c426b340416c\">I80383</a>, <a href=\"https://issuetracker.google.com/issues/341792251\">b/341792251</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b390c8d82bf426c9fb727016dc2423891ecd1735..86a54e23482b320e083f9a337814c7fe4f78e9a3/lifecycle"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.8.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.8.0-beta03",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>CollectionNavType</code> has a new abstract <code>emptyCollection()</code> method. Override this to handle an empty collection passed in as an argument. (<a href=\"https://android-review.googlesource.com/#/q/Ie4d8464050a7164176c2aee55518b03a5db704ad\">Ie4d84</a>, <a href=\"https://issuetracker.google.com/issues/341723133\">b/341723133</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Added documentation on <code>NavType.serializeAsValue</code> and <code>serializeAsValues</code> to highlight that the final outputs should be Uri encoded. (<a href=\"https://android-review.googlesource.com/#/q/Ida6bd848fb1e3d8e26277eff0f214e1d40907063\">Ida6bd</a>, <a href=\"https://issuetracker.google.com/issues/344943214\">b/344943214</a>)</li>\n <li>Fixed crash when calling <code>toRoute&lt;T&gt;</code> with a null <code>CollectionNavType</code> argument. When navigating with a null <code>CollectionNavType</code>, the output argument will be the default value declared on your Serializable class, or the return value of <code>emptyCollection()</code> if there is no default value. (<a href=\"https://android-review.googlesource.com/#/q/I84158320503bc04052de8f80022f83d86e23cc15\">I84158</a>, <a href=\"https://android-review.googlesource.com/#/q/Id630fb148782fbb34d3c236f5d8bb363fba7ef91\">Id630f</a>, <a href=\"https://issuetracker.google.com/issues/342672856\">b/342672856</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/473554f275109d78164adca6b6cea539aed8b68b..9de5bf61f1fad1fd6da2b64fe350d3aa39dc5de1/navigation"
+    },
+    {
+      "id": "room",
+      "name": "Room",
+      "version": "2.7.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.7.0-alpha04",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue in Room’s annotation processor would generate incompatible KMP code when a multi-map return type was defined in a DAO. (<a href=\"https://issuetracker.google.com/340983093\">b/340983093</a>)</li>\n <li>Fixed an issue where Room would fail to find the generated database implementation if the <code>@Database</code> annotated class had no package. (<a href=\"https://issuetracker.google.com/342097292\">b/342097292</a>)</li>\n <li>Fixed an issue where enabling auto-close and multi-instance invalidation would sometimes cause a <code>ConcurrentModificationException</code> when the database was auto-closed due to being idle.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/473554f275109d78164adca6b6cea539aed8b68b..f5541f29d045c6ba9734689ec67891f8d667412b/room"
+    },
+    {
+      "id": "security-state",
+      "name": "Security-state-provider",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/security#security-state-1.0.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Security State is a new library developers can use to get actionable data about versions of updateable system components, security updates and applied fixes.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "sqlite",
+      "name": "Sqlite",
+      "version": "2.5.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/sqlite#2.5.0-alpha04",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added an <code>open()</code> overload API to <code>BundledSQLiteDriver</code> to pass open flags when opening a database connection. Useful for opening a database in read-only mode or using the serialized thread safe mode instead of the multi-thread mode bundled SQLite is compiled with (<a href=\"https://issuetracker.google.com/issues/340949940\">b/340949940</a>).</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a linking issue in the Bundled SQLite Driver that would cause <code>UnsatisfiedLinkError</code> to be thrown due to missing atomic symbols in Android devices with an ARM32. (<a href=\"https://issuetracker.google.com/341639198\">b/341639198</a>)</li>\n <li>Fixed an issue in the drivers where binding a zero-length byte array into a column would lead to a null value when reading from it.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/473554f275109d78164adca6b6cea539aed8b68b..f5541f29d045c6ba9734689ec67891f8d667412b/sqlite"
+    },
+    {
+      "id": "wear-compose",
+      "name": "Wear Compose",
+      "version": "1.4.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-compose#1.4.0-beta03",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>We have updated <code>Modifier.rotaryScrollable</code> to replace use of ‘focusable’ with ‘focusTarget’ which improves performance. (<a href=\"https://android-review.googlesource.com/#/q/Id294b8890b0a043537617a218190991026a75c28\">Id294b</a>)</li>\n <li>We have fixed an issue where the <code>ProgressIndicator</code> repeated its announcement under <code>TalkBack</code>. (<a href=\"https://android-review.googlesource.com/#/q/I945631b73dfaea897c46cf24ce33d191ebbc6f65\">I94563</a>)</li>\n <li>We have updated the Wear Compose library baseline profiles. (<a href=\"https://android-review.googlesource.com/#/q/I3cbc391d29d9f1b3962b3644c40a458a059046e2\">I3cbc3</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/fe555cd2859b125be61b919d63c255741025e9d1..3bb7e8ef41a5a1cec16efda4248c7865d2da51c4/wear/compose"
+    },
+    {
+      "id": "webkit",
+      "name": "Webkit",
+      "version": "1.12.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/webkit#1.12.0-alpha02",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Add a new API to <code>WebSettingsCompat</code> to enabled/disable <a href=\"https://developer.chrome.com/blog/back-forward-cache\"><code>BackForwardCache</code></a>. This API is experimental and can be changed in the future. (<a href=\"https://android-review.googlesource.com/#/q/I64a38d91f09a386a1b9e791538d37a730c1a12f6\">I64a38</a>)</li>\n <li>Add a new API to <code>WebSettingsCompat</code> to control the Speculative Loading behavior for this WebSettings. Only <a href=\"https://developer.chrome.com/docs/web-platform/prerender-pages\">Prerender</a> is available for now. This API is experimental and can be changed in the future. (<a href=\"https://android-review.googlesource.com/#/q/I13962fd09f251fb2629c6d19ad1ec016bc38248d\">I13962</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Some methods are now documented with <code>@UiThread</code> where appropriate. (<a href=\"https://android-review.googlesource.com/#/q/I6c7e092a07cd47c4b76f5cffd2628eda3127edd9\">I6c7e0</a>), (<a href=\"https://android-review.googlesource.com/#/q/I44541931ef0aed0a9755de353b098aa96d0c2604\">I44541</a>)</li>\n <li>Thread-safe methods are now documented with <code>@AnyThread</code>. (<a href=\"https://android-review.googlesource.com/#/q/I701894e8da5d8e968430f6a0a6c14c101d1ab474\">I70189</a>)</li>\n <li>Increasing <code>minSdkVersion</code> from 19 to 21. (<a href=\"https://android-review.googlesource.com/#/q/Id7a43dc96264bb58670a90b7de34b9f3a7cc2818\">Id7a43</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/67004410fdbff19f90caa4cc43965ab21dca1943..f5541f29d045c6ba9734689ec67891f8d667412b/webkit/webkit"
+    }
+  ]
+}

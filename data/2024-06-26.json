@@ -1,0 +1,225 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#june_26_2024",
+  "title": "June 26, 2024",
+  "releasedOn": "2024-06-26",
+  "updated": "2024-06-26T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#june_26_2024",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.10.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.10.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added support for new <code>PhotoPicker</code> features introduced in Android V including being able to pick images in order and choose which tab (either albums or images) should be initially visible.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "annotation",
+      "name": "Annotation",
+      "version": "1.9.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/annotation#1.9.0-alpha01",
+      "detailsHtml": "<p><strong>External Contribution</strong></p>\n<ul>\n <li>Adds support for <code>linuxArm64</code> multiplatform target (thanks to Jake Wharton!)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4e5e9e3ddec39fb6f9f34c89b1b4f9b58a1ab627..948119be341fa4affc055418e695d8c4c7e5e2e4/annotation/annotation"
+    },
+    {
+      "id": "car-app",
+      "name": "Car App",
+      "version": "1.7.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/car-app#1.7.0-beta01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li><em>Map with Content:</em> New template a Map Canvas plus a content template, which for now can be List / Grid / Pane / Message.\n  <ul>\n   <li><code>RoutePreview</code>, <code>PlaceListNavigation</code>, <code>MapTemplate</code> are now deprecated. Templates will continue to work as-is.</li>\n   <li>Sample apps have been updated to show <code>MapWithContent</code>usage instead of deprecated templates</li>\n  </ul></li>\n <li><em>Conversation Item:</em> New APIs for displaying conversations (IM, SMS), and Assistant readout in the car.</li>\n <li><em>Vehicle Dimensions:</em> New API to retrieve vehicle measures (data on AAOS at the moment).</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add <code>@ExperimentalCarApi</code> tag to <code>MediaPlaybackTemplate.Builder</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ic195773f56a9f10234f232413b72404f95434ec6\">Ic1957</a>)</li>\n <li>Adds a new <code>SectionedItemTemplate</code> in experimental. (<a href=\"https://android-review.googlesource.com/#/q/I5958aaacf42d05e9a28774f2c2b468a0c6d8c6de\">I5958a</a>)</li>\n <li>Introduce <code>CarAppApiLevel 8</code> (<a href=\"https://android-review.googlesource.com/#/q/I3fa220efd1382a4d0146f58f505991e55163ba44\">I3fa22</a>)</li>\n <li>Adds <code>MediaPlaybackTemplate</code> for displaying content during media playback in Car App Library. (<a href=\"https://android-review.googlesource.com/#/q/I3c10d979e8fbf2f9240fad946bc42220cda2ac4b\">I3c10d</a>)</li>\n <li>Added new api for apps to detect whether the system supports background audio while driving (<a href=\"https://android-review.googlesource.com/#/q/I0f868508078908bd80f8fd013ce8847dcd3844aa\">I0f868</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixes certain instances of memory leaks and crashes in CAL client code and in CAL Navigation Sample App. (<a href=\"https://android-review.googlesource.com/#/q/I55e04addc90298c44103806ae5c4de681a2506cf\">I55e04</a>)</li>\n <li>Replace <code>requireNotNull instances</code> in <code>BaseCarAppActivity</code>'s <code>onDestroy</code> method with if-null checks to avoid crashes. (<a href=\"https://android-review.googlesource.com/#/q/Iec6767110cf8839cb57b71cdc31444b6124a6950\">Iec676</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5c17ac8d339b80b5f509f83792f5923e337612c7..948119be341fa4affc055418e695d8c4c7e5e2e4/car/app"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.7.0-beta04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.7.0-beta04",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c29f7383c14ede0af9cb64be9f3eee63714bc73c..487d2b07dba29c903cfd87a8dc7f99483084ebb6/compose/animation"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.7.0-beta04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.7.0-beta04",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Avoid crashes when measuring very large text lines (e.g. 10k characters) (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/8157ab1cf5d805e9d626b17e710df49bd6e5d680\">8157ab</a>)</li>\n <li>Fixes measurement of very large text causing crash in the new <code>BasicTextField</code> (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/6b75757fbd5bd38f144b3126a4a1af49c0328430\">6b7575</a>)</li>\n <li>Reverts a behavior change in Row/Column measurement that breaks Text usage in certain scenarios (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/69e8ba04943fb0ba364f1220f8c762163d001c00\">69e8ba</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c29f7383c14ede0af9cb64be9f3eee63714bc73c..487d2b07dba29c903cfd87a8dc7f99483084ebb6/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.7.0-beta04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.7.0-beta04",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c29f7383c14ede0af9cb64be9f3eee63714bc73c..487d2b07dba29c903cfd87a8dc7f99483084ebb6/compose/material"
+    },
+    {
+      "id": "compose-material-3",
+      "name": "Compose Material 3",
+      "version": "1.3.0-beta04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3#1.3.0-beta04",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/f5541f29d045c6ba9734689ec67891f8d667412b..cd4111597651ae0fbd21781f47d06fb3a214bbd6/compose/material3"
+    },
+    {
+      "id": "compose-material3-adaptive",
+      "name": "Compose Material3 Adaptive",
+      "version": "1.0.0-beta04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3-adaptive#1.0.0-beta04",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixes the issue that when hinge bounds get updated, the layout is not updated accordingly. (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/71e9cf129cea74cd1f99b2a08bc9c7f05e0f01e1\">71e9cf1</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/f5541f29d045c6ba9734689ec67891f8d667412b..967bd940b24778daf0ac5f9661bc881f4d0487c1/compose/material3/adaptive"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.7.0-beta04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.7.0-beta04",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c29f7383c14ede0af9cb64be9f3eee63714bc73c..487d2b07dba29c903cfd87a8dc7f99483084ebb6/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.7.0-beta04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.7.0-beta04",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Avoid crashes when measuring very large text lines (e.g. 10k characters) (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/8157ab1cf5d805e9d626b17e710df49bd6e5d680\">8157ab</a>)</li>\n <li>Disable software rendering support for the <code>GraphicsLayer</code> API. (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/35ddd8cb7873c11ccc56c73ad2e4ee4e96ae2b68\">35ddd8</a>)</li>\n <li>Fix for a crash in layer persistence logic. (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/70b13e38e559c9516a79d6d8d39a6cacea4421a0\">70b13e</a>)</li>\n <li>Reusing layer objects optimization was reverted, as it caused rendering issues. (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/70b13e38e559c9516a79d6d8d39a6cacea4421a0\">70b13e</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c29f7383c14ede0af9cb64be9f3eee63714bc73c..487d2b07dba29c903cfd87a8dc7f99483084ebb6/compose/ui"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.8.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.8.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue where fragments without a container were immediately <code>DESTROYED</code> when starting a predictive back gesture. Now they are held in the <code>CREATED</code> state until after the gesture is complete. (<a href=\"https://android-review.googlesource.com/#/q/If6b83f7dbb655e0bebc99c3c769625626a7c4e8d\">If6b83</a>, <a href=\"https://issuetracker.google.com/issues/345244539\">b/345244539</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4cb33e7274271da73c61e9231b4d372300cecec4..c06fe0a3e7c61f31e0734f93bef3899fae9dc0f4/fragment"
+    },
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.4.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.4.0-beta01",
+      "detailsHtml": "<p>Use the 1.4.0 <a href=\"https://developer.android.com/jetpack/androidx/releases/media3#1.4.0\">stable version</a>.</p>",
+      "commitsUrl": null
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.8.0-beta04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.8.0-beta04",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Navigation now supports navigating with empty strings in path arguments. (<a href=\"https://android-review.googlesource.com/#/q/Ic5dbdd3b4786f62f4544a70b6786a269da8a37cc\">Ic5dbd</a>, <a href=\"https://issuetracker.google.com/issues/339481310\">b/339481310</a>)</li>\n <li>Improve error message for custom serializers declared directly on class fields via <code>@Serializable(with =...)</code> to clarify that this is currently an unsupported feature. (<a href=\"https://android-review.googlesource.com/#/q/I052b0e6a34c7e38520723e7c00a920dc7abe4eb7\">I052b0</a>, <a href=\"https://issuetracker.google.com/issues/341319151\">b/341319151</a>)</li>\n <li><code>SavedStateHandleFactory</code> test api can now be used in non-android tests but will require Robolectric to support argument parsing with Bundles. (<a href=\"https://android-review.googlesource.com/#/q/I76cdc4b40474680dbdb58e6b8a6451f0e228f9b1\">I76cdc</a>, <a href=\"https://issuetracker.google.com/issues/340966212\">b/340966212</a>)</li>\n <li>Fixed crash from restoring state when resuming the app after process death with using Type-Safe Navigation in Compose. (<a href=\"https://android-review.googlesource.com/#/q/Ia8f38fc59b8e4dac1910c5a593e1ec0585e59456\">Ia8f38</a>, <a href=\"https://issuetracker.google.com/issues/341801005\">b/341801005</a>)</li>\n <li>Fixed an issue in Navigation Compose where after canceling the Predictive Back Gesture, the <code>NavBackStackEntry</code> that the user returns to never returns back to the <code>RESUMED</code> Lifecycle State. This also ensures the returning destination correctly animates back in instead of snapping into place after a fling. (<a href=\"https://android-review.googlesource.com/#/q/I97a0c5fe7fe661a2fadfbb01346676482d426028\">I97a0c</a>, <a href=\"https://issuetracker.google.com/issues/346608857\">b/346608857</a>)</li>\n <li>When using Predictive back with Navigation Compose, the destination being popped will now have the proper z-order, correctly animating on top of the incoming destination. (<a href=\"https://android-review.googlesource.com/#/q/I2077b399fc9bc9a846da6ed17d63d002c8e8122f\">I2077b</a>, <a href=\"https://issuetracker.google.com/issues/345993681\">b/345993681</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9de5bf61f1fad1fd6da2b64fe350d3aa39dc5de1..5299742c3cf8497f1690c2399056af490673d29e/navigation"
+    },
+    {
+      "id": "privacysandbox-ads",
+      "name": "Privacysandbox Ads",
+      "version": "1.1.0-beta08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/privacysandbox-ads#1.1.0-beta08",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added support for protected app signals.</li>\n <li>Support multiple cloud providers for B&amp;A server auctions.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Experimental API <code>GetAdSelectionDataRequest::seller</code> is non-nullable. (<a href=\"https://android-review.googlesource.com/#/q/I680448540a29283fe627ec191d8b30585edc293c\">I68044</a>)</li>\n <li>Add <code>GetAdSelectionDataRequest::coordinatorOriginUri</code> Experimental API. (<a href=\"https://android-review.googlesource.com/#/q/I18c0bd8074a5366a2c2ab03e789da395abe29790\">I18c0b</a>)</li>\n <li>Added <code>updateSignals</code> API. (<a href=\"https://android-review.googlesource.com/#/q/Ia8512411048824718f8e0acce00607a1deb3fb3c\">Ia8512</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6a69101fd0edc8d02aa316df1f43e0552fd2d7c4..948119be341fa4affc055418e695d8c4c7e5e2e4/privacysandbox/ads"
+    },
+    {
+      "id": "privacysandbox-tools",
+      "name": "Privacysandbox Tools",
+      "version": "1.0.0-alpha09",
+      "url": "https://developer.android.com/jetpack/androidx/releases/privacysandbox-tools#1.0.0-alpha09",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Add support for enum classes annotated with <code>@PrivacySandboxValue</code>.</li>\n <li>Support for Privacy Sandbox UI alpha 09.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/a57d7d17753695012b58c9ce7ad55a8d39157e62..948119be341fa4affc055418e695d8c4c7e5e2e4/privacysandbox/tools"
+    },
+    {
+      "id": "privacysandbox-ui",
+      "name": "Privacysandbox Ui",
+      "version": "1.0.0-alpha09",
+      "url": "https://developer.android.com/jetpack/androidx/releases/privacysandbox-ui#1.0.0-alpha09",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Introduced <code>AbstractSandboxedUiAdapter</code> and <code>AbstractSandboxedUiAdapter.AbstractSession</code> abstract classes that can be used by UI providers to avoid implementing the entire <code>SandboxedUiAdapter</code> or <code>Session</code> interfaces. It is recommended for UI providers to use these abstract classes.</li>\n <li>Added <code>registerObserverFactory</code> logic that allows a <code>SessionObserverFactory</code> to be attached to a <code>SandboxedUiAdapter</code>. When a <code>SessionObserverFactory</code> is attached to an adapter, a <code>SessionObserver</code> will be created for each new UI session created for that adapter. The created <code>SessionObserver</code> will receive an <code>onSessionOpened</code> callback when the UI session is opened. When the UI presentation of the <code>Session</code>’s view changes, <code>SessionObserver.onUiContainerChanged</code> will be called. <code>onUiContainerChanged</code> is throttled and will be called at most every 200ms.</li>\n <li>Added <code>SandboxedSdkViewUiInfo</code> which can be created from the <code>Bundle</code> sent in <code>SessionObserver.onUiContainerChanged</code>. This object represents the UI state of the <code>SandboxedSdkView</code> that is hosting the UI session. It contains height and width information, a <code>Rect</code> representing the geometry of the view that is visible on screen, and an opacity hint that represents the opacity of the view.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add opacity hint to <code>SandboxedSdkViewUiInfo</code>. (<a href=\"https://android-review.googlesource.com/#/q/I093acd0cfe7506466497257f2732257274d1e15f\">I093ac</a>)</li>\n <li>Add <code>SessionObserver.onUiContainerChanged</code> and <code>SandboxedSdkViewUiInfo</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ie98bcf74e46b6b9cb4f3668f664935dd25620e11\">Ie98bc</a>)</li>\n <li>Add <code>SessionObserver</code> interface and registration logic. (<a href=\"https://android-review.googlesource.com/#/q/I047dc591b385780fb8c8b914832165b48ca8727d\">I047dc</a>)</li>\n <li>Add <code>AbstractSandboxedUiAdapter</code> and <code>AbstractSession</code>. (<a href=\"https://android-review.googlesource.com/#/q/I3617af7cec1902062750eaa6d6e3c9cad57ff87d\">I3617a</a>)</li>\n</ul>\n<p><strong>Known Issues</strong></p>\n<ul>\n <li>When the UI provider is in the same process as the client application, <code>SessionObserver.onUiContainerChanged</code> is not sent when the container scrolls.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6a69101fd0edc8d02aa316df1f43e0552fd2d7c4..948119be341fa4affc055418e695d8c4c7e5e2e4/privacysandbox/ui"
+    },
+    {
+      "id": "security-state",
+      "name": "Security-state-provider",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/security#security-state-1.0.0-alpha02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed logic of getting kernel version. (<a href=\"https://android-review.googlesource.com/#/q/I5602a8e1eaa48985d704622195f147a81828e4f0\">I5602a</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/f5541f29d045c6ba9734689ec67891f8d667412b..948119be341fa4affc055418e695d8c4c7e5e2e4/security/security-state"
+    },
+    {
+      "id": "test-core",
+      "name": "Test Core",
+      "version": "1.6.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#core-1.6.1",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-espresso",
+      "name": "Test Espresso",
+      "version": "3.6.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#espresso-3.6.1",
+      "detailsHtml": "<p>The following artifacts were released:</p>\n<ul>\n <li><code>androidx.test.espresso:espresso-accessibility:3.6.1</code></li>\n <li><code>androidx.test.espresso:espresso-core:3.6.1</code></li>\n <li><code>androidx.test.espresso:espresso-contrib:3.6.1</code></li>\n <li><code>androidx.test.espresso:espresso-idling-resource:3.6.1</code></li>\n <li><code>androidx.test.espresso:espresso-intents:3.6.1</code></li>\n <li><code>androidx.test.espresso:espresso-remote:3.6.1</code></li>\n <li><code>androidx.test.espresso:espresso-web:3.6.1</code></li>\n <li><code>androidx.test.espresso.idling:idling-concurrent:3.6.1</code></li>\n <li><code>androidx.test.espresso.idling:idling-net:3.6.1</code></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Upgrade accessibilitytestframework version (back) to 3.1.2.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-espresso-device",
+      "name": "Test Espresso Device",
+      "version": "1.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#espresso_device-1.0.1",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-junit-extensions",
+      "name": "Test JUnit Extensions",
+      "version": "1.2.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#junit-1.2.1",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-monitor",
+      "name": "Test Monitor",
+      "version": "1.7.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#monitor-1.7.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Catch and log NoSuchMethodError on forceEnableAppTracing calls</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-runner",
+      "name": "Test Runner",
+      "version": "1.6.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#runner-1.6.1",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-rules",
+      "name": "Test Rules",
+      "version": "1.6.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#rules-1.6.1",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-uiautomator",
+      "name": "Test Uiautomator",
+      "version": "2.4.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test-uiautomator#2.4.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Deprecated <code>Configurator#getKeyInjectionDelay</code> and <code>setKeyInjectionDelay</code> as the parameter is unused now that text is always injected directly rather than by key presses. (<a href=\"https://android-review.googlesource.com/#/q/I3bcc58975300f83c2e49b41ece57b7e2f0385265\">I3bcc5</a>).</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Updated the delay between <code>UiObject2</code> motion events to account for dynamic refresh rates (i.e. Smooth Display) (<a href=\"https://android-review.googlesource.com/#/q/I43f12c4d40dc21f000983572232796d5d6439330\">I43f12</a>).</li>\n <li>Reduced flakiness from accessibility node staleness on certain UIs by periodically invalidating the accessibility cache (<a href=\"https://android-review.googlesource.com/#/q/I3be25f8a627766be1fbb2760d2188ae69fda5ae9\">I3be25</a>).</li>\n <li>Fixed <code>StaleObjectException</code>s occurring when calling <code>toString</code> or <code>hashCode</code> on a stale <code>UiObject2</code>. (<a href=\"https://android-review.googlesource.com/#/q/I38ea13d4040879c0fe896434d760565de99ff50a\">I38ea1</a>).</li>\n <li>Improved <code>UiWatcher</code> performance by skipping unnecessary <code>waitForIdle</code> calls. (<a href=\"https://android-review.googlesource.com/#/q/I8c65ead246dee1d1d99562e0f7d934a9fa30db16\">I8c65e</a>).</li>\n <li>Fixed javadoc inaccuracies, especially to clarify when each <code>Configurator</code> parameter is used. (<a href=\"https://android-review.googlesource.com/#/q/Ie10b14bdc4d5010a360e285374f1835be6f5f8f3\">Ie10b1</a>, <a href=\"https://android-review.googlesource.com/#/q/I7163105da85bf3cb8a2cb7f6f9c1fdfb94ec8f4f\">I71631</a>).</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4f8d91d904a453dc1b9661cb43ea02b62436a1e6..948119be341fa4affc055418e695d8c4c7e5e2e4/test/uiautomator/uiautomator"
+    },
+    {
+      "id": "wear-protolayout",
+      "name": "Wear ProtoLayout",
+      "version": "1.2.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-protolayout#1.2.0-alpha05",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Add <code>hasText</code> method to <code>Material.CompactChip</code> to check whether the text content has been set. (<a href=\"https://android-review.googlesource.com/#/q/I6e8fc44f8f16016c32d958be538ae8b1428e961d\">I6e8fc</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li><code>FontFamily</code> const are moved to be in <code>FontStyle</code> instead of its Builder class. (<a href=\"https://android-review.googlesource.com/#/q/I06cedbe09c134ea693b77b2ed171c60d82113614\">I06ced</a>)</li>\n <li>Update <code>FontSetting.weight</code> and <code>FontSetting.width</code> API to include Range annotations and change weight's parameter to be int. (<a href=\"https://android-review.googlesource.com/#/q/Ia726c90657bf0c11b8feb8497e1e646e17da6762\">Ia726c</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Non-scalable texts in Material library now work correctly with Android 14's non-linear font scaling. (<a href=\"https://android-review.googlesource.com/#/q/I6601e2af6f197ac7da8407a43349bad799fecbc5\">I6601e</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/473554f275109d78164adca6b6cea539aed8b68b..948119be341fa4affc055418e695d8c4c7e5e2e4/wear/protolayout"
+    },
+    {
+      "id": "wear-tiles",
+      "name": "Wear Tiles",
+      "version": "1.4.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-tiles#1.4.0-alpha05",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/473554f275109d78164adca6b6cea539aed8b68b..948119be341fa4affc055418e695d8c4c7e5e2e4/wear/tiles"
+    }
+  ]
+}
