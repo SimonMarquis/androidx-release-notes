@@ -1,0 +1,33 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#july_18_2023",
+  "title": "July 18, 2023",
+  "releasedOn": "2023-07-18",
+  "updated": "2023-07-18T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#july_18_2023",
+  "components": [
+    {
+      "id": "benchmark",
+      "name": "Benchmark",
+      "version": "1.2.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/benchmark#1.2.0-beta01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix warnings being sometimes suppressed in Benchmark output in Studio, and workaround leading whitespaces from Benchmark output not showing up in Studio (<a href=\"https://android-review.googlesource.com/#/q/Ia61d0fdc52ca0de2ece777ea6dd76bc77876fcf2\">Ia61d0</a>, <a href=\"https://issuetracker.google.com/issues/227205461\">b/227205461</a>, <a href=\"https://issuetracker.google.com/issues/286306579\">b/286306579</a>, <a href=\"https://issuetracker.google.com/issues/285912360\">b/285912360</a>)</li>\n <li>Fixed comment for <code>FrameTimingMetric</code>. The submetric is named <code>frameDurationCpuMs</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ib097f4f633ede0f2932aaaff7c9d5dbbb74daf88\">Ib097f</a>, <a href=\"https://issuetracker.google.com/issues/288830934\">b/288830934</a>).</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3b5b931546a48163444a9eddc533489fcddd7494..c2c1745b1d05b772c7bbe82834a9197ba5b85114/benchmark"
+    },
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.5.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.5.0",
+      "detailsHtml": "<p><strong>Experimental K2 support</strong></p>\n<ul>\n <li>Compose compiler 1.5.0 provides experimental support for <a href=\"https://kotlinlang.org/docs/whatsnew19.html#try-the-k2-compiler-in-your-project\">K2 compiler</a>. Some Compose features are not supported with K2 yet and will be coming in the future versions of the compiler.</li>\n</ul>\n<p><strong>Important changes since 1.4.0</strong></p>\n<ul>\n <li>Kotlin version is updated to 1.9.0.</li>\n <li><a href=\"https://kotlinlang.org/docs/functions.html#named-arguments\">Named arguments</a> for <code>@Composable</code> lambda calls have been deprecated. This feature is relying on internal compiler APIs and will not be supported by K2.</li>\n <li>Added a diagnostic to verify <code>@Composable</code> annotation on expect/actual calls. Both declarations are expected to have matching annotations.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/a0c8102678bd6a0e2f5cf2df3d220b4fe85cba5e..da73ca08c9fa56221ac7d21a156934ddffa94a78/compose/compiler"
+    },
+    {
+      "id": "tracing",
+      "name": "Tracing",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/tracing#perfetto-1.0.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Renamed <code>androidx.tracing.perfetto.Trace</code> to <code>androidx.tracing.perfetto.PerfettoSdkTrace</code> (<a href=\"https://android-review.googlesource.com/#/q/I44af824893288c17c792369058132cca3ac61f1b\">I44af8</a>)</li>\n <li>Renamed \"exit code\" to \"result code\" constants in the protocol for consistency (<a href=\"https://android-review.googlesource.com/#/q/Id1d1e87b1b461e0c6598a5c5425fa73054dcc3b7\">Id1d1e</a>)</li>\n <li>Renamed <code>EnableTracingResponse</code> to <code>Response</code>. (<a href=\"https://android-review.googlesource.com/#/q/I56275818234555399521f104067f83c6e34ac258\">I56275</a>)</li>\n <li>Added an option to enable cold start tracing in a persistent mode. Added a function to clear (persistent or not) cold start tracing. (<a href=\"https://android-review.googlesource.com/#/q/Iaa09d59477d4b8d3aa342422a8f6bcc12d866c5f\">Iaa09d</a>)</li>\n <li>Made Tracing Perfetto SDK APIs consistent with <code>android.os.Trace</code>. (<a href=\"https://android-review.googlesource.com/#/q/I73ba07ca6cc4bd2b6519553c395fe9075a49fe75\">I73ba0</a>, <a href=\"https://issuetracker.google.com/issues/282199917\">b/282199917</a>)</li>\n <li>Moved to a factory pattern for <code>LibrarySource</code> allowing for future use-cases (e.g. loading the <code>.so</code> file directly) to be easily added to the API if needed. (<a href=\"https://android-review.googlesource.com/#/q/I128df0728ce971ca2ed37c278b1bfe0cc2521982\">I128df</a>)</li>\n <li>Making <code>enableTracingColdStart</code> parameters match <code>enableTracingImmediate</code> (<a href=\"https://android-review.googlesource.com/#/q/I541269228ee33cfc73fe53e64032ddd00d62997f\">I54126</a>)</li>\n <li>Removed <code>killProcess</code> argument in <code>enableTracingColdStart</code> (<a href=\"https://android-review.googlesource.com/#/q/I81c4de80f211ad49bc46e6fe8255491850609252\">I81c4d</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3b5b931546a48163444a9eddc533489fcddd7494..c2c1745b1d05b772c7bbe82834a9197ba5b85114/tracing"
+    }
+  ]
+}
