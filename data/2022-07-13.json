@@ -1,0 +1,41 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#july_13_2022",
+  "title": "July 13, 2022",
+  "releasedOn": "2022-07-13",
+  "updated": "2022-07-13T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#july_13_2022",
+  "components": [
+    {
+      "id": "appcompat",
+      "name": "AppCompat",
+      "version": "1.5.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.5.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Add an overridable flag to disable the default switch width adjustment. (<a href=\"https://android-review.googlesource.com/#/q/I37cb751f335e5388d09afdd3aafa91a47bd4d4b9\">I37cb7</a>)</li>\n <li>Add <code>@FloatRange</code> annotation to thumb position getter API (<a href=\"https://android-review.googlesource.com/#/q/If524cd6196636c1dae353c6b7261f5136a3aa180\">If524c</a>)</li>\n <li>Add missing nullability annotations to <code>AnimatedStateListDrawableCompat</code> (<a href=\"https://android-review.googlesource.com/#/q/Ieb4ec34c6bb43fb18a74e495fb322c65123883f3\">Ieb4ec</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Finalize <code>AppCompat</code> APIs for 1.5.0-beta01 (<a href=\"https://android-review.googlesource.com/#/q/I2a43d45452aef36c958e780c0678b2f62738b1f1\">I2a43d</a>, <a href=\"https://issuetracker.google.com/issues/236866227\">b/236866227</a>)</li>\n <li>Changing <code>className</code> value for <code>ActionMenuItemView</code> to treat it as a <code>Button</code> (<a href=\"https://android-review.googlesource.com/#/q/I5ee1c4f0d26e49c647a823a6d9b7ed32007d8441\">I5ee1c</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7ca43e00a517eaeeedc0a21f482b17f06e3d2181..8fda1c7005de1555e6ae9b7a1ae5657c3b91eba7/appcompat"
+    },
+    {
+      "id": "emoji2",
+      "name": "Emoji2",
+      "version": "1.2.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/emoji2#1.2.0-beta01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>No changes from the last version (this release is to support the AppCompat release).</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c0a89ec374961b3015097ab307ebb8196dbe3888..8fda1c7005de1555e6ae9b7a1ae5657c3b91eba7/emoji2"
+    },
+    {
+      "id": "games-activity",
+      "name": "Games-Activity",
+      "version": "1.2.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/games#games-activity-1.2.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed issues with missing .aar file in previous release.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "games-text-input",
+      "name": "Games-Text-Input",
+      "version": "1.1.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/games#games-text-input-1.1.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed issues with missing .aar file in previous release.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/opt/gamesdk/+log/4f851ef851998ea2cb65dad519f595377fd73fcf..df59ba84ac245cfd9db805acc925afd4b19c5566/GameTextInput"
+    }
+  ]
+}

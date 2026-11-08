@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#july_21_2022",
+  "title": "July 21, 2022",
+  "releasedOn": "2022-07-21",
+  "updated": "2022-07-21T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#july_21_2022",
+  "components": [
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.0.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.0.0-beta02",
+      "detailsHtml": "<p>This release corresponds to the <a href=\"https://github.com/google/ExoPlayer/releases/tag/r2.18.1\">ExoPlayer 2.18.1 release</a>.</p>\n<ul>\n <li>Core library:\n  <ul>\n   <li>Ensure that changing the <code>ShuffleOrder</code> with <code>ExoPlayer.setShuffleOrder</code> results in a call to <code>Player.Listener#onTimelineChanged</code> with <code>reason=Player.TIMELINE_CHANGE_REASON_PLAYLIST_CHANGED</code> (<a href=\"https://github.com/google/ExoPlayer/issues/9889\">#9889</a>).</li>\n   <li>For progressive media, only include selected tracks in buffered position (<a href=\"https://github.com/google/ExoPlayer/issues/10361\">#10361</a>).</li>\n   <li>Allow custom logger for all ExoPlayer log output (<a href=\"https://github.com/google/ExoPlayer/issues/9752\">#9752</a>).</li>\n   <li>Fix implementation of <code>setDataSourceFactory</code> in <code>DefaultMediaSourceFactory</code>, which was non-functional in some cases (<a href=\"https://github.com/androidx/media/issues/116\">#116</a>).</li>\n  </ul></li>\n <li>Extractors:\n  <ul>\n   <li>Fix parsing of H265 short term reference picture sets (<a href=\"https://github.com/google/ExoPlayer/issues/10316\">#10316</a>).</li>\n   <li>Fix parsing of bitrates from <code>esds</code> boxes (<a href=\"https://github.com/google/ExoPlayer/issues/10381\">#10381</a>).</li>\n  </ul></li>\n <li>DASH:\n  <ul>\n   <li>Parse ClearKey license URL from manifests (<a href=\"https://github.com/google/ExoPlayer/issues/10246\">#10246</a>).</li>\n  </ul></li>\n <li>UI:\n  <ul>\n   <li>Ensure TalkBack announces the currently active speed option in the playback controls menu (<a href=\"https://github.com/google/ExoPlayer/issues/10298\">#10298</a>).</li>\n  </ul></li>\n <li>RTSP:\n  <ul>\n   <li>Add VP8 fragmented packet handling (<a href=\"https://github.com/androidx/media/pull/110\">#110</a>).</li>\n  </ul></li>\n <li>Leanback extension:\n  <ul>\n   <li>Listen to <code>playWhenReady</code> changes in <code>LeanbackAdapter</code> (<a href=\"https://github.com/google/ExoPlayer/issues/10420\">10420</a>).</li>\n  </ul></li>\n <li>Cast:\n  <ul>\n   <li>Use the <code>MediaItem</code> that has been passed to the playlist methods as <code>Window.mediaItem</code> in <code>CastTimeline</code> (<a href=\"https://github.com/androidx/media/issues/25\">#25</a>, <a href=\"https://github.com/google/ExoPlayer/issues/8212\">#8212</a>).</li>\n   <li>Support <code>Player.getMetadata()</code> and <code>Listener.onMediaMetadataChanged()</code> with <code>CastPlayer</code> (<a href=\"https://github.com/androidx/media/issues/25\">#25</a>).</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": "https://github.com/androidx/media/commits/1.0.0-beta02"
+    }
+  ]
+}
