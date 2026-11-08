@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#february_2_2021",
+  "title": "February 2, 2021",
+  "releasedOn": "2021-02-02",
+  "updated": "2021-02-02T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#february_2_2021",
+  "components": [
+    {
+      "id": "constraintlayout-compose",
+      "name": "ConstraintLayout-compose",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-compose-1.0.0-alpha01",
+      "detailsHtml": "<p>First release of the library, providing inline and external DSLs to express constraints.</p>",
+      "commitsUrl": null
+    }
+  ]
+}

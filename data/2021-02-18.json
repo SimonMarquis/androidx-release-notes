@@ -1,0 +1,33 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#february_18_2021",
+  "title": "February 18, 2021",
+  "releasedOn": "2021-02-18",
+  "updated": "2021-02-18T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#february_18_2021",
+  "components": [
+    {
+      "id": "room",
+      "name": "Room",
+      "version": "2.3.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.3.0-beta02",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>\n  <p>Room now has experimental support for Kotlin Symbol Processing <a href=\"http://github.com/google/ksp\">KSP</a>.</p>\n  <p>KSP is a replacement for KAPT to run annotation processors natively on the Kotlin compiler, significantly reducing build times.</p>\n  <p>To use Room with KSP, you can apply the KSP Gradle plugin and replace the <code>kapt</code> configuration in your build file with <code>ksp</code>. For example, instead of <code>kapt 'androidx.room:room-compiler:2.3.0-beta02'</code> use <code>ksp 'androidx.room:room-compiler:2.3.0-beta02'</code>. See the <a href=\"https://github.com/google/ksp/blob/master/docs/quickstart.md\">KSP documentation</a> for more details.</p>\n  <p>Note that since KSP is experimental, it is recommended to still use KAPT for production code. The reduction of build times is only applicable if there are no other processors that use KAPT. See <a href=\"https://issuetracker.google.com/issues/160322705\">b/160322705</a> for known issues.</p>\n </li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/aee18b103203a91ee89df91f0af5df2ecff356d6..028c82c1173bb9300dd314de4118eb21d92156d1/room"
+    },
+    {
+      "id": "window",
+      "name": "Window",
+      "version": "1.0.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/window#1.0.0-alpha03",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Emit an empty value for WindowLayoutInfo when the OEM implementation is empty. This should make it easier to use the library on more devices. Since the APIs are asynchronous it is still recommended that apps write some defensive code and emit a default value after a timeout. We do not have any guarantees on OEM implementations and the initial value may be delayed.</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Emit an empty value when the OEM library is missing. (<a href=\"https://android-review.googlesource.com/#/q/Ide935358cb94670673234f2ac6fcc8c689b63244\">Ide935</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/aee18b103203a91ee89df91f0af5df2ecff356d6..080f233e07421eca8f842f05f11c12b4cdb84f5b/window/window"
+    },
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.7.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.7.0-alpha01",
+      "detailsHtml": "<strong>Note:</strong><span> WorkManager Version 2.7.0-alpha01 is <strong>only compatible</strong> with the Android 12 Developer Preview 1 SDK.</span> \n<p><strong>New Features</strong></p>\n<ul>\n <li>\n  <p>WorkManager introduces a new<code>WorkRequest.Builder.setExpedited(...)</code> API to take into account the <a href=\"https://developer.android.com/about/versions/12/behavior-changes-12#foreground-service-launch-restrictions\">foreground Service restrictions</a> in Android 12.</p>\n  <p>Applications can no longer launch a foreground service when they are in the background. Therefore, to better support long running work which was previously bound to the lifecycle of a foreground service, applications can mark <code>WorkRequest</code>s as <a href=\"https://developer.android.com/reference/android/app/job/JobInfo.Builder#setExpedited(boolean)\"><em>expedited</em></a>.</p>\n  <p>This API is a replacement for the <code>setForegroundAsync(...)</code> / <code>setForeground(...)</code> APIs which are now <strong>deprecated</strong>.</p>\n  <p>When using <code>setExpedited(...)</code>, WorkManager delegates to expedited jobs in <code>JobScheduler</code> starting Android 12, while providing backwards compatibility on prior versions of Android by delegating to foreground services,</p>\n </li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add support for expedited <code>WorkRequest</code>s.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b32e1d4efc3b6976da585fb8783f913e92108428..51b9293137916801ce8564a523a6ae77398694c1/work"
+    }
+  ]
+}
