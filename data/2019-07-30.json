@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#july_30_2019",
+  "title": "July 30, 2019",
+  "releasedOn": "2019-07-30",
+  "updated": "2019-07-30T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#july_30_2019",
+  "components": [
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.2.0-rc01",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed a bug in the AlarmManager implementation that causes the Service to shutdown prematurely and resulting in a <code>RejectedExecutionException</code> in rare cases. (<a href=\"https://android-review.googlesource.com/1092374\">aosp/1092374</a>) (<a href=\"https://issuetracker.google.com/138238197\">b/138238197</a>).</li>\n <li>Added a workaround for a <code>NullPointerException</code> when using <code>JobScheduler</code> APIs on some devices. (<a href=\"https://android-review.googlesource.com/1091020\">aosp/1091020</a>) (<a href=\"https://issuetracker.google.com/138364061\">b/138364061</a>), (<a href=\"https://issuetracker.google.com/138441699\">b/138441699</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/57828f2feae3e65ae15c1cd8acd4f56af451ce5e..cb0c2f6acf089f2ad79726ab04dc2a56335999e4/work"
+    }
+  ]
+}

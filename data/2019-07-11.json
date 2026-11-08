@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#july_11_2019",
+  "title": "July 11, 2019",
+  "releasedOn": "2019-07-11",
+  "updated": "2019-07-11T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#july_11_2019",
+  "components": [
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.1.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.1.0",
+      "detailsHtml": "<p><strong>Important changes since 2.0.1</strong></p>\n<ul>\n <li><code>work-runtime-ktx</code> now requires Java 8. If you run into any issues, you can add the following to your <code>build.gradle</code>: <code>kotlinOptions { jvmTarget = \"1.8\" }</code></li>\n <li>Added on-demand initialization for WorkManager, which will create WorkManager only when referenced. <a href=\"https://issuetracker.google.com/127497100\">b/127497100</a> To set up your project for on-demand initialization:\n  <ol>\n   <li><a href=\"https://developer.android.com/topic/libraries/architecture/workmanager/advanced/custom-configuration#remove-default\">Disable the automatic initializer</a>.</li>\n   <li>Implement <code>Configuration.Provider</code> on your custom <code>Application</code> object.</li>\n   <li>Change all references of <code>WorkManager.getInstance()</code> to <code>WorkManager.getInstance(Context)</code>. As part of this change, we have deprecated <code>WorkManager.getInstance()</code>. It is always safer to call the new <code>WorkManager.getInstance(Context)</code> replacement, even if you're not doing on-demand initialization.</li>\n  </ol></li>\n <li><code>PeriodicWorkRequest</code>s now support initial delays. You can use the <code>setInitialDelay</code> method on <code>PeriodicWorkRequest.Builder</code> to set an initial delay. <a href=\"https://issuetracker.google.com/111404867\">b/111404867</a></li>\n <li>Added the ability to delegate to one or more registered <code>WorkerFactory</code>s using <code>DelegatingWorkerFactory</code>. <a href=\"https://issuetracker.google.com/131435993\">b/131435993</a></li>\n <li>Added the ability to customize the <code>Executor</code> used by WorkManager for all its internal book-keeping via <code>Configuration.Builder.setTaskExecutor</code>.</li>\n <li>Added the ability to create unit testable <code>Worker</code> and <code>ListenableWorker</code> classes by using <code>TestWorkerBuilder</code> and <code>TestListenableWorkerBuilder</code> in the <code>work-testing</code> artifact.\n  <ul>\n   <li>Note that <code>work-testing</code> now pulls in Kotlin as a dependency and includes several Kotlin extensions by default.</li>\n  </ul></li>\n <li>Added run attempt count to <code>WorkInfo</code>. <a href=\"https://issuetracker.google.com/127290461\">b/127290461</a></li>\n <li><code>Data</code> types can now store and retrieve bytes and byte arrays. This does NOT change the maximum size of <code>Data</code> objects.</li>\n <li>WorkManager now depends on <code>Room 2.1.0</code>, which should fix some database issues.</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

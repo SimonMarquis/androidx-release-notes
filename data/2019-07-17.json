@@ -1,0 +1,41 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#july_17_2019",
+  "title": "July 17, 2019",
+  "releasedOn": "2019-07-17",
+  "updated": "2019-07-17T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#july_17_2019",
+  "components": [
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.1.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.1.0-rc02",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed a crash in <code>FragmentPagerAdapter</code> and <code>FragmentStatePagerAdapter</code> when removing the current item. (<a href=\"https://issuetracker.google.com/issues/137209870\">b/137209870</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/31e072b23ddd65615efc5f3fbece2276b6b5cae4..16e3ea9c8519ff086ea5f0bbc4d6fa84743e87f1/fragment"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.1.0-beta01",
+      "detailsHtml": "<strong>Caution:</strong><span> This version contains an unintentional dependency on <code>org.jacoco:org.jacoco.agent:0.8.3</code>, which can cause a build failure. Please update to the latest version, in which this dependency has been removed.</span>   <strong>Note:</strong><span> This version is dependent on the Java 8 programming language. Please read <a href=\"https://developer.android.com/studio/write/java8-support\">Use Java 8 language features</a> to learn how to use it in your project.</span> \n<p><strong>New features</strong></p>\n<ul>\n <li><code>NavigationUI</code> now animates the removal of the Up button when using <code>setupWithNavController()</code> with a <code>Toolbar</code> or <code>CollapsingToolbarLayout</code>. (<a href=\"https://issuetracker.google.com/issues/131403621\">b/131403621</a>)</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed a timing issue when using multiple NavHostFragments with the same container with <code>findNavController()</code>. (<a href=\"https://issuetracker.google.com/issues/136021571\">b/136021571</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/498e1c39f543ee174434d4fc26e26219c298e9cd..e08a521e6ca90dc09329823c31c733d69a1164cf/navigation"
+    },
+    {
+      "id": "viewpager2",
+      "name": "ViewPager2",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/viewpager2#1.0.0-beta01",
+      "detailsHtml": "<strong>Caution:</strong><span> This version contains an unintentional dependency on <code>org.jacoco:org.jacoco.agent:0.8.3</code>, which can cause a build failure. Please update to the latest version, in which this dependency has been removed.</span> \n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fix for <code>ViewPager2.updateCurrentItem</code> crash while scrolling and updating data-set</li>\n <li>Fix for <code>NullPointerException</code> crash related to <code>ViewPager2.isLayoutRtl</code></li>\n <li><code>TOUCH_SLOP_PAGING</code> now a default touch slop</li>\n <li><code>OnPageChangeCallback</code> events fixed for empty adapters (page <code>0</code> instead of <code>-1</code> for parity with <code>ViewPager1</code>)</li>\n</ul>\n<p><strong>Known issues</strong></p>\n<ul>\n <li>We are still working on the <a href=\"https://issuetracker.google.com/issues?q=hotlistid:814487%20status:open%20targetedto:(6.1%20%7C%206.3)\">remaining open issues</a> before moving to Stable</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/75429d194b9c286a3b71cd8bd7468c25dd25cd59..6fe77d4733bc59a2d99d9266e4b7593952f9667a/viewpager2"
+    },
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.2.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.2.0-beta01",
+      "detailsHtml": "<strong>Caution:</strong><span> This version contains an unintentional dependency on <code>org.jacoco:org.jacoco.agent:0.8.3</code>, which can cause a build failure. Please update to the latest version, in which this dependency has been removed.</span> \n<p><strong>New features</strong></p>\n<ul>\n <li><code>androidx.work:work-gcm:2.2.0-beta01</code> is a new Maven artifact which supports the use of GCMNetworkManager as a scheduler when Google Play Services is available for API levels &lt;= 22. This is an <em>optional</em> dependency that helps with more reliable and performant background processing on older API versions. If your app uses Google Play Services, add this dependency to your gradle file to automatically get GCMNetworkManager support. If Play Services is not available, WorkManager will continue to fall back to AlarmManager on older devices.</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fix for <code>IllegalArgumentException</code> when tracking network state on Nvidia Shield K1 tablets. (<a href=\"https://android-review.googlesource.com/1010188\">aosp/1010188</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/41741982b76f2249a5fc71f2b2fa86aed5e6b6df..32988b2236646245cde4cd158dedbf8c6b2fd0c2/work"
+    }
+  ]
+}

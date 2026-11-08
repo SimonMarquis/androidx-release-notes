@@ -1,0 +1,41 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#july_19_2019",
+  "title": "July 19, 2019",
+  "releasedOn": "2019-07-19",
+  "updated": "2019-07-19T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#july_19_2019",
+  "components": [
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.1.0-rc03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.1.0-rc03",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed an issue where calling <code>postponeEnterTransition()</code> with a timeout more than once would not cancel previous timeouts. (<a href=\"https://issuetracker.google.com/issues/137797118\">b/137797118</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/16e3ea9c8519ff086ea5f0bbc4d6fa84743e87f1..fb2e8b50c7c18c54f770ad7544287ef9a260ec01/fragment"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.1.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.1.0-beta02",
+      "detailsHtml": "<strong>Note:</strong><span> This version is dependent on the Java 8 programming language. Please read <a href=\"https://developer.android.com/studio/write/java8-support\">Use Java 8 language features</a> to learn how to use it in your project.</span> \n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Removed unintentional jacoco dependency that was introduced in <code>2.1.0-beta01</code>. (<a href=\"https://issuetracker.google.com/issues/137782950\">b/137782950</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/e08a521e6ca90dc09329823c31c733d69a1164cf..ec4f7aa322b7f2b5aa14aff6dca9475b0df1345c/navigation"
+    },
+    {
+      "id": "viewpager2",
+      "name": "ViewPager2",
+      "version": "1.0.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/viewpager2#1.0.0-beta02",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Removed unintentional jacoco dependency that was introduced in <code>1.0.0-beta01</code>. (<a href=\"https://issuetracker.google.com/issues/137782951\">b/137782951</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6fe77d4733bc59a2d99d9266e4b7593952f9667a..4ec8012fa882d6e001173996e84466244675aa25/viewpager2"
+    },
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.2.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.2.0-beta02",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Removed unintentional jacoco dependency that was introduced in <code>2.2.0-beta01</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/32988b2236646245cde4cd158dedbf8c6b2fd0c2..57828f2feae3e65ae15c1cd8acd4f56af451ce5e/work"
+    }
+  ]
+}
