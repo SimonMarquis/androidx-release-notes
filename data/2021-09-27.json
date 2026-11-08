@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#september_27_2021",
+  "title": "September 27, 2021",
+  "releasedOn": "2021-09-27",
+  "updated": "2021-09-27T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#september_27_2021",
+  "components": [
+    {
+      "id": "constraintlayout",
+      "name": "ConstraintLayout",
+      "version": "2.1.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#2.1.1",
+      "detailsHtml": "",
+      "commitsUrl": null
+    }
+  ]
+}
