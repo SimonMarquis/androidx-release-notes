@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#august_3_2022",
+  "title": "August 3, 2022",
+  "releasedOn": "2022-08-03",
+  "updated": "2022-08-03T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#august_3_2022",
+  "components": [
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.3.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.3.0-rc02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/a7f0710ad21f556f0dde9bf7bdab6d2135170fd4..997bd961ea59ee8d9eb306712e881c227048e1da/compose/compiler"
+    }
+  ]
+}

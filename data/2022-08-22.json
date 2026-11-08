@@ -1,0 +1,25 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#august_22_2022",
+  "title": "August 22, 2022",
+  "releasedOn": "2022-08-22",
+  "updated": "2022-08-22T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#august_22_2022",
+  "components": [
+    {
+      "id": "test-core",
+      "name": "Test Core",
+      "version": "1.5.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#core-1.5.0-alpha02",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li>Modify ActivityScenario#launch to remove use of Bootstrap Activity API. This change should improve performance and stability of ActivityScenario#launch. ActivityScenario#getResult will now enforce that it can only be used with ActivityScenario#launchActivityForResult</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fix ActivityScenario#launch when targeting and running on Android T</li>\n <li>Use elapsedRealtime instead of currentTimeMillis to track ActivityScenario timeouts.</li>\n</ul>\n<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Update to kotlin stdlib 1.7.10</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "monitor",
+      "name": "Monitor",
+      "version": "1.6.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#monitor-1.6.0-alpha05",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li>Internal API changes to support ActivityScenario#launchActivityForResult</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}
