@@ -1,0 +1,137 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#january_22_2020",
+  "title": "January 22, 2020",
+  "releasedOn": "2020-01-22",
+  "updated": "2020-01-22T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#january_22_2020",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.1.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.1.0",
+      "detailsHtml": "<p><strong>Important changes since 1.0.0</strong></p>\n<ul>\n <li><strong>Lifecycle ViewModel SavedState Integration</strong>: <code>SavedStateViewModelFactory</code> is now the default factory used when using <code>by viewModels()</code>, the <code>ViewModelProvider</code> constructor, or <code>ViewModelProviders.of()</code> with a <code>ComponentActivity</code> or its subclasses.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/19547d654a4c370cb59ce66319f585a674f5ddf3..c8a1a3df9acb8af62c1ccd923b5be6b3defebcae/activity"
+    },
+    {
+      "id": "ads",
+      "name": "Ads",
+      "version": "1.0.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/ads#1.0.0-alpha04",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Performance improvements.</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li><code>AdvertisingIdInfo.getId()</code> now returns the Advertising ID from <code>AdvertisingIdProvider</code> directly, so the ID could be any format now.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/73974afa0b122e423606439e6d8e249da523534e..0a3d894e8fe0217f1312fb163a89ad51bf15794e/ads"
+    },
+    {
+      "id": "camera-camera2",
+      "name": "Camera-Camera2",
+      "version": "1.0.0-alpha09",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-camera2-1.0.0-alpha09",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li>\n  <p>Add camera2 interop path for extracting a Camera2 camera ID. You can extract the camera ID from <code>CameraInfo</code> using <code>Camera2CameraInfo.extractCameraId()</code>. The following code sample shows how to use this:</p>\n  <div></div>\n  <pre><code><span>Camera</span><span> </span><span>camera</span><span> </span><span>=</span><span> </span><span>provider</span><span>.</span><span>bindToLifecycle</span><span>(...);</span>\n<span>String</span><span> </span><span>cameraId</span><span> </span><span>=</span>\n<span>    </span><span>Camera2CameraInfo</span><span>.</span><span>extractCameraId</span><span>(</span><span>camera</span><span>.</span><span>getCameraInfo</span><span>());</span>\n</code></pre>\n  <p>The <code>Camera2CameraInfo</code> class requires the <code>ExperimentalCamera2Interop</code> markerClass.</p>\n </li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/94383d99a6ed372cd569bd5ab7d9aab5e0b056ba..0a3d894e8fe0217f1312fb163a89ad51bf15794e/camera/camera-camera2"
+    },
+    {
+      "id": "camera-core",
+      "name": "Camera-Core",
+      "version": "1.0.0-alpha09",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-core-1.0.0-alpha09",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li>The <code>SurfaceOrientedMeteringPointFactory</code> parameter <code>useCaseForSurface</code> was renamed to <code>useCaseForAspectRatio</code> and the reference documentation was expanded.</li>\n <li><code>FocusMeteringAction.Builder.from()</code> methods are replaced by the constructors <code>FocusMeteringAction.Builder()</code>.</li>\n <li>Removed <code>DisplayOrientedMeteringPointFactory(android.content.Context, androidx.camera.core.CameraSelector, float, float)</code>. Applications should use the constructor that takes a <code>Display</code> parameter and pass in the current display.</li>\n <li>Javadoc improvements for focus and metering APIs regarding <code>MeteringMode</code> and 3A Flags, and usage of <code>Display</code> parameter.</li>\n <li>Expanded the reference documentation for <code>setZoomRatio</code> and <code>setLinearZoom</code>.</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed issues when closing then opening cameras resulting in \"Precondition\" check failure.</li>\n <li>Fixed a <code>ConcurrentModificationException</code> that could occur when using torch and zoom APIs.</li>\n <li>Fixed issue to now select resolutions closer to requested resolution when a mod16 dimensions size is available.</li>\n <li><code>startFocusMetering</code> and <code>cancelFocusMetering</code> APIs now behave as documented, with correct timing and potentially returning errors when they occur.</li>\n <li>Fixed issue when a specific target resolution was requested with a crop aspect ratio on a device that doesn’t support such sizes. Now, a non-cropped size of sufficient resolution to bound the original request will be selected when available.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/94383d99a6ed372cd569bd5ab7d9aab5e0b056ba..0a3d894e8fe0217f1312fb163a89ad51bf15794e/camera/camera-core"
+    },
+    {
+      "id": "camera-extensions",
+      "name": "Camera-Extensions",
+      "version": "1.0.0-alpha06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#ext-1.0.0-alpha06",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "camera-view",
+      "name": "Camera-View",
+      "version": "1.0.0-alpha06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#view-1.0.0-alpha06",
+      "detailsHtml": "<p><strong>Updates</strong></p>\n<ul>\n <li>Various fixes and updates to support Camera Core &amp; Camera2 changes.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/94383d99a6ed372cd569bd5ab7d9aab5e0b056ba..0a3d894e8fe0217f1312fb163a89ad51bf15794e/camera/camera-view"
+    },
+    {
+      "id": "camera-lifecycle",
+      "name": "Camera-Lifecycle",
+      "version": "1.0.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#lifecycle-1.0.0-alpha03",
+      "detailsHtml": "<p><strong>Updates</strong></p>\n<ul>\n <li>Various fixes and updates to support Camera Core &amp; Camera2 changes.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/94383d99a6ed372cd569bd5ab7d9aab5e0b056ba..0a3d894e8fe0217f1312fb163a89ad51bf15794e/camera/camera-lifecycle"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.2.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.2.0",
+      "detailsHtml": "<p><strong>Important changes since 1.1.0</strong></p>\n<ul>\n <li><strong>FragmentContainerView</strong>: The <code>FragmentContainerView</code> is the strongly recommended container for dynamically added Fragments, replacing usage of <code>FrameLayout</code> or other layouts. It also supports the same <code>class</code>, <code>android:name</code>, and optional <code>android:tag</code> as the <code>&lt;fragment&gt;</code> tag, but uses a normal <code>FragmentTransaction</code> to add this initial fragment, instead of the custom code path used by <code>&lt;fragment&gt;</code>.</li>\n <li><strong><code>onDestroyView()</code> timing</strong>: Fragments now wait for exit animations, exit framework transitions, and exit AndroidX transitions (when using <a href=\"https://developer.android.com/jetpack/androidx/releases/transition#version_130_2\">Transition <code>1.3.0</code></a>) to complete before calling <code>onDestroyView()</code>.</li>\n <li><strong>Class based <code>add()</code> and <code>replace()</code></strong>: Added new overloads of <code>add()</code> and <code>replace()</code> on <code>FragmentTransaction</code> that take a <code>Class&lt;? extends Fragment&gt;</code> and optional <code>Bundle</code> of arguments. These methods use your <code>FragmentFactory</code> to construct an instance of the Fragment to add. Kotlin extensions that use reified types (i.e, <code>fragmentTransaction.replace&lt;YourFragment&gt;(R.id.container)</code>) have also been added to <code>fragment-ktx</code>.</li>\n <li><strong>Lifecycle ViewModel SavedState Integration</strong>: <code>SavedStateViewModelFactory</code> is now the default factory used when using <code>by viewModels()</code>, <code>by activityViewModels()</code>, the <code>ViewModelProvider</code> constructor, or <code>ViewModelProviders.of()</code> with a Fragment.</li>\n <li><strong>New Lint checks</strong>: Added a new Lint check that ensures you are using <code>getViewLifecycleOwner()</code> when observing <code>LiveData</code> from <code>onCreateView()</code>, <code>onViewCreated()</code>, or <code>onActivityCreated()</code>.</li>\n <li><strong><code>getFragmentManager()</code> deprecation</strong>: The <code>getFragmentManager()</code> and <code>requireFragmentManager()</code> methods on Fragment have been deprecated and replaced with a single <code>getParentFragmentManager()</code> method, which returns the non-null <code>FragmentManager</code> the Fragment is added to (you can use <code>isAdded()</code> to determine if it is safe to call).</li>\n <li><strong><code>FragmentManager.enableDebugLogging()</code> deprecation</strong>: The static <code>FragmentManager.enableDebugLogging</code> method has been deprecated. FragmentManager now respects <a href=\"https://developer.android.com/reference/android/util/Log#isLoggable(java.lang.String,%20int)\"><code>Log.isLoggable()</code></a> for the tag <code>FragmentManager</code>, allowing you to enable either <code>DEBUG</code> or <code>VERBOSE</code> logging without re-compiling your app.</li>\n</ul>\n<p><strong>Known Issues</strong></p>\n<ul>\n <li>Fragments referenced only via the <code>class</code> or <code>android:name</code> attribute on a <code>FragmentContainerView</code> are not kept by ProGuard automatically, requiring that you manually add a keep rule for each fragment class. (<a href=\"https://issuetracker.google.com/issues/142601969\">b/142601969</a>)</li>\n <li>When adding a <code>NavHostFragment</code> using <code>class</code> or <code>android:name</code> in XML with <code>FragmentContainerView</code>, you cannot use <code>findNavController()</code> in <code>onCreate()</code> of your Activity. (<a href=\"https://issuetracker.google.com/issues/142847973\">b/142847973</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/52c5cbd1c318a40cad51528d31aa6535f1ab38fe..905771170a6b905b05c195eb55273e8f0aade92b/fragment"
+    },
+    {
+      "id": "heifwriter",
+      "name": "Heifwriter",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/heifwriter#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fined tune logic to pick HEVC/HEIC encoder</li>\n <li>Improved the exception handling during the shutdown sequence</li>\n <li>Bug fixes for quality control mode</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/50a39caa72955aae0c75225fd9805ab537cbf049..0a3d894e8fe0217f1312fb163a89ad51bf15794e/heifwriter"
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.2.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.2.0",
+      "detailsHtml": "<p><strong>Important changes since 2.1.0</strong></p>\n<ul>\n <li><strong>Lifecycle Coroutine Integration</strong>: The new <code>lifecycle-runtime-ktx</code> artifact adds integration between Lifecycle and Kotlin coroutines. The <code>lifecycle-livedata-ktx</code> has also been expanded to take advantage of coroutines. See <a href=\"https://developer.android.com/topic/libraries/architecture/coroutines\">Use Kotlin coroutines with Architecture Components</a> for more details.</li>\n <li><strong><code>ViewModelProviders.of()</code> deprecation</strong>: <code>ViewModelProviders.of()</code> has been deprecated. You can pass a <code>Fragment</code> or <code>FragmentActivity</code> to the new <code>ViewModelProvider(ViewModelStoreOwner)</code> constructor to achieve the same functionality when using <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.2.0\">Fragment <code>1.2.0</code></a>.</li>\n <li><strong><code>lifecycle-extensions</code> Artifact Deprecation</strong>: With the above deprecation of <code>ViewModelProviders.of()</code>, this release marks the deprecation of the last API in <code>lifecycle-extensions</code> and this artifact should now be considered deprecated in its entirety. We strongly recommend depending on the specific Lifecycle artifacts you need (such as <code>lifecycle-service</code> if you’re using <code>LifecycleService</code> and <code>lifecycle-process</code> if you’re using <code>ProcessLifecycleOwner</code>) rather than <code>lifecycle-extensions</code> as there will not be a future <code>2.3.0</code> release of <code>lifecycle-extensions</code>.</li>\n <li><strong>Gradle Incremental Annotation Processor</strong>: Lifecycle's annotation processor is incremental by default. If your app is written in the Java 8 programming language you can use <code>DefautLifecycleObserver</code> instead; and if it's written in the Java 7 programming language you can use <code>LifecycleEventObserver</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/8e4cae9ad8deb81db632012ff7b4980108511947..6d46ea5e549b1ec0d0e48ff6b6e63eb6d34c242c/lifecycle"
+    },
+    {
+      "id": "lifecycle-viewmodel-savedstate",
+      "name": "Lifecycle-Viewmodel-Savedstate",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#viewmodel-savedstate-1.0.0",
+      "detailsHtml": "<p><strong>Important features in 1.0.0</strong></p>\n<ul>\n <li>New <strong>SavedStateHandle</strong> class was added. It enables your <code>ViewModel</code> classes to access and to contribute to the saved state. This object can be received in constructor of <code>ViewModel</code> class and factories provided by default by Fragments and AppCompatActivity will inject <code>SavedStateHandle</code> automatically.</li>\n <li><strong>AbstractSavedStateViewModelFactory</strong> was added. It allows you to create custom factories for your <code>ViewModel</code> and provide them access to <code>SavedStateHandle</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/149aa50d7509b6df4e5b1d1c1430468b816cf9a0..fee1737a1d380aa1435ae5fca6336ee350bad4e0/lifecycle/lifecycle-viewmodel-savedstate"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.2.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.2.0",
+      "detailsHtml": "<p><strong>Important changes since 2.1.0</strong></p>\n<ul>\n <li><strong>NavBackStackEntry</strong>: You can now call <code>NavController.getBackStackEntry()</code>, passing in the ID of a destination or navigation graph on the back stack. The returned <code>NavBackStackEntry</code> provides a Navigation-driven <code>LifecycleOwner</code>, <code>ViewModelStoreOwner</code> (the same returned by <code>NavController.getViewModelStoreOwner()</code>), and <code>SavedStateRegistryOwner</code>, in addition to providing the arguments used to start that destination.</li>\n <li><strong>Lifecycle ViewModel SavedState Integration</strong>: <code>SavedStateViewModelFactory</code> is now the default factory used when using <code>by navGraphViewModels()</code> or the <code>ViewModelProvider</code> constructor with a <code>ViewModelStoreOwner</code> returned by <code>NavController.getBackStackEntry()</code> or <code>NavController.getViewModelStoreOwner()</code>.</li>\n <li><strong>Query Parameter Support for Deep Links</strong>: Deep links with query parameters now support reordered query parameters; arguments that have a default value or are nullable are now optional when matching deep links.</li>\n <li><strong>Improved Animation Support</strong>: <code>NavHostFragment</code> now uses <code>FragmentContainerView</code> from <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.2.0\">Fragment 1.2.0</a>, fixing animation z-ordering issues and window insets dispatching to Fragments.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ecc5b7be8afa070b3e8381ad059773453c860324..1420d9e061d8a0ff92bf7b3d28a6bdc4f20d13f5/navigation"
+    },
+    {
+      "id": "sqlite",
+      "name": "SQLite",
+      "version": "2.1.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/sqlite#2.1.0",
+      "detailsHtml": "<p><strong>Important changes since 2.0.1</strong></p>\n<ul>\n <li>Support for <code>useNoBackupDirectory</code> which can be used to indicate that the database should be created in the no backup directory when using <code>SupportSQLiteOpenHelper</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1c41b4cf882cca6eac765d7f2b0911addd0edc0c..0642b56f5157707d35974d776ed1eccae38517f5/sqlite"
+    },
+    {
+      "id": "textclassifier",
+      "name": "TextClassifier",
+      "version": "1.0.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/textclassifier#1.0.0-alpha03",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<p><strong>API changes</strong></p>\n<ul>\n <li><code>setIncludeDefaultEntityTypes</code> has been renamed to <code>includeTypesFromTextClassifier</code></li>\n <li><code>setIncludedEntityTypes</code> has been renamed to <code>setIncludedTypes</code></li>\n <li><code>setExcludedEntityTypes</code> has been renamed to <code>setExcludedTypes</code></li>\n</ul>\n<p><strong>Bug fixes</strong></p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ddceab357394ac5ab55c825844f111afe9401261..0a3d894e8fe0217f1312fb163a89ad51bf15794e/textclassifier"
+    },
+    {
+      "id": "transition",
+      "name": "Transition",
+      "version": "1.3.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/transition#1.3.0",
+      "detailsHtml": "<p><strong>Important changes since 1.2.0</strong></p>\n<ul>\n <li><strong>Improvements for Fragment 1.2.0</strong>: Improved the integration with <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.2.0\">Fragment 1.2.0</a> to ensure that the Fragment’s View is not destroyed before the transition completes and that transitions are cancelled at the appropriate time</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/80680eca51be5c8483a0ad6f0b9466c99474ad5b..250921e7515d62adecbbc0083dc133d14dff542d/transition/transition"
+    },
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.3.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.3.0",
+      "detailsHtml": "<p><strong>Important changes since 2.2.0</strong></p>\n<ul>\n <li>Support for long running or important work via <code>ListenableWorker#setForegroundAsync()</code>.</li>\n <li>Support for Worker Progress via <code>ListenableWorker#setProgressAsync()</code>.</li>\n <li>WorkManager now packages additional lint rules as part of the library which helps catch bugs early.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/491f8d1faf067d76cfaf0c8e82561386861e55e1..cdec0090b957bd9020ff2462c3006cbb1381ddc6/work"
+    }
+  ]
+}
