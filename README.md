@@ -12,9 +12,16 @@ Browse AndroidX release notes across libraries and dates in one place.
 
 <a href="https://simonmarquis.github.io/androidx-release-notes/">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="art/desktop-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="art/desktop-light.png">
-    <img src="art/desktop-light.png" alt="AndroidX release notes desktop view; open the generated site">
+    <!-- Smartphone -->
+    <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="art/smartphone-dark.png">
+    <source media="(max-width: 600px)" srcset="art/smartphone-light.png">
+    <!-- Tablet -->
+    <source media="(min-width: 601px) and (max-width: 1023px) and (prefers-color-scheme: dark)" srcset="art/tablet-dark.png">
+    <source media="(min-width: 601px) and (max-width: 1023px)" srcset="art/tablet-light.png">
+    <!-- Desktop -->
+    <source media="(min-width: 1024px) and (prefers-color-scheme: dark)" srcset="art/desktop-dark.png">
+    <source media="(min-width: 1024px)" srcset="art/desktop-light.png">
+    <img src="art/desktop-light.png" alt="AndroidX release notes">
   </picture>
 </a>
 
