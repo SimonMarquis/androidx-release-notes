@@ -1,0 +1,89 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#february_5_2020",
+  "title": "February 5, 2020",
+  "releasedOn": "2020-02-05",
+  "updated": "2020-02-05T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#february_5_2020",
+  "components": [
+    {
+      "id": "core",
+      "name": "Core-splashscreen",
+      "version": "1.2.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.2.0",
+      "detailsHtml": "<p><strong>Major changes since 1.1.0</strong></p>\n<ul>\n <li>Added new APIs and bug fixes in <code>NotificationCompat</code></li>\n <li>Added new APIs to work with <code>BlendMode</code> introduced in AndroidQ in backwards-compatible way</li>\n <li>Added new APIs and bug fixes in accessibility compat</li>\n <li>Added new APIs to work with <code>ShortcutInfo</code></li>\n <li>Added new APIs to work with <code>WindowInsets</code></li>\n <li>Fixed backwards compatibility for bundle key strings between 28.0 (support library) and 1.1 (AndroidX) in <code>EditorInfoCompat</code>, <code>ShareCompat</code>, <code>WakefulBroadcastReceiver</code> and <code>InputConnectionCompat</code></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2eeb7cf736688188564be5ff2be9cc7a4f3bb3e0..42402e71d1e88fe3d2cec757175074fdf50b4c2b/core"
+    },
+    {
+      "id": "emoji",
+      "name": "Emoji",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/emoji#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li><a href=\"https://www.unicode.org/emoji/charts-12.0/emoji-released.html\">Emoji 12</a> and <a href=\"https://www.unicode.org/emoji/charts-12.1/emoji-released.html\">Emoji 12.1</a> are added to the bundled EmojiCompat font.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/50a39caa72955aae0c75225fd9805ab537cbf049..15eb802358e0836378e4daba5db3d88cf09b7f03/emoji"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.2.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.2.1",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fragments added via the <code>add</code> and <code>replace</code> methods that take a <code>Class</code> instance (or the Kotlin reified versions) now have their default constructor kept by ProGuard. (<a href=\"https://issuetracker.google.com/issues/148181315\">b/148181315</a>)</li>\n <li><code>FragmentStatePagerAdapter</code> and <code>FragmentPagerAdapter</code> no longer catch exceptions thrown by <code>FragmentManager</code> when running <code>finishUpdate()</code>. (<a href=\"https://android-review.googlesource.com/1208711/\">aosp/1208711</a>)</li>\n <li>Fixed an issue where <code>FragmentManager.findFragment()</code> did not work with fragments added via the <code>&lt;fragment&gt;</code> tag. (<a href=\"https://issuetracker.google.com/issues/147784323\">b/147784323</a>)</li>\n <li>Fragments inflated using the <code>&lt;fragment&gt;</code> tag now always receive a call to <code>onInflate()</code> before <code>onCreate()</code> when in the layout. (<a href=\"https://android-review.googlesource.com/1215856/\">aosp/1215856</a>)</li>\n <li>Calling <code>toString()</code> on a <code>FragmentManager</code> instance no longer throws a <code>NullPointerException</code> when the Activity is already destroyed. (<a href=\"https://issuetracker.google.com/issues/148189412\">b/148189412</a>)</li>\n</ul>\n<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Fragments <code>1.2.1</code> now depends on <a href=\"https://developer.android.com/jetpack/androidx/releases/lifecycle#viewmodel-savedstate-2.2.0\">Lifecycle ViewModel SavedState <code>2.2.0</code></a>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/905771170a6b905b05c195eb55273e8f0aade92b..b27fe92ff55203b778e3201a949a85c7c6c1bf76/fragment"
+    },
+    {
+      "id": "lifecycle-viewmodel-savedstate",
+      "name": "Lifecycle ViewModel SavedState",
+      "version": "2.2.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#viewmodel-savedstate-2.2.0",
+      "detailsHtml": "<p>Lifecycle ViewModel SavedState now shares the same version as other Lifecycle artifacts. The behavior of <code>2.2.0</code> is identical to the behavior of <code>1.0.0</code>.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/fee1737a1d380aa1435ae5fca6336ee350bad4e0..fc7c16e8d04b669a38ca27b96646e13d3ae5e733/lifecycle/lifecycle-viewmodel-savedstate"
+    },
+    {
+      "id": "media2",
+      "name": "Media2",
+      "version": "1.0.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media2#1.0.2",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.3.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.3.0-alpha01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>The new <code>navigation-testing</code> artifact provides a <code>TestNavHostController</code> class. This class provides an alternative to using a mock <code>NavController</code> when <a href=\"https://developer.android.com/guide/navigation/navigation-testing\">testing Navigation</a> that allows you to set the current destination and verify the back stack after navigation operations. (<a href=\"https://issuetracker.google.com/issues/140884273\">b/140884273</a>)</li>\n <li>The new <code>navigation-dynamic-features-fragment</code> (and its transitive dependency, <code>navigation-dynamic-features-runtime</code>) allows you to include destinations or entire navigation graphs (via <code>&lt;include-dynamic&gt;</code>) from <a href=\"https://developer.android.com/guide/app-bundle/dynamic-delivery\">feature modules</a>, providing seamless installation of on-demand feature modules when navigating to those destinations. See <a href=\"https://developer.android.com/guide/navigation/navigation-dynamic\">Navigate with feature modules</a> for more information. (<a href=\"https://issuetracker.google.com/issues/132170186\">b/132170186</a>)</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/navigation#2.2.1\">Navigation <code>2.2.1</code></a>: Deep links without query parameters now correctly ignore any query parameters rather than appending them to trailing <code>{argument}</code> elements or not matching the deep link. (<a href=\"https://issuetracker.google.com/issues/147447512\">b/147447512</a>)</li>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/navigation#2.2.1\">Navigation <code>2.2.1</code></a>: The <code>navigation-ui</code> ProGuard rules for <code>DrawerArrowDrawable</code> have been updated to ensure that <code>android.enableJetifier=true</code> is not required. (<a href=\"https://issuetracker.google.com/issues/147610424\">b/147610424</a>)</li>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/navigation#2.2.1\">Navigation <code>2.2.1</code></a>: The <code>navigation-common-ktx</code> module now has a unique manifest package name instead of sharing the same manifest package name as <code>navigation-runtime-ktx</code>. (<a href=\"https://android-review.googlesource.com/1141947/\">aosp/1141947</a>)</li>\n</ul>\n<p><strong>Dependency updates</strong></p>\n<ul>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/navigation#2.2.1\">Navigation <code>2.2.1</code></a>: Navigation <code>2.2.1</code> now depends on <a href=\"https://developer.android.com/jetpack/androidx/releases/lifecycle#viewmodel-savedstate-2.2.0\">Lifecycle ViewModel SavedState <code>2.2.0</code></a> and <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.2.1\">Fragment <code>1.2.1</code></a>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1420d9e061d8a0ff92bf7b3d28a6bdc4f20d13f5..a670497cb9ff2d13701f20ef5f25f14dd4548f22/navigation"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.2.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.2.1",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Deep links without query parameters now correctly ignore any query parameters rather than appending them to trailing <code>{argument}</code> elements or not matching the deep link. (<a href=\"https://issuetracker.google.com/issues/147447512\">b/147447512</a>)</li>\n <li>The <code>navigation-ui</code> ProGuard rules for <code>DrawerArrowDrawable</code> have been updated to ensure that <code>android.enableJetifier=true</code> is not required. (<a href=\"https://issuetracker.google.com/issues/147610424\">b/147610424</a>)</li>\n <li>The <code>navigation-common-ktx</code> module now has a unique manifest package name instead of sharing the same manifest package name as <code>navigation-runtime-ktx</code>. (<a href=\"https://android-review.googlesource.com/1141947/\">aosp/1141947</a>)</li>\n</ul>\n<p><strong>Dependency updates</strong></p>\n<ul>\n <li>Navigation <code>2.2.1</code> now depends on <a href=\"https://developer.android.com/jetpack/androidx/releases/lifecycle#viewmodel-savedstate-2.2.0\">Lifecycle ViewModel SavedState <code>2.2.0</code></a> and <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.2.1\">Fragment <code>1.2.1</code></a>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1420d9e061d8a0ff92bf7b3d28a6bdc4f20d13f5..3758a176b024534e6af6095fbd2f966627453d36/navigation"
+    },
+    {
+      "id": "recyclerview-selection",
+      "name": "Recyclerview Selection",
+      "version": "1.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/recyclerview#recyclerview-selection-1.1.0-rc01",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed an issue where RecyclerView is hard to scroll with a gesture selection if it interacts with a scrollable AppBarLayout (<a href=\"https://android-review.googlesource.com/c/1193934\">aosp/1193934</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ce2902e01f920f17637879b6c918ffe987d2f35b..ee84b31b9af04cf0f0b3b2f3c481950781771d49/recyclerview/recyclerview-selection"
+    },
+    {
+      "id": "webkit",
+      "name": "Webkit",
+      "version": "1.2.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/webkit#1.2.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/740cde70237dd276f8ad66dfe9528b1cdb5d54bb..15eb802358e0836378e4daba5db3d88cf09b7f03/webkit/webkit"
+    },
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.3.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.3.1",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Better manage the lifecycle of <code>Notification</code>s for long running <code>Worker</code>s that run when a foreground <code>Service</code> is active. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1218539\">aosp/1218539</a>, <a href=\"https://issuetracker.google.com/issues/147249312\">b/147249312</a>)</li>\n <li><code>WorkManager</code> now depends on <code>androidx.sqlite:sqlite-framework:2.1.0</code> stable. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1217729\">aosp/1217729</a>)</li>\n <li>Added lint rules to ensure that a <code>foregroundServiceType</code> is specified in the <code>AndroidManifest.xml</code> when using <code>foregroundServiceType</code>s in <code>ForegroundInfo</code>. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1214207\">aosp/1214207</a>, <a href=\"https://issuetracker.google.com/issues/147873061\">b/147873061</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/cdec0090b957bd9020ff2462c3006cbb1381ddc6..d7ffb1e3214adc08092397ca92881b05fb69521a/work"
+    }
+  ]
+}

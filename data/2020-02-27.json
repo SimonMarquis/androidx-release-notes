@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#february_27_2020",
+  "title": "February 27, 2020",
+  "releasedOn": "2020-02-27",
+  "updated": "2020-02-27T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#february_27_2020",
+  "components": [
+    {
+      "id": "window",
+      "name": "Window",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/window#1.0.0-alpha01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li><code>DisplayFeature</code>: This new API identifies disruptions in the continuous flat screen surfaces such as hinges or folds</li>\n <li><code>DeviceState</code>: This new API provides the current posture of the phone from a list of defined postures (For example, <code>CLOSED</code>, <code>OPENED</code>, <code>HALF_OPENED</code>, etc.)</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}
