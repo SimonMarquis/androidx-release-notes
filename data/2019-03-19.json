@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#march_19_2019",
+  "title": "March 19, 2019",
+  "releasedOn": "2019-03-19",
+  "updated": "2019-03-19T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#march_19_2019",
+  "components": [
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.1.0-alpha01",
+      "detailsHtml": "<p>This is the first alpha release of Navigation <code>2.1.0</code>.</p>\n<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Navigation now depends on <code>androidx.core:core:1.0.1</code> and <code>androidx.fragment:fragment:1.1.0-alpha05</code>. This release also removes the dependency on <code>androidx.legacy:legacy-support-core-utils:1.0.0</code>. <a href=\"https://issuetracker.google.com/128632612\">b/128632612</a></li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>A new <code>Navigation.createNavigateOnClickListener(NavDirections)</code> method has been added as an alternative to creating a click listener with a resource ID and Bundle. <a href=\"https://issuetracker.google.com/127631752\">b/127631752</a></li>\n <li><code>FragmentNavigator.instantiateFragment</code> is now deprecated. The default implementation now uses <code>FragmentFactory</code> to instantiate Fragments. <a href=\"https://issuetracker.google.com/119054429\">b/119054429</a></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Navigation no longer sends a null <code>Bundle</code> when there are arguments attached to a destination, fixing an issue when using <code>android:defaultValue=\"@null\"</code>. <a href=\"https://issuetracker.google.com/128531879\">b/128531879</a></li>\n <li>Safe Args now depends on KotlinPoet 1.1.0, fixing an issue with extremely long package names. <a href=\"https://issuetracker.google.com/123654948\">b/123654948</a></li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

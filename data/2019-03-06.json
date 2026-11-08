@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#march_6_2019",
+  "title": "March 6, 2019",
+  "releasedOn": "2019-03-06",
+  "updated": "2019-03-06T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#march_6_2019",
+  "components": [
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.0.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.0.0-rc02",
+      "detailsHtml": "<p>Navigation 2.0.0-rc02 provides new artifacts with the <code>androidx.navigation</code> group ID and changes its dependencies to the AndroidX equivalents.</p>\n<p>The behavior of 2.0.0-rc02 is identical to behavior to Navigation 1.0.0-rc02 and no changes to your code should be required to update from 1.0.0-rc02 besides updating your dependencies to match the <a href=\"https://developer.android.com/jetpack/androidx/releases/navigation#declaring_dependencies\">new dependencies</a>.</p>\n<p>Your project must have <a href=\"https://developer.android.com/jetpack/androidx/migrate\">migrated to AndroidX</a> to use 2.X releases of Navigation. Navigation 1.0 stable will be the last release using the Support Library dependencies; all future development beyond 1.0 will be based on AndroidX and build upon the 2.0 stable release.</p>",
+      "commitsUrl": null
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#march_22_2019",
+  "title": "March 22, 2019",
+  "releasedOn": "2019-03-22",
+  "updated": "2019-03-22T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#march_22_2019",
+  "components": [
+    {
+      "id": "room",
+      "name": "Room",
+      "version": "2.1.0-alpha06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.1.0-alpha06",
+      "detailsHtml": "<p><strong>API / Behavior Changes</strong></p>\n<ul>\n <li>Async transaction queries are now serialized such that Room will not use more than one thread for executing database transactions. <code>RoomDatabase.Builder.setTransactionExecutor(Executor)</code> was added to allow configuring the executor to be used for transactions.</li>\n <li><code>RoomDatabase.runInTransaction(Callable)</code> will no longer wrap checked exceptions into RuntimeExceptions. <a href=\"https://issuetracker.google.com/issues/128623748\">b/128623748</a></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a bug where the invalidation tracker would stop observing a content table if observers for both the content table and an external content FTS table were added. <a href=\"https://issuetracker.google.com/issues/128508917\">b/128508917</a></li>\n <li>Updated <code>Room</code> SQLite grammar to match SQLite 3.24.0. <a href=\"https://issuetracker.google.com/issues/110883668\">b/110883668</a></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "arch-core",
+      "name": "Arch Core",
+      "version": "2.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/arch#2.0.1",
+      "detailsHtml": "<ul>\n <li>Maximum number of threads in the ArchExecutor is increased from 2 to 4.</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

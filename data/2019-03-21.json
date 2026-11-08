@@ -1,0 +1,25 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#march_21_2019",
+  "title": "March 21, 2019",
+  "releasedOn": "2019-03-21",
+  "updated": "2019-03-21T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#march_21_2019",
+  "components": [
+    {
+      "id": "enterprise",
+      "name": "Enterprise",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/enterprise#1.0.0-alpha01",
+      "detailsHtml": "<p>This the first release of <code>androidx.enterprise:enterprise-feedback</code>.</p>\n<p><code>androidx.enterprise:enterprise-feedback:1.0.0-alpha01</code> introduces <code>KeyedAppStatesReporter</code> and <code>KeyedAppStatesService</code>, which allow apps to report state changes to EMMs (Enterprise Mobility Management).</p>\n<p>The commits included in this initial release can be found <a href=\"https://android.googlesource.com/platform/frameworks/support/+log/b0b22bbedaad3ad1f808037a7ada92f0335a71d3/enterprise\">here</a>.</p>\n<p><strong>Features</strong></p>\n<ul>\n <li><code>KeyedAppStatesReporter</code> can be used by apps to report state changes.</li>\n <li><code>KeyedAppStatesService</code> can be used by DPCs to receive and handle state changes.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "version": "1.1.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media#1.1.0-alpha03",
+      "detailsHtml": "<p>March 21st, 2019</p>\n<p><code>androidx.media:media:1.1.0-alpha03</code> is released. The full list of commits included in this version can be found <a href=\"https://android.googlesource.com/platform/frameworks/support/+log/e5cd630912f6f9165114ab5ae9b2aead36cfc713..8c6ad7c45d31d86030e9ad2d43f59472fb771a10/media\">here</a>.</p>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed crash of <code>MedaBrowserServiceCompat</code> when multiple <code>MediaBrowserCompat</code> try to connect to it. (<a href=\"https://android-review.googlesource.com/930246\">aosp/930246</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/e5cd630912f6f9165114ab5ae9b2aead36cfc713..8c6ad7c45d31d86030e9ad2d43f59472fb771a10/media"
+    }
+  ]
+}

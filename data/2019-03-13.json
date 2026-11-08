@@ -1,0 +1,185 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#march_13_2019",
+  "title": "March 13, 2019",
+  "releasedOn": "2019-03-13",
+  "updated": "2019-03-13T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#march_13_2019",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.0.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.0.0-alpha05",
+      "detailsHtml": "<p>March 13th, 2019</p>\n<p><code>androidx.activity:activity:1.0.0-alpha05</code> and <code>androidx.activity:activity-ktx:1.0.0-alpha05</code> are released. The full list of commits included in this release can be found <a href=\"https://android.googlesource.com/platform/frameworks/support/+log/37f2d45370dc3d53ea3f327068edd21698c2e959..82ddb41c3e7be8ae7a4a3557e66edb5274c6d96c/activity\">here</a>.</p>\n<p><strong>New features</strong></p>\n<ul>\n <li><code>@ContentView</code> annotation lookups are now cached (<a href=\"https://issuetracker.google.com/issues/123709449\">b/123709449</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/37f2d45370dc3d53ea3f327068edd21698c2e959..82ddb41c3e7be8ae7a4a3557e66edb5274c6d96c/activity"
+    },
+    {
+      "id": "annotation",
+      "name": "Annotation",
+      "version": "1.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/annotation#1.1.0-alpha02",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>New API restriction scope: <code>RestrictTo.Scope.LIBRARY_GROUP_PREFIX</code>. It restricts usage to code within packages whose groups share the same library group prefix up to the last <code>.</code> (period). For example, because libraries <code>foo.bar:lib1</code> and <code>foo.baz:lib2</code> share the prefix <code>foo</code>, they can use each other's APIs that are restricted to this scope. Similarly, for <code>com.foo.bar:lib1</code> and <code>com.foo.baz:lib2</code> share the <code>com.foo.</code> prefix and can share APIs restricted to that scope. Library <code>com.bar.qux:lib3</code> however will not be able to use the restricted API because it only shares the prefix <code>com.</code> and not all the way until the last <code>.</code> (period).</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/941836d33391459696e51b18c08a08f0441eb216..091eca9ac5e20c1346e4c1fdace7b63721f9ce43/annotations"
+    },
+    {
+      "id": "appcompat",
+      "name": "AppCompat",
+      "version": "1.1.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.1.0-alpha03",
+      "detailsHtml": "<p><code>androidx.appcompat:appcompat:1.1.0-alpha03</code> and <code>androidx.appcompat:appcompat-resources:1.1.0-alpha03</code>are released. This is the first release of <code>appcompat-resources</code>. The full list of commits included in this version can be found <a href=\"https://android.googlesource.com/platform/frameworks/support/+log/871963fd9c70c32aa57a2587530654ac1c7595bb..9d3db78d753254e0f74f24480b2e6f4e6a380a06/appcompat\">here</a>.</p>\n<p><strong>New features</strong></p>\n<ul>\n <li>The new appcompat-resources library contains APIs that allow apps to load and tint drawables (including vector drawables) on older versions of the platform. This is the same functionality that was previously part of the appcompat module, but is now available without the overhead of the full appcompat backport of Material design that includes widgets, dialogs, night mode etc.</li>\n <li>Major fixes to DayNight mode support</li>\n <li>New <code>MODE_NIGHT_AUTO_BATTERY</code> option for DayNight mode</li>\n <li>Drawable tinting in <code>AppCompatTextView</code></li>\n <li>Toolbar overflow can now be styled with themed color state lists</li>\n <li>Menu icons can now use colors that reference theme attributes</li>\n <li>The new app:menu attribute can be set on a Toolbar to provide the menu content at inflation time</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed default tint mode on ImageView on version 21</li>\n <li>Fixed spinner popup incorrect dismissal on device rotation</li>\n <li>Fixed DayNight does not respect <code>configChanges</code> in manifest</li>\n <li>Fixed switching to <code>MODE_NIGHT_FOLLOW_SYSTEM</code> doesn't work (<a href=\"https://issuetracker.google.com/issues/111345020\">b/111345020</a>)</li>\n <li>Fixed WebView resets DayNight Resources (<a href=\"https://issuetracker.google.com/issues/37124582\">b/37124582</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/871963fd9c70c32aa57a2587530654ac1c7595bb..9d3db78d753254e0f74f24480b2e6f4e6a380a06/appcompat"
+    },
+    {
+      "id": "car",
+      "name": "Car",
+      "version": "1.0.0-alpha7",
+      "url": "https://developer.android.com/jetpack/androidx/releases/car#1.0.0-alpha7",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "collection",
+      "name": "Collection",
+      "version": "1.1.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/collection#1.0.0-alpha03",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li>A method on <code>ArraySet</code> previously marked <code>@RestrictTo(LIBRARY_GROUP)</code> was changed to <code>@RestrictTo(LIBRARY_GROUP_PREFIX)</code>. This is to support historical use by other AndroidX libraries which are now in different Maven group IDs. This method will either be made public or removed in 1.1.0-alpha04 because other AndroidX libraries should not get special APIs that other developers do not.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9684a6ace257773f30f568e5559cb91b68113060..79285e90f077844e4b3b1a72a4a051389e3c190a/collection"
+    },
+    {
+      "id": "core",
+      "name": "Core-telecom",
+      "version": "1.1.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.1.0-alpha05",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>New <code>ActivityCompat.recreate()</code> API for working around pre-28 platform bugs (<a href=\"https://android-review.googlesource.com/898940\">aosp/898940</a>)</li>\n <li>New <code>LocationManagerCompat</code> class (<a href=\"https://android-review.googlesource.com/894736\">aosp/894736</a>)</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>This library no longer exposes the ‘collection’ dependency as part of its API. If you were depending on the ‘collection’ types implicitly through a dependency on ‘core’, you will need to add an explicit ‘collection’ dependency to your library or app. This change is source-incompatible but retains binary compatibility. The ‘collection’ dependency is still a transitive dependency of ‘core’ but as an implementation detail instead of part of its API.</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed bug with default tint mode for <code>ImageView</code> on devices running API level 21</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3d680f800229fd452fd94b27f377053964ab4ca3..f6d94c8b8adaf0edaff495c1e88e8ddc96060317/core"
+    },
+    {
+      "id": "exifinterface",
+      "name": "ExifInterface",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/exifinterface#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Support HEIF format</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Added more constructors of ExifInterface</li>\n <li>Fixed Typo: <code>TAG_CAMARA_OWNER_NAME</code> -&gt; <code>TAG_CAMERA_OWNER_NAME</code></li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed the check of possible overflow for thumbnail image (<a href=\"https://android-review.googlesource.com/c/748608\">aosp/748608</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3478ef7cbc6b27d8c1497d76c3ffff688771380e..0b2c8b5a3ea18e80b32b57c49dba74c2812946ee/exifinterface"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.1.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.1.0-alpha05",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li><code>@ContentView</code> annotation lookups are now cached (<a href=\"https://issuetracker.google.com/issues/123709449\">b/123709449</a>)</li>\n</ul>\n<p><strong>Behavior changes</strong></p>\n<ul>\n <li>Calling <code>remove()</code>, <code>hide()</code>, <code>show()</code>, <code>detach()</code>, and <code>setPrimaryNavigationFragment()</code> with a Fragment attached to a different FragmentManager now throws an <code>IllegalStateException</code> rather than silently failing (<a href=\"https://android-review.googlesource.com/904301\">aosp/904301</a>)</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li><code>onNewIntent</code> for <code>FragmentActivity</code> is now correctly marked with <code>@CallSuper</code> (<a href=\"https://issuetracker.google.com/issues/124120586\">b/124120586</a>)</li>\n <li>Fixed an issue where <code>DialogFragment</code>’s <code>onDismiss()</code> could be called twice when using <code>getDialog().dismiss()</code> or <code>getDialog().cancel()</code> (<a href=\"https://issuetracker.google.com/issues/126563750\">b/126563750</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/e3951615d7fc9e64177ce46599a36fe1c26ac918..4c34c957abe3a1cec4eb2342bb41a88c838999f7/fragment"
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.1.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.1.0-alpha03",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li><code>ViewModelProvider.KeyedFactory</code> was removed. Second interface in addition to <code>ViewModelProvider.Factory</code> didn’t compose well with new features as property delegation in Kotlin <code>by viewmodels {}</code>. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/914133\">aosp/914133</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6d57eb14bdfbd1cb71db0f3c8ca1883df6ece85d..69fcbbce9f910d6cb9b2693dacd7c40040ffa495/lifecycle"
+    },
+    {
+      "id": "lifecycle-viewmodel-savedstate",
+      "name": "Lifecycle-ViewModel-SavedState",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#viewmodel-savedstate-1.0.0-alpha01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Now <code>ViewModels</code> can contribute to savedstate. To do that you use newly introduced viewmodel’s factory <code>SavedStateVMFactory</code> and your ViewModel should have a constructor that receives <code>SavedStateHandle</code>object as a parameter.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "loader",
+      "name": "Loader",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/loader#1.1.0-beta01",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed an issue which would cause a <code>StaleDataException</code> when restarting loader from <code>onLoadFinished</code> (<a href=\"https://issuetracker.google.com/issues/123922776\">b/123922776</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b93a1415db20e4d3789c0f3a116f3d556ee6b603..79285e90f077844e4b3b1a72a4a051389e3c190a/loader"
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "version": "1.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media#1.1.0-alpha02",
+      "detailsHtml": "<strong>Note:</strong><span> Please upgrade to version <a href=\"https://developer.android.com/jetpack/androidx/releases/media#1.1.0-alpha03\">1.1.0-alpha03</a> if you'd like to use these new features. Version <a href=\"https://developer.android.com/jetpack/androidx/releases/media#1.1.0-alpha03\">1.1.0-alpha03</a> contains a critical bugfix to <code>MedaBrowserServiceCompat</code>; <a href=\"https://android-review.googlesource.com/930246\">aosp/930246</a>.</span> \n<p><code>androidx.media:media:1.1.0-alpha02</code> is released. The full list of commits included in this version can be found <a href=\"https://android.googlesource.com/platform/frameworks/support/+log/b9925c3695ce7da0625a2fd3ded0149b7153826c..e5cd630912f6f9165114ab5ae9b2aead36cfc713/media\">here</a>.</p>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed crash of <code>MediaBrowserCompat</code> while connecting</li>\n <li>Fixed <code>IllegalStateException</code> happened in <code>getCurrentBrowserInfo()</code>/<code>getBrowserRootHints()</code></li>\n <li>Make <code>MediaBrowserServiceCompat.getCurrentBrowserInfo()</code> return the same <code>RemoteUserInfo</code> instance for the same <code>MediaBrowserCompat</code> in <code>onGetRoot()</code></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b9925c3695ce7da0625a2fd3ded0149b7153826c..e5cd630912f6f9165114ab5ae9b2aead36cfc713/media"
+    },
+    {
+      "id": "mediarouter",
+      "name": "MediaRouter",
+      "version": "1.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/mediarouter#1.1.0-alpha02",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Support MediaRouteButton in Android Studio layout preview</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Added <code>enableDynamicGroup()</code> method in <code>MediaRouteActionProvider</code> and <code>MediaRouteButton</code> to enable dynamic group feature</li>\n <li>Added <code>setAlwaysVisible(boolean)</code> method in <code>MediaRouteActionProvider</code> and <code>MediaRouteButton</code> to allow <code>MediaRouteButton</code> visible always</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Made <code>MediaRouteCastDialog</code> rows easy to click</li>\n <li>Removed unnecessary calls of <code>onRouteChanged</code> callback</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b9925c3695ce7da0625a2fd3ded0149b7153826c..b76873b4b2d548744a08dc5180c4b94b924b9886/mediarouter"
+    },
+    {
+      "id": "preference",
+      "name": "Preference",
+      "version": "1.1.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/preference#1.1.0-alpha04",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<p>The <code>SeekBarPreference</code> update!</p>\n<ul>\n <li>Styling updated to match Material Specifications\n  <ul>\n   <li>The value label is now hidden by default although it can still be shown with <code>app:showSeekBarValue=\"true\"</code> or <code>setShowSeekBarValue(true)</code>. This label is not part of Material spec, but we understand that it is heavily used so we will continue to support it - even though we don’t recommend using it.</li>\n   <li>The value label now updates while the SeekBar is being dragged, instead of when it is released. Note that this does not mean that the value internally is updated, see below for a new API that enables that functionality.</li>\n   <li>Note: Although it is supported, you should avoid setting a summary on a SeekBarPreference, as it is not intended and not part of the Material spec.</li>\n  </ul></li>\n <li>Adds support for continuous updates, allowing the SeekBar to update its saved value while the SeekBar is being dragged. This can be enabled from XML or programmatically, with <code>app:updatesContinuously=\"true\"</code> or <code>setUpdatesContinuously(true)</code>. This will fire whenever the SeekBar’s position on screen changes.</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Adds missing nullability annotations to <code>findPreference()</code></li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed a bug where context menu listeners were not being correctly removed if copying is not enabled</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/eb8080404ca0086bdb1ad89235f849e25e6a6997..968f440307eb94a35ed10a2d281749b2312b6e40/preference"
+    },
+    {
+      "id": "recyclerview",
+      "name": "RecyclerView",
+      "version": "1.1.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/recyclerview#1.1.0-alpha03",
+      "detailsHtml": "<p>March 13th, 2019</p>\n<p><code>androidx.recyclerview:recyclerview:1.1.0-alpha03</code> is released. The full list of commits included in this version can be found <a href=\"https://android.googlesource.com/platform/frameworks/support/+log/871963fd9c70c32aa57a2587530654ac1c7595bb..333a979ce2f308bf7b78f80e684e1d787fb8c6dd/recyclerview\">here</a>.</p>\n<p><strong>New features</strong></p>\n<ul>\n <li><code>GridLayoutManager</code>: Opt in, higher resolution <code>GridLayoutManager</code> scroll bar dimension estimation (<a href=\"https://android-review.googlesource.com/c/838836/\">aosp/838836</a>):\n  <ul>\n   <li>Uses span information to estimate scroll bar dimensions for a <code>GridLayoutManager</code>.</li>\n   <li>To enable, call <code>GridLayoutManager#setUsingSpansToEstimateScrollbarDimensions(boolean)</code> passing in true.</li>\n   <li>See the documentation on <code>GridLayoutManager#setUsingSpansToEstimateScrollbarDimensions(boolean)</code> for more information.</li>\n  </ul></li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Accessibility: There was a bug where once a ViewHolder was recycled and then rebound, the ItemDelegate associated with the RecyclerView’s <code>RecyclerViewAccessibilityDelegate</code> was not being associated with the ViewHolder’s itemView, breaking Accessibility. This is now fixed (<a href=\"https://android-review.googlesource.com/c/917740\">aosp/917740</a>).</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/871963fd9c70c32aa57a2587530654ac1c7595bb..333a979ce2f308bf7b78f80e684e1d787fb8c6dd/recyclerview"
+    },
+    {
+      "id": "room",
+      "name": "Room",
+      "version": "2.1.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.1.0-alpha05",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>The extension function <code>RoomDatabase.withTransaction</code> allows you to safely perform database transactions within a coroutine. Room extensions functions along with coroutines support are available in the <code>room-ktx</code> artifact.</li>\n <li>Non-abstract DAO methods annotated with <code>@Transaction</code> can now be suspend functions. <a href=\"https://issuetracker.google.com/issues/120241587\">b/120241587</a></li>\n</ul>\n<p><strong>API / Behavior Changes</strong></p>\n<ul>\n <li>The artifact <code>room-coroutines</code> has been renamed to <code>room-ktx</code> following the same naming as other androidx artifacts.</li>\n <li><code>beginTransaction</code>, <code>setTransactionSuccessful</code> and <code>endTransaction</code> in <code>RoomDatabase</code> have been deprecated in favor of <code>runInTransaction</code> and the <code>room-ktx</code> extension function <code>withTransaction</code>.</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a bug where tokenizer arguments were being dropped if the tokenizer used was SIMPLE. <a href=\"https://issuetracker.google.com/issues/125427014\">b/125427014</a></li>\n <li>Fixed a bug where Room would fail to correctly identify suspending functions with parameters whos type were an inner class. <a href=\"https://issuetracker.google.com/issues/123767877\">b/123767877</a></li>\n <li>Fixed a bug where deferred <code>@Query</code> DAO method with <code>INSERT</code>, <code>UPDATE</code> or <code>DELETE</code> statements were eagerly preparing the query in the main thread. <a href=\"https://issuetracker.google.com/issues/123695593\">b/123695593</a></li>\n <li>Fixed various bugs where Room would generate incorrect code for certain suspend functions. <a href=\"https://issuetracker.google.com/issues/123466702\">b/123466702</a> and <a href=\"https://issuetracker.google.com/issues/123466702\">b/123457323</a></li>\n <li>Fixed a bug where deprecated usage of methods were not being correctly suppressed in generated code. <a href=\"https://issuetracker.google.com/issues/117602586\">b/117602586</a></li>\n <li>Updated Room dependency of androidx.sqlite to 1.0.2 which contain fixes for correctly handling corrupted databases. <a href=\"https://issuetracker.google.com/issues/124476912\">b/124476912</a></li>\n</ul>\n<p><strong>Known Issues</strong></p>\n<ul>\n <li>Room 2.1.0-alpha05 depends on the <code>kotlinx-metadata-jvm</code> artifact which is not currently available in Maven Central (<a href=\"https://youtrack.jetbrains.com/issue/KT-27991\">KT-27991</a>). This dependency can be resolved by adding <code>maven { url \"https://kotlin.bintray.com/kotlinx/\" }</code> to your project repositories.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "sqlite",
+      "name": "SQLite",
+      "version": "2.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/sqlite#2.0.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed two issues where <code>FrameworkSQLiteOpenHelper</code> wouldn’t properly recover from a corrupted database or a bad migration during initialization. (<a href=\"https://issuetracker.google.com/111504749\">b/111504749</a> and <a href=\"https://issuetracker.google.com/111519144\">b/111519144</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "savedstate",
+      "name": "SavedState",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/savedstate#1.0.0-alpha02",
+      "detailsHtml": "<p>The full list of commits included in this version can be found <a href=\"https://android.googlesource.com/platform/frameworks/support/+log/86267e31251cdaf875674004b9937ff3da0c3f24..b22fd6c3be270f4c9fd632c55593568ff21637e0/savedstate\">here</a>.</p>\n<p><strong>New features</strong></p>\n<ul>\n <li><code>SavedStateRegistry.runOnNextRecreaction(Class&lt;? extends AutoRecreated&gt; clazz )</code> was added. The given class will be instantiated and the method <code>AutoRecreated.onRecreated</code> will be run when the owning component restarted.</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Generics removed from <code>SavedStateRegistry&lt;T&gt;</code></li>\n <li>AbstractSavedStateRegistry &amp; BundlableSavedStateRegistry are removed, use simple <code>SavedStateRegistry</code> instead</li>\n <li><code>BundleSavedStateRegistryOwner</code> is renamed to <code>SavedStateRegistryOwner</code></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/86267e31251cdaf875674004b9937ff3da0c3f24..b22fd6c3be270f4c9fd632c55593568ff21637e0/savedstate"
+    },
+    {
+      "id": "sharetarget",
+      "name": "ShareTarget",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/sharetarget#1.0.0-alpha01",
+      "detailsHtml": "<p>This module provides backwards compatibility for publishing direct share targets on pre-Q Android versions. None of the APIs in this module are meant to be used directly by the app, but when imported as a dependency, will add extra background functionality to <code>ShortcutManagerCompat</code> in the <code>androidx.core</code> module.</p>\n<p>The full list of commits included in this initial release can be found <a href=\"https://android.googlesource.com/platform/frameworks/support/+log/79285e90f077844e4b3b1a72a4a051389e3c190a/sharetarget\">here</a>.</p>\n<p>Please file bugs and feature requests under the <a href=\"https://issuetracker.google.com/issues/new?component=586834&amp;template=1235956\">ShareTarger Issue Tracker</a>.</p>\n<p><strong>New features</strong></p>\n<ul>\n <li>This is the first release of this module.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "transition",
+      "name": "Transition",
+      "version": "1.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/transition#1.1.0-alpha02",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li>The method parameter’s type of <code>Scene.getCurrentScene()</code> was changed from <code>View</code> to <code>ViewGroup</code>.</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li><code>SidePropagation</code> doesn’t work when an additional delay provided via <code>setStartDelay()</code> (<a href=\"https://issuetracker.google.com/issues/119839526\">b/119839526</a>).</li>\n <li><code>ChangeImageTransform</code> applies wrong matrix when interrupted before API 21 (<a href=\"https://issuetracker.google.com/issues/123226255\">b/123226255</a>).</li>\n <li><code>ChangeTransform</code> works incorrectly in some cases before API 21 (<a href=\"https://issuetracker.google.com/issues/125777978\">b/125777978</a>).</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3aaf42ac1ab4f795cae10b821da9c9144b361f21..863462a41d0708ab9044f826e85250cb3d20ffa8/transition"
+    },
+    {
+      "id": "versionedparcelable",
+      "name": "VersionedParcelable",
+      "version": "1.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/versionedparcelable#1.1.0-alpha02",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Updated to the latest annotation version for new annotations.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/f1c97d6550c139c61400f5efd88932a6020587..HEAD/versionedparcelable"
+    },
+    {
+      "id": "viewpager2",
+      "name": "ViewPager2",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/viewpager2#1.0.0-alpha02",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Ability to disable user input (<code>setUserInputEnabled</code>, <code>isUserInputEnabled</code>)</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>ViewPager2 class final</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li><code>FragmentStateAdapter</code> stability fixes</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/965e50ae02ab8c0821aa6db4d3296630ee8f4742..a6c93820c879141a92612abcf559a1993ceeb716/viewpager2"
+    }
+  ]
+}

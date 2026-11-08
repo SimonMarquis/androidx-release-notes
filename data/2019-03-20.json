@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#march_20_2019",
+  "title": "March 20, 2019",
+  "releasedOn": "2019-03-20",
+  "updated": "2019-03-20T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#march_20_2019",
+  "components": [
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.0.0",
+      "detailsHtml": "",
+      "commitsUrl": null
+    }
+  ]
+}
