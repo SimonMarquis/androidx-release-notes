@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>January 23, 2019 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for January 23, 2019: Navigation 1.0.0-alpha11, Navigation 1.0.0-alpha10.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2019-01-23.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="january-23-2019">
+            <div class="date-divider"><a href="./#january-23-2019" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">January 23, 2019</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="alpha" data-search="navigation 1.0.0-alpha11 2019-01-23 january 23, 2019" id="january-23-2019-navigation-1-0-0-alpha11">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/navigation">Navigation</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/navigation#1.0.0-alpha11" class="badge alpha">1.0.0-alpha11</a></div>
+              </div>
+              <div class="notes"><p>This is a hotfix release of <code>1.0.0-alpha10</code> that fixes an issue with Safe Args.</p><p><strong>Bug Fixes</strong></p><ul><li>Fixes an issue where Safe Args would fail to import the Directions class associated with global actions. <a href="https://issuetracker.google.com/123307342" title="b/123307342" class="ref ref-issue">b/123307342</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="navigation 1.0.0-alpha10 2019-01-23 january 23, 2019" id="january-23-2019-navigation-1-0-0-alpha10">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/navigation">Navigation</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/navigation#1.0.0-alpha10" class="badge alpha">1.0.0-alpha10</a></div>
+              </div>
+              <div class="notes"><p><strong>Known Issues</strong></p><ul><li>Safe Args fails to import the Directions class associated with global actions. <a href="https://issuetracker.google.com/123307342" title="b/123307342" class="ref ref-issue">b/123307342</a></li></ul><p>This release contains breaking API changes; please see the <em>Breaking Changes</em> section below.</p><p><strong>New Features</strong></p><ul><li>Kotlin users can now use the <code>by navArgs()</code> property delegate to lazily get a reference to a Safe Args generated <code>NavArgs</code> class in an <code>Activity</code> or <code>Fragment</code>. <a href="https://issuetracker.google.com/122603367" title="b/122603367" class="ref ref-issue">b/122603367</a></li><li>Safe Args now allows you to generate Kotlin code by applying the <code>androidx.navigation.safeargs.kotlin</code> plugin. The Kotlin code is built specifically for Kotlin only modules, using default arguments and immutable classes over the builder pattern that is still available via the previous <code>androidx.navigation.safeargs</code> plugin. <a href="https://issuetracker.google.com/110263087" title="b/110263087" class="ref ref-issue">b/110263087</a></li></ul><p><strong>Behavior Changes</strong></p><ul><li>Matching deep links are now biased towards the deep link that has the most matching arguments. <a href="https://issuetracker.google.com/118393029" title="b/118393029" class="ref ref-issue">b/118393029</a></li><li>Calling <code>setGraph()</code> on a <code>NavController</code> will now reset the back stack. <a href="https://issuetracker.google.com/111450672" title="b/111450672" class="ref ref-issue">b/111450672</a></li><li>Unknown deep links no longer throw an <code>IllegalStateException</code>, but are ignored, fixing issues with nested or multiple <code>NavHostFragment</code>s. <a href="https://issuetracker.google.com/121340440" title="b/121340440" class="ref ref-issue">b/121340440</a></li></ul><p><strong>Breaking Changes</strong></p><ul><li>The <code>NavOptions.applyPopAnimationsToPendingTransition()</code> method for applying pop animations to an Activity has been moved to <code>ActivityNavigator</code>. <a href="https://issuetracker.google.com/122413117" title="b/122413117" class="ref ref-issue">b/122413117</a></li><li>Safe Args now avoids duplicating identical classes for actions without arguments. The return type for no argument methods in generated NavDirections classes is now <code>NavDirections</code>. <a href="https://issuetracker.google.com/123233147" title="b/123233147" class="ref ref-issue">b/123233147</a></li><li>Safe Args generated Directions classes no longer have a public constructor - you should only be interacting with the generated static methods. <a href="https://issuetracker.google.com/123031660" title="b/123031660" class="ref ref-issue">b/123031660</a></li><li>Safe Args generated <code>NavDirections</code> classes no longer have a public constructor - they should only be generated via the static methods in the generated Directions classes. <a href="https://issuetracker.google.com/122963206" title="b/122963206" class="ref ref-issue">b/122963206</a></li><li>The returned <code>Bundle</code> from <code>NavDirections</code>' <code>getArguments()</code> is now marked as <code>@NonNull</code> rather than <code>@Nullable</code>. <a href="https://issuetracker.google.com/123243957" title="b/123243957" class="ref ref-issue">b/123243957</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li><code>NavDeepLinkBuilder</code> now correctly handles multiple simultaneous <code>PendingIntent</code>s to the same destination by using the arguments you pass in to determine the uniqueness. <a href="https://issuetracker.google.com/120042732" title="b/120042732" class="ref ref-issue">b/120042732</a></li><li><code>NavController</code> now correctly handles <code>popBackStack()</code> operations when using a nested <code>NavHostFragment</code> or other child Fragments with a back stack. <a href="https://issuetracker.google.com/122770335" title="b/122770335" class="ref ref-issue">b/122770335</a></li><li><code>NavigationUI</code> now correctly sets the content description of the Up button. <a href="https://issuetracker.google.com/120395362" title="b/120395362" class="ref ref-issue">b/120395362</a></li><li>Safe Args generated Directions classes now correctly handle global actions that have the same id as an action on a destination. <a href="https://issuetracker.google.com/122962504" title="b/122962504" class="ref ref-issue">b/122962504</a></li><li>Safe Args generated <code>NavDirections</code> classes now correctly have equal <code>hashCode()</code> values when <code>equals()</code> would return true. <a href="https://issuetracker.google.com/123043662" title="b/123043662" class="ref ref-issue">b/123043662</a></li><li><code>FragmentNavigator</code> now throws a better error message if you attempt to do custom <code>FragmentTransactions</code> on the <code>NavHostFragment</code>'s <code>FragmentManager</code>. You should always use <code>getChildFragmentManager()</code>. <a href="https://issuetracker.google.com/112927148" title="b/112927148" class="ref ref-issue">b/112927148</a></li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
