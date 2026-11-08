@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>August 29, 2019 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for August 29, 2019: Biometric 1.0.0-beta01.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2019-08-29.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="august-29-2019">
+            <div class="date-divider"><a href="./#august-29-2019" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">August 29, 2019</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="beta" data-search="biometric 1.0.0-beta01 2019-08-29 august 29, 2019" id="august-29-2019-biometric-1-0-0-beta01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/biometric">Biometric</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/b8de83833a365a0342a01630807c96f42e64782b..a3b34e760b913aaf27b25e76cc171bdd86ec3d3b/biometric" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/biometric#1.0.0-beta01" class="badge beta">1.0.0-beta01</a></div>
+              </div>
+              <div class="notes"><p><strong>New features</strong></p><p>We’ve introduced a second constructor for BiometricPrompt that allows it to be hosted in a Fragment (as opposed to the existing constructor, which requires a FragmentActivity).</p><p>We’re also excited to bring the following functionality from Android 10 to the AndroidX Biometric library:</p><ol><li><code>BiometricManager#canAuthenticate</code></li><li><code>BiometricPrompt.PromptInfo#setConfirmationRequired</code></li><li><code>BiometricPrompt.PromptInfo#setDeviceCredentialAllowed</code></li></ol><p>On Android 10, the library will invoke the corresponding methods from the platform API. On older API levels, the library will emulate the behavior.</p><p><strong>API changes</strong></p><ul><li>Added fragment-specific constructor for biometric prompt <a href="https://issuetracker.google.com/issues/131980596" title="b/131980596" class="ref ref-issue">b/131980596</a></li><li>See the “New features” section above.</li></ul><p><strong>Bug fixes</strong></p><ul><li>Add BiometricPrompt device credential support for L+</li><li>Fixed BiometricPrompt to use public error constants <a href="https://issuetracker.google.com/issues/137788194" title="b/137788194" class="ref ref-issue">b/137788194</a></li><li>Fix <code>NullPointerException</code> in <code>BiometricPrompt.onAttach()</code> <a href="https://issuetracker.google.com/issues/136103103" title="b/136103103" class="ref ref-issue">b/136103103</a></li><li>Changed behavior to not allow BiometricPrompt to be cancelled by a touch event outside the prompt <a href="https://issuetracker.google.com/issues/135684487" title="b/135684487" class="ref ref-issue">b/135684487</a></li><li>Fixed onAuthenticationError crash when a null error value is returned in Kotlin <a href="https://issuetracker.google.com/issues/128350861" title="b/128350861" class="ref ref-issue">b/128350861</a></li><li>FingerprintDialogFragment is now style-able <a href="https://issuetracker.google.com/issues/127878106" title="b/127878106" class="ref ref-issue">b/127878106</a></li><li>FingerprintDialog is now scrollable <a href="https://issuetracker.google.com/issues/126367887" title="b/126367887" class="ref ref-issue">b/126367887</a></li><li>Fixed bug where rotating the biometric dialog raises an <code>IllegalStateException</code> <a href="https://issuetracker.google.com/issues/124153656" title="b/124153656" class="ref ref-issue">b/124153656</a>, <a href="https://issuetracker.google.com/issues/123811924" title="b/123811924" class="ref ref-issue">b/123811924</a></li><li>Fixed inconsistent behavior on API Levels 23 to 27. <a href="https://issuetracker.google.com/issues/124066957" title="b/124066957" class="ref ref-issue">b/124066957</a></li><li>Fixed issue where Fingerprint Login Dialog read incorrect text using Talkback. <a href="https://issuetracker.google.com/issues/123572331" title="b/123572331" class="ref ref-issue">b/123572331</a></li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
