@@ -1,0 +1,49 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#september_23_2020",
+  "title": "September 23, 2020",
+  "releasedOn": "2020-09-23",
+  "updated": "2020-09-23T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#september_23_2020",
+  "components": [
+    {
+      "id": "camera-camera2",
+      "name": "Camera-Camera2",
+      "version": "1.0.0-beta10",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-camera2-1.0.0-beta10",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Release to support <a href=\"https://developer.android.com/jetpack/androidx/releases/camera#camera-core-1.0.0-beta10\">Camera-Core 1.0.0-beta10</a></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9ebe09b1cb65d62b65b01054fd9ecd055d653a22..691e3a429902a0a3e087f28877e7cd5f668114fe/camera/camera-camera2"
+    },
+    {
+      "id": "camera-core",
+      "name": "Camera-Core",
+      "version": "1.0.0-beta10",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-core-1.0.0-beta10",
+      "detailsHtml": "<strong>Caution:</strong><span> Please do not use <strong>Camera-Core Version 1.0.0-beta09</strong> as there is a Known Issue [See Bug Fixes Below] around image capture. Please do not use this version in your applications. Instead use <strong>Camera-Core Version 1.0.0-beta10</strong> and above.</span> \n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix bug in validating file save destination for image capture (<a href=\"https://android-review.googlesource.com/#/q/ee9fa116b553b77b17badd7cac58374c99651753\">I8c565</a>, <a href=\"https://issuetracker.google.com/167697553\">b/167697553</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9ebe09b1cb65d62b65b01054fd9ecd055d653a22..691e3a429902a0a3e087f28877e7cd5f668114fe/camera/camera-core"
+    },
+    {
+      "id": "camera-extensions",
+      "name": "Camera-Extensions",
+      "version": "1.0.0-alpha17",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-extensions-1.0.0-alpha17",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Release to support <a href=\"https://developer.android.com/jetpack/androidx/releases/camera#camera-core-1.0.0-beta10\">Camera-Core 1.0.0-beta10</a></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9ebe09b1cb65d62b65b01054fd9ecd055d653a22..691e3a429902a0a3e087f28877e7cd5f668114fe/camera/camera-extensions"
+    },
+    {
+      "id": "camera-lifecycle",
+      "name": "Camera-Lifecycle",
+      "version": "1.0.0-beta10",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-lifecycle-1.0.0-beta10",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Release to support <a href=\"https://developer.android.com/jetpack/androidx/releases/camera#camera-core-1.0.0-beta10\">Camera-Core 1.0.0-beta10</a></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9ebe09b1cb65d62b65b01054fd9ecd055d653a22..691e3a429902a0a3e087f28877e7cd5f668114fe/camera/camera-lifecycle"
+    },
+    {
+      "id": "camera-view",
+      "name": "Camera-View",
+      "version": "1.0.0-alpha17",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-view-1.0.0-alpha17",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Release to support <a href=\"https://developer.android.com/jetpack/androidx/releases/camera#camera-core-1.0.0-beta10\">Camera-Core 1.0.0-beta10</a></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9ebe09b1cb65d62b65b01054fd9ecd055d653a22..691e3a429902a0a3e087f28877e7cd5f668114fe/camera/camera-view"
+    }
+  ]
+}
