@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>March 2, 2023 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for March 2, 2023: Media3 1.0.0-rc02.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2023-03-02.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="march-2-2023">
+            <div class="date-divider"><a href="./#march-2-2023" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">March 2, 2023</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="rc" data-search="media3 1.0.0-rc02 2023-03-02 march 2, 2023" id="march-2-2023-media3-1-0-0-rc02">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                <div class="actions"><a href="https://github.com/androidx/media/commits/1.0.0-rc02" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.0.0-rc02" class="badge rc">1.0.0-rc02</a></div>
+              </div>
+              <div class="notes"><p>This release corresponds to the <a href="https://github.com/google/ExoPlayer/releases/tag/r2.18.4">ExoPlayer 2.18.4 release</a>.</p><ul><li>Core library:
+  <ul><li>Fix network type detection on API 33 <a href="https://github.com/google/ExoPlayer/issues/10970" title="#10970" class="ref ref-github">#10970</a>.</li><li>Fix <code>NullPointerException</code> when calling <code>ExoPlayer.isTunnelingEnabled</code> <a href="https://github.com/google/ExoPlayer/issues/10977" title="#10977" class="ref ref-github">#10977</a>.</li></ul></li><li>Downloads:
+  <ul><li>Make the maximum difference of the start time of two segments to be merged configurable in <code>SegmentDownloader</code> and subclasses <a href="https://github.com/androidx/media/pull/248" title="#248" class="ref ref-github">#248</a>.</li></ul></li><li>Audio:
+  <ul><li>Fix broken gapless MP3 playback on Samsung devices <a href="https://github.com/google/ExoPlayer/issues/8594" title="#8594" class="ref ref-github">#8594</a>.</li><li>Fix bug where playback speeds set immediately after disabling audio may be overridden by a previous speed change <a href="https://github.com/google/ExoPlayer/issues/10882" title="#10882" class="ref ref-github">#10882</a>.</li></ul></li><li>Video:
+  <ul><li>Map HEVC HDR10 format to <code>HEVCProfileMain10HDR10</code> instead of <code>HEVCProfileMain10</code>.</li><li>Add workaround for a device issue on Chromecast with Google TV and Lenovo M10 FHD Plus that causes 60fps AVC streams to be marked as unsupported <a href="https://github.com/google/ExoPlayer/issues/10898" title="#10898" class="ref ref-github">#10898</a>.</li><li>Fix frame release performance issues when playing media with a frame rate far higher than the screen refresh rate.</li></ul></li><li>Cast:
+  <ul><li>Fix transient <code>STATE_IDLE</code> when transitioning between media items <a href="https://github.com/androidx/media/issues/245" title="#245" class="ref ref-github">#245</a>.</li></ul></li><li>RTSP:
+  <ul><li>Catch the IllegalArgumentException thrown in parsing of invalid RTSP Describe response messages <a href="https://github.com/google/ExoPlayer/issues/10971" title="#10971" class="ref ref-github">#10971</a>.</li></ul></li><li>Session:
+  <ul><li>Fix a bug where notification play/pause button doesn't update with player state <a href="https://github.com/androidx/media/issues/192" title="#192" class="ref ref-github">#192</a>.</li></ul></li><li>IMA extension:
+  <ul><li>Fix a bug which prevented DAI streams without any ads from starting because the first (and in the case without ads the only) <code>LOADED</code> event wasn't received.</li></ul></li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
