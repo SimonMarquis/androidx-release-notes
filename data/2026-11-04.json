@@ -1,0 +1,274 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#november_04_2026",
+  "title": "November 04, 2026",
+  "releasedOn": "2026-11-04",
+  "updated": "2026-11-04T18:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#november_04_2026",
+  "components": [
+    {
+      "id": "appfunctions",
+      "name": "Appfunctions",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appfunctions#1.0.0-rc01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Version bump to RC and remove legacy aggregation compiler option.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3e1d825a56395e550f616184e9364be9fa3b45a9..3a5a6c1812a9d0857c55d3a4e737157d9aa4c452/appfunctions"
+    },
+    {
+      "id": "appstate-statestore",
+      "name": "Appstate Statestore",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appstate-statestore#1.0.0-alpha02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/f9cd04314f915c133a8f6e109ed8fbbf2a82bf65..a021adf44194ae86e596ae25ca43d5e4e18f6926/appstate/statestore"
+    },
+    {
+      "id": "appstate-transform",
+      "name": "Appstate Transform",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appstate-transform#1.0.0-alpha02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/f9cd04314f915c133a8f6e109ed8fbbf2a82bf65..a021adf44194ae86e596ae25ca43d5e4e18f6926/appstate/transform"
+    },
+    {
+      "id": "biometric",
+      "name": "Biometric",
+      "version": "1.4.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/biometric#1.4.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/df4b49eda6f6834b6bc4c8aa30a581fa577a511e..090f3c60626d5dd314f7a448a916ff4b533b67ab/biometric"
+    },
+    {
+      "id": "camera",
+      "name": "Camera",
+      "version": "1.7.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#1.7.0-rc02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>\n  <p>Fixed an <code>UnsupportedOperationException</code> on API 30 when apps with <code>SYSTEM_ALERT_WINDOW</code> repeatedly bind camera use cases. (<a href=\"https://android-review.googlesource.com/q/I3235c1d64aa76a9084bdac63d81faa408e2f132f\">I3235c</a>, <a href=\"https://issuetracker.google.com/issues/575161911\">b/575161911</a>)</p>\n </li>\n <li>\n  <p>Fixed a native thread leak when unbinding <code>VideoCapture</code>, which left one media framework thread behind per bind. (<a href=\"https://android-review.googlesource.com/#/q/If57302fe131c0771a60083be3a5128f99c1f5f77\">If5730</a>, <a href=\"https://issuetracker.google.com/issues/573671138\">b/573671138</a>)</p>\n </li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/678ffa9bb7ff9b6d63e55a32c452a45716cfdd71..c77cf64e9734c9c8f7497c161e5e631af91b111f/camera"
+    },
+    {
+      "id": "camera-featurecombinationquery",
+      "name": "Camera Featurecombinationquery",
+      "version": "1.7.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera-featurecombinationquery#1.7.0-rc02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/678ffa9bb7ff9b6d63e55a32c452a45716cfdd71..c77cf64e9734c9c8f7497c161e5e631af91b111f/camera/featurecombinationquery"
+    },
+    {
+      "id": "camera-viewfinder",
+      "name": "Camera Viewfinder",
+      "version": "1.7.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera-viewfinder#1.7.0-rc02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/678ffa9bb7ff9b6d63e55a32c452a45716cfdd71..c77cf64e9734c9c8f7497c161e5e631af91b111f/camera/viewfinder"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.13.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.13.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/8c4a5fab030e62e6dac58c45f5fff974facf903f..57354ca42849ed417dfe0f797132477674d917e0/compose/animation"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.13.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.13.0-rc01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>Modifier.border</code> now consistently uses the outline size when rendering borders. Use <code>ComposeFoundationFlags.isBorderMatchesOutlineBoundsFixEnabled</code> to temporarily disable this if it causes issues. (<a href=\"https://android-review.googlesource.com/#/q/I3e171be3f77c0b9794ad70de9d7be36a2adcf20c\">I3e171</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/8c4a5fab030e62e6dac58c45f5fff974facf903f..57354ca42849ed417dfe0f797132477674d917e0/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.13.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.13.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/8c4a5fab030e62e6dac58c45f5fff974facf903f..57354ca42849ed417dfe0f797132477674d917e0/compose/material"
+    },
+    {
+      "id": "compose-material-3",
+      "name": "Compose Material 3",
+      "version": "1.5.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3#1.5.0-rc01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Resolve hardcoded pressed shape in <code>ToggleButton</code> to use design token <code>ButtonSmallTokens.PressedContainerShape</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ia60dc38f5dc5174eb7028ee81945a37b9521471b\">Ia60dc</a>, <a href=\"https://issuetracker.google.com/issues/531792521\">b/531792521</a>)</li>\n <li>Fixed <code>RangeSlider</code> not updating values on tap when thumbs overlap. (<a href=\"https://android-review.googlesource.com/#/q/I91d428e504f8b76c2a1903e56c18b47120e98a12\">I91d42</a>, <a href=\"https://issuetracker.google.com/issues/352467346\">b/352467346</a>)</li>\n <li>Fixed floating-point precision loss in discrete <code>Slider</code> and <code>RangeSlider</code> when snapping to integer ticks. (<a href=\"https://android-review.googlesource.com/#/q/I91d428e504f8b76c2a1903e56c18b47120e98a12\">I91d42</a>, <a href=\"https://issuetracker.google.com/issues/237634010\">b/237634010</a>)</li>\n <li>Fixed <code>RangeSlider</code> inside a horizontally scrollable container scrolling the container when dragging a thumb. (<a href=\"https://android-review.googlesource.com/#/q/I91d428e504f8b76c2a1903e56c18b47120e98a12\">I91d42</a>, <a href=\"https://issuetracker.google.com/issues/415838608\">b/415838608</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/e4d933c98df7baa7ea2b83eea6e086915961e0ff..1f549b6f5ba84cb3553be9c79110c4c5f6413039/compose/material3"
+    },
+    {
+      "id": "compose-remote",
+      "name": "Compose Remote",
+      "version": "1.0.0-alpha23",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-remote#1.0.0-alpha23",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Renamed <code>Action</code> to <code>RemoteAction</code> in <code>remote-creation-compose</code> and updated action factories and touch/click modifiers (<code>clickable</code>, <code>onTouchDown</code>, <code>onTouchUp</code>, <code>onTouchCancel</code>). (<a href=\"https://android-review.googlesource.com/#/q/I19913e9857793b177ddbc440342bb3e28db42826\">I19913</a>)</li>\n <li>Reordered <code>RemoteShape.createOutline</code> and <code>RemoteCornerBasedShape.createOutline</code> parameters to <code>(size, layoutDirection, density)</code> to match Compose <code>Shape.createOutline</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ifb87adb4b42eaee3874312f61aa5cca5571daa12\">Ifb87a</a>)</li>\n <li>Decoupled <code>RemoteColor</code> from Compose UI <code>Color</code>: <code>RemoteColor</code> now extends <code>BaseRemoteState&lt;Int&gt;</code> (ARGB <code>@ColorInt</code>) with <code>Int.rc</code> and <code>@ColorInt</code> factory overloads; Compose <code>Color</code> conversions (<code>Color.rc</code>, <code>Color.asRemoteColor()</code>, <code>RemoteColor.asConstantColor()</code>) remain available as extensions. (<a href=\"https://android-review.googlesource.com/#/q/Ib31ea808beeb923bd9c764a65a002dc714eef366\">Ib31ea</a>)</li>\n <li>Added <code>currentProfileSupportsPathClip()</code> to check whether the current Remote Compose creation profile supports clipping to a path. (<a href=\"https://android-review.googlesource.com/#/q/I3b0ab8eb261e1e363e1695b12d0899571f9fe568\">I3b0ab</a>)</li>\n <li>Deprecated <code>rememberMutableRemote*</code> factory functions (<code>rememberMutableRemoteBoolean</code>, <code>rememberMutableRemoteEnum</code>, <code>rememberMutableRemoteFloat</code>, <code>rememberMutableRemoteImageBitmap</code>, <code>rememberMutableRemoteInt</code>, and <code>rememberMutableRemoteString</code>) in <code>remote-creation-compose</code> in favor of <code>remember { MutableRemote*(initialValue) }</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ifb1f86ebaf91017f1f8f4bdf0bfe5d9a933e1378\">Ifb1f8</a>)</li>\n <li>Removed <code>RemoteTypeface.toAndroidTypeface()</code> and <code>RemoteTypeface.Companion.fromAndroidTypeface()</code> from <code>remote-creation-compose</code>. (<a href=\"https://android-review.googlesource.com/#/q/I8867ef49d6557dd83723040c744a24e45e10e42d\">I8867e</a>)</li>\n <li>Removed the previously deprecated <code>RemoteModifier.animationSpec</code> modifier. (<a href=\"https://android-review.googlesource.com/#/q/I1aea8966a25a7832124db35a99f1292d537c375a\">I1aea8</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed chained <code>RemoteModifier.drawWithContent</code> modifiers dropping inner draw blocks (such as component container backgrounds when callers attach <code>drawWithContent</code>). (<a href=\"https://android-review.googlesource.com/#/q/If7e7512f84a6ca6907638fbade4170bf25a3d7ee\">If7e75</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3566803898b060d7136357220affc9ece8236019..9b2acdf2ecd36aa5ddf9c43ebfc288ed11d2c49e/compose/remote"
+    },
+    {
+      "id": "compose-remote-foundation",
+      "name": "Compose Remote Foundation",
+      "version": "1.0.0-alpha06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-remote-foundation#1.0.0-alpha06",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Renamed <code>remoteBitmap</code> to <code>bitmap</code> on <code>RemoteBasicImage</code> and moved <code>style</code> to the final parameter on <code>RemoteBasicText</code> to match Compose Foundation. (<a href=\"https://android-review.googlesource.com/#/q/I2b57acba50caad03246d3df009cf25533b1dbbd4\">I2b57a</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3566803898b060d7136357220affc9ece8236019..9b2acdf2ecd36aa5ddf9c43ebfc288ed11d2c49e/compose/remote/foundation/foundation"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.13.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.13.0-rc01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Updated androidx.tracing:tracing-wire dependency to 2.0.5. (<a href=\"https://android-review.googlesource.com/#/q/I70e9fe15d6f913d55b01a81391f9afeb83cd19e8\">I70e9f</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/8c4a5fab030e62e6dac58c45f5fff974facf903f..57354ca42849ed417dfe0f797132477674d917e0/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.13.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.13.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/8c4a5fab030e62e6dac58c45f5fff974facf903f..57354ca42849ed417dfe0f797132477674d917e0/compose/ui"
+    },
+    {
+      "id": "coordinatorlayout",
+      "name": "Coordinatorlayout",
+      "version": "1.4.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/coordinatorlayout#1.4.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added a <code>CoordinatorLayout.Behavior#onRequestChildRectangleOnScreen</code> overload that provides the request source to Behaviors and updated compileSdk to API 36.1 (<a href=\"https://android-review.googlesource.com/#/q/Ibddfdf906bc11dfef550688ebbcf9b086be0abf8\">Ibddfd</a>)</li>\n <li>Removing obsolete @RequiresApi(21) annotations (<a href=\"https://android-review.googlesource.com/#/q/Ic47923dcc82f4b7c4638fadb10c2c0268b414fcd\">Ic4792</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Moving the default minSdk from API 21 to API 23 (<a href=\"https://android-review.googlesource.com/#/q/Ibdfca5942dbb414ca07594ba240093db14aad4df\">Ibdfca</a>, <a href=\"https://issuetracker.google.com/issues/380448311\">b/380448311</a>, <a href=\"https://issuetracker.google.com/issues/435705964\">b/435705964</a>, <a href=\"https://issuetracker.google.com/issues/435705223\">b/435705223</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c75bdbab8bebc2c00788ed8427172c46b9463345..47204469ad7a534a5fac14a8059c3935ab220f62/coordinatorlayout/coordinatorlayout"
+    },
+    {
+      "id": "core",
+      "name": "Core",
+      "version": "1.1.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.1.0",
+      "detailsHtml": "<p><strong>Important Changes since 1.0.0</strong></p>\n<ul>\n <li>Updated accessibility APIs to match the Android 10 platform accessibility APIs</li>\n <li>Added improvements to Nested Scrolling; see <a href=\"https://developer.android.com/reference/androidx/core/view/NestedScrollingChild3\"><code>NestedScrollingChild3</code></a> and <a href=\"https://developer.android.com/reference/androidx/core/view/NestedScrollingParent3\"><code>NestedScrollingParent3</code></a>.</li>\n <li>This library no longer exposes the <code>androidx.collection</code> dependency as part of its API. If you were depending on the <code>androidx.collection</code> types implicitly through a dependency on Core, you will need to add an explicit <code>androidx.collection</code> dependency to your library or app. This change is source-incompatible but retains binary compatibility. The Collection dependency is still a transitive dependency of Core but as an implementation detail instead of part of its API.</li>\n <li>Worked around an IPC compatibility issue caused by refactor to androidx (<a href=\"https://android-review.googlesource.com/948725\">aosp/948725</a>, <a href=\"https://android-review.googlesource.com/938269\">aosp/938269</a>)</li>\n <li>Added a variety of fixes for AppCompat DayNight (<a href=\"https://android-review.googlesource.com/942956\">aosp/942956</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/bedbf8f35b386aceeb6ab1aa6105597b4a25855b..8139a2b2a6e73b094652ce1ad9865cdb60df2843/core"
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise",
+      "version": "1.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/enterprise#1.2.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Merged public and experimental API files for d,e,f,g-paths (<a href=\"https://android-review.googlesource.com/#/q/I03646bc0839d44b40105cff9bd4662c77e0d3c50\">I03646</a>, <a href=\"https://issuetracker.google.com/issues/278769092\">b/278769092</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Moving the default <code>minSdk</code> from API 21 to API 23 (<a href=\"https://android-review.googlesource.com/#/q/Ibdfca5942dbb414ca07594ba240093db14aad4df\">Ibdfca</a>, <a href=\"https://issuetracker.google.com/issues/380448311\">b/380448311</a>, <a href=\"https://issuetracker.google.com/issues/435705964\">b/435705964</a>, <a href=\"https://issuetracker.google.com/issues/435705223\">b/435705223</a>)</li>\n <li>This library now uses <a href=\"https://jspecify.dev/\">JSpecify nullness annotations</a>, which are type-use. Kotlin developers should use the following compiler arguments to enforce correct usage: -Xjspecify-annotations=strict, -Xtype-enhancement-improvements-strict-mode (<a href=\"https://android-review.googlesource.com/#/q/I3d340562cef73af357f6a763dc663893f6a46be2\">I3d340</a>, <a href=\"https://issuetracker.google.com/issues/326456246\">b/326456246</a>)</li>\n <li>Fixed a <code>ClassCastException</code> or <code>NullPointerException</code> that could occur in <code>KeyedAppStatesService</code> when processing received application states. <a href=\"https://android-review.googlesource.com/q/I6909a28aa177923ff594652adb24d1175564d93b\">I6909a28a</a></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/55d7bedcdcca20013223c29e0cde8d11c86970ae..9c8961185ed7c431b9e78870acb3393f8f27cd1e/enterprise"
+    },
+    {
+      "id": "exifinterface",
+      "name": "Exifinterface",
+      "version": "1.5.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/exifinterface#1.5.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3566803898b060d7136357220affc9ece8236019..ce093d9bcebe73a513e5e1ab8aa716a2f8df336c/exifinterface/exifinterface"
+    },
+    {
+      "id": "glance-adaptive",
+      "name": "Glance Adaptive",
+      "version": "1.0.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/glance-adaptive#1.0.0-alpha04",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added <code>GlanceAdaptiveWidgetReceiver</code> base <code>AppWidgetProvider</code> class as the main entry point for Glance Adaptive widgets. (<a href=\"https://android-review.googlesource.com/#/q/Iddecc86920578ee4f5c6a66d96278ceae72758b7\">Iddecc</a>)</li>\n <li>Added <code>@integer/glance_adaptive_widget_category_all_known</code> resource for <code>&lt;appwidget-provider&gt;</code>'s <code>android:widgetCategory</code> declaration, to opt in into all supported Widget surfaces. (<a href=\"https://android-review.googlesource.com/#/q/I4582e2140f96b5911d674a6892d726f7e8cda4ff\">I4582e</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b2b5ae7b0fe1bb4eece7018878fe5f18c5967a2f..a021adf44194ae86e596ae25ca43d5e4e18f6926/glance/adaptive"
+    },
+    {
+      "id": "glance-wear",
+      "name": "Glance Wear",
+      "version": "1.0.0-alpha22",
+      "url": "https://developer.android.com/jetpack/androidx/releases/glance-wear#1.0.0-alpha22",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Glance Wear now throws <code>WearWidgetContentTooLargeException</code> with actionable guidance when a widget's content is too large to be sent to the host (for example due to large bitmaps in <code>RemoteImage</code>), instead of failing with an obscure Binder error. (<a href=\"https://android-review.googlesource.com/#/q/I9eb1cf1f99f4e4162ac5125d1827f66f40bf04e5\">I9eb1c</a>)</li>\n <li>Added <code>WearWidgetConfigExtras</code> with helper to extract widget configuration parameters and moved constants from <code>GlanceWearWidget</code> to <code>WearWidgetConfigExtras</code>. (<a href=\"https://android-review.googlesource.com/#/q/I7056161b8fabeb8cb173e9ed03034e5165ecaa97\">I70561</a>)</li>\n <li>Added <code>GlanceWearProfiles.createWearWidgetsProfile(WearWidgetParams)</code> to create a profile configured with the host-supported operations. (<a href=\"https://android-review.googlesource.com/#/q/I51f284bc74acdcb5a5cac7eb54f0004562b38598\">I51f28</a>)</li>\n <li>Exposed <code>horizontalPaddingDp</code>, <code>verticalPaddingDp</code>, and <code>cornerRadiusDp</code> in <code>WearWidgetParams</code>. (<a href=\"https://android-review.googlesource.com/#/q/I19925bc109768e7b075279fade17e4d9651e5ced\">I19925</a>)</li>\n</ul>\n<p><strong>Additional changes</strong></p>\n<ul>\n <li>Changes to use newly aligned parameter names and order across Remote Compose library.(<a href=\"https://android-review.googlesource.com/#/q/I2e16470215ea1568e5667056d44f6e17db4310f1\">I2e164</a>)</li>\n <li>Wear Widgets can now use the <code>onTouchDown</code>, <code>onTouchUp</code> and <code>onTouchCancel</code> modifiers on all Wear OS devices that support widgets, not only on devices with the latest widget renderer. Use them to show press feedback, such as a pressed state on a button. (<a href=\"https://android-review.googlesource.com/#/q/I6dce7d3fa15ef09258f4411406270e2cb6646911\">I6dce7</a>)</li>\n <li>Added the <code>MODIFIER_TOUCH_DOWN</code>, <code>MODIFIER_TOUCH_UP</code> and <code>MODIFIER_TOUCH_CANCEL</code> operations to the Wear Widgets profile (<code>GlanceWearProfiles</code>), so widgets can use <code>onTouchDown</code>, <code>onTouchUp</code> and <code>onTouchCancel</code> on hosts that support them. (<a href=\"https://android-review.googlesource.com/#/q/Id4a9a4520d6f123af811dc4b715e4d3fa409ab98\">Id4a9a</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3566803898b060d7136357220affc9ece8236019..a021adf44194ae86e596ae25ca43d5e4e18f6926/glance/wear"
+    },
+    {
+      "id": "heifwriter",
+      "name": "Heifwriter",
+      "version": "1.2.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/heifwriter#1.2.0-rc02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d132e08f7006f8d455328299971050d6e6815403..7ae604df333be6cbdd595ecf7f86407cd4b3cf47/heifwriter/heifwriter"
+    },
+    {
+      "id": "ink",
+      "name": "Ink",
+      "version": "1.1.0-alpha11",
+      "url": "https://developer.android.com/jetpack/androidx/releases/ink#1.1.0-alpha11",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Add experimental Ink APIs for calculating/storing phase offsets for strokes with animated textures (<a href=\"https://android-review.googlesource.com/#/q/I620e6f7a70715691bed4acfdc5ee199b0cc8d622\">I620e6</a>)</li>\n <li>Add experimental Ink brush APIs for specifying an animated paint texture (<a href=\"https://android-review.googlesource.com/#/q/If0f10a8a9455af33a8f51668f24e0208a48e7013\">If0f10</a>)</li>\n <li>Stroke shape (<code>PartitionedMesh</code>) serialization, to save partially erased strokes or to speed up document load times by saving mesh data (<a href=\"https://android-review.googlesource.com/#/q/I1604f6da99ce038abe51df87a673498c21a17997\">I1604f</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed handling of concurrent inputs, and improved barrel twist compatibility. (<a href=\"https://android-review.googlesource.com/#/q/I0fc23934611435e978078368fa498a9d5e7d8abb\">I0fc23</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3566803898b060d7136357220affc9ece8236019..a021adf44194ae86e596ae25ca43d5e4e18f6926/ink"
+    },
+    {
+      "id": "input",
+      "name": "Input",
+      "version": "1.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/input#input-motionprediction-1.0.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Support stylus AXIS_RZ in motion event predictor (<a href=\"https://android-review.googlesource.com/#/q/I04f3a4818bd4c41bdbef057a3211f5615e964252\">I04f3a</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b2bd14a028581cd8869c8ef9116871da68fd875e..473a92c6d96596487a7e981a767358fe3bdc1418/input/input-motionprediction"
+    },
+    {
+      "id": "navigation3",
+      "name": "Navigation3",
+      "version": "1.2.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation3#1.2.1",
+      "detailsHtml": "<p><strong>Changes</strong></p>\n<ul>\n <li><code>compileSdk</code> has been downgraded from 37 to 36. Version 1.2 depends on Compose <code>1.10</code> which does not require <code>compileSdk</code> 37.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/811e8c9c37f4955d520fe0cf7e39d96866066abc..65822252146d26e872acf03dc11bda43f11efa3b/navigation3"
+    },
+    {
+      "id": "navigation3",
+      "name": "Navigation3",
+      "version": "1.3.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation3#1.3.0-alpha04",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix shared <code>NavEntry</code> not rendered on screen when it is popped then pushed again before the pop completes. (<a href=\"https://android-review.googlesource.com/#/q/I6a482e02627fa6804f9cf65809005c400a0b949e\">I6a482</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3566803898b060d7136357220affc9ece8236019..a021adf44194ae86e596ae25ca43d5e4e18f6926/navigation3"
+    },
+    {
+      "id": "test-backup",
+      "name": "Test Backup",
+      "version": "1.0.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test-backup#1.0.0-alpha04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added <code>StorageDomain.DataStorePreference</code> to seed and verify Preferences <code>DataStore</code> entries, <code>StorageDomain.CustomData</code> to run custom device actions, and <code>StorageDomain.ExcludedData</code> to verify that excluded data is not restored. (<a href=\"https://android-review.googlesource.com/#/q/If127d4dbf62c38ef67fc5e222b6a003a1fb8dde8\">If127d</a>, <a href=\"https://android-review.googlesource.com/#/q/I6190e2e2f9a72b43d8bff509fd8e3731636d7805\">I6190e</a>)</li>\n <li>Added <code>isDeviceProtectedStorage</code> across <code>StorageDomain</code> types to test Device Protected (DE) storage, and added support for <code>String</code> <code>Set</code> values in <code>StorageDomain.Preference</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ie96beb1bdf8a39d339316b10a7b9ec8f1bac8142\">Ie96be</a>)</li>\n <li>Added a <code>restoreOn</code> parameter to <code>runBackupRestoreFlow</code> for cross-device restore flows, <code>BackupRestoreController.uninstallApp()</code>, and <code>minApi</code> and <code>maxApi</code> bounds on <code>@Device</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ifa0e33017a012e3742ab40f6a5f443f91abb2355\">Ifa0e3</a>)</li>\n <li>Added <code>testApplicationId</code> and a default <code>applicationId</code> to <code>@BackupRestoreConfig</code>, and registered <code>BackupRestoreTestRunner</code> with <code>InstrumentationRegistry</code> for device actions. (<a href=\"https://android-review.googlesource.com/#/q/Ie96beb1bdf8a39d339316b10a7b9ec8f1bac8142\">Ie96be</a>, <a href=\"https://android-review.googlesource.com/#/q/Ifa0e33017a012e3742ab40f6a5f443f91abb2355\">Ifa0e3</a>)</li>\n <li>Updated <code>BackupRestoreExtension</code> to automatically save device logs when a test fails and report the saved file paths in the failure message (disable via <code>androidx.test.backup.device.logs.enabled=false</code>). (<a href=\"https://android-review.googlesource.com/#/q/I7f6053dd3a1a8e529b248b046920b385cf82c59f\">I7f605</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Added <code>BackupActionResult.data</code> and <code>BackupActionResult.getOrThrow()</code> to read output payloads from device actions, along with <code>STORAGE_TYPE_DATASTORE_PREFS</code>, <code>VALUE_TYPE_DOUBLE</code>, and <code>VALUE_TYPE_BYTES</code> on <code>BackupActionValues</code>. (<a href=\"https://android-review.googlesource.com/#/q/I6190e2e2f9a72b43d8bff509fd8e3731636d7805\">I6190e</a>, <a href=\"https://android-review.googlesource.com/#/q/If127d4dbf62c38ef67fc5e222b6a003a1fb8dde8\">If127d</a>)</li>\n <li>Removed <code>BackupDeviceAction.phase</code>, <code>PHASE_POPULATE</code>, and <code>PHASE_VERIFY</code> (remove the <code>phase</code> override from custom actions), as well as the <code>BackupRestoreExtension(AdbSession)</code> constructor. (<a href=\"https://android-review.googlesource.com/#/q/Ie96beb1bdf8a39d339316b10a7b9ec8f1bac8142\">Ie96be</a>, <a href=\"https://android-review.googlesource.com/#/q/I1a34914a131160f2aaa109cee01277cd7dbddd52\">I1a349</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3566803898b060d7136357220affc9ece8236019..a021adf44194ae86e596ae25ca43d5e4e18f6926/test/backup"
+    },
+    {
+      "id": "test-uiautomator",
+      "name": "Test Uiautomator",
+      "version": "2.4.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test-uiautomator#2.4.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue in <code>ShellServer</code> where random port selection could lead to port collisions and startup failures. (<a href=\"https://android-review.googlesource.com/#/q/I1951b6a1c46dbc7abfd08b33c1496258dac3522a\">I1951b</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ec9022d156846f24e22bec3e475d4206d6f321ea..3054cd1c711b06fa33d39e66427dfc37e91c637d/test/uiautomator"
+    },
+    {
+      "id": "wear",
+      "name": "Wear",
+      "version": "1.3.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#wear-1.3.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/73f902dee011bfe400d8a0330bfd8d4bb632065f..7b02e08f28f0a0eeda84e40d638084bbc89c82f9/wear/wear"
+    },
+    {
+      "id": "wear-compose",
+      "name": "Wear Compose",
+      "version": "1.8.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-compose#1.8.0-alpha03",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Integrate material3-ripple in Wear material3 and add support for inset focus rings, introduce <code>LocalRippleThemeConfiguration</code> and <code>RippleThemeConfiguration</code> to support configuring focus indication, and deprecate <code>RippleConfiguration.rippleAlpha</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ifb63a3c6f150219c262b10f4d40364deaaa2229b\">Ifb63a</a>)</li>\n <li>Added <code>LocalTimeSource</code> to allow overriding <code>TimeText</code>'s time source via <code>CompositionLocal</code> in tests and previews. (<a href=\"https://android-review.googlesource.com/#/q/Ic981ae4793be554abb90d953054af83cd84963bc\">Ic981a</a>)</li>\n <li>Added <code>Modifier.suppressStatusBar()</code> to allow screens and components to suppress the status bar and automatically collapse top status bar insets. Removed the unreleased <code>StatusBarSuppression()</code> composables; use <code>Modifier.suppressStatusBar()</code> instead. (<a href=\"https://android-review.googlesource.com/#/q/I0a0d6d102adc6271ada948007e8da1b62599f5c2\">I0a0d6</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>Dialog</code> now only uses a full-screen offscreen layer while it is animating or being swiped, reducing GPU memory usage while it is shown and idle. (<a href=\"https://android-review.googlesource.com/#/q/I65bafbca490ba2f454f8ac4bb5e92892d71917a0\">I65baf</a>)</li>\n <li>Fixed an issue where state written from a background thread while <code>TransformingLazyColumn</code> was measuring could be lost. (<a href=\"https://android-review.googlesource.com/#/q/I3ed10502ea07fe102166dcc1296099aee91a29a8\">I3ed10</a>)</li>\n <li>Fixed a bug in <code>OneHandedGestureDefaults.scrollDownToNextItem</code> so that the first double pinch gesture always scrolls down, even when the list is at the top and the first item sits below the anchor point.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3566803898b060d7136357220affc9ece8236019..8c25756316d2436d4c1064969926f34c67bf2bc4/wear/compose"
+    },
+    {
+      "id": "wear-compose-remote",
+      "name": "Wear Compose Remote",
+      "version": "1.0.0-alpha15",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-compose-remote#1.0.0-alpha15",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Aligned <code>RemoteButton</code>, <code>RemoteCompactButton</code> (including defaulting <code>label</code> to <code>null</code>), <code>RemoteIconButton</code>, <code>RemoteTextButton</code>, <code>RemoteEdgeButton</code>, <code>RemoteCheckboxButton</code>, <code>RemoteRadioButton</code>, <code>RemoteSwitchButton</code>, <code>RemoteTitleCard</code>, <code>RemoteOutlinedCard</code>, <code>RemoteCardDefaults.outlinedCardBorder</code>, <code>RemoteHorizontalPageIndicator</code>, <code>RemoteVerticalPageIndicator</code>, and <code>RemoteText</code> parameter order, types, and names with Wear Compose Material 3, adopting <code>RemoteBorderStroke</code> for button borders and <code>indicatorSize</code> (<code>RemotePageIndicatorDefaults.IndicatorSize</code>) for page indicators. (<a href=\"https://android-review.googlesource.com/#/q/If09ffd4987f888b77c0a8d47601dca053f755013\">If09ff</a>)</li>\n <li>Updated action callbacks (<code>onClick</code>, <code>onCheckedChange</code>, <code>onSelect</code>, <code>onContainerClick</code>, and <code>onSelectionClick</code>) across <code>remote-material3</code> components to use <code>RemoteAction</code> instead of <code>Action</code>. (<a href=\"https://android-review.googlesource.com/#/q/I19913e9857793b177ddbc440342bb3e28db42826\">I19913</a>)</li>\n <li>Reordered <code>RemoteEdgeButtonShape.createOutline</code> parameters to <code>(size, layoutDirection, density)</code> to match <code>RemoteShape.createOutline</code> and Compose <code>Shape.createOutline</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ifb87adb4b42eaee3874312f61aa5cca5571daa12\">Ifb87a</a>)</li>\n <li>Added <code>copy()</code> to <code>RemoteProgressIndicatorColors</code> and <code>RemoteShapes</code>, made <code>copy()</code> parameters non-nullable across <code>*Colors</code> and <code>*Shapes</code> classes, removed <code>@Composable</code> from non-theme shape properties on <code>*Defaults</code> objects, removed the redundant <code>RemoteEdgeButtonDefaults.shape</code> property (use <code>RemoteEdgeButtonDefaults.shape(buttonSize)</code>), and renamed constants on <code>RemotePageIndicatorDefaults</code> and <code>RemoteTimeTextDefaults</code> to <code>PascalCase</code>. (<a href=\"https://android-review.googlesource.com/#/q/Iae17044880c1a48c4bb37043e183adafaf03a4a9\">Iae170</a>)</li>\n <li>Removed <code>DefaultRemotePageIndicatorState</code> and <code>RemoteModifier.buttonSizeModifier()</code> from the public API. (<a href=\"https://android-review.googlesource.com/#/q/I3ada2c9051e157bc26ffd1099c7f09e5310eef4c\">I3ada2</a>)</li>\n <li>Added a required <code>defaultFontFamily</code> parameter to the <code>RemoteTypography(Typography)</code> constructor to apply a <code>RemoteFontFamily</code> to every style. Pass <code>RemoteFontFamily.Default</code> for the previous behavior. (<a href=\"https://android-review.googlesource.com/#/q/I34646152dd520b22d2ee43cd8b295cd3826be84e\">I34646</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>RemoteButton</code>, <code>RemoteCompactButton</code>, <code>RemoteIconButton</code>, and <code>RemoteTextButton</code> now clip their container backgrounds to custom <code>RemoteShape</code> outlines when the creation profile supports path clipping. (<a href=\"https://android-review.googlesource.com/#/q/I3b0ab8eb261e1e363e1695b12d0899571f9fe568\">I3b0ab</a>)</li>\n <li><code>RemoteTimeText</code> now defaults its color to <code>onBackground</code> with luminance 80, matching Wear Compose Material 3 <code>TimeText</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ib53fcf9d30bec282eee850c711ae712002d957ec\">Ib53fc</a>)</li>\n <li><code>RemoteSplitCheckboxButton</code> now draws the same check mark and check animation as <code>RemoteCheckboxButton</code>. (<a href=\"https://android-review.googlesource.com/#/q/I96f9f8b9c7b38d137cf19bd19b81f626e675c519\">I96f9f</a>)</li>\n <li><code>RemoteSplitSwitchButton</code> now mirrors the switch thumb in right-to-left layouts and draws the same thumb check mark as <code>RemoteSwitchButton</code>. (<a href=\"https://android-review.googlesource.com/#/q/I686ec277cb9ddcc3ea1a01d46ffbd0a7411d4908\">I686ec</a>)</li>\n <li>Fixed <code>RemoteButtonDefaults.containerPainter</code> and <code>RemoteCardDefaults.containerPainter</code> ignoring alpha and <code>disabledContainerOpacity</code>, and aligned <code>RemoteIconButtonDefaults</code> <code>contentColor</code> defaults with Wear Compose Material 3. (<a href=\"https://android-review.googlesource.com/#/q/I9c5fbdab637df486682845835cfb87b5258a8da9\">I9c5fb</a>)</li>\n <li><code>RemoteCheckboxButton</code>, <code>RemoteSwitchButton</code>, and <code>RemoteRadioButton</code> now tint their icon with the icon colors from their colors, which default to the primary color, matching Wear Compose Material 3. (<a href=\"https://android-review.googlesource.com/#/q/I315906845f3443a01230665605bc00acae0dfcb1\">I31590</a>)</li>\n <li>Remote selection buttons and their split variants now animate their container and content colors with the slow effects spec of <code>RemoteMaterialTheme.motionScheme</code>, matching Wear Compose Material 3, and the <code>RemoteCheckboxButton</code> tick no longer rotates while being unchecked. (<a href=\"https://android-review.googlesource.com/#/q/I822aa6b9e0f2e4da980f4b9c0a656dbfa32559af\">I822aa</a>)</li>\n <li><code>RemoteCircularProgressIndicator</code> and <code>RemoteLinearProgressIndicator</code> now animate progress changes with <code>RemoteMaterialTheme.motionScheme</code>, matching Wear Compose Material 3, and <code>RemoteCircularProgressIndicator</code> now coerces progress into <code>0f..1f</code>. The indeterminate <code>RemoteCircularProgressIndicator</code> now uses the standard easing for its trims. (<a href=\"https://android-review.googlesource.com/#/q/Ief8ea398cc2c6dfc8c3566a7aa19c2954009929e\">Ief8ea</a>)</li>\n <li>Aligned default colors in <code>RemoteButtonDefaults</code>, <code>RemoteCardDefaults.outlinedCardBorderColor</code>, <code>RemoteCheckboxButtonDefaults</code>, and <code>RemotePageIndicatorDefaults</code> with Wear Compose Material 3. (<a href=\"https://android-review.googlesource.com/#/q/I87510409fe33840e58a96f66348801fbe730ce13\">I87510</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3566803898b060d7136357220affc9ece8236019..9b2acdf2ecd36aa5ddf9c43ebfc288ed11d2c49e/wear/compose/remote/remote-material3"
+    },
+    {
+      "id": "web",
+      "name": "Web",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/web#web-1.0.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>WebContent</code>: Introducing a new API to hold a persistent web engine session state that can safely outlive individual UI views or Activities. (<a href=\"https://android-review.googlesource.com/#/q/I413973fcf8af9c93f650bf35c7c3c66bd6cf1a87\">I41397</a>)</li>\n <li><code>WebContentView</code>: Introducing a new specialized <code>WebView</code> designed to integrate with <code>WebContent</code>. (<a href=\"https://android-review.googlesource.com/#/q/I413973fcf8af9c93f650bf35c7c3c66bd6cf1a87\">I41397</a>)</li>\n <li><code>DetachedWebContentView</code>: A specialized <code>WebContentView</code> that <code>WebContent</code> attaches to when not attached to an Activity. (<a href=\"https://android-review.googlesource.com/#/q/I413973fcf8af9c93f650bf35c7c3c66bd6cf1a87\">I41397</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b4510a0ac49baf283afedaa15ee936afa8a25ff4/web/web"
+    },
+    {
+      "id": "webkit",
+      "name": "Webkit",
+      "version": "1.19.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/webkit#1.19.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Fix accidental hidden callback on <code>NavigationListener</code> (<a href=\"https://android-review.googlesource.com/#/q/I1cd2e8bbaa6c3b827f44d8223ad68af2525b02df\">I1cd2e</a>, <a href=\"https://issuetracker.google.com/issues/576625538\">b/576625538</a>)</li>\n <li>Added an overload of <code>WebViewCompat#startUpWebView</code> that accepts an <code>Executor</code> on which to invoke the <code>WebViewOutcomeReceiver</code> callback, allowing applications to handle startup completion on a background thread rather than the main looper. (<a href=\"https://android-review.googlesource.com/#/q/I517483734a80c8d8662e454a9b8ce955be526593\">I51748</a>)</li>\n <li>Changed <code>Navigation/Page#snapshotState</code> to <code>#captureState</code> and edited <code>NavigationState#didCommitErrorPage</code> javadoc (<a href=\"https://android-review.googlesource.com/#/q/I0405a2d341e77bae624e70e05148ed658c9e291a\">I0405a</a>)</li>\n <li>\n  <p>Adds <code>NavigationState</code> and <code>PageState</code> which are immutable copies of <code>Navigation</code> and <code>Page</code> at a certain point in time. They are supplied via new callbacks within <code>NavigationListener</code>, which have <code>NavigationState</code> and <code>PageState</code> as parameters instead of <code>Navigation</code> and <code>Page</code>. The state objects can also be supplied by <code>Navigation#snapshotState</code> and <code>Page#snapshotState</code>.</p>\n </li>\n <li>\n  <p>Added <code>NavigationState#getNavigationStartUptimeMillis</code> which returns the navigation's start up time in milliseconds.</p>\n </li>\n <li>\n  <p>Added <code>NavigationState#getResponseHeaders</code> and <code>NavigationRedirectParameters</code> which is supplied via <code>onNavigationRedirect(NavigationState,NavigationRedirectParameters)</code> which exposes the HTTP response headers for the Navigation. (<a href=\"https://android-review.googlesource.com/#/q/I9886a73001f22295762a7cc268812454c86347f1\">I9886a</a>)</p>\n </li>\n <li>\n  <p>Added support for <code>Profile#addQuicHints</code> to take wildcards as URLs (such as <code>https://*.example.com</code> or `https://*) (<a href=\"https://android-review.googlesource.com/#/q/Ic6d67d674316386681dbabb4c28d22c2a0297051\">Ic6d67</a>, <a href=\"https://issuetracker.google.com/issues/442161273\">b/442161273</a>)</p>\n </li>\n <li>\n  <p>Deprecated <code>WebSettingsCompat.getAttributionRegistrationBehavior</code>, <code>WebSettingsCompat.setAttributionRegistrationBehavior</code>, and related constants as <code>WebView</code> no longer supports Attribution Reporting in version 152 and later. (<a href=\"https://android-review.googlesource.com/#/q/I3453a4cf11826a8d6fd3bcd4ce9fef83f4a73e09\">I3453a</a>, <a href=\"https://issuetracker.google.com/issues/528282384\">b/528282384</a>)</p>\n </li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/fb536a9a01ea26779570787c8a6af74256f17cb0..21b800145da7b651ce947785e2e20815a3132c9d/webkit/webkit"
+    }
+  ],
+  "rssUpdated": "2026-11-04T18:00:00Z"
+}
