@@ -1,0 +1,25 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#april_15_2021",
+  "title": "April 15, 2021",
+  "releasedOn": "2021-04-15",
+  "updated": "2021-04-15T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#april_15_2021",
+  "components": [
+    {
+      "id": "core-core-ktx",
+      "name": "Core Core-Ktx",
+      "version": "1.6.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.6.0-alpha02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Add <code>TelephoneManagerCompat</code> and <code>SubscriptionManagerCompat</code> (<a href=\"https://android-review.googlesource.com/#/q/I5568d5ef665d140ec998adbbf7681870a1c84ee2\">I5568d</a>)</li>\n <li>Remove deprecated <code>addCapabilityBinding</code> method from <code>ShortcutInfoCompat</code> (<a href=\"https://android-review.googlesource.com/#/q/Ie8f70595bd410b6db5d4473f78d9423f4d7ea10c\">Ie8f70</a>)</li>\n <li>Add <code>addCapabilityBinding</code> with parameters and <code>addCapabilityBinding</code> without parameters setters to <code>ShortcutInfoCompat.Builder</code>, deprecated old <code>addCapabilityBinding</code> (<a href=\"https://android-review.googlesource.com/#/q/I906865532502b3bc2246bc79d32e64d7a2173c8f\">I90686</a>)</li>\n <li>Add <code>LocationCompat</code> class and <code>LocationManagerCompat.getCurrentLocation()</code> (<a href=\"https://android-review.googlesource.com/#/q/I78d9ad233c3381477612bb9b382ca0cb60ce01a6\">I78d9a</a>)</li>\n <li>Deprecated <code>ModeCompat.isNative</code> which is replaced by <code>DisplayCompat.getMode</code>. (<a href=\"https://android-review.googlesource.com/#/q/I9a6a2cc601ac0fb41501ef5ac9e0aaa105a9d11d\">I9a6a2</a>)</li>\n <li>Added <code>ContextCompat.getAttributionTag()</code> and <code>UserHandleCompat.getUserHandleForUid()</code> (<a href=\"https://android-review.googlesource.com/#/q/Iea4861c037732310318f97c359206a704573777a\">Iea486</a>)</li>\n</ul>\n<p><strong>External Contribution</strong></p>\n<ul>\n <li>Backport tintable background and check mark for <code>CheckedTextView</code> (<a href=\"https://android-review.googlesource.com/#/q/I8575c5c23240a14153654ffafd0387fa89f2a3bc\">I8575c</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5c42896eb6591b09e3952030fb7ea8d9b8c42713..079dd60d7d581a10fe71f976c3194c150ef1dd58/core"
+    },
+    {
+      "id": "core-google-shortcuts",
+      "name": "Core-pip",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#core-google-shortcuts-1.0.0-alpha02",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>By depending on <code>androidx.core:core-google-shortcuts</code> as an optional component along with <code>androidx.core</code>; you can start using <code>ShortcutManagerCompat</code> to donate shortcuts to be used by Google.</li>\n <li>A new TrampolineActivity will be merged with apps depending on this module. The TrampolineActivity is used to open shortcuts donated by this module.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Added <code>ShortcutInfoChangeListenerImpl</code>, to be used by <code>ShortcutManagerCompat</code> to donate shortcuts to Firebase App Index.</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}
