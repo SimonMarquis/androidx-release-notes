@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#november_7_2023",
+  "title": "November 7, 2023",
+  "releasedOn": "2023-11-07",
+  "updated": "2023-11-07T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#november_7_2023",
+  "components": [
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.5.4",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.5.4",
+      "detailsHtml": "<p><strong>Dependency Updates</strong></p>\n<ul>\n <li>Compose Compiler is now compatible with Kotlin 1.9.20</li>\n</ul>\n<p><strong>New Features</strong></p>\n<ul>\n <li>Add an experimental option to enable strong skipping mode. Strong skipping mode allows composables with unstable parameters to be skipped. Additionally, lambdas with unstable captures are memoized. This feature is experimental and not considered ready for production use. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/2671135\">22421e</a>)</li>\n <li>Add flag to enable/disable source/trace information. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/2810413\">4d45f09</a>)</li>\n <li>Allow configuring the stability of external classes via a configuration file. (<a href=\"https://android-review.googlesource.com/#/q/If40eb860d19ece10d8385ce2fd518bd5d271f620\">If40eb</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix early exit from composable functions when source information is not collected. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/2737893\">fe6267</a>)</li>\n <li>Fix continue from composable functions. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/2762445\">948362</a>)</li>\n <li>Fix resolution when composable functions are invoked from within a function invocation that has multiple overloads that are dependent on expression return type. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/2769286\">2d36d0</a>)</li>\n <li>Fix memoization when function reference does not have dispatch receiver. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/2770269\">fc2326</a>)</li>\n <li>Fix dirty check which was preventing recomposition of lambdas in some situations. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/2779188\">db3699</a>)</li>\n <li>Fix stability when incrementally compiling across modules. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/2766125\">7d3e127</a>)</li>\n <li>Reduce scope of <code>@DontMemoize</code> to lambda expressions only. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/2804275\">7a7fa52</a>)</li>\n <li>Fix Variables not captured correctly when using a Composable fun interface as a lambda. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/2810414\">5ae3556</a>)</li>\n</ul>\n<p><strong>External Contribution</strong></p>\n<ul>\n <li>Use structural equality symbol for numeric and null comparison (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/2668595\">c612a0</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/738409b08051e4780768b4e7163348898f8d6c03..e858b16810125048c66293684afdfc08f57e4ebc/compose/compiler"
+    }
+  ]
+}
