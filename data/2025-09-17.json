@@ -1,0 +1,26 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#september_17_2025",
+  "title": "September 17, 2025",
+  "releasedOn": "2025-09-17",
+  "updated": "2025-09-17T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#september_17_2025",
+  "components": [
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.9.4",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.9.4",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an error with the Compose Compiler plugin not being applied that caused Lifecycle KMP artifacts to be broken. (<a href=\"https://android-review.googlesource.com/#/q/Ie95bc1567a9d2afee9b276057c8a5cb8ed1a4f29\">Ie95bc</a>, <a href=\"https://issuetracker.google.com/443096483\">b/443096483</a>, <a href=\"https://issuetracker.google.com/443965665\">b/443965665</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/8760ebe0c4b4174e0a3933fe6162e46ca06f8d80..de92a2e4117ed83ceccc5bf636358c1df27d4bd6/lifecycle"
+    },
+    {
+      "id": "savedstate",
+      "name": "Savedstate",
+      "version": "1.3.3",
+      "url": "https://developer.android.com/jetpack/androidx/releases/savedstate#1.3.3",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an error with the Compose Compiler plugin not being applied that caused <code>SavedState</code> KMP artifacts to be broken. (<a href=\"https://android-review.googlesource.com/#/q/Id2290d74b2db521eb4cd00999bda3e8b116ae48d\">Id2290</a>, <a href=\"https://issuetracker.google.com/443965665\">b/443965665</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1f24bdb90711ef452dd28d14ea3a6537b3bbfc0c..a4c23caec259e53f8cfdc40b79e95c6f33136bec/savedstate"
+    }
+  ],
+  "rssUpdated": "2025-09-17T00:00:00Z"
+}
