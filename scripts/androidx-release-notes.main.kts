@@ -1087,7 +1087,7 @@ class GitHubReleases(env: Map<String, String> = System.getenv()) {
             .distinctBy { it.name to it.version }
             .sortedWith(compareBy({ it.name }, { it.version }))
         return buildString {
-            appendLine("### 📖 **[Open the complete release notes digest](https://$owner.github.io/$name/$date.html)**")
+            appendLine("### 📖 **[Open the release notes digest](https://$owner.github.io/$name/$date.html)**")
             appendLine("---")
             components.forEach { appendLine("- [${it.name} `${it.version}`](${it.url})") }
         }
