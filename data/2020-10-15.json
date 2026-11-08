@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#october_15_2020",
+  "title": "October 15, 2020",
+  "releasedOn": "2020-10-15",
+  "updated": "2020-10-15T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#october_15_2020",
+  "components": [
+    {
+      "id": "test",
+      "name": "Test",
+      "version": "1.3.1-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#1.3.1-alpha01",
+      "detailsHtml": "<p>This is the alpha release of AndroidX Test 1.3.1. New APIs are subject to change. It contains updates to the following libraries:</p>\n<ul>\n <li>Core 1.3.1-alpha01</li>\n <li>Espresso 3.4.0-alpha01</li>\n <li>Intents 3.4.0-alpha01</li>\n <li>JUnit 1.1.3-alpha01</li>\n <li>Monitor 1.3.1-alpha01</li>\n <li>Orchestrator 1.3.1-alpha01</li>\n <li>Runner 1.3.1-alpha01</li>\n <li>Rules 1.3.1-alpha01</li>\n <li>Truth 1.3.1-alpha01</li>\n <li>Test Services 1.3.1-alpha01</li>\n</ul>\n<p>Here is a summary of the changes since the 1.3.0 release:</p>\n<p><strong>New Features</strong></p>\n<ul>\n <li>Add Espresso ViewMatcher APIs for negative conditions</li>\n <li>Allow unregistering Loopers from Espresso IdlingRegistry</li>\n <li>Support specifying junit RunListeners via java.util.ServiceLoader</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Improve handling for large stack traces on test failures [#729, #269]\n  <ul>\n   <li>Remove test runner framework related stack frames</li>\n   <li>Truncate stack traces to a max limit of 64KB, to avoid binder limit transaction errors</li>\n  </ul></li>\n <li>Espresso: Improve error messaging when no activity is present</li>\n <li>Improve Instrumentation#runOnMainSync exception error handling</li>\n <li>Add package visibility entries for Orchestrator and Services to fix Orchestator when using targetSdk 30 [#743]</li>\n <li>Improve documentation for -e timeout_msec and AndroidJUnit4.</li>\n <li>Send ActivityOptions to BootstrapActivity [#685]</li>\n <li>Improve ViewMatchers#assertThat error messaging by enabling it to use Matcher.describeMismatch</li>\n <li>Fix the missing desugar ThrowableExtension errors when using espresso remote [issuetracker.google.com/170228109]</li>\n <li>Fix espresso web on &lt; Android API 19 by including the androidx.test.espresso.web.bridge classes</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#october_29_2020",
+  "title": "October 29, 2020",
+  "releasedOn": "2020-10-29",
+  "updated": "2020-10-29T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#october_29_2020",
+  "components": [
+    {
+      "id": "constraintlayout",
+      "name": "ConstraintLayout",
+      "version": "2.0.4",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#2.0.4",
+      "detailsHtml": "",
+      "commitsUrl": null
+    }
+  ]
+}
