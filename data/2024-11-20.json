@@ -1,0 +1,25 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#november_20_2024",
+  "title": "November 20, 2024",
+  "releasedOn": "2024-11-20",
+  "updated": "2024-11-20T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#november_20_2024",
+  "components": [
+    {
+      "id": "test-orchestrator",
+      "name": "Test Orchestrator",
+      "version": "1.6.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#orchestrator-1.6.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Update to minSdkVersion 21</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-services",
+      "name": "Test Services",
+      "version": "1.6.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#services-1.6.0-alpha01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>TestStorage: Use input directory location for internal files</li>\n <li>StackTrimmer: harden against exceptions coming from Failure.getMessage().</li>\n</ul>\n<p><strong>New Features</strong></p>\n<ul>\n <li>Adding a LocalSocket-based protocol for the ShellExecutor to talk to the ShellMain. This obsoletes SpeakEasy; if androidx.test.services is killed (e.g. by the low memory killer) between the start of the app_process that invokes LocalSocketShellMain and the start of the test, the test is still able to talk to LocalSocketShellMain.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Update to minSdkVersion 21</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}
