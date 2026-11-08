@@ -1,0 +1,89 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#march_18_2020",
+  "title": "March 18, 2020",
+  "releasedOn": "2020-03-18",
+  "updated": "2020-03-18T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#march_18_2020",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.2.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.2.0-alpha02",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li><strong>ActivityResultRegistry</strong>: <code>ComponentActivity</code> now provides an <code>ActivityResultRegistry</code> that lets you handle the <code>startActivityForResult()</code>+<code>onActivityResult()</code> as well as <code>requestPermissions()</code>+<code>onRequestPermissionsResult()</code> flows without overriding methods in your Activity or Fragment, brings increased type safety via <code>ActivityResultContract</code>, and provides hooks for testing these flows. See the updated <a href=\"https://developer.android.com/training/basics/intents/result\">Getting a Result from an Activity</a>. (<a>b/125158199</a>)</li>\n</ul>\n<strong>Note:</strong><span> when upgrading to Activity <code>1.2.0-alpha02</code>, you <strong>must</strong> upgrade to <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.3.0-alpha02\">Fragment <code>1.3.0-alpha02</code></a> or higher to use the <code>RequestPermission</code> or <code>RequestPermissions</code> Activity Result contracts.</span>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/666ae665acfcfa2a20eccc18e4494808169742f4..1e0ba6efec9a86f20ddc75c8c2b132e009cfb6b1/activity"
+    },
+    {
+      "id": "autofill",
+      "name": "Autofill",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/autofill#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li><code>InlinePresentationBuilder</code> added to help autofill providers to interface with the new keyboard based <code>InlineSuggestionRequest</code></li>\n <li><code>InlinePresentationRenderer</code> added to help keyboard providers to render Slices given by autofill providers</li>\n <li><code>InlineSuggestionsHostView</code> added to allow keyboard providers to constrain where the slices are rendered</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/34328d238b2999f231e824d2a9149acdbe3d5c00..8744680798c115f612a99148c5a5c3ad4bd6fbf5/autofill/autofill"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.2.3",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.2.3",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a bug in <code>DialogFragment</code> that caused a <code>StackOverflowError</code> when calling <code>getLayoutInflater()</code> from within <code>onCreateDialog()</code>. (<a href=\"https://issuetracker.google.com/issues/117894767\">b/117894767</a>, <a href=\"https://android-review.googlesource.com/1258665\">aosp/1258665</a>)</li>\n <li>Reduced the scope of Fragment’s included ProGuard rules to ensure that unused Fragment classes can be stripped. (<a href=\"https://issuetracker.google.com/issues/149665169\">b/149665169</a>)</li>\n <li>Fixed false positives in the <code>UseRequireInsteadOfGet</code> Lint check when using a local variable name that shadowed the Kotlin property name. (<a href=\"https://issuetracker.google.com/issues/149891163\">b/149891163</a>)</li>\n <li><code>FragmentContainerView</code> no longer throws an <code>UnsupportedOperationException</code> for using the incorrect constructor in layout preview. (<a href=\"https://issuetracker.google.com/issues/149707833\">b/149707833</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9598eb9e7eaf8411e0433c8b5fc5a5bc8abc096a..bb33dc2112f153d6d7ae15a267d2acd7ac53dabb/fragment"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.3.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.3.0-alpha02",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added support for the <code>ActivityResultRegistry</code> API introduced in <a href=\"https://developer.android.com/jetpack/androidx/releases/activity#1.2.0-alpha02\">Activity <code>1.2.0-alpha02</code></a> to handle the <code>startActivityForResult()</code>+<code>onActivityResult()</code> as well as <code>requestPermissions()</code>+<code>onRequestPermissionsResult()</code> flows without overriding methods in your Fragment in addition to providing hooks for testing these flows. See the updated <a href=\"https://developer.android.com/training/basics/intents/result\">Getting a Result from an Activity</a>. (<a>b/125158199</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li><code>DialogFragment</code> now provides a constructor that takes a <code>@LayoutRes</code> that indicates the layout that <code>onCreateView()</code> should inflate by default. (<a href=\"https://issuetracker.google.com/issues/150327080\">b/150327080</a>)</li>\n <li>The <code>onActivityCreated()</code> method is now deprecated. Code touching the fragment's view should be done in <code>onViewCreated()</code> (which is called immediately before <code>onActivityCreated()</code>) and other initialization code should be in <code>onCreate()</code>. To receive a callback specifically when the activity's <code>onCreate()</code> is complete, a <code>LifeCycleObserver</code> should be registered on the activity's <code>Lifecycle</code> in <code>onAttach()</code>, and removed once the <code>onCreate()</code> callback is received. (<a href=\"https://issuetracker.google.com/issues/144309266\">b/144309266</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.2.3\">Fragment <code>1.2.3</code></a>: Fixed a bug in <code>DialogFragment</code> that caused a <code>StackOverflowError</code> when calling <code>getLayoutInflater()</code> from within <code>onCreateDialog()</code>. (<a href=\"https://issuetracker.google.com/issues/117894767\">b/117894767</a>, <a href=\"https://android-review.googlesource.com/1258664\">aosp/1258664</a>)</li>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.2.3\">Fragment <code>1.2.3</code></a>: Reduced the scope of Fragment’s included ProGuard rules to ensure that unused Fragment classes can be stripped. (<a href=\"https://issuetracker.google.com/issues/149665169\">b/149665169</a>)</li>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.2.3\">Fragment <code>1.2.3</code></a>: Fixed false positives in the <code>UseRequireInsteadOfGet</code> Lint check when using a local variable name that shadowed the Kotlin property name. (<a href=\"https://issuetracker.google.com/issues/149891163\">b/149891163</a>)</li>\n <li>From <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.2.3\">Fragment <code>1.2.3</code></a>: <code>FragmentContainerView</code> no longer throws an <code>UnsupportedOperationException</code> for using the incorrect constructor in layout preview. (<a href=\"https://issuetracker.google.com/issues/149707833\">b/149707833</a>)</li>\n</ul>\n<p><strong>Known Issues</strong></p>\n<ul>\n <li><code>BottomSheetDialogFragment</code> no longer properly positions its dialog on the screen. (<a href=\"https://issuetracker.google.com/issues/151652127\">b/151652127</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/666ae665acfcfa2a20eccc18e4494808169742f4..1e0ba6efec9a86f20ddc75c8c2b132e009cfb6b1/fragment"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.3.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.3.0-alpha04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added support for feature module activity and fragment destinations in the Navigation Kotlin DSL. (<a href=\"https://issuetracker.google.com/issues/148969800\">b/148969800</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>The <code>DynamicExtras</code> class no longer uses a builder pattern and can now be constructed directly. (<a href=\"https://android-review.googlesource.com/1253671\">aosp/1253671</a>)</li>\n <li><code>DynamicActivityNavigator</code> now takes a <code>Context</code> in its constructor rather than an <code>Activity</code>. (<a href=\"https://android-review.googlesource.com/1250252\">aosp/1250252</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>NavigationUI</code> no longer ignores empty labels (i.e., a destination with <code>android:label=””</code>) and now correctly sets the title to an empty string. (<a href=\"https://issuetracker.google.com/issues/148679860\">b/148679860</a>)</li>\n</ul>\n<p><strong>Dependency Updates</strong></p>\n<ul>\n <li>The Navigation Dynamic Features artifacts now depend on Play Core <code>1.6.5</code>. (<a href=\"https://issuetracker.google.com/issues/149556401\">b/149556401</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/666ae665acfcfa2a20eccc18e4494808169742f4..8744680798c115f612a99148c5a5c3ad4bd6fbf5/navigation"
+    },
+    {
+      "id": "paging",
+      "name": "Paging",
+      "version": "2.1.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/paging#2.1.2",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix for <code>IndexOutOfBoundsException</code> in rare cases when converting a position during invalidation.</li>\n</ul>\n<p><strong>Release issue</strong></p>\n<ul>\n <li>\n  <p>Paging version <code>2.1.1</code> was released incorrectly from a misconfigured branch, exposing partially-implemented APIs and functionality upcoming in a future release.</p>\n </li>\n <li>\n  <p>Paging <code>2.1.2</code> contains the load-centering fix originally released in 2.1.1, but this time correctly cherry-picked atop the 2.1.0 release. It is strongly recommended to upgrade to this release, if you are currently on 2.1.1.</p>\n </li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ccb8e324ee105f23ea5d97e683a853330f236203..f4786c969d8bdf214a797bc7ef09f05037fdea58/paging"
+    },
+    {
+      "id": "room",
+      "name": "Room",
+      "version": "2.2.5",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.2.5",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Make <code>MultiInstanceInvalidationService</code> directBootAware. Thanks to ‘Mygod <a href=\"mailto:contact-git@mygod.be\">contact-git@mygod.be</a>’ (<a href=\"https://issuetracker.google.com/issues/148240967\">b/148240967</a>)</li>\n <li>Fixed a bug that would cause a crash when multi-instance invalidation was enabled and the database contained a FTS entity. (<a href=\"https://issuetracker.google.com/issues/148969394\">b/148969394</a>)</li>\n <li>Fixed an issue when loading the SQLite native libraries in the Room annotation processor that would cause the compiler to crash due to parallel compilations. (<a href=\"https://issuetracker.google.com/issues/146217083\">b/146217083</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c4faf1724c897234f083f07e15f0156873fd6a8a..6880f4a443ed0d4e88e15c18044fbfc644c766e2/room"
+    },
+    {
+      "id": "security",
+      "name": "Security-state-provider",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/security#1.0.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "slidingpanelayout",
+      "name": "SlidingPaneLayout",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/slidingpanelayout#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>SlidingPaneLayout</code> now implements the <code>Openable</code> interface added in <a href=\"https://developer.android.com/jetpack/androidx/releases/customview#1.1.0-alpha02\">CustomView <code>1.1.0-alpha02</code></a>, mirroring the change in <a href=\"https://developer.android.com/jetpack/androidx/releases/drawerlayout#1.1.0-alpha04\">DrawerLayout <code>1.1.0-alpha04</code></a>. (<a href=\"https://issuetracker.google.com/issues/129979320\">b/129979320</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/50a39caa72955aae0c75225fd9805ab537cbf049..8744680798c115f612a99148c5a5c3ad4bd6fbf5/slidingpanelayout/slidingpanelayout"
+    },
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.3.4",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.3.4",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a bug which would cause multiple instances of a long running <code>Worker</code>s to run, after exceeding the 10 minute execution window. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1247484\">aosp/1247484</a>, <a href=\"https://issuetracker.google.com/issues/150553353\">b/150553353</a>)</li>\n <li>Fix for WorkManager’s lint <code>IssueRegistry</code>. Thank you <a href=\"https://twitter.com/ZacSweers\">@ZacSweers</a> from Slack, for the contribution. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1217923\">aosp/1217923</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3735155f52238ca168c5608ed332179382b76899..a6360a30a94ce26f8b4d9322eccd3038b669adee/work"
+    }
+  ]
+}
