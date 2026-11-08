@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#february_6_2025",
+  "title": "February 6, 2025",
+  "releasedOn": "2025-02-06",
+  "updated": "2025-02-06T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#february_06_2025",
+  "components": [
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.6.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.6.0-alpha03",
+      "detailsHtml": "<p>Use the 1.6.0 <a href=\"https://developer.android.com/jetpack/androidx/releases/media3#1.6.0\">stable version</a>.</p>",
+      "commitsUrl": null
+    }
+  ]
+}

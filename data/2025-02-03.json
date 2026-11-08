@@ -1,0 +1,89 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#february_3_2025",
+  "title": "February 3, 2025",
+  "releasedOn": "2025-02-03",
+  "updated": "2025-02-03T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#february_03_2025",
+  "components": [
+    {
+      "id": "test-core",
+      "name": "Test Core",
+      "version": "1.7.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#core-1.7.0-alpha01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong> * Fix <code>Rect</code> handling in <code>ViewCapture</code> for SDK &gt;= 34 for non root views. * Fix bug reporting the status code when PixelCopy fails in ViewCapture.generateBitmapFromPixelCopy. * Improving wording of a failure message.</p>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Update to minSdkVersion 21</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-espresso",
+      "name": "Test Espresso",
+      "version": "3.7.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#espresso-3.7.0-alpha01",
+      "detailsHtml": "<p>The following artifacts were released:</p>\n<ul>\n <li><code>androidx.test.espresso:espresso-accessibility:3.7.0-alpha01</code></li>\n <li><code>androidx.test.espresso:espresso-core:3.7.0-alpha01</code></li>\n <li><code>androidx.test.espresso:espresso-contrib:3.7.0-alpha01</code></li>\n <li><code>androidx.test.espresso:espresso-idling-resource:3.7.0-alpha01</code></li>\n <li><code>androidx.test.espresso:espresso-intents:3.7.0-alpha01</code></li>\n <li><code>androidx.test.espresso:espresso-remote:3.7.0-alpha01</code></li>\n <li><code>androidx.test.espresso:espresso-web:3.7.0-alpha01</code></li>\n <li><code>androidx.test.espresso.idling:idling-concurrent:3.7.0-alpha01</code></li>\n <li><code>androidx.test.espresso.idling:idling-net:3.7.0-alpha01</code></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix deadlock in espresso in Robolectric INSTRUMENTATION_TEST + paused looper.</li>\n <li>Refactor espresso's MessageQueue access into a TestLooperManagerCompat class, and use new TestLooperManager APIs when available.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Update to minSdkVersion 21</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-espresso-device",
+      "name": "Test Espresso Device",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#espresso_device-1.1.0-alpha01",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-junit-extensions",
+      "name": "Test JUnit Extensions",
+      "version": "1.3.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#junit-1.3.0-alpha01",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-truth-extensions",
+      "name": "Test Truth Extensions",
+      "version": "1.7.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#truth-1.7.0-alpha01",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-monitor",
+      "name": "Test Monitor",
+      "version": "1.8.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#monitor-1.8.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Update to minSdkVersion 21</li>\n <li>Make ReflectionException a RuntimeException</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-orchestrator",
+      "name": "Test Orchestrator",
+      "version": "1.6.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#orchestrator-1.6.0-alpha02",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-runner",
+      "name": "Test Runner",
+      "version": "1.7.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#runner-1.7.0-alpha01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Exceptions during <code>@AfterClass</code> were not being reported via <code>InstrumentationResultPrinter</code>.</li>\n <li>Exceptions arising in AndroidJUnitRunner.buildRequest are now handled.</li>\n <li>Assumption failures during a ClassRule or BeforeClass are now reported more consistently via <code>InstrumentationResultPrinter</code></li>\n <li>Clarify SdkSuppress reference docs</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Update to minSdkVersion 21</li>\n <li>Deprecate androidx.test.filters.Suppress in favor of org.junit.Ignore</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-rules",
+      "name": "Test Rules",
+      "version": "1.7.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#rules-1.7.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Update to minSdkVersion 21</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-services",
+      "name": "Test Services",
+      "version": "1.6.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#services-1.6.0-alpha02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>The obsolete FileObserver protocol has been removed in favor of the LocalSocket-based protocol.</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}
