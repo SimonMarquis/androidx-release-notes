@@ -1,0 +1,33 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#january_25_2019",
+  "title": "January 25, 2019",
+  "releasedOn": "2019-01-25",
+  "updated": "2019-01-25T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#january_25_2019",
+  "components": [
+    {
+      "id": "paging",
+      "name": "Paging",
+      "version": "2.1.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/paging#2.1.0",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "1.0.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#1.0.0-beta03",
+      "detailsHtml": "<p>This release contains some bug fixes.</p>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>We introduced a regression <code>1.0.0-beta02</code> that was causing work to not execute properly in some situations. <a href=\"https://issuetracker.google.com/123211993\">b/123211993</a></li>\n <li>Fixed a case where work wasn't properly honoring backoff timing. <a href=\"https://issuetracker.google.com/122881597\">b/122881597</a></li>\n <li>Fixed a <code>ConcurrentModificationException</code> on devices running Android 5.1 (API or) or lower. This is a continuation of the fix in <code>1.0.0-beta02</code>. <a href=\"https://issuetracker.google.com/121345393\">b/121345393</a></li>\n <li>Added <code>exported=false</code> for some components in our manifest that were missing this annotation.</li>\n <li>Included information about how WorkManager interacts with the OS in the package-level documentation.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "room",
+      "name": "Room",
+      "version": "2.1.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.1.0-alpha04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>DAO methods annotated with <code>@Query</code> containing <code>INSERT</code>, <code>UPDATE</code> or <code>DELETE</code> statements can now return async types <code>Single</code>, <code>Mayble</code>, <code>Completable</code> and <code>ListenableFuture</code>. Additionally they can also be suspend functions. <a href=\"https://issuetracker.google.com/120227284\">b/120227284</a></li>\n</ul>\n<p><strong>API / Behavior Changes</strong></p>\n<ul>\n <li>Room will now throw an error if a non-abstract DAO method annotated with <code>@Transaction</code> returns an async type such as <code>Single</code>, <code>Mayble</code>, <code>Completable</code>, <code>LiveData</code> or <code>ListenableFuture</code>. Since transactions are thread confined it is currently impossible for Room to begin and end a transaction around a function that may peform queries in different threads. <a href=\"https://issuetracker.google.com/120109336\">b/120109336</a></li>\n <li><code>OnConflictStrategy.FAIL</code> and <code>OnConflictStrategy.ROLLBACK</code> have been <code>@Deprecated</code> since they do not behave as intended with Android's current SQLite bindings. <a href=\"https://issuetracker.google.com/117266738\">b/117266738</a></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a bug where Room wouldn't correctly use the TypeConverter of a return type if the DAO method was a suspend function. <a href=\"https://issuetracker.google.com/122988159\">b/122988159</a></li>\n <li>Fixed a bug where Room would incorrectly identify inherited suspend functions as non-suspending. <a href=\"https://issuetracker.google.com/122902595\">b/122902595</a></li>\n <li>Fixed a bug where Room would generate incorrect code when an <code>@Embedded</code> field was in a parent class and used in multiple child classes. <a href=\"https://issuetracker.google.com/121099048\">b/121099048</a></li>\n <li>Fixed an issue where the database would deadlock when invoking DAO suspend functions between a <code>beginTransaction()</code> and <code>endTransaction()</code>. <a href=\"https://issuetracker.google.com/120854786\">b/120854786</a></li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

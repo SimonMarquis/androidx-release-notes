@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#january_15_2019",
+  "title": "January 15, 2019",
+  "releasedOn": "2019-01-15",
+  "updated": "2019-01-15T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#january_15_2019",
+  "components": [
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "1.0.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#1.0.0-beta02",
+      "detailsHtml": "<p>This release contains some bug fixes.</p>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an edge case where periodic work could run more than once per interval on devices running Android 6.0 (API level 23). <a href=\"https://issuetracker.google.com/121998363\">b/121998363</a></li>\n <li>Fixed a <code>ConcurrentModificationException</code> on devices running Android 5.1 (API level 22) or lower. <a href=\"https://issuetracker.google.com/121345393\">b/121345393</a></li>\n <li>Fixed erroneous execution of work when Constraints aren't met on devices running Android 5.1 (API level 22) or lower. <a href=\"https://issuetracker.google.com/122578012\">b/122578012</a></li>\n <li>Optimized work completion handling to be faster in some edge cases. <a href=\"https://issuetracker.google.com/122358129\">b/122358129</a></li>\n <li>Added a change to address potential race conditions among multiple instances of <code>LiveData</code> that WorkManager uses.</li>\n <li>Moved to use <code>Room</code> dependency <code>1.1.1</code> instead of <code>1.1.1-rc01</code>; these versions are identical. <a href=\"https://issuetracker.google.com/122578011\">b/122578011</a></li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#january_30_2019",
+  "title": "January 30, 2019",
+  "releasedOn": "2019-01-30",
+  "updated": "2019-01-30T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#january_30_2019",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.0.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.0.0-alpha04",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Added support for the <code>@ContentView</code> class annotation that allows you to indicate which layout XML file should be inflated as an alternative to using <code>setContentView()</code>. (<a href=\"https://android-review.googlesource.com/837619\">aosp/837619</a>)</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Added a note that <code>getViewModelStore()</code> should not be overridden and will be made final in a future release. Please <a href=\"https://issuetracker.google.com/issues/new?component=527362\">file a feature request</a> if you are currently overriding this method. (<a href=\"https://android-review.googlesource.com/880712\">aosp/837619</a>)</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>The <code>activity</code> module now depends on version 2.1.0-alpha02 of ViewModel to match the <code>activity-ktx</code> module’s dependency.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "annotation",
+      "name": "Annotation",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/annotation#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Added a <code>@ContentView</code> annotation that allows you to indicate which layout XML file should be inflated. This is supported in <code>ComponentActivity</code> in its <code>1.0.0-alpha04</code> and <code>Fragment</code> in its <code>1.1.0-alpha04</code> release as an alternative to using <code>setContentView()</code> or overriding <code>onCreateView()</code>, respectively. (<a href=\"https://android-review.googlesource.com/837619\">aosp/837619</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "collection",
+      "name": "Collection",
+      "version": "1.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/collection#1.1.0-alpha02",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li>Deprecate redundant <code>delete</code> methods. The <code>remove</code> methods offers the same API and functionality and matches the API used by non-specialized Maps. (<a href=\"https://r.android.com/866053\">aosp/866053</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "core",
+      "name": "Core-telecom",
+      "version": "1.1.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.1.0-alpha04",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li>Change value of <code>EXTRA_SHORTCUT_ID</code> to be consistent with the platform (<a href=\"https://android-review.googlesource.com/877712/\">aosp/877712</a>)</li>\n <li>Add <code>CATEGORY_NOTIFICATION</code> to <code>NotificationCompat</code> (<a href=\"https://android-review.googlesource.com/861067/\">aosp/861067</a>)</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fix for fontFamily not working on devices running API level 24 and lower (<a href=\"https://android-review.googlesource.com/807054/\">aosp/807054</a>)</li>\n <li>Fixed bug where replacing accessibility actions, and adding accessibility actions, didn't remove old accessibility actions (<a href=\"https://android-review.googlesource.com/848314/\">aosp/848314</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "leanback",
+      "name": "Leanback",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/leanback#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Added PinPicker widget.</li>\n <li>Outline clipping is now disabled by default on low-ram device.</li>\n <li>Allowed customized PlaybackSupportFragment showing/hiding controls behavior (<a href=\"https://issuetracker.google.com/122918400\">b/122918400</a>)</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Framework fragments were deprecated.</li>\n <li>New PinPicker class.</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed a fragment transaction crash after <code>BrowseSupportFragment</code> is stopped</li>\n <li><code>GuidedStepSupportFragment</code> should not clip items in <code>VerticalGridView</code> (<a href=\"https://android-review.googlesource.com/787396\">aosp/787396</a>)</li>\n <li><code>onCreateActionsStylist()</code> and <code>onCreateGuidanceStylist()</code> were moved from constructor to <code>GuidedSupportFragment.onCreate()</code> (<a href=\"https://android-review.googlesource.com/787397\">aosp/787397</a>)</li>\n <li>Fixed a bug where <code>SearchSupportFragment</code> failed to focus to results fragment. (<a href=\"https://android-review.googlesource.com/798833\">aosp/798833</a>)</li>\n <li>Fixed a scrolling bug in <code>VerticalGridView</code> and <code>HorizontalGridView</code> (<a href=\"https://android-review.googlesource.com/858809\">aosp/858809</a>)</li>\n</ul>\n<p><code>androidx.leanback-preference 1.1.0-alpha01</code> is released.</p>\n<p><strong>New features</strong></p>\n<ul>\n <li>Added androidx fragment classes, deprecated framework fragment classes.</li>\n <li>Colors and fonts are now based on framework theme attributes.</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>New androidx fragment classes, framework fragment classes were deprecated.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.1.0-alpha02",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li><code>LifecycleRegistry</code> now contains a <code>setCurrentState()</code> method that replaces the now deprecated <code>setState()</code> method. (<a href=\"https://android-review.googlesource.com/880715\">aosp/880715</a>)</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed an issue where mock <code>ViewModel</code> instances would crash when the containing <code>ViewModelStore</code> was cleared. <a href=\"https://issuetracker.google.com/122273087\">b/122273087</a></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "version": "1.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media#1.0.1",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed bug of an unexpected IllegalStateException while using <code>MediaBrowserCompat.connect()</code> (<a href=\"https://android-review.googlesource.com/858075\">aosp/858075</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "recyclerview",
+      "name": "RecyclerView",
+      "version": "1.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/recyclerview#1.1.0-alpha02",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li><code>RecyclerView.setLayoutFrozen(boolean)</code> and <code>RecyclerView.isLayoutFrozen()</code> are deprecated in favor of <code>RecyclerView.suppressLayout(boolean)</code> and <code>RecyclerView.isLayoutSuppressed()</code>. (<a href=\"https://android-review.googlesource.com/839414\">aosp/839414</a>)</li>\n <li><code>RecyclerView.setLayoutTransition(LayoutTransition)</code> is formally deprecated and will throw an <code>IllegalArgumentException</code> when called with a non null value. (<a href=\"https://android-review.googlesource.com/839414\">aosp/839414</a>)</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fix bug in RV where <code>SmoothScroller</code> is never stopped (<a href=\"https://android-review.googlesource.com/843741\">aosp/843741</a>)</li>\n <li>Bug fixed where <code>SCROLL_STATE_IDLE</code> may not be called at the end of a scrolling animation. (<a href=\"https://android-review.googlesource.com/812576\">aosp/812576</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test",
+      "name": "Test",
+      "version": "1.1.1-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#1.1.1-alpha01",
+      "detailsHtml": "<p>This is an alpha release of AndroidX Test 1.1.1. New APIs are subject to change. It contains updates to the following libraries:</p>\n<ul>\n <li>Espresso 3.1.2-alpha01\n  <ul>\n   <li>Added method AccessibilityChecks.disable().</li>\n  </ul></li>\n <li>Intents 3.1.2-alpha01\n  <ul>\n   <li>Add IntentMatchers#hasDataString</li>\n   <li>Fix activity lifecycle timing bug in Intents#intended(). It now idles main looper before checking activity state.</li>\n  </ul></li>\n <li>Runner 1.1.2-alpha01\n  <ul>\n   <li>AndroidJUnitRunner now accepts comma separated class list in -e annotation option, for running only tests with all of the given annotations</li>\n  </ul></li>\n <li>Truth 1.1.1-alpha01\n  <ul>\n   <li>Add filtersEquallyTo() to IntentSubject for comparison of intents using Intent.filterEquals().</li>\n  </ul></li>\n <li>JUnit 1.1.1-alpha01</li>\n <li>Core 1.1.1-alpha01</li>\n <li>Monitor 1.1.2-alpha01</li>\n <li>Rules 1.1.2-alpha01</li>\n <li>Orchestrator 1.1.2-alpha01</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}
