@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#march_22_2022",
+  "title": "March 22, 2022",
+  "releasedOn": "2022-03-22",
+  "updated": "2022-03-22T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#march_22_2022",
+  "components": [
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.0.0",
+      "detailsHtml": "<p>This release corresponds to the <a href=\"https://github.com/google/ExoPlayer/releases/tag/r2.18.5\">ExoPlayer 2.18.5 release</a>.</p>\n<p>There are no changes since 1.0.0-rc02.</p>",
+      "commitsUrl": "https://github.com/androidx/media/commits/1.0.0"
+    }
+  ]
+}
