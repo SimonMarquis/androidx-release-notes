@@ -1,0 +1,201 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#october_27_2021",
+  "title": "October 27, 2021",
+  "releasedOn": "2021-10-27",
+  "updated": "2021-10-27T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#october_27_2021",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.4.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.4.0",
+      "detailsHtml": "<p><strong>Important changes since 1.3.0</strong></p>\n<ul>\n <li>AndroidX <code>ComponentActivity</code> now implements the <code>MenuHost</code> interface. This allows any component to add menu items to the <code>ActionBar</code> by adding a <code>MenuProvider</code> instance to the activity. Each <code>MenuProvider</code> can optionally be added with a <code>Lifecycle</code> that will automatically control the visibility of those menu items based on the <code>Lifecycle</code> state and handle the removal of the <code>MenuProvider</code> when the <code>Lifecycle</code> is destroyed.</li>\n <li>The <code>ActivityResultContract</code> class has been rewritten in Kotlin to ensure that developers writing custom contracts in Kotlin can define the correct nullability for their input and output classes.</li>\n <li>The <code>ActivityResultContracts</code> class and its contracts have been rewritten in Kotlin to ensure the proper nullability.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/e436c934fda58d94a88adef42dd8321f508b9812..12bdbc07b7e7e6ea8c70d50af20301310931d415/activity"
+    },
+    {
+      "id": "annotation",
+      "name": "Annotation",
+      "version": "1.3.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/annotation#1.3.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1f6bc4d47b7be46a5af151ed726e84db0a1cf9f9..c38bf8cba2f6d60f9cceb03adcb56ff57f793b27/annotation/annotation"
+    },
+    {
+      "id": "appcompat-appcompat-resources",
+      "name": "AppCompat AppCompat-Resources",
+      "version": "1.4.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.4.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/418e77ded6b319212f986a3d211532a4b89f2468..88bc2c8e95a4edeecf71e5b2a14a8d736bdda9f2/appcompat"
+    },
+    {
+      "id": "benchmark",
+      "name": "Benchmark",
+      "version": "1.1.0-alpha10",
+      "url": "https://developer.android.com/jetpack/androidx/releases/benchmark#1.1.0-alpha10",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Backport StartupTimingMetric to work back to API 23. This new implementation also better handles reportFullyDrawn() to wait until corresponding content has been rendered. (<a href=\"https://android-review.googlesource.com/#/q/If3ac9a339bedbb61785c80ea78c0e7ae8f9018e9\">If3ac9</a>, <a href=\"https://issuetracker.google.com/issues/183129298\">b/183129298</a>)</li>\n <li>Added JvmOverloads to multiple MacrobenchmarkScope methods for Java callers. (<a href=\"https://android-review.googlesource.com/#/q/I644fe5b1ba90200ae264e8dabd68ae27689befa8\">I644fe</a>, <a href=\"https://issuetracker.google.com/issues/184546459\">b/184546459</a>)</li>\n <li>Provide alternative MacrobenchmarkRule.measureRepeated function that uses a <code>Consumer&lt;MacrobenchmarkScope&gt;</code> for idiomatic usage in Java language. (<a href=\"https://android-review.googlesource.com/#/q/If74abe75c4b0defd0016acd3de20689cf604badd\">If74ab</a>, <a href=\"https://issuetracker.google.com/issues/184546459\">b/184546459</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix for traces not starting early enough, and missing metric data. This is expected to fix \"Unable to read any metrics during benchmark\" exceptions that were caused by the library itself. (<a href=\"https://android-review.googlesource.com/#/q/I6dfcbda59c6f5887433f3b1227613f8789ca6307\">I6dfcb</a>, <a href=\"https://issuetracker.google.com/issues/193827052\">b/193827052</a>, <a href=\"https://issuetracker.google.com/issues/200302931\">b/200302931</a>)</li>\n <li>FrameNegativeSlack has been renamed to FrameOverrun to clarify its meaning - how much the frame went over its time budget. (<a href=\"https://android-review.googlesource.com/#/q/I6c2aa3a408b3cc455bcabcd1479933672f186636\">I6c2aa</a>, <a href=\"https://issuetracker.google.com/issues/203008701\">b/203008701</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/db476cd663f3d4c2d60594fd492ec621639b2c72..31a8acd5d0aa030454712d3df1ec114631651ef3/benchmark"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.1.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>New animation APIs for supporting tooling. Specifically, they allow tooling to inspect the animations &amp; their configurations in a Transitions. (<a href=\"https://android-review.googlesource.com/#/q/I4116e0f930fdbbbf3c306e1c2aa32b71b257bd3d\">I4116e</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/db0888af4fa9a8eaeaf55cc1f120724bc67bdb20..92af5b17ecee9d3c62f59e98b483e411c390f51b/compose/animation"
+    },
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.1.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/db0888af4fa9a8eaeaf55cc1f120724bc67bdb20..92af5b17ecee9d3c62f59e98b483e411c390f51b/compose/compiler-hosted"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.1.0-beta01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Added experimental BringIntoView API that lets you send a request to parents so that they scroll to bring an item into view (<a href=\"https://android-review.googlesource.com/#/q/Ib918da5f0ee21833e6e1c12169dbd308ca33caf5\">Ib918d</a>, <a href=\"https://issuetracker.google.com/issues/195353459\">b/195353459</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/db0888af4fa9a8eaeaf55cc1f120724bc67bdb20..92af5b17ecee9d3c62f59e98b483e411c390f51b/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.1.0-beta01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Ripples now support hover and focus states, so hovering / focusing a component such as Button will now show the correct state overlay.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/db0888af4fa9a8eaeaf55cc1f120724bc67bdb20..92af5b17ecee9d3c62f59e98b483e411c390f51b/compose/material"
+    },
+    {
+      "id": "compose-material-3",
+      "name": "Compose Material3",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3#1.0.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<p>Material Design 3 theming and Material You dynamic color</p>\n<ul>\n <li><a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#materialtheme\"><code>MaterialTheme</code></a></li>\n <li><a href=\"https://m3.material.io/styles/color/overview\">Color</a>\n  <ul>\n   <li><a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/ColorScheme\"><code>ColorScheme</code></a></li>\n   <li><a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#lightcolorscheme\"><code>lightColorScheme</code></a>, <a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#darkcolorscheme\"><code>darkColorScheme</code></a></li>\n  </ul></li>\n <li><a href=\"https://m3.material.io/styles/color/dynamic-color/overview\">Dynamic color</a>\n  <ul>\n   <li><a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#dynamiclightcolorscheme\"><code>dynamicLightColorScheme</code></a>, <a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#dynamicdarkcolorscheme\"><code>dynamicDarkColorScheme</code></a></li>\n  </ul></li>\n <li><a href=\"https://m3.material.io/styles/typography/overview\">Typography</a>\n  <ul>\n   <li><a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/Typography\"><code>Typography</code></a></li>\n  </ul></li>\n</ul>\n<p>Material Design 3 components</p>\n<ul>\n <li><a href=\"https://m3.material.io/components/buttons/overview\">Buttons</a>\n  <ul>\n   <li><a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#button\"><code>Button</code></a>, <a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#elevatedbutton\"><code>ElevatedButton</code></a>, <a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#filledtonalbutton\"><code>FilledTonalButton</code></a>, <a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#outlinedbutton\"><code>OutlinedButton</code></a>, <a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#textbutton\"><code>TextButton</code></a></li>\n  </ul></li>\n <li><a href=\"https://m3.material.io/components/floating-action-button/overview\">FAB</a> and <a href=\"https://m3.material.io/components/extended-fab/overview\">extended FAB</a>\n  <ul>\n   <li><a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#smallfloatingactionbutton\"><code>SmallFloatingActionButton</code></a>, <a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#floatingactionbutton\"><code>FloatingActionButton</code></a>, <a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#largefloatingactionbutton\"><code>LargeFloatingActionButton</code></a>, <a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#extendedfloatingactionbutton\"><code>ExtendedFloatingActionButton</code></a></li>\n  </ul></li>\n <li><a href=\"https://m3.material.io/components/dialogs/overview\">Dialogs</a>\n  <ul>\n   <li><a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#alertdialog\"><code>AlertDialog</code></a></li>\n  </ul></li>\n <li><a href=\"https://m3.material.io/components/navigation-bar/overview\">Navigation bar</a>\n  <ul>\n   <li><a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#navigationbar\"><code>NavigationBar</code></a></li>\n  </ul></li>\n <li><a href=\"https://m3.material.io/components/navigation-drawer/overview\">Navigation drawer</a>\n  <ul>\n   <li><a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#navigationdrawer\"><code>NavigationDrawer</code></a></li>\n  </ul></li>\n <li><a href=\"https://m3.material.io/components/navigation-rail/overview\">Navigation rail</a>\n  <ul>\n   <li><a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#navigationrail\"><code>NavigationRail</code></a></li>\n  </ul></li>\n <li><a href=\"https://m3.material.io/components/top-app-bar/overview\">Top app bar</a>\n  <ul>\n   <li><a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#smalltopappbar\"><code>SmallTopAppBar</code></a>, <a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#centeralignedtopappbar\"><code>CenterAlignedTopAppBar</code></a>, <a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#mediumtopappbar\"><code>MediumTopAppBar</code></a>, <a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#largetopappbar\"><code>LargeTopAppBar</code></a></li>\n  </ul></li>\n <li>Badge\n  <ul>\n   <li><a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#badge\"><code>Badge</code></a>, <a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#badgedbox\"><code>BadgedBox</code></a></li>\n  </ul></li>\n <li>Icon\n  <ul>\n   <li><a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#icon\"><code>Icon</code></a>, <a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#iconbutton\"><code>IconButton</code></a></li>\n  </ul></li>\n <li>Text\n  <ul>\n   <li><a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#text\"><code>Text</code></a></li>\n  </ul></li>\n <li>Surface\n  <ul>\n   <li><a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#surface\"><code>Surface</code></a></li>\n  </ul></li>\n <li>Layout\n  <ul>\n   <li><a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#scaffold\"><code>Scaffold</code></a></li>\n  </ul></li>\n <li>Content color\n  <ul>\n   <li><a href=\"https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#LocalContentColor()\"><code>LocalContentColor</code></a></li>\n  </ul></li>\n</ul>\n<p>For more information, check out the <a href=\"https://developer.android.com/jetpack/compose/themes/material#material3\">Material Design 3 and Material You</a> section in the Material Theming in Compose guide.</p>",
+      "commitsUrl": null
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.1.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/db0888af4fa9a8eaeaf55cc1f120724bc67bdb20..92af5b17ecee9d3c62f59e98b483e411c390f51b/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.1.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added experimental <code>BringIntoView</code> API that lets you send a request to parents so that they scroll to bring an item into view (<a href=\"https://android-review.googlesource.com/#/q/Ib918da5f0ee21833e6e1c12169dbd308ca33caf5\">Ib918d</a>, <a href=\"https://issuetracker.google.com/issues/195353459\">b/195353459</a>)</li>\n <li>New animation APIs for supporting tooling. Specifically, they allow tooling to inspect the animations &amp; their configurations in a Transitions. (<a href=\"https://android-review.googlesource.com/#/q/I4116e0f930fdbbbf3c306e1c2aa32b71b257bd3d\">I4116e</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/db0888af4fa9a8eaeaf55cc1f120724bc67bdb20..92af5b17ecee9d3c62f59e98b483e411c390f51b/compose/ui"
+    },
+    {
+      "id": "core",
+      "name": "Core",
+      "version": "1.7.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.7.0",
+      "detailsHtml": "<p><strong>Important changes since 1.6.0</strong></p>\n<ul>\n <li>Adds support for interacting with SDK 30 and later’s permission revocation and app hibernation features, with backporting down to SDK 23 on supported devices. See <a href=\"https://developer.android.com/reference/androidx/core/content/IntentCompat#createManageUnusedAppRestrictionsIntent(android.content.Context,%20java.lang.String)\">IntentCompat.createManageUnusedAppRestrictionsIntent</a> for more information.</li>\n <li>Adds support for composing menu support in components, see <a href=\"https://developer.android.com/reference/kotlin/androidx/core/view/MenuProvider\">MenuProvider</a> for more information.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7376f60e84b9c218cd791c4abfac43a605f6c078..f01b06dda22df8afd990b500c0663bf83df78a52/core"
+    },
+    {
+      "id": "emoji2",
+      "name": "Emoji2",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/emoji2#1.0.0-rc01",
+      "detailsHtml": "<ul>\n <li>No changes since beta02.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1a3dcfb231517d6104969f17063fcc6c97ba6eeb..23b75a63032c5a1579ccc6a2dd4f60c1153452dd/emoji2"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.4.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.4.0-beta01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Parent fragments will now dispatch <code>onHiddenChanged()</code> down their entire hierarchy before launching their own callback. (<a href=\"https://android-review.googlesource.com/#/q/Iedc201ab435cb963e81bc02d203d4d37ff827e01\">Iedc20</a>, <a href=\"https://issuetracker.google.com/issues/77504618\">b/77504618</a>)</li>\n <li>The keyboard will now close automatically when going from a fragment with an open keyboard to a fragment with a recycler view. (<a href=\"https://android-review.googlesource.com/#/q/I8b842dd9a421cfbc9189014b802f5e4b6b9c2a47\">I8b842</a>, <a href=\"https://issuetracker.google.com/issues/196852211\">b/196852211</a>)</li>\n <li><code>DialogFragment</code> now uses <code>setReorderingAllowed(true)</code> for all transactions it creates when you call <code>show()</code>, <code>showNow()</code>, or <code>dismiss()</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ie2c14fb6d11b426ea0b2c26b035a962f08ddc586\">Ie2c14</a>)</li>\n <li>The extremely long Lint warning of <code>DetachAndAttachFragmentInSameFragmentTransaction</code> has been shortened to <code>DetachAndAttachSameFragment</code>. (<a href=\"https://android-review.googlesource.com/#/q/e9eca34ab9edfad6e1b8e9c1a6a26dd26e166998\">e9eca3</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/da9716386798fc4e39075f54e5bd3317384a63e6..ca6054a5e12fcf05ba5e20bf93403afdab093986/fragment"
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.4.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.4.0",
+      "detailsHtml": "<p><strong>Important changes since 2.3.0</strong></p>\n<ul>\n <li><code>@OnLifecycleEvent</code> was deprecated. <code>LifecycleEventObserver</code> or <code>DefaultLifecycleObserver</code> should be used instead.</li>\n <li><code>androidx.lifecycle:lifecycle-viewmodel-compose</code> library was added. It provides <code>viewModel()</code> composable and <code>LocalViewModelStoreOwner</code>.\n  <ul>\n   <li><em>Source-breaking change</em>: <code>ViewModelProvider</code> has been rewritten in Kotlin. <code>ViewModelProvider.Factory.create</code> method no longer allows nullable generic.</li>\n  </ul></li>\n <li>New coroutines API were added to <code>androidx.lifecycle:lifecycle-runtime-ktx</code>:</li>\n <li><code>Lifecycle.repeatOnLifecycle</code>, API that executes a block of code in a coroutine when the Lifecycle is at least in a certain state. The block will cancel and re-launch as the lifecycle moves in and out of the target state;</li>\n <li><code>Flow.flowWithLifecycle</code>, API that emits values from the upstream Flow when the lifecycle is at least in a certain state.</li>\n <li><code>DefaultLifecycleObserver</code> was moved from <code>lifecycle.lifecycle-common-java8</code> to <code>lifecycle.lifecycle-common</code>. <code>lifecycle.lifecycle-common-java8</code>doesn't provide anymore any additional functionality on top of <code>lifecycle.lifecycle-common</code>, so dependency on it can be replaced by <code>lifecycle.lifecycle-common</code>.</li>\n <li>Non coroutines API from <code>lifecycle-viewmodel-ktx</code> have been moved to the <code>lifecycle-viewmodel</code> module.</li>\n <li>\n  <p><code>lifecycle-process</code> now uses <code>androidx.startup</code> to initialize the <code>ProcessLifecycleOwner</code>.</p>\n  <p>Previously, this was being done by <code>androidx.lifecycle.ProcessLifecycleOwnerInitializer</code>.</p>\n  <p>If you used <code>tools:node=\"remove\"</code> the <code>ContentProvider</code> being used to initialize process lifecycle in the past, then you need to do the following instead.</p>\n  <div></div>\n  <pre><code><span> </span>&lt;provider\n<span>    </span>android:name=\"androidx.startup.InitializationProvider\"\n<span>    </span>android:authorities=\\\"${applicationId}.androidx-startup\"\n<span>    </span>android:exported=\"false\"\n<span>    </span>tools:node=\\\"merge\"&gt;\n<span>    </span>&lt;!--<span> </span>If<span> </span>you<span> </span>are<span> </span>using<span> </span>androidx.startup<span> </span>to<span> </span>initialize<span> </span>other<span> </span>components<span> </span>--&gt;\n<span>    </span>&lt;meta-data\n<span>        </span>android:name=\"androidx.lifecycle.ProcessLifecycleInitializer\"\n<span>        </span>android:value=\"androidx.startup\"\n<span>        </span>tools:node=\"remove\"<span> </span>/&gt;\n<span> </span>&lt;/provider&gt;\n</code></pre>\n  <p>(or)</p>\n  <div></div>\n  <pre><code><span> </span>&lt;<span>!--</span><span> </span><span>If</span><span> </span><span>you</span><span> </span><span>want</span><span> </span><span>to</span><span> </span><span>disable</span><span> </span><span>androidx</span><span>.</span><span>startup</span><span> </span><span>completely</span><span>.</span><span> </span><span>--</span>&gt;\n<span> </span>&lt;<span>provider</span>\n<span>    </span><span>android</span><span>:</span><span>name</span><span>=</span><span>\"androidx.startup.InitializationProvider\"</span>\n<span>    </span><span>android</span><span>:</span><span>authorities</span><span>=</span><span>\"${applicationId}.androidx-startup\"</span>\n<span>    </span><span>tools</span><span>:</span><span>node</span><span>=</span><span>\"remove\"</span>&gt;\n<span> </span>&lt;<span>/</span><span>provider</span>&gt;\n</code></pre>\n </li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/433fef42bf9ce2a319e54a8fc3f7ba350249d2d2..03e82488323f4f6d9999228d07c0336a54f4798e/lifecycle"
+    },
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.0.0-alpha01",
+      "detailsHtml": "<h4>New features</h4>\n<p>Media3 is the new home for media support libraries, including ExoPlayer. The first alpha contains early, functional implementations of libraries for implementing media use cases, including:</p>\n<ul>\n <li>ExoPlayer, an application-level media player for Android that is easy to customize and extend.</li>\n <li>Media session functionality, for exposing and controlling playbacks. This new session module uses the same <code>Player</code> interface as ExoPlayer.</li>\n <li>UI components for building media playback user interfaces.</li>\n <li>Modules wrapping functionality in other libraries for use with ExoPlayer, for example, ad insertion via the IMA SDK.</li>\n</ul>\n<p>For more information, see the <a href=\"https://github.com/androidx/media\">Media3 GitHub project</a>.</p>\n<p>ExoPlayer was previously hosted in a separate <a href=\"https://github.com/google/ExoPlayer\">ExoPlayer GitHub project</a>. In Media3 its package name is <code>androidx.media3.exoplayer</code>. We plan to continue to maintain and release the ExoPlayer GitHub project for a while to give apps time to migrate to Media3. Media3 has replacements for all the ExoPlayer modules, except for the legacy media2 and mediasession extensions, which are replaced by the new <code>media3-session</code> module. This provides direct integration between players and media sessions without needing to use an adapter/connector class.</p>",
+      "commitsUrl": "https://github.com/androidx/media/commits/1.0.0-alpha01"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.4.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.4.0-beta01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>You can now use <code>by navGraphViewModel</code> with a route as an alternative to using an ID so as to better support using the Navigation Kotlin DSL with Fragments. (<a href=\"https://android-review.googlesource.com/#/q/I901e3832099e6e2a698e41af1e5e5d9bef7634d5\">I901e3</a>, <a href=\"https://issuetracker.google.com/issues/201446416\">b/201446416</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>The <code>visibleEntries</code> API is now experimental. (<a href=\"https://android-review.googlesource.com/#/q/I93f6fce8ecad6a57aad12aa042c1b1a5e5f9f004\">I93f6f</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>ViewModels will no longer be destroyed when transitions are interrupted by navigating back and forth between the same screens (<a href=\"https://android-review.googlesource.com/#/q/Id52d8102f24b4b7d62ca2dd4c36c74c1ab7c11e5\">Id52d8</a>, <a href=\"https://issuetracker.google.com/issues/200817333\">b/200817333</a>)</li>\n <li>Nullable <code>NavDeepLink</code> arguments no longer require a default value when adding deep links to <code>NavDestination</code>s. (<a href=\"https://android-review.googlesource.com/#/q/I5aad4e1e7cc53857d050d328d099f813bc0dd0d9\">I5aad4</a>, <a href=\"https://issuetracker.google.com/issues/201320030\">b/201320030</a>)</li>\n <li>NavBackStackEntries now with different Lifecycles are not longer considered equal. This means NavHost will properly recompose all destinations when doing navigation with singleTop and when reselecting bottom menu items. (<a href=\"https://android-review.googlesource.com/#/q/I1b3510b238d3c4e6ed5cc86a6fddf795bd9acb02\">I1b351</a>, <a href=\"https://issuetracker.google.com/issues/196997433\">b/196997433</a>)</li>\n <li>Fixed an issue with <code>AbstractListDetailFragment</code> that caused the <code>layout_width</code> and <code>layout_weight</code> attributes on the list pane returned by <code>onCreateListPaneView()</code> to be incorrectly handled or ignored. (<a href=\"https://android-review.googlesource.com/#/q/f5fbf3227a0d9111f8d284398ad58554429046cb\">f5fbf3</a>)</li>\n <li>The visual state of dialog destinations now correctly stays in sync with the <code>DialogFragmentNavigator</code>'s state. This means that manually calling the asynchronous <code>dismiss()</code> API for <code>DialogFragment</code> now properly clears all dialog destinations above the now dismissed dialog. This does not affect cases where you use <code>popUpTo</code> or <code>popBackStack()</code> to dismiss your dialog. (<a href=\"https://android-review.googlesource.com/#/q/I77ba23fb7a816fc555d0c383213cac01cbafee43\">I77ba2</a>)</li>\n <li><code>AbstractAppBarOnDestinationChangedListener</code> now has clearer error messaging for <code>onDestinationChanged()</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ie742de2163740a4050d4c80f3f\">Ie742d</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/418e77ded6b319212f986a3d211532a4b89f2468..4414c046f9f3ceed61638de755aac5f976f4d4b7/navigation"
+    },
+    {
+      "id": "preference",
+      "name": "Preference",
+      "version": "1.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/preference#1.2.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added <code>PreferenceHeaderFragmentCompat</code> for two-pane preference (<a href=\"https://android-review.googlesource.com/#/q/I9a2d87178737bb0dd2df8e4f6173f8cc690eb20c\">I9a2d8</a>)</li>\n</ul>\n<p><strong>Behavior Changes</strong></p>\n<ul>\n <li>\n  <p>Preference callbacks for OnPreferenceDisplayDialogCallback, OnPreferenceStartScreenCallback, and OnPreferenceStartFragmentCallback can now be implemented in a non-Activity Context. getContext() is checked to see if it implements these callbacks before checking getActivity(). If getContext() returns an Activity (the common case), then there is no behavior change.</p>\n </li>\n <li>\n  <p><code>PreferenceFragmentCompat</code>’s call to <code>onPreferenceTreeClick</code> now looks for implementations of the <code>OnPreferenceStartFragmentCallback</code> interface on parent fragments before considering the Activity’s implementation. (<a href=\"https://android-review.googlesource.com/#/q/c64eed7505e6ec59172a0b2c98e7d69430d63f12\">c64eed</a>)</p>\n </li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "profileinstaller",
+      "name": "ProfileInstaller",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/profileinstaller#1.1.0-beta01",
+      "detailsHtml": "<ul>\n <li>No changes since 1.1.0-alpha07.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/db0888af4fa9a8eaeaf55cc1f120724bc67bdb20..92af5b17ecee9d3c62f59e98b483e411c390f51b/profileinstaller/profileinstaller"
+    },
+    {
+      "id": "resourceinspection",
+      "name": "ResourceInspection",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/resourceinspection#1.0.0-rc01",
+      "detailsHtml": "<ul>\n <li>No changes since 1.0.0-beta01</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1a3dcfb231517d6104969f17063fcc6c97ba6eeb..c38bf8cba2f6d60f9cceb03adcb56ff57f793b27/resourceinspection"
+    },
+    {
+      "id": "wear-compose",
+      "name": "Wear Compose",
+      "version": "1.0.0-alpha09",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-compose#1.0.0-alpha09",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>We have launched the Developer Preview of Compose on Wear OS - see our <a href=\"https://android-developers.googleblog.com/2021/10/compose-for-wear-os-now-in-developer.html\">blog post</a> which reviews the main composables and links to further resources to starting using them.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>We have added support for developers to be able to customize all of the colors in the Wear Material Design Color theme. (<a href=\"https://android-review.googlesource.com/#/q/I4759baf83e4f76138fd3769a1292ebe5da927b21\">I4759b</a>, <a href=\"https://issuetracker.google.com/issues/199754668\">b/199754668</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Added SwipeToDismissBox samples that persist state (<a href=\"https://android-review.googlesource.com/#/q/Ibaffe1d598d15c8b4105f7455ade42628b481c56\">Ibaffe</a>)</li>\n <li>Added links to developer.android.com guides from KDocs for CurvedText, TimeText and SwipeToDismissBox. (<a href=\"https://android-review.googlesource.com/#/q/I399d4c3ba7fe520772c3746da17080907ac764cf\">I399d4</a>)</li>\n <li>SwipeDismissableNavHost now throws if there's no current destination (indicates that the NavGraph was not built with the wear.compose.navigation.composable utility function) (<a href=\"https://android-review.googlesource.com/#/q/I91403cb5ce05de34a522dccb5e380c356b496e31\">I91403</a>)</li>\n <li>Added additional documentation and examples for time source usage in TimeText (<a href=\"https://android-review.googlesource.com/#/q/I4f6f0b374b8bbef5080569b3942c7760be46781a\">I4f6f0</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/db0888af4fa9a8eaeaf55cc1f120724bc67bdb20..b5f9c6b124ab46a4c5eee7f15d2443287f8a539d/wear/compose"
+    },
+    {
+      "id": "wear-tiles",
+      "name": "Wear Tiles",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-tiles#1.0.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/db0888af4fa9a8eaeaf55cc1f120724bc67bdb20..8651d9ea0f2523efe566785034a57a30f2a53e53/wear/tiles"
+    },
+    {
+      "id": "wear-watchface",
+      "name": "Wear Watchface",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-watchface#1.0.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/db0888af4fa9a8eaeaf55cc1f120724bc67bdb20..ca6054a5e12fcf05ba5e20bf93403afdab093986/wear/watchface"
+    },
+    {
+      "id": "window",
+      "name": "Window",
+      "version": "1.0.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/window#1.0.0-beta03",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Add experimental Activity Embedding APIs. This initial layout version allows showing two Activities side by side.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Removed the currentWindowMetrics API since we can not provide it accurately. Please use WindowMetricsCalculator instead (<a href=\"https://android-review.googlesource.com/#/q/Icda5f3802692e70d0220a491c90999866a1b73cb\">Icda5f</a>)</li>\n <li>Updated the extensions api. (<a href=\"https://android-review.googlesource.com/#/q/Ica92bbdb8300f51b2d2906f38b40a9ed027b7810\">Ica92b</a>)</li>\n <li>Added an interface for a new feature that allows embedding activities and showing them side-by-side within the parent task window. (<a href=\"https://android-review.googlesource.com/#/q/I5711d3dfcfd27212fd8c0f83e4b3277863460c0\">I5711d</a>)</li>\n <li>Hid the constructors for WindowMetrics and WindowLayoutInfo, please use the test APIs instead. (<a href=\"https://android-review.googlesource.com/#/q/I5a1b5b9197c7c26274f6f48a2a3e3b8f525f338f\">I5a1b5</a>)</li>\n <li>Add an API to create fake WindowLayoutInfo objects. (<a href=\"https://android-review.googlesource.com/#/q/I4a2fd3a8da2e40fbabcb72c4f323f0090a573bd4\">I4a2fd</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed memory leak. (<a href=\"https://android-review.googlesource.com/#/q/I3fc799fa458528a5cb18dac373aa024f99fa5a6a\">I3fc79</a>, <a href=\"https://issuetracker.google.com/issues/202989046\">b/202989046</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/47e81d1c497b8a57534a460c277855db1b0257ae..41fb7767c8521ac3a81010ce2a48df33b54c9d02/window"
+    }
+  ]
+}
