@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>February 16, 2023 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for February 16, 2023: Media3 1.0.0-rc01.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2023-02-16.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="february-16-2023">
+            <div class="date-divider"><a href="./#february-16-2023" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">February 16, 2023</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="rc" data-search="media3 1.0.0-rc01 2023-02-16 february 16, 2023" id="february-16-2023-media3-1-0-0-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                <div class="actions"><a href="https://github.com/androidx/media/commits/1.0.0-rc01" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.0.0-rc01" class="badge rc">1.0.0-rc01</a></div>
+              </div>
+              <div class="notes"><p>This release corresponds to the <a href="https://github.com/google/ExoPlayer/releases/tag/r2.18.3">ExoPlayer 2.18.3 release</a>.</p><ul><li>Core library:
+  <ul><li>Tweak the renderer's decoder ordering logic to uphold the <code>MediaCodecSelector</code>'s preferences, even if a decoder reports it may not be able to play the media performantly. For example with default selector, hardware decoder with only functional support will be preferred over software decoder that fully supports the format <a href="https://github.com/google/ExoPlayer/issues/10604" title="#10604" class="ref ref-github">#10604</a>.</li><li>Add <code>ExoPlayer.Builder.setPlaybackLooper</code> that sets a pre-existing playback thread for a new ExoPlayer instance.</li><li>Allow download manager helpers to be cleared <a href="https://github.com/google/ExoPlayer/issues/10776" title="#10776" class="ref ref-github">#10776</a>.</li><li>Add parameter to <code>BasePlayer.seekTo</code> to also indicate the command used for seeking.</li><li>Use theme when loading drawables on API 21+ <a href="https://github.com/androidx/media/issues/220" title="#220" class="ref ref-github">#220</a>.</li><li>Add <code>ConcatenatingMediaSource2</code> that allows combining multiple media items into a single window <a href="https://github.com/androidx/media/issues/247" title="#247" class="ref ref-github">#247</a>.</li></ul></li><li>Extractors:
+  <ul><li>Throw a <code>ParserException</code> instead of a <code>NullPointerException</code> if the sample table (stbl) is missing a required sample description (stsd) when parsing trak atoms.</li><li>Correctly skip samples when seeking directly to a sync frame in fMP4 <a href="https://github.com/google/ExoPlayer/issues/10941" title="#10941" class="ref ref-github">#10941</a>.</li></ul></li><li>Audio:
+  <ul><li>Use the compressed audio format bitrate to calculate the min buffer size for <code>AudioTrack</code> in direct playbacks (passthrough).</li></ul></li><li>Text:
+  <ul><li>Fix <code>TextRenderer</code> passing an invalid (negative) index to <code>Subtitle.getEventTime</code> if a subtitle file contains no cues.</li><li>SubRip: Add support for UTF-16 files if they start with a byte order mark.</li></ul></li><li>Metadata:
+  <ul><li>Parse multiple null-separated values from ID3 frames, as permitted by ID3 v2.4.</li><li>Add <code>MediaMetadata.mediaType</code> to denote the type of content or the type of folder described by the metadata.</li><li>Add <code>MediaMetadata.isBrowsable</code> as a replacement for <code>MediaMetadata.folderType</code>. The folder type will be deprecated in the next release.</li></ul></li><li>DASH:
+  <ul><li>Add full parsing for image adaptation sets, including tile counts <a href="https://github.com/google/ExoPlayer/issues/3752" title="#3752" class="ref ref-github">#3752</a>.</li></ul></li><li>UI:
+  <ul><li>Fix the deprecated <code>PlayerView.setControllerVisibilityListener(PlayerControlView.VisibilityListener)</code> to ensure visibility changes are passed to the registered listener <a href="https://github.com/androidx/media/issues/229" title="#229" class="ref ref-github">#229</a>.</li><li>Fix the ordering of the center player controls in <code>PlayerView</code> when using a right-to-left (RTL) layout <a href="https://github.com/androidx/media/issues/227" title="#227" class="ref ref-github">#227</a>.</li></ul></li><li>Session:
+  <ul><li>Add abstract <code>SimpleBasePlayer</code> to help implement the <code>Player</code> interface for custom players.</li><li>Add helper method to convert platform session token to Media3 <code>SessionToken</code> <a href="https://github.com/androidx/media/issues/171" title="#171" class="ref ref-github">#171</a>.</li><li>Use <code>onMediaMetadataChanged</code> to trigger updates of the platform media session <a href="https://github.com/androidx/media/issues/219" title="#219" class="ref ref-github">#219</a>.</li><li>Add the media session as an argument of <code>getMediaButtons()</code> of the <code>DefaultMediaNotificationProvider</code> and use immutable lists for clarity <a href="https://github.com/androidx/media/issues/216" title="#216" class="ref ref-github">#216</a>.</li><li>Add <code>onSetMediaItems</code> callback listener to provide means to modify/set <code>MediaItem</code> list, starting index and position by session before setting onto Player <a href="https://github.com/androidx/media/issues/156" title="#156" class="ref ref-github">#156</a>.</li><li>Avoid double tap detection for non-Bluetooth media button events <a href="https://github.com/androidx/media/issues/233" title="#233" class="ref ref-github">#233</a>.</li><li>Make <code>QueueTimeline</code> more robust in case of a shady legacy session state <a href="https://github.com/androidx/media/issues/241" title="#241" class="ref ref-github">#241</a>.</li></ul></li><li>Metadata:
+  <ul><li>Parse multiple null-separated values from ID3 frames, as permitted by ID3 v2.4.</li><li>Add <code>MediaMetadata.mediaType</code> to denote the type of content or the type of folder described by the metadata.</li><li>Add <code>MediaMetadata.isBrowsable</code> as a replacement for <code>MediaMetadata.folderType</code>. The folder type will be deprecated in the next release.</li></ul></li><li>Cast extension:
+  <ul><li>Bump Cast SDK version to 21.2.0.</li></ul></li><li>IMA extension:
+  <ul><li>Remove player listener of the <code>ImaServerSideAdInsertionMediaSource</code> on the application thread to avoid threading issues.</li><li>Add a property <code>focusSkipButtonWhenAvailable</code> to the <code>ImaServerSideAdInsertionMediaSource.AdsLoader.Builder</code> to request focusing the skip button on TV devices and set it to true by default.</li><li>Add a method <code>focusSkipButton()</code> to the <code>ImaServerSideAdInsertionMediaSource.AdsLoader</code> to programmatically request to focus the skip button.</li><li>Bump IMA SDK version to 3.29.0.</li></ul></li><li>Demo app:
+  <ul><li>Request notification permission for download notifications at runtime <a href="https://github.com/google/ExoPlayer/issues/10884" title="#10884" class="ref ref-github">#10884</a>.</li></ul></li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
