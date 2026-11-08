@@ -1,0 +1,25 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#february_10_2023",
+  "title": "February 10, 2023",
+  "releasedOn": "2023-02-10",
+  "updated": "2023-02-10T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#february_10_2023",
+  "components": [
+    {
+      "id": "mediarouter",
+      "name": "Mediarouter",
+      "version": "1.6.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/mediarouter#1.6.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Route Listing preferences for output switcher</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Mechanism for the app to configure the output switcher.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6baf17024ccdfc27531f3b18b534341162885d1a..6d22a07c33e6f53eafa5be1ef0b4aa27b1c7080a/"
+    },
+    {
+      "id": "tracing-perfetto",
+      "name": "Tracing Perfetto",
+      "version": "1.0.0-alpha09",
+      "url": "https://developer.android.com/jetpack/androidx/releases/tracing#perfetto-1.0.0-alpha09",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Version bump release to allow other <code>androidx.tracing:tracing-perfetto*: 1.0.0-alpha09</code> libraries to work together.</li>\n</ul>\n<p>January 11, 2023</p>\n<p><code>androidx.tracing:tracing-perfetto:1.0.0-alpha09</code> and <code>androidx.tracing:tracing-perfetto-common:1.0.0-alpha09</code> are released with no changes. <a href=\"https://android.googlesource.com/platform/frameworks/support/+log/4a2f5e696614339c1ac21f706c1a17c0285780e7..adf1c279a86ab3886e1666c08e2c3efba783367b/tracing\">Version 1.0.0-alpha09 contains these commits.</a></p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4a2f5e696614339c1ac21f706c1a17c0285780e7..adf1c279a86ab3886e1666c08e2c3efba783367b/tracing/tracing-perfetto-binary"
+    }
+  ]
+}
