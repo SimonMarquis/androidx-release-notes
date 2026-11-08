@@ -1,0 +1,33 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#april_27_2022",
+  "title": "April 27, 2022",
+  "releasedOn": "2022-04-27",
+  "updated": "2022-04-27T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#april_27_2022",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.6.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.6.0-alpha03",
+      "detailsHtml": "<ul>\n <li>Note: This version will only compile against the Android 13 Developer Beta 1 SDK.</li>\n</ul>\n<p><strong>New Features</strong></p>\n<ul>\n <li>Added <code>ActivityResultContracts.PickVisualMedia</code> and <code>ActivityResultContracts.PickMultipleVisualMedia</code> for providing a backward compatible contract that uses <code>MediaStore.ACTION_PICK_IMAGES</code> when the <a href=\"https://developer.android.com/about/versions/13/features/photopicker\">Photo Picker</a> is available and <code>Intent.ACTION_OPEN_DOCUMENT</code> when it is not available.</li>\n <li>Integrated the <code>OnBackInvokedCallback</code> in Android 13 Dev Beta 1 into the <code>OnBackPressedDispatcher</code> provided by <code>ComponentActivity</code>. This ensures that all APIs built on <code>OnBackPressedDispatcher</code> work when <a href=\"https://developer.android.com/about/versions/13/features/predictive-back-gesture\">enabling a predictive back gesture</a>.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "appcompat-appcompat-resources",
+      "name": "AppCompat AppCompat-Resources",
+      "version": "1.6.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.6.0-alpha03",
+      "detailsHtml": "<p>This version requires Android 13 Beta 1 to compile and is not guaranteed to be runtime-compatible with future developer previews.</p>\n<p><strong>New Features</strong></p>\n<ul>\n <li>Support for app-wide custom language selection via <code>AppCompatDelegate.setApplicationLocales()</code>. Delegates to platform implementation on API 33 and above.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "core-core-ktx",
+      "name": "Core Core-Ktx",
+      "version": "1.9.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.9.0-alpha03",
+      "detailsHtml": "<p>This version requires Android 13 Beta 1 to compile and is not guaranteed to be runtime-compatible with future developer previews.</p>",
+      "commitsUrl": null
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#april_20_2022",
+  "title": "April 20, 2022",
+  "releasedOn": "2022-04-20",
+  "updated": "2022-04-20T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#april_20_2022",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.5.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.5.0-beta01",
+      "detailsHtml": "<p><strong>Dependency updates</strong></p>\n<ul>\n <li>Activity now depends on <a href=\"https://developer.android.com/jetpack/androidx/releases/lifecycle#2.5.0-beta01\">Lifecycle <code>2.4.0-beta01</code></a>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7ca43e00a517eaeeedc0a21f482b17f06e3d2181..c0a89ec374961b3015097ab307ebb8196dbe3888/activity"
+    },
+    {
+      "id": "benchmark",
+      "name": "Benchmark",
+      "version": "1.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/benchmark#1.1.0-rc01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Baseline profile output links in Android Studio now use a unique file name. This way the output always reflects the latest results of using a <code>BaselineProfileRule</code>. ( <a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/2057008\">aosp/2057008</a>, <a href=\"https://issuetracker.google.com/issues/228203086\">b/228203086</a> )</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6055e4c5b3ffb001b032c8e82f53e9c052611ac9..c132bd2ce9a7b1cae3d8035d59d3dde892d6a121/benchmark"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.2.0-alpha08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.2.0-alpha08",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7ca43e00a517eaeeedc0a21f482b17f06e3d2181..41a4e31408842caa2b58db5e4ee6ec708464425f/compose/animation"
+    },
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.2.0-alpha08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.2.0-alpha08",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7ca43e00a517eaeeedc0a21f482b17f06e3d2181..41a4e31408842caa2b58db5e4ee6ec708464425f/compose/compiler"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.2.0-alpha08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.2.0-alpha08",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Display all available weights for systems fonts on Android when using <code>FontFamily.SansSerif</code>. This will use fallback font names like sans-serif-medium internally on API 21-28. This is a behavior change as previously only weights 400 and 700 were supported on API 21-28. (<a href=\"https://android-review.googlesource.com/#/q/I380fecb5ba839eecbf0b08acbca6247082b605d7\">I380fe</a>, <a href=\"https://issuetracker.google.com/issues/156048036\">b/156048036</a>, <a href=\"https://issuetracker.google.com/issues/226441992\">b/226441992</a>)</li>\n <li>Paragraph and MultiParagraph are now accepting Constraints parameter. Passing <code>Constraints.maxHeight</code> is a no-op at the moment but will allow to do some calculation in the future, like ellipsizing based on the height. (<a href=\"https://android-review.googlesource.com/#/q/I6afeecb15d34ade2e82cad0381018f0736a167c1\">I6afee</a>, <a href=\"https://issuetracker.google.com/issues/168720622\">b/168720622</a>)</li>\n <li><code>SubcomposeSlotReusePolicy.getSlotsToRetain()</code> now accepts a custom MutableSet-like class which doesn't allow adding new items in it. (<a href=\"https://android-review.googlesource.com/#/q/Icd314177f35c2ba05d1042454ca47834cf196e10\">Icd314</a>)</li>\n <li>Partial consumption (down OR position) has been deprecated in <code>PointerInputChange</code>. You can use <code>consume()</code> to consume the change completely. You can use <code>isConsumed</code> to determine whether or not someone else has previously consumed the change.</li>\n <li><code>PointerInputChange::copy()</code> now always makes a shallow copy. It means that copies of <code>PointerInputChange</code> will be consumed once one of the copies is consumed. If you want to create an unbound <code>PointerInputChange</code>, use constructor instead. (<a href=\"https://android-review.googlesource.com/#/q/Ie6be471e6ed2a843e38712922c2231fdfd26213a\">Ie6be4</a>, <a href=\"https://issuetracker.google.com/issues/225669674\">b/225669674</a>)</li>\n <li>New experimental <code>LazyLayout</code> API is introduced. This allows you to build your own components like <code>LazyColumn</code> of <code>LazyVerticalGrid</code>. Note that the API is in its early stages and can be changed in the future releases. (<a href=\"https://android-review.googlesource.com/#/q/Iba2bcf7e48fb1693c61e9e0b93e0a9e97f9ecf8c\">Iba2bc</a>, <a href=\"https://issuetracker.google.com/issues/166591700\">b/166591700</a>)</li>\n <li><code>AndroidFont</code> now takes <code>typefaceLoader</code> as a constructor parameter. (<a href=\"https://android-review.googlesource.com/#/q/I2c9718fa02b6f84813e5d5cdb499c89b355b0b4b\">I2c971</a>)</li>\n <li><code>WindowInsets</code> companion now exposes the visibility (whether they are on the screen, regardless of whether they intersect with the window) and the size they could be if they are available on the device, but not currently active. (<a href=\"https://android-review.googlesource.com/#/q/I65182e3c8cdc868b9f6de3aef403c9f4d5074711\">I65182</a>, <a href=\"https://issuetracker.google.com/issues/217770337\">b/217770337</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7ca43e00a517eaeeedc0a21f482b17f06e3d2181..41a4e31408842caa2b58db5e4ee6ec708464425f/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.2.0-alpha08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.2.0-alpha08",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Partial consumption (down OR position) has been deprecated in <code>PointerInputChange</code>. You can use <code>consume()</code> to consume the change completely. You can use <code>isConsumed</code> to determine whether or not someone else has previously consumed the change.</li>\n <li><code>PointerInputChange::copy()</code> now always makes a shallow copy. It means that copies of <code>PointerInputChange</code> will be consumed once one of the copies is consumed. If you want to create an unbound <code>PointerInputChange</code>, use constructor instead. (<a href=\"https://android-review.googlesource.com/#/q/Ie6be471e6ed2a843e38712922c2231fdfd26213a\">Ie6be4</a>, <a href=\"https://issuetracker.google.com/issues/225669674\">b/225669674</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7ca43e00a517eaeeedc0a21f482b17f06e3d2181..41a4e31408842caa2b58db5e4ee6ec708464425f/compose/material"
+    },
+    {
+      "id": "compose-material-3",
+      "name": "Compose Material 3",
+      "version": "1.0.0-alpha10",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3#1.0.0-alpha10",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li><code>material3-window-size-class</code> is a new library that provides support for window size classes: a set of opinionated viewport breakpoints for you to design, develop, and test resizable application layouts against. You can use <code>calculateWindowSizeClass</code> to retrieve a window size class instance, which you can use to determine how your UI should appear, such as showing a navigation rail instead of bottom navigation for larger window sizes. For more information and sample usage see the API reference documentation for <code>WindowSizeClass</code>. For more information on window size class definitions, see the public guidance on supporting different screen sizes.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Adds default FAB elevation for <code>BottomAppBar</code>, removes trailing lambda from <code>BottomAppBar</code> with FAB. (<a href=\"https://android-review.googlesource.com/#/q/I92c479d1978bc1d2a2e2d5f66d63afee870363fa\">I92c47</a>)</li>\n <li>Adds Material3 <code>FilledIconButton</code>, <code>FilledTonalIconButton</code>, and <code>OutlinedIconButton</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ib2bda93643f833d04a989233cc3b1bc09bcdfa2d\">Ib2bda</a>)</li>\n <li>Updates Material 3 Snackbar API to accept color values for the optional action and dismiss-action. (<a href=\"https://android-review.googlesource.com/#/q/Ibe4b49cdf157005f98eda5c1bb5a2e2c40668d63\">Ibe4b4</a>)</li>\n <li>Partial consumption (down OR position) has been deprecated in <code>PointerInputChange</code>. You can use <code>consume()</code> to consume the change completely. You can use <code>isConsumed</code> to determine whether or not someone else has previously consumed the change.</li>\n <li><code>PointerInputChange::copy()</code> now always makes a shallow copy. It means that copies of <code>PointerInputChange</code> will be consumed once one of the copies is consumed. If you want to create an unbound <code>PointerInputChange</code>, use constructor instead. (<a href=\"https://android-review.googlesource.com/#/q/Ie6be471e6ed2a843e38712922c2231fdfd26213a\">Ie6be4</a>, <a href=\"https://issuetracker.google.com/issues/225669674\">b/225669674</a>)</li>\n <li>Changes to the Cards API to receive the container and content colors via a <code>CardColors</code> interface, and to support a disabled state for clickable cards. (<a href=\"https://android-review.googlesource.com/#/q/I927dfb2b7723e3d2f5c36de86c6ea9a78582c153\">I927df</a>)</li>\n <li>The parameter <code>backgroundColor</code> has been renamed <code>containerColor</code> in Material 3 text fields for improved consistency with other components. (<a href=\"https://android-review.googlesource.com/#/q/I6fbd9b4114b8bbd699ed57a8ff1df73b8fd16c33\">I6fbd9</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Updates to the standard <code>IconButton</code> to align it with the Material3 spec. (<a href=\"https://android-review.googlesource.com/#/q/I09eab8e771f182abcafaabf8679ce1374126181b\">I09eab</a>)</li>\n <li>Move the top bar height of material3 Scaffold into the padding passed to content, allowing the content to render underneath the top app bar. If the <code>PaddingValues</code> are ignored, then the content might be obscured by the top bar. (<a href=\"https://android-review.googlesource.com/#/q/I83cbc17a8068a04ea8b18609f12bd9e103630229\">I83cbc</a>, <a href=\"https://issuetracker.google.com/issues/217776202\">b/217776202</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.2.0-alpha08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.2.0-alpha08",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added <code>TracingInProgress</code> to the <code>CompositionTracer</code> interface. (<a href=\"https://android-review.googlesource.com/#/q/Ic6f12d84c8622c7a796d44cf3eb04b0e077efc97\">Ic6f12</a>)</li>\n <li>Add <code>recomposeScopeIdentity</code> to Composer (<a href=\"https://android-review.googlesource.com/#/q/I0c8733fc97baaec4990e85f3fcbf8904ca732eaa\">I0c873</a>)</li>\n <li>Restricted tracing APIs (Composer.setTracer) to <code>OptIn(InternalComposeTracingApi)</code>. (<a href=\"https://android-review.googlesource.com/#/q/I9187fb92741e90a78945ebb078686b53d103d19f\">I9187f</a>)</li>\n <li>Added <code>ResuableContentHost</code> which allows better control over the lifetime of state created for reusable content. For example, if a sub-composition is temporarily not in use then the content can be deactivated causing all the remembered state in the composition to be forgotten triggering, for example, all disposable effects. (<a href=\"https://android-review.googlesource.com/#/q/I2c0f297104d425e2bf673debccfe7a1729761593\">I2c0f2</a>, <a href=\"https://issuetracker.google.com/issues/220322704\">b/220322704</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7ca43e00a517eaeeedc0a21f482b17f06e3d2181..41a4e31408842caa2b58db5e4ee6ec708464425f/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.2.0-alpha08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.2.0-alpha08",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>The <code>pluralStringResource</code> functions were marked as experimental in order to allow evolution to support better internationalization in the future. (<a href=\"https://android-review.googlesource.com/#/q/If24e41254c027dac9f68b3271ce91c8788712a9b\">If24e4</a>)</li>\n <li>Paragraph and MultiParagraph are now accepting Constraints parameter. Passing <code>Constraints.maxHeight</code> is a no-op at the moment but will allow to do some calculation in the future, like ellipsizing based on the height. (<a href=\"https://android-review.googlesource.com/#/q/I6afeecb15d34ade2e82cad0381018f0736a167c1\">I6afee</a>, <a href=\"https://issuetracker.google.com/issues/168720622\">b/168720622</a>)</li>\n <li><code>SubcomposeSlotReusePolicy.getSlotsToRetain()</code> now accepts a custom MutableSet-like class which doesn't allow adding new items in it. (<a href=\"https://android-review.googlesource.com/#/q/Icd314177f35c2ba05d1042454ca47834cf196e10\">Icd314</a>)</li>\n <li>PointerIcon is now a <code>@Stable</code> interface (<a href=\"https://android-review.googlesource.com/#/q/I9dafec680d335898344ecf5be5cd2de9fcf92b06\">I9dafe</a>)</li>\n <li>Partial consumption (down OR position) has been deprecated in <code>PointerInputChange</code>. You can use <code>consume()</code> to consume the change completely. You can use <code>isConsumed</code> to determine whether or not someone else has previously consumed the change.</li>\n <li><code>PointerInputChange::copy()</code> now always makes a shallow copy. It means that copies of <code>PointerInputChange</code> will be consumed once one of the copies is consumed. If you want to create an unbound <code>PointerInputChange</code>, use constructor instead. (<a href=\"https://android-review.googlesource.com/#/q/Ie6be471e6ed2a843e38712922c2231fdfd26213a\">Ie6be4</a>, <a href=\"https://issuetracker.google.com/issues/225669674\">b/225669674</a>)</li>\n <li>Enable Nested Scroll interop between Compose and View in the direction Compose &gt; View. This means that a compose parent will be able to receive nested scroll deltas from a nested scroll view. (<a href=\"https://android-review.googlesource.com/#/q/If7949ccb50ba7897bc740b489fd3f4d615a5369b\">If7949</a>, <a href=\"https://issuetracker.google.com/issues/174348612\">b/174348612</a>)</li>\n <li>New <code>SemanticsProperty testTagsAsResourceId</code>, which can be used to make Compose conform with UIAutomator tests designed for the View system. (<a href=\"https://android-review.googlesource.com/#/q/I39c207e20a892df47707e38708bc314a23fe18f7\">I39c20</a>)</li>\n <li>Display all available weights for systems fonts on Android when using <code>FontFamily.SansSerif</code>. This will use fallback font names like sans-serif-medium internally on API 21-28. This is a behavior change as previously only weights 400 and 700 were supported on API 21-28. (<a href=\"https://android-review.googlesource.com/#/q/I380fecb5ba839eecbf0b08acbca6247082b605d7\">I380fe</a>, <a href=\"https://issuetracker.google.com/issues/156048036\">b/156048036</a>, <a href=\"https://issuetracker.google.com/issues/226441992\">b/226441992</a>)</li>\n <li>Paragraph and Multiparagraph instructors reordered positional arguments to before optional arguments. (<a href=\"https://android-review.googlesource.com/#/q/Idafaae32232ac4fd093530dac211f4de491c89b6\">Idafaa</a>)</li>\n <li><code>AndroidFont</code> now takes typefaceLoader as a constructor parameter. (<a href=\"https://android-review.googlesource.com/#/q/I2c9718fa02b6f84813e5d5cdb499c89b355b0b4b\">I2c971</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7ca43e00a517eaeeedc0a21f482b17f06e3d2181..41a4e31408842caa2b58db5e4ee6ec708464425f/compose/ui"
+    },
+    {
+      "id": "core-core-ktx",
+      "name": "Core Core-Ktx",
+      "version": "1.8.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.8.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7ca43e00a517eaeeedc0a21f482b17f06e3d2181..c0a89ec374961b3015097ab307ebb8196dbe3888/core"
+    },
+    {
+      "id": "core-animation",
+      "name": "Core-Animation",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#core-animation-1.0.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/96eb302ee1740ba656c90c9fb27df3723a1a89c1..c0a89ec374961b3015097ab307ebb8196dbe3888/core/core-animation"
+    },
+    {
+      "id": "drag-and-drop",
+      "name": "Drag And Drop",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/draganddrop#1.0.0-rc01",
+      "detailsHtml": "<ul>\n <li>No changes since the last beta release.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5ef5671233460b844828e14a816255dbf7904868..792d15289c94ffb5121f8e0ea664cc758926ff49/draganddrop/draganddrop"
+    },
+    {
+      "id": "emoji2",
+      "name": "Emoji2",
+      "version": "1.2.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/emoji2#1.2.0-alpha04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>No changes in this release.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7ca43e00a517eaeeedc0a21f482b17f06e3d2181..c0a89ec374961b3015097ab307ebb8196dbe3888/emoji2"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.5.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.5.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>DialogFragment</code> has added a new <code>dismissNow</code> method that uses <code>commitNow</code> for parity with the <code>showNow</code> function. Note that this will not make the <code>Dialog</code> be dismissed immediately, it will only synchronously update the state of the <code>FragmentManager</code>. (<a href=\"https://android-review.googlesource.com/#/q/I15c3618ccbea638e8f2125b5c361cce43721b017\">I15c36</a>, <a href=\"https://issuetracker.google.com/issues/72644830\">b/72644830</a>)</li>\n</ul>\n<p><strong>Saved Instance State Refactoring</strong></p>\n<ul>\n <li><code>FragmentManager</code> now saves its saved instance state into a <code>Bundle</code> instead of directly in a custom <code>Parcelable</code>. This is the first step in providing additional transparency into what is actually being saved by Fragments. (<a href=\"https://android-review.googlesource.com/#/q/I93807d8bebb127fd24d20dee23fc7813cfa0f6ab\">I93807</a>, <a href=\"https://issuetracker.google.com/issues/207158202\">b/207158202</a>)</li>\n <li>Results set via the <a href=\"https://developer.android.com/guide/fragments/communicate#fragment-result\">Fragment Result APIs</a> that have not yet been delivered are now saved separately from the internal state of the <code>FragmentManager</code>. This will allow for additional transparency into what results are being saved as part of your saved instance state. (<a href=\"https://android-review.googlesource.com/#/q/I6ea121b1c4a42408de9af44e6cd12a825ec378d1\">I6ea12</a>, <a href=\"https://issuetracker.google.com/issues/207158202\">b/207158202</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7ca43e00a517eaeeedc0a21f482b17f06e3d2181..c0a89ec374961b3015097ab307ebb8196dbe3888/fragment"
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.5.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.5.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added <code>SavedStateHandle.saveable</code> property delegates to use property names as keys for persisting state into the <code>SavedStateHandle</code> (<a href=\"https://android-review.googlesource.com/#/q/I8bb86c6c636e62f89b61d8406ea1ecb8435783f6\">I8bb86</a>, <a href=\"https://issuetracker.google.com/issues/225014345\">b/225014345</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue where nesting one <code>NavHost</code> within another <code>NavHost</code> in a non-primary bottom navigation tab would lead to an <code>IllegalStateException</code> when using multiple back stacks. (<a href=\"https://android-review.googlesource.com/#/q/I11bd5173f035ae1da7922b4142fcedc0f3b54ff6\">I11bd5</a>, <a href=\"https://issuetracker.google.com/228865698\">b/228865698</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7ca43e00a517eaeeedc0a21f482b17f06e3d2181..c0a89ec374961b3015097ab307ebb8196dbe3888/lifecycle"
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "version": "1.6.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media#media-1.6.0",
+      "detailsHtml": "<p><strong>Important changes since 1.5.0</strong></p>\n<ul>\n <li>Add extras necessary to set up signIn/Settings page using <code>CarAppLibrary</code> on a media app for Android Auto.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/096a5a510b8fff3cdaee42a3f5f761f18e2e139d..c2abb1a63ad5d8a92cd723550b6989c767f86175/media/media"
+    },
+    {
+      "id": "mediarouter",
+      "name": "Mediarouter",
+      "version": "1.3.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/mediarouter#1.3.0",
+      "detailsHtml": "<p><strong>Important changes since 1.2.0</strong></p>\n<ul>\n <li>Add a flag into <code>MediaRouterParams</code> that can be used to disable seamless transfer at runtime.</li>\n <li>Added a testing artifact which can reset the <code>MediaRouter</code>.</li>\n <li>Add a router param for UX tweak in <code>MediaRouterControllerDialog</code>.</li>\n <li>Annotated nullness for public methods.</li>\n <li>API lint check for <code>MissingGetterMatchingBuilder</code> is enabled for androidx.</li>\n <li>Update dependency on core for mediarouter to 1.6.0.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/38c02ea495b416f7db83faaefb8674d94f0c2dfc..d15c54ec9034549e7b7ce6b631f032d8c322dfd0/mediarouter/mediarouter"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.5.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.5.0-beta01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>DialogNavigator</code> now uses <code>popWithTransition</code> when executing a <code>dismiss()</code> call. This fixes a race condition when using a <code>ViewModel</code> within <code>dialog</code> destination that would cause an <code>IllegalStateException</code> when dismissing the Dialog by either using system back or tapping outside of the dialog to exit. (<a href=\"https://android-review.googlesource.com/#/q/Id7376c0b8db5be869d8ff53185e15b0603bf8582\">Id7376</a>, <a href=\"https://issuetracker.google.com/issues/226552301\">b/226552301</a>)</li>\n</ul>\n<p><strong>Dependency Updates</strong></p>\n<ul>\n <li>Navigation now depends on <a href=\"https://developer.android.com/jetpack/androidx/releases/lifecycle#2.5.0-beta01\">Lifecycle <code>2.5.0-beta01</code></a>, fixing an <code>IllegalStateException</code> when nesting one <code>NavHost</code> within another <code>NavHost</code> in a non-primary bottom navigation tab when using multiple back stacks.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7ca43e00a517eaeeedc0a21f482b17f06e3d2181..c0a89ec374961b3015097ab307ebb8196dbe3888/navigation"
+    },
+    {
+      "id": "savedstate",
+      "name": "SavedState",
+      "version": "1.2.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/savedstate#1.2.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>The <code>SavedStateRegistry</code> and <code>ViewTreeSavedStateRegistryOwner</code> classes have been rewritten in Kotlin. For <code>ViewTreeSavedStateRegistryOwner</code>, this is a <strong>source incompatible change</strong> for those classes written in Kotlin - you must now directly import and use the Kotlin extension methods on <code>View</code> of <code>androidx.savedstate.setViewTreeSavedStateRegistryOwner</code> and <code>androidx.savedstate.findViewTreeSavedStateRegistryOwner</code> to set and find a previously set owner. This replaces the <code>savedstate-ktx</code> API of <code>findViewTreeSavedStateRegistryOwner</code>. This is binary compatible and remains source compatible for implementations written in the Java programming language. (<a href=\"https://issuetracker.google.com/issues/220191285\">b/220191285</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7ca43e00a517eaeeedc0a21f482b17f06e3d2181..c0a89ec374961b3015097ab307ebb8196dbe3888/savedstate"
+    },
+    {
+      "id": "tracing",
+      "name": "Tracing",
+      "version": "1.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/tracing#1.1.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/75784ce6dbac6faa5320e5898e9472f02ab8710c..b5954e1f49c8e5ba7511565c978c6c08df7df2cd/tracing"
+    },
+    {
+      "id": "vectordrawable",
+      "name": "VectorDrawable",
+      "version": "1.2.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/vectordrawable#vectordrawable-1.2.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/96eb302ee1740ba656c90c9fb27df3723a1a89c1..c0a89ec374961b3015097ab307ebb8196dbe3888/vectordrawable/vectordrawable"
+    },
+    {
+      "id": "vectordrawable-seekable",
+      "name": "VectorDrawable-Seekable",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/vectordrawable#vectordrawable-seekable-1.0.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/96eb302ee1740ba656c90c9fb27df3723a1a89c1..c0a89ec374961b3015097ab307ebb8196dbe3888/vectordrawable/vectordrawable-seekable"
+    },
+    {
+      "id": "wear-compose",
+      "name": "Wear Compose",
+      "version": "1.0.0-alpha21",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-compose#1.0.0-alpha21",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added new curved modifiers to specify the background of a curved element: <code>CurvedModifier.background</code>, <code>.radialGradientBackground</code> and <code>.angularGradientBackground</code> (<a href=\"https://android-review.googlesource.com/#/q/I8f3921a9ac17280467ae8f2166e88fd0b2c5aea4\">I8f392</a>)</li>\n <li>Allow curved text overflow mode (clip/ellipsis/visible) to be specified. (<a href=\"https://android-review.googlesource.com/#/q/I8e7aa041f072d59eae87c9da0d5aee74a6d9fef1\">I8e7aa</a>)</li>\n <li>Added <code>CurvedModifier.weight</code> modifier, similar to the one in Compose. This can be used on children of curvedRow and CurvedLayout (for width) and children of curvedColumn (for height). (<a href=\"https://android-review.googlesource.com/#/q/I8abbd06d6b444a4edd2a5c66bc0dd5d2a416978d\">I8abbd</a>)</li>\n <li>Added <code>CurvedModifier.size</code>, <code>.angularSize</code> and <code>.radialSize</code> modifiers to specify the size of a curved element. (<a href=\"https://android-review.googlesource.com/#/q/I623c71a99245a91f8cead2f25674487870d77ae9\">I623c7</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Reorder parameters to ensure background is before color consistently across the Wear Compose API (<a href=\"https://android-review.googlesource.com/#/q/I4320831fdca3c14da7e1e1e290978afa5fcb5a5f\">I43208</a>)</li>\n <li>Removed clockwise &amp; <code>insideOut</code> parameters and replaced with more expressive constants on new classes. Curved layout direction can now be <code>LayoutDirection</code> aware, and it is inherited when not specified (<a href=\"https://android-review.googlesource.com/#/q/If0e6af67383a62a9e8135d5350b7f2b72fe79fda\">If0e6a</a>)</li>\n <li>We have replaced <code>autoCenter: Boolean</code> with <code>autoCenter: AutoCentringParams</code> in order to fix an API issue with the <code>ScalingLazyColumn</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ia9c90a1af9226e8c1510fd4199043a619554e85e\">Ia9c90</a>)</li>\n <li>We have renamed <code>iconTintColor</code> and <code>toggleControlTintColor</code> to <code>iconColor</code> and <code>toggleControlColor</code> throughout the API (Chip/ToggleChip/Dialog/Slider/Stepper/...) as the color is applied to the icon/toggleControl slot. (<a href=\"https://android-review.googlesource.com/#/q/Ied23864a671b3cfd241cb0f077f111b762525a33\">Ied238</a>)</li>\n <li>Rewrite <code>PageIndicatorStyle</code> enum into value class (<a href=\"https://android-review.googlesource.com/#/q/I2dc72d7428a681586e2bf47a5bb40b449f43725a\">I2dc72</a>)</li>\n <li>We have added <code>RowScope/ColumnScope/BoxScope</code> to some of the slots in our Composables to indicate to developers what the layouts assumptions are. This will allow developers to use additional modifiers on some slot content and avoid the need to provide extra layout elements. Additionally we have made some minor updates to the AppCard/TitleCard colors so that <code>timeColor</code> and <code>appColor</code> default to <code>contentColor</code>, these properties can still all be individually overridden if needed. (<a href=\"https://android-review.googlesource.com/#/q/I26b597bb6b2c9db3d8d3833a2dfa36374c7631a2\">I26b59</a>)</li>\n <li>Made <code>SwipeToDismissBoxState.Companion</code> object private (<a href=\"https://android-review.googlesource.com/#/q/I39e84b8b16e9450f95147b44d4f10d40efa4cb8f\">I39e84</a>)</li>\n <li>Fix parameters order for <code>InlineSlider</code> and <code>Stepper</code>. A simple change to follow api guidelines (<a href=\"https://android-review.googlesource.com/#/q/I11fecebf74d60ccf4446e23935ca8e8724d7104a\">I11fec</a>)</li>\n <li>We have removed the Saver object for <code>SwipeToDismissBoxState</code> as it was not used. (<a href=\"https://android-review.googlesource.com/#/q/Ifb54eef912a95beb4b17f53eaf309c09c560bcac\">Ifb54e</a>)</li>\n <li>We have updated <code>CompactChip</code> to bring it inline with the latest UX Specification. Padding has been reduced to horizontal = 12.dp and vertical = 0.dp. The font for label has been changed from button to caption1. The recommended icon sizes are 20x20 when both icon and label are present and 24x24 for an icon only compact chip. For the icon only use case we have also ensured that the icon is center aligned. (<a href=\"https://android-review.googlesource.com/#/q/Iea2bef2ab11f750f9fe459c240354f06214f7930\">Iea2be</a>)</li>\n <li>We have added a number of new fields to <code>ScalingLazyListLayoutInfo</code> to enable developers to know the amount of <code>contentPadding</code> and <code>autoCenteringPadding</code> that has been applied. These can be useful for developers when calculating fling/scroll (<a href=\"https://android-review.googlesource.com/#/q/I7577bc2830a0a5c2bbbb0d14a691e016c8f9dfc6\">I7577b</a>)</li>\n <li>We have implemented in/out transitions for Dialog. A <code>showDialog</code> parameter has been added and the Dialog now controls its own visibility (this enables Dialog to run the intro and outro animations when the Dialog is shown/hidden). Note that the outro animation is not performed when the user leaves the dialog via swipe-to-dismiss. We have also added a default value for state in the recently added <code>SwipeToDismissBox</code> overload. (<a href=\"https://android-review.googlesource.com/#/q/I682a03ea9354ed112f2b5be15634b27c41c6f31a\">I682a0</a>)</li>\n <li>In order to better support i18n and a11y we have changed <code>ToggleChip</code> and <code>SplitToggleChip</code> so that they no longer have a default for the <code>toggleControl</code> slot. We have also changed <code>ToggleChipDefaults</code> so that the following methods now return ImageVector rather than Icon (note that as they no longer return @Composables they have changed to start with lower case), <code>SwitchIcon()-&gt;switchIcon()</code>, <code>CheckboxIcon-&gt;checkboxIcon()</code> and <code>RadioIcon()-&gt;radioIcon()</code> - this allows and encourages developers to create their own <code>Icon()</code> composables with an appropriate <code>contentDescription</code> set. (<a href=\"https://android-review.googlesource.com/#/q/I5bb5b4158b2818130c314e4020249d96d4da59fb\">I5bb5b</a>)</li>\n <li>We have added a <code>SwipeDismissableNavHostState</code> parameter to <code>SwipeDismissableNavHost</code>. This supports use of edge-swiping on screens used as navigation destinations, because <code>SwipeToDismissBoxState</code> can now be hoisted and used to initialize both <code>SwipeDismissableNavHostState</code> and <code>Modifier.edgeSwipeToDismiss</code> on screens that require edge-swiping. (<a href=\"https://android-review.googlesource.com/#/q/I819f5f6daa7084f7c7b536652937d4d1dbdb7ff8\">I819f5</a>, <a href=\"https://issuetracker.google.com/issues/228336555\">b/228336555</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Ensure curved layouts are updated when needed. (<a href=\"https://android-review.googlesource.com/#/q/Ie8bfa8217d76aea62d587074d1d67e0dfa2929a6\">Ie8bfa</a>, <a href=\"https://issuetracker.google.com/issues/229079150\">b/229079150</a>)</li>\n <li>Bug fix for https://issuetracker.google.com/issues/226648931 (<a href=\"https://android-review.googlesource.com/#/q/Ia0a0aa4e2e480814665f0687af41506842f36de6\">Ia0a0a</a>, <a href=\"https://issuetracker.google.com/issues/226648931\">b/226648931</a>)</li>\n <li>Removed unnecessary experimental annotations (<a href=\"https://android-review.googlesource.com/#/q/I88d7e4224b611bee3400db0d228e5c81dea7dab2\">I88d7e</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7ca43e00a517eaeeedc0a21f482b17f06e3d2181..c0a89ec374961b3015097ab307ebb8196dbe3888/wear/compose"
+    },
+    {
+      "id": "wear-watchface",
+      "name": "Wear Watchface",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-watchface#1.1.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Now <code>WatchFaceMetadataClient</code> methods (<code>getUserStyleSchema</code>, <code>getComplicationSlotMetadataMap</code>, <code>getUserStyleFlavors</code>) and <code>HeadlessWatchFaceClient.getUserStyleFlavors</code> throw unchecked RuntimeException instead of <code>WatchFaceException</code>. (<a href=\"https://android-review.googlesource.com/#/q/I0718ae7a2fc0966a55fa60304b2c4a6848aa50d0\">I0718a</a>)</li>\n <li><code>WatchFaceMetadataClient.WatchFaceException</code> has been moved out of the class to allow it to be reused. (<a href=\"https://android-review.googlesource.com/#/q/I4e86906c5b7c66e2e27d04999391a23616322260\">I4e869</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>WatchFaceMetadataClient</code> will no longer crash when sent partial <code>ComplicationSlotBounds</code>.(<a href=\"https://android-review.googlesource.com/#/q/Iaafdce466558ac3165e52e8ed1e0116387c87171\">Iaafd</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7ca43e00a517eaeeedc0a21f482b17f06e3d2181..c0a89ec374961b3015097ab307ebb8196dbe3888/wear/watchface"
+    },
+    {
+      "id": "window",
+      "name": "Window",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/window#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Release adapters to support java and RxJava</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/64cc4d2fc346bde9fe41f047a665695fed2b5baf..c0a89ec374961b3015097ab307ebb8196dbe3888/window"
+    }
+  ]
+}
