@@ -1,0 +1,145 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#december_1_2021",
+  "title": "December 1, 2021",
+  "releasedOn": "2021-12-01",
+  "updated": "2021-12-01T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#december_1_2021",
+  "components": [
+    {
+      "id": "annotation-experimental",
+      "name": "Annotation-Experimental",
+      "version": "1.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/annotation#annotation-experimental-1.2.0-rc01",
+      "detailsHtml": "<p>No changes from beta.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/cc1240d00b28657ee0c1a937f60430eaf1b03b09..3fb4e62996bb3b5696c6c0eec850a915e6c2d23f/annotation/annotation-experimental"
+    },
+    {
+      "id": "collection",
+      "name": "Collection",
+      "version": "1.2.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/collection#1.2.0",
+      "detailsHtml": "<p><strong>Important changes since 1.1.0</strong></p>\n<ul>\n <li>Add an array constructor to <code>ArraySet</code>. (<a href=\"https://android-review.googlesource.com/#/q/Id7f199478f1cb7a69ac056a69e4c87d24faa80a8\">Id7f19</a>)</li>\n <li>Make <code>entrySet()</code> API-compliant by implementing <code>entrySet().toArray()</code>, <code>remove()</code>, <code>removeAll()</code>, and <code>retainAll()</code>, and removing implementation of <code>entrySet().addAll()</code> (<a href=\"https://android-review.googlesource.com/#/q/I5d5059350c611de1e4cd7d83e8d3dad17a5ba00f\">I5d505</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2bc1daaee7473641ca10a727847a1a884c17d1ae..271a55ffaa9a85ba4f84c140c435906d088e79a0/collection"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.1.0-beta04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.1.0-beta04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Updated to be compatible with Kotlin <code>1.6.0</code></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9fee5f6a2093713639af8853adbf898f7b609969..75784ce6dbac6faa5320e5898e9472f02ab8710c/compose/animation"
+    },
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.1.0-beta04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.1.0-beta04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Updated to be compatible with Kotlin <code>1.6.0</code></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9fee5f6a2093713639af8853adbf898f7b609969..75784ce6dbac6faa5320e5898e9472f02ab8710c/compose/compiler"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.1.0-beta04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.1.0-beta04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Updated to be compatible with Kotlin <code>1.6.0</code></li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Cleaned up nullability in <code>androidx.core.view</code>(<a href=\"https://android-review.googlesource.com/#/q/I7078a577cc3cab983bdf34fae57e962fa734ceb9\">I7078a</a>, <a href=\"https://issuetracker.google.com/issues/204917439\">b/204917439</a>)</li>\n <li>Experimental APIs were added that allow to consume PointerInputchange as a whole or check whether it was consumed or not. (<a href=\"https://android-review.googlesource.com/#/q/I2e59de430d24336bbdbe3d0a975948969e8d2e82\">I2e59d</a>)</li>\n <li>Show a magnifier widget when dragging the cursor or selection handles inside text fields. (<a href=\"https://android-review.googlesource.com/#/q/I5391e3fab709172189dada65e8dba6a130526c15\">I5391e</a>, <a href=\"https://issuetracker.google.com/issues/203781358\">b/203781358</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix text handles not moving when IME visibility changes. (<a href=\"https://android-review.googlesource.com/#/q/I25f2ec3b813f179836c6e69c78bbd8ff2a636179\">I25f2e</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9fee5f6a2093713639af8853adbf898f7b609969..75784ce6dbac6faa5320e5898e9472f02ab8710c/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.1.0-beta04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.1.0-beta04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Updated to be compatible with Kotlin <code>1.6.0</code></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9fee5f6a2093713639af8853adbf898f7b609969..75784ce6dbac6faa5320e5898e9472f02ab8710c/compose/material"
+    },
+    {
+      "id": "compose-material-3",
+      "name": "Compose Material3",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3#material3-a2ui-1.0.0-alpha02",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Added an animated shimmer effect for the component loading states.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Replaced the list of functions of <code>A2uiBasicCatalogV1</code> with the <code>A2uiBasicCatalogV1.Functions</code> interface, which has a method for each basic catalog function except the logical functions <code>and</code>, <code>or</code>, and <code>not</code>, which the catalog implements. Implementations only need to implement <code>openUrl</code> and can override other methods to customize individual functions. <code>A2uiBasicCatalogV1.Functions(context)</code> creates default implementations of all methods. <code>materialA2uiBasicCatalogV1</code> now takes <code>functions</code> instead of <code>urlOpener</code>, <code>messageFormatter</code>, and <code>localeProvider</code>. (<a href=\"https://android-review.googlesource.com/#/q/I647b252e90a4f76bc1ac4dc0feb40acb7cd1becf\">I647b2</a>, <a href=\"https://issuetracker.google.com/issues/568735972\">b/568735972</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b2b5ae7b0fe1bb4eece7018878fe5f18c5967a2f..51b1c49d773c47aab307ccfe10c460650cdb8708/compose/material3/material3-a2ui"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.1.0-beta04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.1.0-beta04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Updated to be compatible with Kotlin <code>1.6.0</code></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9fee5f6a2093713639af8853adbf898f7b609969..75784ce6dbac6faa5320e5898e9472f02ab8710c/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.1.0-beta04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.1.0-beta04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Updated to be compatible with Kotlin <code>1.6.0</code></li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Cleaned up nullability in <code>androidx.core.view</code> (<a href=\"https://android-review.googlesource.com/#/q/I7078a577cc3cab983bdf34fae57e962fa734ceb9\">I7078a</a>, <a href=\"https://issuetracker.google.com/issues/204917439\">b/204917439</a>)</li>\n <li>Experimental APIs were added that allow users to consume PointerInputchange as a whole or check whether it was consumed or not. (<a href=\"https://android-review.googlesource.com/#/q/I2e59de430d24336bbdbe3d0a975948969e8d2e82\">I2e59d</a>)</li>\n <li>Adds support for mouse scroll wheel events in the UI layer. (<a href=\"https://android-review.googlesource.com/#/q/Ia14eb9c9827bff80b57ecc62ae9227fad74c2a7e\">Ia14eb</a>, <a href=\"https://issuetracker.google.com/issues/198214718\">b/198214718</a>)</li>\n <li>Add experimental <code>Modifier.composed</code> overloads that accept keys to compare for equality and qualify for skipping optimizations. (<a href=\"https://android-review.googlesource.com/#/q/Ice799fbdef230423eab1ad0247979091410b9065\">Ice799</a>, <a href=\"https://issuetracker.google.com/issues/205851704\">b/205851704</a>)</li>\n <li><code>ComposeNotIdleException</code> now extends from <code>Exception</code> instead of directly from <code>Throwable</code>. Note that this means that catch clauses that were catching <code>Exception</code> might now catch <code>ComposeNotIdleException</code>s, where they wouldn't do that previously. (<a href=\"https://android-review.googlesource.com/#/q/I9c217e174dbdeb96ef97ebcf840ef300a4dd9276\">I9c217</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix text handles not moving when IME visibility changes. (<a href=\"https://android-review.googlesource.com/#/q/I25f2ec3b813f179836c6e69c78bbd8ff2a636179\">I25f2e</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9fee5f6a2093713639af8853adbf898f7b609969..75784ce6dbac6faa5320e5898e9472f02ab8710c/compose/ui"
+    },
+    {
+      "id": "core-core-ktx",
+      "name": "Core Core-Ktx",
+      "version": "1.8.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.8.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Significant clean-up of nullability annotations</li>\n <li>Added a new API <code>ShortcutInfoCompat.Builder#setHiddenFromLauncher</code> to determine whether the shortcut should be hidden from the launcher. (<a href=\"https://android-review.googlesource.com/#/q/Ia2a7147fab366308c392eb3dcf0cc6122d7f6181\">Ia2a71</a>)</li>\n <li>Add <code>NotificationCompat.Action#setAuthenticationRequired</code> (<a href=\"https://android-review.googlesource.com/#/q/Ieeafaea3a880bf04e81320a5b944272e65804d01\">Ieeafa</a>, <a href=\"https://issuetracker.google.com/issues/202172887\">b/202172887</a>)</li>\n <li>Add <code>NotificationCompat.BigPictureStyle.setContentDescription</code> (<a href=\"https://android-review.googlesource.com/#/q/I3b483c4ac9b282f3f20f22effe4579363b633fda\">I3b483</a>)</li>\n <li>Added extension function <code>Map&lt;String, Any?&gt;.toPersistableBundle()</code> (<a href=\"https://android-review.googlesource.com/#/q/I82c867ee5f5c22332fd0db8bbf8b9ca5e67229aa\">I82c86</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Adjusts the scroll distance for accessibility action (<a href=\"https://android-review.googlesource.com/#/q/If74ae6f6d204f2b238998a31154abf61f8167d11\">If74ae</a>)</li>\n <li>Removed hardcoded language code in Javadocs (<a href=\"https://android-review.googlesource.com/#/q/Ie5d6865dfeb20562647aff50f1a4c0d33a642efa\">Ie5d68</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/f01b06dda22df8afd990b500c0663bf83df78a52..75784ce6dbac6faa5320e5898e9472f02ab8710c/core"
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "version": "1.5.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media#media-1.5.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/f07d12061370a603549747200c79b60239706330..75784ce6dbac6faa5320e5898e9472f02ab8710c/media/media"
+    },
+    {
+      "id": "profileinstaller",
+      "name": "ProfileInstaller",
+      "version": "1.1.0-beta04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/profileinstaller#1.1.0-beta04",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/cc1240d00b28657ee0c1a937f60430eaf1b03b09..75784ce6dbac6faa5320e5898e9472f02ab8710c/profileinstaller/profileinstaller"
+    },
+    {
+      "id": "room",
+      "name": "Room",
+      "version": "2.4.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.4.0-rc01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Update Room’s dependency on KSP to <code>1.6.0-1.0.1</code> to support Kotlin 1.6</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/cc1240d00b28657ee0c1a937f60430eaf1b03b09..2c190565e1d506313ad852188959a8fa46f80e97/room"
+    },
+    {
+      "id": "sqlite",
+      "name": "Sqlite",
+      "version": "2.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/sqlite#2.2.0-rc01",
+      "detailsHtml": "<p>No significant changes since 2.2.0-beta01.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/db0888af4fa9a8eaeaf55cc1f120724bc67bdb20..75784ce6dbac6faa5320e5898e9472f02ab8710c/sqlite"
+    },
+    {
+      "id": "tracing",
+      "name": "Tracing",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/tracing#1.1.0-beta01",
+      "detailsHtml": "<p>No changes since <code>1.1.0-alpha02</code>.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/cc1240d00b28657ee0c1a937f60430eaf1b03b09..75784ce6dbac6faa5320e5898e9472f02ab8710c/tracing"
+    },
+    {
+      "id": "wear-compose",
+      "name": "Wear Compose",
+      "version": "1.0.0-alpha12",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-compose#1.0.0-alpha12",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>\n  <p>We have added a Stepper component which allows users to make a selection from a range of values. Stepper is a full-screen control with increase and decrease buttons at the top and bottom, and a slot in the middle (expected to take either a Chip or Text). The button icons can be customized if required. (<a href=\"https://android-review.googlesource.com/#/q/I625fe06a1b1e90d1e59cb20be9fc5b8b19f387bf\">I625fe</a>)</p>\n </li>\n <li>\n  <p>We have added 2 new composables for displaying dialogs: AlertDialog waits for a response from the user and displays a title, icon, message and either a) two buttons for simple positive/negative choices or b) vertically stacked chips or toggle chips for more flexible choices, ConfirmationDialog displays an acknowledgement with a timeout. This simple dialog has slots for a title and an (animated) icon. (<a href=\"https://android-review.googlesource.com/#/q/Ic2cf88647bf55c8c93d7b3d8140249c98af0ccbb\">Ic2cf8</a>)</p>\n </li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add units (millis) to suggested dialog duration values. (<a href=\"https://android-review.googlesource.com/#/q/I09b484c76b9c4f3291b1fdd5024340fef95d377b\">I09b48</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/cc1240d00b28657ee0c1a937f60430eaf1b03b09..75784ce6dbac6faa5320e5898e9472f02ab8710c/wear/compose"
+    },
+    {
+      "id": "wear-watchface",
+      "name": "Wear Watchface",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-watchface#1.0.0",
+      "detailsHtml": "<p><strong>Major Features of 1.0.0</strong></p>\n<p>The <code>androidx.wear.watchface</code> package is the new recommended library for developing WearOS watch faces. It has a number of new features over the old Wearable Support Library.</p>\n<ul>\n <li>User styling (e.g. to change the color palette, the style of the watch hands, the look of the hour marks etc) is directly supported by the library (see <code>androidx.wear.watchface.style</code>). It’s now much easier to develop an on watch face editor using androidx.wear.watchface.editor and your watch face can be edited from the system companion app without you needing to write any extra code.</li>\n <li>Best practices baked in. The library automatically generated screen reader content labels for complications (you can also add your own ones), and the framerate automatically drops when the battery is low and not charging to improve battery life.</li>\n <li>Less code is needed to develop a watch face, especially for complications where a lot of the boilerplate has moved into the library.</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix <code>EditorSession.userStyle.compareAndSet</code> (<a href=\"https://android-review.googlesource.com/q/I6f676876b91bbcdbed3a270fda61ab1567c3ce89\">I6f676</a>)</li>\n <li>Fix very short watch face delays (<a href=\"https://android-review.googlesource.com/q/Iffb9725767a97a911d1794904b6aa7aee2246d38\">Iffb97</a>)</li>\n <li>Dispatch <code>InteractiveWatchFaceImpl.onDestroy</code> on the UI thread (<a href=\"https://android-review.googlesource.com/q/I8334083557fea6eb8944a66ddd9059f588aad190\">I83340</a>)</li>\n <li>Fix several problems with broadcast receivers (<a href=\"https://android-review.googlesource.com/q/I7d25f091f48422a1135bd74b7092142501265303\">I7d25f</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/e90bbb5c9ce1de64d619166e2d548e79f7a9bdf4..a0b94773cb4f134522ad5fb19f641b5fec937975/wear/watchface"
+    }
+  ]
+}

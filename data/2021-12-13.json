@@ -1,0 +1,41 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#december_13_2021",
+  "title": "December 13, 2021",
+  "releasedOn": "2021-12-13",
+  "updated": "2021-12-13T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#december_13_2021",
+  "components": [
+    {
+      "id": "test-annotation",
+      "name": "Test Annotation",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#annotation-1.0.0",
+      "detailsHtml": "<p>Dec 13, 2021</p>\n<p><code>androidx.test:annotation:1.0.0</code> is released.</p>\n<p>New artifact, currently for internal androidx.test use.</p>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-monitor",
+      "name": "Test Monitor",
+      "version": "1.5.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#monitor-1.5.0",
+      "detailsHtml": "<p>Dec 13, 2021</p>\n<p><code>androidx.test:monitor:1.5.0</code> is released.</p>\n<p>Changes since last 1.4.0 stable release are:</p>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add HardwareRendererCompat</li>\n <li>Add PlatformTestStorage</li>\n <li>Deprecate androidx.test.annotation.Beta</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-orchestrator",
+      "name": "Test Orchestrator",
+      "version": "1.4.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#orchestrator-1.4.1",
+      "detailsHtml": "<p>Dec 13, 2021</p>\n<p><code>androidx.test:orchestrator:1.4.1</code> is released.</p>\n<p>The notable changes since previous 1.4.0 stable release are:</p>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Delete obsolete OrchestrationXmlTestRunListener , in part to prevent error messages on Android 11+</li>\n <li>Support for android API 31</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-services",
+      "name": "Test Services",
+      "version": "1.4.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#services-1.4.1",
+      "detailsHtml": "<p>Dec 13, 2021</p>\n<p><code>androidx.test.services:test-services:1.4.1</code> <code>androidx.test.services:storage:1.4.1</code> are released.</p>\n<p>The notable changes since previous 1.4.0 stable release are:</p>\n<p>** Bug Fixes**</p>\n<ul>\n <li>Fix execution on Android API 31 by using real uid for ToolConnection [#1042]</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

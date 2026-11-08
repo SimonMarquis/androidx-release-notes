@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#december_16_2021",
+  "title": "December 16, 2021",
+  "releasedOn": "2021-12-16",
+  "updated": "2021-12-16T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#december_16_2021",
+  "components": [
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.1.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.1.0-rc02",
+      "detailsHtml": "<p><strong>Dependency updates</strong></p>\n<ul>\n <li>Compose Compiler <code>1.1.0-rc02</code> is compatible with Kotlin <code>1.6.10</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/8b1e748d80de10c087ce57eaaa93cd209cccebad..34f387b12323c3d92df36491123fe089602fe520/compose/compiler"
+    }
+  ]
+}
