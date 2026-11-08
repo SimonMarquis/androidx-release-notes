@@ -1,0 +1,41 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#november_8_2021",
+  "title": "November 8, 2021",
+  "releasedOn": "2021-11-08",
+  "updated": "2021-11-08T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#november_8_2021",
+  "components": [
+    {
+      "id": "test-annotation",
+      "name": "Test Annotation",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#annotation-1.0.0-beta01",
+      "detailsHtml": "<p>Nov 8, 2021</p>\n<p><code>androidx.test:annotation:1.0.0-beta01</code> is released.</p>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-monitor",
+      "name": "Test Monitor",
+      "version": "1.5.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#monitor-1.5.0-beta01",
+      "detailsHtml": "<p>Nov 8, 2021</p>\n<p><code>androidx.test:monitor:1.5.0-beta01</code> is released.</p>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-orchestrator",
+      "name": "Test Orchestrator",
+      "version": "1.4.1-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#orchestrator-1.4.1-beta01",
+      "detailsHtml": "<p>Nov 8, 2021</p>\n<p><code>androidx.test:orchestrator:1.4.1-beta01</code> is released.</p>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-services",
+      "name": "Test Services",
+      "version": "1.4.1-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#services-1.4.1-beta01",
+      "detailsHtml": "<p>Nov 8, 2021</p>\n<p><code>androidx.test.services:test-services:1.4.1-beta01</code> <code>androidx.test.services:storage:1.4.1-beta01</code> are released.</p>",
+      "commitsUrl": null
+    }
+  ]
+}

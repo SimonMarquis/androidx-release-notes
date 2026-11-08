@@ -1,0 +1,265 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#november_3_2021",
+  "title": "November 3, 2021",
+  "releasedOn": "2021-11-03",
+  "updated": "2021-11-03T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#november_3_2021",
+  "components": [
+    {
+      "id": "annotation",
+      "name": "Annotation",
+      "version": "1.3.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/annotation#annotation-1.3.0",
+      "detailsHtml": "<p><strong>Important changes since 1.2.0</strong></p>\n<ul>\n <li><code>@Discouraged</code> annotation for marking APIs that cannot be reasonably deprecated but have significant negative performance impact and should not be called in normal production code</li>\n <li><code>@Context</code> annotation to mark generic Contexts so that developers can migrate to new APIs more easily</li>\n <li><code>@GravityInt</code> annotation for marking elements containing gravity values packed into integers</li>\n <li>Deprecated <code>@InspectableProperty</code> in favor of <code>@Attribute</code> for <code>androidx.resourceinspection</code></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c38bf8cba2f6d60f9cceb03adcb56ff57f793b27..cbe56bb68421125805e82cc6ecb60a7701518e07/annotation/annotation"
+    },
+    {
+      "id": "appsearch",
+      "name": "AppSearch",
+      "version": "1.0.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appsearch#1.0.0-alpha04",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Guava ListenableFuture dependency automatically brought in as an API dependency</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add SearchResult#getSubmatchRange() and SearchResult#getSubmatch() to provide more information about each match. (<a href=\"https://android-review.googlesource.com/#/q/I2fef6746cada48fc7d0e51cf55378c71a6cb3ba8\">I2fef6</a>)</li>\n <li>Clarify documentation around how to generate PackageIdentifier fingerprints for sharing data by packagename+certificate</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix crash if user tries to fetch result pages after the end of the result set</li>\n <li>Fix issue with all namespaces being queried if only invalid namespaces were supplied as query filters</li>\n <li>Fix issue with all namespaces being removed if only invalid namespaces were supplied as remove-by-query filtersLo</li>\n <li>Fix issue where document data stopped being indexed after a certain point for very large documents</li>\n <li>Fix issue where tokenization would drop segments with non-Ascii numeric characters</li>\n <li>Add check for consecutive failed initialization attempts to help break out of potential bad state that prevents successful initialization.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/85f7b1566fa43b10b48aa6c8fbb3855f6cd02adb..f07d12061370a603549747200c79b60239706330/appsearch"
+    },
+    {
+      "id": "benchmark",
+      "name": "Benchmark",
+      "version": "1.1.0-alpha11",
+      "url": "https://developer.android.com/jetpack/androidx/releases/benchmark#1.1.0-alpha11",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Macrobenchmark now has a <code>minSdkVersion</code> of <code>23</code>. (<a href=\"https://android-review.googlesource.com/#/q/If265556949897999b3841e99bb59919fcdfa2c15\">If2655</a>)</li>\n <li>Adds a new experimental <code>BaselineProfileRule</code> which is capable of generating baseline profiles for app's critical user journey. Detailed documentation to follow. (<a href=\"https://android-review.googlesource.com/#/q/Ibbefa8ef27e60b6634f9c4a604db91ae715c69c5\">Ibbefa</a>, <a href=\"https://issuetracker.google.com/issues/203692160\">b/203692160</a>)</li>\n <li>Removes measureRepeated interface variant, which was added for java callers, as it caused ambiguity in completing/resolving the method. Java callers will again need to return Unit.Instance from measureRepeated. If this is an inconvenience, please file a bug, we can revisit this in a future version. (<a href=\"https://android-review.googlesource.com/#/q/Ifb23eaa6926a7375def8e5a3a63a4e951c19f0e0\">Ifb23e</a>, <a href=\"https://issuetracker.google.com/issues/204331495\">b/204331495</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/31a8acd5d0aa030454712d3df1ec114631651ef3..f07d12061370a603549747200c79b60239706330/benchmark"
+    },
+    {
+      "id": "browser",
+      "name": "Browser",
+      "version": "1.4.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/browser#1.4.0",
+      "detailsHtml": "<p><strong>Important changes since 1.3.0</strong></p>\n<ul>\n <li>Mark PendingIntents as PendingIntent.FLAG_IMMUTABLE for Android 12 compatibility.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/bbc22b0da7f8b1bbe5494736312e209292fd0301..cd9e194d80b7be5c6e04a2eedb05c6451db89138/browser/browser"
+    },
+    {
+      "id": "car-app",
+      "name": "Car App",
+      "version": "1.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/car-app#1.1.0-rc01",
+      "detailsHtml": "<p>This is a stabilization release, and there are no API changes compared to <code>v1.1.0-beta01</code>. New experimental features (API level 4) have been added that are intended for future Android Auto releases. See the release notes for <code>v1.2.0-alpha01</code> for more details on the experimental APIs.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ef3b5fed8cbec46a41f2d3b8cf11551fb19f282c..ec1427b1107ee0f4fea226a288599a73f4533ba0/car/app"
+    },
+    {
+      "id": "car-app",
+      "name": "Car App",
+      "version": "1.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/car-app#1.2.0-alpha01",
+      "detailsHtml": "<p>All new <code>v1.2.0</code> features (API 4+) are currently experimental targeting future Android Auto and Android Automotive OS releases. Refer to the <a href=\"https://developer.android.com/training/cars/apps\">development guide</a> for more details.</p>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Made <code>AutomotiveCarInfo</code> API experimental. (<a href=\"https://android-review.googlesource.com/#/q/Ia13e57579056baee54edf81a7e6e083b419ad0a9\">Ia13e5</a>)</li>\n <li>Added Car App Library API level 4 (<a href=\"https://android-review.googlesource.com/#/q/I2a2e7807b4c964c08fdf1e858f5f102559b3d299\">I2a2e7</a>)</li>\n <li>API Level 4: Added support for setting a <code>CarIcon</code> in <code>Pane</code> (<a href=\"https://android-review.googlesource.com/#/q/Ifcc125bed378969e35b0f51068b1a496bd8486e1\">Ifcc12</a>)</li>\n <li>API Level 4: Added QR code sign in method (<a href=\"https://android-review.googlesource.com/#/q/Ib623e16fe35735bedfc204fe1eaf26f197125639\">Ib623e</a>)</li>\n <li>API Level 4: Added set/getFlags to <code>Action</code> (<a href=\"https://android-review.googlesource.com/#/q/Ic03abf3a1f793db7e123f3431aee2b5585ec9de2\">Ic03ab</a>)</li>\n <li>API Level 4: Added support for panning and zooming in <code>PlaceListNavigationTemplate</code> and <code>RoutePreviewNavigationTemplate</code> (<a href=\"https://android-review.googlesource.com/#/q/I9d8a3ff7751ffd5423201b2f29886adff38e8bde\">I9d8a3</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>API Level 4: Add mechanism to allow apps to send location updates to the car host (<a href=\"https://android-review.googlesource.com/#/q/I3bad3e2a2343ba817442ed96b8d8818b586a30f9\">I3bad3</a>)</li>\n <li>Fix an issue where the host validation logic was not finding the TEMPLATE_RENDERER permission properly (<a href=\"https://android-review.googlesource.com/#/q/I626184386c346a4017424a7eecbf91145f04fed3\">I62618</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ef3b5fed8cbec46a41f2d3b8cf11551fb19f282c..f07d12061370a603549747200c79b60239706330/car/app"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.0.5",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.0.5",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a crash tracking derivedStateOf instances. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1792247\">aosp/1792247</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/74486e447dc2667c6a4cc46b2963f40210ceb348..39088e9f5278a15516318bb8979517d532bfdac3/compose/animation"
+    },
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.0.5",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.0.5",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a crash tracking derivedStateOf instances. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1792247\">aosp/1792247</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/74486e447dc2667c6a4cc46b2963f40210ceb348..39088e9f5278a15516318bb8979517d532bfdac3/compose/compiler"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.0.5",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.0.5",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a crash tracking derivedStateOf instances. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1792247\">aosp/1792247</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/74486e447dc2667c6a4cc46b2963f40210ceb348..39088e9f5278a15516318bb8979517d532bfdac3/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.0.5",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.0.5",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a crash tracking derivedStateOf instances. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1792247\">aosp/1792247</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/74486e447dc2667c6a4cc46b2963f40210ceb348..39088e9f5278a15516318bb8979517d532bfdac3/compose/material"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.0.5",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.0.5",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a crash tracking derivedStateOf instances. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1792247\">aosp/1792247</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/74486e447dc2667c6a4cc46b2963f40210ceb348..39088e9f5278a15516318bb8979517d532bfdac3/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.0.5",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.0.5",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a crash tracking derivedStateOf instances. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1792247\">aosp/1792247</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/74486e447dc2667c6a4cc46b2963f40210ceb348..39088e9f5278a15516318bb8979517d532bfdac3/compose/ui"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.1.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.1.0-beta02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>New animation APIs for supporting tooling. Specifically, they allow tooling to inspect the animations &amp; their configurations in a Transitions. (<a href=\"https://android-review.googlesource.com/#/q/I4116e0f930fdbbbf3c306e1c2aa32b71b257bd3d\">I4116e</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/92af5b17ecee9d3c62f59e98b483e411c390f51b..f07d12061370a603549747200c79b60239706330/compose/animation"
+    },
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.1.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.1.0-beta02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/92af5b17ecee9d3c62f59e98b483e411c390f51b..f07d12061370a603549747200c79b60239706330/compose/compiler-hosted"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.1.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.1.0-beta02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Ripples and other indications will now only be delayed if they are inside a <code>Modifier.scrollable()</code> container, instead of always being delayed for a down event. (<a href=\"https://android-review.googlesource.com/#/q/Ibefe01bcdef89e01b6e9f7edf9fe13622450f487\">Ibefe0</a>, <a href=\"https://issuetracker.google.com/issues/203141462\">b/203141462</a>)</li>\n <li>Added experimental BringIntoView API that lets you send a request to parents so that they scroll to bring an item into view (<a href=\"https://android-review.googlesource.com/#/q/Ib918da5f0ee21833e6e1c12169dbd308ca33caf5\">Ib918d</a>, <a href=\"https://issuetracker.google.com/issues/195353459\">b/195353459</a>)</li>\n</ul>\n<p><strong>External Contribution</strong></p>\n<ul>\n <li>Added <code>Modifier.pointerHoverIcon</code> (<a href=\"https://android-review.googlesource.com/#/q/I95f011f87824926ddc87398a5ad553ca003c6f08\">I95f01</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/92af5b17ecee9d3c62f59e98b483e411c390f51b..f07d12061370a603549747200c79b60239706330/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.1.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.1.0-beta02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Ripples and other indications will now only be delayed if they are inside a Modifier.scrollable() container, instead of always being delayed for a down event. (<a href=\"https://android-review.googlesource.com/#/q/Ibefe01bcdef89e01b6e9f7edf9fe13622450f487\">Ibefe0</a>, <a href=\"https://issuetracker.google.com/issues/203141462\">b/203141462</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/92af5b17ecee9d3c62f59e98b483e411c390f51b..f07d12061370a603549747200c79b60239706330/compose/material"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.1.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.1.0-beta02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Snapshot code was split up into multiple files, but all still lives in the same JVM class. (<a href=\"https://android-review.googlesource.com/#/q/Ic6c98dc9d1e4a85a2ef5acf099bc153b0d5f4146\">Ic6c98</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/92af5b17ecee9d3c62f59e98b483e411c390f51b..f07d12061370a603549747200c79b60239706330/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.1.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.1.0-beta02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added experimental BringIntoView API that lets you send a request to parents so that they scroll to bring an item into view (<a href=\"https://android-review.googlesource.com/#/q/Ib918da5f0ee21833e6e1c12169dbd308ca33caf5\">Ib918d</a>, <a href=\"https://issuetracker.google.com/issues/195353459\">b/195353459</a>)</li>\n <li>New animation APIs for supporting tooling. Specifically, they allow tooling to inspect the animations &amp; their configurations in a Transitions. (<a href=\"https://android-review.googlesource.com/#/q/I4116e0f930fdbbbf3c306e1c2aa32b71b257bd3d\">I4116e</a>)</li>\n</ul>\n<p><strong>External Contribution</strong></p>\n<ul>\n <li>Added Modifier.pointerHoverIcon (<a href=\"https://android-review.googlesource.com/#/q/I95f011f87824926ddc87398a5ad553ca003c6f08\">I95f01</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/92af5b17ecee9d3c62f59e98b483e411c390f51b..f07d12061370a603549747200c79b60239706330/compose/ui"
+    },
+    {
+      "id": "coordinatorlayout",
+      "name": "CoordinatorLayout",
+      "version": "1.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/coordinatorlayout#1.2.0-alpha01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Only retain runtime visible annotations in CoordinatorLayout rules (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/9ec7cbd4c185c80999d9d3d8b08dcde305ef52aa\">9ec7cb</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7f141e51dccf55d6c8d368dac9afaf06c11a8108..f07d12061370a603549747200c79b60239706330/coordinatorlayout/coordinatorlayout"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.4.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.4.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ca6054a5e12fcf05ba5e20bf93403afdab093986..02d119fbee4cdfe60f6b1b1a4ee172a726f26963/fragment"
+    },
+    {
+      "id": "health-services-client",
+      "name": "Health-Services-Client",
+      "version": "1.0.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/health#health-services-client-1.0.0-alpha03",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "version": "1.5.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media#media-1.5.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Update dependency on core for media to 1.6.0</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add isVolumeFixed to AudioManagerCompat</li>\n <li>Add MediaConstants for single item styling and completion percentage.</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>For API level 30 or higher, the library won't inject the package visibility filter for <code>MediaBrowserCompat</code>. You need to specify a <code>&lt;queries&gt;</code> element in your apps manifest.</li>\n <li>Fix the unexpected change of extras of getMediaDescription() on API 21</li>\n <li>Fix inefficient use of ArrayList by setting default size.</li>\n <li>Prevent some IllegalStateException on API 19.</li>\n <li>Fix a crash in MediaSessionCompat when targeting Android 12</li>\n <li>Fix a crash in NotificationCompat on KitKat</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/1f259226090fde0d482f2b0713630c8ee1328d73..f07d12061370a603549747200c79b60239706330/media/media"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.4.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.4.0-beta02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>The handling of both explicit and implicit deep links now automatically adds the <code>saveState</code> flag when navigating to another graph, ensuring that code such as <code>NavigationUI.setupWithNavController</code> and code using multiple back stacks works as expected. (<a href=\"https://android-review.googlesource.com/#/q/Ic8807b65fbcaf8d859f2ac35a45d508d2714231e\">Ic8807</a>)</li>\n</ul>\n<p><strong>Behavior Changes</strong></p>\n<ul>\n <li>Deep link patterns are now compiled lazily in NavDeepLink instead of during inflation. This should improve the inflation time of navigation graphs that include deep links. (<a href=\"https://android-review.googlesource.com/#/q/b8d257d8ea213126b304813c6d70cc5986e97d3e\">b8d257</a>, <a href=\"https://issuetracker.google.com/issues/184149935\">b/184149935</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue where NavBackStackEntries were being pushed down to <code>Lifecycle.State.CREATED</code> after moving to <code>Lifecycle.State.STARTED</code> when the <code>NavHost</code> is added directly to the activity's <code>setContent()</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ia5ac1c2c7e83f90780dd85187519c08debaa6eca\">Ia5ac1</a>, <a href=\"https://issuetracker.google.com/issues/203536683\">b/203536683</a>)</li>\n <li>Fixed a race condition where popping a <code>DialogFragment</code> destination off of the back stack before the dialog was actually shown would not actually dismiss the dialog, resulting in a crash when the errant dialog was manually dismissed by the user. (<a href=\"https://android-review.googlesource.com/#/q/I687e5c540686b7eedf96a2c8875e6e456840ca69\">I687e5</a>)</li>\n <li>Fixed an issue where the <code>onNavDestinationSelected</code> API on <code>NavigationUI</code> would return <code>true</code> even if you didn't actually <code>navigate()</code> to that navigation graph. It now uses the same logic used internally by <code>setupWithNavController</code> to only select the <code>MenuItem</code> associated with the current destination using the <code>hierarchy</code> of the destination. (<a href=\"https://android-review.googlesource.com/#/q/I2b053225195ac72ee7e2e6aabebcbb0b97418ec0\">I2b053</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4414c046f9f3ceed61638de755aac5f976f4d4b7..f07d12061370a603549747200c79b60239706330/navigation"
+    },
+    {
+      "id": "paging",
+      "name": "Paging",
+      "version": "3.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/paging#3.1.0-rc01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a race condition + memory leak in .cachedIn() in cases where multiple load events were sent by Paging downstream while there are no observers or between when an observer is switching to a new PagingData. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1869943\">Ib682e</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/db0888af4fa9a8eaeaf55cc1f120724bc67bdb20..b15a1d282b578971faba0bbe4e631dd2e9b5b854/paging"
+    },
+    {
+      "id": "preference",
+      "name": "Preference",
+      "version": "1.2.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/preference#1.2.0-alpha02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added nullability annotations to many of the APIs that previously did not specify <code>@NonNull</code> or <code>@Nullable</code>. (<a href=\"https://android-review.googlesource.com/#/q/I04252b54e80c7fcac6d652387f20ec7004b64b84\">I04252</a>, <a href=\"https://android-review.googlesource.com/#/q/Ie2cc00f2df7720824d01bda67ee2b7747b4f3086\">Ie2cc0</a>)</li>\n <li>Removed the <code>openPreference()</code> API from <code>PreferenceHeaderFragmentCompat</code> - this method is called for you and should not be called manually. (<a href=\"https://android-review.googlesource.com/#/q/Ia69899cc01b3c4692123cd9451e70104fdaaf577\">Ia6989</a>)</li>\n</ul>\n<p><strong>Behavior Changes</strong></p>\n<ul>\n <li>PreferenceFragmentCompat callbacks for <code>OnNavigateToScreenListener</code>, and <code>OnDisplayPreferenceDialogListener</code> now follow the same pattern as <code>OnPreferenceTreeClickListener</code> and look up the parent fragment hierarchy for valid listeners before looking to see if the hosting Context or Activity implement these interfaces. (<a href=\"https://android-review.googlesource.com/#/q/I7ae6c1bc71c02be900d733e29f41a7f5dd72a605\">I7ae6c</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ca6054a5e12fcf05ba5e20bf93403afdab093986..f07d12061370a603549747200c79b60239706330/preference"
+    },
+    {
+      "id": "profileinstaller",
+      "name": "ProfileInstaller",
+      "version": "1.1.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/profileinstaller#1.1.0-beta02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Updated to support Compose 1.1.0-beta02</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/92af5b17ecee9d3c62f59e98b483e411c390f51b..f07d12061370a603549747200c79b60239706330/profileinstaller/profileinstaller"
+    },
+    {
+      "id": "resourceinspection",
+      "name": "ResourceInspection",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/resourceinspection#1.0.0",
+      "detailsHtml": "<p><strong>Major features of 1.0.0</strong></p>\n<ul>\n <li>The ResourceInspection library provides an annotation processor for library developers to surface the attributes of custom views in Android Studio’s <a href=\"https://developer.android.com/studio/debug/layout-inspector#4-0-0-live-layout-inspector\">Live Layout Inspector</a>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c38bf8cba2f6d60f9cceb03adcb56ff57f793b27..255d9759ff9495ea552d71b415bf638a02046780/resourceinspection"
+    },
+    {
+      "id": "sharetarget",
+      "name": "ShareTarget",
+      "version": "1.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/sharetarget#1.2.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4428a02d484bb23d7e516c6f55579cf9130f086f..64c0bc017f4cd3bac36d7063eaf61ca6a820309c/sharetarget/sharetarget"
+    },
+    {
+      "id": "tracing",
+      "name": "Tracing",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/tracing#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Avoid class verification errors when Trace.java is loaded for the first time (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/b19fac01b2a7f4d55ca777397c5719892905f6b4\">05f6b4</a> and <a href=\"https://android.googlesource.com/platform/frameworks/support/+/4474e187d25886eca264463b7c834c5353cb101f\">cb101f</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2a518b53bb3172e4945cba723ae628e9c18bcd23..f07d12061370a603549747200c79b60239706330/tracing"
+    },
+    {
+      "id": "wear-compose",
+      "name": "Wear Compose",
+      "version": "1.0.0-alpha10",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-compose#1.0.0-alpha10",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>\n  <p>Added an InlineSlider for wear compose. InlineSlider allows users to make a selection from a range of values. The range of selections is shown as a bar between the minimum and maximum values of the range, from which users may select a single value. (<a href=\"https://android-review.googlesource.com/#/q/If01485d8dd34fc309770c843709a8bceae10e2fd\">If0148</a>)</p>\n </li>\n <li>\n  <p>Check out the new Compose for <a href=\"https://developer.android.com/codelabs/compose-for-wear-os#1\">WearOS Codelab</a>!</p>\n </li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Macrobenchmark now has a <code>minSdkVersion</code> of <code>23</code>. (<a href=\"https://android-review.googlesource.com/#/q/If265556949897999b3841e99bb59919fcdfa2c15\">If2655</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Update transition handling in SwipeDismissableNavHost in a SideEffect (<a href=\"https://android-review.googlesource.com/#/q/I04994074e7d024dcf857c156c8c265b57e3769f8\">I04994</a>, <a href=\"https://issuetracker.google.com/issues/202863359\">b/202863359</a>)</li>\n <li>Update transition handling in SwipeDismissableNavHost (<a href=\"https://android-review.googlesource.com/#/q/I1cbe09cd902f785dcb68f11f098b340e4da1e55a\">I1cbe0</a>, <a href=\"https://issuetracker.google.com/issues/202863359\">b/202863359</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b5f9c6b124ab46a4c5eee7f15d2443287f8a539d..f07d12061370a603549747200c79b60239706330/wear/compose"
+    },
+    {
+      "id": "wear-tiles",
+      "name": "Wear Tiles",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-tiles#1.0.0",
+      "detailsHtml": "<p><strong>Major features of 1.0.0</strong></p>\n<ul>\n <li>The Wear Tiles library provides functionality to build custom Tiles for Wear OS devices, along with the classes that allow the system to fetch your Tile and display it right next to your watch face.</li>\n <li>tiles-renderer allows you to show a Tile as part of an Android Activity, facilitating quick testing of your tile layouts.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/8651d9ea0f2523efe566785034a57a30f2a53e53..e632337e786a8f1ca1f8830e988656e02548a89e/wear/tiles"
+    },
+    {
+      "id": "wear-watchface",
+      "name": "Wear Watchface",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-watchface#1.0.0-rc01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>\n  <p>Fix dump() (called by adb shell dumpsys) which got broken by flow migrations. (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/087cf9e9cd0e8a22ce606fe609523b302a6fe2df\">087cf9e</a>)</p>\n </li>\n <li>\n  <p>Ensure proper ordering of writeDirectBootPrefs. We want writeDirectBootPrefs to always run after initStyleAndComplications or we risk delaying UI thread init.(<a href=\"https://android.googlesource.com/platform/frameworks/support/+/37650ac346629f446d7780b68fda5188a1f7a245\">37650ac</a>)</p>\n </li>\n <li>\n  <p>Ensure Renderer.onDestroy is called. In the scenario where the renderer has been created but WF init has not completed and Engine.onDestroy is called, we need to call Renderer.onDestroy. (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/f9952dc62e10a23846123e4ecd166272784a178c\">f9952dc</a>)</p>\n </li>\n <li>\n  <p>Optimization/fix to isBatteryLowAndNotCharging. This patch moves the initial setup of isBatteryLowAndNotCharging earlier which means it can be done in parallel with createWatchFace. In addition we now listen to ACTION_POWER_DISCONNECTED. (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/ddffd80227ea2c84abc0d00eb3aba2e5a7c64dab\">ddffd80</a></p>\n </li>\n <li>\n  <p>InteractiveWatchFaceClientImpl.isConnectionAlive to be false after close (<a href=\"https://android.googlesource.com/platform/frameworks/support/+/ab9774ee2c38e62152a8fb0b65d367884984813f\">ab9774e</a>)</p>\n </li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ca6054a5e12fcf05ba5e20bf93403afdab093986..e90bbb5c9ce1de64d619166e2d548e79f7a9bdf4/wear/watchface"
+    }
+  ]
+}

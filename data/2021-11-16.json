@@ -1,0 +1,25 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#november_16_2021",
+  "title": "November 16, 2021",
+  "releasedOn": "2021-11-16",
+  "updated": "2021-11-16T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#november_16_2021",
+  "components": [
+    {
+      "id": "constraintlayout",
+      "name": "ConstraintLayout",
+      "version": "2.1.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#2.1.2",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "compose-constraintlayout",
+      "name": "Compose ConstraintLayout",
+      "version": "1.0.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-compose-1.0.0-rc02",
+      "detailsHtml": "<p>For more information, see the GitHub article <a href=\"https://github.com/androidx/constraintlayout/wiki/What's-New-in-1.0-(Compose)\">What's New in 1.0 (Compose)</a>.</p>",
+      "commitsUrl": null
+    }
+  ]
+}
