@@ -1,0 +1,25 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#february_21_2019",
+  "title": "February 21, 2019",
+  "releasedOn": "2019-02-21",
+  "updated": "2019-02-21T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#february_21_2019",
+  "components": [
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#1.0.0-rc01",
+      "detailsHtml": "<p>This is a release candidate for Navigation's 1.0.0 stable release. This release contains one bug fix.</p>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue when using Fragments and <code>singleTop</code> navigation operations <a href=\"https://issuetracker.google.com/124294805\">b/124294805</a></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "1.0.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#1.0.0-rc02",
+      "detailsHtml": "<p>This is the second release candidate for WorkManager's 1.0.0 stable release. This release contains two bug fixes.</p>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>\n  <p><code>Worker</code>s are now correctly scheduled after an application crash. <a href=\"https://issuetracker.google.com/124546316\">b/124546316</a></p>\n </li>\n <li>\n  <p><code>Worker</code>s that throw an unchecked <code>Exception</code> are now correctly marked as <code>FAILED</code> and no longer crash the app process.</p>\n </li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

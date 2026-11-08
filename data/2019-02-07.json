@@ -1,0 +1,65 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#february_7_2019",
+  "title": "February 7, 2019",
+  "releasedOn": "2019-02-07",
+  "updated": "2019-02-07T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#february_7_2019",
+  "components": [
+    {
+      "id": "appcompat",
+      "name": "AppCompat",
+      "version": "1.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.1.0-alpha02",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Extracted resource-specific drawable handling into a hook (<a href=\"https://android-review.googlesource.com/870976\">aosp/870976</a>)</li>\n <li>Allowed Toolbar <code>titleTextColor</code> and <code>subtitleTextColor</code> to use a <code>ColorStateList</code> and added <code>ColorStateList</code> overloads of the <code>setTitleTextColor</code> and <code>setSubtitleTextColor</code> methods (<a href=\"https://android-review.googlesource.com/867489\">aosp/867489</a>)</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed <code>fontFamily</code> not working on pre API 24 (<a href=\"https://android-review.googlesource.com/807054\">aosp/807054</a>)</li>\n <li>Fixed bug where <code>textFontWeight</code> did not work when an activity extends from <code>AppCompatActivity</code> (<a href=\"https://android-review.googlesource.com/847640\">aosp/847640</a>)</li>\n <li>Fixed bug that caused the title text on the spinner widget popup (when using dialog mode) to not use the font specified in the <code>fontFamily</code> (<a href=\"https://android-review.googlesource.com/789994\">aosp/789994</a>)</li>\n <li>Fix bug that prevented widgets <code>AppCompatCheckBox</code> and <code>AppCompatRadioButton</code> from be able to change the background tint (<a href=\"https://android-review.googlesource.com/825160\">aosp/825160</a>)</li>\n <li>Fixed bug where AppCompat did not override <code>android: list styles</code> (<a href=\"https://android-review.googlesource.com/862350\">aosp/862350</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.1.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.1.0-alpha04",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Added support for the <code>@ContentView</code> class annotation that allows you to indicate which layout XML file should be inflated as an alternative to overriding <code>onCreateView()</code>. It is recommended to do view related work in <code>onViewCreated()</code>. (<a href=\"https://android-review.googlesource.com/837619\">aosp/837619</a>)</li>\n <li><code>fragment-testing</code> now depends on <code>androidx.test:core-ktx</code> 1.1.0 stable (<a href=\"https://issuetracker.google.com/issues/121209673\">b/121209673</a>)</li>\n <li>You can now use <code>openActionBarOverflowOrOptionsMenu</code> with <code>FragmentScenario</code> to test Fragment hosted options menus (<a href=\"https://issuetracker.google.com/issues/121126668\">b/121126668</a>)</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Added a <code>requireArguments()</code> method which returns a <code>@NonNull Bundle</code> or throws an <code>IllegalStateException</code> (<a href=\"https://issuetracker.google.com/issues/121196360\">b/121196360</a>)</li>\n <li>Added a note that <code>getLifecycle()</code>, <code>getViewLifecycleOwner()</code>, and <code>getViewLifecycleOwnerLiveData()</code> should not be overridden and will be made final in a future release. Please <a href=\"https://issuetracker.google.com/issues/new?component=460964\">file a feature request</a> if you are currently overriding this method. (<a href=\"https://android-review.googlesource.com/880714\">aosp/880714</a>)</li>\n <li>Added a note that <code>getViewModelStore()</code> should not be overridden and will be made final in a future release. Please <a href=\"https://issuetracker.google.com/issues/new?component=460964\">file a feature request</a> if you are currently overriding this method. (<a href=\"https://android-review.googlesource.com/880713\">aosp/880713</a>)</li>\n <li>Fixed an issue with binary compatibility with previous releases of Fragments. (<a href=\"https://android-review.googlesource.com/887877\">aosp/887877</a>) (<a href=\"https://android-review.googlesource.com/889834\">aosp/889834</a>)</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Target fragments are correctly cleared out when you pass <code>null</code> to <code>setTargetFragment()</code>. (<a href=\"https://android-review.googlesource.com/849969\">aosp/849969</a>)</li>\n <li>Fixed an issue where target Fragments were sometimes unavailable in or after <code>onDestroy()</code>. (<a href=\"https://issuetracker.google.com/issues/122312935\">b/122312935</a>)</li>\n <li>DialogFragment’s onDismiss() is now called before <code>onDestroy()</code>. (<a href=\"https://android-review.googlesource.com/874133\">aosp/874133</a>) (<a href=\"https://android-review.googlesource.com/890734\">aosp/890734</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "dynamicanimation-ktx",
+      "name": "DynamicAnimation-ktx",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/dynamicanimation#dynamicanimation-ktx-1.0.0-alpha01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>New Kotlin API for creating <code>SpringAnimations</code> and <code>FlingAnimations</code></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "jetifier",
+      "name": "Jetifier",
+      "version": "1.0.0-beta03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/jetifier#1.0.0-beta03",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Jetifier now throws an exception if it finds a signature inside a jetified JAR. This can be disabled by using <code>-stripSignatures</code> which will remove all signature files. This does not apply to libraries that do not have any dependencies on old support library as jetifier skips these (<a href=\"https://android-review.googlesource.com/894356/\">aosp/894356</a>)</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed jetification of android.support.customtabs so jetifier no longer migrates the constants (<a href=\"https://android-review.googlesource.com/875343/\">aosp/875343</a>)</li>\n <li>Fixed that jetifier always marked non-modified archives as modified if they contained a POM file (<a href=\"https://android-review.googlesource.com/876353/\">aosp/876353</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "textclassifier",
+      "name": "TextClassifier",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/textclassifier#1.0.0-alpha02",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li><code>TextLinks.TextLink.getEntityType</code> replaces <code>TextLinks.TextLink.getEntity</code></li>\n <li><code>TextLinks.TextLink.getEntityTypeCount</code> replaces <code>TextLinks.TextLink.getEntityCount</code></li>\n <li><code>TextSelection.getEntityType</code> replaces <code>TextSelection.getEntity</code></li>\n <li><code>TextSelection.getEntityTypeCount</code> replaces `TextSelection.getEntityCount</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fix a memory leak issue in AndroidX TextClassificationManager. (<a href=\"https://android-review.googlesource.com/887354\">aosp/887354</a>)</li>\n <li>Floating Toolbar: Handle TextView position changes. (<a href=\"https://android-review.googlesource.com/877713\">aosp/877713</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "preference",
+      "name": "Preference",
+      "version": "1.1.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/preference#1.1.0-alpha03",
+      "detailsHtml": "<h4>androidx.preference:preference 1.1.0-alpha03</h4>\n<p><code>androidx.preference:preference 1.1.0-alpha03</code> and <code>androidx.preference:preference-ktx 1.1.0-alpha03</code> are released with the following changes.</p>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed an issue where the copy/paste popup would sometimes not show in EditTextPreference’s dialog</li>\n <li>Fixed an issue where the underlying adapter was not unregistered properly, causing memory leaks under specific conditions (<a href=\"https://issuetracker.google.com/121006469\">b/121006469</a>)</li>\n <li>Fixed some dialog related crashes that occurred during configuration change (<a href=\"https://issuetracker.google.com/122167543\">b/122167543</a>)</li>\n <li>Fixed SummaryProvider not working for MultiSelectListPreference (<a href=\"https://issuetracker.google.com/123022772\">b/123022772</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "viewpager2",
+      "name": "ViewPager2",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/viewpager2#1.0.0-alpha01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Comparing to its predecessor <code>android.support.v4.view.ViewPager</code> (VP1):\n  <ul>\n   <li>Right-to-left (RTL) layout support</li>\n   <li>Vertical orientation support</li>\n   <li><code>notifyDataSetChanged</code> fully functional (VP1 bugs addressed)</li>\n  </ul></li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li><code>FragmentStateAdapter</code> replaces <code>FragmentStatePagerAdapter</code></li>\n <li><code>RecyclerView.Adapter</code> replaces <code>PagerAdapter</code></li>\n <li><code>registerOnPageChangeCallback</code> replaces <code>addPageChangeListener</code></li>\n</ul>\n<p><strong>Known issues</strong></p>\n<ul>\n <li>clipToPadding</li>\n <li>no fakeDrag</li>\n <li>JavaDoc</li>\n <li>nested scrolling parallel to orientation</li>\n <li>no offscreen limit control</li>\n <li>needs better TabLayout integration</li>\n <li>no pageWidth setter (forced 100%/100%)</li>\n <li>page transformer: no hardware/software layer choice; no reverse drawing order</li>\n <li>keep current item visible when inserting a page before current</li>\n <li>keyboard navigation needs work</li>\n <li><code>FragmentStateAdapter</code> stability / performance improvements coming</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

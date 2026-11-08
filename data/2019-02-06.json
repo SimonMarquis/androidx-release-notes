@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#february_6_2019",
+  "title": "February 6, 2019",
+  "releasedOn": "2019-02-06",
+  "updated": "2019-02-06T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#february_6_2019",
+  "components": [
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "1.0.0-beta05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#1.0.0-beta05",
+      "detailsHtml": "<p>This release contains some bug fixes.</p>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a case where <code>JobScheduler.getPendingJob(...)</code> was used on API 23. <a href=\"https://issuetracker.google.com/123893059\">b/123893059</a></li>\n <li>Fixed a <code>NullPointerException</code> on devices running Android 5.1 (API level 22) or lower. <a href=\"https://issuetracker.google.com/123835104\">b/123835104</a></li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

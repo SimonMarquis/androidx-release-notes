@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#february_12_2019",
+  "title": "February 12, 2019",
+  "releasedOn": "2019-02-12",
+  "updated": "2019-02-12T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#february_12_2019",
+  "components": [
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "1.0.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#1.0.0-beta02",
+      "detailsHtml": "<p>This release includes a number of minor improvements and important bug fixes.</p>\n<p><strong>New Features</strong></p>\n<ul>\n <li>You can now use <code>0</code> as an <code>android:defaultValue</code> for <code>reference</code> arguments. <a href=\"https://issuetracker.google.com/124248602\">b/124248602</a></li>\n</ul>\n<p><strong>Behavior changes</strong></p>\n<ul>\n <li>Exact deep link matches are now prioritized over deep links with <code>.*</code> or argument matches. <a href=\"https://issuetracker.google.com/123969518\">b/123969518</a></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>popBackStack()</code> and <code>navigateUp</code> now correctly return <code>false</code> when popping the last destination on the back stack, fixing a regression introduced in <code>1.0.0-beta01</code>. <a href=\"https://issuetracker.google.com/123933201\">b/123933201</a></li>\n <li>Navigation now correctly sets the <code>ClassLoader</code> during restoration of saved instance state, avoiding issues when using custom classes in <code>Navigator</code> saved state or in arguments sent to a <code>NavDestination</code>. <a href=\"https://issuetracker.google.com/123893858\">b/123893858</a></li>\n <li>Safe Args generated NavArgs classes no longer crash when restoring a <code>Parcelable[]</code> argument from saved instance state. <a href=\"https://issuetracker.google.com/123963545\">b/123963545</a></li>\n <li>Safe Args now properly cleans up unnecessary generated Kotlin classes. <a href=\"https://issuetracker.google.com/124120883\">b/124120883</a></li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}
