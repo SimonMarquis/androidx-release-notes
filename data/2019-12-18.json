@@ -1,0 +1,153 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#december_18_2019",
+  "title": "December 18, 2019",
+  "releasedOn": "2019-12-18",
+  "updated": "2019-12-18T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#december_18_2019",
+  "components": [
+    {
+      "id": "biometric",
+      "name": "Biometric",
+      "version": "1.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/biometric#1.0.1",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Extended the existing fingerprint fallback workaround for crypto-based authentication to known affected vendors, while also limiting it to API 28 (<a href=\"https://issuetracker.google.com/143361271\">b/143361271</a>)</li>\n <li>Fixed an issue on certain devices where the biometric dialog was shown under a system overlay (<a href=\"https://issuetracker.google.com/143230260\">b/143230260</a>)</li>\n <li>Fixed several issues with <code>setDeviceCredentialAllowed(true)</code> (<a href=\"https://issuetracker.google.com/143091227\">b/143091227</a>, <a href=\"https://issuetracker.google.com/143097321\">b/143097321</a>, <a href=\"https://issuetracker.google.com/143653944\">b/143653944</a>)</li>\n <li>Fixed an issue on certain Android versions where <code>onAuthenticationSuccess</code> was not always called after the user confirmed their device credential (<a href=\"https://issuetracker.google.com/145232806\">b/145232806</a>)</li>\n <li>Fixed an issue on certain Android versions where <code>onAuthenticationError</code> was not always called when the prompt was dismissed on rotation (<a href=\"https://issuetracker.google.com/145230042\">b/145230042</a>)</li>\n <li>Fixed an issue on certain Android versions where the prompt was not dismissed when receiving certain error codes (<a href=\"https://issuetracker.google.com/143683687\">b/143683687</a>)</li>\n <li>Fixed a potential <code>NullPointerException</code> in <code>BiometricFragment</code> (<a href=\"https://issuetracker.google.com/142599311\">b/142599311</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5232c33def2f56cb56ae395aba84c7cf95f27864..33c93675e3a1ba85a74980937fb3df96824f7888/biometric"
+    },
+    {
+      "id": "browser",
+      "name": "Browser",
+      "version": "1.2.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/browser#1.2.0",
+      "detailsHtml": "<p><strong>Major changes since 1.0.0</strong></p>\n<ul>\n <li><strong>Trusted Web Activities</strong>\n  <ul>\n   <li>Support for <a href=\"https://developers.google.com/web/updates/2019/02/using-twa\">Trusted Web Activities</a> is now stable.</li>\n   <li>The <code>TrustedWebActivityIntentBuilder</code> can be used to customize and create a <code>TrustedWebActivityIntent</code>, to launch a Trusted Web Activity.</li>\n   <li>The <code>TrustedWebActivityService</code> can be included or extended to allow clients to display web push notifications handed to them by the browser.</li>\n   <li>The <code>TrustedWebActivityServiceConnectionPool</code> can be used by browsers to connect to the <code>TrustedWebActivityService</code>s in clients. A <code>TrustedWebActivityServiceConnection</code> represents such a connection.</li>\n   <li>Trusted Web Activities can be launched providing information to a Web Share Target.</li>\n  </ul></li>\n <li><strong>Dark Theme</strong>\n  <ul>\n   <li>Developers can provide (through <code>CustomTabColorSchemeParams</code>) different theme colors to be used when the device is in light or dark mode.</li>\n   <li>Developers can request that the browser itself is in light or dark mode.</li>\n  </ul></li>\n <li><strong>Session resumption</strong>\n  <ul>\n   <li><code>CustomTabsSession</code>s can be created with an id, allowing subsequent Custom Tabs launches from the same client and id to be merged.</li>\n  </ul></li>\n <li>The navigation bar colour can be specified for Custom Tabs.</li>\n <li>Browser Actions related classes are marked deprecated due to incredibly low feature usage and will be removed in a future version of the library.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2cf2b71971967b7ca0469a45ac470a0d303dc437..6e847a4064cdda740b778d560b1db477e13e0772/browser"
+    },
+    {
+      "id": "camera-camera2",
+      "name": "Camera-Camera2",
+      "version": "1.0.0-alpha08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-camera2-1.0.0-alpha08",
+      "detailsHtml": "<p><strong>Known Issues</strong></p>\n<ul>\n <li>Not all Camera2 capture request options work when using the Camera2 interop. If the requested option is not supported, the session fails to start and an error like this may occur: <code>09-09 14:04:13.643 10117 26020 26036 E AndroidRuntime: java.lang.IllegalArgumentException: Unsupported session configuration combination</code></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue in which a preview black screen occurred after rotating or switching the camera for API Levels 21 and 22.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li><em>Experimental</em>: Added a camera2 interop path for extracting the Camera ID.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4cb7a5cbd2e20d3bf45cae63fea8436818576256..740cde70237dd276f8ad66dfe9528b1cdb5d54bb/camera/camera-camera2"
+    },
+    {
+      "id": "camera-core",
+      "name": "Camera-Core",
+      "version": "1.0.0-alpha08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-core-1.0.0-alpha08",
+      "detailsHtml": "<p><strong>Known Issues</strong></p>\n<ul>\n <li>Apps using the <code>PreviewView</code> or <code>CameraView</code> may have the wrong aspect ratio preview. This happens after pause or resume on some FULL devices, such as the Pixel2.</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Updated the documentation for <code>FocusMeteringAction</code> and <code>CameraControl</code>.</li>\n <li>Implemented <code>TorchControl</code> for <code>enableTorch()</code> and <code>getTorchState()</code>.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Hid IntDefs and moved IntDef constants outside of the IntDef definition.</li>\n <li>Moved <code>rotationDegrees</code> from class <code>OnImageCaptureCallback</code> to <code>ImageInfo</code>.</li>\n <li>Moved <code>rotationDegrees</code> from class <code>Analyzer</code> to <code>ImageInfo</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4cb7a5cbd2e20d3bf45cae63fea8436818576256..740cde70237dd276f8ad66dfe9528b1cdb5d54bb/camera/camera-core"
+    },
+    {
+      "id": "camera-extensions",
+      "name": "Camera-Extensions",
+      "version": "1.0.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-ext-1.0.0-alpha05",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Updated to match the internal Camera Core APIs.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4cb7a5cbd2e20d3bf45cae63fea8436818576256..740cde70237dd276f8ad66dfe9528b1cdb5d54bb/camera/camera-extensions"
+    },
+    {
+      "id": "camera-lifecycle",
+      "name": "Camera-Lifecycle",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-lifecycle-1.0.0-alpha02",
+      "detailsHtml": "<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Updated to use <code>androidx.camera:camera-core:1.0.0-alpha08</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4cb7a5cbd2e20d3bf45cae63fea8436818576256..740cde70237dd276f8ad66dfe9528b1cdb5d54bb/camera/camera-lifecycle"
+    },
+    {
+      "id": "camera-view",
+      "name": "Camera-View",
+      "version": "1.0.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-view-1.0.0-alpha05",
+      "detailsHtml": "<p><strong>Known Issues</strong></p>\n<ul>\n <li>The aspect ratio may be incorrect when using PreviewView (<a href=\"https://issuetracker.google.com/146215202\">b/146215202</a>).</li>\n</ul>\n<p><strong>New Features</strong></p>\n<ul>\n <li>Implemented a new class called <code>PreviewView.TextureViewImplementation</code> that syncs the SurfaceTexture's lifecycle with the camera's usage of the TextureView's surface.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4cb7a5cbd2e20d3bf45cae63fea8436818576256..740cde70237dd276f8ad66dfe9528b1cdb5d54bb/camera/camera-view"
+    },
+    {
+      "id": "concurrent-futures",
+      "name": "Concurrent-Futures",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/concurrent#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Kotlin extensions to help convert between ListenableFuture and Kotlin Coroutines are now available in <code>concurrent-futures-ktx</code>. This artifact is meant to be used with <code>com.google.guava:listenablefuture</code> as opposed to the full Guava library, which is a lightweight substitute for Guava that only contains <code>ListenableFuture</code>. For users of the full Guava library, you should use the official ListenableFuture extensions from <code>kotlinx.coroutines.kotlinx-coroutines-guava</code> instead.</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Adds a suspending <code>ListenableFuture.await()</code> extension which converts a ListenableFuture to a Kotlin Coroutine</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/631e6dd8dd3e57789af36d56a8d720da1c37cbd5..740cde70237dd276f8ad66dfe9528b1cdb5d54bb/concurrent"
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/enterprise#1.0.0",
+      "detailsHtml": "<p><strong>Major features in 1.0.0</strong></p>\n<ul>\n <li><code>KeyedAppStatesReporter</code> allows apps to report state changes to EMMs (Enterprise Mobility Management)</li>\n <li><code>KeyedAppStatesService</code> allows Device Policy Managers to receive reported state changes</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3d995d2fc12e3103b5bd3a5c414dfa3987f9f76c..825d4a371a29f073d46f219936f7ef0f6e5f437d/enterprise/feedback"
+    },
+    {
+      "id": "exifinterface",
+      "name": "Exifinterface",
+      "version": "1.2.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/exifinterface#1.2.0-beta01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Added support for adding EXIF to PNG files</li>\n <li>Added support support for reading and writing EXIF from WebP files</li>\n <li>Added support for an EXIF data only stream</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Added an API to check if the specified mime type is supported</li>\n <li>Exposed the read and write OffsetTime* tags</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed an issue where the incorrect offsets were being returned for <code>getAttributeRange()</code></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4075a57e3d23631e5690a18b9c73e137957e8faa..d5e6675db6f6b1c9317dc1c82b8f0bed06694a87/exifinterface"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.2.0-rc04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.2.0-rc04",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Adjusted the animations for <code>TRANSIT_FRAGMENT_OPEN</code>, <code>TRANSIT_FRAGMENT_CLOSE</code>, and <code>TRANSIT_FRAGMENT_FADE</code> to avoid visual issues. (<a href=\"https://issuetracker.google.com/issues/145468417\">b/145468417</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/0754f64b25856c50be34974ca8081be31c1b8b2f..51813e9145ac8b1ed7f01f3b8dc6741abc937079/fragment"
+    },
+    {
+      "id": "leanback",
+      "name": "Leanback",
+      "version": "1.1.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/leanback#1.1.0-alpha03",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>BaseGridView now supports custom scrolling speeds (<a href=\"https://android-review.googlesource.com/c/952718\">aosp/952718</a>)</li>\n <li>Made guided step item touch more friendly (<a href=\"https://android-review.googlesource.com/c/1167964\">aosp/1167964</a>)</li>\n <li>Exposed the BaseGridView OnLayoutCompleteListener so apps can perform View transformations after the layout pass. (<a href=\"https://android-review.googlesource.com/c/1164409\">aosp/1164409</a>)</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Added a new API to allow custom BaseGridView scrolling speeds (<a href=\"https://android-review.googlesource.com/c/952718\">aosp/952718</a>)</li>\n <li>Added a new API to add OnLayoutCompleteListener in BaseGridView (<a href=\"https://android-review.googlesource.com/c/1164409\">aosp/1164409</a>)</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed a bug where fast layout pass doesn’t update the alignment of a child. (<a href=\"https://android-review.googlesource.com/c/1122745\">aosp/1122745</a>)</li>\n <li>Fixed a stack overflow crash in the Picker widget when the focus is changing (<a href=\"https://android-review.googlesource.com/c/1168473\">aosp/1168473</a>)</li>\n</ul>\n<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Leanback-preference: pinned the dependency of <code>androidx.preference</code> to <code>1.1.0</code> (<a href=\"https://android-review.googlesource.com/c/1181902\">aosp/1181902</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7d95cd5e6358dee8cab72c39e4e99e412c7a450c..740cde70237dd276f8ad66dfe9528b1cdb5d54bb/leanback"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.2.0-rc04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.2.0-rc04",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Adjusted the default fade animations used by <code>navigation-ui</code> to match the adjusted fade animations in <a href=\"https://developer.android.com/jetpack/androidx/releases/fragment#1.2.0-rc04\">Fragment <code>1.2.0-rc04</code></a>. (<a href=\"https://issuetracker.google.com/issues/145769814\">b/145769814</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ac0a968ffb9334b853a1799aba7dac42fed70b5f..f251e0f6da084dca812052169c8f2032a3151604/navigation"
+    },
+    {
+      "id": "paging",
+      "name": "Paging",
+      "version": "2.1.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/paging#2.1.1",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Contiguous initial loads from PositionalDataSources are now centered around last access when placeholders disabled</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/237c8946756af4b0fe9d0fa3965593e247d53698..5cad5782a1610dc724e2715c93c349e95828981e/paging"
+    },
+    {
+      "id": "recyclerview",
+      "name": "Recyclerview",
+      "version": "1.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/recyclerview#1.2.0-alpha01",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed minor issues with FastScroller related to RTL drawing and touch accuracy (<a href=\"https://issuetracker.google.com/issues/143789932\">b/143789932</a>, <a href=\"https://android-review.googlesource.com/c/1130438\">aosp/1130438</a>)</li>\n <li>Fixed crash in ItemTouchHelper when removed from RecyclerView while ItemTouchHelper animations are running (<a href=\"https://issuetracker.google.com/issues/140447176\">b/140447176</a>, <a href=\"https://android-review.googlesource.com/c/1167575\">aosp/1167575</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/63bf356b1e1c722539dc8768f5cfe991a23c517a..740cde70237dd276f8ad66dfe9528b1cdb5d54bb/recyclerview/recyclerview"
+    },
+    {
+      "id": "room",
+      "name": "Room",
+      "version": "2.2.3",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.2.3",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed a bug where Room would fail to validate a database that had not gone through any migration and contained a legacy hash with indices in its schema. (<a href=\"https://issuetracker.google.com/issues/139306173\">b/139306173</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/a04145cf715ff88c1aa0dd36f3447be35a5c3e62..65f69af711a37fa7729dfd4d120a17010d1c27f0/room"
+    },
+    {
+      "id": "webkit",
+      "name": "Webkit",
+      "version": "1.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/webkit#1.2.0-alpha01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>ForceDark API to control if WebViews should be rendered in dark mode.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2a1fc7faf719ace396316bf287f3a2b06f446b86..740cde70237dd276f8ad66dfe9528b1cdb5d54bb/webkit"
+    },
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "2.3.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.3.0-beta02",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Added a better error message for non-recoverable SQLite exceptions. (<a href=\"https://android-review.googlesource.com/c/1185777\">aosp/1185777</a>)</li>\n <li>Added a lint rule which ensures that the content provider <code>androidx.work.impl.WorkManagerInitializer</code> is removed from the <code>AndroidManifest.xml</code> when using on demand initialization. (<a href=\"https://android-review.googlesource.com/c/1167007\">aosp/1167007</a>)</li>\n <li>Added a lint warning when <code>enqueue()</code> is used for a <code>PeriodicWorkRequest</code> instead of <code>enqueueUniquePeriodicWork()</code>. (<a href=\"https://android-review.googlesource.com/c/1166032\">aosp/1166032</a>)</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li><code>ForegroundInfo</code> now requires you to specify the <code>notificationId</code> to be used when using <code>ListenableWorker.setForegroundAsync()</code>. <strong>This is a breaking change.</strong> This allows you to run multiple long running <code>Worker</code>s in parallel. <code>WorkManager</code> also better manages lifetimes of the provided <code>Notification</code>s. (<a href=\"https://issuetracker.google.com/issues/145473554\">b/145473554</a>, <a href=\"https://android-review.googlesource.com/c/1181208\">aosp/1181208</a>, <a href=\"https://android-review.googlesource.com/c/1181216\">asop/1181216</a>, <a href=\"https://android-review.googlesource.com/c/1183577\">asop/1183577</a>)</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed a bug in the AlarmManager implementation where alarms were not being cleaned up correctly. (<a href=\"https://android-review.googlesource.com/c/1156444\">aosp/1156444</a>)</li>\n <li>Fixed a bug where an empty list of <code>WorkRequest</code>s would cause an incorrect <code>WorkContinuation</code> chain to be built. (<a href=\"https://issuetracker.google.com/issues/142835274\">b/142835274</a>, <a href=\"https://android-review.googlesource.com/c/1157051\">aosp/1157051</a>)</li>\n</ul>\n<p><strong>Dependency changes</strong></p>\n<ul>\n <li>WorkManager now uses Room 2.2.2.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/0042c0019bb455afc79ddfec9bf2993d018f70ce..740cde70237dd276f8ad66dfe9528b1cdb5d54bb/work"
+    }
+  ]
+}

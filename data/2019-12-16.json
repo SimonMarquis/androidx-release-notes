@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#december_16_2019",
+  "title": "December 16, 2019",
+  "releasedOn": "2019-12-16",
+  "updated": "2019-12-16T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#december_16_2019",
+  "components": [
+    {
+      "id": "constraintlayout",
+      "name": "ConstraintLayout",
+      "version": "2.0.0-beta4",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-2.0.0-beta4",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<p>MotionLayout</p>\n<p>New attributes in Transition:</p>\n<ul>\n <li>layoutDuringTransition : let you configure how MotionLayout should react to children's requestLayouts calls during a transition. Possible values are {ignoreRequest, honorRequest}</li>\n <li>pathMotionArc : the path taken by elements moving will use an arc. Possible values are {startVertical | startHorizontal | flip | none }</li>\n</ul>\n<p>A default transition is now possible to define, simply by omitting the start and end ConstraintSets. That default transition will be used if no other existing transition can be found to match the current start/end states.</p>\n<p><strong>Bug Fixes</strong></p>\n<p>See the list of closed issues <a href=\"https://androidstudio.googleblog.com/2019/12/constraintlayout-200-beta-4.html\">here</a></p>",
+      "commitsUrl": null
+    }
+  ]
+}

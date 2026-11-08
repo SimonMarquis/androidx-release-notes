@@ -1,0 +1,169 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#december_4_2019",
+  "title": "December 4, 2019",
+  "releasedOn": "2019-12-04",
+  "updated": "2019-12-04T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#december_4_2019",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.1.0-rc03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.1.0-rc03",
+      "detailsHtml": "<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Activity now depends on Lifecycle <code>2.2.0-rc03</code> and Lifecycle ViewModel SavedState <code>1.0.0-rc03</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/a010ca9118db203ee40cc5db0a023002d5a247bd..19547d654a4c370cb59ce66319f585a674f5ddf3/activity/activity"
+    },
+    {
+      "id": "appcompat",
+      "name": "AppCompat",
+      "version": "1.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.2.0-alpha01",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Calls to PackageManager.getActivityInfo don't crash anymore under strict mode with boot-aware checks enabled</li>\n <li>Fixes for tinting drawables on AppCompatButton</li>\n <li>Fixes for tinting and text appearance on older versions of the platform</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/f48ce15dc1716809f45fa761daa26ba7a838ca55..ce2902e01f920f17637879b6c918ffe987d2f35b/appcompat"
+    },
+    {
+      "id": "autofill",
+      "name": "Autofill",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/autofill#1.0.0",
+      "detailsHtml": "<p><strong>Major features of 1.0.0</strong></p>\n<ul>\n <li>First stable version of the autofill module.</li>\n <li>Adds a standard set of supported autofill hint constants which should be supported by all autofill services.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ce07ec29121b02ac196689766626af39a5fa8700..34328d238b2999f231e824d2a9149acdbe3d5c00/autofill"
+    },
+    {
+      "id": "browser",
+      "name": "Browser",
+      "version": "1.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/browser#1.2.0-rc01",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Javadoc formatting for code samples was fixed.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/134a51a9d15b3760a26431637d27019816a8b4d5..2cf2b71971967b7ca0469a45ac470a0d303dc437/browser"
+    },
+    {
+      "id": "camerax-camera2",
+      "name": "CameraX Camera2",
+      "version": "1.0.0-alpha07",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-camera2-1.0.0-alpha07",
+      "detailsHtml": "<ul>\n <li><code>Camera2Config</code> is now available for use with initializing and configuring a Camera2-based implementation for CameraX. More details on how to use this in initialization are in the <a href=\"https://developer.android.com/jetpack/androidx/releases/camera#camera2-core-1.0.0-alpha07\">camera-core section</a> of the release notes.</li>\n <li>The camera2 interop functionally is now marked as experimental and moved to a separate package, <code>androidx.camera.camera2.interop.</code></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b46de96e17b1ea1b0f2a729c86cd5a8413d19c5c..4cb7a5cbd2e20d3bf45cae63fea8436818576256/camera/camera-camera2"
+    },
+    {
+      "id": "camerax-core",
+      "name": "CameraX Core",
+      "version": "1.0.0-alpha07",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-core-1.0.0-alpha07",
+      "detailsHtml": "<p><strong>Note that there are some substantial changes in this Alpha release as we prepare for Beta.</strong> We recommend you review the changes and share any feedback you may have on the <a href=\"http://g.co/camerax/developers\">CameraX Google group</a>. For those developers using CameraX in apps that are on the Play store, we recommend waiting for the formal Beta release before upgrading the library within your applications.</p>\n<p><strong>API changes</strong></p>\n<ul>\n <li>\n  <p><strong><em>Important</em></strong>: CameraX initialization has changed. Applications should implement <code>CameraXConfig.Provider</code>, and use the default <code>Camera2Config</code> provided by <code>androidx.camera.camera2</code>. A typical usage is:</p>\n  <div></div>\n  <pre><code><span>import</span><span> </span><span>androidx.camera.camera2.Camera2Config</span>\n<span>import</span><span> </span><span>androidx.camera.core.CameraXConfig</span>\n\n<span>public</span><span> </span><span>class</span><span> </span><span>MyCameraXApplication</span><span> </span><span>:</span><span> </span><span>Application</span><span>(),</span><span>  </span><span>CameraXConfig</span><span>.</span><span>Provider</span><span> </span><span>{</span>\n<span>    </span><span>override</span><span> </span><span>fun</span><span> </span><span>getCameraXConfig</span><span>():</span><span> </span><span>CameraXConfig</span><span> </span><span>{</span>\n<span>            </span><span>return</span><span> </span><span>Camera2Config</span><span>.</span><span>defaultConfig</span><span>(</span><span>this</span><span>)</span>\n<span>    </span><span>}</span>\n<span>}</span>\n</code></pre>\n </li>\n <li>\n  <p>The CameraX class has been removed. The <code>bindToLifecycle()</code>, <code>unbind()</code>, <code>unbindAll()</code>, <code>isBound()</code>, and <code>hasCamera()</code> previously provided by the CameraX class call are now available via the <code>ProcessCameraProvider</code>.</p>\n </li>\n <li>\n  <p>A per-process instance of <code>ProcessCameraProvider</code> is obtained asynchronously using the static method <code>ProcessCameraProvider.getInstance()</code>, which returns a listenable future, which provides the <code>ProcessCameraProvider</code> on completion. Here it is shown in <code>onCreate()</code> for a typical usage. You can place calls to <code>getInstance()</code> later in the activity’s lifecycle to defer initialization latency to a later time (such as when a user action opens a camera UI).</p>\n  <div></div>\n  <pre><code><span>import</span><span> </span><span>androidx.camera.lifecycle.ProcessCameraProvider</span>\n<span>import</span><span> </span><span>com.google.common.util.concurrent.ListenableFuture</span>\n\n<span>class</span><span> </span><span>MainActivity</span><span> </span><span>:</span><span> </span><span>AppCompatActivity</span><span>()</span><span> </span><span>{</span>\n<span>   </span><span>private</span><span> </span><span>lateinit</span><span> </span><span>var</span><span> </span><span>cameraProviderFuture</span><span> </span><span>:</span><span> </span><span>ListenableFuture&lt;ProcessCameraProvider&gt;</span>\n<span>   </span><span>override</span><span> </span><span>fun</span><span> </span><span>onCreate</span><span>(</span><span>savedInstanceState</span><span>:</span><span> </span><span>Bundle?)</span><span> </span><span>{</span>\n<span>       </span><span>cameraProviderFuture</span><span> </span><span>=</span><span> </span><span>ProcessCameraProvider</span><span>.</span><span>getInstance</span><span>(</span><span>this</span><span>);</span>\n<span>  </span><span>}</span>\n</code></pre>\n </li>\n <li>\n  <p>A listener can be added to the <code>ListenableFuture</code> returned by <code>getInstance()</code>. This ensures the camera provider can be retrieved from the <code>Future</code> without blocking on <code>Future.get()</code></p>\n  <div></div>\n  <pre><code><span>cameraProviderFuture</span><span>.</span><span>addListener</span><span>(</span><span>Runnable</span><span> </span><span>{</span>\n<span>  </span><span>val</span><span> </span><span>cameraProvider</span><span> </span><span>=</span><span> </span><span>cameraProviderFuture</span><span>.</span><span>get</span><span>()</span>\n<span>  </span><span>cameraProvider</span><span>.</span><span>bindToLifecycle</span><span>(...)</span>\n<span>},</span><span> </span><span>ContextCompat</span><span>.</span><span>getMainExecutor</span><span>(</span><span>this</span><span>))</span>\n</code></pre>\n </li>\n <li>\n  <p>Camera selection is now done by a camera selector, instead of per-use case</p>\n  <div></div>\n  <pre><code><span>val</span><span> </span><span>cameraSelector</span><span> </span><span>=</span><span> </span><span>CameraSelector</span><span>.</span><span>Builder</span><span>().</span><span>requireLensFacing</span><span>(</span><span>LensFacing</span><span>.</span><span>BACK</span><span>).</span><span>build</span><span>()</span>\n</code></pre>\n </li>\n <li>\n  <p><code>CameraProvider.bindToLifecycle</code> is given the lifecycle owner, the camera selector, and use cases, which are then bound to the given lifecycle owner and run for the selected camera.</p>\n  <div></div>\n  <pre><code><span>cameraProvider</span><span>.</span><span>bindToLifecycle</span><span>(</span><span>this</span><span> </span><span>as</span><span> </span><span>LifecycleOwner</span><span>,</span>\n<span>       </span><span>cameraSelector</span><span>,</span><span> </span><span>preview</span><span>,</span><span> </span><span>imageAnalysis</span><span>)</span>\n</code></pre>\n </li>\n <li>\n  <p>Use case “Config” classes are removed. Instead, build use cases directly, setting options on each use case builder. For example:</p>\n  <div></div>\n  <pre><code><span>preview</span><span> </span><span>=</span><span> </span><span>Preview</span><span>.</span><span>Builder</span><span>().</span><span>setTargetAspectRatio</span><span>(</span><span>AspectRatio</span><span>.</span><span>RATIO_16_9</span><span>).</span><span>build</span><span>()</span>\n</code></pre>\n </li>\n <li>\n  <p>The Preview use case has been updated to accept a surface created and managed by the application to ensure Android best practices. It is highly recommended to use the <code>PreviewView</code> view class provided in the camera-view package.</p>\n  <div></div>\n  <pre><code><span>preview</span><span>.</span><span>setPreviewSurfaceProvider</span><span>(</span><span>previewView</span><span>.</span><span>previewSurfaceProvider</span><span>)</span>\n</code></pre>\n </li>\n <li>\n  <p>See documentation for attaching an app-managed surface. In these cases the app manages the lifecycle of the surface.</p>\n </li>\n <li>\n  <p><strong><em>Important</em></strong>: <strong>The <code>ImageAnalysis</code> Analyzer method implementation must call <code>image.close()</code> on received images when finished using them. Otherwise, new images may not be received or the camera may stall, depending on back pressure setting. Refer to the <a href=\"https://developer.android.com/reference/kotlin/androidx/camera/core/ImageAnalysis\">reference docs</a> for details.</strong></p>\n </li>\n <li>\n  <p><code>ImageAnalysis ImageReaderMode</code> is now changed to a backpressure strategy <code>intdef</code>.</p>\n </li>\n <li>\n  <p><code>ImageProxy.getImage()</code> is marked as experimental. Applications should annotate usage for example via <code>@androidx.camera.core.ExperimentalGetImage</code></p>\n </li>\n <li>\n  <p>The <code>UIThread</code> annotation requirement for the <code>Analyzer</code> has been removed.</p>\n </li>\n <li>\n  <p>The <code>ImageAnalysis.clearAnalyzer()</code> function is added for removing an analyzer.</p>\n </li>\n <li>\n  <p>Listeners with more than 1 method have been renamed to Callback:</p>\n  <ul>\n   <li><code>ImageCapture.OnImageCapturedListener</code> is now <code>ImageCapture.OnImageCapturedCallback</code></li>\n   <li><code>ImageCapture.OnImageSavedListener</code> is now <code>ImageCapture.OnImageSavedCallback</code></li>\n   <li><code>VideoCapture.OnVideoSavedListener</code> is now <code>VideoCapture.OnVideoSavedCallback</code></li>\n  </ul>\n </li>\n <li>\n  <p>Enums have changed to IntDef</p>\n </li>\n <li>\n  <p>Zoom controls have been added:</p>\n  <ul>\n   <li><code>CameraControl.setLinearZoom()</code></li>\n   <li><code>CameraControl.setZoomRatio()</code></li>\n   <li><code>CameraInfo.getLinearZoom()</code></li>\n   <li><code>CameraInfo.getMaxZoomRatio()</code></li>\n   <li><code>CameraInfo.getZoomRatio()</code></li>\n  </ul>\n </li>\n <li>\n  <p><code>CameraInfo.hasFlashUnit()</code> is added to determine if flash/torch hardware is present.</p>\n </li>\n <li>\n  <p><code>CameraInfo.isFlashAvailable()</code> has been removed. Torch overrides flash functionality. More detail is included in the <a href=\"https://developer.android.com/reference/androidx/camera/core/Preview#public-methods_1\">reference documentation</a>.</p>\n </li>\n <li>\n  <p><code>ImageCapture.Metadata</code> fields are replaced by get/set/is accessors.</p>\n </li>\n <li>\n  <p><code>startFocusMetering</code> and <code>cancelFocusMetering</code> now return <code>ListenableFutures</code> which represent the asynchronous operation of the call.</p>\n </li>\n <li>\n  <p><code>MeteringPoints</code> are now functioning as handles to metering actions, and are produced by factories. Apps should use the existing factories rather than custom factories.</p>\n </li>\n</ul>\n<p><strong>Fixed issues</strong></p>\n<ul>\n <li>Fixed issue when taking a picture on resuming (after a previous pause had take pictures pending completion).</li>\n <li>Known Issue: <code>CameraControl.enableTorch()</code> is functional but the returned <code>ListenableFuture&lt;Void&gt;</code> is always an immediate <code>complete(success)</code> future, even if there is no flash unit. Future versions will fix this to the final behavior: When there is no flash unit, <code>enableTorch(true)</code> fails immediately (won't send request to <code>CaptureSession</code>), and <code>TorchState</code> remain Off.</li>\n <li>Known Issue: <code>startFocusAndMetering</code> and <code>cancelFocusAndMetering</code> start and cancel focus metering, but return an immediately <code>completed (success)</code> future not representing the documented behavior. The <code>FocusMeteringResult</code> from <code>ListenableFuture&lt;FocusMeteringResult&gt; CameraControl.startFocusAndMetering()</code> is a fake result which <code>isFocusSuccessful()</code> and is always \"false,\" differing from intended, documented behavior.</li>\n <li>Known Issue: A metering point factory for use with <code>PreviewView</code> touch events is being developed. For now, apps connecting custom managed surfaces can use the existing metering point factories, and otherwise no touch focus functionality is available for <code>PreviewView</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/22d0f5f2091012403b8be4ffd93314d3ca43b06d..4cb7a5cbd2e20d3bf45cae63fea8436818576256/camera/camera-core"
+    },
+    {
+      "id": "camerax-extensions",
+      "name": "CameraX Extensions",
+      "version": "1.0.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-ext-1.0.0-alpha04",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li>\n  <p>Checking for the availability and enabling of an extension now takes in a <code>CameraSelector</code> as an input parameter. This needs to be the same <code>CameraSelector</code> that is used for binding the use case.</p>\n  <div></div>\n  <pre><code><span>val</span><span> </span><span>cameraSelector</span><span> </span><span>=</span><span> </span><span>CameraSelector</span><span>.</span><span>DEFAULT_BACK_CAMERA</span>\n<span>val</span><span> </span><span>builder</span><span> </span><span>=</span><span> </span><span>ImageCapture</span><span>.</span><span>Builder</span><span>()</span>\n<span>val</span><span> </span><span>bokehImageCaptureExtender</span><span> </span><span>=</span><span> </span><span>BokehImageCaptureExtender</span><span>.</span><span>create</span><span>(</span><span>builder</span><span>)</span>\n<span>if</span><span> </span><span>(</span><span>bokehImageCaptureExtender</span><span>.</span><span>isExtensionAvailable</span><span>(</span><span>cameraSelector</span><span>))</span><span> </span><span>{</span>\n<span>    </span><span>bokehImageCaptureExtender</span><span>.</span><span>enableExtension</span><span>(</span><span>cameraSelector</span><span>)</span>\n<span>}</span>\n<span>val</span><span> </span><span>imageCapture</span><span> </span><span>=</span><span> </span><span>builder</span><span>.</span><span>build</span><span>()</span>\n<span>mCameraProvider</span><span>?.</span><span>bindToLifecycle</span><span>(</span><span>this</span><span>,</span><span> </span><span>cameraSelector</span><span>,</span><span> </span><span>imageCapture</span><span>)</span>\n</code></pre>\n </li>\n <li>\n  <p>You must initialize extensions before using the extension library.</p>\n  <div></div>\n  <pre><code><span>val</span><span> </span><span>availability</span><span> </span><span>=</span><span> </span><span>ExtensionsManager</span><span>.</span><span>init</span><span>()</span>\n<span>Futures</span><span>.</span><span>addCallback&lt;ExtensionsManager</span><span>.</span><span>ExtensionsAvailability</span>&gt;<span>(</span>\n<span>   </span><span>availability</span><span>,</span>\n<span>   </span><span>object</span><span> </span><span>:</span><span> </span><span>FutureCallback&lt;ExtensionsManager</span><span>.</span><span>ExtensionsAvailability</span>&gt;<span> </span><span>{</span>\n<span>       </span><span>override</span><span> </span><span>fun</span><span> </span><span>onSuccess</span><span>(</span><span>availability</span><span>:</span><span> </span><span>ExtensionsManager</span><span>.</span><span>ExtensionsAvailability</span><span>?</span><span>)</span><span> </span><span>{</span>\n<span>           </span><span>// Ready to make extensions calls</span>\n<span>       </span><span>}</span>\n<span>       </span><span>override</span><span> </span><span>fun</span><span> </span><span>onFailure</span><span>(</span><span>throwable</span><span>:</span><span> </span><span>Throwable</span><span>)</span><span> </span><span>{</span>\n<span>           </span><span>// Extensions could not be initialized</span>\n<span>       </span><span>}</span>\n<span>   </span><span>},</span>\n<span>   </span><span>Executors</span><span>.</span><span>newSingleThreadExecutor</span><span>()</span>\n<span>)</span>\n</code></pre>\n </li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c92e554b976570c612bad53b16f5aa7591713593..4cb7a5cbd2e20d3bf45cae63fea8436818576256/camera/camera-extensions"
+    },
+    {
+      "id": "camerax-view",
+      "name": "CameraX View",
+      "version": "1.0.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-view-1.0.0-alpha04",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li>A <code>PreviewView</code> class is provided for easily displaying the output from the Preview use case in an application.</li>\n <li>\n  <p><code>PreviewView</code> can be included in the layout:</p>\n  <div></div>\n  <pre><code>&lt;androidx.camera.view.PreviewView\n<span>  </span>android:id=\"@+id/preview_view\"\n<span>  </span>…<span> </span>/&gt;\n</code></pre>\n </li>\n <li>\n  <p><code>PreviewView</code> provides a <code>PreviewSurfaceProvider</code> to easily connect a Preview use case</p>\n  <div></div>\n  <pre><code><span>preview</span><span>.</span><span>setPreviewSurfaceProvider</span><span>(</span><span>previewView</span><span>.</span><span>previewSurfaceProvider</span><span>)</span>\n</code></pre>\n </li>\n <li>\n  <p>“<code>ZoomLevel</code>” is now “<code>ZoomRatio</code>” in API-naming</p>\n </li>\n <li>\n  <p>Some method parameters have changed nullability</p>\n </li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4606c6c990d6924534ff6c5c525648bd0877d551..4cb7a5cbd2e20d3bf45cae63fea8436818576256/camera/camera-view"
+    },
+    {
+      "id": "camerax-lifecycle",
+      "name": "CameraX Lifecycle",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#camera-lifecycle-1.0.0-alpha01",
+      "detailsHtml": "<p><strong>API notes</strong></p>\n<ul>\n <li>The camera-lifecycle artifact is added, providing <code>LifeCycleCameraProvider</code> interface, and an implementation called <code>ProcessCameraProvider</code> which provides many of the functions of the previous CameraX class in core and is obtained via a <code>getInstance()</code> method.</li>\n <li>Apps should include the camera-lifecycle library to use CameraX.</li>\n <li>See notes in the <a href=\"https://developer.android.com/jetpack/androidx/releases/camera#camera2-core-1.0.0-alpha07\">camera-core</a> section for how to perform initialization of CameraX using a <code>ProcessCameraProvider</code>.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "coordinatorlayout",
+      "name": "CoordinatorLayout",
+      "version": "1.1.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/coordinatorlayout#1.1.0",
+      "detailsHtml": "<p><strong>Important changes since 1.0.0</strong></p>\n<ul>\n <li><a href=\"https://android-review.googlesource.com/c/737190\">aosp/737190</a>: CoordinatorLayout now implements <code>NestedScrollingParent3</code> and <code>CoordinatorLayout.Behavior</code> implements a new overload of <code>onNestedScroll</code> to enable <code>Behaviors</code> to be able to report how much scroll distance they consume to nested scrolling children (during the <code>dispatchNestedScroll()</code>/<code>onNestedScroll()</code> pass). The previously existing <code>onNestedScroll(CoordinatorLayout, V, View, int, int, int, int, int)</code> has been deprecated in favor of the new <code>onNestedScroll(CoordinatorLayout, V, View, int, int, int, int, int, int[])</code> and <code>Behavior</code> implementations should be updated accordingly. If developer code currently overrides <code>CoordinatorLayout#onNestedScroll(View, int, int, int, int, int)</code>, it will likely no longer be called and <code>CoordinatorLayout#onNestedScroll(View, int, int, int, int, int, int[])</code> should be overridden instead.</li>\n <li>Exposed CoordinatorLayout to accessibility services (<a href=\"https://android-review.googlesource.com/c/1056175\">aosp/1056175</a>)</li>\n <li>The <code>CoordinatorLayout.DefaultBehavior</code> annotation is deprecated. Use the <code>CoordinatorLayout.AttachedBehavior</code> interface instead.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b98f40c889e3083050d4270e953874921fde8e52..7f141e51dccf55d6c8d368dac9afaf06c11a8108/coordinatorlayout"
+    },
+    {
+      "id": "dynamicanimation",
+      "name": "DynamicAnimation",
+      "version": "1.1.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/dynamicanimation#1.1.0-alpha03",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/668764cd97f4074bc1f309fa4b55467402332773..ce2902e01f920f17637879b6c918ffe987d2f35b/dynamic-animation"
+    },
+    {
+      "id": "dynamicanimation-ktx",
+      "name": "DynamicAnimation-Ktx",
+      "version": "1.0.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/dynamicanimation#dynamicanimation-ktx-1.0.0-alpha03",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/21e165dc2f0fe0acc7ced317d75f4e92155a8e35..ce2902e01f920f17637879b6c918ffe987d2f35b/dynamic-animation/ktx"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.2.0-rc03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.2.0-rc03",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed an unintentional behavior change where Fragments who have been removed are still returned by <code>findFragmentById()</code> / <code>findFragmentByTag()</code> while their exit animations/transitions run. (<a href=\"https://issuetracker.google.com/issues/143982969\">b/143982969</a>, <a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1167585\">aosp/1167585</a>)</li>\n <li>Child fragments are now correctly stopped before their parents when the containing activity calls <code>onSaveInstanceState()</code>. (<a href=\"https://issuetracker.google.com/issues/144380645\">b/144380645</a>)</li>\n <li>Fixed an issue where Views were incorrectly marked <code>INVISIBLE</code> after popping a hidden Fragment. (<a href=\"https://issuetracker.google.com/issues/70793925\">b/70793925</a>)</li>\n <li>Fragment shared element transitions now handle Views that have been rotated, scaled, etc. (<a href=\"https://issuetracker.google.com/issues/142835261\">b/142835261</a>)</li>\n</ul>\n<p><strong>Documentation Updates</strong></p>\n<ul>\n <li>Clarified the deprecation documentation around <code>setUserVisibleHint()</code>. (<a href=\"https://issuetracker.google.com/issues/143897055\">b/143897055</a>)</li>\n <li>Improved the documentation on <code>setFragmentFactory()</code> and <code>getFragmentFactory()</code> to better indicate that setting a <code>FragmentFactory</code> will also affect child FragmentManagers. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1170095\">aosp/1170095</a>)</li>\n</ul>\n<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Fragments now depends on Lifecycle <code>2.2.0-rc03</code>, Lifecycle ViewModel SavedState <code>1.0.0-rc03</code>, and Activity <code>1.1.0-rc03</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/daa892ee7bce89afe2ab151da444916753225de8..0754f64b25856c50be34974ca8081be31c1b8b2f/fragment"
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.2.0-rc03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.2.0-rc03",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed a failure occurring when a mocked <code>ViewModel</code> was stored in <code>ViewModelStore</code> and queried later with default factory.</li>\n <li>Fix a usage of <code>Dispatchers.Main.immediate</code> in <code>launchWhenCreated</code> and similar methods to be called synchronously during corresponding lifecycle event. (<a href=\"https://android-review.googlesource.com/c/1156203\">aosp/1156203</a>)</li>\n</ul>\n<p><strong>External contributions</strong></p>\n<ul>\n <li>Thanks to Anders Järleberg for contributing the fix! (<a href=\"https://android-review.googlesource.com/c/1156203\">aosp/1156203</a>)</li>\n <li>Thanks to Vsevolod Tolstopyatov from Jetbrains for reviewing an implementation of inlined execution.</li>\n</ul>\n<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Lifecycle Extensions now depends on Fragment <code>1.2.0-rc03</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/45b11795d6737dd540ccedaec026dc34397f1ba6..8e4cae9ad8deb81db632012ff7b4980108511947/lifecycle"
+    },
+    {
+      "id": "lifecycle-viewmodel-savedstate",
+      "name": "Lifecycle-ViewModel-Savedstate",
+      "version": "1.0.0-rc03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#viewmodel-savedstate-1.0.0-rc03",
+      "detailsHtml": "<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Lifecycle ViewModel SavedState now depends on Lifecycle <code>2.2.0-rc03</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/45b11795d6737dd540ccedaec026dc34397f1ba6..149aa50d7509b6df4e5b1d1c1430468b816cf9a0/lifecycle/lifecycle-viewmodel-savedstate"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.2.0-rc03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.2.0-rc03",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed an issue with deep link parsing when using query parameters and an argument as the last part of the path that prevented more than one character of the final path argument from being parsed. (<a href=\"https://issuetracker.google.com/issues/144554689\">b/144554689</a>)</li>\n <li>Fixed an issue with deep link parsing where optional parameters would receive <code>\"@null\"</code> instead of <code>null</code>. (<a href=\"https://issuetracker.google.com/issues/141613546\">b/141613546</a>)</li>\n <li><code>NavHostFragment</code> now correctly restores the graph after a configuration change when used with <code>FragmentContainerView</code>. (<a href=\"https://issuetracker.google.com/issues/143752103\">b/143752103</a>)</li>\n</ul>\n<p><strong>Dependency changes</strong></p>\n<ul>\n <li>Navigation now depends on Lifecycle <code>2.2.0-rc03</code>, Lifecycle ViewModel SavedState <code>1.0.0-rc03</code>, Activity <code>1.1.0-rc03</code>, and Fragment <code>1.2.0-rc03</code> where appropriate.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b0b973c9bc89f9ad3efe3c06e41b72957f032a99..ac0a968ffb9334b853a1799aba7dac42fed70b5f/navigation"
+    },
+    {
+      "id": "recyclerview-selection",
+      "name": "RecyclerView-Selection",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/recyclerview#selection-1.1.0-beta01",
+      "detailsHtml": "<p>General improvements in stability related to defensive checks and management of internal state.</p>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Improved management of library state and interpretation of CANCEL events, resulting in stability improvements.\n  <ul>\n   <li><a href=\"https://issuetracker.google.com/128054552\">b/128054552</a></li>\n   <li><a href=\"https://issuetracker.google.com/130707991\">b/130707991</a></li>\n   <li><a href=\"https://issuetracker.google.com/137460699\">b/137460699</a></li>\n  </ul></li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Added selection key type parameter to classes and methods where missing.</li>\n <li>Deprecated methods:\n  <ul>\n   <li><a href=\"https://developer.android.com/reference/androidx/recyclerview/selection/SelectionTracker.Builder#withPointerTooltypes(int...)\">SelectionTracker.Builder#withPointerTooltype</a></li>\n   <li><a href=\"https://developer.android.com/reference/androidx/recyclerview/selection/SelectionTracker.Builder#withGestureTooltypes(int...)\">SelectionTracker.Builder#withGestureTooltype</a></li>\n   <li>These methods existed with the intent that developers might map pointer or gesture behaviors to tooltypes other than the defaults*. The intent was good, but upon further use it became clear that user expectations around input behavior are <em>very</em> tooltype specific. Also, \"passive\" styli are FINGER tooltype as far as the Android input system is concerned.</li>\n   <li>Default tooltypes are <a href=\"https://developer.android.com/reference/android/view/MotionEvent#TOOL_TYPE_FINGER\">FINGER</a> for Gesture and <a href=\"https://developer.android.com/reference/android/view/MotionEvent#TOOL_TYPE_MOUSE\">MOUSE</a> for Pointer.</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/0c2a7091f663f8e853290ecb2a84c08fc7adac86..ce2902e01f920f17637879b6c918ffe987d2f35b/recyclerview/recyclerview-selection"
+    },
+    {
+      "id": "sharetarget",
+      "name": "ShareTarget",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/sharetarget#1.0.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3c455c01a83d0598e2e6a014d8f1b490d0a39170..74353beef24977dfe1748b2f1bc94f6472d725a0/sharetarget"
+    },
+    {
+      "id": "sqlite",
+      "name": "Sqlite",
+      "version": "2.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/sqlite#2.1.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/0b58731e733ba8c3fd60fb2edf2806d134dc19c9..ce2902e01f920f17637879b6c918ffe987d2f35b/sqlite"
+    },
+    {
+      "id": "transition",
+      "name": "Transition",
+      "version": "1.3.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/transition#1.3.0-rc02",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed an issue where Views were incorrectly marked <code>INVISIBLE</code> after popping a hidden Fragment. (<a href=\"https://issuetracker.google.com/issues/70793925\">b/70793925</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c378b9a2eae63d2701c82b0144af36e33d15c26a..80680eca51be5c8483a0ad6f0b9466c99474ad5b/transition/transition"
+    }
+  ]
+}
