@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>June 6, 2019 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for June 6, 2019: Benchmark 1.0.0-alpha02.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2019-06-06.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="june-6-2019">
+            <div class="date-divider"><a href="./#june-6-2019" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">June 6, 2019</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="alpha" data-search="benchmark 1.0.0-alpha02 2019-06-06 june 6, 2019" id="june-6-2019-benchmark-1-0-0-alpha02">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/benchmark">Benchmark</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/a04120000a63645245f046b0aa7773cb2c6d9768..a1664e857bbcb746318a95abefa845edd9c88bf8/benchmark" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/benchmark#1.0.0-alpha02" class="badge alpha">1.0.0-alpha02</a></div>
+              </div>
+              <div class="notes"><p>Note that we are treating the JSON schema as an API. We plan to follow the same stability constraints as other APIs: stable (with very rare exceptions) once in beta, and fixed in final release, with only additions in minor releases and changes/removals in major releases.</p><p><strong>API changes</strong></p><ul><li><p>Overhauled JSON schema. Further changes to the JSON schema are likely to be limited to additions:</p><ul><li>Reorganized the result object structure to support additional metric groups in the future <a href="https://issuetracker.google.com/issues/132713021" title="b/132713021" class="ref ref-issue">b/132713021</a></li><li>Added test run context information, such as device and build info and whether clocks are locked, to the top-level object <a href="https://issuetracker.google.com/issues/132711920" title="b/132711920" class="ref ref-issue">b/132711920</a></li><li>Time metric names now have ‘ns’ in their name <a href="https://issuetracker.google.com/issues/132714527" title="b/132714527" class="ref ref-issue">b/132714527</a></li><li>Additional stats added per reported metric (maximum, median, minimum), and removed simplified 'nanos' summary stat <a href="https://issuetracker.google.com/issues/132713851" title="b/132713851" class="ref ref-issue">b/132713851</a></li></ul></li><li><p>Removed XML output <a href="https://issuetracker.google.com/issues/132714414" title="b/132714414" class="ref ref-issue">b/132714414</a></p></li><li><p>Thermal throttle detection removed from <code>BenchmarkState.reportData</code> API <a href="https://issuetracker.google.com/issues/132887006" title="b/132887006" class="ref ref-issue">b/132887006</a></p></li></ul><p><strong>Bug fixes</strong></p><ul><li>Fixed <code>./gradlew lockClocks</code> not sticking on some recent OS devices <a href="https://issuetracker.google.com/issues/133424037" title="b/133424037" class="ref ref-issue">b/133424037</a></li><li>Throttling detection disabled for emulator <a href="https://issuetracker.google.com/issues/132880807" title="b/132880807" class="ref ref-issue">b/132880807</a></li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
