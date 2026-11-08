@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>June 24, 2020 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for June 24, 2020: Biometric 1.1.0-alpha01, Browser 1.3.0-alpha04, Camera-Camera2 1.0.0-beta06, Camera-Core 1.0.0-beta06, and more.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2020-06-24.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="june-24-2020">
+            <div class="date-divider"><a href="./#june-24-2020" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">June 24, 2020</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="alpha" data-search="biometric 1.1.0-alpha01 2020-06-24 june 24, 2020" id="june-24-2020-biometric-1-1-0-alpha01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/biometric">Biometric</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/33c93675e3a1ba85a74980937fb3df96824f7888..b6054a1a7396b962ac2c6d80d21053cf9d2f02db/biometric/biometric" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/biometric#1.1.0-alpha01" class="badge alpha">1.1.0-alpha01</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>Refactored the internal library implementation to address potential sources of memory leaks and other unintended behavior:
+  <ul><li>Internal fragments now share and persist data using a <code>ViewModel</code> that is tied to the client application's activity lifecycle.</li><li>Device credential authentication prior to Android 10 (API level 29) no longer starts a transparent activity within the client application.</li></ul></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Resolved deprecation warnings related to the use of <code>FingerprintManagerCompat</code>. <a href="https://issuetracker.google.com/issues/142967618" title="b/142967618" class="ref ref-issue">b/142967618</a></li><li>Changed how SDK-gated platform methods are called to avoid class verification issues on older Android versions. <a href="https://android.googlesource.com/platform/frameworks/support/+/94beb4b7bf9f66e78bd767bc4e4e3c0448e25689" title="94beb4b" class="ref ref-gerrit">94beb4b</a></li><li>Gradle dependencies that are not part of the public API are no longer exported by the library. <a href="https://android.googlesource.com/platform/frameworks/support/+/f289d9eca14bc9d88d6fae7599fd3137437972b9" title="f289d9e" class="ref ref-gerrit">f289d9e</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="browser 1.3.0-alpha04 2020-06-24 june 24, 2020" id="june-24-2020-browser-1-3-0-alpha04">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/browser">Browser</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/bea4dafe72ba1ec91a105da3128954d5ed7f1cd0..b6054a1a7396b962ac2c6d80d21053cf9d2f02db/browser/browser" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/browser#1.3.0-alpha04" class="badge alpha">1.3.0-alpha04</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>Added the <code>CustomTabsClient#bindCustomTabServicePreservePriority</code> method, allowing connecting to a Custom Tabs Service without using the <code>Context.BIND_WAIVE_PRIORITY</code> flag.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="camera-camera2 1.0.0-beta06 2020-06-24 june 24, 2020" id="june-24-2020-camera-camera2-1-0-0-beta06">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/camera">Camera-Camera2</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/bea4dafe72ba1ec91a105da3128954d5ed7f1cd0..b6054a1a7396b962ac2c6d80d21053cf9d2f02db/camera/camera-camera2" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/camera#camera-camera2-1.0.0-beta06" class="badge beta">1.0.0-beta06</a></div>
+              </div>
+              <div class="notes"><p><strong>API Changes</strong></p><ul><li>Added experimental interfaces for filtering cameras by camera ID and CameraCharacteristics. <a href="https://android-review.googlesource.com/#/q/I28f6110779ead8d6ed3177b86bd21ae5c27528c2" title="I28f61" class="ref ref-gerrit">I28f61</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Fixed the issue where startFocusAndMetering fails to focus successfully on Samsung Galaxy S7. <a href="https://android-review.googlesource.com/#/q/If3be7c3359687a47a61fbd0f9c7f018d5d8fd323" title="If3be7" class="ref ref-gerrit">If3be7</a> <a href="https://issuetracker.google.com/issues/159039233" title="b/159039233" class="ref ref-issue">b/159039233</a></li><li>Fix the camera can't be closed after quit the app. <a href="https://android-review.googlesource.com/#/q/I7a7b3a7ab9006b513bf0a4fee4e9747150fb9479" title="I7a7b3" class="ref ref-gerrit">I7a7b3</a></li><li>Fix repeated camera switching breaks preview when using SurfaceView implementation of PreviewView <a href="https://android-review.googlesource.com/#/q/I920ceac24f0ed65d33badfd4b8263eb71d741da0" title="I920ce" class="ref ref-gerrit">I920ce</a></li><li><code>CameraControl#startFocusAndMetering</code> will fail if none of the specified MeteringPoint can generate valid metering rectangles. <a href="https://android-review.googlesource.com/#/q/Id53ce08eb463ae641765eb91bacb5b466ba6a008" title="Id53ce" class="ref ref-gerrit">Id53ce</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="camera-core 1.0.0-beta06 2020-06-24 june 24, 2020" id="june-24-2020-camera-core-1-0-0-beta06">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/camera">Camera-Core</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/bea4dafe72ba1ec91a105da3128954d5ed7f1cd0..b6054a1a7396b962ac2c6d80d21053cf9d2f02db/camera/camera-core" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/camera#camera-core-1.0.0-beta06" class="badge beta">1.0.0-beta06</a></div>
+              </div>
+              <div class="notes"><p><strong>API Changes</strong></p><ul><li>Added experimental interfaces for filtering cameras by camera ID and CameraCharacteristics. <a href="https://android-review.googlesource.com/#/q/I28f6110779ead8d6ed3177b86bd21ae5c27528c2" title="I28f61" class="ref ref-gerrit">I28f61</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li>CameraX can now be configured with <code>ProcessCameraProvider#configureInstance()</code> before calling <code>ProcessCameraProvider#getInstance()</code>. This allows for customization of the <code>CameraXConfig</code> without requiring implementing <code>CameraXConfig.Provider</code> in the app's Application class. <a href="https://android-review.googlesource.com/#/q/Ia1a8d0b979e033d42ac06d1498395af07942d08f" title="Ia1a8d" class="ref ref-gerrit">Ia1a8d</a></li><li><code>CameraControl#startFocusAndMetering</code> will fail if none of the specified MeteringPoint can generate valid metering rectangles. <a href="https://android-review.googlesource.com/#/q/Id53ce08eb463ae641765eb91bacb5b466ba6a008" title="Id53ce" class="ref ref-gerrit">Id53ce</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="camera-extensions 1.0.0-alpha13 2020-06-24 june 24, 2020" id="june-24-2020-camera-extensions-1-0-0-alpha13">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/camera">Camera-Extensions</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/bea4dafe72ba1ec91a105da3128954d5ed7f1cd0..b6054a1a7396b962ac2c6d80d21053cf9d2f02db/camera/camera-extensions" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/camera#camera-extensions-1.0.0-alpha13" class="badge alpha">1.0.0-alpha13</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Added experimental interfaces for filtering cameras by camera ID and CameraCharacteristics. <a href="https://android-review.googlesource.com/#/q/I28f6110779ead8d6ed3177b86bd21ae5c27528c2" title="I28f61" class="ref ref-gerrit">I28f61</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="camera-lifecycle 1.0.0-beta06 2020-06-24 june 24, 2020" id="june-24-2020-camera-lifecycle-1-0-0-beta06">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/camera">Camera-Lifecycle</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/bea4dafe72ba1ec91a105da3128954d5ed7f1cd0..b6054a1a7396b962ac2c6d80d21053cf9d2f02db/camera/camera-lifecycle" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/camera#camera-lifecycle-1.0.0-beta06" class="badge beta">1.0.0-beta06</a></div>
+              </div>
+              <div class="notes"><p><strong>API Changes</strong></p><ul><li>CameraX can now be configured with ProcessCameraProvider#configureInstance() before calling ProcessCameraProvider#getInstance(). This allows for customization of the CameraXConfig without requiring implementing CameraXConfig.Provider in the app's Application class. <a href="https://android-review.googlesource.com/#/q/Ia1a8d0b979e033d42ac06d1498395af07942d08f" title="Ia1a8d" class="ref ref-gerrit">Ia1a8d</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="camera-view 1.0.0-alpha13 2020-06-24 june 24, 2020" id="june-24-2020-camera-view-1-0-0-alpha13">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/camera">Camera-View</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/bea4dafe72ba1ec91a105da3128954d5ed7f1cd0..b6054a1a7396b962ac2c6d80d21053cf9d2f02db/camera/camera-view" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/camera#camera-view-1.0.0-alpha13" class="badge alpha">1.0.0-alpha13</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>CameraView no longer crashes with an IllegalArgumentException when binding to a LifecycleOwner whose Lifecycle transitions to a DESTROYED state shortly after being bound. Binding Lifecycles in a DESTROYED state will not attempt to open the camera. <a href="https://android-review.googlesource.com/#/q/I7c2b8699881ff7d1abce7547b11d2ef107e5cce8" title="I7c2b8" class="ref ref-gerrit">I7c2b8</a></li><li>PreviewView StreamState is now available through CameraView.getPreviewStreamState() <a href="https://android-review.googlesource.com/#/q/I21a2be6dd610f0bb5720fa09b8c63396dfd5e374" title="I21a2b" class="ref ref-gerrit">I21a2b</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="compose 0.1.0-dev14 2020-06-24 june 24, 2020" id="june-24-2020-compose-0-1-0-dev14">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose">Compose</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/compose#0.1.0-dev14" class="badge stable">0.1.0-dev14</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="concurrent 1.1.0-beta01 2020-06-24 june 24, 2020" id="june-24-2020-concurrent-1-1-0-beta01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/concurrent">Concurrent</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/740cde70237dd276f8ad66dfe9528b1cdb5d54bb..b6054a1a7396b962ac2c6d80d21053cf9d2f02db/concurrent" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/concurrent#1.1.0-beta01" class="badge beta">1.1.0-beta01</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="customview 1.1.0 2020-06-24 june 24, 2020" id="june-24-2020-customview-1-1-0">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/customview">CustomView</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/75f3faf4ff897611ef2e732ed0be0187917d797e..df8e8a74e8f656eb0ab5e4747da96f60bfe0fc89/customview/customview" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/customview#1.1.0" class="badge stable">1.1.0</a></div>
+              </div>
+              <div class="notes"><p><strong>Major changes since 1.0.0</strong></p><ul><li>Added a new <a href="https://developer.android.com/reference/androidx/customview/widget/Openable"><code>Openable</code></a> interface for layouts that can transition between an ‘open’ and ‘closed’ state.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="drawerlayout 1.1.0 2020-06-24 june 24, 2020" id="june-24-2020-drawerlayout-1-1-0">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/drawerlayout">DrawerLayout</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/75f3faf4ff897611ef2e732ed0be0187917d797e..c8d28fbc5476c828cb1cf34b6e7f5ec6f7920c24/drawerlayout/drawerlayout" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/drawerlayout#1.1.0" class="badge stable">1.1.0</a></div>
+              </div>
+              <div class="notes"><p><strong>Major changes since 1.0.0</strong></p><ul><li><code>DrawerLayout</code> now takes into account the size of any gesture navigation insets, expanding the area available to users to long press and swipe to open the drawer when gesture navigation is enabled.</li><li><code>DrawerLayout</code> now supports setting a default style using the <code>drawerLayoutStyle</code> theme attribute.</li><li><code>DrawerLayout</code> now implements the <a href="https://developer.android.com/reference/androidx/customview/widget/Openable"><code>Openable</code></a> interface added in <a href="https://developer.android.com/jetpack/androidx/releases/customview#1.1.0">CustomView <code>1.1.0</code></a>.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="emoji 1.1.0 2020-06-24 june 24, 2020" id="june-24-2020-emoji-1-1-0">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/emoji">Emoji</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/b878bf9d7ec27f04fbda7bac038b5e8863b467c4..7df41e99110bc88b2978236027e7643f87c9c03d/emoji" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/emoji#1.1.0" class="badge stable">1.1.0</a></div>
+              </div>
+              <div class="notes"><p><strong>Major changes since 1.0.0</strong></p><ul><li><a href="https://www.unicode.org/emoji/charts-12.0/emoji-released.html">Emoji 12</a> and <a href="https://www.unicode.org/emoji/charts-12.1/emoji-released.html">Emoji 12.1</a> have been added to the bundled EmojiCompat font.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="lifecycle 2.3.0-alpha05 2020-06-24 june 24, 2020" id="june-24-2020-lifecycle-2-3-0-alpha05">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/lifecycle">Lifecycle</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/bea4dafe72ba1ec91a105da3128954d5ed7f1cd0..b6054a1a7396b962ac2c6d80d21053cf9d2f02db/lifecycle" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/lifecycle#2.3.0-alpha05" class="badge alpha">2.3.0-alpha05</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li><code>LiveData</code> now better handles reentrant cases, avoiding duplicate calls to <code>onActive()</code> or <code>onInactive()</code>. <a href="https://issuetracker.google.com/issues/157840298" title="b/157840298" class="ref ref-issue">b/157840298</a></li><li>Fixed an issue where Lint checks would not run when using Android Studio 4.1 Canary 6 or higher. <a href="https://android-review.googlesource.com/1331903" title="aosp/1331903" class="ref ref-gerrit">aosp/1331903</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="media 1.2.0-alpha04 2020-06-24 june 24, 2020" id="june-24-2020-media-1-2-0-alpha04">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media">Media</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/945594abd75f83bd14daf4fbcd8621796161281e..b6054a1a7396b962ac2c6d80d21053cf9d2f02db/media/media" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media#media-1.2.0-alpha04" class="badge alpha">1.2.0-alpha04</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>Provided a way to support volume control for mediarouter library</li></ul><p><strong>API Changes</strong></p><ul><li>Added <code>AudioManagerCompat#getStreamMaxVolume</code></li><li>Added <code>AudioManagerCompat#getStreamMinVolume</code></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Fixed an interoperability issue between media and media2 on SDK &lt; 21</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="media2 1.1.0-alpha01 2020-06-24 june 24, 2020" id="june-24-2020-media2-1-1-0-alpha01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media2">Media2</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/media2#1.1.0-alpha01" class="badge alpha">1.1.0-alpha01</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="navigation 2.3.0 2020-06-24 june 24, 2020" id="june-24-2020-navigation-2-3-0">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/navigation">Navigation</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/098293bcdb2b40862b3e287d38dd82ac8a9c6d38..654b8a76ea3c162fc3f9d84f3484ebadda0bbb9f/navigation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/navigation#2.3.0" class="badge stable">2.3.0</a></div>
+              </div>
+              <div class="notes"><p><strong>Major changes since 2.2.0</strong></p><ul><li><strong>Feature Module integration</strong>: The <code>navigation-dynamic-features-runtime</code> and <code>navigation-dynamic-features-fragment</code> artifacts allow you to navigate to destinations that are defined in feature modules, automatically handling the installation of the feature modules as needed. See <a href="https://developer.android.com/guide/navigation/navigation-dynamic">Navigate with feature modules</a> for more information.</li><li><strong>Navigation Testing</strong>: The <code>navigation-testing</code> artifact provides a <code>TestNavHostController</code> that allows you to set the current destination and verify the back stack after navigation operations. See <a href="https://developer.android.com/guide/navigation/navigation-testing">Test Navigation</a> for more information.</li><li><strong>Returning a Result</strong>: The <code>NavBackStackEntry</code> associated with each destination on the Navigation back stack now allows you to access a <a href="https://developer.android.com/reference/androidx/lifecycle/SavedStateHandle"><code>SavedStateHandle</code></a> suitable for storing small amounts of saved state that should be associated with a particular back stack entry. See <a href="https://developer.android.com/guide/navigation/navigation-programmatic#returning_a_result">Returning a result to the previous Destination</a> for more information.</li><li><strong><code>NavigationUI</code> support for <code>Openable</code></strong>: All usages of <code>DrawerLayout</code> in <code>NavigationUI</code> have been replaced with the more generic <a href="https://developer.android.com/reference/androidx/customview/widget/Openable"><code>Openable</code></a> interface added in <a href="https://developer.android.com/jetpack/androidx/releases/customview#1.1.0">CustomView <code>1.1.0</code></a> and implemented by <code>DrawerLayout</code> in <a href="https://developer.android.com/jetpack/androidx/releases/drawerlayout#1.1.0">DrawerLayout <code>1.1.0</code></a>.</li><li><strong>Action and Mime Type support in deep links</strong>: Deep linking has been expanded to support <code>app:action</code> and <code>app:mimeType</code> in addition to the <code>app:uri</code> previously available. <code>NavController</code> now supports navigating by any combination of these fields via the new <code>NavDeepLinkRequest</code> class. See <a href="https://developer.android.com/guide/navigation/navigation-navigate#uri">Navigate using NavDeepLinkRequest</a> for more information.</li></ul>
+<strong>Note:</strong><span> Support for adding an action and mime type in the visual editor is available in Android Studio 4.1 Canary 10 and higher.</span> 
+<p><strong>Known Issues</strong></p><ul><li>Support for deep link actions and mime types is not yet available in <a href="https://issuetracker.google.com/issues/154166825" title="Manifest Merger" class="ref ref-issue">Manifest Merger</a>. Until that work is completed, any generated <code>&lt;intent-filter&gt;</code> elements from the <code>&lt;nav-graph&gt;</code> element in your manifest won't include your mime type in its <code>&lt;data&gt;</code> element or your custom <code>&lt;action&gt;</code>. You must manually add an appropriate <code>&lt;intent-filter&gt;</code> to your manifest.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="paging 3.0.0-alpha02 2020-06-24 june 24, 2020" id="june-24-2020-paging-3-0-0-alpha02">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/paging">Paging</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/91b99a1bab5d164df694a93d77b6694a65257e7e..b6054a1a7396b962ac2c6d80d21053cf9d2f02db/paging" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/paging#3.0.0-alpha02" class="badge alpha">3.0.0-alpha02</a></div>
+              </div>
+              <div class="notes"><p><strong>API Changes</strong></p><ul><li>Added overloads for <code>PagingConfig</code>'s constructor with common default values <a href="https://android-review.googlesource.com/#/q/I39c508a7403e0372b66d2f511843538e26e7cde7" title="I39c50" class="ref ref-gerrit">I39c50</a> <a href="https://issuetracker.google.com/issues/158576040" title="b/158576040" class="ref ref-issue">b/158576040</a></li><li>Added overloads for constructors of <code>PagingDataAdapter</code> and <code>AsyncPagingDataDiffer</code> with common default values <a href="https://android-review.googlesource.com/#/q/Ie91f55060e17102435525ef4e90f8d943df3c90b" title="Ie91f5" class="ref ref-gerrit">Ie91f5</a></li><li>The adapter APIs, <code>dataRefreshFlow</code> and <code>dataRefreshListener</code> now pass a Boolean to signal whether a <code>PagingData</code> is empty <a href="https://android-review.googlesource.com/#/q/I6e37e844cf9f947aeefaaa99d22b2672e04f207d" title="I6e37e" class="ref ref-gerrit">I6e37e</a> <a href="https://issuetracker.google.com/issues/159054196" title="b/159054196" class="ref ref-issue">b/159054196</a></li><li>Added RxJava and Guava APIs for RemoteMediator - <a href="https://developer.android.com/reference/kotlin/androidx/paging/RxRemoteMediator">RxRemoteMediator</a> and <a href="https://developer.android.com/reference/kotlin/androidx/paging/ListenableFutureRemoteMediator">ListenableFutureRemoteMediator</a></li><li>Added helpers to PagingState for common item access such as <code>isEmpty()</code> and <code>firstItemOrNull()</code> <a href="https://android-review.googlesource.com/#/q/I3b5b687f5188e1408806c567417921fb8101bfdb" title="I3b5b6" class="ref ref-gerrit">I3b5b6</a> <a href="https://issuetracker.google.com/issues/158892717" title="b/158892717" class="ref ref-issue">b/158892717</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Pager now checks for PagingSource reuse in factory, to prevent accidental reuse of invalid PagingSources, which gave an unclear error <a href="https://android-review.googlesource.com/q/I99809eba7ca878fb841d2f250387d6b989ef701e" title="I99809" class="ref ref-gerrit">I99809</a> <a href="https://issuetracker.google.com/issues/158486430" title="b/158486430" class="ref ref-issue">b/158486430</a></li><li>Failures from RemoteMediator REFRESH no longer prevent PagingSource from loading <a href="https://android-review.googlesource.com/#/q/I38b1b1784af935cfbd8b937d9f4ab372f59619ed" title="I38b1b" class="ref ref-gerrit">I38b1b</a> <a href="https://issuetracker.google.com/issues/158892717" title="b/158892717" class="ref ref-issue">b/158892717</a></li><li>The non-suspending version of <code>submitData</code> no longer causes a crash due to concurrent collection on multiple <code>PagingData</code> when called after the suspending version of <code>submitData</code>. <a href="https://android-review.googlesource.com/#/q/I263580a7cb300229eadaa431fa699f25d7ac4ee1" title="I26358" class="ref ref-gerrit">I26358</a> <a href="https://issuetracker.google.com/issues/158048877" title="b/158048877" class="ref ref-issue">b/158048877</a></li><li>Fixed "cannot collect twice from pager" exception that could occur after config change <a href="https://android-review.googlesource.com/#/q/I58bcc4b2bde88b1c78ed1a96cf227e068127b47e" title="I58bcc" class="ref ref-gerrit">I58bcc</a> <a href="https://issuetracker.google.com/issues/158784811" title="b/158784811" class="ref ref-issue">b/158784811</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="recyclerview 1.2.0-alpha04 2020-06-24 june 24, 2020" id="june-24-2020-recyclerview-1-2-0-alpha04">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/recyclerview">RecyclerView</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/b752a10305d7cd58a7f50ad094ed54af4d765f27..b6054a1a7396b962ac2c6d80d21053cf9d2f02db/recyclerview/recyclerview" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/recyclerview#recyclerview-1.2.0-alpha04" class="badge alpha">1.2.0-alpha04</a></div>
+              </div>
+              <div class="notes"><p><strong>API Changes</strong></p><ul><li><code>MergeAdapter</code> has been renamed to <code>ConcatAdapter</code> to avoid any confusion with different data merging behaviors <a href="https://android.googlesource.com/platform/frameworks/support/+/c0540c10cc7ea5027d3fc3b22024de7e66c41a9d" title="c0540c" class="ref ref-gerrit">c0540c</a> <a href="https://issuetracker.google.com/issues/158019211" title="b/158019211" class="ref ref-issue">b/158019211</a>.</li></ul><p><strong>Bug Fixes</strong></p><ul><li>Improvements to automatic scrolling when all visible items are removed <a href="https://android.googlesource.com/platform/frameworks/support/+/fe867028214a364167c893083065eddcd709e223" title="fe8670" class="ref ref-gerrit">fe8670</a> <a href="https://issuetracker.google.com/issues/154124815" title="b/154124815" class="ref ref-issue">b/154124815</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="slidingpanelayout 1.1.0 2020-06-24 june 24, 2020" id="june-24-2020-slidingpanelayout-1-1-0">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/slidingpanelayout">SlidingPaneLayout</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/75f3faf4ff897611ef2e732ed0be0187917d797e..f778df0ff4a2d74de91163d48b9a03fa278397e7/slidingpanelayout/slidingpanelayout" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/slidingpanelayout#1.1.0" class="badge stable">1.1.0</a></div>
+              </div>
+              <div class="notes"><p><strong>Major changes since 1.0.0</strong></p><ul><li><code>SlidingPaneLayout</code> now implements the <a href="https://developer.android.com/reference/androidx/customview/widget/Openable"><code>Openable</code></a> interface added in <a href="https://developer.android.com/jetpack/androidx/releases/customview#1.1.0">CustomView <code>1.1.0</code></a>.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="swiperefreshlayout 1.1.0 2020-06-24 june 24, 2020" id="june-24-2020-swiperefreshlayout-1-1-0">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/swiperefreshlayout">SwipeRefreshLayout</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/6563b7854e79a3f7182efe27ee726867a091b603..6b97b146b743340c9d9b6fa54e735404374f2a5f/swiperefreshlayout/swiperefreshlayout" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/swiperefreshlayout#1.1.0" class="badge stable">1.1.0</a></div>
+              </div>
+              <div class="notes"><p><strong>Major changes since 1.0.0</strong></p><ul><li><code>SwipeRefreshLayout</code> now implements <code>NestedScrollingChild3</code> and <code>NestedScrollingParent3</code>.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="tracing 1.0.0-beta01 2020-06-24 june 24, 2020" id="june-24-2020-tracing-1-0-0-beta01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/tracing">Tracing</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/3b5b931546a48163444a9eddc533489fcddd7494..c2c1745b1d05b772c7bbe82834a9197ba5b85114/tracing" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/tracing#perfetto-1.0.0-beta01" class="badge beta">1.0.0-beta01</a></div>
+              </div>
+              <div class="notes"><p><strong>API Changes</strong></p><ul><li>Renamed <code>androidx.tracing.perfetto.Trace</code> to <code>androidx.tracing.perfetto.PerfettoSdkTrace</code> <a href="https://android-review.googlesource.com/#/q/I44af824893288c17c792369058132cca3ac61f1b" title="I44af8" class="ref ref-gerrit">I44af8</a></li><li>Renamed "exit code" to "result code" constants in the protocol for consistency <a href="https://android-review.googlesource.com/#/q/Id1d1e87b1b461e0c6598a5c5425fa73054dcc3b7" title="Id1d1e" class="ref ref-gerrit">Id1d1e</a></li><li>Renamed <code>EnableTracingResponse</code> to <code>Response</code>. <a href="https://android-review.googlesource.com/#/q/I56275818234555399521f104067f83c6e34ac258" title="I56275" class="ref ref-gerrit">I56275</a></li><li>Added an option to enable cold start tracing in a persistent mode. Added a function to clear (persistent or not) cold start tracing. <a href="https://android-review.googlesource.com/#/q/Iaa09d59477d4b8d3aa342422a8f6bcc12d866c5f" title="Iaa09d" class="ref ref-gerrit">Iaa09d</a></li><li>Made Tracing Perfetto SDK APIs consistent with <code>android.os.Trace</code>. <a href="https://android-review.googlesource.com/#/q/I73ba07ca6cc4bd2b6519553c395fe9075a49fe75" title="I73ba0" class="ref ref-gerrit">I73ba0</a> <a href="https://issuetracker.google.com/issues/282199917" title="b/282199917" class="ref ref-issue">b/282199917</a></li><li>Moved to a factory pattern for <code>LibrarySource</code> allowing for future use-cases (e.g. loading the <code>.so</code> file directly) to be easily added to the API if needed. <a href="https://android-review.googlesource.com/#/q/I128df0728ce971ca2ed37c278b1bfe0cc2521982" title="I128df" class="ref ref-gerrit">I128df</a></li><li>Making <code>enableTracingColdStart</code> parameters match <code>enableTracingImmediate</code> <a href="https://android-review.googlesource.com/#/q/I541269228ee33cfc73fe53e64032ddd00d62997f" title="I54126" class="ref ref-gerrit">I54126</a></li><li>Removed <code>killProcess</code> argument in <code>enableTracingColdStart</code> <a href="https://android-review.googlesource.com/#/q/I81c4de80f211ad49bc46e6fe8255491850609252" title="I81c4d" class="ref ref-gerrit">I81c4d</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="transition 1.4.0-alpha01 2020-06-24 june 24, 2020" id="june-24-2020-transition-1-4-0-alpha01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/transition">Transition</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/transition#1.4.0-alpha01" class="badge alpha">1.4.0-alpha01</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>The <code>transition-ktx</code> artifact introduces Kotlin extensions for adding listeners to AndroidX <code>Transition</code> instances. <a href="https://issuetracker.google.com/issues/138870873" title="b/138870873" class="ref ref-issue">b/138870873</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="ui 0.1.0-dev14 2020-06-24 june 24, 2020" id="june-24-2020-ui-0-1-0-dev14">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/ui">UI</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/ui#0.1.0-dev14" class="badge stable">0.1.0-dev14</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="wear 1.1.0-rc02 2020-06-24 june 24, 2020" id="june-24-2020-wear-1-1-0-rc02">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/wear">Wear</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/7128ce821b832b2f02be65d5cfc4a31b3d3aa04e..07056667a38fffbc916fa2def4a5f0ce23d1933a/wear/wear" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/wear#1.1.0-rc02" class="badge rc">1.1.0-rc02</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Added a <code>layout_</code> prefix to boxedEdges attribute (now <code>layout_boxedEdges</code>) for <code>BoxInsetLayout</code> in order to comply with android naming convention. This will remove the linter error in Android Studio for these attributes.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="webkit 1.3.0-rc01 2020-06-24 june 24, 2020" id="june-24-2020-webkit-1-3-0-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/webkit">Webkit</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/945594abd75f83bd14daf4fbcd8621796161281e..6038f9f88eeb910506ee40fc6f3cc4fc21e606ff/webkit/webkit" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/webkit#1.3.0-rc01" class="badge rc">1.3.0-rc01</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="work 2.4.0-rc01 2020-06-24 june 24, 2020" id="june-24-2020-work-2-4-0-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/work">Work</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/ccc6e95c574b66563952c33fbe26888b93a0e0cb..098521464a5be8f6d5fb14a9772d859a8e6d3638/work" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/work#2.4.0-rc01" class="badge rc">2.4.0-rc01</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>The in-process scheduler now uses better APIs to determine the name of the process. This is useful to better support apps that use multiple-processes. <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/1324732" title="aosp/1324732" class="ref ref-gerrit">aosp/1324732</a></li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
