@@ -1,0 +1,177 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#may_18_2022",
+  "title": "May 18, 2022",
+  "releasedOn": "2022-05-18",
+  "updated": "2022-05-18T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#may_18_2022",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.6.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.6.0-alpha04",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an error in <code>PickVisualMediaRequest</code> where attempting to create a request, either via the Builder or the top level Kotlin function, would result in a stack overflow.</li>\n <li>Integrated the <code>OnBackInvokedCallback</code> in Android 13 Dev Beta 2 into the <code>OnBackPressedDispatcher</code> provided by <code>ComponentDialog</code>. This ensures that all APIs built on <code>OnBackPressedDispatcher</code> work when <a href=\"https://developer.android.com/about/versions/13/features/predictive-back-gesture\">enabling a predictive back gesture</a>.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "annotation",
+      "name": "Annotation",
+      "version": "1.4.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/annotation#annotation-1.4.0-beta01",
+      "detailsHtml": "<ul>\n <li>No changes since the last alpha. API surface has been locked down for Beta release.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/db2ecbef194afcddfaede22e1d884a8959a9277c..59f5332a9fc2dc4bae1733a97b9518103d068d19/annotation/annotation"
+    },
+    {
+      "id": "appcompat-appcompat-resources",
+      "name": "AppCompat AppCompat-Resources",
+      "version": "1.6.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.6.0-alpha04",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Add an API to override SwitchCompat width restriction for use by MDC-Android</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Avoid managed configuration when config changes outside of attachBaseConfig</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "camera",
+      "name": "Camera",
+      "version": "1.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#1.2.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>New library camera-mlkit-vision is launched</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed <code>QualitySelector</code> fails to record a UHD video when a fallback strategy is enabled. The issue happens when <code>VideoCapture</code> is bound with <code>ImageCapture</code> and Preview on a FULL or higher hardware level camera device. A fallback strategy of <code>QualitySelector</code> causes <code>VideoCapture</code> incorrectly to get a FHD resolution. UHD resolution is actually supported for this use case combination and should be adopted. (<a href=\"https://android-review.googlesource.com/#/q/I0e788060512feef5fa934d7f35374da218ffe8e8\">I0e788</a>, <a href=\"https://issuetracker.google.com/issues/230651237\">b/230651237</a>)</li>\n <li>Fixed <code>NullPointerException</code> on <code>ImageCapture.takePicture()</code>. (<a href=\"https://android-review.googlesource.com/#/q/I92366821320e183ca9ba4c6468325a686e6f9720\">I92366</a>, <a href=\"https://issuetracker.google.com/issues/230454568\">b/230454568</a>, <a href=\"https://issuetracker.google.com/issues/229766155\">b/229766155</a>)</li>\n <li>Fix async pause behavior of <code>androidx.camera.video.Recorder</code> (<a href=\"https://android-review.googlesource.com/#/q/Ia8ce8c70381988220194b4bed439a88a45c9156a\">Ia8ce8</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6946e183ec360b11e53fb5a43ea1880dbb9e1b0a..7529bbe53a1c354c3787cfd67a666e1c8c341be0/camera"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.2.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.2.0-beta02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/eea19c54f6d94f1c234c4305c1329f7f1427867a..6266a22ad9adaed6fa88fe98aa8adaa46eb96ccc/compose/animation"
+    },
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.2.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.2.0-beta02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/eea19c54f6d94f1c234c4305c1329f7f1427867a..6266a22ad9adaed6fa88fe98aa8adaa46eb96ccc/compose/compiler"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.2.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.2.0-beta02",
+      "detailsHtml": "<ul>\n <li>Downloadable font resolution that does not change the layout size of Text or <code>TextField</code> previously would not redraw, leading to stale font display. This bugfix ensures that text layout always triggers redraw (b/229727404). (<a href=\"https://android-review.googlesource.com/#/q/I1d49e9b977c234c9bc0317def7918d7821b321eb\">I1d49e</a>, <a href=\"https://issuetracker.google.com/issues/229727404\">b/229727404</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/eea19c54f6d94f1c234c4305c1329f7f1427867a..6266a22ad9adaed6fa88fe98aa8adaa46eb96ccc/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.2.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.2.0-beta02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/eea19c54f6d94f1c234c4305c1329f7f1427867a..6266a22ad9adaed6fa88fe98aa8adaa46eb96ccc/compose/material"
+    },
+    {
+      "id": "compose-material-3",
+      "name": "Compose Material 3",
+      "version": "1.0.0-alpha12",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3#1.0.0-alpha12",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Slider parent can now have 0 width. (<a href=\"https://issuetracker.google.com/231707291\">b/231707291</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/eea19c54f6d94f1c234c4305c1329f7f1427867a..3b9b6af3f1b771c21aa90b87e466318ad8f9a2f0/compose/material3"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.2.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.2.0-beta02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/eea19c54f6d94f1c234c4305c1329f7f1427867a..6266a22ad9adaed6fa88fe98aa8adaa46eb96ccc/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.2.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.2.0-beta02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Reusing functionality in other preview types (<a href=\"https://android-review.googlesource.com/#/q/I19f39a319fdf562c930d5b7a124da79677a36f77\">I19f39</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>ViewCompositionStrategy.DisposeOnDetachedFromWindowIfNotInPoolingContainer</code> has been renamed to <code>DisposeOnDetachedFromWindowOrReleasedFromPool</code> to better reflect that when disposals do occur, rather than simply when they do not occur. (<a href=\"https://android-review.googlesource.com/#/q/If15ca41841dde8226ce850b8894e473a1ac9c9d4\">If15ca</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/eea19c54f6d94f1c234c4305c1329f7f1427867a..6266a22ad9adaed6fa88fe98aa8adaa46eb96ccc/compose/ui"
+    },
+    {
+      "id": "core-core-ktx",
+      "name": "Core Core-Ktx",
+      "version": "1.9.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.9.0-alpha04",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Revert deprecation of <code>BuildCompat.isAtLeastT()</code> and accompanying <code>SDK_INT</code> checks</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "core-core-ktx",
+      "name": "Core Core-Ktx",
+      "version": "1.8.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.8.0-rc02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Cast <code>OnSharedElementsReadyListener</code> to fully-qualified platform class to prevent <code>ClassCastException</code> (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/2086006\">0029fed</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/df694c502b6ecdcfc15500f0dd4fbb1d07683ed0..e43c8f66cf73f1d25b5759c0e8a65f93051ea618/core"
+    },
+    {
+      "id": "core-google-shortcuts",
+      "name": "Core",
+      "version": "1.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#core-google-shortcuts-1.0.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix proguard rule to prevent a method from being unintentionally removed</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/720ae3dd8b52a9505c88d436616c421214a389c3..2651c095c4b4fc97349aac2631ae60879d0aa8a8/core/core-google-shortcuts"
+    },
+    {
+      "id": "core-splashscreen",
+      "name": "Core-Splashscreen",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#core-splashscreen-1.0.0-rc01",
+      "detailsHtml": "<ul>\n <li>No changes since the last beta release.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5ef5671233460b844828e14a816255dbf7904868..b8f90710aba0a775d0bbabb0eed20f4573c0a48d/core/core-splashscreen"
+    },
+    {
+      "id": "customview-poolingcontainer",
+      "name": "CustomView-Poolingcontainer",
+      "version": "1.0.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/customview#customview-poolingcontainer-1.0.0-beta02",
+      "detailsHtml": "<ul>\n <li>No changes, needed to support Compose 1.2.0-beta02 versions.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/53d512be6fd26bc30bffa7cae8e9769ec5c4bfbf..6266a22ad9adaed6fa88fe98aa8adaa46eb96ccc/customview/customview-poolingcontainer"
+    },
+    {
+      "id": "profileinstaller",
+      "name": "ProfileInstaller",
+      "version": "1.2.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/profileinstaller#1.2.0-beta02",
+      "detailsHtml": "<ul>\n <li>No changes, needed to support Compose 1.2.0-beta02 versions.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/53d512be6fd26bc30bffa7cae8e9769ec5c4bfbf..6266a22ad9adaed6fa88fe98aa8adaa46eb96ccc/profileinstaller/profileinstaller"
+    },
+    {
+      "id": "wear-compose",
+      "name": "Wear Compose",
+      "version": "1.0.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-compose#1.0.0-beta02",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Picker now always responds to scroll events even when in read-only mode. This avoids the need for users to first select a Picker by tapping, before they can scroll. In read-only mode, options other than that currently selected are obscured by a shim in <code>gradientColor</code>. (<a href=\"https://android-review.googlesource.com/#/q/I72925a66999fa5ad1ec2307189483484aae4c9fc\">I72925</a>)</li>\n <li>We have changed the UX behavior of <code>Chip/ToggleChip/CompactChip/SplitToggleChip</code> to stop them from doing <code>fillMaxWidth</code> by default. Instead they will grow to fit their contents. To keep the previous behavior simply add <code>modifier = Modifier.fillMaxWidth()</code>(<a href=\"https://android-review.googlesource.com/#/q/I60a2cc1d2a7c1d88483ecbb374beae7fe4a688ff\">I60a2c</a>, <a href=\"https://issuetracker.google.com/issues/232206371\">b/232206371</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>CurvedTextStyle</code> constructor taking a <code>TextStyle</code> now also respects the <code>fontWeight</code>(This may be added to the constructor and copy methods in future revisions of the API) (<a href=\"https://android-review.googlesource.com/#/q/Ieebb94f123e1b7d43b90249520bfaff7f62bb5c7\">Ieebb9</a>)</li>\n <li>Edge swiping improvements. When <code>Modifier.edgeSwipeToDismiss</code> is used and a swipe to the left is triggered from the edge area, it no longer triggers swipe-to-dismiss when swipe direction changes to the right. Previously, it was possible to trigger swipe-to-dismiss by swiping to the left and then swiping to the right.(<a href=\"https://android-review.googlesource.com/#/q/I916eafd9eb308eca15d4925dc0490a93c5bbb830\">I916ea</a>)</li>\n <li><code>HorizontalPageIndicator</code> now shows up to 6 pages on the screen. If there are more than 6 pages in total, it shows a half-size indicator on the left or right, with a smooth transition between pages.(<a href=\"https://android-review.googlesource.com/#/q/I2ac2920a8f392233d44c6b739ea294fb29d5b80d\">I2ac29</a>)</li>\n <li>Improved default snap behavior on <code>ScalingLazyColumn</code> and <code>Picker</code> (<a href=\"https://android-review.googlesource.com/#/q/I495391b07b2cb92b3adcb6e23ae0153c2f176e78\">I49539</a>)</li>\n <li>Edge swiping improvements. When <code>Modifier.edgeSwipeToDismiss</code> is used, swipe-to-dismiss only triggers when first touch lands on the edge and swiped to the right, Previously it was possible to trigger swipe-to-dismiss by swiping from any part of the screen if a scroll reaches the start.(<a href=\"https://android-review.googlesource.com/#/q/I8ca2a7eb6dd8f73d69de02e0d631c0cd672bfb5b\">I8ca2a</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/53d512be6fd26bc30bffa7cae8e9769ec5c4bfbf..6266a22ad9adaed6fa88fe98aa8adaa46eb96ccc/wear/compose"
+    },
+    {
+      "id": "wear-tiles",
+      "name": "Wear Tiles",
+      "version": "1.1.0-alpha07",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-tiles#1.1.0-alpha07",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Getters related to different setters for content have now been added to the <code>ProgressIndicatorLayout</code> and <code>PrimaryLayout</code>. Now all setters in these classes have matching getters.(<a href=\"https://android-review.googlesource.com/#/q/Iddbe588fbb562c7348a5cb2bfc56af7fe053b403\">Iddbe5</a>) (<a href=\"https://android-review.googlesource.com/#/q/Iabe4e6d4fc4df8a4e95a148edae14540710f21ba\">Iabe4e</a>)</li>\n <li>Getter for content description in Material Components can return null since its setter is not mandatory.</li>\n <li>Attempting to create a Button with no content passed in will result in <code>IllegalArgumentException</code>. (<a href=\"https://android-review.googlesource.com/#/q/I7fc0cc24e5ccac3d1de92781e3d117bbc8030656\">I7fc0c</a>)</li>\n <li>Icon color related fields in <code>ChipColors</code> have been renamed from <code>iconTintColor</code> to <code>iconColor</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ic053baaf614a88b2a7fe44806c9abc85c0bc953c\">Ic053b</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Added <code>androidTests</code> for Layouts in Tiles Material. (<a href=\"https://android-review.googlesource.com/#/q/I96404dbf9d30295e89f5fdb09e44a6aa830ca7a2\">I96404</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b18424ac8b7d47a65751381a4f8ad4777f537107..6266a22ad9adaed6fa88fe98aa8adaa46eb96ccc/wear/tiles"
+    },
+    {
+      "id": "wear-watchface",
+      "name": "Wear Watchface",
+      "version": "1.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-watchface#1.1.0-rc01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>We’ve made some usability tweaks to watchface XML support, making it easier to specify <code>ComplicationSlotBounds</code> and supporting references. Experimentation with edge complication <code>BoundingArc</code> continues, plumbing it through to <code>drawHighlight</code> although it’s not recommended for use at that time.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>We've added an experimental overload of <code>drawHighlight</code> which accepts a <code>BoundingArc</code> parameter. (<a href=\"https://android-review.googlesource.com/#/q/I705f8f92e4b133a3d76038c6520789a747c667ee\">I705f8</a>)</li>\n <li>Watch face XML now supports resource references. It lets you use the same constants both in XML and your code. (<a href=\"https://android-review.googlesource.com/#/q/I3ef61ab93d8e3a6a0d314a8a0425b31164a9c63f\">I3ef61</a>)</li>\n <li>We've added the ability to define <code>ComplicationSlotBounds</code> in <code>center_x</code>, <code>center_y</code>, <code>size_x</code>, <code>size_y</code> form. Now it is also possible to use different units (i.e. dp) using resource references. (<a href=\"https://android-review.googlesource.com/#/q/Iace98fc80f978037b1ae42307f2cbb278c4a8129\">Iace98</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix <code>runBlockingWithTracing</code> which was running tasks on the wrong context.(<a href=\"https://android.googlesource.com/platform/frameworks/support/+/4f595fe139661c42d56fb829d085a384bf832c6b\">4f595fe</a>)</li>\n <li>Make <code>BaseEditorSession.close</code> synchronous. The problem with <code>BaseEditorSession.close</code> being asynchronous is that we release the <code>ComplicationDataSourceInfoRetriever</code> too late leading to warning spam in logcat. This was probably harmless but logcat spam is distracting and should be avoided.(<a href=\"https://android.googlesource.com/platform/frameworks/support/+/35a5308a631f3db7bba4a9b186fec8b85df74659\">35a5308</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b18424ac8b7d47a65751381a4f8ad4777f537107..947b9ceb775ff5ace7ed32e57bb398c964bf5db3/wear/watchface"
+    },
+    {
+      "id": "webkit",
+      "name": "Webkit",
+      "version": "1.5.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/webkit#1.5.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Add a new <code>getVariationsHeader()</code> method on <code>WebViewCompat</code> to get the X-Client-Data header value sent by the <code>WebView</code>. The returned value will be a base64 encoded <a href=\"https://source.chromium.org/chromium/chromium/src/+/main:components/variations/proto/client_variations.proto\">ClientVariations</a> protobuf.</li>\n <li>Add APIs on <code>WebSettingsCompat</code> to allow/disallow algorithmic darkening for app with targetSdk &gt;= 33. (<a href=\"https://android-review.googlesource.com/#/q/I2959738a8d71ab509fdcf01e393977398b2179b6\">I29597</a>)</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add a new method in <code>ProxyCofig.Builder</code> to set reverse bypass. Setting reverse bypass to true means only URLs in the bypass list will use the proxy settings. (<a href=\"https://android-review.googlesource.com/#/q/I9eaa29bbecebecade8cf82d1d65581f0a5715e1a\">I9eaa2</a>, <a href=\"https://issuetracker.google.com/issues/168728599\">b/168728599</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a typo in dark theme documentation. (<a href=\"https://android-review.googlesource.com/#/q/I36ebf63c24427e8a19a3ef3d202a5a277d52cc16\">I36ebf</a>, <a href=\"https://issuetracker.google.com/issues/194343633\">b/194343633</a>)</li>\n <li>Fixed a bug where <code>WebViewAssetLoader.Builder</code> methods were unintentionally order-dependent. (<a href=\"https://android-review.googlesource.com/#/q/If420d559a21ea624b2a493d09550ed496ffee392\">If420d</a>, <a href=\"https://issuetracker.google.com/issues/182196765\">b/182196765</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/be8fed3a2ca8490bd8b93503459a1b36640ea5eb..6266a22ad9adaed6fa88fe98aa8adaa46eb96ccc/webkit/webkit"
+    }
+  ]
+}

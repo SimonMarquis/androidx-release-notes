@@ -1,0 +1,41 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#may_20_2022",
+  "title": "May 20, 2022",
+  "releasedOn": "2022-05-20",
+  "updated": "2022-05-20T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#may_20_2022",
+  "components": [
+    {
+      "id": "constraintlayout",
+      "name": "ConstraintLayout",
+      "version": "2.1.4",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-2.1.4",
+      "detailsHtml": "<p>For more information, see what's <a href=\"https://github.com/androidx/constraintlayout/wiki/What's-New-in-2.1#new-in-214\">New in 2.1.4</a> on GitHub.</p>",
+      "commitsUrl": null
+    },
+    {
+      "id": "compose-constraintlayout",
+      "name": "Compose ConstraintLayout",
+      "version": "1.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-compose-1.0.1",
+      "detailsHtml": "<p>Please note MotionLayout API is experimental and requires opt in.</p>\n<p>For more information, see what's <a href=\"https://github.com/androidx/constraintlayout/wiki/What%27s-New-in-1.0-%28Compose%29#new-in-compose-101\">New in Compose 1.0.1</a> on GitHub.</p>",
+      "commitsUrl": null
+    },
+    {
+      "id": "constraintlayout",
+      "name": "ConstraintLayout",
+      "version": "2.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-2.2.0-alpha01",
+      "detailsHtml": "<p>Includes a preview of the new <code>Grid</code> helper.</p>\n<p>For more information, see what's <a href=\"https://github.com/androidx/constraintlayout/wiki/What's-New-in-2.2#new-in-220-alpha01\">New in 2.2.0-alpha01</a> on GitHub.</p>",
+      "commitsUrl": null
+    },
+    {
+      "id": "compose-constraintlayout",
+      "name": "Compose ConstraintLayout",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-compose-1.1.0-alpha01",
+      "detailsHtml": "<p>Please note MotionLayout API is experimental and requires opt in.</p>\n<p>For more information, see what's <a href=\"https://github.com/androidx/constraintlayout/wiki/What's-New-in-1.1-(Compose)#new-in-compose-110-alpha01\">New in Compose 1.1.0-alpha01</a> on GitHub.</p>",
+      "commitsUrl": null
+    }
+  ]
+}
