@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#august_27_2024",
+  "title": "August 27, 2024",
+  "releasedOn": "2024-08-27",
+  "updated": "2024-08-27T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#august_27_2024",
+  "components": [
+    {
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.4.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.4.1",
+      "detailsHtml": "<ul>\n <li>ExoPlayer:\n  <ul>\n   <li>Handle preload callbacks asynchronously in <code>PreloadMediaSource</code> (<a href=\"https://github.com/androidx/media/issues/1568\">#1568</a>).</li>\n   <li>Allow playback regardless of buffered duration when loading fails (<a href=\"https://github.com/androidx/media/issues/1571\">#1571</a>).</li>\n  </ul></li>\n <li>Extractors:\n  <ul>\n   <li>MP3: Fix <code>Searched too many bytes</code> error by correctly ignoring trailing non-MP3 data based on the length field in an <code>Info</code> frame (<a href=\"https://github.com/androidx/media/issues/1480\">#1480</a>).</li>\n  </ul></li>\n <li>Text:\n  <ul>\n   <li>TTML: Fix handling of percentage <code>tts:fontSize</code> values to ensure they are correctly inherited from parent nodes with percentage <code>tts:fontSize</code> values.</li>\n   <li>Fix <code>IndexOutOfBoundsException</code> in <code>LegacySubtitleUtil</code> due to incorrectly handling the case of the requested output start time being greater than or equal to the final event time in the <code>Subtitle</code> (<a href=\"https://github.com/androidx/media/issues/1516\">#1516</a>).</li>\n  </ul></li>\n <li>DRM:\n  <ul>\n   <li>Fix <code>android.media.MediaCodec$CryptoException: Operation not supported in this configuration: ERROR_DRM_CANNOT_HANDLE</code> error on API 31+ devices playing L1 Widevine content. This error is caused by an incomplete implementation of the framework <a href=\"https://developer.android.com/reference/android/media/MediaDrm#requiresSecureDecoder(java.lang.String)\"><code>MediaDrm.requiresSecureDecoder</code></a> method (<a href=\"https://github.com/androidx/media/issues/1603\">#1603</a>).</li>\n  </ul></li>\n <li>Effect:\n  <ul>\n   <li>Add a <code>release()</code> method to <code>GlObjectsProvider</code>.</li>\n  </ul></li>\n <li>Session:\n  <ul>\n   <li>Transform a double-tap of <code>KEYCODE_HEADSETHOOK</code> into a 'seek to next' action, as <a href=\"https://developer.android.com/reference/androidx/media3/session/MediaSession#media-key-events-mapping\">documented</a> (<a href=\"https://github.com/androidx/media/issues/1493\">#1493</a>).</li>\n   <li>Handle <code>KEYCODE_HEADSETHOOK</code> as a 'play' command in <code>MediaButtonReceiver</code> when deciding whether to ignore it to avoid a <code>ForegroundServiceDidNotStartInTimeException</code> (<a href=\"https://github.com/androidx/media/issues/1581\">#1581</a>).</li>\n  </ul></li>\n <li>RTSP Extension:\n  <ul>\n   <li>Skip invalid Media Descriptions in SDP parsing (<a href=\"https://github.com/androidx/media/issues/1472\">#1087</a>).</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": "https://github.com/androidx/media/commits/1.4.1"
+    }
+  ]
+}
