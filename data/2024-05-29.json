@@ -1,0 +1,201 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#may_29_2024",
+  "title": "May 29, 2024",
+  "releasedOn": "2024-05-29",
+  "updated": "2024-05-29T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#may_29_2024",
+  "components": [
+    {
+      "id": "appcompat",
+      "name": "AppCompat",
+      "version": "1.7.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.7.0",
+      "detailsHtml": "<p><strong>Important changes since 1.6.0</strong></p>\n<ul>\n <li><code>AppCompatDialog</code> now correctly sets the <code>LifecycleOwner</code>, <code>SavedStateRegistryOwner</code>, and <code>OnBackPressedDispatcherOwner</code> on the dialog's decor view via the <code>ViewTree</code> APIs, fixing issues when hosting a <code>ComposeView</code> within an <code>AppCompatDialog</code>.</li>\n <li><code>AppCompatActivity</code> now sets the <code>ViewTreeOnBackPressedDispatcherOwner</code> so that it is possible to retrieve the dispatcher from the view.</li>\n <li>Significantly improved the performance of <code>SupportMenuInflater</code>.</li>\n <li><code>Locale.getDefault()</code> now returns the system locale after a cold start.</li>\n <li><code>LinearLayoutCompat</code> now preserves margin layout params.</li>\n</ul>\n<p><strong>Dependency Updates</strong></p>\n<ul>\n <li><code>AppCompat</code> now depends on Activity 1.7.0.</li>\n <li><code>AppCompat</code> now depends on Fragment version 1.5.4.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6424b9a28d12f04e043d5257a3e821c152b0187d..31e0791ed498d528e1ee51f54e0c7cd334729997/appcompat"
+    },
+    {
+      "id": "biometric",
+      "name": "Biometric",
+      "version": "1.4.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/biometric#1.4.0-alpha01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Update UI to be consistent with platform changes in Android 15</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "car-app",
+      "name": "Car App",
+      "version": "1.4.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/car-app#1.4.0",
+      "detailsHtml": "<p><strong>Important changes since 1.3.0</strong></p>\n<ul>\n <li>Instrument Cluster map rendering for Navigation apps</li>\n <li>New Tab Template for improved app layout / usability</li>\n <li>Support for Adaptive task limits</li>\n <li>Secondary actions on list elements</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.7.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.7.0-beta02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6a69101fd0edc8d02aa316df1f43e0552fd2d7c4..1a123f646cfea1599f9efead6da546b0c26063fa/compose/animation"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.7.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.7.0-beta02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Adds an experimental API for configuring prefetch behavior of <code>LazyGrids</code> similar to the existing experimental API for <code>LazyLists</code>. This includes support for prefetching items in nested <code>LazyGrids</code>. Similiar to <code>LazyListPrefetchStrategy</code>, the implementation default is to prefetch the first 2 nested items of each grid, but this can be configured by the new <code>LazyGridPrefetchStrategy(nestedPrefetchItemCount)</code> and <code>LazyListPrefetchStrategy#onNestedPrefetch</code> APIs. (<a href=\"https://android-review.googlesource.com/#/q/I591c4e8959ba225b9e1817765c6e6bc10b7fac1a\">I591c4</a>)</li>\n <li>Renamed <code>SemanticsProperties.Editable</code> to <code>IsEditable</code> and changes <code>SemanticsPropertyReceiver.editable</code> to a val <code>isEditable</code>. The property is now a boolean and always specified by text fields. (<a href=\"https://android-review.googlesource.com/#/q/I8acd87bcdfc80b70de9665ba45708ca529ccdf69\">I8acd8</a>)</li>\n <li>Moved <code>basicMarquee</code> default values into <code>MarqueeDefaults</code> object. (<a href=\"https://android-review.googlesource.com/#/q/I12ff617e3c8bddc43c3cc44d8be14926ac20378b\">I12ff6</a>)</li>\n <li>Renamed <code>basicMarquee</code> <code>delayMillis</code> parameter to <code>repeatDelayMillis</code>. (<a href=\"https://android-review.googlesource.com/#/q/I12ff617e3c8bddc43c3cc44d8be14926ac20378b\">I12ff6</a>)</li>\n <li>Update API for styling the links: moved the <code>TextLinkStyles</code> to the <code>TextStyle</code> and removed the <code>TextDefaults</code> from material (<a href=\"https://android-review.googlesource.com/#/q/I5477bdb498b6b4f33ab3bc998e2be59d8a4ff7e4\">I5477b</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Renamed <code>LayoutCoordinates.introducesFrameOfReference</code> to <code>LayoutCoordinates.introducesMotionFrameOfReference</code> to better reflect its purpose. Renamed related function to calculate coordinates based on that flag. (<a href=\"https://android-review.googlesource.com/#/q/I3a3301164ea2c08728b09faed6cf72ae089ead72\">I3a330</a>)</li>\n <li>Removed 'Default' from the <code>MarqueeDefaults</code> properties. (<a href=\"https://android-review.googlesource.com/#/q/I1d8a0a53a7b74aa116a5595013a815a201f16c01\">I1d8a0</a>)</li>\n <li>Removed 'Marquee' from <code>MarqueeDefaults</code> properties. (<a href=\"https://android-review.googlesource.com/#/q/Iad4f44b7803faf57f5a3a1445bfdbe94e4693d80\">Iad4f4</a>)</li>\n <li>Removed <code>TextLinkStyles</code> from the <code>TextStyle</code> class. Instead, <code>TextLinkStyles</code> is part of the <code>LinkAnntation</code> constructor and the <code>AnnotatedString.fromHtml</code> method (<a href=\"https://android-review.googlesource.com/#/q/I90b2b73e126d9c1106c223de823dda8babaf6708\">I90b2b</a>)</li>\n <li>Fixed a bug where Pager would snap when flinging towards a bound while already settled at the bound. (<a href=\"https://android-review.googlesource.com/#/q/I9f3730a6c168c19e077fd4d29325f444f54c1070\">I9f373</a>, <a href=\"https://issuetracker.google.com/issues/339171222\">b/339171222</a>)</li>\n <li>BTF2 now has correct mouse selection gestures. (<a href=\"https://android-review.googlesource.com/#/q/Ibe8c678df325fd1cd55962ab023d8d3b40ab4aa3\">Ibe8c6</a>)</li>\n</ul>\n<p><strong>External Contribution</strong></p>\n<ul>\n <li>Resubmit 'Make compose/measure time calculation content-type based in prefetch to improve accuracy' (<a href=\"https://android-review.googlesource.com/#/q/Iea6227ee19a6ef6ed4d6a09f8c28f3d012c5594c\">Iea622</a>)</li>\n <li>Make compose/measure time calculation content-type based in prefetch to improve accuracy (<a href=\"https://android-review.googlesource.com/#/q/Ibccb1d3bfcc5c5409eea4ab47904f9f10e1f7fc5\">Ibccb1</a>)</li>\n <li>Make <code>WindowInsetsPadding</code> modifiers available from common source set (<a href=\"https://android-review.googlesource.com/#/q/I070b2fbfc6dcae41be4bc9bf313d5847065d4053\">I070b2</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6a69101fd0edc8d02aa316df1f43e0552fd2d7c4..1a123f646cfea1599f9efead6da546b0c26063fa/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.7.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.7.0-beta02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Update API for styling the links: moved the <code>TextLinkStyles</code> to the <code>TextStyle</code> and removed the <code>TextDefaults</code> from material (<a href=\"https://android-review.googlesource.com/#/q/I5477bdb498b6b4f33ab3bc998e2be59d8a4ff7e4\">I5477b</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6a69101fd0edc8d02aa316df1f43e0552fd2d7c4..1a123f646cfea1599f9efead6da546b0c26063fa/compose/material"
+    },
+    {
+      "id": "compose-material-3",
+      "name": "Compose Material 3",
+      "version": "1.3.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3#1.3.0-beta02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>Modifier.pullToRefreshIndicator</code> supports elevation, update Pull To Refresh APIs to have enabled be a boolean, instead of a lambda. Support content alignment in <code>PullToRefreshBox</code> (<a href=\"https://android-review.googlesource.com/#/q/I75679e45af151b0ad1741f8c4513ee25fb20b225\">I75679</a>)</li>\n <li>Making <code>TooltipScope</code> a sealed interface and creating an internal implementation to use in <code>TooltipBox</code> and Label. (<a href=\"https://android-review.googlesource.com/#/q/I3833ea874e67e9c835bbbdf397caf54df8771122\">I3833e</a>)</li>\n <li>Added two new modifiers to <code>CarouselItemScope</code> - <code>maskClip</code> and <code>maskBorder</code> - to easily add a shape and border to any carousel item (<a href=\"https://android-review.googlesource.com/#/q/Id67a1e2ac1e9a3cc1a6654f20c0fc5ea95fc9ed4\">Id67a1</a>)</li>\n <li><code>TimePickerState</code> is now an interface and allows for setting the time (<a href=\"https://android-review.googlesource.com/#/q/I88546d3967a854fb64099eddbbf9ee3bc52490cb\">I88546</a>)</li>\n <li>Updated API for styling the links: moved the <code>TextLinkStyles</code> to the <code>TextStyle</code> and removed the <code>TextDefaults</code> from material. (<a href=\"https://android-review.googlesource.com/#/q/I5477bdb498b6b4f33ab3bc998e2be59d8a4ff7e4\">I5477b</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>ModalBottomSheet</code> status and nav bar icons now respond to dark theme status. (<a href=\"https://android-review.googlesource.com/#/q/Ie1fe7e1f792c39d52b4d419a08209c2577bf1175\">Ie1fe7</a>, <a href=\"https://issuetracker.google.com/issues/338342149\">b/338342149</a>)</li>\n <li>Added close sheet semantics to <code>ModalBottomSheet</code> scrim. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/3085729\">0e61cb</a>,<a href=\"https://issuetracker.google.com/issue?id=328801864&amp;query=328801864\">b/328801864</a>)</li>\n</ul>\n<p><strong>External Contribution</strong></p>\n<ul>\n <li>Make <code>androidx.compose.material3.AlertDialog</code> available from common source set (<a href=\"https://android-review.googlesource.com/#/q/Ia33f513f472f6d200de922fdef0fd2f73f62b007\">Ia33f5</a>)</li>\n <li>Make <code>ModalBottomSheet</code> available from common source set (<a href=\"https://android-review.googlesource.com/#/q/Id7cc733003fc7c2cdceb95a30b6d7183d39fdffc\">Id7cc7</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6a69101fd0edc8d02aa316df1f43e0552fd2d7c4..473554f275109d78164adca6b6cea539aed8b68b/compose/material3"
+    },
+    {
+      "id": "compose-material3-adaptive",
+      "name": "Compose Material3 Adaptive",
+      "version": "1.0.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material3-adaptive#1.0.0-beta02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6a69101fd0edc8d02aa316df1f43e0552fd2d7c4..473554f275109d78164adca6b6cea539aed8b68b/compose/material3/adaptive"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.7.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.7.0-beta02",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6a69101fd0edc8d02aa316df1f43e0552fd2d7c4..1a123f646cfea1599f9efead6da546b0c26063fa/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.7.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.7.0-beta02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Renamed <code>SemanticsProperties.Editable</code> to <code>IsEditable</code> and changes <code>SemanticsPropertyReceiver.editable</code> to a val <code>isEditable</code>. The property is now a boolean and always specified by text fields. (<a href=\"https://android-review.googlesource.com/#/q/I8acd87bcdfc80b70de9665ba45708ca529ccdf69\">I8acd8</a>)</li>\n <li>Rename accessibility benchmark parameter. (<a href=\"https://android-review.googlesource.com/#/q/I3d4405c9fecc11b98eec71c82f763d7e78fa9d55\">I3d440</a>)</li>\n <li>Updated API for styling the links: <code>TextLinkStyles</code> is now part of the <code>LinkAnnotation</code> constructor and the <code>AnnotatedString.fromHtml</code> method (<a href=\"https://android-review.googlesource.com/#/q/I90b2b73e126d9c1106c223de823dda8babaf6708\">I90b2b</a>). Also removed the <code>TextDefaults</code> from material (<a href=\"https://android-review.googlesource.com/#/q/I5477bdb498b6b4f33ab3bc998e2be59d8a4ff7e4\">I5477b</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Renamed <code>LayoutCoordinates.introducesFrameOfReference</code> to <code>LayoutCoordinates.introducesMotionFrameOfReference</code> to better reflect its purpose. Renamed related function to calculate coordinates based on that flag. (<a href=\"https://android-review.googlesource.com/#/q/I3a3301164ea2c08728b09faed6cf72ae089ead72\">I3a330</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6a69101fd0edc8d02aa316df1f43e0552fd2d7c4..1a123f646cfea1599f9efead6da546b0c26063fa/compose/ui"
+    },
+    {
+      "id": "concurrent",
+      "name": "Concurrent",
+      "version": "1.2.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/concurrent#1.2.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6a69101fd0edc8d02aa316df1f43e0552fd2d7c4..981a26f286d763f3ebe90ef825c12873ae8fd171/concurrent"
+    },
+    {
+      "id": "credentials",
+      "name": "Credentials",
+      "version": "1.5.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/credentials#1.5.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<p>Secondary UI experience for credential selection: App developers that call Credential Manager APIs at sign-in moments to present the user with a selector, are now able to use new APIs to associate the same <code>GetCredentialRequest</code> with a given view, such as a username or a password field.</p>\n<p>Subsequently, when the user focuses on one of these views, the corresponding request will be sent to Credential Manager. The resulting credentials are aggregated across providers and displayed in autofill like secondary UIs, such as keyboard or dropdown suggestions. As such when all APIs are used together, the user is first presented with a selector, and if dismissed and taps on one of the fields mentioned above, is then presented with keyboard/dropdown suggestions.</p>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>A <code>PendingGetCredentialRequest</code> class that takes in a (pre-existing) <code>GetCredentialRequest</code>, and a callback to be invoked with a (pre-existing) <code>GetCredentialResponse</code>, when available asynchronously.</li>\n <li>New extension setter API for the android View class, that allows setting an instance of <code>PendingGetCredentialRequest</code>. Usage of this API will prepare the given view, such that when the user taps on it, credential suggestions will show up on secondary UI experiences like keyboard/dropdown suggestions.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "credentials",
+      "name": "Credentials",
+      "version": "1.3.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/credentials#1.3.0-beta01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Rename the <code>reateCredentialRequest</code> Bundle conversion API. (<a href=\"https://android-review.googlesource.com/#/q/I46b956754cd004befb8a3d34584ae3e5b774c419\">I46b95</a>)</li>\n <li>Update the priorityhints API (<a href=\"https://android-review.googlesource.com/#/q/Ida55401340bf127d664d81e322cea40964cabdc9\">Ida554</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6a69101fd0edc8d02aa316df1f43e0552fd2d7c4..473554f275109d78164adca6b6cea539aed8b68b/credentials"
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.8.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.8.0-rc01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>The <code>onBackStackChangeCancelled</code> callback on the <code>FragmentManagers OnBackStackChangedListener</code> interface now fires as part of executing operations in <code>FragmentManager</code>, moving it closer in line with the timing of the <code>onBackStackChangeCommitted</code> callback. (<a href=\"https://android-review.googlesource.com/#/q/I5ebfb12840173c4e239ff239856c2a05464648f5\">I5ebfb</a>, <a href=\"https://issuetracker.google.com/issues/332916112\">b/332916112</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6a69101fd0edc8d02aa316df1f43e0552fd2d7c4..b9b27a2972eeb4612cbea0f230f514ffb142a5ee/fragment"
+    },
+    {
+      "id": "graphics-core",
+      "name": "Graphics-Core",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/graphics#graphics-core-1.0.0",
+      "detailsHtml": "<p><strong>Major features of 1.0.0</strong></p>\n<ul>\n <li>Official stable release of the graphics-core library. Includes minor bug fixes and performance improvements from 1.0.0-rc01</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/fc8da84ada72223ae5bca7d13fccc8c9c9242f19..df2afa3c4e8c0c1cf2095ea9057dd59df17de4ca/graphics/graphics-core"
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.8.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.8.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>lifecycle-viewmodel-compose</code> now only has a common dependency on <code>compose-runtime</code>, removing its common dependency on <code>compose-ui</code>. The Android artifact retains its <code>compose-ui</code> for compatibility. (<a href=\"https://android-review.googlesource.com/3079334\">aosp/3079334</a>, <a href=\"https://issuetracker.google.com/339562627\">b/339562627</a>)</li>\n <li><code>ViewModel</code>’s <code>saveable</code> integration using property delegates now uses the class name as part of the auto-generated key, avoiding conflicts if multiple classes use the same <code>SavedStateHandle</code>. (<a href=\"https://android-review.googlesource.com/3063463\">aosp/3063463</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7ad6b8bbf8fa3d5a3c97feca6c52a1a2bf98a622..b390c8d82bf426c9fb727016dc2423891ecd1735/lifecycle"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.8.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.8.0-beta02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed <code>ClassCastException</code> crash when using <code>NavBackStackEntry.toRoute</code> with a nullable custom <code>NavType</code>. (<a href=\"https://android-review.googlesource.com/#/q/I1c29be47a230c2c991aa24924c57b6a3f97ecd5d\">I1c29b</a>, <a href=\"https://issuetracker.google.com/issues/342239473\">b/342239473</a>)</li>\n <li>Fixed Navigation back stack state restoration issues caused when attempting to restore a back stack entry that is not reachable via id from the current destination. Since routes are backed by ids, destinations built with routes were also affected. This also fixes a crash caused by calling <code>clearBackStack()</code> that had the same underlying issue. (<a href=\"https://android-review.googlesource.com/#/q/I423c3f6d8ee27be46450dcb53c28272fe0a1e085\">I423c3</a>, <a href=\"https://issuetracker.google.com/issues/339908057\">b/339908057</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6a69101fd0edc8d02aa316df1f43e0552fd2d7c4..473554f275109d78164adca6b6cea539aed8b68b/navigation"
+    },
+    {
+      "id": "room",
+      "name": "Room",
+      "version": "2.7.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.7.0-alpha03",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix various issues regarding Kotlin 2.0 and KSP 2.0. Note that Kotlin 2.0 with KSP 2 support is not complete and the team is working on the various APIs and behavior changes in the new compiler. (<a href=\"https://issuetracker.google.com/issues/314151707\">b/314151707</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6a69101fd0edc8d02aa316df1f43e0552fd2d7c4..473554f275109d78164adca6b6cea539aed8b68b/room"
+    },
+    {
+      "id": "sqlite",
+      "name": "Sqlite",
+      "version": "2.5.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/sqlite#2.5.0-alpha03",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix an issue with the <code>BundledSQLiteDriver</code> where databases created with it would contain the C null terminator character. (<a href=\"https://issuetracker.google.com/issues/314151707\">b/340822359</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6a69101fd0edc8d02aa316df1f43e0552fd2d7c4..473554f275109d78164adca6b6cea539aed8b68b/sqlite"
+    },
+    {
+      "id": "wear-core",
+      "name": "Wear-Core",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#wear-core-1.0.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added a new class <code>WearApiVersionhelper</code> to assist with runtime API compatibility checking on Wear. Clients can use this static helper class and the provided method (<code>#isApiVersionAtLeast(VERSION)</code>) to check compatibility.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "wear-compose",
+      "name": "Wear Compose",
+      "version": "1.4.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-compose#1.4.0-beta02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>We have increased the boundary width passed to screen readers from curved text in order to address issues with truncation (<a href=\"https://android-review.googlesource.com/#/q/Id865f2951c33a8b69017c88d0654e9c7315d775d\">Id865f</a>).</li>\n <li>We have constrained the boundary of the <code>HorizontalPageIndicator</code> that was passed to screen readers - previously the indicator occupied the full screen (<a href=\"https://android-review.googlesource.com/#/q/Id8d7a619e4daed577929e94a3aa2b46e4ac977d9\">Id8d7a</a>).</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6a69101fd0edc8d02aa316df1f43e0552fd2d7c4..fe555cd2859b125be61b919d63c255741025e9d1/wear/compose"
+    },
+    {
+      "id": "wear-protolayout",
+      "name": "Wear ProtoLayout",
+      "version": "1.2.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-protolayout#1.2.0-alpha04",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Added asymmetrical corners API to be able to specify separately each corner’s radius with 2 values. (<a href=\"https://android-review.googlesource.com/#/q/Icbd699ec4aad1c81ab31d854ba91867ea7c3e9d1\">Icbd69</a>)</li>\n <li>Extended the <code>FontSetting</code> API to include:\n  <ul>\n   <li>font feature setting such as setting the font to be tabular. (<a href=\"https://android-review.googlesource.com/#/q/If12b7cbdce9a8db38308408ccc3a28d2d25d2a8e\">If12b7</a>)</li>\n   <li>font variation setting such as setting custom width for variable fonts. (<a href=\"https://android-review.googlesource.com/#/q/I2b36d8876971c16376a7ab24fc022cfd039bf32c\">I2b36d</a>)</li>\n  </ul></li>\n <li>Added font family API to <code>FontStyle</code> to allow specifying an order list of which font families should be used. (<a href=\"https://android-review.googlesource.com/#/q/Iba9f5cb44a178ccf9748a05b39b192b6d4653b6d\">Iba9f5</a>)</li>\n <li>Renamed constants for space height between content and secondary label in Material’s <code>LayoutDefaults</code> that were initially prefixed with “Edge content” to be more generic as they can be applied to both <code>PrimaryLayout</code> and <code>EdgeContentLayout</code>. (<a href=\"https://android-review.googlesource.com/#/q/I4dc32916f927888e0e2f10144ea84b14f11b26c1\">I4dc32</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Renamed naming for variable font axes from <code>axisName</code> to <code>axisTag</code>. (<a href=\"https://android-review.googlesource.com/#/q/I02ba3d37e99a048ddbba9134d8957765bc633082\">I02ba3</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6a69101fd0edc8d02aa316df1f43e0552fd2d7c4..473554f275109d78164adca6b6cea539aed8b68b/wear/protolayout"
+    },
+    {
+      "id": "wear-tiles",
+      "name": "Wear Tiles",
+      "version": "1.4.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-tiles#1.4.0-alpha04",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/6a69101fd0edc8d02aa316df1f43e0552fd2d7c4..473554f275109d78164adca6b6cea539aed8b68b/wear/tiles"
+    },
+    {
+      "id": "window",
+      "name": "Window",
+      "version": "1.3.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/window#1.3.0",
+      "detailsHtml": "<p><strong>Important changes since 1.2.0</strong></p>\n<ul>\n <li>Kotlin Multiplatform support for Window Size Classes.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/0ef82c0673456addf3c611f9081d4d8cbbcf1c62..c50bbb6627cd345df69ae3c3e7f4a133dec7fe48/window"
+    }
+  ]
+}
