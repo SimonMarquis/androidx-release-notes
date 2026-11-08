@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#october_15_2024",
+  "title": "October 15, 2024",
+  "releasedOn": "2024-10-15",
+  "updated": "2024-10-15T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#october_15_2024",
+  "components": [
+    {
+      "id": "test-orchestrator",
+      "name": "Test Orchestrator",
+      "version": "1.5.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#orchestrator-1.5.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix execution of test names containing whitespace</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}
