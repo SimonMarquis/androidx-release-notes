@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>May 3, 2023 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for May 3, 2023: Benchmark 1.2.0-alpha14, Browser 1.6.0-alpha01, Compose Animation 1.4.3, Compose Compiler 1.4.7, and more.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2023-05-03.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="may-3-2023">
+            <div class="date-divider"><a href="./#may-3-2023" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">May 3, 2023</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="alpha" data-search="benchmark 1.2.0-alpha14 2023-05-03 may 3, 2023" id="may-3-2023-benchmark-1-2-0-alpha14">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/benchmark">Benchmark</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/a200cb82769634cecdb118ec4f0bfdf0b086e597..6f3ac2bd197d5e61ab2708125b57d6ae4003ad68/benchmark" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/benchmark#1.2.0-alpha14" class="badge alpha">1.2.0-alpha14</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fix <code>FrameTimingMetric</code> ignoring frames with inconsistent frame IDs. This would cause some animations on recent platform versions (API 31+) to ignore many frames while <code>RenderThread</code> was animating (e.g. during a ripple). <a href="https://android-review.googlesource.com/#/q/I747d23e6f5f38eda2c51ee3d26929fa4130e297c" title="I747d2" class="ref ref-gerrit">I747d2</a> <a href="https://issuetracker.google.com/issues/279088460" title="b/279088460" class="ref ref-issue">b/279088460</a></li><li>Fixed trace processor parsing for traces larger than 64Mb. <a href="https://android-review.googlesource.com/#/q/Ief831b2c58ebfeac3ae5cb2bfcb8623b920ad356" title="Ief831" class="ref ref-gerrit">Ief831</a> <a href="https://issuetracker.google.com/issues/269949822" title="b/269949822" class="ref ref-issue">b/269949822</a></li><li>Fixed baseline profile generation on Android U failing because of the different output of <code>pm dump-profiles</code> command. <a href="https://android-review.googlesource.com/#/q/Id1392207ec545dc4b095c4b435a92bb2a1ff0c66" title="Id1392" class="ref ref-gerrit">Id1392</a> <a href="https://issuetracker.google.com/issues/277645214" title="b/277645214" class="ref ref-issue">b/277645214</a></li><li>Fix GPU clock locking script to compare strings correctly <a href="https://android-review.googlesource.com/#/q/I53e5416ca2b24933a3d6d43db678dad035132dd2" title="I53e54" class="ref ref-gerrit">I53e54</a> <a href="https://issuetracker.google.com/issues/213935715" title="b/213935715" class="ref ref-issue">b/213935715</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="browser 1.6.0-alpha01 2023-05-03 may 3, 2023" id="may-3-2023-browser-1-6-0-alpha01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/browser">Browser</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/aaba505f4fbf7aa68c09dc54b739d051a7e6b30d..6f3ac2bd197d5e61ab2708125b57d6ae4003ad68/browser/browser" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/browser#1.6.0-alpha01" class="badge alpha">1.6.0-alpha01</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>Added Engagement Signals API, which allows developers to receive callbacks for user interactions on the web page such as scrolls. <a href="https://android-review.googlesource.com/#/q/I835e60827e8f409c8ba490d7a05c1b2b347635a5" title="I835e6" class="ref ref-gerrit">I835e6</a></li></ul><p><strong>API Changes</strong></p><ul><li>Updated Engagement Signals API to simplify the API surface on the Custom Tabs implementation side. <a href="https://android-review.googlesource.com/#/q/Iaa6dcac86483556f0594a9a8254082e4c67c2da0" title="Iaa6dc" class="ref ref-gerrit">Iaa6dc</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="compose animation 1.4.3 2023-05-03 may 3, 2023" id="may-3-2023-compose-animation-1-4-3">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-animation">Compose Animation</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/compose-animation#1.4.3" class="badge stable">1.4.3</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="compose compiler 1.4.7 2023-05-03 may 3, 2023" id="may-3-2023-compose-compiler-1-4-7">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-compiler">Compose Compiler</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/08777402b2ebfe081ca6468dd4c394377f43402e..2fe7d40c0deea40f58e95e1e709fc55c5d5ad477/compose/compiler" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.4.7" class="badge stable">1.4.7</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>Support for Kotlin 1.8.21</li><li>Added primitive versions of the <code>State</code> API, allowing Int, Long, Float, and Double values to be tracked in <code>State</code> objects without incurring penalties for autoboxing.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="compose foundation 1.4.3 2023-05-03 may 3, 2023" id="may-3-2023-compose-foundation-1-4-3">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-foundation">Compose Foundation</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.4.3" class="badge stable">1.4.3</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="compose material 1.4.3 2023-05-03 may 3, 2023" id="may-3-2023-compose-material-1-4-3">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-material">Compose Material</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/compose-material#1.4.3" class="badge stable">1.4.3</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="compose runtime 1.4.3 2023-05-03 may 3, 2023" id="may-3-2023-compose-runtime-1-4-3">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-runtime">Compose Runtime</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.4.3" class="badge stable">1.4.3</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="compose ui 1.4.3 2023-05-03 may 3, 2023" id="may-3-2023-compose-ui-1-4-3">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-ui">Compose UI</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/eaef265d47319c6bebd094eb8cbfce92dd790277..d83e1a7d6afe597aed6e48be005010c7a26486dd/compose/ui" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-ui#1.4.3" class="badge stable">1.4.3</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixed an issue where <code>AndroidView</code> may not be laid out correctly when used with certain Modifiers. <a href="https://android-review.googlesource.com/q/I4dc771beb990020ea91d6fbf83de71145a4b6382" title="I4dc77" class="ref ref-gerrit">I4dc77</a> <a href="https://issuetracker.google.com/issues/274797771" title="b/274797771" class="ref ref-issue">b/274797771</a></li><li>Fixed a bug in 2D Focus Search that affected <code>DropDown</code> Menus <a href="https://issuetracker.google.com/issues/276811828" title="b/276811828" class="ref ref-issue">b/276811828</a></li><li>Fixed a bug in custom focus enter/exit properties that only ran the enter/exit block the first time the lambda was invoked <a href="https://issuetracker.google.com/issues/277234245" title="b/277234245" class="ref ref-issue">b/277234245</a></li><li>Fixed a regression in the focus system that caused a crash while reading <code>focusProperties</code>. <a href="https://issuetracker.google.com/issues/271324781" title="b/271324781" class="ref ref-issue">b/271324781</a> <a href="https://issuetracker.google.com/issues/274897776" title="b/274897776" class="ref ref-issue">b/274897776</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="credentials 1.0.0-alpha08 2023-05-03 may 3, 2023" id="may-3-2023-credentials-1-0-0-alpha08">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/credentials">Credentials</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/07707e9f27eff2cebbd758a493ed2f38f9cf4739..6f3ac2bd197d5e61ab2708125b57d6ae4003ad68/credentials" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/credentials#1.0.0-alpha08" class="badge alpha">1.0.0-alpha08</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Improved debug output readability and error messages.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="mediarouter 1.4.0 2023-05-03 may 3, 2023" id="may-3-2023-mediarouter-1-4-0">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/mediarouter">Mediarouter</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/3b4796d8003385f8c36719805a80f658abd99c2f..0bdaed7dcede1e26861f5e60c08633ca79fa42cf/mediarouter" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/mediarouter#1.4.0" class="badge stable">1.4.0</a></div>
+              </div>
+              <div class="notes"><p><strong>Important changes since 1.3.1</strong></p><ul><li>Add <code>SystemOutputSwitcherDialogController#showDialog</code> to show the system’s output switcher dialog, or the Bluetooth Settings Fragment on Wear devices where the system output switcher is not available. <a href="https://android-review.googlesource.com/#/q/Ic3d7874263d6bb1fbdbc01ff265642f984711e98" title="Ic3d78" class="ref ref-gerrit">Ic3d78</a></li><li>Fix regression causing application crashes due <code>IllegalArgumentException</code> in <code>MediaRouterProvider.notifyDynamicRoutesChanged</code> <a href="https://android.googlesource.com/platform/frameworks/support/+/7d17ea43394f687d40c5d64830eb4544ef9e2590" title="7d17ea" class="ref ref-gerrit">7d17ea</a>.</li><li>Add <code>MediaRouteDescriptor.Builder.clearControlFilters</code> <a href="https://android-review.googlesource.com/#/q/I3a4e1dde46dced116d574991abe9be5e7134db3f" title="I3a4e1" class="ref ref-gerrit">I3a4e1</a></li><li>Add missing <code>MainThread</code> annotations in <code>MediaRouter</code>. <a href="https://android-review.googlesource.com/#/q/I3ef6ea1113fcd88b33900f790e0f1979901d4cd7" title="I3ef6e" class="ref ref-gerrit">I3ef6e</a></li><li>Add broadcast receiver export flags on API 33+ <a href="https://android.googlesource.com/platform/frameworks/support/+/b2a66336c9a9e18f70cde28d2b91cafd18d00837%5E%21/#F7" title="b2a663" class="ref ref-gerrit">b2a663</a>.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="paging 3.2.0-alpha05 2023-05-03 may 3, 2023" id="may-3-2023-paging-3-2-0-alpha05">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/paging">Paging</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/7d3ac1ab1206c01fae3ebb500b5b942636070155..6f3ac2bd197d5e61ab2708125b57d6ae4003ad68/paging" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/paging#3.2.0-alpha05" class="badge alpha">3.2.0-alpha05</a></div>
+              </div>
+              <div class="notes"><p><strong>API Changes</strong></p><ul><li>The Paging Testing API of <code>asSnapshot</code> now defaults its <code>loadOperations</code> parameter to an empty lambda. This allows calling <code>asSnapshot</code> without passing in any load operations to retrieve the data from the initial refresh load. <a href="https://android-review.googlesource.com/#/q/Ied354f58b94c8303eb9914dc5ca784d1313ddc04" title="Ied354" class="ref ref-gerrit">Ied354</a> <a href="https://issuetracker.google.com/issues/277233770" title="b/277233770" class="ref ref-issue">b/277233770</a></li></ul><p><strong>Documentation Improvements</strong></p><ul><li>Updated the documentation on <code>asPagingSourceFactory()</code> to clarify that it is an extension method on a <code>Flow</code> which returns a reusable factory for generating <code>PagingSource</code> instances. <a href="https://android-review.googlesource.com/#/q/I5ff4f23644c737e86deab84fb9bcce7668239c7f" title="I5ff4f" class="ref ref-gerrit">I5ff4f</a> <a href="https://android-review.googlesource.com/q/I705b5ab25c0dee98d90fe8d28248e66d67ebcb40" title="I705b5" class="ref ref-gerrit">I705b5</a></li><li>Updated the documentation on the <code>LoadResult.Page</code>constructor to clarify the need to override <code>itemsBefore</code> and <code>itemsAfter</code> to support jumping. <a href="https://android-review.googlesource.com/#/q/I367334e2570bfaba2f43adcdf00543559fa3b37f" title="Ied354" class="ref ref-gerrit">Ied354</a></li></ul><p><strong>External Contributions</strong></p><ul><li>Thanks <a href="https://github.com/veyndan">Veyndan</a> for contributing to moving Paging away from Android/JVM specifics. <a href="https://github.com/androidx/androidx/pull/525" title="#525" class="ref ref-github">#525</a> <a href="https://github.com/androidx/androidx/pull/523" title="#523" class="ref ref-github">#523</a> <a href="https://github.com/androidx/androidx/pull/520" title="#520" class="ref ref-github">#520</a> <a href="https://github.com/androidx/androidx/pull/519" title="#519" class="ref ref-github">#519</a> <a href="https://github.com/androidx/androidx/pull/507" title="#507" class="ref ref-github">#507</a> <a href="https://github.com/androidx/androidx/pull/506" title="#506" class="ref ref-github">#506</a> <a href="https://github.com/androidx/androidx/pull/505" title="#505" class="ref ref-github">#505</a> <a href="https://github.com/androidx/androidx/pull/499" title="#499" class="ref ref-github">#499</a> <a href="https://github.com/androidx/androidx/pull/497" title="#497" class="ref ref-github">#497</a> <a href="https://github.com/androidx/androidx/pull/496" title="#496" class="ref ref-github">#496</a> <a href="https://github.com/androidx/androidx/pull/493" title="#493" class="ref ref-github">#493</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="paging compose 1.0.0-alpha19 2023-05-03 may 3, 2023" id="may-3-2023-paging-compose-1-0-0-alpha19">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/paging">Paging Compose</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/7d3ac1ab1206c01fae3ebb500b5b942636070155..6f3ac2bd197d5e61ab2708125b57d6ae4003ad68/paging/paging-compose" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/paging#1.0.0-alpha19" class="badge alpha">1.0.0-alpha19</a></div>
+              </div>
+              <div class="notes"><p><strong>Supporting all lazy layouts</strong></p><p>Previously, Paging Compose provided custom <code>items</code> and <code>itemsIndexed</code> extensions on <code>LazyListScope</code>, which meant that you could not use Paging Compose with other lazy layouts like <code>LazyVerticalGrid</code>, <code>HorizontalPager</code>, or other custom lazy components provided by the Wear and TV libraries. Addressing this inflexibility is the primary update for this release.</p><p>To support more lazy layouts, we needed to build out APIs at a different layer - rather than providing a custom <code>items</code> API for each lazy layout, Paging Compose now provides slightly lower level extension methods on <code>LazyPagingItems</code> in <code>itemKey</code> and <code>itemContentType</code>. These APIs focus on helping you implement the <code>key</code> and <code>contentType</code> parameters to the standard <code>items</code> APIs that already exist for <code>LazyColumn</code>, <code>LazyVerticalGrid</code> as well as their equivalents in APIs like <code>HorizontalPager</code>. <a href="https://android-review.googlesource.com/q/Ifa13b3d764203422645cac8bfc3d09278d508874" title="Ifa13b" class="ref ref-gerrit">Ifa13b</a> <a href="https://android-review.googlesource.com/q/Ib04f099111605af368c5b025d84a085ab4251fb6" title="Ib04f0" class="ref ref-gerrit">Ib04f0</a> <a href="https://issuetracker.google.com/issues/259385813" title="b/259385813" class="ref ref-issue">b/259385813</a></p><p>This means that supporting a <code>LazyVerticalGrid</code> would look like:</p><div></div><pre><code><span>// This part is unchanged</span>
+<span>val</span><span> </span><span>lazyPagingItems</span><span> </span><span>=</span><span> </span><span>pager</span><span>.</span><span>collectAsLazyPagingItems</span><span>()</span>
+
+<span>LazyVerticalGrid</span><span>(</span><span>columns</span><span> </span><span>=</span><span> </span><span>GridCells</span><span>.</span><span>Fixed</span><span>(</span><span>2</span><span>))</span><span> </span><span>{</span>
+<span>  </span><span>// Here we use the standard items API</span>
+<span>  </span><span>items</span><span>(</span>
+<span>    </span><span>count</span><span> </span><span>=</span><span> </span><span>lazyPagingItems</span><span>.</span><span>itemCount</span><span>,</span>
+<span>    </span><span>// Here we use the new itemKey extension on LazyPagingItems to</span>
+<span>    </span><span>// handle placeholders automatically, ensuring you only need to provide</span>
+<span>    </span><span>// keys for real items</span>
+<span>    </span><span>key</span><span> </span><span>=</span><span> </span><span>lazyPagingItems</span><span>.</span><span>itemKey</span><span> </span><span>{</span><span> </span><span>it</span><span>.</span><span>uniqueId</span><span> </span><span>},</span>
+<span>    </span><span>// Similarly, itemContentType lets you set a custom content type for each item</span>
+<span>    </span><span>contentType</span><span> </span><span>=</span><span> </span><span>lazyPagingItems</span><span>.</span><span>itemContentType</span><span> </span><span>{</span><span> </span><span>"contentType"</span><span> </span><span>}</span>
+<span>  </span><span>)</span><span> </span><span>{</span><span> </span><span>index</span><span> </span><span>-</span>&gt;
+<span>    </span><span>// As the standard items call provides only the index, we get the item</span>
+<span>    </span><span>// directly from our lazyPagingItems</span>
+<span>    </span><span>val</span><span> </span><span>item</span><span> </span><span>=</span><span> </span><span>lazyPagingItems</span><span>[</span><span>index</span><span>]</span>
+<span>    </span><span>PagingItem</span><span>(</span><span>item</span><span> </span><span>=</span><span> </span><span>item</span><span>)</span>
+<span>  </span><span>}</span>
+<span>}</span>
+</code></pre><p>For more examples of using these new APIs, please see <a href="https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:paging/paging-compose/samples/src/main/java/androidx/paging/compose/samples/PagingFoundationSample.kt?q=PagingFoundationSample">our samples</a>.</p><p>While these changes do make the <code>LazyColumn</code> and <code>LazyRow</code> examples a few lines longer, we felt that consistency across all lazy layouts was an important factor for those using Paging Compose going forward. For that reason, the existing extensions to <code>LazyListScope</code> have now been deprecated. <a href="https://android-review.googlesource.com/#/q/I0c45926ecf7fbaa7b68fba7bb1201cdf6f13105d" title="I0c459" class="ref ref-gerrit">I0c459</a> <a href="https://android-review.googlesource.com/#/q/I92c8ffc330fd98f9fb31fe14db2da7a3f7a3b547" title="I92c8f" class="ref ref-gerrit">I92c8f</a> <a href="https://issuetracker.google.com/issues/276989796" title="b/276989796" class="ref ref-issue">b/276989796</a></p>
+<strong>Note:</strong><span> while the deprecated <code>items</code> API has a clear equivalent, the quick fix for <code>itemsIndexed</code> may still leave your code in a state where it does not compile immediately as generating keys and content types based on indices is no longer possible or recommended as this pattern is susceptible to errors when item indices shift due to prepends (i.e., item 0 actually becomes item 20 due to prepending 20 additional items). It is always recommended to use <code>items</code> when using Paging Compose.</span> 
+<p><strong>API Changes</strong></p><ul><li>To ease the migration to the new APIs, the <code>items</code> and <code>itemsIndexed</code> extension functions on <code>LazyListScope</code> now support a <code>contentType</code> parameter, mirroring the support in the new APIs. <a href="https://android-review.googlesource.com/#/q/Ib19181ac9cfd734c940c015a605c03440bbdfda6" title="Ib1918" class="ref ref-gerrit">Ib1918</a> <a href="https://issuetracker.google.com/issues/255283378" title="b/255283378" class="ref ref-issue">b/255283378</a></li></ul><p><strong>Dependency Updates</strong></p><ul><li>Paging Compose has updated its dependency from Compose 1.0.5 to Compose 1.2.1. <a href="https://android-review.googlesource.com/#/q/Ib19181ac9cfd734c940c015a605c03440bbdfda6" title="Ib1918" class="ref ref-gerrit">Ib1918</a> <a href="https://issuetracker.google.com/issues/255283378" title="b/255283378" class="ref ref-issue">b/255283378</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="profileinstaller 1.3.1 2023-05-03 may 3, 2023" id="may-3-2023-profileinstaller-1-3-1">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/profileinstaller">ProfileInstaller</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/96686b86417177a6743d87bead947ab48e8a5b7a..3305e24b86112613150e9999ff18ea462a5ab76b/profileinstaller/profileinstaller" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/profileinstaller#1.3.1" class="badge stable">1.3.1</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Enabled support for Android U in profile installer <a href="https://android-review.googlesource.com/#/q/Iaf1779eb2abdd0030804240e505c68b8c39506f9" title="Iaf177" class="ref ref-gerrit">Iaf177</a></li><li>Fixed profile installer on Android U failing due to current profile not created empty when process starts. <a href="https://android-review.googlesource.com/#/q/Ie3899ddf7fd38be4d91fb0281ea4ead9f9f8288e" title="Ie3899" class="ref ref-gerrit">Ie3899</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="tracing 1.2.0-beta04 2023-05-03 may 3, 2023" id="may-3-2023-tracing-1-2-0-beta04">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/tracing">Tracing</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/a200cb82769634cecdb118ec4f0bfdf0b086e597..6f3ac2bd197d5e61ab2708125b57d6ae4003ad68/tracing" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/tracing#1.2.0-beta04" class="badge beta">1.2.0-beta04</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="tracing perfetto 1.0.0-alpha15 2023-05-03 may 3, 2023" id="may-3-2023-tracing-perfetto-1-0-0-alpha15">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/tracing">Tracing Perfetto</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/a200cb82769634cecdb118ec4f0bfdf0b086e597..6f3ac2bd197d5e61ab2708125b57d6ae4003ad68/tracing" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/tracing#perfetto-1.0.0-alpha15" class="badge alpha">1.0.0-alpha15</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="window extensions core 1.0.0-beta03 2023-05-03 may 3, 2023" id="may-3-2023-window-extensions-core-1-0-0-beta03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/window-extensions-core">Window Extensions Core</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/a200cb82769634cecdb118ec4f0bfdf0b086e597..5d4c9b3ab577ea883637e38bbd1fc3ca9b08f2fa/window/extensions/core/core" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/window-extensions-core#1.0.0-beta03" class="badge beta">1.0.0-beta03</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><p>Reinstate <code>extensions.core</code> interfaces. These are an implementation detail used, please use the <code>androidx.core</code> APIs instead.</p><p><strong>Bug Fixes</strong></p><ul><li>Make core interfaces public so it can be used in extensions. <a href="https://android-review.googlesource.com/#/q/I450527ca1ed9cb8bcd27289d681f441b0074f012" title="I45052" class="ref ref-gerrit">I45052</a></li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
