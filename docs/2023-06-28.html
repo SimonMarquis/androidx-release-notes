@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>June 28, 2023 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for June 28, 2023: Compose Animation 1.5.0-beta03, Compose Compiler 1.4.8, Compose Foundation 1.5.0-beta03, and more.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2023-06-28.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="june-28-2023">
+            <div class="date-divider"><a href="./#june-28-2023" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">June 28, 2023</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="beta" data-search="compose animation 1.5.0-beta03 2023-06-28 june 28, 2023" id="june-28-2023-compose-animation-1-5-0-beta03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-animation">Compose Animation</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/9eb2d144f9209cb9c4205ad1f981eb7ddf29b96e..24dc7b0781cb908b2385ec207ca1b3a72cb90093/compose/animation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-animation#1.5.0-beta03" class="badge beta">1.5.0-beta03</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="compose compiler 1.4.8 2023-06-28 june 28, 2023" id="june-28-2023-compose-compiler-1-4-8">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-compiler">Compose Compiler</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/2fe7d40c0deea40f58e95e1e709fc55c5d5ad477..a0c8102678bd6a0e2f5cf2df3d220b4fe85cba5e/compose/compiler" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.4.8" class="badge stable">1.4.8</a></div>
+              </div>
+              <div class="notes"><p><strong>New Features</strong></p><ul><li>Target Kotlin compiler version is bumped to 1.8.22.</li></ul><p><strong>Bug Fixes</strong></p><ul><li>Improved error message for <code>@Composable</code> overrides. Now it correctly points out annotation mismatch.</li><li>Warn about redundant <code>@Composable</code> annotation on inline lambdas that should not be marked as composable. This feature will not be supported with K2 compiler.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="compose foundation 1.5.0-beta03 2023-06-28 june 28, 2023" id="june-28-2023-compose-foundation-1-5-0-beta03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-foundation">Compose Foundation</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/9eb2d144f9209cb9c4205ad1f981eb7ddf29b96e..24dc7b0781cb908b2385ec207ca1b3a72cb90093/compose/foundation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.5.0-beta03" class="badge beta">1.5.0-beta03</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="compose material 1.5.0-beta03 2023-06-28 june 28, 2023" id="june-28-2023-compose-material-1-5-0-beta03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-material">Compose Material</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/9eb2d144f9209cb9c4205ad1f981eb7ddf29b96e..24dc7b0781cb908b2385ec207ca1b3a72cb90093/compose/material" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-material#1.5.0-beta03" class="badge beta">1.5.0-beta03</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li><code>BottomSheetState</code>, <code>ModalBottomSheetState</code> and <code>BottomDrawerState</code> now expose a progress property indicating the progress between the current (settled) anchor and the closest anchor in the swipe direction. <a href="https://android-review.googlesource.com/#/q/I1b31727b4f56df890e336bea9f4de526733aaacc" title="I1b317" class="ref ref-gerrit">I1b317</a> <a href="https://issuetracker.google.com/issues/271169225" title="b/271169225" class="ref ref-issue">b/271169225</a> <a href="https://issuetracker.google.com/issues/276375124" title="b/276375124" class="ref ref-issue">b/276375124</a> <a href="https://issuetracker.google.com/issues/276776071" title="b/276776071" class="ref ref-issue">b/276776071</a> <a href="https://issuetracker.google.com/issues/270066861" title="b/270066861" class="ref ref-issue">b/270066861</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="compose runtime 1.5.0-beta03 2023-06-28 june 28, 2023" id="june-28-2023-compose-runtime-1-5-0-beta03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-runtime">Compose Runtime</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/9eb2d144f9209cb9c4205ad1f981eb7ddf29b96e..24dc7b0781cb908b2385ec207ca1b3a72cb90093/compose/runtime" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.5.0-beta03" class="badge beta">1.5.0-beta03</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Skip recomposition of subcompositions that will be removed. <a href="https://android-review.googlesource.com/#/q/Ieeb9919897a9f9b4274ddc77e66608a673cd1112" title="Ieeb99" class="ref ref-gerrit">Ieeb99</a> <a href="https://issuetracker.google.com/issues/254645321" title="b/254645321" class="ref ref-issue">b/254645321</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="compose ui 1.5.0-beta03 2023-06-28 june 28, 2023" id="june-28-2023-compose-ui-1-5-0-beta03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-ui">Compose UI</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/9eb2d144f9209cb9c4205ad1f981eb7ddf29b96e..24dc7b0781cb908b2385ec207ca1b3a72cb90093/compose/ui" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-ui#1.5.0-beta03" class="badge beta">1.5.0-beta03</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Added FocusTargetModifierNode interface that can be used to create a custom FocusTarget. <a href="https://android-review.googlesource.com/#/q/Ifb1d6a93af9292ec159b72513cb3f40b62c643e0" title="Ifb1d6" class="ref ref-gerrit">Ifb1d6</a></li><li>Fixed an issue with Dialog and Popup composables that could result in the child window not resizing as expected when <code>usePlatformDefaultWidth=true</code>. <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/2616362" title="I112ee" class="ref ref-gerrit">I112ee</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="navigation 2.7.0-beta02 2023-06-28 june 28, 2023" id="june-28-2023-navigation-2-7-0-beta02">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/navigation">Navigation</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/navigation#2.7.0-beta02" class="badge beta">2.7.0-beta02</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Navigation Compose now has the right z-order for custom transitions that use navigate with the <code>popUpTo</code> option.<a href="https://android-review.googlesource.com/#/q/Ib1c3a329755b2cbec3d28568d03d73e5aa9b9128" title="/Ib1c3a" class="ref ref-gerrit">/Ib1c3a</a> <a href="https://issuetracker.google.com/285153947" title="b/285153947" class="ref ref-issue">b/285153947</a></li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
