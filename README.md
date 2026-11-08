@@ -22,8 +22,8 @@ Browse AndroidX release notes across libraries and dates in one place.
 
 ## Implementation
 
-A single Kotlin script, `scripts/androidx-release-notes.main.kts`, imports official release notes into a JSON cache in `data/`.  
-The site in `docs/` and the [GitHub releases](https://github.com/SimonMarquis/androidx-release-notes/releases) are built only from that cache.
+A single Kotlin script, [`androidx-release-notes.main.kts`](scripts/androidx-release-notes.main.kts), imports official release notes into a JSON cache in [`data`](data/).  
+The site in [`docs`](docs/) and the [GitHub releases](https://github.com/SimonMarquis/androidx-release-notes/releases) are built only from that cache.
 
 ### Sources
 
@@ -55,4 +55,4 @@ Run `./scripts/androidx-release-notes.main.kts <command>` from the repository ro
 - [![🏗️ CI](https://github.com/SimonMarquis/androidx-release-notes/actions/workflows/ci.yml/badge.svg)](https://github.com/SimonMarquis/androidx-release-notes/actions/workflows/ci.yml) builds self-contained preview pages and screenshots on PRs.
 
 Workflows push as a GitHub App (`APP_CLIENT_ID`, `APP_PRIVATE_KEY` secrets).  
-GitHub Pages serves `docs/` from `main`.
+GitHub Pages serves [`docs`](docs/) from `main`.
