@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#may_4_2023",
+  "title": "May 4, 2023",
+  "releasedOn": "2023-05-04",
+  "updated": "2023-05-04T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#may_4_2023",
+  "components": [
+    {
+      "id": "espresso-device",
+      "name": "Espresso Device",
+      "version": "1.0.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#espresso-device-1.0.0-alpha05",
+      "detailsHtml": "<p>The following artifacts were released:</p>\n<ul>\n <li><code>androidx.test.espresso:espresso-device:1.0.0-alpha05</code></li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Add experimental APIs for rotating and folding emulators</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}
