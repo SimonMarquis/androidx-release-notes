@@ -25,6 +25,264 @@
     <main class="page-content">
       <div class="content-inner">
         <div class="release-groups">
+          <section class="date-group" id="april-30-2019">
+            <div class="date-divider">
+              <div class="date-stepper" role="group" aria-label="Navigate release dates"><button type="button" class="date-step" data-date-step="previous" aria-label="Previous date (newer)" title="Previous date (newer) · P" aria-keyshortcuts="P"></button><button type="button" class="date-step" data-date-step="next" aria-label="Next date (older)" title="Next date (older) · N" aria-keyshortcuts="N"></button></div>
+              <h2 class="date-title"><a href="2019-04-30.html" class="date-link" target="_self">April 30, 2019</a></h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="alpha" data-search="test 1.2.0-alpha05 2019-04-30 april 30, 2019" id="april-30-2019-test-1-2-0-alpha05">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#1.2.0-alpha05" class="badge alpha">1.2.0-alpha05</a></div>
+              </div>
+              <div class="notes"><p>This is an alpha release of AndroidX Test 1.2.0. New APIs are subject to change. It contains updates to the following libraries:</p><ul><li>Core 1.2.0-alpha05
+  <ul><li>Make ActivityScenario#onActivity callable from the main thread</li></ul></li><li>Espresso 3.2.0-alpha05
+  <ul><li>More deflaking of openActionBarOverflowOrOptionsMenu</li></ul></li><li>Intents 3.2.0-alpha05</li><li>JUnit 1.1.1-alpha05</li><li>Monitor 1.2.0-alpha05</li><li>Orchestrator 1.2.0-alpha05</li><li>Runner 1.2.0-alpha05</li><li>Rules 1.2.0-alpha05</li><li>Truth 1.2.0-alpha05
+  <ul><li>update to upstream google Truth 0.44</li></ul></li></ul></div>
+            </article>
+          </section>
+          <section class="date-group" id="april-25-2019">
+            <div class="date-divider">
+              <div class="date-stepper" role="group" aria-label="Navigate release dates"><button type="button" class="date-step" data-date-step="previous" aria-label="Previous date (newer)" title="Previous date (newer) · P" aria-keyshortcuts="P"></button><button type="button" class="date-step" data-date-step="next" aria-label="Next date (older)" title="Next date (older) · N" aria-keyshortcuts="N"></button></div>
+              <h2 class="date-title"><a href="2019-04-25.html" class="date-link" target="_self">April 25, 2019</a></h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="alpha" data-search="activity 1.0.0-alpha07 2019-04-25 april 25, 2019" id="april-25-2019-activity-1-0-0-alpha07">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/activity">Activity</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/00d1b79bfaa97c1a00793e5e80769f094316a6b0..1d1a928881b4a7a75a85ab5b723cc81c829f1c83/activity" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/activity#1.0.0-alpha07" class="badge alpha">1.0.0-alpha07</a></div>
+              </div>
+              <div class="notes"><p>April 25th, 2019</p><p><code>androidx.activity:activity:1.0.0-alpha07</code> and <code>androidx.activity:activity-ktx:1.0.0-alpha07</code> are released. The commits included in this version can be found <a href="https://android.googlesource.com/platform/frameworks/support/+log/00d1b79bfaa97c1a00793e5e80769f094316a6b0..1d1a928881b4a7a75a85ab5b723cc81c829f1c83/activity">here</a>.</p><p><strong>API changes</strong></p><p>This release makes significant changes to the handling of the <code>onBackPressed()</code>. See the <a href="https://developer.android.com/guide/navigation/navigation-custom-back">updated custom back documentation</a> for more details.</p><ul><li>The methods for <code>OnBackPressedCallback</code> and <code>OnBackPressedDispatcher</code> have been marked as <code>@MainThread</code>. <a href="https://android-review.googlesource.com/943813" title="aosp/943813" class="ref ref-gerrit">aosp/943813</a></li><li>The <code>handleOnBackPressed()</code> method no longer returns a <code>boolean</code>. Instead, <code>OnBackPressedCallback</code> is now an abstract class that can be enabled or disabled - only when the new <code>isEnabled()</code> method returns true will <code>handleOnBackPressed()</code> be called, in which you <strong>must</strong> handle the back button. <a href="https://android-review.googlesource.com/944518" title="aosp/944518" class="ref ref-gerrit">aosp/944518</a></li><li>The <code>addCallback</code> methods of <code>OnBackPressedDispatcher</code> no longer return a <code>Cancellable</code> instance. <code>OnBackPressedCallback</code> now contain a <code>remove()</code> method that fulfill this functionality, allowing you to call <code>remove()</code> during <code>handleOnBackPressed()</code>. <a href="https://android-review.googlesource.com/944519" title="aosp/944519" class="ref ref-gerrit">aosp/944519</a> <a href="https://android-review.googlesource.com/946316" title="aosp/946316" class="ref ref-gerrit">aosp/946316</a></li><li><code>activity-ktx</code> now contains a receiver scoped callback for <code>addCallback</code> that accepts a lamdba that implements <code>handleOnBackPressed()</code> and has access to <code>isEnabled</code> and <code>remove()</code> <a href="https://android-review.googlesource.com/944520" title="aosp/944520" class="ref ref-gerrit">aosp/944520</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="arch core 2.1.0-alpha02 2019-04-25 april 25, 2019" id="april-25-2019-arch-core-2-1-0-alpha02">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/arch">Arch Core</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/479525251389167f9bed63ec4e1485a2ceec0aa7..1d1a928881b4a7a75a85ab5b723cc81c829f1c83/arch" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/arch#2.1.0-alpha02" class="badge alpha">2.1.0-alpha02</a></div>
+              </div>
+              <div class="notes"><p><strong>API Changes</strong></p><ul><li>The <code>Cancellable</code> interface has been deprecated due to a lack of composable infrastructure and its removal from public API in <a href="https://developer.android.com/jetpack/androidx/releases/activity#1.0.0-alpha07">androidx.activity 1.0.0-alpha07</a>. <a href="https://android-review.googlesource.com/945461" title="aosp/945461" class="ref ref-gerrit">aosp/945461</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="fragment 1.1.0-alpha07 2019-04-25 april 25, 2019" id="april-25-2019-fragment-1-1-0-alpha07">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/fragment">Fragment</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/ea6ef7b3e86be09ad7380887c0ddada0064cdee5..1d1a928881b4a7a75a85ab5b723cc81c829f1c83/fragment" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/fragment#1.1.0-alpha07" class="badge alpha">1.1.0-alpha07</a></div>
+              </div>
+              <div class="notes"><p><strong>New features</strong></p><ul><li>You can now set a max Lifecycle state for a Fragment by calling <code>setMaxLifecycle()</code> on a <code>FragmentTransaction</code>. This replaces the now deprecated <code>setUserVisibleHint()</code>. <code>FragmentPagerAdapter</code> and <code>FragmentStatePagerAdapter</code> have a new constructor that allows you to switch to the new behavior. <a href="https://issuetracker.google.com/issues/129780800" title="b/129780800" class="ref ref-issue">b/129780800</a></li></ul><p><strong>API Changes</strong></p><ul><li><code>moveToState(STARTED)</code> on <code>FragmentScenario</code> can now only be called on API 24+ devices. <a href="https://issuetracker.google.com/issues/129880016" title="b/129880016" class="ref ref-issue">b/129880016</a></li></ul><p><strong>Behavior Changes</strong></p><ul><li>As a consequence of <a href="https://issuetracker.google.com/issues/129907905" title="b/129907905" class="ref ref-issue">b/129907905</a>, fragments on the back stack will <strong>not</strong> get a callback to <code>onCreateView()</code> when the hosting activity is recreated. <code>onCreateView()</code> will now only be called when the fragment becomes visible (i.e., the back stack is popped).</li></ul><p><strong>Bug fixes</strong></p><ul><li>Fixed an issue when using a <code>&lt;fragment&gt;</code> tag in XML and the <code>contentLayoutId</code> constructor of <code>FragmentActivity</code> or <code>AppCompatActivity</code>. <a href="https://issuetracker.google.com/issues/129907905" title="b/129907905" class="ref ref-issue">b/129907905</a></li><li>Corrected an issue where fragments on the back stack would not be moved to at least <code>CREATED</code> after a configuration change, causing ViewModels and child retained fragments to not be properly disposed. <a href="https://issuetracker.google.com/issues/129593351" title="b/129593351" class="ref ref-issue">b/129593351</a></li><li>Fixed a crash in <code>restoreSaveState</code> caused by a desync of the retained fragments after the instance state is saved. <a href="https://issuetracker.google.com/issues/130433793" title="b/130433793" class="ref ref-issue">b/130433793</a> <a href="https://android-review.googlesource.com/947824" title="aosp/947824" class="ref ref-gerrit">aosp/947824</a></li><li>Fixed issues where an <code>OnBackPressedCallback</code> added with a fragment lifecycle would not be called if the <code>FragmentManager</code> had a back stack. See <a href="https://developer.android.com/jetpack/androidx/releases/activity#1.0.0-alpha07">androidx.activity 1.0.0-alpha07</a> for more details. <a href="https://android-review.googlesource.com/948209" title="aosp/948209" class="ref ref-gerrit">aosp/948209</a></li><li>Fragments no longer enforce <code>LAYER_TYPE_HARDWARE</code> for animations. If you specifically need a hardware layer animation, please set it as part of your animation. <a href="https://issuetracker.google.com/issues/129486478" title="b/129486478" class="ref ref-issue">b/129486478</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="room 2.1.0-alpha07 2019-04-25 april 25, 2019" id="april-25-2019-room-2-1-0-alpha07">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/room">Room</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/room#2.1.0-alpha07" class="badge alpha">2.1.0-alpha07</a></div>
+              </div>
+              <div class="notes"><p><strong>API / Behavior Changes</strong></p><ul><li>The extension function <code>RoomDatabase.withTransaction</code> has been changed to no longer take a function block with a <code>CoroutineScope</code> as receiver. This prevents skipping the additional <code>coroutineScope { }</code> wrapper required to run things in the transaction block concurrently.</li></ul><p><strong>Bug Fixes</strong></p><ul><li>Fixed a bug where Room would fail to match a TypeConverter for a Kotlin DAO function containing a parameter of Collection type. <a href="https://issuetracker.google.com/issues/122066791" title="b/122066791" class="ref ref-issue">b/122066791</a></li></ul></div>
+            </article>
+          </section>
+          <section class="date-group" id="april-24-2019">
+            <div class="date-divider">
+              <div class="date-stepper" role="group" aria-label="Navigate release dates"><button type="button" class="date-step" data-date-step="previous" aria-label="Previous date (newer)" title="Previous date (newer) · P" aria-keyshortcuts="P"></button><button type="button" class="date-step" data-date-step="next" aria-label="Next date (older)" title="Next date (older) · N" aria-keyshortcuts="N"></button></div>
+              <h2 class="date-title"><a href="2019-04-24.html" class="date-link" target="_self">April 24, 2019</a></h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="alpha" data-search="workmanager 2.1.0-alpha01 2019-04-24 april 24, 2019" id="april-24-2019-workmanager-2-1-0-alpha01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/work">WorkManager</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/work#2.1.0-alpha01" class="badge alpha">2.1.0-alpha01</a></div>
+              </div>
+              <div class="notes"><p><strong>API Changes</strong></p><ul><li>Added on-demand initialization for WorkManager, which will create WorkManager only when referenced. <a href="https://issuetracker.google.com/127497100" title="b/127497100" class="ref ref-issue">b/127497100</a> To set up your project for on-demand initialization:
+  <ol><li><a href="https://developer.android.com/topic/libraries/architecture/workmanager/advanced/custom-configuration#removing_the_default_initializer">Disable the automatic initializer</a>.</li><li>Implement <code>Configuration.Provider</code> on your custom <code>Application</code> object.</li><li>Change all references of <code>WorkManager.getInstance()</code> to <code>WorkManager.getInstance(Context)</code>. As part of this change, we have deprecated <code>WorkManager.getInstance()</code>. It is always safer to call the new <code>WorkManager.getInstance(Context)</code> replacement, even if you're not doing on-demand initialization.</li></ol></li><li>Added the ability to create unit testable <code>Worker</code> and <code>ListenableWorker</code> classes by using <code>TestWorkerBuilder</code> and <code>TestListenableWorkerBuilder</code> in the <code>work-testing</code> artifact.
+  <ul><li>Note that <code>work-testing</code> now pulls in Kotlin as a dependency, but also includes several Kotlin extensions by default.</li></ul></li><li>Added run attempt count to <code>WorkInfo</code>. <a href="https://issuetracker.google.com/127290461" title="b/127290461" class="ref ref-issue">b/127290461</a></li><li><code>Data</code> types can now store and retrieve bytes and byte arrays. This does NOT change the maximum size of <code>Data</code> objects.</li><li>Deprecated <code>CoroutineWorker.coroutineContext</code>. This field was incorrectly typed as a <code>CoroutineDispatcher</code>; you should no longer need it as you can go to the desired coroutineContext yourself in the body of the suspending function.</li><li><code>RxWorker.createWork()</code> and <code>RxWorker.getBackgroundScheduler()</code> are now annotated with <code>@NonNull</code> return types.</li></ul></div>
+            </article>
+          </section>
+          <section class="date-group" id="april-18-2019">
+            <div class="date-divider">
+              <div class="date-stepper" role="group" aria-label="Navigate release dates"><button type="button" class="date-step" data-date-step="previous" aria-label="Previous date (newer)" title="Previous date (newer) · P" aria-keyshortcuts="P"></button><button type="button" class="date-step" data-date-step="next" aria-label="Next date (older)" title="Next date (older) · N" aria-keyshortcuts="N"></button></div>
+              <h2 class="date-title"><a href="2019-04-18.html" class="date-link" target="_self">April 18, 2019</a></h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="alpha" data-search="test 1.2.0-alpha04 2019-04-18 april 18, 2019" id="april-18-2019-test-1-2-0-alpha04">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#1.2.0-alpha04" class="badge alpha">1.2.0-alpha04</a></div>
+              </div>
+              <div class="notes"><p>This is an alpha release of AndroidX Test 1.2.0. New APIs are subject to change. It contains updates to the following libraries:</p><ul><li>Core 1.2.0-alpha04</li><li>Espresso 3.2.0-alpha04
+  <ul><li>Deflake openActionBarOverflowOrOptionsMenu</li><li>Add hook in androidx.test to simulate a window focus changed for local test environments</li></ul></li><li>Intents 3.2.0-alpha04</li><li>JUnit 1.1.1-alpha04</li><li>Monitor 1.2.0-alpha04</li><li>Orchestrator 1.2.0-alpha04</li><li>Runner 1.2.0-alpha04
+  <ul><li>Make androidx.test work if legacy android.test classes are not present</li></ul></li><li>Rules 1.2.0-alpha04</li><li>Truth 1.2.0-alpha04</li></ul></div>
+            </article>
+          </section>
+          <section class="date-group" id="april-9-2019">
+            <div class="date-divider">
+              <div class="date-stepper" role="group" aria-label="Navigate release dates"><button type="button" class="date-step" data-date-step="previous" aria-label="Previous date (newer)" title="Previous date (newer) · P" aria-keyshortcuts="P"></button><button type="button" class="date-step" data-date-step="next" aria-label="Next date (older)" title="Next date (older) · N" aria-keyshortcuts="N"></button></div>
+              <h2 class="date-title"><a href="2019-04-09.html" class="date-link" target="_self">April 9, 2019</a></h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="stable" data-search="workmanager 2.0.1 2019-04-09 april 9, 2019" id="april-9-2019-workmanager-2-0-1">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/work">WorkManager</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/work#2.0.1" class="badge stable">2.0.1</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="stable" data-search="workmanager 1.0.1 2019-04-09 april 9, 2019" id="april-9-2019-workmanager-1-0-1">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/work">WorkManager</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/work#1.0.1" class="badge stable">1.0.1</a></div>
+              </div>
+              <div class="notes"><p>Please note that we <em>strongly</em> encourage users to update to WorkManager 2.x, as there will be very few updates to the 1.x branch moving forward. New APIs will also not be released for the 1.x library.</p></div>
+            </article>
+          </section>
+          <section class="date-group" id="april-4-2019">
+            <div class="date-divider">
+              <div class="date-stepper" role="group" aria-label="Navigate release dates"><button type="button" class="date-step" data-date-step="previous" aria-label="Previous date (newer)" title="Previous date (newer) · P" aria-keyshortcuts="P"></button><button type="button" class="date-step" data-date-step="next" aria-label="Next date (older)" title="Next date (older) · N" aria-keyshortcuts="N"></button></div>
+              <h2 class="date-title"><a href="2019-04-04.html" class="date-link" target="_self">April 4, 2019</a></h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="alpha" data-search="test espresso device 1.2.0-alpha03 2019-04-04 april 4, 2019" id="april-4-2019-test-1-2-0-alpha03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Espresso Device</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#1.2.0-alpha03" class="badge alpha">1.2.0-alpha03</a></div>
+              </div>
+              <div class="notes"><p>This is an alpha release of AndroidX Test 1.2.0. New APIs are subject to change. It contains updates to the following libraries:</p><ul><li>Core 1.2.0-alpha03
+  <ul><li>Add getState() API to ActivityScenario</li></ul></li><li>Espresso 3.2.0-alpha03
+  <ul><li>Convert WithTagKeyMatcher to accept <code>Matcher&lt;?&gt;</code> instead of <code>Matcher&lt;Obj&gt;</code></li><li>Update link to espresso setup docs</li><li>Fix debug logging when running in different locales</li></ul></li><li>Intents 3.2.0-alpha03</li><li>JUnit 1.1.1-alpha03</li><li>Monitor 1.2.0-alpha03
+  <ul><li>Another attempt at clearing exception handler to prevent memory leaks in Robolectric.</li></ul></li><li>Orchestrator 1.2.0-alpha03</li><li>Runner 1.2.0-alpha03
+  <ul><li>Add a tests_regex AJUR option to run tests matching a given regular expression.</li></ul></li><li>Rules 1.2.0-alpha03</li><li>Truth 1.2.0-alpha03
+  <ul><li>Expose the ParcelableSubject API</li><li>Add BundleSubject#longInt</li><li>Add IntentSubject#hasComponent</li></ul></li></ul></div>
+            </article>
+          </section>
+          <section class="date-group" id="april-3-2019">
+            <div class="date-divider">
+              <div class="date-stepper" role="group" aria-label="Navigate release dates"><button type="button" class="date-step" data-date-step="previous" aria-label="Previous date (newer)" title="Previous date (newer) · P" aria-keyshortcuts="P"></button><button type="button" class="date-step" data-date-step="next" aria-label="Next date (older)" title="Next date (older) · N" aria-keyshortcuts="N"></button></div>
+              <h2 class="date-title"><a href="2019-04-03.html" class="date-link" target="_self">April 3, 2019</a></h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="alpha" data-search="activity 1.0.0-alpha06 2019-04-03 april 3, 2019" id="april-3-2019-activity-1-0-0-alpha06">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/activity">Activity</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/82ddb41c3e7be8ae7a4a3557e66edb5274c6d96c..00d1b79bfaa97c1a00793e5e80769f094316a6b0/activity" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/activity#1.0.0-alpha06" class="badge alpha">1.0.0-alpha06</a></div>
+              </div>
+              <div class="notes"><p>April 3rd, 2019</p><p><code>androidx.activity:activity:1.0.0-alpha06</code> and <code>androidx.activity:activity-ktx:1.0.0-alpha06</code> are released. The commits included in this version can be found <a href="https://android.googlesource.com/platform/frameworks/support/+log/82ddb41c3e7be8ae7a4a3557e66edb5274c6d96c..00d1b79bfaa97c1a00793e5e80769f094316a6b0/activity">here</a>.</p><p><strong>API changes</strong></p><ul><li>ComponentActivity now contain a second constructor that takes a <code>@LayoutRes int</code>, which replaces the previous behavior of annotating your AppCompatActivity class with <code>@ContentView</code>. This approach works in both app and library modules. <a href="https://issuetracker.google.com/issues/128352521" title="b/128352521" class="ref ref-issue">b/128352521</a></li><li>The <code>OnBackPressedCallback</code> related APIs on ComponentActivity have been deprecated in favor of the new <code>OnBackPressedDispatcher</code>, retrievable via <code>getOnBackPressedDispatcher()</code>. <a href="https://android-review.googlesource.com/922523" title="aosp/922523" class="ref ref-gerrit">aosp/922523</a></li><li>Methods to add a new <code>OnBackPressedCallback</code> to the <code>OnBackPressedDispatcher</code> now return a <code>Cancellable</code> object, allowing removal of the callback without requiring an explicit reference to the <code>OnBackPressedDispatcher</code>. <a href="https://android-review.googlesource.com/922523" title="aosp/922523" class="ref ref-gerrit">aosp/922523</a></li><li>Adding a <code>OnBackPressedCallback</code> with an associated <code>LifecycleOwner</code> now results in adding and removing the <code>OnBackPressedCallback</code> as the Lifecycle is started and stopped, respectively. <a href="https://android-review.googlesource.com/922523" title="aosp/922523" class="ref ref-gerrit">aosp/922523</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="annotation 1.1.0-beta01 2019-04-03 april 3, 2019" id="april-3-2019-annotation-1-1-0-beta01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/annotation">Annotation</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/091eca9ac5e20c1346e4c1fdace7b63721f9ce43..2f634eec2143acd6a4ea19a375a6e3877cdcc2ed/annotations" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/annotation#1.1.0-beta01" class="badge beta">1.1.0-beta01</a></div>
+              </div>
+              <div class="notes"><p>April 3rd, 2019</p><p><code>androidx.annotation:annotation:1.1.0-beta01</code> is released. The commits included in this version can be found <a href="https://android.googlesource.com/platform/frameworks/support/+log/091eca9ac5e20c1346e4c1fdace7b63721f9ce43..2f634eec2143acd6a4ea19a375a6e3877cdcc2ed/annotations">here</a>.</p>
+<strong>Note:</strong><span> this version of Annotation is incompatible with Activity 1.0.0-alpha04 and 1.0.0-alpha05 as well as Fragment 1.1.0-alpha04 and 1.1.0-alpha05. Please upgrade to Activity 1.0.0-alpha06 and Fragment 1.1.0-alpha06, respectively.</span> 
+<p><strong>New features</strong></p><ul><li>New <code>@InspectableProperty</code>annotation to support the new view inspection APIs added in Android 10. This annotation can be applied to getters on views or other UI elements. Code generation tools may use it to create companion objects that map property names and attribute IDs to property values without the overhead of reflection.</li></ul><p><strong>API changes</strong></p><ul><li>Breaking change: <code>@ContentView</code> has been changed to a constructor annotation and the <code>@LayoutRes</code> value has been removed. Classes wishing to support <code>@ContentView</code> annotations should add this annotation to a constructor that takes a <code>@LayoutRes int</code> parameter. This fixes an issue when using this annotation in library modules. <a href="https://issuetracker.google.com/issues/128352521" title="b/128352521" class="ref ref-issue">b/128352521</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="appcompat 1.1.0-alpha04 2019-04-03 april 3, 2019" id="april-3-2019-appcompat-1-1-0-alpha04">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/appcompat">AppCompat</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/9d3db78d753254e0f74f24480b2e6f4e6a380a06..2f634eec2143acd6a4ea19a375a6e3877cdcc2ed/appcompat" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/appcompat#1.1.0-alpha04" class="badge alpha">1.1.0-alpha04</a></div>
+              </div>
+              <div class="notes"><p><strong>New features</strong></p><ul><li>Added new <code>ThemeOverlay.AppCompat.DayNight</code> family of themes. These should be used when using the DayNight feature.</li></ul><p><strong>API changes</strong></p><ul><li>AppCompatActivity now contain a second constructor that takes a <code>@LayoutRes int</code>, which replaces the previous behavior of annotating your AppCompatActivity class with <code>@ContentView</code>. This approach works in both app and library modules. <a href="https://issuetracker.google.com/issues/128352521" title="b/128352521" class="ref ref-issue">b/128352521</a></li></ul><p><strong>Bug fixes</strong></p><ul><li>Pinned internal dependencies to stable versions where possible</li><li>Fixed <code>AppCompatSpinner</code>scrolling in dropdown mode )<a href="https://issuetracker.google.com/issues/124274573" title="b/124274573" class="ref ref-issue">b/124274573</a>)</li><li>Only calls <code>applyOverrideConfiguration()</code> if required for DayNight</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="arch core 2.1.0-alpha01 2019-04-03 april 3, 2019" id="april-3-2019-arch-core-2-1-0-alpha01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/arch">Arch Core</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/845cc95561b0c5370e341e6d7640afeda55718a2..479525251389167f9bed63ec4e1485a2ceec0aa7/arch" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/arch#2.1.0-alpha01" class="badge alpha">2.1.0-alpha01</a></div>
+              </div>
+              <div class="notes"><p><strong>New features</strong></p><ul><li>Added a new <code>Cancellable</code> interface to <code>core-common</code> to represent cancellable operations. See <a href="https://developer.android.com/jetpack/androidx/releases/activity#1.0.0-alpha05">androidx.activity 1.0.0-alpha05</a>. <a href="https://android-review.googlesource.com/922523" title="aosp/922523" class="ref ref-gerrit">aosp/922523</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="biometric 1.0.0-alpha04 2019-04-03 april 3, 2019" id="april-3-2019-biometric-1-0-0-alpha04">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/biometric">Biometric</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/82b61c231e74262ac499b9788e8af46e2c4bf779..b8de83833a365a0342a01630807c96f42e64782b/biometric" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/biometric#1.0.0-alpha04" class="badge alpha">1.0.0-alpha04</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug fixes</strong></p><ul><li>Fixed Biometric fragments don't clean up in all cases. <a href="https://issuetracker.google.com/issues/121117380" title="b/121117380" class="ref ref-issue">b/121117380</a></li><li>Fixed <code>BiometricPrompt</code> only allows one instance of <code>BiometricPrompt.AuthenticationCallback</code> <a href="https://issuetracker.google.com/issues/123857949" title="b/123857949" class="ref ref-issue">b/123857949</a></li><li>Fixed <code>BiometricPrompt</code> error behavior inconsistent between system and compat versions. <a href="https://issuetracker.google.com/issues/123572326" title="b/123572326" class="ref ref-issue">b/123572326</a></li><li>Fixed callback <code>onAuthenticationError()</code> with <code>@NotNull errString</code> causes <code>NullPointerException</code> at runtime <a href="https://issuetracker.google.com/issues/123167217" title="b/123167217" class="ref ref-issue">b/123167217</a></li><li>Fixed <code>androidx.BiometricPrompt</code> Cancel button Crashes <a href="https://issuetracker.google.com/issues/122054485" title="b/122054485" class="ref ref-issue">b/122054485</a></li><li>Fixed <code>androidx.biometric.PromptInfo</code> title/description not changed on Android P <a href="https://issuetracker.google.com/issues/122856773" title="b/122856773" class="ref ref-issue">b/122856773</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="car-cluster 1.0.0-alpha05 2019-04-03 april 3, 2019" id="april-3-2019-car-cluster-1-0-0-alpha05">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/car">Car-Cluster</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/car#car-cluster-1.0.0-alpha05" class="badge alpha">1.0.0-alpha05</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="collection 1.1.0-beta01 2019-04-03 april 3, 2019" id="april-3-2019-collection-1-1-0-beta01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/collection">Collection</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/79285e90f077844e4b3b1a72a4a051389e3c190a..a81cba4406e40dfca7ba3c37e629537c4840de95/collection" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/collection#1.1.0-beta01" class="badge beta">1.1.0-beta01</a></div>
+              </div>
+              <div class="notes"><p><strong>API changes</strong></p><ul><li>The method mentioned in <a href="https://developer.android.com/jetpack/androidx/releases/collection#1.0.0-alpha03">the alpha03 release notes</a> as having its <code>@RestrictTo</code> value changed has been removed. It was unused by any AndroidX library (now or historically) and it did not offer any functionality that was missing from the public API.</li></ul><p><strong>Bug fixes</strong></p><ul><li>Change <code>SimpleArrayMap</code> to synchronize its internal global cache of arrays on <code>SimpleArrayMap.class</code> instead of <code>ArrayMap.class</code>. This ensures that if you are only using <code>SimpleArrayMap</code>, <code>ArrayMap</code> can be removed by code shrinking tools. <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/934557" title="aosp/934557" class="ref ref-gerrit">aosp/934557</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="dynamicanimation 1.1.0-alpha01 2019-04-03 april 3, 2019" id="april-3-2019-dynamicanimation-1-1-0-alpha01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/dynamicanimation">DynamicAnimation</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/3478ef7cbc6b27d8c1497d76c3ffff688771380e..21e165dc2f0fe0acc7ced317d75f4e92155a8e35/dynamic-animation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/dynamicanimation#1.1.0-alpha01" class="badge alpha">1.1.0-alpha01</a></div>
+              </div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="fragment 1.1.0-alpha06 2019-04-03 april 3, 2019" id="april-3-2019-fragment-1-1-0-alpha06">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/fragment">Fragment</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/4c34c957abe3a1cec4eb2342bb41a88c838999f7..ea6ef7b3e86be09ad7380887c0ddada0064cdee5/fragment" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/fragment#1.1.0-alpha06" class="badge alpha">1.1.0-alpha06</a></div>
+              </div>
+              <div class="notes"><p><strong>New features</strong></p><ul><li>Exceptions thrown by FragmentManager now include the Fragment’s name in the message. <a href="https://issuetracker.google.com/issues/67759402" title="b/67759402" class="ref ref-issue">b/67759402</a></li></ul><p><strong>API Changes</strong></p><ul><li><code>Fragment</code> and <code>FragmentActivity</code> now contain a second constructor that takes a <code>@LayoutRes int</code>, which replaces the previous behavior of annotating your class with <code>@ContentView</code>. This approach works in both app and library modules. <a href="https://issuetracker.google.com/issues/128352521" title="b/128352521" class="ref ref-issue">b/128352521</a></li><li>FragmentActivity’s <code>onActivityResult()</code> is now properly marked as <code>@CallSuper</code>. <a href="https://issuetracker.google.com/issues/127971684" title="b/127971684" class="ref ref-issue">b/127971684</a></li><li>The FragmentFactory’s <code>instantiate</code> method that takes an argument Bundle has been deprecated and apps should use the new <code>instantiate</code> overload that does not take a Bundle. <a href="https://issuetracker.google.com/issues/128836103" title="b/128836103" class="ref ref-issue">b/128836103</a></li><li><code>FragmentScenario</code> methods are now properly annotated with <code>@StyleRes</code>. <a href="https://android-review.googlesource.com/924193" title="aosp/924193" class="ref ref-gerrit">aosp/924193</a></li><li><code>FragmentTabHost</code> has been deprecated. <a href="https://issuetracker.google.com/issues/127971835" title="b/127971835" class="ref ref-issue">b/127971835</a></li><li>FragmentActivity’s <code>getThemedContext()</code> has been removed. <a href="https://android-review.googlesource.com/934078" title="aosp/934078" class="ref ref-gerrit">aosp/934078</a></li></ul><p><strong>Bug fixes</strong></p><ul><li>Fixed a regression in 1.1.0-alpha05 that caused the incoming Fragment to flash on the screen. <a href="https://issuetracker.google.com/issues/129405432" title="b/129405432" class="ref ref-issue">b/129405432</a></li><li>Fixed an issue where the primary navigation fragment would be lost after a popBackStack+replace+popBackStack series of operations. <a href="https://issuetracker.google.com/issues/124332597" title="b/124332597" class="ref ref-issue">b/124332597</a></li><li>Fixed an issue when using <code>@ContentView</code> constructors on your Activity when restoring Fragment state. <a href="https://issuetracker.google.com/issues/127313094" title="b/127313094" class="ref ref-issue">b/127313094</a></li><li>Corrected the logic of <code>setTargetFragment()</code> when replacing an existing target Fragment with a Fragment not yet attached to the FragmentManager. <a href="https://android-review.googlesource.com/932156/" title="aosp/932156" class="ref ref-gerrit">aosp/932156</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="lifecycle 2.1.0-alpha04 2019-04-03 april 3, 2019" id="april-3-2019-lifecycle-2-1-0-alpha04">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/lifecycle">Lifecycle</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/69fcbbce9f910d6cb9b2693dacd7c40040ffa495..7e9a5afb451c3bff1c20e2ce0121c3677810cd5b/lifecycle" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/lifecycle#2.1.0-alpha04" class="badge alpha">2.1.0-alpha04</a></div>
+              </div>
+              <div class="notes"><strong>Note:</strong><span> lifecycle-viewmodel-ktx is incompatible with Activity 1.0.0-alpha01 through 1.0.0-alpha05 and Fragment 1.1.0-alpha01 through 1.1.0-alpha05. Please upgrade to Activity 1.0.0-alpha06 and Fragment 1.1.0-alpha06, respectively.</span> 
+<p><strong>API changes</strong></p><ul><li>Breaking change: the underlying API behind <code>by viewModels()</code> and <code>by activityViewModels()</code> has been changed to support a <code>ViewModelStore</code> directly, rather than only a <code>ViewModelStoreOwner</code>. <a href="https://android-review.googlesource.com/932932/" title="aosp/932932" class="ref ref-gerrit">aosp/932932</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="media 1.1.0-alpha04 2019-04-03 april 3, 2019" id="april-3-2019-media-1-1-0-alpha04">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media">Media</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/8c6ad7c45d31d86030e9ad2d43f59472fb771a10..38c07ac6fed103450aa5949a4c12729d1480d72f/media" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media#1.1.0-alpha04" class="badge alpha">1.1.0-alpha04</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug fixes</strong></p><ul><li>Tweak on a version-compat-test constant <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/933656" title="aosp/933656" class="ref ref-gerrit">aosp/933656</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="mediarouter 1.1.0-alpha03 2019-04-03 april 3, 2019" id="april-3-2019-mediarouter-1-1-0-alpha03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/mediarouter">MediaRouter</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/b76873b4b2d548744a08dc5180c4b94b924b9886..4b8b1a18bf33c6daf7400de92c09fde21da06f6f/mediarouter" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/mediarouter#1.1.0-alpha03" class="badge alpha">1.1.0-alpha03</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug fixes</strong></p><ul><li>Fixed crashes on MediaRouteVolumeSlider and RegisteredMediaRouteProvider.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="navigation 2.1.0-alpha02 2019-04-03 april 3, 2019" id="april-3-2019-navigation-2-1-0-alpha02">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/navigation">Navigation</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/d0b1a77198af283997fb25e6ca3f083fbf535179..3cc9b77742508c095f3268b60956967bce46f0ed/navigation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/navigation#2.1.0-alpha02" class="badge alpha">2.1.0-alpha02</a></div>
+              </div>
+              <div class="notes"><p><strong>New features</strong></p><ul><li>You can now create ViewModels that are scoped at a navigation graph level via the <code>by navGraphViewModels()</code> property delegate for Kotlin users or by using the <code>getViewModelStore()</code> API added to <code>NavController</code>. <a href="https://issuetracker.google.com/issues/111614463" title="b/111614463" class="ref ref-issue">b/111614463</a></li></ul><p><strong>API changes</strong></p><ul><li>You can now add an <code>app:targetPackage</code> to an <code>&lt;activity&gt;</code> destination to limit the matching package name. It supports <code>app:targetPackage="${applicationId}"</code> for restricting the package to your own application id. <a href="https://issuetracker.google.com/issues/110975456" title="b/110975456" class="ref ref-issue">b/110975456</a></li></ul><p><strong>Bug fixes</strong></p><ul><li>The <code>android:name</code> for <code>&lt;activity&gt;</code> destinations is no longer parsed into a Class at inflation time, preventing ClassNotFoundExceptions when using dynamic features. <a href="https://issuetracker.google.com/issues/124538597" title="b/124538597" class="ref ref-issue">b/124538597</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="recyclerview 1.1.0-alpha04 2019-04-03 april 3, 2019" id="april-3-2019-recyclerview-1-1-0-alpha04">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/recyclerview">RecyclerView</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/333a979ce2f308bf7b78f80e684e1d787fb8c6dd..162c15eca5b62edc19734a7c502e5f94a936411c/recyclerview" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/recyclerview#1.1.0-alpha04" class="badge alpha">1.1.0-alpha04</a></div>
+              </div>
+              <div class="notes"><p>April 3rd, 2019</p><p><code>androidx.recyclerview:recyclerview:1.1.0-alpha04</code> is released. The commits included in this version can be found <a href="https://android.googlesource.com/platform/frameworks/support/+log/333a979ce2f308bf7b78f80e684e1d787fb8c6dd..162c15eca5b62edc19734a7c502e5f94a936411c/recyclerview">here</a>.</p><p><strong>Bug fixes</strong></p><ul><li>RV OnItemTouchListener's previously couldn’t intercept on ACTION_UP, preventing OnItemTouchListener’s from blocking other code from responding to ACTION_UP. This is now fixed: <a href="https://android-review.googlesource.com/c/916137/" title="aosp/916137" class="ref ref-gerrit">aosp/916137</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="beta" data-search="transition 1.1.0-beta01 2019-04-03 april 3, 2019" id="april-3-2019-transition-1-1-0-beta01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/transition">Transition</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/863462a41d0708ab9044f826e85250cb3d20ffa8..2a481e3fb01ec779d5bc26b7963942e7476ec8a8/transition" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/transition#1.1.0-beta01" class="badge beta">1.1.0-beta01</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug fixes</strong></p><ul><li>Fixed <code>ViewGroupOverlay</code> caching bug in <code>Visibility</code>, occurring on API Level 17 and lower <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/937350" title="aosp/937350" class="ref ref-gerrit">aosp/937350</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="viewpager2 1.0.0-alpha03 2019-04-03 april 3, 2019" id="april-3-2019-viewpager2-1-0-0-alpha03">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/viewpager2">ViewPager2</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/a6c93820c879141a92612abcf559a1993ceeb716..a1c79782eee81abb62c774f0f516ac27852282f2/viewpager2" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/viewpager2#1.0.0-alpha03" class="badge alpha">1.0.0-alpha03</a></div>
+              </div>
+              <div class="notes"><p>April 3rd, 2019</p><p><code>androidx.viewpager2:viewpager2:1.0.0-alpha03</code> is released. The commits included in this version can be found <a href="https://android.googlesource.com/platform/frameworks/support/+log/a6c93820c879141a92612abcf559a1993ceeb716..a1c79782eee81abb62c774f0f516ac27852282f2/viewpager2">here</a>.</p><p><strong>New features</strong></p><ul><li>Ability to programmatically scroll ViewPager2: <code>fakeDragBy(offsetPx)</code>.</li></ul><p><strong>API changes</strong></p><ul><li><code>FragmentStateAdapter</code> now requires a <code>Lifecycle</code> object. Two utility constructors added to obtain it from the host <code>FragmentActivity</code> or the host <code>Fragment</code>.</li></ul><p><strong>Bug fixes</strong></p><ul><li>Numerous <code>Fragment</code> support fixes:
+  <ul><li>handling dataset updates while minimised, or during a screen rotation;</li><li>removing irrelevant Fragments after rotation;</li><li>removing saved state of removed items.</li></ul></li><li><code>PageChangeCallback</code>: fixed page offset calculation for pages with margins.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="workmanager 2.0.1-rc01 2019-04-03 april 3, 2019" id="april-3-2019-workmanager-2-0-1-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/work">WorkManager</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/work#2.0.1-rc01" class="badge rc">2.0.1-rc01</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Robolectric tests now operate properly with WorkManager. <a href="https://issuetracker.google.com/122553577" title="b/122553577" class="ref ref-issue">b/122553577</a></li><li>Fixed an edge case crash with constraints tracking not being cleaned up on pre-JobScheduler APIs. <a href="https://issuetracker.google.com/129226383" title="b/129226383" class="ref ref-issue">b/129226383</a></li><li>Fixed a <code>StackOverflowError</code> dealing with long chains of work. <a href="https://issuetracker.google.com/129091233" title="b/129091233" class="ref ref-issue">b/129091233</a></li><li>Updated documentation for <code>PeriodicWorkRequest</code>s to indicate that flex time is not supported on API 23.</li><li>Fixed some broken links in the Kotlin documentation.</li></ul></div>
+            </article>
+            <article class="card" data-release-kind="rc" data-search="workmanager 1.0.1-rc01 2019-04-03 april 3, 2019" id="april-3-2019-workmanager-1-0-1-rc01">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/work">WorkManager</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/work#1.0.1-rc01" class="badge rc">1.0.1-rc01</a></div>
+              </div>
+              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Robolectric tests now operate properly with WorkManager. <a href="https://issuetracker.google.com/122553577" title="b/122553577" class="ref ref-issue">b/122553577</a></li><li>Fixed an edge case crash with constraints tracking not being cleaned up on pre-JobScheduler APIs. <a href="https://issuetracker.google.com/129226383" title="b/129226383" class="ref ref-issue">b/129226383</a></li><li>Fixed a <code>StackOverflowError</code> dealing with long chains of work. <a href="https://issuetracker.google.com/129091233" title="b/129091233" class="ref ref-issue">b/129091233</a></li></ul></div>
+            </article>
+          </section>
           <section class="date-group" id="march-22-2019">
             <div class="date-divider">
               <div class="date-stepper" role="group" aria-label="Navigate release dates"><button type="button" class="date-step" data-date-step="previous" aria-label="Previous date (newer)" title="Previous date (newer) · P" aria-keyshortcuts="P"></button><button type="button" class="date-step" data-date-step="next" aria-label="Next date (older)" title="Next date (older) · N" aria-keyshortcuts="N"></button></div>

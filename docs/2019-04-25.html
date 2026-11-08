@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1b1e22" media="(prefers-color-scheme: dark)">
+<base target="_blank">
+    <title>April 25, 2019 · AndroidX Release Notes</title>
+    <meta name="description" content="AndroidX release notes for April 25, 2019: Activity 1.0.0-alpha07, Arch Core 2.1.0-alpha02, Fragment 1.1.0-alpha07, Room 2.1.0-alpha07.">
+    <link href="https://simonmarquis.github.io/androidx-release-notes/2019-04-25.html" rel="canonical">
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="assets/site.css" rel="stylesheet">
+    <script src="assets/theme.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner"><a href="./" class="brand" target="_self"><span class="brand-name">AndroidX</span><span class="brand-subtitle">Release Notes</span></a>
+        <div class="header-filters" role="group" aria-label="Filter by stability"><button type="button" class="filter-btn stable" data-filter="stable" aria-pressed="false">Stable</button><button type="button" class="filter-btn rc" data-filter="rc" aria-pressed="false">RC</button><button type="button" class="filter-btn beta" data-filter="beta" aria-pressed="false">Beta</button><button type="button" class="filter-btn alpha" data-filter="alpha" aria-pressed="false">Alpha</button></div>
+        <div class="search-control"><label class="search-icon" for="release-search" title="Search"></label><input type="search" name="release-search" id="release-search" placeholder="Name, version, date…" autocomplete="off" aria-label="Filter components by name, version or date"></div>
+<button type="button" class="theme-toggle" id="theme-toggle" title="Toggle theme"></button><a href="https://github.com/SimonMarquis/androidx-release-notes" class="github-link" title="View project on GitHub"></a></div>
+    </header>
+    <main class="page-content">
+      <div class="content-inner">
+        <div class="release-groups">
+          <section class="date-group" id="april-25-2019">
+            <div class="date-divider"><a href="./#april-25-2019" class="date-back" target="_self" title="All releases"></a>
+              <h2 class="date-title">April 25, 2019</h2>
+              <div class="divider-line"></div>
+            </div>
+            <article class="card" data-release-kind="alpha" data-search="activity 1.0.0-alpha07 2019-04-25 april 25, 2019" id="april-25-2019-activity-1-0-0-alpha07">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/activity">Activity</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/00d1b79bfaa97c1a00793e5e80769f094316a6b0..1d1a928881b4a7a75a85ab5b723cc81c829f1c83/activity" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/activity#1.0.0-alpha07" class="badge alpha">1.0.0-alpha07</a></div>
+              </div>
+              <div class="notes"><p>April 25th, 2019</p><p><code>androidx.activity:activity:1.0.0-alpha07</code> and <code>androidx.activity:activity-ktx:1.0.0-alpha07</code> are released. The commits included in this version can be found <a href="https://android.googlesource.com/platform/frameworks/support/+log/00d1b79bfaa97c1a00793e5e80769f094316a6b0..1d1a928881b4a7a75a85ab5b723cc81c829f1c83/activity">here</a>.</p><p><strong>API changes</strong></p><p>This release makes significant changes to the handling of the <code>onBackPressed()</code>. See the <a href="https://developer.android.com/guide/navigation/navigation-custom-back">updated custom back documentation</a> for more details.</p><ul><li>The methods for <code>OnBackPressedCallback</code> and <code>OnBackPressedDispatcher</code> have been marked as <code>@MainThread</code>. <a href="https://android-review.googlesource.com/943813" title="aosp/943813" class="ref ref-gerrit">aosp/943813</a></li><li>The <code>handleOnBackPressed()</code> method no longer returns a <code>boolean</code>. Instead, <code>OnBackPressedCallback</code> is now an abstract class that can be enabled or disabled - only when the new <code>isEnabled()</code> method returns true will <code>handleOnBackPressed()</code> be called, in which you <strong>must</strong> handle the back button. <a href="https://android-review.googlesource.com/944518" title="aosp/944518" class="ref ref-gerrit">aosp/944518</a></li><li>The <code>addCallback</code> methods of <code>OnBackPressedDispatcher</code> no longer return a <code>Cancellable</code> instance. <code>OnBackPressedCallback</code> now contain a <code>remove()</code> method that fulfill this functionality, allowing you to call <code>remove()</code> during <code>handleOnBackPressed()</code>. <a href="https://android-review.googlesource.com/944519" title="aosp/944519" class="ref ref-gerrit">aosp/944519</a> <a href="https://android-review.googlesource.com/946316" title="aosp/946316" class="ref ref-gerrit">aosp/946316</a></li><li><code>activity-ktx</code> now contains a receiver scoped callback for <code>addCallback</code> that accepts a lamdba that implements <code>handleOnBackPressed()</code> and has access to <code>isEnabled</code> and <code>remove()</code> <a href="https://android-review.googlesource.com/944520" title="aosp/944520" class="ref ref-gerrit">aosp/944520</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="arch core 2.1.0-alpha02 2019-04-25 april 25, 2019" id="april-25-2019-arch-core-2-1-0-alpha02">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/arch">Arch Core</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/479525251389167f9bed63ec4e1485a2ceec0aa7..1d1a928881b4a7a75a85ab5b723cc81c829f1c83/arch" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/arch#2.1.0-alpha02" class="badge alpha">2.1.0-alpha02</a></div>
+              </div>
+              <div class="notes"><p><strong>API Changes</strong></p><ul><li>The <code>Cancellable</code> interface has been deprecated due to a lack of composable infrastructure and its removal from public API in <a href="https://developer.android.com/jetpack/androidx/releases/activity#1.0.0-alpha07">androidx.activity 1.0.0-alpha07</a>. <a href="https://android-review.googlesource.com/945461" title="aosp/945461" class="ref ref-gerrit">aosp/945461</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="fragment 1.1.0-alpha07 2019-04-25 april 25, 2019" id="april-25-2019-fragment-1-1-0-alpha07">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/fragment">Fragment</a></h3>
+                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/ea6ef7b3e86be09ad7380887c0ddada0064cdee5..1d1a928881b4a7a75a85ab5b723cc81c829f1c83/fragment" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/fragment#1.1.0-alpha07" class="badge alpha">1.1.0-alpha07</a></div>
+              </div>
+              <div class="notes"><p><strong>New features</strong></p><ul><li>You can now set a max Lifecycle state for a Fragment by calling <code>setMaxLifecycle()</code> on a <code>FragmentTransaction</code>. This replaces the now deprecated <code>setUserVisibleHint()</code>. <code>FragmentPagerAdapter</code> and <code>FragmentStatePagerAdapter</code> have a new constructor that allows you to switch to the new behavior. <a href="https://issuetracker.google.com/issues/129780800" title="b/129780800" class="ref ref-issue">b/129780800</a></li></ul><p><strong>API Changes</strong></p><ul><li><code>moveToState(STARTED)</code> on <code>FragmentScenario</code> can now only be called on API 24+ devices. <a href="https://issuetracker.google.com/issues/129880016" title="b/129880016" class="ref ref-issue">b/129880016</a></li></ul><p><strong>Behavior Changes</strong></p><ul><li>As a consequence of <a href="https://issuetracker.google.com/issues/129907905" title="b/129907905" class="ref ref-issue">b/129907905</a>, fragments on the back stack will <strong>not</strong> get a callback to <code>onCreateView()</code> when the hosting activity is recreated. <code>onCreateView()</code> will now only be called when the fragment becomes visible (i.e., the back stack is popped).</li></ul><p><strong>Bug fixes</strong></p><ul><li>Fixed an issue when using a <code>&lt;fragment&gt;</code> tag in XML and the <code>contentLayoutId</code> constructor of <code>FragmentActivity</code> or <code>AppCompatActivity</code>. <a href="https://issuetracker.google.com/issues/129907905" title="b/129907905" class="ref ref-issue">b/129907905</a></li><li>Corrected an issue where fragments on the back stack would not be moved to at least <code>CREATED</code> after a configuration change, causing ViewModels and child retained fragments to not be properly disposed. <a href="https://issuetracker.google.com/issues/129593351" title="b/129593351" class="ref ref-issue">b/129593351</a></li><li>Fixed a crash in <code>restoreSaveState</code> caused by a desync of the retained fragments after the instance state is saved. <a href="https://issuetracker.google.com/issues/130433793" title="b/130433793" class="ref ref-issue">b/130433793</a> <a href="https://android-review.googlesource.com/947824" title="aosp/947824" class="ref ref-gerrit">aosp/947824</a></li><li>Fixed issues where an <code>OnBackPressedCallback</code> added with a fragment lifecycle would not be called if the <code>FragmentManager</code> had a back stack. See <a href="https://developer.android.com/jetpack/androidx/releases/activity#1.0.0-alpha07">androidx.activity 1.0.0-alpha07</a> for more details. <a href="https://android-review.googlesource.com/948209" title="aosp/948209" class="ref ref-gerrit">aosp/948209</a></li><li>Fragments no longer enforce <code>LAYER_TYPE_HARDWARE</code> for animations. If you specifically need a hardware layer animation, please set it as part of your animation. <a href="https://issuetracker.google.com/issues/129486478" title="b/129486478" class="ref ref-issue">b/129486478</a></li></ul></div>
+            </article>
+            <article class="card" data-release-kind="alpha" data-search="room 2.1.0-alpha07 2019-04-25 april 25, 2019" id="april-25-2019-room-2-1-0-alpha07">
+              <div class="head">
+                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/room">Room</a></h3>
+                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/room#2.1.0-alpha07" class="badge alpha">2.1.0-alpha07</a></div>
+              </div>
+              <div class="notes"><p><strong>API / Behavior Changes</strong></p><ul><li>The extension function <code>RoomDatabase.withTransaction</code> has been changed to no longer take a function block with a <code>CoroutineScope</code> as receiver. This prevents skipping the additional <code>coroutineScope { }</code> wrapper required to run things in the transaction block concurrently.</li></ul><p><strong>Bug Fixes</strong></p><ul><li>Fixed a bug where Room would fail to match a TypeConverter for a Kotlin DAO function containing a parameter of Collection type. <a href="https://issuetracker.google.com/issues/122066791" title="b/122066791" class="ref ref-issue">b/122066791</a></li></ul></div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
