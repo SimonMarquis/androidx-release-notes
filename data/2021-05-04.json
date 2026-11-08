@@ -1,0 +1,25 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#may_4_2021",
+  "title": "May 4, 2021",
+  "releasedOn": "2021-05-04",
+  "updated": "2021-05-04T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#may_4_2021",
+  "components": [
+    {
+      "id": "constraintlayout",
+      "name": "ConstraintLayout",
+      "version": "2.1.0-beta02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-2.1.0-beta02",
+      "detailsHtml": "<p>A few new features in MotionLayout:</p>\n<ul>\n <li>OnSwipe enhancement including spring (stiffness, damping, mass etc) &amp; never complete</li>\n <li>jumpToState function</li>\n <li>ViewTransition downUp mode where on touch Down it plays to 100 and on up reverses to 0</li>\n</ul>\n<p>Various fixes, notably:</p>\n<ul>\n <li>Fix problem in MotionLayout with vertical scroll (#173)</li>\n <li>Perf improvements on nested MotionLayout (#189)</li>\n <li>Fast transition with NestedScrollView in MotionLayout (#189)</li>\n <li>ConstraintSet gone in MotionLayout (#189)</li>\n <li>Support downUp ViewTransitions in MotionLayout (#190)</li>\n <li>Fix in ImageFilter when reusing drawables (#192)</li>\n <li>Add spring support in MotionLayout (#199)</li>\n <li>Performance improvement to CircularFlow (#200)</li>\n <li>Fixes in derived constraints / constraint override (#212)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "constraintlayout-compose",
+      "name": "ConstraintLayout-compose",
+      "version": "1.0.0-alpha06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-compose-1.0.0-alpha06",
+      "detailsHtml": "<ul>\n <li>Compose optimisation: Constraintlayout inline composable (#193)</li>\n <li>Minimize remeasurements in Compose (#210)</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

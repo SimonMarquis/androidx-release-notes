@@ -1,0 +1,217 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#may_5_2021",
+  "title": "May 5, 2021",
+  "releasedOn": "2021-05-05",
+  "updated": "2021-05-05T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#may_5_2021",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.2.3",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.2.3",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Using the <code>launch()</code> method extension with a custom <code>ActivityResultContract</code> that has a <code>Unit</code> input will no longer cause a <code>NullPointerException</code> (<a href=\"https://android-review.googlesource.com/#/q/I76282e17d47d25e3ff859f0b646e6063a381a510\">I76282</a>, <a href=\"https://issuetracker.google.com/issues/183837954\">b/183837954</a>)</li>\n <li>Fixed a false positive lint error telling you to use Fragment <code>1.3.0</code> when using an snapshot, alpha, beta, or RC build of a newer version of Fragments. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1684167\">f4a57e</a>, <a href=\"https://issuetracker.google.com/issues/184847092\">b/184847092</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2e83201d839574608d563976022ea651a4a4192c..f4a57ed58db086df5059f059a09e014df9f46e4c/activity"
+    },
+    {
+      "id": "appsearch",
+      "name": "AppSearch",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appsearch#1.0.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<p>AppSearch is a search library for managing locally stored structured data, with APIs for indexing data and retrieving data via full-text search. Use it to build custom in-app search capabilities for your users. This initial release is <code>1.0.0-alpha01</code>.</p>",
+      "commitsUrl": null
+    },
+    {
+      "id": "camera",
+      "name": "Camera",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#1.0.0",
+      "detailsHtml": "<p><strong>Major features of 1.0.0</strong></p>\n<ul>\n <li>CameraX supports <a href=\"https://developer.android.com/training/camerax/preview\">Preview</a>, <a href=\"https://developer.android.com/training/camerax/take-photo\">ImageCapture</a>, and <a href=\"https://developer.android.com/training/camerax/analyze\">Analysis</a></li>\n <li>CameraX manages the camera <a href=\"https://developer.android.com/training/camerax/architecture#lifecycles\">lifecycle</a> within an easy to use API</li>\n <li>CameraX aims to provide a compatibility layer that fixes many issues in the Android Camera Ecosystem</li>\n</ul>\n<p><strong>Known Issues</strong></p>\n<ul>\n <li>See <a href=\"https://issuetracker.google.com/hotlists/1551123\">Known Issue list</a></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/00406dba96e608d4f56964a2d73e234cfb5ed019..de3cb1599436fa5736337b468448853d1981fadc/camera"
+    },
+    {
+      "id": "compose-animation",
+      "name": "Compose Animation",
+      "version": "1.0.0-beta06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-animation#1.0.0-beta06",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b04f2c39ebb45a0480dc0dc04d7fb7406646eb5e..3d6f168394d1dd14e1d6f5b6dc4a0d405cb1a26a/compose/animation"
+    },
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.0.0-beta06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.0.0-beta06",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b04f2c39ebb45a0480dc0dc04d7fb7406646eb5e..4c1927601bfcaaaf049d0fc7a4e5801ff5cf9729/compose/compiler/compiler"
+    },
+    {
+      "id": "compose-foundation",
+      "name": "Compose Foundation",
+      "version": "1.0.0-beta06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-foundation#1.0.0-beta06",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Solve Conflict with Navigation Gesture (<a href=\"https://android-review.googlesource.com/#/q/I1145eacbec270abcbb70f8ccb3664609a699ee47\">I1145e</a>)</li>\n <li>Added CollectionInfo and CollectionItemInfo accessibility APIs that allows to mark collection and its items for accessibility services (<a href=\"https://android-review.googlesource.com/#/q/Id54ef37379e14e41ac52782b40e29de54f95eed0\">Id54ef</a>, <a href=\"https://issuetracker.google.com/issues/180479017\">b/180479017</a>)</li>\n <li>Added <code>SemanticsActions.ScrollToIndex</code> to scroll a list with indexed items to the item with a certain index, and <code>SemanticsProperties.IndexForKey</code> to get the index of an item in a list with keyed items. Both actions are implemented by LazyList.\n  <ul>\n   <li>Added <code>SemanticsNodeInteraction.performScrollToIndex</code> that scrolls a list to the given index, and <code>SemanticsNodeInteraction.performScrollToKey</code> that scrolls a list to the item with the given key. (<a href=\"https://android-review.googlesource.com/#/q/I4fe63399fb620794651e1973730658877bcfeff4\">I4fe63</a>, <a href=\"https://issuetracker.google.com/issues/178483889\">b/178483889</a>, <a href=\"https://issuetracker.google.com/issues/161584524\">b/161584524</a>)</li>\n  </ul></li>\n <li>AnnotatedString save support to TextFieldValue.Saver. Added addTtsAnnotation and withAnnotation utility functions to AnnotatedString.Builder (<a href=\"https://android-review.googlesource.com/#/q/I8cbdcfcdbe167ff7c68c760aebdd8affe2d8434e\">I8cbdc</a>, <a href=\"https://issuetracker.google.com/issues/178446304\">b/178446304</a>)</li>\n <li>Default <code>0.dp</code> parameter values were added to <code>PaddingValues(horizontal, vertical)</code> (<a href=\"https://android-review.googlesource.com/#/q/I0557182c68da793da30caeb6325949829101e0cf\">I05571</a>, <a href=\"https://issuetracker.google.com/issues/181336792\">b/181336792</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Row &amp; Column children with <code>weight(fill = false)</code> are no longer making the parent fill the entire available main axis space. (<a href=\"https://android-review.googlesource.com/#/q/Ied94da682f4cf6ead5b91e06ba08904c1a349b9f\">Ied94d</a>, <a href=\"https://issuetracker.google.com/issues/186012444\">b/186012444</a>, <a href=\"https://issuetracker.google.com/issues/184355105\">b/184355105</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b04f2c39ebb45a0480dc0dc04d7fb7406646eb5e..4c1927601bfcaaaf049d0fc7a4e5801ff5cf9729/compose/foundation"
+    },
+    {
+      "id": "compose-material",
+      "name": "Compose Material",
+      "version": "1.0.0-beta06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-material#1.0.0-beta06",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Ripple has been migrated to use <code>RippleDrawable</code> internally on Android devices. This means that ripple animations will happen on the RenderThread, and so will be smooth even when the UI thread is under load, such as when navigating between screens. This does not change the API surface of ripple, but there may be behavior changes introduced as a result of this change. To aid the migration, <code>LocalRippleNativeRendering</code> has been added - provide a value of <code>false</code> to this CompositionLocal to fall back to the previous ripple implementation inside the CompositionLocalProvider. This API is temporary and will be removed in the future, so if you run into issues that cause you to use this API, please <a href=\"https://issuetracker.google.com/issues/new?component=612128\">file a bug</a>. (<a href=\"https://android-review.googlesource.com/#/q/I902f8eecaa8e3f55eb4c1bebc86f4f50e2967d0c\">I902f8</a>, <a href=\"https://issuetracker.google.com/issues/168777351\">b/168777351</a>, <a href=\"https://issuetracker.google.com/issues/183019123\">b/183019123</a>)</li>\n <li>Added CollectionInfo and CollectionItemInfo accessibility APIs that allows to mark collection and its items for accessibility services (<a href=\"https://android-review.googlesource.com/#/q/Id54ef37379e14e41ac52782b40e29de54f95eed0\">Id54ef</a>, <a href=\"https://issuetracker.google.com/issues/180479017\">b/180479017</a>)</li>\n <li>Added accessibility API <code>error</code> that allows to mark a node that contains invalid input (<a href=\"https://android-review.googlesource.com/#/q/I129977e3d3b5f03435de41de409fde9029c325b9\">I12997</a>, <a href=\"https://issuetracker.google.com/issues/180584804\">b/180584804</a>, <a href=\"https://issuetracker.google.com/issues/182142737\">b/182142737</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Updated Compose Material catalog insets implementation from: https://github.com/google/accompanist/pull/365. (<a href=\"https://android-review.googlesource.com/#/q/I25dc3d73bdf3245036a6299efe11f9c7a2de14df\">I25dc3</a>)</li>\n <li>Row &amp; Column children with weight(fill = false) are no longer making the parent fill the entire available main axis space. (<a href=\"https://android-review.googlesource.com/#/q/Ied94da682f4cf6ead5b91e06ba08904c1a349b9f\">Ied94d</a>, <a href=\"https://issuetracker.google.com/issues/186012444\">b/186012444</a>, <a href=\"https://issuetracker.google.com/issues/184355105\">b/184355105</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b04f2c39ebb45a0480dc0dc04d7fb7406646eb5e..4c1927601bfcaaaf049d0fc7a4e5801ff5cf9729/compose/material"
+    },
+    {
+      "id": "compose-runtime",
+      "name": "Compose Runtime",
+      "version": "1.0.0-beta06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-runtime#1.0.0-beta06",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>@ComposeCompilerApi</code> no longer <code>@RequiresOptIn</code> (<a href=\"https://android-review.googlesource.com/#/q/Iab6901114e02706221c6f1f2050d372b366ee060\">Iab690</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b04f2c39ebb45a0480dc0dc04d7fb7406646eb5e..4c1927601bfcaaaf049d0fc7a4e5801ff5cf9729/compose/runtime"
+    },
+    {
+      "id": "compose-ui",
+      "name": "Compose UI",
+      "version": "1.0.0-beta06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-ui#1.0.0-beta06",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Solve Conflict with Navigation Gesture (<a href=\"https://android-review.googlesource.com/#/q/I1145eacbec270abcbb70f8ccb3664609a699ee47\">I1145e</a>)</li>\n <li><code>@ComposeCompilerApi</code> no longer <code>@RequiresOptIn</code> (<a href=\"https://android-review.googlesource.com/#/q/Iab6901114e02706221c6f1f2050d372b366ee060\">Iab690</a>)</li>\n <li>Added CollectionInfo and CollectionItemInfo accessibility APIs that allows to mark collection and its items for accessibility services (<a href=\"https://android-review.googlesource.com/#/q/Id54ef37379e14e41ac52782b40e29de54f95eed0\">Id54ef</a>, <a href=\"https://issuetracker.google.com/issues/180479017\">b/180479017</a>)</li>\n <li>Added <code>SemanticsActions.ScrollToIndex</code> to scroll a list with indexed items to the item with a certain index, and <code>SemanticsProperties.IndexForKey</code> to get the index of an item in a list with keyed items. Both actions are implemented by LazyList.\n  <ul>\n   <li>Added <code>SemanticsNodeInteraction.performScrollToIndex</code> that scrolls a list to the given index, and <code>SemanticsNodeInteraction.performScrollToKey</code> that scrolls a list to the item with the given key. (<a href=\"https://android-review.googlesource.com/#/q/I4fe63399fb620794651e1973730658877bcfeff4\">I4fe63</a>, <a href=\"https://issuetracker.google.com/issues/178483889\">b/178483889</a>, <a href=\"https://issuetracker.google.com/issues/161584524\">b/161584524</a>)</li>\n  </ul></li>\n <li>Added ownerViewId to GraphicLayerInfo (<a href=\"https://android-review.googlesource.com/#/q/I19f62ba250ad53284a6c3fb94c562bf7c86e96c4\">I19f62</a>)</li>\n <li>Added Font() overloads to load fonts from assets, File and FileDescriptor (<a href=\"https://android-review.googlesource.com/#/q/I5d3825e6120f68e7fac8f88c6b69662018175650\">I5d382</a>)</li>\n <li>Added accessibility API <code>error</code> that allows to mark a node that contains invalid input (<a href=\"https://android-review.googlesource.com/#/q/I129977e3d3b5f03435de41de409fde9029c325b9\">I12997</a>, <a href=\"https://issuetracker.google.com/issues/180584804\">b/180584804</a>, <a href=\"https://issuetracker.google.com/issues/182142737\">b/182142737</a>)</li>\n <li>Added <code>Font()</code> overloads to load fonts from assets, File and FileDescriptor (<a href=\"https://android-review.googlesource.com/#/q/I43007da51b8500b57b9d7bb5dec2d00e4f61e2e4\">I43007</a>)</li>\n <li>AnnotatedString save support to <code>TextFieldValue.Saver</code>. Added <code>addTtsAnnotation</code> and withAnnotation utility functions to <code>AnnotatedString.Builder</code> (<a href=\"https://android-review.googlesource.com/#/q/I8cbdcfcdbe167ff7c68c760aebdd8affe2d8434e\">I8cbdc</a>, <a href=\"https://issuetracker.google.com/issues/178446304\">b/178446304</a>)</li>\n <li>Added TextUnit constructor function <code>TextUnit(value: Float, type: TextUnitType)</code> (<a href=\"https://android-review.googlesource.com/#/q/I7eccedda948c374d0cab1e883a56294aa9007b68\">I7ecce</a>, <a href=\"https://issuetracker.google.com/issues/178446304\">b/178446304</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b04f2c39ebb45a0480dc0dc04d7fb7406646eb5e..4c1927601bfcaaaf049d0fc7a4e5801ff5cf9729/compose/ui"
+    },
+    {
+      "id": "core",
+      "name": "Core",
+      "version": "1.5.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.5.0-rc02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Add support for setSystemBarsBehavior on SDK &lt; 30. (<a href=\"https://android-review.googlesource.com/q/I062c841f0e4201fddfcf1489dbfaff605bebbdb6\">I062c8</a>, <a href=\"https://issuetracker.google.com/issues/173203649\">b/173203649</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d4cb15fdc3d603b2628e4bfe9c57a72dea59b7e8..d71649df1a2eceeb1c1b0aa28eddc59707515ffe/core"
+    },
+    {
+      "id": "core",
+      "name": "Core",
+      "version": "1.6.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.6.0-alpha03",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>Add support for resolving theme attributes in nested <code>ColorStateList</code>s. (<a href=\"https://android-review.googlesource.com/q/I2e4098d45173a443dda97a23923c02755e83acfb\">I2e409</a> <a href=\"https://issuetracker.google.com/issues/155579892\">b/155579892</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>\n  <p>Prevent NPE when handling <code>null</code> custom selection action mode callbacks on AppCompat-backed views. (<a href=\"https://android-review.googlesource.com/#/q/I033c712ffa477853f122788f2335e7cab9a877fb\">I033c7</a>, <a href=\"https://issuetracker.google.com/issues/173435375\">b/173435375</a>)</p>\n </li>\n <li>\n  <p>Add support for setSystemBarsBehavior on SDK &lt; 30. (<a href=\"https://android-review.googlesource.com/q/I062c841f0e4201fddfcf1489dbfaff605bebbdb6\">I062c8</a>, <a href=\"https://issuetracker.google.com/issues/173203649\">b/173203649</a>)</p>\n </li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/902e5b7442704f108ee9ea59ebbde4282d710ca8..3d6f168394d1dd14e1d6f5b6dc4a0d405cb1a26a/core"
+    },
+    {
+      "id": "core-google-shortcuts",
+      "name": "Core",
+      "version": "1.0.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#core-google-shortcuts-1.0.0-alpha03",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>No longer automatically report shortcut usage when a shortcut is added / updated. Instead usage reporting will be moved to <code>ShortcutManagerCompat#pushDynamicShortcut</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/902e5b7442704f108ee9ea59ebbde4282d710ca8..3d6f168394d1dd14e1d6f5b6dc4a0d405cb1a26a/core/core-google-shortcuts"
+    },
+    {
+      "id": "hilt",
+      "name": "Hilt",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/hilt#1.0.0",
+      "detailsHtml": "<p><strong>Major features of 1.0.0</strong></p>\n<p>The <code>androidx.hilt</code>artifacts offers extensions for integrating <a href=\"https://dagger.dev/hilt/\">Hilt</a> with various other AndroidX libraries, such as WorkManager and Navigation. To see a list of features and examples check out <a href=\"https://developer.android.com/training/dependency-injection/hilt-jetpack\">the integration documentation</a>.</p>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/52fbd7ed5b07ca4431fa828325a1f8da45b02e51..661b67017024a998cb20270523ec049edbc33dde/hilt"
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "version": "1.4.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media#media-1.4.0-alpha01",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Deprecate <code>MediaControllerCompat.TransportControls#EXTRA_LEGACY_STREAM_TYPE</code> and add <code>MediaConstants#TRANSPORT_CONTROLS_EXTRAS_KEY_LEGACY_STREAM_TYPE</code> instead (<a href=\"https://android-review.googlesource.com/#/q/I62f172373ac24f4c883f46c86740651264c3c049\">I62f17</a>)</li>\n <li>Add an extra key to shuffle media for playFromUri (<a href=\"https://android-review.googlesource.com/#/q/Ibc63c77f4f79c9279d809aab837c7d25a621930e\">Ibc63c</a>)</li>\n <li>Add @Nullable annotation to Result class (<a href=\"https://android-review.googlesource.com/#/q/I2d61708d314224ac945f34699f1f46a21aed32fb\">I2d617</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix missing <code>EXTRA_KEY_EVENT</code> of intent for MediaButtonReceiver (<a href=\"https://android-review.googlesource.com/#/q/If755747418aca8b76b12cbce13ffed2c7dedb038\">If7557</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/612741347a477b0647a2a8b94b1e7d40aa91abaa..3d6f168394d1dd14e1d6f5b6dc4a0d405cb1a26a/media/media"
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "version": "1.3.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media#media-1.3.1",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix missing EXTRA_KEY_EVENT of intent for MediaButtonReceiver (<a href=\"https://android-review.googlesource.com/#/q/If755747418aca8b76b12cbce13ffed2c7dedb038\">If7557</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/612741347a477b0647a2a8b94b1e7d40aa91abaa..51bc56c58cf5159c3df4a8b324914e16695e33ed/media/media"
+    },
+    {
+      "id": "mediarouter",
+      "name": "Mediarouter",
+      "version": "1.2.3",
+      "url": "https://developer.android.com/jetpack/androidx/releases/mediarouter#1.2.3",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed the NullPointerException for customized chooser dialog.</li>\n <li>Fixed issue where the MediaRouteButton shows a disconnected state even when it's connected, if it is temporarily disabled.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/773ee0f10f4aefa072b6c62f93eaf5c2862e8044..ab0e0fa1d05c014d6bbec0091425363dbd629259/mediarouter/mediarouter"
+    },
+    {
+      "id": "paging",
+      "name": "Paging",
+      "version": "3.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/paging#3.0.0",
+      "detailsHtml": "<p><strong>Major features of 3.0.0</strong></p>\n<p>The majority of the existing API from Paging 2.x.x has been deprecated in favor of the new Paging 3 APIs to bring the following improvements:</p>\n<ul>\n <li>First-class support for Kotlin coroutines and Flow</li>\n <li>Support for cancellation</li>\n <li>Built-in load state and error signals</li>\n <li>Retry + refresh functionality</li>\n <li>All three DataSource subclasses have been combined into a unified PagingSource class</li>\n <li>Custom page transformations including a built-in one for adding separators</li>\n <li>Loading state headers and footers</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ce0bda2d989654e33f843b4c7cb263afaca28b14..5651d1dbcb19d1b2d3cc50e8c379a8cc9f6ee1ad/paging"
+    },
+    {
+      "id": "recyclerview-selection",
+      "name": "RecyclerView-Selection",
+      "version": "1.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/recyclerview#recyclerview-selection-1.2.0-alpha01",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix an issue where key/position mapping in KeyProvider was lost while entry was not yet recycled. (<a href=\"https://issuetracker.google.com/issues/145767095\">b/145767095</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/563bff8d5f42c831ddfa3a732ad82d97d0c60d99..3d6f168394d1dd14e1d6f5b6dc4a0d405cb1a26a/recyclerview/recyclerview-selection"
+    },
+    {
+      "id": "room",
+      "name": "Room",
+      "version": "2.4.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.4.0-alpha02",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>@ProvidedAutoMigrationSpec</code> is a new API for declaring that an <code>AutoMigrationSpec</code> will be provided at runtime via <code>RoomDatabase.Builder#addAutoMigrationSpec()</code>. This allows for a dependency injection framework to provide such specs when they need complex dependencies.</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix an issue with auto migrations where <code>@DatabaseView</code>s where not being properly re-created.</li>\n</ul>\n<p><strong>External Contribution</strong></p>\n<ul>\n <li>Fix an issue in Room’s <code>JournalMode.TRUNCATE</code> where the <code>InvalidationTracker</code> callback was sometimes being invoked invalidly, too late, or not at all. Thanks to <code>Uli Bubenheimer | bubenheimer@users.noreply.github.com</code> (<a href=\"https://issuetracker.google.com/154040286\">b/154040286</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ab8f8cb3fbe8e7409d54bb7251e636d8a92226e2..3d6f168394d1dd14e1d6f5b6dc4a0d405cb1a26a/room"
+    },
+    {
+      "id": "security-app-authenticator",
+      "name": "Security-state-provider",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/security#security-app-authenticator-1.0.0-alpha01",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<p>AppAuthenticator is a new library aimed at simplifying verification of app trust based on signing identity. An app just needs to specify an XML configuration file containing the package names and signing identities of trusted apps, and the library will take care of verifying the signing identity of apps at runtime.</p>",
+      "commitsUrl": null
+    },
+    {
+      "id": "slidingpanelayout",
+      "name": "SlidingPaneLayout",
+      "version": "1.2.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/slidingpanelayout#1.2.0-alpha02",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>SlidingPaneLayout</code> now takes into account folding features that have a non-zero width. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1678094\">847cc2</a>)</li>\n <li><code>SlidingPaneLayout</code> now expands the drag edge size when gesture navigation is enabled, mirroring the behavior of <code>DrawerLayout</code>. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1664980\">2c6d24</a>)</li>\n <li>The open and closed state of <code>SlidingPaneLayout</code> is now preserved even if it is changed when the device is non-slidable (i.e., when both panes are shown side by side), thus ensuring that users will continue to see the detail screen when they rotate their device or otherwise switch to a smaller display. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1681593\">b15eda</a>)</li>\n <li>Fix lock mode behavior (<a href=\"https://android-review.googlesource.com/#/q/Ic01dcef161ec0800d79bd257c17226480d50108d\">Ic01dc</a>)</li>\n</ul>\n<p><strong>External Contributions</strong></p>\n<ul>\n <li>Thanks Cesar Valiente for fixing <code>SlidingPaneLayout</code> to now take into account folding features that have a non-zero width. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/1678094\">847cc2</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5c42896eb6591b09e3952030fb7ea8d9b8c42713..3d6f168394d1dd14e1d6f5b6dc4a0d405cb1a26a/slidingpanelayout/slidingpanelayout"
+    },
+    {
+      "id": "wear",
+      "name": "Wear",
+      "version": "1.2.0-alpha08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#wear-1.2.0-alpha08",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>To improve code clarity, we added <code>@FloatRange</code> annotations to some angle parameters and return types. (<a href=\"https://android-review.googlesource.com/#/q/I430dd3cd37ce660234b5e5bb1937f477ae947cc8\">I430dd</a>)</li>\n <li>In the interface <code>WearArcLayout.ArcLayoutWidget</code>, the method <code>insideClickArea</code> is now called isPointInsideClickArea. (<a href=\"https://android-review.googlesource.com/#/q/Ia73073b0e9d664d41865d5df63afc2db637d036d\">Ia7307</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5c42896eb6591b09e3952030fb7ea8d9b8c42713..3d6f168394d1dd14e1d6f5b6dc4a0d405cb1a26a/wear/wear"
+    },
+    {
+      "id": "wear-complications-watchface",
+      "name": "Wear Complications & Watchface",
+      "version": "1.0.0-alpha13",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#complications-watchface-1.0.0-alpha13",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>\n  <p>Watch faces can have important visual elements beyond showing the time and complications. To provide screen reader support for this, watchface can now specify accessibility ContentDescriptionLabels via the Renderer's additionalContentDescriptionLabels property. In addition, to control the ordering of ContentDescriptionLabels accessibilityTraversalIndex has been added to complications. This can be modified by a ComplicationsUserStyleSetting.</p>\n </li>\n <li>\n  <p>To encourage developers to carefully consider screen readers we have made <code>ShortTextComplicationData.Builder</code>'s, <code>LongTextComplicationData.Builder</code>'s and <code>RangedValueComplicationData.Builder</code>'s <code>contentDescription</code> field mandatory to be passed into their constructors. If <code>ComplicationText.EMPTY</code> is passed in for the <code>contentDescription</code>, a <code>contentDescription</code> will be automatically generated from the text and title.</p>\n </li>\n <li>\n  <p><code>WatchFaceControlClient.getOrCreateInteractiveWatchFaceClient</code> now throws <code>ServiceStartFailureException</code> if the watchface throws an exception during init, this makes it much easier to diagnose issues during watch face startup.</p>\n </li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>We added support for having a null component name in ComplicationProviderInfo, which is needed to support older versions of Wear OS. (<a href=\"https://android-review.googlesource.com/#/q/I744d23cebf1d658c0066d63f4b989a078dc828f9\">I744d2</a>)</li>\n <li>We have migrated <code>androidx.wear.complications.SystemProviders</code> from Java to Kotlin. (<a href=\"https://android-review.googlesource.com/#/q/Ia1f8bd1a6ed1e129b0fcc469781aa06a7f03dc90\">Ia1f8b</a>)</li>\n <li>We have hidden all classes from public API that are in android.support.wearable.complications and created corresponding wrappers in AndroidX where needed. (<a href=\"https://android-review.googlesource.com/#/q/I7bd50e3bd368ae14883ad2c4802404a1c424ab3f\">I7bd50</a>)</li>\n <li>We have renamed method in <code>TimeDifferenceComplicationText.Builder</code> from <code>setMinimumUnit</code> to <code>setMinimalTimeUnit</code>. (<a href=\"https://android-review.googlesource.com/#/q/I20c64730819afd73e0bc0531315565d31ea21ada\">I20c64</a>)</li>\n <li>We have made <code>ShortTextComplicationData.Builder</code>'s, <code>LongTextComplicationData.Builder</code>'s and <code>RangedValueComplicationData.Builder</code>'s <code>contentDescription</code> field mandatory to be passed in constructor. (<a href=\"https://android-review.googlesource.com/#/q/I8cb69eb4bf900fb76eae8d2bb39af1297d490b6f\">I8cb69</a>)</li>\n <li>We have renamed ComplicationProviderService.onComplicationUpdate to onComplicationRequest and encapsulated id and type parameter of this method into data ComplicationRequest. Corresponding listener has been renamed to ComplicationRequestListener and its method ComplicationRequestListener.onComplicationData. (<a href=\"https://android-review.googlesource.com/#/q/Iaf146c9495ce65ec8a3a13908979bc79277da6d8\">Iaf146</a>)</li>\n <li>We have removed method <code>isActiveAt</code> from <code>ComplicationData</code> and exposed field <code>validTimeRange</code> instead of it. This method call can be replaced with <code>validTimeRange.contains</code>. (<a href=\"https://android-review.googlesource.com/#/q/I65936f9b3b4d6c2acf3f64be2773e92600e55d9c\">I65936</a>)</li>\n <li>We have changed description of the method ComplicationProviderService.onComplicationActivated to receive a ComplicationType instead of an int. (<a href=\"https://android-review.googlesource.com/#/q/Idb5ffd58898956aba178505c0791c434fcea9239\">Idb5ff</a>)</li>\n <li>Migrated ProviderUpdateRequester from Java to Koltin. (<a href=\"https://android-review.googlesource.com/#/q/Ibce13d8a9e244164640ade18afccf3e80af31250\">Ibce13</a>)</li>\n <li>GlesRender.makeContextCurrent is now public. Watch face code may need to make gl calls outside of render and onGlContextCreated and because there may be both an interactive and a headless context its necessary to call this. (<a href=\"https://android-review.googlesource.com/#/q/I8a43ce92884892b6131c0b1fe2e08019c9f38fa1\">I8a43c</a>)</li>\n <li>WatchFaceControlClient.getOrCreateInteractiveWatchFaceClient now throws ServiceStartFailureException if the watchface throws during init. In addition WatchFaceService now throws an exception if createWatchFace takes longer than 6 seconds. (<a href=\"https://android-review.googlesource.com/#/q/I59b2f354e62a71eea1b4b4d5da9309e3968b3b2e\">I59b2f</a>)</li>\n <li>We have removed the unused id property of <code>GlesTextureComplication</code>. (<a href=\"https://android-review.googlesource.com/#/q/I28958350f962380a962b520425ae6e5d3acc5536\">I28958</a>)</li>\n <li>The watchface can now specify accessibility ContentDescriptionLabels via the <code>Renderer</code>'s additionalContentDescriptionLabels property. In addition to controlling the ordering of ContentDescriptionLabels accessibilityTraversalIndex has been added to complications. This can be modified by a ComplicationsUserStyleSetting. (<a href=\"https://android-review.googlesource.com/#/q/Ib7362def16d52e924f7db5fdcfedb000683e7103\">Ib7362</a>)</li>\n <li>Expand documentation about touch event handling in the watch face. (<a href=\"https://android-review.googlesource.com/#/q/Iaf31ef431003a29c90228fc1866ef85e2651be55\">Iaf31e</a>)</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>EditorSession.getComplicationsPreviewData()</code> now returns a map for every rather only non-empty complications. An instance of EmptyComplicationData is used for empty complications. (<a href=\"https://android-review.googlesource.com/#/q/I1ef7e9c1c9919a3103e83fdfb4f3c005962287db\">I1ef7e</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4ddfc1583c09aaa878d34437fbfee1b995b60d3a..3d6f168394d1dd14e1d6f5b6dc4a0d405cb1a26a/wear"
+    },
+    {
+      "id": "wear-ongoing",
+      "name": "Wear-Ongoing",
+      "version": "1.0.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear#wear-ongoing-1.0.0-alpha04",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>On OngoingActivity, the methods fromExistingOngoingActivity are now called recoverOngoingActivity.</li>\n <li>OngoingActivity now has a full set of getters, the same previously only available at OngoingActivityData. (<a href=\"https://android-review.googlesource.com/#/q/I0ee4deaba18f5da836d5dc31607df3d93a808edd\">I0ee4d</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/52fbd7ed5b07ca4431fa828325a1f8da45b02e51..3d6f168394d1dd14e1d6f5b6dc4a0d405cb1a26a/wear/wear-ongoing"
+    },
+    {
+      "id": "wear-tiles",
+      "name": "Wear Tiles",
+      "version": "1.0.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/wear-tiles#1.0.0-alpha04",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Hidden concrete TileProviderService classes.\n  <ul>\n   <li>Made TileUpdateRequester take a <code>Class&lt;? extends TileProviderService&gt;</code>. (<a href=\"https://android-review.googlesource.com/#/q/Ib7ccab689da6c43f8d210109cbfeef1e1c1b8c54\">Ib7cca</a>)</li>\n  </ul></li>\n <li>Added ability to add extras to AndroidActivity. (<a href=\"https://android-review.googlesource.com/#/q/I748f4516245ee82f86d12a7e6b076bd7cf4a4ded\">I748f4</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4ddfc1583c09aaa878d34437fbfee1b995b60d3a..3d6f168394d1dd14e1d6f5b6dc4a0d405cb1a26a/wear/tiles"
+    },
+    {
+      "id": "window",
+      "name": "Window",
+      "version": "1.0.0-alpha06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/window#window-1.0.0-alpha06",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li>We have started our migration to Kotlin and will finish in the next release.</li>\n <li>DeviceState has been removed from the public API, please use FoldingFeature instead.</li>\n <li>We have removed <code>STATE_FLIPPED</code> from the FoldingFeature states since it is not supported by any use-case at the moment.</li>\n <li>We have also removed other deprecated APIs.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Adding Kotlin as a dependency.\n  <ul>\n   <li>Migrate core library to Kotlin. (<a href=\"https://android-review.googlesource.com/#/q/Idd995cb977e2eadc79623dfb8390cf136f0b5cdf\">Idd995</a>)</li>\n  </ul></li>\n <li>Removed <code>DisplayFeature</code> builder. (<a href=\"https://android-review.googlesource.com/#/q/I61fa463a930f9a98556e5c56b45860fbdc88a04c\">I61fa4</a>)</li>\n <li>Removed <code>DeviceState</code> from public api, use <code>FoldingFeature</code> instead. (<a href=\"https://android-review.googlesource.com/#/q/Id6079a0980a7a89e1f72f8074024926ebb646ab9\">Id6079</a>)</li>\n <li>Remove device state callback from extensions. (<a href=\"https://android-review.googlesource.com/#/q/I5ea837baa8880474f2db5944a9a2878321f32733\">I5ea83</a>)</li>\n <li>Remove <code>STATE_FLIPPED</code> from FoldingFeature. (<a href=\"https://android-review.googlesource.com/#/q/I9c4e1819214647440a1a7886593691f85b385f4d\">I9c4e1</a>)</li>\n <li>Remove deprecated registration methods. (<a href=\"https://android-review.googlesource.com/#/q/Ib381b2f3ec48fc9181160fc43e231f6457d5ff4e\">Ib381b</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/5c42896eb6591b09e3952030fb7ea8d9b8c42713..3d6f168394d1dd14e1d6f5b6dc4a0d405cb1a26a/window/window"
+    }
+  ]
+}
