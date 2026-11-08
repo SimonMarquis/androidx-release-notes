@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#october_4_2022",
+  "title": "October 4, 2022",
+  "releasedOn": "2022-10-04",
+  "updated": "2022-10-04T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#october_4_2022",
+  "components": [
+    {
+      "id": "compose-compiler",
+      "name": "Compose Compiler",
+      "version": "1.3.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.3.2",
+      "detailsHtml": "<p><strong>New Feature</strong></p>\n<ul>\n <li>This version includes an update to Kotlin 1.7.20</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/ce1a4d490897c8f3abec98164b4aab15e6ea9d8d..31382b61f1af46fc43d9a781645ca9eed1b56874/compose/compiler"
+    }
+  ]
+}
