@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#july_1_2024",
+  "title": "July 1, 2024",
+  "releasedOn": "2024-07-01",
+  "updated": "2024-07-01T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#july_1_2024",
+  "components": [
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.8.3",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.8.3",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue with Lifecycle 2.8’s backward compatibility with Compose 1.6.0 and lower when using code shrinking. (<a href=\"https://android-review.googlesource.com/3133056\">aosp/3133056</a>, <a href=\"https://issuetracker.google.com/346808608\">b/346808608</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/86a54e23482b320e083f9a337814c7fe4f78e9a3..92cc6e5d71efd12345ce7ba558cbc2a29926e9ac/lifecycle"
+    }
+  ]
+}
