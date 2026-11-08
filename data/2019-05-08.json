@@ -1,0 +1,33 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#may_8_2019",
+  "title": "May 8, 2019",
+  "releasedOn": "2019-05-08",
+  "updated": "2019-05-08T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#may_8_2019",
+  "components": [
+    {
+      "id": "core",
+      "name": "Core",
+      "version": "1.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.2.0-alpha01",
+      "detailsHtml": "<strong>Note:</strong><span> This version will only compile against the Q Beta 3 SDK.</span> \n<p><strong>New features</strong></p>\n<ul>\n <li>Add <code>ACTION_PAGE_UP/DOWN/NEXT/PREVIOUS</code> accessibility actions</li>\n <li>Add <code>CATEGORY_NOTIFICATION</code> to NotificationCompat</li>\n <li>Add support for contextual Notification Actions</li>\n <li>Add support for bubbles in NotificationCompat</li>\n <li>Added BlendModeCompat APIs to leverage the BlendMode APIs on Android 10 and falling back to <code>PorterDuff.Mode</code> equivalents wherever possible</li>\n <li>Add new getters to WindowInsetsCompat and ViewCompat</li>\n <li>Add support for tap-to-edit in notifications</li>\n <li>DrawerLayout system gesture exclusion rects</li>\n <li>Add NotificationCompat API for whether to allow system generated contextual actions</li>\n <li>Handle disabled <code>&lt;activity-alias&gt;</code> components in NavUtils</li>\n <li>Add <code>AccessibilityNodeInfoCompat.setEntryKey</code></li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fix exception when loading fonts in TypefaceCompat</li>\n <li>Various DayNight fixes</li>\n <li>Fix backwards compatibility for bundle key strings between 28.0 (support library) and 1.1 (AndroidX) in EditorInfoCompat, ShareCompat, <code>WakefulBroadcastReceiver</code> and <code>InputConnectionCompat</code></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "drawerlayout",
+      "name": "DrawerLayout",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/drawerlayout#1.1.0-alpha01",
+      "detailsHtml": "<strong>Note:</strong><span> This version will only compile against the Q Beta 3 SDK.</span> \n<p><strong>New features</strong></p>\n<ul>\n <li>Update for Gesture Nav Support: <code>DrawerLayout</code> now sets system gesture exclusion <code>rects</code> to permit swiping drawers open.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "transition",
+      "name": "Transition",
+      "version": "1.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/transition#1.2.0-alpha01",
+      "detailsHtml": "<strong>Note:</strong><span> This version will only work with the Q Beta 3 SDK.</span> \n<p><strong>New features</strong></p>\n<ul>\n <li>This version should be used if you are specifying Q as a <code>targetSdkVersion</code>. Otherwise, some of the transitions will not work properly. Instead of the reflection calls, this version uses the new public methods added in Q. It is a part of our restrictions on non-SDK interfaces effort.</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

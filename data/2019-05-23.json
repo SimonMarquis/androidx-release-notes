@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#may_23_2019",
+  "title": "May 23, 2019",
+  "releasedOn": "2019-05-23",
+  "updated": "2019-05-23T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#may_23_2019",
+  "components": [
+    {
+      "id": "security",
+      "name": "Security-state-provider",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/security#1.0.0-alpha02",
+      "detailsHtml": "",
+      "commitsUrl": null
+    }
+  ]
+}

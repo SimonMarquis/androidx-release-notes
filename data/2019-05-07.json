@@ -1,0 +1,249 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#may_7_2019",
+  "title": "May 7, 2019",
+  "releasedOn": "2019-05-07",
+  "updated": "2019-05-07T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#may_7_2019",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.0.0-alpha08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.0.0-alpha08",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li>Breaking change: The previously deprecated <code>addOnBackPressedCallback</code> and <code>removeOnBackPressedCallback</code> methods on <code>ComponentActivity</code> have been removed. <a href=\"https://android-review.googlesource.com/953857\">aosp/953857</a></li>\n <li>The <code>setEnabled()</code> and <code>isEnabled()</code> methods of <code>OnBackPressedCallback</code> are now final. <a href=\"https://issuetracker.google.com/issues/131416833\">b/131416833</a></li>\n <li>The <code>remove()</code> method of <code>OnBackPressedCallback</code> is now final. <a href=\"https://android-review.googlesource.com/952720\">aosp/952720</a></li>\n <li><code>OnBackPressedDispatcher</code> now has public constructors, allowing you to construct your own instances for testing, etc. <a href=\"https://android-review.googlesource.com/953431\">aosp/953431</a></li>\n <li><code>onBackPressed()</code> for <code>ComponentActivity</code> is now explicitly marked as <code>@MainThread</code> <a href=\"https://android-review.googlesource.com/952721\">aosp/952721</a></li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed a <code>ConcurrentModificationException</code> when calling <code>remove()</code> from within the <code>handleOnBackPressed()</code> method of a <code>OnBackPressedCalback</code> that was added with a <code>LifecycleOwner</code>. <a href=\"https://issuetracker.google.com/issues/131765095\">b/131765095</a></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d0c85eb6e595cfd4383ef345e97e1b8d6acd0a44..baca2b5c73982f26b5630b87ff7dbf25622bbafc/activity"
+    },
+    {
+      "id": "annotation",
+      "name": "Annotation",
+      "version": "1.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/annotation#1.1.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/d0c85eb6e595cfd4383ef345e97e1b8d6acd0a44..baca2b5c73982f26b5630b87ff7dbf25622bbafc/activity"
+    },
+    {
+      "id": "appcompat",
+      "name": "AppCompat",
+      "version": "1.1.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.1.0-alpha05",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li><a href=\"https://developer.android.com/reference/androidx/appcompat/app/AppCompatDelegate.html#setDefaultNightMode(int)\">setDefaultNightMode()</a> now automatically recreates any started activities.</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Various fixes to DayNight mode</li>\n <li>Invalidate outline on any background change in ActionBar</li>\n <li>Fix spinner widget scroll</li>\n <li>Fix custom set window backgrounds being overridden in AlertDialog</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/2f634eec2143acd6a4ea19a375a6e3877cdcc2ed..fbdc0c35696b2e1ee3216e3e8c397aeb1abe4311/appcompat"
+    },
+    {
+      "id": "arch-core",
+      "name": "Arch Core",
+      "version": "2.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/arch#2.1.0-beta01",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li>Breaking change: the previously deprecated <code>Cancellable</code> class has been removed. (<a href=\"https://android-review.googlesource.com/952616\">aosp/952616</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/c5af1d83cdaec5dff1d4bdefe93d0a24bd1fec89..fbdc0c35696b2e1ee3216e3e8c397aeb1abe4311/arch"
+    },
+    {
+      "id": "benchmark",
+      "name": "Benchmark",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/benchmark#1.0.0-alpha01",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "camerax",
+      "name": "CameraX",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camerax#1.0.0-alpha01",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "collection",
+      "name": "Collection",
+      "version": "1.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/collection#1.1.0-rc01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Use more efficient implementation for <code>contains</code> and <code>isNotEmpty</code> functions in 'collection-ktx' artifact. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/866529\">aosp/866529</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/a81cba4406e40dfca7ba3c37e629537c4840de95..2ee5d826c17d6b538469d85d92745ea43f1ec19e/collection"
+    },
+    {
+      "id": "concurrent",
+      "name": "Concurrent",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/concurrent#1.0.0-beta01",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li><code>ResolvableFuture</code> and <code>AbstractResolvableFuture</code> were hidden from public api in favor <code>CallbackToFutureAdapter</code> that provides safer API.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/033f65978071d72164b3707a61d342844c9f2811..26b84a56581b60b44efe49f4ee63c95fa8dc8787/concurrent/futures"
+    },
+    {
+      "id": "core",
+      "name": "Core",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.1.0-beta01",
+      "detailsHtml": "<p>The initial release of AndroidX broke backwards compatibility for Support Library <code>compat</code> APIs that are used for inter-process communication, sending keyed data in bundles. This release fixes this compatibility, restoring communication between code built with Support Library 28.0 (or earlier) and AndroidX 1.1 (or later).</p>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Undeprecated capability setters (<a href=\"https://android-review.googlesource.com/c/937281/\">aosp/937281</a>)</li>\n <li><code>RemoteActionCompat</code> is now a 1VersionedParcelable` (<a href=\"https://android-review.googlesource.com/c/928534/\">aosp/928534</a>)</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>AppCompatTextView in core tests should be created with an appcompat theme (<a href=\"https://android-review.googlesource.com/c/951636/\">aosp/951636</a>)</li>\n <li>Use pre-1.0 string values for InputConnectionCompat (<a href=\"https://android-review.googlesource.com/c/948725/\">aosp/948725</a>)</li>\n <li>Use pre-AndroidX strings as fallback interop for bundle keys (<a href=\"https://android-review.googlesource.com/c/938269/\">aosp/938269</a>)</li>\n <li>Fixed bug in DayNight updates when in background (<a href=\"https://android-review.googlesource.com/c/942956/\">aosp/942956</a>)</li>\n <li>Implemented text entry key API for accessibility services in AOSP Keyboard (<a href=\"https://android-review.googlesource.com/c/943897/\">aosp/943897</a>)</li>\n <li>Fixed exception when loading font on devices running API Level 20 and lower</li>\n <li>Handle disabled <code>&lt;activity-alias&gt;</code> components in NavUtils (<a href=\"https://android-review.googlesource.com/c/940788/\">aosp/940788</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/f6d94c8b8adaf0edaff495c1e88e8ddc96060317..2c7181c30858d401daba909d0a9400d5fc8d16d9/core"
+    },
+    {
+      "id": "core",
+      "name": "Core",
+      "version": "1.0.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.0.2",
+      "detailsHtml": "<p>The initial release of AndroidX broke backwards compatibility for Support Library <code>compat</code> APIs that are used for inter-process communication, sending keyed data in bundles. This release fixes this compatibility, restoring communication between code built with Support Library 28.0 (or earlier) and AndroidX 1.1 (or later).</p>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Use pre-1.0 string values for InputConnectionCompat (<a href=\"https://android-review.googlesource.com/c/948725/\">aosp/948725</a>)</li>\n <li>Use pre-AndroidX strings as fallback interop for bundle keys (<a href=\"https://android-review.googlesource.com/c/938269/\">aosp/938269</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.1.0-alpha08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.1.0-alpha08",
+      "detailsHtml": "<p>This release is incompatible with Preferences 1.1.0-alpha01 through 1.1.0-alpha04. Please upgrade to Preferences 1.1.0-alpha05 when using this version of Fragments.</p>\n<p><strong>New features</strong></p>\n<ul>\n <li>Added a new overload of <code>postponeEnterTransition()</code> that takes a timeout, after which the Fragment will automatically call <code>startPostponedEnterTransition()</code> <a href=\"https://issuetracker.google.com/issues/120803208\">b/120803208</a></li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Breaking change: the previously deprecated <code>FragmentFactory</code> <code>instantiate</code> method that took a <code>Bundle</code> has been removed. <a href=\"https://android-review.googlesource.com/953856\">aosp/953856</a></li>\n <li>Breaking change: The <code>RESUME_ONLY_CURRENT_FRAGMENT</code> and <code>USE_SET_USER_VISIBLE_HINT</code> constants in <code>FragmentPagerAdapter</code> and <code>FragmentStatePagerAdapter</code> have been renamed to <code>BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT</code> and <code>BEHAVIOR_SET_USER_VISIBLE_HINT</code>, respectively. <a href=\"https://android-review.googlesource.com/954782\">aosp/954782</a></li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fragments that have had their lifecycle capped via <code>setMaxLifecycle()</code> no longer get resumed before reaching their final state. <a href=\"https://issuetracker.google.com/issues/131557151\">b/131557151</a></li>\n <li>When using <code>setMaxLifecycle(Lifecycle.State.CREATED)</code>, Fragments will properly have their view destroyed. <a href=\"https://android-review.googlesource.com/954180\">aosp/954180</a></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/0fe6b4168055f8da37c439dc82fbc535a9e1987a..948d2294e7ae482dffa9641ec0fb0cbb3412481a/fragment"
+    },
+    {
+      "id": "leanback",
+      "name": "Leanback",
+      "version": "1.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/leanback#1.1.0-alpha02",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>RowsSupportFragment is now allowed to share ViewHolders with other RowsSupportFragments, which would improve performance for a multiple-tab UI.</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Added <code>PlaybackSupportFragment.setShowOrHideControlsOverlayOnUserInteraction()</code> to allow app disable auto hide/show playback controls when DPAD is pressed.</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed broken leanback-preference Fragments theme due to a change in preference library.</li>\n <li>Fix navigation bug when BACK key is pressed on SearchEditText</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/612658bcef0ed83d388dc2d49377854857614d7f..7d95cd5e6358dee8cab72c39e4e99e412c7a450c/leanback"
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.1.0-beta01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Lifecycles are graduated to beta: api introduced in previous alphas such as <code>liveData</code> extension functions for transformations and observations, <code>ViewModel</code> initialisation with property delegation and others are stabilised and not going to change.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7e9a5afb451c3bff1c20e2ce0121c3677810cd5b..be101c5ab63016840c743ab315e9a77ea4e3164a/lifecycle"
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.2.0-alpha01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>This release adds new features that adds support for Kotlin coroutines for Lifecycle and LiveData. Detailed documentation on them can be found <a href=\"https://developer.android.com/topic/libraries/architecture/coroutines\">here</a>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7e9a5afb451c3bff1c20e2ce0121c3677810cd5b..be101c5ab63016840c743ab315e9a77ea4e3164a/lifecycle"
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media#1.1.0-beta01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Changed <code>IllegalPointerException</code> to <code>NullPointerException</code> for the null arguments which marked as <code>@NonNull</code>.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/38c07ac6fed103450aa5949a4c12729d1480d72f..2c7181c30858d401daba909d0a9400d5fc8d16d9/media"
+    },
+    {
+      "id": "media2",
+      "name": "Media2",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media2#1.0.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "mediarouter",
+      "name": "MediaRouter",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/mediarouter#1.1.0-beta01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Changed <code>IllegalPointerException</code> to <code>NullPointerException</code> for the null arguments which marked as <code>@NonNull</code>.</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Callback logic for <code>DynamicRouteDescriptor</code> was changed. Now <code>MediaRouteProvider</code> will call <code>MediaRouterProvider.DynamicGroupController.notifyDynamicRoutesChanged</code> instead of directly calling the callback method.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/4b8b1a18bf33c6daf7400de92c09fde21da06f6f..2c7181c30858d401daba909d0a9400d5fc8d16d9/mediarouter"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.1.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.1.0-alpha03",
+      "detailsHtml": "<p><strong>Known Issues</strong></p>\n<ul>\n <li>NavHostFragment continues to intercept the system Back button despite using <code>app:defaultNavHost=\"false\"</code> <a href=\"https://issuetracker.google.com/issues/132077777\">b/132077777</a></li>\n</ul>\n<p><strong>New features</strong></p>\n<ul>\n <li>You can now create <code>&lt;dialog&gt;</code> destinations that will show a <code>DialogFragment</code> when you <code>navigate</code> to them. <code>NavHostFragment</code> supports dialog destinations by default. <a href=\"https://issuetracker.google.com/issues/80267254\">b/80267254</a></li>\n <li>In addition to calling <code>navigate</code> with a resource id or a <code>NavDirections</code> instance, you can now navigate via a <code>Uri</code>, which uses the <code>&lt;deepLink&gt;</code> you’ve added to a destination to navigate to the correct destination. <a href=\"https://issuetracker.google.com/issues/110412864\">b/110412864</a></li>\n</ul>\n<p><strong>Behavior changes</strong></p>\n<ul>\n <li>The default animations provided by NavigationUI have been sped up from 400ms to 220ms to match the default animation speed of activities and fragments. <a href=\"https://issuetracker.google.com/issues/130055522\">b/130055522</a></li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>The <code>createFragmentNavigator()</code> method of <code>NavHostFragment</code> has been deprecated and its functionality moved to the new <code>onCreateNavController()</code> method to make it more clear that this is the correct entry point of adding custom Navigators when subclassing <code>NavHostFragment</code>. <a href=\"https://issuetracker.google.com/issues/122802849\">b/122802849</a></li>\n <li>A <code>hasDeepLink()</code> method has been added to <code>NavDestination</code> to allow you to check if a given <code>Uri</code> can be handled by that destination or, in the case of a <code>NavGraph</code>, any destination in the navigation graph. <a href=\"https://issuetracker.google.com/issues/117437718\">b/117437718</a></li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Default arguments are now correctly passed to <code>OnDestinationChangedListener</code> instances. <a href=\"https://issuetracker.google.com/issues/130630686\">b/130630686</a></li>\n <li><code>NavHostFragment</code> now intercepts system Back events using the <code>OnBackPressedDispatcher</code>, fixing an issue when doing conditional navigation in Fragment lifecycle methods upon returning to a Fragment. <a href=\"https://issuetracker.google.com/issues/111598096\">b/111598096</a></li>\n <li>For Safe Args, an <code>android:defaultValue=”@null”</code> with an unspecified <code>app:argType</code> is now properly inferred as a <code>string</code> argument. <a href=\"https://issuetracker.google.com/issues/129629192\">b/129629192</a></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/3cc9b77742508c095f3268b60956967bce46f0ed..d339df058031dadca4676524c5c184e559553a2e/navigation"
+    },
+    {
+      "id": "preference",
+      "name": "Preference",
+      "version": "1.1.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/preference#1.1.0-alpha05",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Updated the styling for unselectable Preferences - the title and summary now share the same color to make it clear that they cannot be interacted with, and are only used for displaying information.</li>\n <li>Note: you may want to consider adding <code>enableCopying=\"true\"</code> to your unselectable Preferences, so you can long press to copy the summary.</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed a regression where PreferenceCategory and other unselectable Preferences would have a ripple effect when selected</li>\n <li>Fixed an accessibility issue where TalkBack did not see DropDownPreference as clickable</li>\n <li>Fixed some RTL layout issues</li>\n <li>Updated some nullable annotations in PreferenceFragmentCompat to match Fragment</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/968f440307eb94a35ed10a2d281749b2312b6e40..fbdc0c35696b2e1ee3216e3e8c397aeb1abe4311/preference"
+    },
+    {
+      "id": "recyclerview",
+      "name": "RecyclerView",
+      "version": "1.1.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/recyclerview#1.1.0-alpha05",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li><code>LinearLayoutManager.calculateExtraLayoutSpace(RecyclerView.State, int[])</code> can be overridden to customize how much extra layout space should be added to either side of the associated RecyclerView. (<a href=\"https://android-review.googlesource.com/c/931259/\">aosp/931259</a>)</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Add API to retrieve <code>DividerItemDecoration</code> drawable (<a href=\"https://android-review.googlesource.com/c/937282/\">aosp/937282</a>)</li>\n <li>Deprecate <code>LinearLayout.getExtraLayoutSpace(RecyclerVew.State)</code> in favor of a new mechanism that allows to have custom extra layout space on both sides. The new method is <code>LinearLayout.calculateExtraLayoutSpace(RecyclerView.state, int[])</code> (<a href=\"https://android-review.googlesource.com/c/931259/\">aosp/931259</a>)</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Cleaned up Gesture selection (<a href=\"https://android-review.googlesource.com/c/940781/\">aosp/940781</a>)</li>\n <li>Preserve order of selection (by creation time) (<a href=\"https://issuetracker.google.com/issues/128455535\">b/128455535</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/162c15eca5b62edc19734a7c502e5f94a936411c..a546ca859408ae97792539219c423031cca32392/recyclerview"
+    },
+    {
+      "id": "remotecallback",
+      "name": "Remotecallback",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/remotecallback#1.0.0-alpha02",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li>Cleanup to handle context/authority (<a href=\"https://android-review.googlesource.com/c/836270\">aosp/836270</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/76a0131c6783572a9dc3c06a0b686d3cbc68d713..3979d96937e945201359c48c6d992447ef7ef79c/remotecallback"
+    },
+    {
+      "id": "room",
+      "name": "Room",
+      "version": "2.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.1.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/9a00dbb5a21ad46c78b5ce525c761542f95d7cc3..92174716bb8c7d3088badc0b72b4e83dc8bf2c1b/room"
+    },
+    {
+      "id": "savedstate",
+      "name": "SavedState",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/savedstate#1.0.0-beta01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b22fd6c3be270f4c9fd632c55593568ff21637e0..fbdc0c35696b2e1ee3216e3e8c397aeb1abe4311/savedstate"
+    },
+    {
+      "id": "security",
+      "name": "Security-state-provider",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/security#1.0.0-alpha01",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "slice",
+      "name": "Slice",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/slice#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li><code>onCreatePermissionRequest</code> can be overridden in <code>SliceProvider</code> to customize the permission grant behavior</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed OnSliceActionListener was not getting called when a row item with only one action was clicked</li>\n <li>Fixed SliceView has not respecting MeasureSpec.EXACTLY layout params</li>\n <li>Fixed duplicate onClick during onLongClick on SliceView</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/50a39caa72955aae0c75225fd9805ab537cbf049..557d5e4baea877324ddd0d6b9f2b969f080a8b7b/slices"
+    },
+    {
+      "id": "transition",
+      "name": "Transition",
+      "version": "1.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/transition#1.1.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/7d0db7338f4fda203216bed530d235f500fa7af3..f584907a42c20e38f68e1b60f1f701db76ca1408/transition"
+    },
+    {
+      "id": "vectordrawable",
+      "name": "VectorDrawable",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/vectordrawable#1.1.0-beta01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li><code>fillType</code> is now supported in <code>ClipPath</code></li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/b7c49c4fbaec3ab27903b27ba7a511a370a78643..2c7181c30858d401daba909d0a9400d5fc8d16d9/graphics/drawable"
+    },
+    {
+      "id": "versionedparcelable",
+      "name": "VersionedParcelable",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/versionedparcelable#1.1.0-beta01",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li><code>Parcelutils.getVersionedParcelable</code> and Parcelutils.putVersionedParcelable` now support null (<a href=\"https://android-review.googlesource.com/c/940072/\">aosp/940072</a>)</li>\n <li><code>RemoteActionCompat</code> is now a VersionedParcelable` (<a href=\"https://android-review.googlesource.com/c/928534/\">aosp/928534</a>)</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/0b2c8b5a3ea18e80b32b57c49dba74c2812946ee..fbdc0c35696b2e1ee3216e3e8c397aeb1abe4311/versionedparcelable"
+    },
+    {
+      "id": "viewpager2",
+      "name": "ViewPager2",
+      "version": "1.0.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/viewpager2#1.0.0-alpha04",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li><code>offscreenPageLimit</code>: allows for a tight control of the number of page <code>View</code>s / <code>Fragment</code>s kept in the view hierarchy</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li><code>orientation</code> and <code>isUserScrollable</code> attributes are no longer part of <code>SavedState</code></li>\n <li><code>saveState</code> and <code>restoreState</code> methods made final in <code>FragmentStateAdapter</code></li>\n <li><code>ViewPager2.Orientation</code> and <code>ViewPager2.ScrollState</code> annotations made non-public</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li><code>SavedState</code>: fixed an issue with restoring when <code>Activity</code> gets destroyed / recreated</li>\n <li><code>SavedState</code>: delayed restoring until the adapter is set</li>\n <li><code>OnPageChangeCallback</code>: minor edge cases fixed</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/a1c79782eee81abb62c774f0f516ac27852282f2..5335d9969ded09ef2812c3ac63c42853375a1c55/viewpager2"
+    },
+    {
+      "id": "webkit",
+      "name": "Webkit",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/webkit#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Getter APIs to complement <code>setWebViewClient()</code> and <code>setWebChromeClient()</code></li>\n <li>ProxyController API to set a network request proxy for an app's WebViews.</li>\n <li>AssetLoader API to simplify loading APK assets and resources via request interception, allowing access to web resources without disabling CORS.</li>\n <li>TracingController API to collect WebView tracing information for debugging purposes.</li>\n <li>RenderProcess APIs to manage WebView renderer services, and to detect when poorly behaved content causes WebView renderers to become unresponsive.</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Minor fixes to documentation formatting for existing APIs.</li>\n</ul>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/50a39caa72955aae0c75225fd9805ab537cbf049..a0c2e45e3baa2b73dcdbbd7122900f1a324738c3/webkit"
+    }
+  ]
+}
