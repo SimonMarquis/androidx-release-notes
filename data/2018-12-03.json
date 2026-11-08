@@ -1,0 +1,121 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#december_3_2018",
+  "title": "December 3, 2018",
+  "releasedOn": "2018-12-03",
+  "updated": "2018-12-03T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#december_3_2018",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.0.0-alpha02",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li>Added a note that <code>getLifecycle()</code> should not be overridden and will be made <code>final</code> in a future release. Please <a href=\"https://issuetracker.google.com/issues/new?component=197448\">file a feature request</a> if you are currently overriding this method. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/815834\">aosp/815834</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "appcompat",
+      "name": "AppCompat",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>\n  <p>AppCompatTextView now supports <code>app:drawableLeftCompat</code>, <code>app:drawableTopCompat</code>, <code>app:drawableRightCompat</code>, <code>app:drawableBottomCompat</code>, <code>app:drawableStartCompat</code> and <code>app:drawableEndCompat</code> compound drawables, supporting backported drawable types such as <code>VectorDrawableCompat</code>.</p>\n </li>\n <li>\n  <p><code>AppCompatCheckBox</code> and <code>AppCompatRadioButton</code>’s default drawables now animate check state changes.</p>\n </li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li><a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/740385\">aosp/740385</a>: ActionBarOverlayLayout now implements NestedScrollingParent2 and NestedScrollingParent3, enabling it to facilitate the latest functionality in nested scrolling 3. If developer code currently overrides <code>ActionBarOverLayLayout.onNestedScroll(View, int, int, int, int)</code>, it will likely no longer be called and <code>ActionBarOverLayLayout.onNestedScroll(View, int, int, int, int, int, int[])</code> should be overridden instead.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "collection",
+      "name": "Collection",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/collection#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li>Add <code>putIfAbsent</code> to <code>LongSparseArray</code>, <code>SimpleArrayMap</code>, and <code>SparseArrayCompat</code> (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/772608\">aosp/772608</a>)</li>\n <li>Add <code>getOrDefault</code> to <code>SimpleArrayMap</code> (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/772607\">aosp/772607</a>)</li>\n <li>Add two-argument <code>remove</code> to <code>LongSparseArray</code>, <code>SimpleArrayMap</code>, and <code>SparseArrayCompat</code>. Deprecate corresponding KTX extensions for this functionality. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/772482\">aosp/772482</a>)</li>\n <li>Add two-argument <code>replace</code> to <code>LongSparseArray</code>, <code>SimpleArrayMap</code>, and <code>SparseArrayCompat</code> (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/772483\">aosp/772483</a>)</li>\n <li>Add three-argument <code>replace</code> to <code>LongSparseArray</code>, <code>SimpleArrayMap</code>, and <code>SparseArrayCompat</code> (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/772484\">aosp/772484</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "coordinator-layout",
+      "name": "Coordinator Layout",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/coordinatorlayout#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li>\n  <p><a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/737190\">aosp/737190</a>: CoordinatorLayout now implements <code>NestedScrollingParent3</code> and <code>CoordinatorLayout.Behavior</code> implements a new overload of <code>onNestedScroll</code> to enable <code>Behaviors</code> to be able to report how much scroll distance they consume to nested scrolling children (during the <code>dispatchNestedScroll()</code>/<code>onNestedScroll()</code> pass). The previously existing <code>onNestedScroll(CoordinatorLayout, V, View, int, int, int, int, int)</code> has been deprecated in favor of the new <code>onNestedScroll(CoordinatorLayout, V, View, int, int, int, int, int, int[])</code> and <code>Behavior</code> implementations should be updated accordingly.</p>\n  <p>If developer code currently overrides <code>CoordinatorLayout#onNestedScroll(View, int, int, int, int, int)</code>, it will likely no longer be called and <code>CoordinatorLayout#onNestedScroll(View, int, int, int, int, int, int[])</code> should be overridden instead.</p>\n </li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.1.0-alpha02",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>FragmentScenario’s Kotlin extensions now let you use a lambda for Fragment construction as an alternative to passing in a <code>FragmentFactory</code> instance. (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/812913\">aosp/812913</a>)</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed an IllegalStateException when using nested Fragments on the back stack (<a href=\"https://issuetracker.google.com/issues/119256498\">b/119256498</a>)</li>\n <li>Fixed crash when using <code>FragmentScenario.recreate()</code> with a <code>FragmentFactory</code> (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/820540\">aosp/820540</a>)</li>\n <li>Fixed an issue where target Fragments were not accessible after the Fragment was removed (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/807634/\">aosp/807634</a>)</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "loader",
+      "name": "Loader",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/loader#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Added a <code>getExecutor()</code> method to <code>AsyncTaskLoader</code> to allow you to set a custom Executor (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/810773\">aosp/810773</a>)</li>\n</ul>\n<p><strong>Behavior changes</strong></p>\n<ul>\n <li>The default Executor for <code>AsyncTaskLoader</code> is now <code>AsyncTask.THREAD_POOL_EXECUTOR</code> rather than a custom Executor.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media#1.0.0-alpha01",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li>Deprecated two <code>MediaSessionCompat</code> flags:\n  <ul>\n   <li><code>FLAG_HANDLES_MEDIA_BUTTONS</code></li>\n   <li><code>FLAG_HANDLES_TRANSPORT_CONTROLS</code></li>\n  </ul></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "mediarouter",
+      "name": "MediaRouter",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/mediarouter#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Added support dynamic group routes\n  <ul>\n   <li>Added APIs to support dynamic group routes by <code>MediaRouteProviders</code></li>\n   <li>Added new UX for route chooser and controller dialogues for dynamic group routes</li>\n  </ul></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "recyclerview",
+      "name": "RecyclerView",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/recyclerview#1.1.0-alpha01",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "remotecallback",
+      "name": "RemoteCallback",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/remotecallback#1.0.0-alpha01",
+      "detailsHtml": "<ul>\n <li>Remote Callback is a new library aimed at making generating and receiving <code>PendingIntents</code> easier. This is the first version of Remote Callback.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "swiperefreshlayout",
+      "name": "SwipeRefreshLayout",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/swiperefreshlayout#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li><a href=\"https://developer.android.com/jetpack/androidx/releases/swiperefreshlayout#1.1.0-alpha01\">aosp/737631</a>: <code>SwipeRefreshLayout</code> now implements <code>NestedScrollingChild3</code> and <code>NestedScrollingParent3</code>, enabling nested scrolling 3 parents and children to pass consumed nested scrolling distance information through <code>SwipeRefreshLayout</code>. If developer code currently overrides <code>SwipeRefreshLayout.onNestedScroll(View, int, int, int, int, int)</code>, it will likely no longer be called and <code>SwipeRefreshLayout.onNestedScroll(View, int, int, int, int, int, int[])</code> should be overridden instead. Likewise, <code>SwipeRefreshLayout.dispatchNestedScroll(int, int, int, int, int[], int)</code> will likely no longer be called and <code>SwipeRefreshLayout.dispatchNestedScroll(int, int, int, int, int[], int, int[])</code> should be overridden instead.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "textclassifier",
+      "name": "TextClassifier",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/textclassifier#1.0.0-alpha01",
+      "detailsHtml": "<p>This is the first refactoring of <code>TextClassifier</code> to <code>androidx</code>. This release backports (<code>android.view.textclassifier.TextClassifier</code>)[/reference/android/view/textclassifier/TextClassifier] features, particularly Smart Linkify, back to API 14.</p>",
+      "commitsUrl": null
+    },
+    {
+      "id": "transition",
+      "name": "Transition",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/transition#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<ul>\n <li><a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/807055/\">aosp/807055</a>: <code>Scene.getCurrentScene(View)</code> method made public. It allows you to write a custom conditional logic depending on a current scene.</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed crash when using <code>TransitionManager</code> to collapse/expand item in <code>RecyclerView</code> (<a href=\"https://issuetracker.google.com/issues/37129527\">b/37129527</a>).</li>\n <li>Fixed incorrect animation when two Visibility transitions applied (<a href=\"https://issuetracker.google.com/issues/62629600\">b/62629600</a>).</li>\n <li>Allow override values like duration and interpolator for TransitionSet’s children (<a href=\"https://issuetracker.google.com/issues/64644617\">b/64644617</a>).</li>\n <li>Many other minor bugs fixed.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "vectordrawable",
+      "name": "VectorDrawable",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/vectordrawable#1.1.0-alpha01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Support tinting using <code>ColorStateLists</code> defined with theme attrs in <code>VectorDrawableCompat</code>.</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed bug in rendering <code>VectorDrawables</code> with gradients (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/790377/\">aosp/790377</a>)</li>\n <li>Fixed <code>getColorFilter()</code> that returned null even when it was set (<a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/762198/\">aosp/762198</a>)</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

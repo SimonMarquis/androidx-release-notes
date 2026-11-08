@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#december_4_2018",
+  "title": "December 4, 2018",
+  "releasedOn": "2018-12-04",
+  "updated": "2018-12-04T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#december_4_2018",
+  "components": [
+    {
+      "id": "room",
+      "name": "Room",
+      "version": "2.1.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.1.0-alpha03",
+      "detailsHtml": "<p><strong>API Changes</strong></p>\n<ul>\n <li>The FTS <code>tokenizer</code> in <code>@Fts3</code>/<code>@Fts4</code> now takes a String instead of an Enum. This allows custom tokenizers to be used by Room. Built-in tokenizers are still defined in <code>FtsOptions</code> as string constants. <a href=\"https://issuetracker.google.com/119234881\">b/119234881</a></li>\n</ul>\n<p><strong>New Features</strong></p>\n<ul>\n <li><strong>Couroutines</strong>: DAO methods can now be suspend functions. To support suspend functions in Room a new artifact has been released, <code>room-coroutines</code>. <a href=\"https://issuetracker.google.com/69474692\">b/69474692</a></li>\n <li>DAO methods annotated with <code>@Insert</code>, <code>@Delete</code> or <code>@Update</code> now support <code>ListenableFuture</code> as return type. <a href=\"https://issuetracker.google.com/119418331\">b/119418331</a></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a bug where Room would incorrectly attempt to find a constructor with columns in the <code>ignoredColumns</code> property of <code>@Entity</code>. <a href=\"https://issuetracker.google.com/119830714\">b/119830714</a></li>\n <li>Fixed a bug where Room would not mark DAO method parameters as final in their generated implementation. <a href=\"https://issuetracker.google.com/118015483\">b/118015483</a></li>\n <li>Fixed a bug where <code>Room</code> processor would crash when reporting an error on a query with special symbols. <a href=\"https://issuetracker.google.com/119520136\">b/119520136</a></li>\n <li>Fixed a bug where Room would decline other various <code>Collection</code> implementations as arguments of an <code>IN</code> expression. <a href=\"https://issuetracker.google.com/119884035\">b/119884035</a></li>\n <li>Fixed a bug where LiveData returned from Room would get garbage collected when observed forever causing it to no longer emit new data. <a href=\"https://issuetracker.google.com/74477406\">b/74477406</a></li>\n <li>Updated <code>RoomDatabase</code>'s close lock to reduce lock contention. <a href=\"https://issuetracker.google.com/117900450\">b/117900450</a></li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

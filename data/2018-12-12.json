@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#december_12_2018",
+  "title": "December 12, 2018",
+  "releasedOn": "2018-12-12",
+  "updated": "2018-12-12T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#december_12_2018",
+  "components": [
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "1.0.0-alpha13",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#1.0.0-alpha13",
+      "detailsHtml": "<p>This release contains a minor API change that will be helpful for some Kotlin users.</p>\n<p><strong>API Changes</strong></p>\n<ul>\n <li><code>androidx.work.Result</code> has been moved to be an inner class of <code>ListenableWorker</code>. This prevents refactoring conflicts with Kotlin's top-level <code>Result</code> class. <em>This is a breaking API change.</em> <a href=\"https://issuetracker.google.com/120564418\">b/120564418</a></li>\n</ul>\n<p><strong>Breaking API Changes</strong></p>\n<ul>\n <li><code>androidx.work.Result</code> has been moved to be an inner class of <code>ListenableWorker</code>.</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

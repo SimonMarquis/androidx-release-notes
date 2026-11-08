@@ -1,0 +1,33 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#december_6_2018",
+  "title": "December 6, 2018",
+  "releasedOn": "2018-12-06",
+  "updated": "2018-12-06T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#december_6_2018",
+  "components": [
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "1.0.0-alpha08",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#1.0.0-alpha08",
+      "detailsHtml": "<p><strong>New Features</strong></p>\n<ul>\n <li><code>NavHost</code> now populates the <code>LocalSavedStateRegistryOwner</code> CompositionLocal with that destination’s <code>NavBackStackEntry</code>, ensuring that any state directly saved into the <code>SavedStateRegistry</code> will be saved and restored alongside the destination. (<a href=\"https://android-review.googlesource.com/#/q/I435d70ef0cfa8059e0d490cd5e4ed141b690ec59\">I435d7</a>, <a href=\"https://issuetracker.google.com/issues/179469431\">b/179469431</a>)</li>\n</ul>\n<strong>Note:</strong><span> Navigation Compose 1.0.0-alpha08 is only compatible with Compose 1.0.0-beta01.</span>",
+      "commitsUrl": "https://android.googlesource.com/platform/frameworks/support/+log/602cf9bff5e74e4355760aa47d3fc73a2e6d779b..4b6cff92e45f1d4467086aa2c6aa0248b4883950/navigation/navigation-compose"
+    },
+    {
+      "id": "paging",
+      "name": "Paging",
+      "version": "2.1.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/paging#2.1.0-rc01",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test",
+      "name": "Test",
+      "version": "1.1.0-b1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#1.1.0-b1",
+      "detailsHtml": "<p>This is the beta01 release of AndroidX Test 1.1.0. It contains updates to the following libraries:</p>\n<ul>\n <li>Core 1.1.0-beta01\n  <ul>\n   <li>New core-ktx kotlin extension artifact! Includes a kotlin-friendly ActivityScenario.launchActivity API</li>\n   <li>New ActivityScenario API for launching activities with custom intents</li>\n   <li>New ActivityScenario API for receiving an Activity result</li>\n   <li>Make ActivityScenario closeable</li>\n  </ul></li>\n <li>Espresso3.1.1-beta01\n  <ul>\n   <li>Modify withResourceNameMatcher and HumanReadables to be API 28 compatible.</li>\n   <li>Update ReplaceTextAction's description to include the stringToBeSet</li>\n   <li>Support Espresso in Robolectric paused looper mode.</li>\n  </ul></li>\n <li>JUnit 1.1.0-beta01\n  <ul>\n   <li>New ActivityScenarioRule API, for auto-launching and closing an Activity on test setup and teardown</li>\n   <li>New junit-ktx kotlin extension artifact! Includes a kotlin-friendly ActivityScenarioRule API</li>\n  </ul></li>\n <li>Runner 1.1.1-beta01\n  <ul>\n   <li>Make -e package and -e testFile consistent in behavior when receiving packages</li>\n  </ul></li>\n <li>Truth 1.1.0-beta01\n  <ul>\n   <li>Add bool, parcelable, and parcelableAsType BundleSubject APIs</li>\n  </ul></li>\n <li>Rules 1.1.1-beta01</li>\n <li>Monitor 1.1.1-beta01</li>\n <li>AndroidTestOrchestrator 1.1.1-beta01</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

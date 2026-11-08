@@ -1,0 +1,17 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#december_19_2018",
+  "title": "December 19, 2018",
+  "releasedOn": "2018-12-19",
+  "updated": "2018-12-19T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#december_19_2018",
+  "components": [
+    {
+      "id": "workmanager",
+      "name": "WorkManager",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#1.0.0-beta01",
+      "detailsHtml": "<p>This release contains no API changes; moving forward, WorkManager is expected to stay API stable until the next version unless there is a critical problem. This release contains some bug fixes.</p>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Previously-cancelled children of successfully completed parent work will no longer run. <a href=\"https://issuetracker.google.com/120811767\">b/120811767</a></li>\n <li>Properly initialized logging classes (primarily surfaced during tests).</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}

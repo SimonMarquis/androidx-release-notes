@@ -1,0 +1,105 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#december_17_2018",
+  "title": "December 17, 2018",
+  "releasedOn": "2018-12-17",
+  "updated": "2018-12-17T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#december_17_2018",
+  "components": [
+    {
+      "id": "activity",
+      "name": "Activity",
+      "version": "1.0.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/activity#1.0.0-alpha03",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>ComponentActivity now implements <code>BundleSavedStateRegistryOwner</code> and depends on the newly released SavedState library [<a href=\"https://android-review.googlesource.com/815133\">aosp/815133</a>]</li>\n <li>ComponentActivity now works around an Android framework bug that would cause InputMethodManager to leak the last focused view [<a href=\"https://issuetracker.google.com/issues/37122102\">b/37122102</a>]</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "biometrics",
+      "name": "Biometrics",
+      "version": "1.0.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/biometric#1.0.0-alpha03",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed fragment-related issues</li>\n <li>On devices O and older, lockout errors are returned immediately to be consistent with P and above</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "concurrent",
+      "name": "Concurrent",
+      "version": "1.0.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/concurrent#1.0.0-alpha03",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li><code>CallbackToFutureAdapter</code> was introduced. It’s a new, safer API to wrap a callback driven API into <code>ListenableFuture</code>. Prefer it over using <code>ResolvableFuture</code>.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "core",
+      "name": "Core-telecom",
+      "version": "1.1.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.1.0-alpha03",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Added Notification channels methods to <code>NotificationManagerCompat</code> so developers can use only <code>NotificationManagerCompat</code> when working with notifications. Special thanks to Zdeněk Kořán for this new feature!</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Added new APIs to <code>ShortcutManagerCompat</code> to publish and update dynamic shortcuts.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "fragment",
+      "name": "Fragment",
+      "version": "1.1.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/fragment#1.1.0-alpha03",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Fragment now implements <code>BundleSavedStateRegistryOwner</code> and depends on the newly released SavedState library [<a href=\"https://android-review.googlesource.com/824380\">aosp/824380</a>]</li>\n <li>A <code>by activityViewModels</code> Kotlin property delegate has been added to retrieve ViewModels associated with the containing Activity [<a href=\"https://issuetracker.google.com/issues/119050253\">b/119050253</a>]</li>\n <li>The <code>by viewModels</code> Kotlin property delegate has been expanded to take an optional lambda method for getting the <code>ViewModelStoreOwner</code>, allowing you to pass in the parent Fragment or other custom <code>ViewModelStoreOwner</code> with code such as <code>val viewModel: MyViewModel by viewModels(::requireParentFragment)</code> [<a href=\"https://issuetracker.google.com/issues/119050253\">b/119050253</a>]</li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li><code>FragmentScenario</code> now allows you to specify a theme such as <code>Theme.AppCompat</code> [<a href=\"https://issuetracker.google.com/issues/119054431\">b/119054431</a>]. This is a breaking change.</li>\n <li>Added a <code>requireView()</code> method which returns a <code>@NonNull View</code> or throws an <code>IllegalStateException</code> [<a href=\"https://issuetracker.google.com/issues/120241368\">b/120241368</a>]</li>\n <li>Added a <code>requireParentFragment()</code> method which returns a <code>@NonNull Fragment</code> or throws an <code>IllegalStateException</code> [<a href=\"https://issuetracker.google.com/issues/112103783\">b/112103783</a>]</li>\n</ul>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed IllegalStateException: Failure saving state <a href=\"https://issuetracker.google.com/issues/120814739\">b/120814739</a></li>\n <li>Fragments being restored from saved instance state will now always receive a non-null <code>Bundle</code> [<a href=\"https://issuetracker.google.com/issues/119794496\">b/119794496</a>]</li>\n <li>Removed Fragments no longer reuse their <code>Lifecycle</code> object if re-added [<a href=\"https://issuetracker.google.com/issues/118880674\">b/118880674</a>]</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.1.0-alpha01",
+      "detailsHtml": "<p><strong>New features</strong></p>\n<ul>\n <li>Added <code>LifecycleEventObserver</code> for the cases when a stream of lifecycle events is needed. It is a public api instead of a hidden <code>GenericLifecycleObserver</code> class.</li>\n <li>Added ktx extensions for <code>LiveData.observe</code> methods and <code>Transformations.*</code> methods.</li>\n <li>Method <code>Transformations.distinctUntilChanged</code> was added. It creates a new <code>LiveData</code> object that does not emit a value until the source LiveData value has been changed.</li>\n <li>Coroutine support in ViewModels: extension property <code>ViewModel.viewModelScope</code> was added.</li>\n <li>Added <code>ViewModelProvider.KeyedFactory</code>, a factory for ViewModels that receives <code>key</code> and <code>Class</code> in <code>create</code> method.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "localbroadcastmanager",
+      "name": "LocalBroadcastManager",
+      "version": "1.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/localbroadcastmanager#1.1.0-alpha01",
+      "detailsHtml": "<p><code>androidx.localbroadcastmanager</code> is being deprecated in version <code>1.1.0-alpha01</code>.</p>\n<p><strong>Reason</strong></p>\n<ul>\n <li><code>LocalBroadcastManager</code> is an application-wide event bus and embraces layer violations in your app; any component may listen to events from any other component.</li>\n <li>It inherits unnecessary use-case limitations of system <code>BroadcastManager</code>; developers have to use <code>Intent</code> even though objects live in only one process and never leave it. For this same reason, it doesn’t follow feature-wise <code>BroadcastManager</code> .</li>\n</ul>\n<p>These add up to a confusing developer experience.</p>\n<p><strong>Replacement</strong></p>\n<ul>\n <li>You can replace usage of <code>LocalBroadcastManager</code> with other implementations of the observable pattern. Depending on your use case, suitable options may be <code>LiveData</code> or reactive streams.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "version": "1.0.0-alpha06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media#1.0.0-alpha06",
+      "detailsHtml": "<p><strong>API changes</strong></p>\n<p>Renamed the <code>media.widget</code> package and class names as follows:</p>\n<ul>\n <li><code>androidx.media.widget.VideoView2</code> → <code>androidx.media2.widget.VideoView</code></li>\n <li><code>androidx.media.widget.MediaControlView2</code> → <code>androidx.media2.widget.MediaControlView</code></li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "media2",
+      "name": "Media2",
+      "version": "1.0.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media2#1.0.0-alpha04",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "multidex",
+      "name": "Multidex",
+      "version": "2.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/multidex#2.0.1",
+      "detailsHtml": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed compatibility with Robolectric testing. Improved performance of version checking code.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "preference",
+      "name": "Preference",
+      "version": "1.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/preference#1.1.0-alpha02",
+      "detailsHtml": "<p>Please also check out the recently updated <a href=\"https://developer.android.com/guide/topics/ui/settings\">Settings guide</a> and <a href=\"https://github.com/android/user-interface-samples/tree/main/Preferences\">sample app</a>.</p>\n<p><strong>New features</strong></p>\n<ul>\n <li>\n  <p>Added <code>EditTextPreference.OnBindEditTextListener</code> interface This allows customizing the EditText displayed in the corresponding dialog after the dialog has been bound. For example, setting a custom input type / length or adding a TextWatcher.</p>\n </li>\n <li>\n  <p>Added <code>Preference.setCopyingEnabled()</code> When set, long pressing on the Preference will show a context menu that allows copying the summary of the Preference. This can be used to allow copying of static information such as user-specific IDs / application version information.</p>\n </li>\n <li>\n  <p>preferenceTheme is now applied to the activity theme This means that when creating a Preference from code, you no longer need to use the context from <code>PreferenceManager#getContext()</code> - you can just use your Fragment/Activity context.</p>\n </li>\n</ul>\n<p><strong>API changes</strong></p>\n<ul>\n <li>Refactored <code>findPreference()</code> to return <code>&lt;T extends Preference&gt;</code> This means that you do not need to explicitly cast Preferences when using findPreference(). For example, <code>EditTextPreference preference = findPreference(“edit_text”)</code> is now valid code.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "savedstate",
+      "name": "SavedState",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/savedstate#1.0.0-alpha01",
+      "detailsHtml": "<p>This is the first release of <code>SavedState</code>.</p>\n<p><strong>New features</strong></p>\n<p><code>androidx.savedstate</code> is a new set of alpha APIs that allow developers to plugin components to the restore / saveInstanceState process. The main entry point of the API is <code>SavedStateRegistry&lt;T&gt;</code>, which provides a way to retrieve previously savedstate via <code>consumeRestoredStateForKey</code> and register a callback to <code>registerSavedStateProvider</code> to provide a savedstate once system requests it.</p>",
+      "commitsUrl": null
+    }
+  ]
+}
