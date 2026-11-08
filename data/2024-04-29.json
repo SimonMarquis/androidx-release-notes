@@ -1,0 +1,97 @@
+{
+  "id": "tag:google.com,2016:androidx-release-notes#april_29_2024",
+  "title": "April 29, 2024",
+  "releasedOn": "2024-04-29",
+  "updated": "2024-04-29T00:00:00Z",
+  "sourceUrl": "https://developer.android.com/jetpack/androidx/versions/all-channel#april_29_2024",
+  "components": [
+    {
+      "id": "test-annotation",
+      "name": "Test Annotation",
+      "version": "1.1.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#annotation-1.1.0-alpha04",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-core",
+      "name": "Test Core",
+      "version": "1.6.0-alpha06",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#core-1.6.0-alpha06",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Make ViewCapture use ControlledLooper API instead of hardcoding is Robolectric check</li>\n <li>Fix using ActivityScenario#launchActivityForResult with an implicit Intent</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Added ApplicationInfoBuilder.setFlags(int)</li>\n <li>Make suspend function versions of ViewCapture/WindowCapture/DeviceCapture APIs,\n  <br>\n  and rename existing methods as *Async variants that return ListenableFutures</li>\n <li>Make Bitmap.writeToTestStorage use the registered PlatformTestStorage instead of hardcoding TestStorage</li>\n <li>Remove ExperimentalTestApi/RequiresOptIn restrictions from captureToBitmap and takeScreenshot APIs</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-espresso",
+      "name": "Test Espresso",
+      "version": "3.6.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#espresso-3.6.0-alpha04",
+      "detailsHtml": "<p>The following artifacts were released:</p>\n<ul>\n <li><code>androidx.test.espresso:espresso-accessibility:3.6.0-alpha04</code></li>\n <li><code>androidx.test.espresso:espresso-core:3.6.0-alpha04</code></li>\n <li><code>androidx.test.espresso:espresso-contrib:3.6.0-alpha04</code></li>\n <li><code>androidx.test.espresso:espresso-idling-resource:3.6.0-alpha04</code></li>\n <li><code>androidx.test.espresso:espresso-intents:3.6.0-alpha04</code></li>\n <li><code>androidx.test.espresso:espresso-remote:3.6.0-alpha04</code></li>\n <li><code>androidx.test.espresso:espresso-web:3.6.0-alpha04</code></li>\n <li><code>androidx.test.espresso.idling:idling-concurrent:3.6.0-alpha04</code></li>\n <li><code>androidx.test.espresso.idling:idling-net:3.6.0-alpha04</code></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix slow inRoot operations in Robolectric</li>\n <li>Use PlatformTestStorageRegistry.getInstance consistently instead of passing a reference around</li>\n <li>Remove TODO from InteractionResponse public ref docs</li>\n</ul>\n<p><strong>New Features</strong></p>\n<ul>\n <li>Add waitForClose to DrawerActions.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Adapt to ViewCapture API changes</li>\n <li>Delete ViewInteraction.captureToBitmap in favor of ViewActions.captureToBitmap, and promote to a stable API from ExperimentalTestApi</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-espresso-device",
+      "name": "Test Espresso Device",
+      "version": "1.0.0-alpha09",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#espresso_device-1.0.0-alpha09",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-junit-extensions",
+      "name": "Test JUnit Extensions",
+      "version": "1.2.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#junit-1.2.0-alpha04",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-truth-extensions",
+      "name": "Test Truth Extensions",
+      "version": "1.6.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#truth-1.6.0-alpha04",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-monitor",
+      "name": "Test Monitor",
+      "version": "1.7.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#monitor-1.7.0-alpha05",
+      "detailsHtml": "<p><strong>API Changes</strong> * Make DeviceController an public API from ExperimentalTestApi * Move PlatformTestStorage to a public API * Add internal ControlledLooper#isDrawCallbacksSupported.</p>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-orchestrator",
+      "name": "Test Orchestrator",
+      "version": "1.5.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#orchestrator-1.5.0-alpha04",
+      "detailsHtml": "",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-runner",
+      "name": "Test Runner",
+      "version": "1.6.0-alpha07",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#runner-1.6.0-alpha07",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>When logging test exceptions, use Log's built-in support for throwables to avoid stack truncation</li>\n <li>Internal changes to support GrantPermissionRule using UiAutomation#grantRuntimePermissions</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-rules",
+      "name": "Test Rules",
+      "version": "1.6.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#rules-1.6.0-alpha04",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Make GrantPermissionRule use UiAutomation to grant permissions on APIs &gt; =28 to fix issues running on automotive.</li>\n</ul>",
+      "commitsUrl": null
+    },
+    {
+      "id": "test-services",
+      "name": "Test Services",
+      "version": "1.5.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#services-1.5.0-alpha04",
+      "detailsHtml": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>TestStorage: use local cache dir to store output files when running as non system user</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Make TestStorage an internal API from experimental</li>\n</ul>",
+      "commitsUrl": null
+    }
+  ]
+}
