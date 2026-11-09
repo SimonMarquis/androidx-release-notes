@@ -822,7 +822,7 @@ class SiteRenderer(private val docs: Path, private val embedded: Boolean) {
             }
             div("divider-line")
         }
-        record.components.forEach { card(record, it, anchor) }
+        div("card") { record.components.forEach { component(record, it, anchor) } }
     }
 
     private fun FlowContent.dateStep(step: String, label: String, key: String) =
@@ -835,10 +835,10 @@ class SiteRenderer(private val docs: Path, private val embedded: Boolean) {
             )
         }
 
-    private fun FlowContent.card(record: EntryRecord, component: ComponentRecord, anchor: String) {
+    private fun FlowContent.component(record: EntryRecord, component: ComponentRecord, anchor: String) {
         val version = component.version.lowercase()
         val kind = listOf("alpha", "beta", "rc").firstOrNull { it in version } ?: "stable"
-        article("card") {
+        article("component") {
             attributes(
                 "data-release-kind" to kind,
                 "data-search" to "${component.name} ${component.version} ${record.releasedOn} ${record.releasedOn.heading}".lowercase(),

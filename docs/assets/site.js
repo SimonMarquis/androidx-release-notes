@@ -4,6 +4,7 @@
   const isIndex = document.body.hasAttribute("data-date-navigation");
   const header = document.querySelector(".site-header");
 
+  const components = [...document.querySelectorAll(".component")];
   const cards = [...document.querySelectorAll(".card")];
   const groups = [...document.querySelectorAll(".date-group")];
   const search = document.getElementById("release-search");
@@ -12,14 +13,18 @@
   const update = () => {
     // Every word must match, in any order, so "compose 1.8" finds "compose ui 1.8.0".
     const terms = search.value.toLowerCase().split(/\s+/).filter(Boolean);
-    for (const card of cards) {
-      const { releaseKind, search: text } = card.dataset;
+    for (const component of components) {
+      const { releaseKind, search: text } = component.dataset;
       const hide = !((selectedKinds.size === 0 || selectedKinds.has(releaseKind)) && terms.every(term => text.includes(term)));
+      if (component.hidden !== hide) component.hidden = hide;
+    }
+    for (const card of cards) {
+      const hide = !card.querySelector(".component:not([hidden])");
       if (card.hidden !== hide) card.hidden = hide;
     }
     for (const group of groups) {
       // Dated pages keep their date heading (and back chevron) even when nothing matches.
-      const hide = isIndex && !group.querySelector(".card:not([hidden])");
+      const hide = isIndex && !group.querySelector(".component:not([hidden])");
       if (group.hidden !== hide) group.hidden = hide;
     }
   };
@@ -55,8 +60,8 @@
     lastTarget = target;
     lastNavigationAt = Date.now();
     history.replaceState(null, "", `#${target.id}`);
-    // Distant cards have estimated heights until rendered. Re-align the target
-    // as those cards acquire their real sizes, while keeping CSS scroll margins.
+    // Distant components have estimated heights until rendered. Re-align the target
+    // as those components acquire their real sizes, while keeping CSS scroll margins.
     let frame = 0;
     const align = () => {
       if (token !== navigationToken) return;
@@ -76,7 +81,7 @@
   });
   // Record the clicked date in the URL before leaving, so Back lands on it via the alignment below.
   // Manual restoration stops the browser from restoring a pixel offset that no longer matches the
-  // reloaded page, where off-screen cards only have estimated heights.
+  // reloaded page, where off-screen components only have estimated heights.
   // When the previous history entry is the index, a dated page's back chevron returns to it
   // (keeping its position) instead of loading it again. Without the Navigation API it stays a link.
   document.addEventListener("click", event => {

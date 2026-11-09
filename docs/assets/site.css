@@ -97,16 +97,22 @@ button, input { font: inherit; }
 .date-back:hover { background: var(--surface-container); }
 .date-title { margin: 0; font: inherit; }
 .divider-line { height: 1px; flex: 1; background: color-mix(in srgb, var(--primary) 28%, var(--outline-variant)); }
-.card { --card-padding: 16px; content-visibility: auto; contain-intrinsic-size: auto 120px; padding: var(--card-padding); border: 1px solid var(--subtle-border); border-radius: 12px; background: var(--surface); box-shadow: 0 1px 2px rgb(0 0 0 / 4%); scroll-margin-top: var(--content-offset); }
-.head { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 12px; }
-.card:has(.notes) .head { padding-bottom: var(--card-padding); border-bottom: 1px solid var(--subtle-border); }
+.card { --card-padding: 16px; border: 1px solid var(--subtle-border); border-radius: 12px; background: var(--surface); box-shadow: 0 1px 2px rgb(0 0 0 / 4%); }
+.component { content-visibility: auto; contain-intrinsic-size: auto 250px; scroll-margin-top: var(--content-offset); }
+.component:not(:has(.notes)) { contain-intrinsic-size: auto 50px; }
+.component:not([hidden]) ~ .component:not([hidden]) { border-top: 1px solid var(--outline-variant); }
+.head { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 12px var(--card-padding); background: var(--surface-container-low); }
+.component:has(.notes) .head { border-bottom: 1px dashed var(--subtle-border); }
+.component:nth-child(1 of :not([hidden])) .head { border-top-left-radius: 11px; border-top-right-radius: 11px; }
+.component:nth-last-child(1 of :not([hidden])):not(:has(.notes)) .head { border-bottom-left-radius: 11px; border-bottom-right-radius: 11px; }
 .actions { display: flex; align-items: center; gap: 8px; }
 .commits { display: inline-block; width: 1.5rem; height: 1.5rem; border-radius: 4px; background-color: var(--secondary); -webkit-mask: var(--file-diff-icon) center / 16px 16px no-repeat; mask: var(--file-diff-icon) center / 16px 16px no-repeat; transition: background-color .15s ease; }
 .commits:is(:hover, :active, :focus-visible) { background-color: var(--primary); }
 .name { min-width: 0; margin: 0; overflow-wrap: anywhere; font-size: 17px; line-height: 1.4; font-weight: 550; letter-spacing: -.01em; }
 .badge { padding: 3px 8px; color: var(--kind-ink); background: transparent; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; font-weight: 650; letter-spacing: 0; }
-.notes { padding-top: 16px; overflow-wrap: anywhere; }
+.notes { padding: var(--card-padding); overflow-wrap: anywhere; }
 .notes > :first-child { margin-top: 0; }
+.notes > :last-child { margin-bottom: 0; }
 .notes :is(h1, h2, h3, h4, h5, h6) { margin: 1.2em 0 .5em; font-size: 15px; line-height: 1.4; font-weight: 700; }
 .notes p { margin: .7em 0; }
 .notes blockquote { margin: .8em 0; padding: 8px 16px; border-left: 3px solid var(--primary); background: var(--surface-container-low); border-radius: 0 6px 6px 0; }
