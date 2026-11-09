@@ -45,7 +45,7 @@
 html { scrollbar-gutter: stable; }
 body { margin: 0; background: var(--background); color: var(--on-surface); line-height: 1.5; }
 a { color: inherit; text-decoration: none; }
-a:hover:not(.badge) { color: var(--primary); }
+a:hover:not(.badge, .github-link) { color: var(--primary); }
 button, input { font: inherit; }
 :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
 .site-header { position: fixed; inset: 0 0 auto; z-index: 2; height: var(--app-bar-height); background: color-mix(in srgb, var(--surface) 90%, transparent); border-bottom: 1px solid var(--subtle-border); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
@@ -130,9 +130,9 @@ button, input { font: inherit; }
 .notes a.ref::before { content: ""; display: block; flex: none; width: 1.5rem; height: 1.5rem; background-position: center; background-repeat: no-repeat; filter: grayscale(1); transition: filter .15s ease; }
 .notes a.ref-issue::before { background-image: var(--ref-issue-icon); background-size: 1.2rem 1.2rem; }
 .notes a.ref-gerrit::before { background-image: var(--ref-gerrit-icon); background-size: 1.1rem 1.1rem; }
-.notes a.ref-github::before { background: var(--secondary); -webkit-mask: var(--github-icon) center / 1.1rem 1.1rem no-repeat; mask: var(--github-icon) center / 1.1rem 1.1rem no-repeat; filter: none; }
+.notes a.ref-github::before { background: var(--secondary); -webkit-mask: var(--github-icon) center / 1.1rem 1.1rem no-repeat; mask: var(--github-icon) center / 1.1rem 1.1rem no-repeat; filter: none; transition: background-color .15s ease; }
 .notes a.ref:is(:hover, :active, :focus-visible)::before { filter: none; }
-.notes a.ref-github:is(:hover, :active, :focus-visible)::before { background-color: var(--primary); }
+.notes a.ref-github:is(:hover, :active, :focus-visible)::before { background-color: light-dark(#000, #fff); }
 @media (min-width: 681px) {
   :root { --background: light-dark(#e9eef1, #121316); --subtle-border: light-dark(#d4dde0, color-mix(in srgb, var(--outline-variant) 40%, transparent)); }
   .card { box-shadow: 0 2px 8px light-dark(rgb(26 46 54 / 7%), rgb(0 0 0 / 4%)); }
