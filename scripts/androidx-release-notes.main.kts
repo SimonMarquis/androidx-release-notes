@@ -697,7 +697,8 @@ class SiteRenderer(private val docs: Path, private val embedded: Boolean) {
                 Log.info("🗑️ Removing stale page ${it.name}")
                 it.deleteExisting()
             }
-        Log.info("✅ Rendered index.html and ${dated.size} dated pages in $docs")
+        docs.resolve("sitemap.xml").writeAtomically(sitemap(dated.keys))
+        Log.info("✅ Rendered index.html, sitemap.xml and ${dated.size} dated pages in $docs")
     }
 
     //region Assets
@@ -714,6 +715,17 @@ class SiteRenderer(private val docs: Path, private val embedded: Boolean) {
     //endregion
 
     //region Pages
+
+    /**
+     * Lists the index and dated pages. The index follows the weekly release cadence; dated pages rarely change once published.
+     */
+    private fun sitemap(dates: Set<LocalDate>): String = """
+        |<?xml version="1.0" encoding="UTF-8"?>
+        |<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+        |  <url><loc>$siteUrl</loc><changefreq>weekly</changefreq></url>
+        |${dates.joinToString("\n") { "  <url><loc>$siteUrl$it.html</loc></url>" }}
+        |</urlset>
+        |""".trimMargin()
 
     /** Renders the index when [date] is null, or the page of that date. */
     private fun page(records: List<EntryRecord>, date: LocalDate? = null): String =
