@@ -29,17 +29,19 @@
               <h2 class="date-title">April 18, 2023</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="stable" data-search="media3 1.0.1 2023-04-18 april 18, 2023" id="april-18-2023-media3-1-0-1">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
-                <div class="actions"><a href="https://github.com/androidx/media/commits/1.0.1" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.0.1" class="badge stable">1.0.1</a></div>
-              </div>
-              <div class="notes"><p>This release corresponds to the <a href="https://github.com/google/ExoPlayer/releases/tag/r2.18.6">ExoPlayer 2.18.6 release</a>.</p><ul><li>Core library:
+            <div class="card">
+              <article class="component" data-release-kind="stable" data-search="media3 1.0.1 2023-04-18 april 18, 2023" id="april-18-2023-media3-1-0-1">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                  <div class="actions"><a href="https://github.com/androidx/media/commits/1.0.1" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.0.1" class="badge stable">1.0.1</a></div>
+                </div>
+                <div class="notes"><p>This release corresponds to the <a href="https://github.com/google/ExoPlayer/releases/tag/r2.18.6">ExoPlayer 2.18.6 release</a>.</p><ul><li>Core library:
   <ul><li>Reset target live stream override when seeking to default position <a href="https://github.com/google/ExoPlayer/pull/11051" title="#11051" class="ref ref-github">#11051</a>.</li><li>Fix bug where empty sample streams in the media could cause playback to be stuck.</li></ul></li><li>Session:
   <ul><li>Fix bug where multiple identical queue items published by a legacy <code>MediaSessionCompat</code> result in an exception in <code>MediaController</code> <a href="https://github.com/androidx/media/issues/290" title="#290" class="ref ref-github">#290</a>.</li><li>Add missing forwarding of <code>MediaSession.broadcastCustomCommand</code> to the legacy <code>MediaControllerCompat.Callback.onSessionEvent</code> <a href="https://github.com/androidx/media/issues/293" title="#293" class="ref ref-github">#293</a>.</li><li>Fix bug where calling <code>MediaSession.setPlayer</code> doesn't update the available commands.</li><li>Fix issue that <code>TrackSelectionOverride</code> instances sent from a <code>MediaController</code> are ignored if they reference a group with <code>Format.metadata</code> <a href="https://github.com/androidx/media/issues/296" title="#296" class="ref ref-github">#296</a>.</li><li>Fix issue where <code>Player.COMMAND_GET_CURRENT_MEDIA_ITEM</code> needs to be available to access metadata via the legacy <code>MediaSessionCompat</code>.</li><li>Fix issue where <code>MediaSession</code> instances on a background thread cause crashes when used in <code>MediaSessionService</code> <a href="https://github.com/androidx/media/issues/318" title="#318" class="ref ref-github">#318</a>.</li><li>Fix issue where a media button receiver was declared by the library without the app having intended this <a href="https://github.com/androidx/media/issues/314" title="#314" class="ref ref-github">#314</a>.</li></ul></li><li>DASH:
   <ul><li>Fix handling of empty segment timelines <a href="https://github.com/google/ExoPlayer/issues/11014" title="#11014" class="ref ref-github">#11014</a>.</li></ul></li><li>RTSP:
   <ul><li>Retry with TCP if RTSP Setup with UDP fails with RTSP Error 461 UnsupportedTransport <a href="https://github.com/google/ExoPlayer/issues/11069" title="#11069" class="ref ref-github">#11069</a>.</li></ul></li></ul></div>
-            </article>
+              </article>
+            </div>
           </section>
         </div>
       </div>

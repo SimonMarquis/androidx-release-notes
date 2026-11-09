@@ -29,179 +29,181 @@
               <h2 class="date-title">June 10, 2020</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="alpha" data-search="activity 1.2.0-alpha06 2020-06-10 june 10, 2020" id="june-10-2020-activity-1-2-0-alpha06">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/activity">Activity</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/ccc6e95c574b66563952c33fbe26888b93a0e0cb..bea4dafe72ba1ec91a105da3128954d5ed7f1cd0/activity" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/activity#1.2.0-alpha06" class="badge alpha">1.2.0-alpha06</a></div>
-              </div>
-              <div class="notes"><p><strong>New Features</strong></p><ul><li>You can now destructure the <code>ActivityResult</code> class in kotlin to directly access the <code>requestCode</code> and <code>intent</code>. <a href="https://issuetracker.google.com/issues/157212935" title="b/157212935" class="ref ref-issue">b/157212935</a></li><li><code>ActivityResultLauncher</code> now allows you to get the <code>ActivityResultContract</code> that was used to register the launcher. <a href="https://issuetracker.google.com/issues/156875743" title="b/156875743" class="ref ref-issue">b/156875743</a></li></ul><p><strong>API Changes</strong></p><ul><li><em>Breaking change</em>: The <code>invoke()</code> method on <code>ActivityResultRegistry</code> has been renamed to <code>onLaunch()</code>. <a href="https://issuetracker.google.com/issues/157496491" title="b/157496491" class="ref ref-issue">b/157496491</a></li><li>The <code>OpenMultipleDocuments</code> contract now returns an empty list instead of <code>null</code> to the registered callback if no result is returned. <a href="https://issuetracker.google.com/issues/157348014" title="b/157348014" class="ref ref-issue">b/157348014</a></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="benchmark 1.1.0-alpha01 2020-06-10 june 10, 2020" id="june-10-2020-benchmark-1-1-0-alpha01">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/benchmark">Benchmark</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/e4841066bef97212f3eeb84f894d36dc5a25f756..945594abd75f83bd14daf4fbcd8621796161281e/benchmark" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/benchmark#1.1.0-alpha01" class="badge alpha">1.1.0-alpha01</a></div>
-              </div>
-              <div class="notes"><p><strong>New Features of 1.1</strong></p><ul><li>Allocation Metric - Benchmarks now run an additional phase after warmup and timing, capturing allocation counts. Allocations can cause performance problems on older versions of the platform (140ns in O became 8ns in M - measured on Nexus5X, with locked clocks). This metric is displayed in Android Studio console output, as well as in the</li><li><a href="https://developer.android.com/benchmark#profiling">Profiling support</a> - You can now capture profiling data for a benchmark run, to inspect why your code may be running slowly. Benchmark supports capturing either method tracing, or method sampling from ART. These files can be inspected with the Profiler inside Android Studio using <em>File &gt; Open</em>.</li><li>The Benchmark Gradle plugin now provides defaults for simpler setup:
+            <div class="card">
+              <article class="component" data-release-kind="alpha" data-search="activity 1.2.0-alpha06 2020-06-10 june 10, 2020" id="june-10-2020-activity-1-2-0-alpha06">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/activity">Activity</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/ccc6e95c574b66563952c33fbe26888b93a0e0cb..bea4dafe72ba1ec91a105da3128954d5ed7f1cd0/activity" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/activity#1.2.0-alpha06" class="badge alpha">1.2.0-alpha06</a></div>
+                </div>
+                <div class="notes"><p><strong>New Features</strong></p><ul><li>You can now destructure the <code>ActivityResult</code> class in kotlin to directly access the <code>requestCode</code> and <code>intent</code>. <a href="https://issuetracker.google.com/issues/157212935" title="b/157212935" class="ref ref-issue">b/157212935</a></li><li><code>ActivityResultLauncher</code> now allows you to get the <code>ActivityResultContract</code> that was used to register the launcher. <a href="https://issuetracker.google.com/issues/156875743" title="b/156875743" class="ref ref-issue">b/156875743</a></li></ul><p><strong>API Changes</strong></p><ul><li><em>Breaking change</em>: The <code>invoke()</code> method on <code>ActivityResultRegistry</code> has been renamed to <code>onLaunch()</code>. <a href="https://issuetracker.google.com/issues/157496491" title="b/157496491" class="ref ref-issue">b/157496491</a></li><li>The <code>OpenMultipleDocuments</code> contract now returns an empty list instead of <code>null</code> to the registered callback if no result is returned. <a href="https://issuetracker.google.com/issues/157348014" title="b/157348014" class="ref ref-issue">b/157348014</a></li></ul></div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="benchmark 1.1.0-alpha01 2020-06-10 june 10, 2020" id="june-10-2020-benchmark-1-1-0-alpha01">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/benchmark">Benchmark</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/e4841066bef97212f3eeb84f894d36dc5a25f756..945594abd75f83bd14daf4fbcd8621796161281e/benchmark" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/benchmark#1.1.0-alpha01" class="badge alpha">1.1.0-alpha01</a></div>
+                </div>
+                <div class="notes"><p><strong>New Features of 1.1</strong></p><ul><li>Allocation Metric - Benchmarks now run an additional phase after warmup and timing, capturing allocation counts. Allocations can cause performance problems on older versions of the platform (140ns in O became 8ns in M - measured on Nexus5X, with locked clocks). This metric is displayed in Android Studio console output, as well as in the</li><li><a href="https://developer.android.com/benchmark#profiling">Profiling support</a> - You can now capture profiling data for a benchmark run, to inspect why your code may be running slowly. Benchmark supports capturing either method tracing, or method sampling from ART. These files can be inspected with the Profiler inside Android Studio using <em>File &gt; Open</em>.</li><li>The Benchmark Gradle plugin now provides defaults for simpler setup:
   <ul><li><code>testBuildType</code> is set to release by default, to avoid using dependencies with code coverage built-in. The release buildType is also configured as the default buildType, which allows Android Studio to automatically select the correct build variant when opening a project for the first time. <a href="https://issuetracker.google.com/issues/138808399" title="b/138808399" class="ref ref-issue">b/138808399</a></li><li><code>signingConfig.debug</code> is used as the default signing config <a href="https://issuetracker.google.com/issues/153583269" title="b/153583269" class="ref ref-issue">b/153583269</a></li></ul></li></ul><p>** Bug Fixes **</p><ul><li>Significantly reduced the warmup transition overhead, where the first measurement for each benchmark was artificially higher than others. This issue was more pronounced in very small benchmarks (1 microsecond or less). <a href="https://issuetracker.google.com/issues/142058671" title="b/142058671" class="ref ref-issue">b/142058671</a></li><li>Fixed <code>InstrumentationResultParser</code> error printed for each benchmark when running from command line. <a href="https://android-review.googlesource.com/#/q/I64988447a89d7e0314cedabf87812eaf6c413545" title="I64988" class="ref ref-gerrit">I64988</a> <a href="https://issuetracker.google.com/issues/154248456" title="b/154248456" class="ref ref-issue">b/154248456</a></li></ul><p><strong>Known Issues</strong></p><ul><li>Command line, gradle invocations of Benchmark do not print out results directly. You can work around this by either running through Studio, or parsing the JSON output file for results.</li><li>Benchmark reporting fails to pull the report from devices that have an app installed with an applicationId ending with either “android” or “download” (case insensitive). Users hitting this issue should upgrade the Android Gradle Plugin to 4.2-alpha01 or later.</li></ul></div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="browser 1.3.0-alpha03 2020-06-10 june 10, 2020" id="june-10-2020-browser-1-3-0-alpha03">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/browser">Browser</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/14041ec7183a12ffd22ec024d26202e0101a3790..bea4dafe72ba1ec91a105da3128954d5ed7f1cd0/browser/browser" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/browser#1.3.0-alpha03" class="badge alpha">1.3.0-alpha03</a></div>
-              </div>
-              <div class="notes"><p><strong>New Features</strong></p><ul><li>Added <code>TrustedWebActivityCallback</code> interface that can be used by a Trusted Web Activity client to return data to the browser. <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/1267733" title="I64dbb" class="ref ref-gerrit">I64dbb</a></li></ul><p><strong>API Changes</strong></p><ul><li><code>TrustedWebActivityServiceConnection.extraCommand</code> now also takes a <code>@Nullable</code> <code>TrustedWebActivityCallback</code> parameter. The bundle parameter is now marked as <code>@NonNull</code> instead of <code>@Nullable</code>. <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/1267733" title="I64dbb" class="ref ref-gerrit">I64dbb</a></li><li><code>TrustedWebActivityServiceConnection.extraCommand</code> method has been renamed to <code>sendExtraCommand</code> <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/1320096" title="Id29a8" class="ref ref-gerrit">Id29a8</a></li><li><code>CustomTabsIntent.Builder#addDefaultShareMenuItem()</code> has been deprecated in favor of the new <code>#setDefaultShareMenuItemEnabled(boolean)</code> and <code>CustomTabsIntent.Builder#enableUrlBarHiding()</code> has been deprecated in favor of the new <code>#setUrlBarHidingEnabled(boolean)</code>. <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/1321806" title="Iad702" class="ref ref-gerrit">Iad702</a></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="beta" data-search="camera-camera2 1.0.0-beta05 2020-06-10 june 10, 2020" id="june-10-2020-camera-camera2-1-0-0-beta05">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/camera">Camera-Camera2</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/c4d097f4335fe6b0268ee9a6d53df43615da0d90..bea4dafe72ba1ec91a105da3128954d5ed7f1cd0/camera/camera-camera2" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/camera#camera-camera2-1.0.0-beta05" class="badge beta">1.0.0-beta05</a></div>
-              </div>
-              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fix the crash on app startup when initialising CameraX while phone is in Do Not Disturb mode. An <code>InitializationException</code> contains a <code>CameraUnavailableException</code> that will be set to the <code>ListenableFuture</code> of the intialization result instead of crashing the application. <a href="https://android-review.googlesource.com/#/q/I9909af08a8305fcf8e603d709d98b4488f1af69f" title="I9909a" class="ref ref-gerrit">I9909a</a> <a href="https://issuetracker.google.com/issues/149413835" title="b/149413835" class="ref ref-issue">b/149413835</a></li><li>Fixed the crash when calling <code>startFocusAndMetering</code> on devices that <code>CONTROL_AF_STATE</code> is null. <a href="https://android-review.googlesource.com/#/q/Ife55e091685081b37f87d61d429c7243a494e946" title="Ife55e" class="ref ref-gerrit">Ife55e</a> <a href="https://issuetracker.google.com/issues/157084254" title="b/157084254" class="ref ref-issue">b/157084254</a></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="beta" data-search="camera-core 1.0.0-beta05 2020-06-10 june 10, 2020" id="june-10-2020-camera-core-1-0-0-beta05">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/camera">Camera-Core</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/c4d097f4335fe6b0268ee9a6d53df43615da0d90..bea4dafe72ba1ec91a105da3128954d5ed7f1cd0/camera/camera-core" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/camera#camera-core-1.0.0-beta05" class="badge beta">1.0.0-beta05</a></div>
-              </div>
-              <div class="notes"><p><strong>API Changes</strong></p><ul><li>Fix the crash on app startup when initialising CameraX while phone is in Do Not Disturb mode. An <code>InitializationException</code> contains a <code>CameraUnavailableException</code> will be set to the <code>ListenableFuture</code> of the intialization result instead of crashing the application. <a href="https://android-review.googlesource.com/#/q/I9909af08a8305fcf8e603d709d98b4488f1af69f" title="I9909a" class="ref ref-gerrit">I9909a</a> <a href="https://issuetracker.google.com/issues/149413835" title="b/149413835" class="ref ref-issue">b/149413835</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Updated javadocs of <code>setTargetResolution</code> and <code>setTargetRotation</code>. <a href="https://android-review.googlesource.com/#/q/Iae16f3a1fc2f4419fbb5e53c97c88b56313acad7" title="Iae16f" class="ref ref-gerrit">Iae16f</a></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="camera-extensions 1.0.0-alpha12 2020-06-10 june 10, 2020" id="june-10-2020-camera-extensions-1-0-0-alpha12">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/camera">Camera-Extensions</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/c4d097f4335fe6b0268ee9a6d53df43615da0d90..bea4dafe72ba1ec91a105da3128954d5ed7f1cd0/camera/camera-extensions" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/camera#camera-extensions-1.0.0-alpha12" class="badge alpha">1.0.0-alpha12</a></div>
-              </div>
-              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fix the crash on app startup when initialising CameraX while phone is in Do Not Disturb mode. An <code>InitializationException</code> contains a <code>CameraUnavailableException</code> will be set to the <code>ListenableFuture</code> of the intialization result instead of crashing the application. <a href="https://android-review.googlesource.com/#/q/I9909af08a8305fcf8e603d709d98b4488f1af69f" title="I9909a" class="ref ref-gerrit">I9909a</a> <a href="https://issuetracker.google.com/issues/149413835" title="b/149413835" class="ref ref-issue">b/149413835</a></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="beta" data-search="camera-lifecycle 1.0.0-beta05 2020-06-10 june 10, 2020" id="june-10-2020-camera-lifecycle-1-0-0-beta05">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/camera">Camera-Lifecycle</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/c4d097f4335fe6b0268ee9a6d53df43615da0d90..bea4dafe72ba1ec91a105da3128954d5ed7f1cd0/camera/camera-lifecycle" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/camera#camera-lifecycle-1.0.0-beta05" class="badge beta">1.0.0-beta05</a></div>
-              </div>
-              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fix the crash on app startup when initialising CameraX while phone is in Do Not Disturb mode. An <code>InitializationException</code> contains a <code>CameraUnavailableException</code> will be set to the <code>ListenableFuture</code> of the intialization result instead of crashing the application. <a href="https://android-review.googlesource.com/#/q/I9909af08a8305fcf8e603d709d98b4488f1af69f" title="I9909a" class="ref ref-gerrit">I9909a</a> <a href="https://issuetracker.google.com/issues/149413835" title="b/149413835" class="ref ref-issue">b/149413835</a></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="camera-view 1.0.0-alpha12 2020-06-10 june 10, 2020" id="june-10-2020-camera-view-1-0-0-alpha12">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/camera">Camera-View</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/c4d097f4335fe6b0268ee9a6d53df43615da0d90..bea4dafe72ba1ec91a105da3128954d5ed7f1cd0/camera/camera-view" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/camera#camera-view-1.0.0-alpha12" class="badge alpha">1.0.0-alpha12</a></div>
-              </div>
-              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Add <code>PreviewView#getBitmap()</code> API which returns a Bitmap representation of the content displayed on the preview surface. <a href="https://android-review.googlesource.com/#/q/I9b500504cc6a7ec7b067706b91117118b4d4f7ab" title="I9b500" class="ref ref-gerrit">I9b500</a> <a href="https://issuetracker.google.com/issues/157659818" title="b/157659818" class="ref ref-issue">b/157659818</a></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="stable" data-search="compose 0.1.0-dev13 2020-06-10 june 10, 2020" id="june-10-2020-compose-0-1-0-dev13">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose">Compose</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/compose#0.1.0-dev13" class="badge stable">0.1.0-dev13</a></div>
-              </div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="core 1.5.0-alpha01 2020-06-10 june 10, 2020" id="june-10-2020-core-1-5-0-alpha01">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/core">Core</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/core#1.5.0-alpha01" class="badge alpha">1.5.0-alpha01</a></div>
-              </div>
-              <div class="notes"><p><strong>New Features</strong></p><ul><li>Provides parity with Android R platform SDK APIs for <code>ShortcutManager</code>, <code>ShortcutInfo</code>, <code>AccessibilityNodeInfo</code>, <code>DisplayCutout</code>, <code>GnssStatus</code>, and <code>Notification</code> classes</li></ul><p><strong>Bug Fixes</strong></p><ul><li>Make it clear that checking shouldShowPermissionRationale is recommended.</li><li>Change AtomicFile to use rename-into-place.</li><li>Adjust the Typeface display style with the style of given font. <a href="https://issuetracker.google.com/issues/156853883" title="b/156853883" class="ref ref-issue">b/156853883</a></li><li>Fix failing Notification Builder Tests</li><li>Fix register/unregister bug <code>LocationManagerCompat</code>.</li></ul></div>
-            </article>
-            <article class="card" data-release-kind="stable" data-search="fragment 1.2.5 2020-06-10 june 10, 2020" id="june-10-2020-fragment-1-2-5">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/fragment">Fragment</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/1f1113dbc41d1678cef9a13711434b9640729ccd..1fa73cb2d5a51ba9016a9d7f8cf80e04ad50f528/fragment" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/fragment#1.2.5" class="badge stable">1.2.5</a></div>
-              </div>
-              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>The fragment’s <code>getViewLifecycleOwner()</code> is now stopped before <code>onSaveInstanceState()</code> is called, mirroring the behavior of the fragment’s lifecycle. This was previously released in <a href="https://developer.android.com/jetpack/androidx/releases/fragment#1.3.0-alpha04">Fragment <code>1.3.0-alpha04</code></a>. <a href="https://issuetracker.google.com/issues/154645875" title="b/154645875" class="ref ref-issue">b/154645875</a></li><li>Calling <code>setMenuVisibility(false)</code> on a fragment now correctly changes the visibility of menus provided by its child fragments. This was previously released in <a href="https://developer.android.com/jetpack/androidx/releases/fragment#1.3.0-alpha04">Fragment <code>1.3.0-alpha04</code></a>. <a href="https://issuetracker.google.com/issues/153593580" title="b/153593580" class="ref ref-issue">b/153593580</a></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="fragment 1.3.0-alpha06 2020-06-10 june 10, 2020" id="june-10-2020-fragment-1-3-0-alpha06">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/fragment">Fragment</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/ccc6e95c574b66563952c33fbe26888b93a0e0cb..bea4dafe72ba1ec91a105da3128954d5ed7f1cd0/fragment" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/fragment#1.3.0-alpha06" class="badge alpha">1.3.0-alpha06</a></div>
-              </div>
-              <div class="notes"><p><strong>New Features</strong></p><ul><li>The <code>onAttachFragment()</code> callback on <code>FragmentActivity</code> and <code>Fragment</code> have been deprecated. A new <code>FragmentOnAttachListener</code> has been added to provide a more flexible alternative, allowing delegation of <code>onAttachFragment()</code> to separate, testable listeners and support for adding a listener to FragmentManagers other than your direct child FragmentManager. <a href="https://android-review.googlesource.com/#/q/I06d3daa4247914ae363382f7eab920657f23b5fa" title="I06d3d" class="ref ref-gerrit">I06d3d</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Parent fragments now have their view state restored before their child fragments, fixing a visual ordering issue after a configuration change when a <code>DialogFragment</code> would show another <code>DialogFragment</code> as a child fragment. <a href="https://issuetracker.google.com/issues/157195715" title="b/157195715" class="ref ref-issue">b/157195715</a></li><li>Fixed an issue where the <code>UseRequireInsteadOfGet</code> Lint check would not handle chained usages of the <code>?.</code> and <code>!!</code> operators correctly. <a href="https://issuetracker.google.com/issues/157677616" title="b/157677616" class="ref ref-issue">b/157677616</a></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="gaming 1.0.0-alpha01 2020-06-10 june 10, 2020" id="june-10-2020-gaming-1-0-0-alpha01">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/gaming">Gaming</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/gaming#1.0.0-alpha01" class="badge alpha">1.0.0-alpha01</a></div>
-              </div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="hilt 1.0.0-alpha01 2020-06-10 june 10, 2020" id="june-10-2020-hilt-1-0-0-alpha01">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/hilt">Hilt</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/hilt#1.0.0-alpha01" class="badge alpha">1.0.0-alpha01</a></div>
-              </div>
-              <div class="notes"><p>The <code>androidx.hilt</code> package and libraries extend the functionality of <a href="https://dagger.dev/hilt">Dagger Hilt</a> to enable dependency injection of certain classes from the androidx libraries.</p></div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="lifecycle 2.3.0-alpha04 2020-06-10 june 10, 2020" id="june-10-2020-lifecycle-2-3-0-alpha04">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/lifecycle">Lifecycle</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/ccc6e95c574b66563952c33fbe26888b93a0e0cb..bea4dafe72ba1ec91a105da3128954d5ed7f1cd0/lifecycle" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/lifecycle#2.3.0-alpha04" class="badge alpha">2.3.0-alpha04</a></div>
-              </div>
-              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixed a crash in the <code>NonNullableMutableLiveData</code> Lint check. <a href="https://issuetracker.google.com/issues/157294666" title="b/157294666" class="ref ref-issue">b/157294666</a></li><li>The <code>NonNullableMutableLiveData</code> Lint check now covers significantly more cases where a <code>null</code> value was set on a <code>MutableLiveData</code> with a non-null type parameter. <a href="https://issuetracker.google.com/issues/156002218" title="b/156002218" class="ref ref-issue">b/156002218</a></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="media 1.2.0-alpha03 2020-06-10 june 10, 2020" id="june-10-2020-media-1-2-0-alpha03">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media">Media</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/24daa503442fcd3e44ada60cf1da41df2815c045..945594abd75f83bd14daf4fbcd8621796161281e/media/media" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media#media-1.2.0-alpha03" class="badge alpha">1.2.0-alpha03</a></div>
-              </div>
-              <div class="notes"><p><strong>API Changes</strong></p><ul><li><code>MediaConstants.SESSION_EXTRAS_KEY_AUTHTOKEN</code> has been removed</li></ul><p><strong>Bug Fixes</strong></p><ul><li>Fixed an issue with <code>equals()</code> of <code>RemoteUserInfo</code></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="rc" data-search="navigation 2.3.0-rc01 2020-06-10 june 10, 2020" id="june-10-2020-navigation-2-3-0-rc01">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/navigation">Navigation</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/ccc6e95c574b66563952c33fbe26888b93a0e0cb..098293bcdb2b40862b3e287d38dd82ac8a9c6d38/navigation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/navigation#2.3.0-rc01" class="badge rc">2.3.0-rc01</a></div>
-              </div>
-              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixed a <code>NullPointerException</code> when replacing an instance of a destination with no arguments with another instance <em>with</em> arguments with <code>singleTop</code>. <a href="https://issuetracker.google.com/issues/158006669" title="b/158006669" class="ref ref-issue">b/158006669</a></li><li>All <code>destination is unknown</code> exceptions thrown by <code>NavController</code> now have additional debugging information to help determine the state of the <code>NavController</code>. <a href="https://issuetracker.google.com/issues/157764916" title="b/157764916" class="ref ref-issue">b/157764916</a></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="paging 3.0.0-alpha01 2020-06-10 june 10, 2020" id="june-10-2020-paging-3-0-0-alpha01">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/paging">Paging</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/paging#3.0.0-alpha01" class="badge alpha">3.0.0-alpha01</a></div>
-              </div>
-              <div class="notes"><p>The Paging Library has updated to 3.0, to enable several major new features.</p><p><strong>New Features of 3.0</strong></p><ul><li>First-class support for Kotlin coroutines and Flow.</li><li>Support for async loading with <a href="https://developer.android.com/topic/libraries/architecture/paging/v3-paged-data#data-source">coroutines suspend functions, RxJava Single or Guava ListenableFuture primitives</a>.</li><li><a href="https://developer.android.com/topic/libraries/architecture/paging/v3-paged-data#display-loading-state">Built-in load state and error signals</a> for responsive UI design, including retry and refresh functionality.</li><li>Improvements to the repository layer
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="browser 1.3.0-alpha03 2020-06-10 june 10, 2020" id="june-10-2020-browser-1-3-0-alpha03">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/browser">Browser</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/14041ec7183a12ffd22ec024d26202e0101a3790..bea4dafe72ba1ec91a105da3128954d5ed7f1cd0/browser/browser" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/browser#1.3.0-alpha03" class="badge alpha">1.3.0-alpha03</a></div>
+                </div>
+                <div class="notes"><p><strong>New Features</strong></p><ul><li>Added <code>TrustedWebActivityCallback</code> interface that can be used by a Trusted Web Activity client to return data to the browser. <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/1267733" title="I64dbb" class="ref ref-gerrit">I64dbb</a></li></ul><p><strong>API Changes</strong></p><ul><li><code>TrustedWebActivityServiceConnection.extraCommand</code> now also takes a <code>@Nullable</code> <code>TrustedWebActivityCallback</code> parameter. The bundle parameter is now marked as <code>@NonNull</code> instead of <code>@Nullable</code>. <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/1267733" title="I64dbb" class="ref ref-gerrit">I64dbb</a></li><li><code>TrustedWebActivityServiceConnection.extraCommand</code> method has been renamed to <code>sendExtraCommand</code> <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/1320096" title="Id29a8" class="ref ref-gerrit">Id29a8</a></li><li><code>CustomTabsIntent.Builder#addDefaultShareMenuItem()</code> has been deprecated in favor of the new <code>#setDefaultShareMenuItemEnabled(boolean)</code> and <code>CustomTabsIntent.Builder#enableUrlBarHiding()</code> has been deprecated in favor of the new <code>#setUrlBarHidingEnabled(boolean)</code>. <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/1321806" title="Iad702" class="ref ref-gerrit">Iad702</a></li></ul></div>
+              </article>
+              <article class="component" data-release-kind="beta" data-search="camera-camera2 1.0.0-beta05 2020-06-10 june 10, 2020" id="june-10-2020-camera-camera2-1-0-0-beta05">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/camera">Camera-Camera2</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/c4d097f4335fe6b0268ee9a6d53df43615da0d90..bea4dafe72ba1ec91a105da3128954d5ed7f1cd0/camera/camera-camera2" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/camera#camera-camera2-1.0.0-beta05" class="badge beta">1.0.0-beta05</a></div>
+                </div>
+                <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fix the crash on app startup when initialising CameraX while phone is in Do Not Disturb mode. An <code>InitializationException</code> contains a <code>CameraUnavailableException</code> that will be set to the <code>ListenableFuture</code> of the intialization result instead of crashing the application. <a href="https://android-review.googlesource.com/#/q/I9909af08a8305fcf8e603d709d98b4488f1af69f" title="I9909a" class="ref ref-gerrit">I9909a</a> <a href="https://issuetracker.google.com/issues/149413835" title="b/149413835" class="ref ref-issue">b/149413835</a></li><li>Fixed the crash when calling <code>startFocusAndMetering</code> on devices that <code>CONTROL_AF_STATE</code> is null. <a href="https://android-review.googlesource.com/#/q/Ife55e091685081b37f87d61d429c7243a494e946" title="Ife55e" class="ref ref-gerrit">Ife55e</a> <a href="https://issuetracker.google.com/issues/157084254" title="b/157084254" class="ref ref-issue">b/157084254</a></li></ul></div>
+              </article>
+              <article class="component" data-release-kind="beta" data-search="camera-core 1.0.0-beta05 2020-06-10 june 10, 2020" id="june-10-2020-camera-core-1-0-0-beta05">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/camera">Camera-Core</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/c4d097f4335fe6b0268ee9a6d53df43615da0d90..bea4dafe72ba1ec91a105da3128954d5ed7f1cd0/camera/camera-core" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/camera#camera-core-1.0.0-beta05" class="badge beta">1.0.0-beta05</a></div>
+                </div>
+                <div class="notes"><p><strong>API Changes</strong></p><ul><li>Fix the crash on app startup when initialising CameraX while phone is in Do Not Disturb mode. An <code>InitializationException</code> contains a <code>CameraUnavailableException</code> will be set to the <code>ListenableFuture</code> of the intialization result instead of crashing the application. <a href="https://android-review.googlesource.com/#/q/I9909af08a8305fcf8e603d709d98b4488f1af69f" title="I9909a" class="ref ref-gerrit">I9909a</a> <a href="https://issuetracker.google.com/issues/149413835" title="b/149413835" class="ref ref-issue">b/149413835</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Updated javadocs of <code>setTargetResolution</code> and <code>setTargetRotation</code>. <a href="https://android-review.googlesource.com/#/q/Iae16f3a1fc2f4419fbb5e53c97c88b56313acad7" title="Iae16f" class="ref ref-gerrit">Iae16f</a></li></ul></div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="camera-extensions 1.0.0-alpha12 2020-06-10 june 10, 2020" id="june-10-2020-camera-extensions-1-0-0-alpha12">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/camera">Camera-Extensions</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/c4d097f4335fe6b0268ee9a6d53df43615da0d90..bea4dafe72ba1ec91a105da3128954d5ed7f1cd0/camera/camera-extensions" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/camera#camera-extensions-1.0.0-alpha12" class="badge alpha">1.0.0-alpha12</a></div>
+                </div>
+                <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fix the crash on app startup when initialising CameraX while phone is in Do Not Disturb mode. An <code>InitializationException</code> contains a <code>CameraUnavailableException</code> will be set to the <code>ListenableFuture</code> of the intialization result instead of crashing the application. <a href="https://android-review.googlesource.com/#/q/I9909af08a8305fcf8e603d709d98b4488f1af69f" title="I9909a" class="ref ref-gerrit">I9909a</a> <a href="https://issuetracker.google.com/issues/149413835" title="b/149413835" class="ref ref-issue">b/149413835</a></li></ul></div>
+              </article>
+              <article class="component" data-release-kind="beta" data-search="camera-lifecycle 1.0.0-beta05 2020-06-10 june 10, 2020" id="june-10-2020-camera-lifecycle-1-0-0-beta05">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/camera">Camera-Lifecycle</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/c4d097f4335fe6b0268ee9a6d53df43615da0d90..bea4dafe72ba1ec91a105da3128954d5ed7f1cd0/camera/camera-lifecycle" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/camera#camera-lifecycle-1.0.0-beta05" class="badge beta">1.0.0-beta05</a></div>
+                </div>
+                <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fix the crash on app startup when initialising CameraX while phone is in Do Not Disturb mode. An <code>InitializationException</code> contains a <code>CameraUnavailableException</code> will be set to the <code>ListenableFuture</code> of the intialization result instead of crashing the application. <a href="https://android-review.googlesource.com/#/q/I9909af08a8305fcf8e603d709d98b4488f1af69f" title="I9909a" class="ref ref-gerrit">I9909a</a> <a href="https://issuetracker.google.com/issues/149413835" title="b/149413835" class="ref ref-issue">b/149413835</a></li></ul></div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="camera-view 1.0.0-alpha12 2020-06-10 june 10, 2020" id="june-10-2020-camera-view-1-0-0-alpha12">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/camera">Camera-View</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/c4d097f4335fe6b0268ee9a6d53df43615da0d90..bea4dafe72ba1ec91a105da3128954d5ed7f1cd0/camera/camera-view" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/camera#camera-view-1.0.0-alpha12" class="badge alpha">1.0.0-alpha12</a></div>
+                </div>
+                <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Add <code>PreviewView#getBitmap()</code> API which returns a Bitmap representation of the content displayed on the preview surface. <a href="https://android-review.googlesource.com/#/q/I9b500504cc6a7ec7b067706b91117118b4d4f7ab" title="I9b500" class="ref ref-gerrit">I9b500</a> <a href="https://issuetracker.google.com/issues/157659818" title="b/157659818" class="ref ref-issue">b/157659818</a></li></ul></div>
+              </article>
+              <article class="component" data-release-kind="stable" data-search="compose 0.1.0-dev13 2020-06-10 june 10, 2020" id="june-10-2020-compose-0-1-0-dev13">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose">Compose</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/compose#0.1.0-dev13" class="badge stable">0.1.0-dev13</a></div>
+                </div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="core 1.5.0-alpha01 2020-06-10 june 10, 2020" id="june-10-2020-core-1-5-0-alpha01">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/core">Core</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/core#1.5.0-alpha01" class="badge alpha">1.5.0-alpha01</a></div>
+                </div>
+                <div class="notes"><p><strong>New Features</strong></p><ul><li>Provides parity with Android R platform SDK APIs for <code>ShortcutManager</code>, <code>ShortcutInfo</code>, <code>AccessibilityNodeInfo</code>, <code>DisplayCutout</code>, <code>GnssStatus</code>, and <code>Notification</code> classes</li></ul><p><strong>Bug Fixes</strong></p><ul><li>Make it clear that checking shouldShowPermissionRationale is recommended.</li><li>Change AtomicFile to use rename-into-place.</li><li>Adjust the Typeface display style with the style of given font. <a href="https://issuetracker.google.com/issues/156853883" title="b/156853883" class="ref ref-issue">b/156853883</a></li><li>Fix failing Notification Builder Tests</li><li>Fix register/unregister bug <code>LocationManagerCompat</code>.</li></ul></div>
+              </article>
+              <article class="component" data-release-kind="stable" data-search="fragment 1.2.5 2020-06-10 june 10, 2020" id="june-10-2020-fragment-1-2-5">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/fragment">Fragment</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/1f1113dbc41d1678cef9a13711434b9640729ccd..1fa73cb2d5a51ba9016a9d7f8cf80e04ad50f528/fragment" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/fragment#1.2.5" class="badge stable">1.2.5</a></div>
+                </div>
+                <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>The fragment’s <code>getViewLifecycleOwner()</code> is now stopped before <code>onSaveInstanceState()</code> is called, mirroring the behavior of the fragment’s lifecycle. This was previously released in <a href="https://developer.android.com/jetpack/androidx/releases/fragment#1.3.0-alpha04">Fragment <code>1.3.0-alpha04</code></a>. <a href="https://issuetracker.google.com/issues/154645875" title="b/154645875" class="ref ref-issue">b/154645875</a></li><li>Calling <code>setMenuVisibility(false)</code> on a fragment now correctly changes the visibility of menus provided by its child fragments. This was previously released in <a href="https://developer.android.com/jetpack/androidx/releases/fragment#1.3.0-alpha04">Fragment <code>1.3.0-alpha04</code></a>. <a href="https://issuetracker.google.com/issues/153593580" title="b/153593580" class="ref ref-issue">b/153593580</a></li></ul></div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="fragment 1.3.0-alpha06 2020-06-10 june 10, 2020" id="june-10-2020-fragment-1-3-0-alpha06">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/fragment">Fragment</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/ccc6e95c574b66563952c33fbe26888b93a0e0cb..bea4dafe72ba1ec91a105da3128954d5ed7f1cd0/fragment" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/fragment#1.3.0-alpha06" class="badge alpha">1.3.0-alpha06</a></div>
+                </div>
+                <div class="notes"><p><strong>New Features</strong></p><ul><li>The <code>onAttachFragment()</code> callback on <code>FragmentActivity</code> and <code>Fragment</code> have been deprecated. A new <code>FragmentOnAttachListener</code> has been added to provide a more flexible alternative, allowing delegation of <code>onAttachFragment()</code> to separate, testable listeners and support for adding a listener to FragmentManagers other than your direct child FragmentManager. <a href="https://android-review.googlesource.com/#/q/I06d3daa4247914ae363382f7eab920657f23b5fa" title="I06d3d" class="ref ref-gerrit">I06d3d</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Parent fragments now have their view state restored before their child fragments, fixing a visual ordering issue after a configuration change when a <code>DialogFragment</code> would show another <code>DialogFragment</code> as a child fragment. <a href="https://issuetracker.google.com/issues/157195715" title="b/157195715" class="ref ref-issue">b/157195715</a></li><li>Fixed an issue where the <code>UseRequireInsteadOfGet</code> Lint check would not handle chained usages of the <code>?.</code> and <code>!!</code> operators correctly. <a href="https://issuetracker.google.com/issues/157677616" title="b/157677616" class="ref ref-issue">b/157677616</a></li></ul></div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="gaming 1.0.0-alpha01 2020-06-10 june 10, 2020" id="june-10-2020-gaming-1-0-0-alpha01">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/gaming">Gaming</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/gaming#1.0.0-alpha01" class="badge alpha">1.0.0-alpha01</a></div>
+                </div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="hilt 1.0.0-alpha01 2020-06-10 june 10, 2020" id="june-10-2020-hilt-1-0-0-alpha01">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/hilt">Hilt</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/hilt#1.0.0-alpha01" class="badge alpha">1.0.0-alpha01</a></div>
+                </div>
+                <div class="notes"><p>The <code>androidx.hilt</code> package and libraries extend the functionality of <a href="https://dagger.dev/hilt">Dagger Hilt</a> to enable dependency injection of certain classes from the androidx libraries.</p></div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="lifecycle 2.3.0-alpha04 2020-06-10 june 10, 2020" id="june-10-2020-lifecycle-2-3-0-alpha04">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/lifecycle">Lifecycle</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/ccc6e95c574b66563952c33fbe26888b93a0e0cb..bea4dafe72ba1ec91a105da3128954d5ed7f1cd0/lifecycle" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/lifecycle#2.3.0-alpha04" class="badge alpha">2.3.0-alpha04</a></div>
+                </div>
+                <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixed a crash in the <code>NonNullableMutableLiveData</code> Lint check. <a href="https://issuetracker.google.com/issues/157294666" title="b/157294666" class="ref ref-issue">b/157294666</a></li><li>The <code>NonNullableMutableLiveData</code> Lint check now covers significantly more cases where a <code>null</code> value was set on a <code>MutableLiveData</code> with a non-null type parameter. <a href="https://issuetracker.google.com/issues/156002218" title="b/156002218" class="ref ref-issue">b/156002218</a></li></ul></div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="media 1.2.0-alpha03 2020-06-10 june 10, 2020" id="june-10-2020-media-1-2-0-alpha03">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media">Media</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/24daa503442fcd3e44ada60cf1da41df2815c045..945594abd75f83bd14daf4fbcd8621796161281e/media/media" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media#media-1.2.0-alpha03" class="badge alpha">1.2.0-alpha03</a></div>
+                </div>
+                <div class="notes"><p><strong>API Changes</strong></p><ul><li><code>MediaConstants.SESSION_EXTRAS_KEY_AUTHTOKEN</code> has been removed</li></ul><p><strong>Bug Fixes</strong></p><ul><li>Fixed an issue with <code>equals()</code> of <code>RemoteUserInfo</code></li></ul></div>
+              </article>
+              <article class="component" data-release-kind="rc" data-search="navigation 2.3.0-rc01 2020-06-10 june 10, 2020" id="june-10-2020-navigation-2-3-0-rc01">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/navigation">Navigation</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/ccc6e95c574b66563952c33fbe26888b93a0e0cb..098293bcdb2b40862b3e287d38dd82ac8a9c6d38/navigation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/navigation#2.3.0-rc01" class="badge rc">2.3.0-rc01</a></div>
+                </div>
+                <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixed a <code>NullPointerException</code> when replacing an instance of a destination with no arguments with another instance <em>with</em> arguments with <code>singleTop</code>. <a href="https://issuetracker.google.com/issues/158006669" title="b/158006669" class="ref ref-issue">b/158006669</a></li><li>All <code>destination is unknown</code> exceptions thrown by <code>NavController</code> now have additional debugging information to help determine the state of the <code>NavController</code>. <a href="https://issuetracker.google.com/issues/157764916" title="b/157764916" class="ref ref-issue">b/157764916</a></li></ul></div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="paging 3.0.0-alpha01 2020-06-10 june 10, 2020" id="june-10-2020-paging-3-0-0-alpha01">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/paging">Paging</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/paging#3.0.0-alpha01" class="badge alpha">3.0.0-alpha01</a></div>
+                </div>
+                <div class="notes"><p>The Paging Library has updated to 3.0, to enable several major new features.</p><p><strong>New Features of 3.0</strong></p><ul><li>First-class support for Kotlin coroutines and Flow.</li><li>Support for async loading with <a href="https://developer.android.com/topic/libraries/architecture/paging/v3-paged-data#data-source">coroutines suspend functions, RxJava Single or Guava ListenableFuture primitives</a>.</li><li><a href="https://developer.android.com/topic/libraries/architecture/paging/v3-paged-data#display-loading-state">Built-in load state and error signals</a> for responsive UI design, including retry and refresh functionality.</li><li>Improvements to the repository layer
   <ul><li><a href="https://developer.android.com/topic/libraries/architecture/paging/v3-paged-data#data-source">Simplified data source interface</a></li><li>Simplified network + database pagination</li><li>Cancellation support</li></ul></li><li>Improvements to the presentation layer
   <ul><li><a href="https://developer.android.com/topic/libraries/architecture/paging/v3-transform">Custom page transformations</a></li><li><a href="https://developer.android.com/topic/libraries/architecture/paging/v3-transform#handle-separators-ui">List separators</a></li><li><a href="https://developer.android.com/topic/libraries/architecture/paging/v3-paged-data#load-state-adapter">Loading state headers and footers</a></li></ul></li></ul><p><strong>Known Issues</strong></p><ul><li>Paging 3 javadocs are not yet available. In the interim, please use the guides linked above or the Kotlin docs. <a href="https://issuetracker.google.com/issues/158614050" title="b/158614050" class="ref ref-issue">b/158614050</a></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="room 2.3.0-alpha01 2020-06-10 june 10, 2020" id="june-10-2020-room-2-3-0-alpha01">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/room">Room</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/6880f4a443ed0d4e88e15c18044fbfc644c766e2..945594abd75f83bd14daf4fbcd8621796161281e/room" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/room#2.3.0-alpha01" class="badge alpha">2.3.0-alpha01</a></div>
-              </div>
-              <div class="notes"><p><strong>New Features</strong></p><ul><li><p><strong>Paging 3.0 Support</strong>: Room will now support generating implementations for<code>@Query</code> annotated methods whose return type is <code>androidx.paging.PagingSource</code>.</p><div></div><pre><code><span>@Dao</span>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="room 2.3.0-alpha01 2020-06-10 june 10, 2020" id="june-10-2020-room-2-3-0-alpha01">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/room">Room</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/6880f4a443ed0d4e88e15c18044fbfc644c766e2..945594abd75f83bd14daf4fbcd8621796161281e/room" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/room#2.3.0-alpha01" class="badge alpha">2.3.0-alpha01</a></div>
+                </div>
+                <div class="notes"><p><strong>New Features</strong></p><ul><li><p><strong>Paging 3.0 Support</strong>: Room will now support generating implementations for<code>@Query</code> annotated methods whose return type is <code>androidx.paging.PagingSource</code>.</p><div></div><pre><code><span>@Dao</span>
 <span>interface</span><span> </span><span>UserDao</span><span> </span><span>{</span>
 <span>  </span><span>@Query</span><span>(</span><span>"SELECT * FROM users ORDER BY id ASC"</span><span>)</span>
 <span>  </span><span>fun</span><span> </span><span>pagingSource</span><span>():</span><span> </span><span>PagingSource&lt;Int</span><span>,</span><span> </span><span>User</span>&gt;
 <span>}</span>
 </code></pre></li></ul><p><strong>API Changes</strong></p><ul><li><code>@RewriteQueriesToDropUnusedColumns</code> is a new convenient annotation that makes Room rewrite the ‘*’ projection in a query such that unused columns in the result are removed.</li><li>The processor option <code>room.expandProjection</code> is now deprecated. Use <code>@RewriteQueriesToDropUnusedColumns</code> as a replacement for Room optimizing queries with star projections. Note that <code>@RewriteQueriesToDropUnusedColumns</code> does not replace the column conflict solution <code>room.expandProjection</code> offered with regards to return types that contained <code>@Embedded</code> fields.</li></ul><p><strong>Bug Fixes</strong></p><ul><li>Fixed a bug where Room would not correctly detect the JDK version used to enable incremental annotation processor. Thanks to Blaz Solar (me@blaz.solar) <a href="https://issuetracker.google.com/155215201" title="b/155215201" class="ref ref-issue">b/155215201</a></li><li>Room now embeds its ANTLR dependency with the annotation processor to avoid version conflicts with other processors that also use ANTLR. <a href="https://issuetracker.google.com/150106190" title="b/150106190" class="ref ref-issue">b/150106190</a></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="security-state 1.1.0-alpha01 2020-06-10 june 10, 2020" id="june-10-2020-security-crypto-1-1-0-alpha01">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/security">Security-state</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/6be101c2241593fee3ef9ab4e1fb337b485f2f9a..945594abd75f83bd14daf4fbcd8621796161281e/security/crypto" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/security#security-crypto-1.1.0-alpha01" class="badge alpha">1.1.0-alpha01</a></div>
-              </div>
-              <div class="notes"><p><strong>New Features</strong></p><ul><li>Lollipop (API Level 21+) is now supported. Please note that the AndroidKeyStore is <em>not</em> used for API 21 and 22. <a href="https://android-review.googlesource.com/#/q/I7c12d205273e4b652271865e53ff6c406632f407" title="I7c12d" class="ref ref-gerrit">I7c12d</a> <a href="https://issuetracker.google.com/issues/132325342" title="b/132325342" class="ref ref-issue">b/132325342</a></li><li>New MasterKey class provides more options for keys, also deprecating MasterKeys to support new features and versions of Android that do not have KeyGenParamSpec.</li></ul></div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="startup 1.0.0-alpha01 2020-06-10 june 10, 2020" id="june-10-2020-startup-1-0-0-alpha01">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/startup">Startup</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/startup#1.0.0-alpha01" class="badge alpha">1.0.0-alpha01</a></div>
-              </div>
-              <div class="notes"><p><strong>New Features</strong></p><p>The App Startup library provides a straightforward, performant way to initialize components at application startup. Both library developers and app developers can use App Startup to streamline startup sequences and explicitly set the order of initialization. This initial release is <code>1.0.0-alpha01</code>.</p></div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="tracing 1.0.0-alpha01 2020-06-10 june 10, 2020" id="june-10-2020-tracing-1-0-0-alpha01">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/tracing">Tracing</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/tracing#1.0.0-alpha01" class="badge alpha">1.0.0-alpha01</a></div>
-              </div>
-              <div class="notes"><p><strong>New Features</strong></p><p>androidx.tracing is a library which helps write trace events to the system trace buffer. This can be visualized using tools like Systrace and Perfetto. This library replaces the deprecated <a href="https://developer.android.com/reference/kotlin/androidx/core/os/TraceCompat">androidx.core.os.TraceCompat</a> class. This initial release is 1.0.0-alpha01.</p></div>
-            </article>
-            <article class="card" data-release-kind="stable" data-search="ui 0.1.0-dev13 2020-06-10 june 10, 2020" id="june-10-2020-ui-0-1-0-dev13">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/ui">UI</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/ui#0.1.0-dev13" class="badge stable">0.1.0-dev13</a></div>
-              </div>
-            </article>
-            <article class="card" data-release-kind="beta" data-search="webkit 1.3.0-beta01 2020-06-10 june 10, 2020" id="june-10-2020-webkit-1-3-0-beta01">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/webkit">Webkit</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/b752a10305d7cd58a7f50ad094ed54af4d765f27..945594abd75f83bd14daf4fbcd8621796161281e/webkit/webkit" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/webkit#1.3.0-beta01" class="badge beta">1.3.0-beta01</a></div>
-              </div>
-              <div class="notes"><p><strong>New Features</strong></p><ul><li><code>ForceDarkStrategy</code> API to control WebView darkening (CSS/web content darkening versus auto darkening).</li><li><code>WebMessageListener</code> APIs provide a simple and secure mechanism to establish communication between web contents and the WebView embedder app.</li><li><code>MultiProcessEnabled</code> API to check if WebView is running in multi process mode.</li></ul></div>
-            </article>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="security-state 1.1.0-alpha01 2020-06-10 june 10, 2020" id="june-10-2020-security-crypto-1-1-0-alpha01">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/security">Security-state</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/6be101c2241593fee3ef9ab4e1fb337b485f2f9a..945594abd75f83bd14daf4fbcd8621796161281e/security/crypto" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/security#security-crypto-1.1.0-alpha01" class="badge alpha">1.1.0-alpha01</a></div>
+                </div>
+                <div class="notes"><p><strong>New Features</strong></p><ul><li>Lollipop (API Level 21+) is now supported. Please note that the AndroidKeyStore is <em>not</em> used for API 21 and 22. <a href="https://android-review.googlesource.com/#/q/I7c12d205273e4b652271865e53ff6c406632f407" title="I7c12d" class="ref ref-gerrit">I7c12d</a> <a href="https://issuetracker.google.com/issues/132325342" title="b/132325342" class="ref ref-issue">b/132325342</a></li><li>New MasterKey class provides more options for keys, also deprecating MasterKeys to support new features and versions of Android that do not have KeyGenParamSpec.</li></ul></div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="startup 1.0.0-alpha01 2020-06-10 june 10, 2020" id="june-10-2020-startup-1-0-0-alpha01">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/startup">Startup</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/startup#1.0.0-alpha01" class="badge alpha">1.0.0-alpha01</a></div>
+                </div>
+                <div class="notes"><p><strong>New Features</strong></p><p>The App Startup library provides a straightforward, performant way to initialize components at application startup. Both library developers and app developers can use App Startup to streamline startup sequences and explicitly set the order of initialization. This initial release is <code>1.0.0-alpha01</code>.</p></div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="tracing 1.0.0-alpha01 2020-06-10 june 10, 2020" id="june-10-2020-tracing-1-0-0-alpha01">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/tracing">Tracing</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/tracing#1.0.0-alpha01" class="badge alpha">1.0.0-alpha01</a></div>
+                </div>
+                <div class="notes"><p><strong>New Features</strong></p><p>androidx.tracing is a library which helps write trace events to the system trace buffer. This can be visualized using tools like Systrace and Perfetto. This library replaces the deprecated <a href="https://developer.android.com/reference/kotlin/androidx/core/os/TraceCompat">androidx.core.os.TraceCompat</a> class. This initial release is 1.0.0-alpha01.</p></div>
+              </article>
+              <article class="component" data-release-kind="stable" data-search="ui 0.1.0-dev13 2020-06-10 june 10, 2020" id="june-10-2020-ui-0-1-0-dev13">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/ui">UI</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/ui#0.1.0-dev13" class="badge stable">0.1.0-dev13</a></div>
+                </div>
+              </article>
+              <article class="component" data-release-kind="beta" data-search="webkit 1.3.0-beta01 2020-06-10 june 10, 2020" id="june-10-2020-webkit-1-3-0-beta01">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/webkit">Webkit</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/b752a10305d7cd58a7f50ad094ed54af4d765f27..945594abd75f83bd14daf4fbcd8621796161281e/webkit/webkit" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/webkit#1.3.0-beta01" class="badge beta">1.3.0-beta01</a></div>
+                </div>
+                <div class="notes"><p><strong>New Features</strong></p><ul><li><code>ForceDarkStrategy</code> API to control WebView darkening (CSS/web content darkening versus auto darkening).</li><li><code>WebMessageListener</code> APIs provide a simple and secure mechanism to establish communication between web contents and the WebView embedder app.</li><li><code>MultiProcessEnabled</code> API to check if WebView is running in multi process mode.</li></ul></div>
+              </article>
+            </div>
           </section>
         </div>
       </div>

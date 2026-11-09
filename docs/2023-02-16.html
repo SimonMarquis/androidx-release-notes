@@ -29,12 +29,13 @@
               <h2 class="date-title">February 16, 2023</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="rc" data-search="media3 1.0.0-rc01 2023-02-16 february 16, 2023" id="february-16-2023-media3-1-0-0-rc01">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
-                <div class="actions"><a href="https://github.com/androidx/media/commits/1.0.0-rc01" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.0.0-rc01" class="badge rc">1.0.0-rc01</a></div>
-              </div>
-              <div class="notes"><p>This release corresponds to the <a href="https://github.com/google/ExoPlayer/releases/tag/r2.18.3">ExoPlayer 2.18.3 release</a>.</p><ul><li>Core library:
+            <div class="card">
+              <article class="component" data-release-kind="rc" data-search="media3 1.0.0-rc01 2023-02-16 february 16, 2023" id="february-16-2023-media3-1-0-0-rc01">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                  <div class="actions"><a href="https://github.com/androidx/media/commits/1.0.0-rc01" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.0.0-rc01" class="badge rc">1.0.0-rc01</a></div>
+                </div>
+                <div class="notes"><p>This release corresponds to the <a href="https://github.com/google/ExoPlayer/releases/tag/r2.18.3">ExoPlayer 2.18.3 release</a>.</p><ul><li>Core library:
   <ul><li>Tweak the renderer's decoder ordering logic to uphold the <code>MediaCodecSelector</code>'s preferences, even if a decoder reports it may not be able to play the media performantly. For example with default selector, hardware decoder with only functional support will be preferred over software decoder that fully supports the format <a href="https://github.com/google/ExoPlayer/issues/10604" title="#10604" class="ref ref-github">#10604</a>.</li><li>Add <code>ExoPlayer.Builder.setPlaybackLooper</code> that sets a pre-existing playback thread for a new ExoPlayer instance.</li><li>Allow download manager helpers to be cleared <a href="https://github.com/google/ExoPlayer/issues/10776" title="#10776" class="ref ref-github">#10776</a>.</li><li>Add parameter to <code>BasePlayer.seekTo</code> to also indicate the command used for seeking.</li><li>Use theme when loading drawables on API 21+ <a href="https://github.com/androidx/media/issues/220" title="#220" class="ref ref-github">#220</a>.</li><li>Add <code>ConcatenatingMediaSource2</code> that allows combining multiple media items into a single window <a href="https://github.com/androidx/media/issues/247" title="#247" class="ref ref-github">#247</a>.</li></ul></li><li>Extractors:
   <ul><li>Throw a <code>ParserException</code> instead of a <code>NullPointerException</code> if the sample table (stbl) is missing a required sample description (stsd) when parsing trak atoms.</li><li>Correctly skip samples when seeking directly to a sync frame in fMP4 <a href="https://github.com/google/ExoPlayer/issues/10941" title="#10941" class="ref ref-github">#10941</a>.</li></ul></li><li>Audio:
   <ul><li>Use the compressed audio format bitrate to calculate the min buffer size for <code>AudioTrack</code> in direct playbacks (passthrough).</li></ul></li><li>Text:
@@ -47,7 +48,8 @@
   <ul><li>Bump Cast SDK version to 21.2.0.</li></ul></li><li>IMA extension:
   <ul><li>Remove player listener of the <code>ImaServerSideAdInsertionMediaSource</code> on the application thread to avoid threading issues.</li><li>Add a property <code>focusSkipButtonWhenAvailable</code> to the <code>ImaServerSideAdInsertionMediaSource.AdsLoader.Builder</code> to request focusing the skip button on TV devices and set it to true by default.</li><li>Add a method <code>focusSkipButton()</code> to the <code>ImaServerSideAdInsertionMediaSource.AdsLoader</code> to programmatically request to focus the skip button.</li><li>Bump IMA SDK version to 3.29.0.</li></ul></li><li>Demo app:
   <ul><li>Request notification permission for download notifications at runtime <a href="https://github.com/google/ExoPlayer/issues/10884" title="#10884" class="ref ref-github">#10884</a>.</li></ul></li></ul></div>
-            </article>
+              </article>
+            </div>
           </section>
         </div>
       </div>

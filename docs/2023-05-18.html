@@ -29,17 +29,19 @@
               <h2 class="date-title">May 18, 2023</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="stable" data-search="media3 1.0.2 2023-05-18 may 18, 2023" id="may-18-2023-media3-1-0-2">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
-                <div class="actions"><a href="https://github.com/androidx/media/commits/1.0.2" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.0.2" class="badge stable">1.0.2</a></div>
-              </div>
-              <div class="notes"><p>This release corresponds to the <a href="https://github.com/google/ExoPlayer/releases/tag/r2.18.7">ExoPlayer 2.18.7 release</a>.</p><p>This release contains the following changes since the <a href="https://developer.android.com/jetpack/androidx/releases/media3#1.0.1">1.0.1 release</a>:</p><ul><li>Core library:
+            <div class="card">
+              <article class="component" data-release-kind="stable" data-search="media3 1.0.2 2023-05-18 may 18, 2023" id="may-18-2023-media3-1-0-2">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                  <div class="actions"><a href="https://github.com/androidx/media/commits/1.0.2" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.0.2" class="badge stable">1.0.2</a></div>
+                </div>
+                <div class="notes"><p>This release corresponds to the <a href="https://github.com/google/ExoPlayer/releases/tag/r2.18.7">ExoPlayer 2.18.7 release</a>.</p><p>This release contains the following changes since the <a href="https://developer.android.com/jetpack/androidx/releases/media3#1.0.1">1.0.1 release</a>:</p><ul><li>Core library:
   <ul><li>Add <code>Buffer.isLastSample()</code> that denotes if <code>Buffer</code> contains flag <code>C.BUFFER_FLAG_LAST_SAMPLE</code>.</li><li>Fix issue where last frame may not be rendered if the last sample with frames is dequeued without reading the 'end of stream' sample. <a href="https://github.com/google/ExoPlayer/issues/11079" title="#11079" class="ref ref-github">#11079</a>.</li></ul></li><li>Extractors:
   <ul><li>Fix parsing of H.265 SPS in MPEG-TS files by re-using the parsing logic already used by RTSP and MP4 extractors <a href="https://github.com/androidx/media/issues/303" title="#303" class="ref ref-github">#303</a>.</li></ul></li><li>Text:
   <ul><li>SSA: Add support for UTF-16 files if they start with a byte order mark <a href="https://github.com/androidx/media/issues/319" title="#319" class="ref ref-github">#319</a>.</li></ul></li><li>Session:
   <ul><li>Fix issue where <code>MediaController</code> doesn't update its available commands when connected to a legacy <code>MediaSessionCompat</code> that updates its actions.</li><li>Fix bug that prevented the <code>MediaLibraryService</code> from returning null for a call from System UI to <code>Callback.onGetLibraryRoot</code> with <code>params.isRecent == true</code> on API 30 <a href="https://github.com/androidx/media/issues/355" title="#355" class="ref ref-github">#355</a>.</li><li>Fix memory leak of <code>MediaSessionService</code> or <code>MediaLibraryService</code> <a href="https://github.com/androidx/media/issues/346" title="#346" class="ref ref-github">#346</a>.</li><li>Fix bug where a combined <code>Timeline</code> and position update in a <code>MediaSession</code> may cause a <code>MediaController</code> to throw an <code>IllegalStateException</code>.</li></ul></li></ul></div>
-            </article>
+              </article>
+            </div>
           </section>
         </div>
       </div>

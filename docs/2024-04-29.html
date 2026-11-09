@@ -29,80 +29,82 @@
               <h2 class="date-title">April 29, 2024</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="alpha" data-search="test annotation 1.1.0-alpha04 2024-04-29 april 29, 2024" id="april-29-2024-test-annotation-1-1-0-alpha04">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Annotation</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#annotation-1.1.0-alpha04" class="badge alpha">1.1.0-alpha04</a></div>
-              </div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="test core 1.6.0-alpha06 2024-04-29 april 29, 2024" id="april-29-2024-test-core-1-6-0-alpha06">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Core</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#core-1.6.0-alpha06" class="badge alpha">1.6.0-alpha06</a></div>
-              </div>
-              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Make ViewCapture use ControlledLooper API instead of hardcoding is Robolectric check</li><li>Fix using ActivityScenario#launchActivityForResult with an implicit Intent</li></ul><p><strong>API Changes</strong></p><ul><li>Added ApplicationInfoBuilder.setFlags(int)</li><li>Make suspend function versions of ViewCapture/WindowCapture/DeviceCapture APIs,
+            <div class="card">
+              <article class="component" data-release-kind="alpha" data-search="test annotation 1.1.0-alpha04 2024-04-29 april 29, 2024" id="april-29-2024-test-annotation-1-1-0-alpha04">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Annotation</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#annotation-1.1.0-alpha04" class="badge alpha">1.1.0-alpha04</a></div>
+                </div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="test core 1.6.0-alpha06 2024-04-29 april 29, 2024" id="april-29-2024-test-core-1-6-0-alpha06">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Core</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#core-1.6.0-alpha06" class="badge alpha">1.6.0-alpha06</a></div>
+                </div>
+                <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Make ViewCapture use ControlledLooper API instead of hardcoding is Robolectric check</li><li>Fix using ActivityScenario#launchActivityForResult with an implicit Intent</li></ul><p><strong>API Changes</strong></p><ul><li>Added ApplicationInfoBuilder.setFlags(int)</li><li>Make suspend function versions of ViewCapture/WindowCapture/DeviceCapture APIs,
   <br>
   and rename existing methods as *Async variants that return ListenableFutures</li><li>Make Bitmap.writeToTestStorage use the registered PlatformTestStorage instead of hardcoding TestStorage</li><li>Remove ExperimentalTestApi/RequiresOptIn restrictions from captureToBitmap and takeScreenshot APIs</li></ul></div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="test espresso 3.6.0-alpha04 2024-04-29 april 29, 2024" id="april-29-2024-test-espresso-3-6-0-alpha04">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Espresso</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#espresso-3.6.0-alpha04" class="badge alpha">3.6.0-alpha04</a></div>
-              </div>
-              <div class="notes"><p>The following artifacts were released:</p><ul><li><code>androidx.test.espresso:espresso-accessibility:3.6.0-alpha04</code></li><li><code>androidx.test.espresso:espresso-core:3.6.0-alpha04</code></li><li><code>androidx.test.espresso:espresso-contrib:3.6.0-alpha04</code></li><li><code>androidx.test.espresso:espresso-idling-resource:3.6.0-alpha04</code></li><li><code>androidx.test.espresso:espresso-intents:3.6.0-alpha04</code></li><li><code>androidx.test.espresso:espresso-remote:3.6.0-alpha04</code></li><li><code>androidx.test.espresso:espresso-web:3.6.0-alpha04</code></li><li><code>androidx.test.espresso.idling:idling-concurrent:3.6.0-alpha04</code></li><li><code>androidx.test.espresso.idling:idling-net:3.6.0-alpha04</code></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Fix slow inRoot operations in Robolectric</li><li>Use PlatformTestStorageRegistry.getInstance consistently instead of passing a reference around</li><li>Remove TODO from InteractionResponse public ref docs</li></ul><p><strong>New Features</strong></p><ul><li>Add waitForClose to DrawerActions.</li></ul><p><strong>API Changes</strong></p><ul><li>Adapt to ViewCapture API changes</li><li>Delete ViewInteraction.captureToBitmap in favor of ViewActions.captureToBitmap, and promote to a stable API from ExperimentalTestApi</li></ul></div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="test espresso device 1.0.0-alpha09 2024-04-29 april 29, 2024" id="april-29-2024-test-espresso-device-1-0-0-alpha09">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Espresso Device</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#espresso_device-1.0.0-alpha09" class="badge alpha">1.0.0-alpha09</a></div>
-              </div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="test junit extensions 1.2.0-alpha04 2024-04-29 april 29, 2024" id="april-29-2024-test-junit-extensions-1-2-0-alpha04">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test JUnit Extensions</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#junit-1.2.0-alpha04" class="badge alpha">1.2.0-alpha04</a></div>
-              </div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="test truth extensions 1.6.0-alpha04 2024-04-29 april 29, 2024" id="april-29-2024-test-truth-extensions-1-6-0-alpha04">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Truth Extensions</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#truth-1.6.0-alpha04" class="badge alpha">1.6.0-alpha04</a></div>
-              </div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="test monitor 1.7.0-alpha05 2024-04-29 april 29, 2024" id="april-29-2024-test-monitor-1-7-0-alpha05">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Monitor</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#monitor-1.7.0-alpha05" class="badge alpha">1.7.0-alpha05</a></div>
-              </div>
-              <div class="notes"><p><strong>API Changes</strong> * Make DeviceController an public API from ExperimentalTestApi * Move PlatformTestStorage to a public API * Add internal ControlledLooper#isDrawCallbacksSupported.</p></div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="test orchestrator 1.5.0-alpha04 2024-04-29 april 29, 2024" id="april-29-2024-test-orchestrator-1-5-0-alpha04">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Orchestrator</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#orchestrator-1.5.0-alpha04" class="badge alpha">1.5.0-alpha04</a></div>
-              </div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="test runner 1.6.0-alpha07 2024-04-29 april 29, 2024" id="april-29-2024-test-runner-1-6-0-alpha07">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Runner</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#runner-1.6.0-alpha07" class="badge alpha">1.6.0-alpha07</a></div>
-              </div>
-              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>When logging test exceptions, use Log's built-in support for throwables to avoid stack truncation</li><li>Internal changes to support GrantPermissionRule using UiAutomation#grantRuntimePermissions</li></ul></div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="test rules 1.6.0-alpha04 2024-04-29 april 29, 2024" id="april-29-2024-test-rules-1-6-0-alpha04">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Rules</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#rules-1.6.0-alpha04" class="badge alpha">1.6.0-alpha04</a></div>
-              </div>
-              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Make GrantPermissionRule use UiAutomation to grant permissions on APIs &gt; =28 to fix issues running on automotive.</li></ul></div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="test services 1.5.0-alpha04 2024-04-29 april 29, 2024" id="april-29-2024-test-services-1-5-0-alpha04">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Services</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#services-1.5.0-alpha04" class="badge alpha">1.5.0-alpha04</a></div>
-              </div>
-              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>TestStorage: use local cache dir to store output files when running as non system user</li></ul><p><strong>API Changes</strong></p><ul><li>Make TestStorage an internal API from experimental</li></ul></div>
-            </article>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="test espresso 3.6.0-alpha04 2024-04-29 april 29, 2024" id="april-29-2024-test-espresso-3-6-0-alpha04">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Espresso</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#espresso-3.6.0-alpha04" class="badge alpha">3.6.0-alpha04</a></div>
+                </div>
+                <div class="notes"><p>The following artifacts were released:</p><ul><li><code>androidx.test.espresso:espresso-accessibility:3.6.0-alpha04</code></li><li><code>androidx.test.espresso:espresso-core:3.6.0-alpha04</code></li><li><code>androidx.test.espresso:espresso-contrib:3.6.0-alpha04</code></li><li><code>androidx.test.espresso:espresso-idling-resource:3.6.0-alpha04</code></li><li><code>androidx.test.espresso:espresso-intents:3.6.0-alpha04</code></li><li><code>androidx.test.espresso:espresso-remote:3.6.0-alpha04</code></li><li><code>androidx.test.espresso:espresso-web:3.6.0-alpha04</code></li><li><code>androidx.test.espresso.idling:idling-concurrent:3.6.0-alpha04</code></li><li><code>androidx.test.espresso.idling:idling-net:3.6.0-alpha04</code></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Fix slow inRoot operations in Robolectric</li><li>Use PlatformTestStorageRegistry.getInstance consistently instead of passing a reference around</li><li>Remove TODO from InteractionResponse public ref docs</li></ul><p><strong>New Features</strong></p><ul><li>Add waitForClose to DrawerActions.</li></ul><p><strong>API Changes</strong></p><ul><li>Adapt to ViewCapture API changes</li><li>Delete ViewInteraction.captureToBitmap in favor of ViewActions.captureToBitmap, and promote to a stable API from ExperimentalTestApi</li></ul></div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="test espresso device 1.0.0-alpha09 2024-04-29 april 29, 2024" id="april-29-2024-test-espresso-device-1-0-0-alpha09">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Espresso Device</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#espresso_device-1.0.0-alpha09" class="badge alpha">1.0.0-alpha09</a></div>
+                </div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="test junit extensions 1.2.0-alpha04 2024-04-29 april 29, 2024" id="april-29-2024-test-junit-extensions-1-2-0-alpha04">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test JUnit Extensions</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#junit-1.2.0-alpha04" class="badge alpha">1.2.0-alpha04</a></div>
+                </div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="test truth extensions 1.6.0-alpha04 2024-04-29 april 29, 2024" id="april-29-2024-test-truth-extensions-1-6-0-alpha04">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Truth Extensions</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#truth-1.6.0-alpha04" class="badge alpha">1.6.0-alpha04</a></div>
+                </div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="test monitor 1.7.0-alpha05 2024-04-29 april 29, 2024" id="april-29-2024-test-monitor-1-7-0-alpha05">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Monitor</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#monitor-1.7.0-alpha05" class="badge alpha">1.7.0-alpha05</a></div>
+                </div>
+                <div class="notes"><p><strong>API Changes</strong> * Make DeviceController an public API from ExperimentalTestApi * Move PlatformTestStorage to a public API * Add internal ControlledLooper#isDrawCallbacksSupported.</p></div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="test orchestrator 1.5.0-alpha04 2024-04-29 april 29, 2024" id="april-29-2024-test-orchestrator-1-5-0-alpha04">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Orchestrator</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#orchestrator-1.5.0-alpha04" class="badge alpha">1.5.0-alpha04</a></div>
+                </div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="test runner 1.6.0-alpha07 2024-04-29 april 29, 2024" id="april-29-2024-test-runner-1-6-0-alpha07">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Runner</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#runner-1.6.0-alpha07" class="badge alpha">1.6.0-alpha07</a></div>
+                </div>
+                <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>When logging test exceptions, use Log's built-in support for throwables to avoid stack truncation</li><li>Internal changes to support GrantPermissionRule using UiAutomation#grantRuntimePermissions</li></ul></div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="test rules 1.6.0-alpha04 2024-04-29 april 29, 2024" id="april-29-2024-test-rules-1-6-0-alpha04">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Rules</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#rules-1.6.0-alpha04" class="badge alpha">1.6.0-alpha04</a></div>
+                </div>
+                <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Make GrantPermissionRule use UiAutomation to grant permissions on APIs &gt; =28 to fix issues running on automotive.</li></ul></div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="test services 1.5.0-alpha04 2024-04-29 april 29, 2024" id="april-29-2024-test-services-1-5-0-alpha04">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Services</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#services-1.5.0-alpha04" class="badge alpha">1.5.0-alpha04</a></div>
+                </div>
+                <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>TestStorage: use local cache dir to store output files when running as non system user</li></ul><p><strong>API Changes</strong></p><ul><li>Make TestStorage an internal API from experimental</li></ul></div>
+              </article>
+            </div>
           </section>
         </div>
       </div>

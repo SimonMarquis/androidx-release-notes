@@ -29,15 +29,17 @@
               <h2 class="date-title">July 11, 2019</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="stable" data-search="workmanager 2.1.0 2019-07-11 july 11, 2019" id="july-11-2019-workmanager-2-1-0">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/work">WorkManager</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/work#2.1.0" class="badge stable">2.1.0</a></div>
-              </div>
-              <div class="notes"><p><strong>Important changes since 2.0.1</strong></p><ul><li><code>work-runtime-ktx</code> now requires Java 8. If you run into any issues, you can add the following to your <code>build.gradle</code>: <code>kotlinOptions { jvmTarget = "1.8" }</code></li><li>Added on-demand initialization for WorkManager, which will create WorkManager only when referenced. <a href="https://issuetracker.google.com/127497100" title="b/127497100" class="ref ref-issue">b/127497100</a> To set up your project for on-demand initialization:
+            <div class="card">
+              <article class="component" data-release-kind="stable" data-search="workmanager 2.1.0 2019-07-11 july 11, 2019" id="july-11-2019-workmanager-2-1-0">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/work">WorkManager</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/work#2.1.0" class="badge stable">2.1.0</a></div>
+                </div>
+                <div class="notes"><p><strong>Important changes since 2.0.1</strong></p><ul><li><code>work-runtime-ktx</code> now requires Java 8. If you run into any issues, you can add the following to your <code>build.gradle</code>: <code>kotlinOptions { jvmTarget = "1.8" }</code></li><li>Added on-demand initialization for WorkManager, which will create WorkManager only when referenced. <a href="https://issuetracker.google.com/127497100" title="b/127497100" class="ref ref-issue">b/127497100</a> To set up your project for on-demand initialization:
   <ol><li><a href="https://developer.android.com/topic/libraries/architecture/workmanager/advanced/custom-configuration#remove-default">Disable the automatic initializer</a>.</li><li>Implement <code>Configuration.Provider</code> on your custom <code>Application</code> object.</li><li>Change all references of <code>WorkManager.getInstance()</code> to <code>WorkManager.getInstance(Context)</code>. As part of this change, we have deprecated <code>WorkManager.getInstance()</code>. It is always safer to call the new <code>WorkManager.getInstance(Context)</code> replacement, even if you're not doing on-demand initialization.</li></ol></li><li><code>PeriodicWorkRequest</code>s now support initial delays. You can use the <code>setInitialDelay</code> method on <code>PeriodicWorkRequest.Builder</code> to set an initial delay. <a href="https://issuetracker.google.com/111404867" title="b/111404867" class="ref ref-issue">b/111404867</a></li><li>Added the ability to delegate to one or more registered <code>WorkerFactory</code>s using <code>DelegatingWorkerFactory</code>. <a href="https://issuetracker.google.com/131435993" title="b/131435993" class="ref ref-issue">b/131435993</a></li><li>Added the ability to customize the <code>Executor</code> used by WorkManager for all its internal book-keeping via <code>Configuration.Builder.setTaskExecutor</code>.</li><li>Added the ability to create unit testable <code>Worker</code> and <code>ListenableWorker</code> classes by using <code>TestWorkerBuilder</code> and <code>TestListenableWorkerBuilder</code> in the <code>work-testing</code> artifact.
   <ul><li>Note that <code>work-testing</code> now pulls in Kotlin as a dependency and includes several Kotlin extensions by default.</li></ul></li><li>Added run attempt count to <code>WorkInfo</code>. <a href="https://issuetracker.google.com/127290461" title="b/127290461" class="ref ref-issue">b/127290461</a></li><li><code>Data</code> types can now store and retrieve bytes and byte arrays. This does NOT change the maximum size of <code>Data</code> objects.</li><li>WorkManager now depends on <code>Room 2.1.0</code>, which should fix some database issues.</li></ul></div>
-            </article>
+              </article>
+            </div>
           </section>
         </div>
       </div>

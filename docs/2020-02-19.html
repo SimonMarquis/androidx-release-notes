@@ -29,74 +29,76 @@
               <h2 class="date-title">February 19, 2020</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="rc" data-search="exifinterface 1.2.0-rc01 2020-02-19 february 19, 2020" id="february-19-2020-exifinterface-1-2-0-rc01">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/exifinterface">Exifinterface</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/d5e6675db6f6b1c9317dc1c82b8f0bed06694a87..986ebacc6810b886802b3e4175bb0b96c64f5d0b/exifinterface/exifinterface" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/exifinterface#1.2.0-rc01" class="badge rc">1.2.0-rc01</a></div>
-              </div>
-              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixed an issue where JPEG files were incorrected saved if the JPEG had XMP data</li></ul></div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="exifinterface 1.3.0-alpha01 2020-02-19 february 19, 2020" id="february-19-2020-exifinterface-1-3-0-alpha01">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/exifinterface">Exifinterface</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/d5e6675db6f6b1c9317dc1c82b8f0bed06694a87..6f7b9ed69dc63e3c2c2b02ee1155b6009a9d5f82/exifinterface/exifinterface" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/exifinterface#1.3.0-alpha01" class="badge alpha">1.3.0-alpha01</a></div>
-              </div>
-              <div class="notes"><p><strong>API Changes</strong></p><ul><li>Added a new method: <code>ExifInterface.getGpsDateTime()</code></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="stable" data-search="fragment 1.2.2 2020-02-19 february 19, 2020" id="february-19-2020-fragment-1-2-2">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/fragment">Fragment</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/b27fe92ff55203b778e3201a949a85c7c6c1bf76..9598eb9e7eaf8411e0433c8b5fc5a5bc8abc096a/fragment" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/fragment#1.2.2" class="badge stable">1.2.2</a></div>
-              </div>
-              <div class="notes"><p><strong>New Lint checks</strong></p><ul><li>Lint suggests using the <code>viewLifecycleOwner</code> as the <code>LifecycleOwner</code> to calls into <code>OnBackPressedDispatcher</code> in <code>onCreateView()</code>, <code>onViewCreated()</code>, and <code>onActivityCreated()</code>. <a href="https://issuetracker.google.com/issues/142117657" title="b/142117657" class="ref ref-issue">b/142117657</a></li><li>Added a new Lint check that confirms that you are using the correct <code>debugImplementation</code> when using the <code>fragment-testing</code> artifact. <a href="https://issuetracker.google.com/issues/141500106" title="b/141500106" class="ref ref-issue">b/141500106</a></li><li>Fragments now suggest using the associated <code>require___()</code> methods for more descriptive error messages instead of <code>checkNotNull(get___())</code>, <code>requireNonNull(get___())</code>, or <code>get___()!!</code> for all of the Fragment APIs that include both a <code>get</code> and <code>require</code> equivalent. <a href="https://android-review.googlesource.com/1202883" title="aosp/1202883" class="ref ref-gerrit">aosp/1202883</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Fixed the Fragment ProGuard files to avoid R8 warnings <a href="https://issuetracker.google.com/issues/148963981" title="b/148963981" class="ref ref-issue">b/148963981</a></li><li>Improved the existing Lint check suggesting using <code>viewLifecycleOwner</code> when using <code>observe</code> to also handle the <code>livedata-ktx</code> extension method version of <code>observe</code>. <a href="https://issuetracker.google.com/issues/148996309" title="b/148996309" class="ref ref-issue">b/148996309</a></li><li>Fixed the formatting for many of the Lint checks <a href="https://android-review.googlesource.com/1157012" title="aosp/1157012" class="ref ref-gerrit">aosp/1157012</a></li></ul><p><strong>External contributions</strong></p><ul><li>Thanks to Zac Sweers for contributing the <code>require___()</code> Lint checks on behalf of Slack! <a href="https://android-review.googlesource.com/1202883" title="aosp/1202883" class="ref ref-gerrit">aosp/1202883</a></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="beta" data-search="jetifier 1.0.0-beta09 2020-02-19 february 19, 2020" id="february-19-2020-jetifier-1-0-0-beta09">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/jetifier">Jetifier</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/b062e6d3d53790823deac02cc553aa21461a4079..6f7b9ed69dc63e3c2c2b02ee1155b6009a9d5f82/jetifier" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/jetifier#1.0.0-beta09" class="badge beta">1.0.0-beta09</a></div>
-              </div>
-              <div class="notes"><p><strong>New features</strong></p><ul><li>Added support for processing <code>@link</code> references in XML</li></ul><p><strong>Bug Fixes</strong></p><ul><li>Rewrite libraries that contain a mix of androidx and android.support references as these were skipped before. <a href="https://issuetracker.google.com/issues/148462462" title="b/148462462" class="ref ref-issue">b/148462462</a></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="stable" data-search="media2 1.0.3 2020-02-19 february 19, 2020" id="february-19-2020-media2-1-0-3">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media2">Media2</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/media2#1.0.3" class="badge stable">1.0.3</a></div>
-              </div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="navigation 2.3.0-alpha02 2020-02-19 february 19, 2020" id="february-19-2020-navigation-2-3-0-alpha02">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/navigation">Navigation</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/a670497cb9ff2d13701f20ef5f25f14dd4548f22..6f7b9ed69dc63e3c2c2b02ee1155b6009a9d5f82/navigation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/navigation#2.3.0-alpha02" class="badge alpha">2.3.0-alpha02</a></div>
-              </div>
-              <div class="notes"><p><strong>New Features</strong></p><ul><li>The <code>NavBackStackEntry</code> now allows you to access a <a href="https://developer.android.com/reference/androidx/lifecycle/SavedStateHandle"><code>SavedStateHandle</code></a> suitable for storing small amounts of saved state that should be associated with a particular back stack entry. See <a href="https://developer.android.com/guide/navigation/navigation-programmatic#returning_a_result">Returning a result</a> for an example use case. <a href="https://issuetracker.google.com/issues/79672220" title="b/79672220" class="ref ref-issue">b/79672220</a></li></ul><p><strong>API Changes</strong></p><ul><li>Convenience methods of <code>getCurrentBackStackEntry()</code> and <code>getPreviousBackStackEntry()</code> have been added to make it easier to retrieve a <code>NavBackStackEntry</code> for the current and previous destinations. <a href="https://issuetracker.google.com/issues/79672220" title="b/79672220" class="ref ref-issue">b/79672220</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li><code>navigateUp()</code> now passes the current destination’s arguments and the <a href="https://developer.android.com/reference/androidx/navigation/NavController#KEY_DEEP_LINK_INTENT"><code>KEY_DEEP_LINK_INTENT</code></a> to the previous destination when launching your app on your own task stack. <a href="https://issuetracker.google.com/issues/147456890" title="b/147456890" class="ref ref-issue">b/147456890</a></li></ul><p><strong>Dependency changes</strong></p><ul><li>Navigation now depends on <a href="https://developer.android.com/jetpack/androidx/releases/core#1.2.0">Core <code>1.2.0</code></a>.</li></ul></div>
-            </article>
-            <article class="card" data-release-kind="stable" data-search="room 2.2.4 2020-02-19 february 19, 2020" id="february-19-2020-room-2-2-4">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/room">Room</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/31d127394de2acb29cd81204796b413f5a1db8b2..c4faf1724c897234f083f07e15f0156873fd6a8a/room" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/room#2.2.4" class="badge stable">2.2.4</a></div>
-              </div>
-              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixed an issue with suspending transactions where they would deadlock if the coroutine was canceled quickly before the transaction actually started. <a href="https://issuetracker.google.com/issues/148181325" title="b/148181325" class="ref ref-issue">b/148181325</a></li><li>Fixed an issue with the @Generated being wrongly used when building with JDK 9. <a href="https://issuetracker.google.com/issues/146538330" title="b/146538330" class="ref ref-issue">b/146538330</a></li><li>Fixed an issue where Room would generate incorrect code when a DAO interface in Kotlin had a concrete function. <a href="https://issuetracker.google.com/issues/146825845" title="b/146825845" class="ref ref-issue">b/146825845</a></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="stable" data-search="transition 1.3.1 2020-02-19 february 19, 2020" id="february-19-2020-transition-1-3-1">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/transition">Transition</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/250921e7515d62adecbbc0083dc133d14dff542d..d9fcad3c5d44e76249fafb1e5e3619c80d0f3a72/transition/transition" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/transition#1.3.1" class="badge stable">1.3.1</a></div>
-              </div>
-              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixed bug when some animated Views were incorrectly clipped when ChangeTransform is used <a href="https://issuetracker.google.com/issues/148798452" title="b/148798452" class="ref ref-issue">b/148798452</a></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="rc" data-search="webkit 1.2.0-rc01 2020-02-19 february 19, 2020" id="february-19-2020-webkit-1-2-0-rc01">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/webkit">Webkit</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/15eb802358e0836378e4daba5db3d88cf09b7f03..0bda71c96ae7ef19673a6a1e7bee8d1d8b8a4877/webkit/webkit" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/webkit#1.2.0-rc01" class="badge rc">1.2.0-rc01</a></div>
-              </div>
-            </article>
-            <article class="card" data-release-kind="stable" data-search="work 2.3.2 2020-02-19 february 19, 2020" id="february-19-2020-work-2-3-2">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/work">Work</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/d7ffb1e3214adc08092397ca92881b05fb69521a..3735155f52238ca168c5608ed332179382b76899/work" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/work#2.3.2" class="badge stable">2.3.2</a></div>
-              </div>
-              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixes an issue where WorkManager exceeds the 100 job limit in JobScheduler in rare cases. <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/1226859" title="aosp/1226859" class="ref ref-gerrit">aosp/1226859</a> <a href="https://issuetracker.google.com/issues/149092520" title="b/149092520" class="ref ref-issue">b/149092520</a></li><li>Fix for a race condition in ConstraintControllers. <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/1220100" title="aosp/1220100" class="ref ref-gerrit">aosp/1220100</a></li><li>Improved the management foreground Service lifecycle for long running Workers. <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/1226295" title="aosp/1226295" class="ref ref-gerrit">aosp/1226295</a></li><li>Improved the management of cancellation of Notifications for long running Workers upon Worker cancellation. <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/1228346" title="aosp/1228346" class="ref ref-gerrit">aosp/1228346</a></li></ul></div>
-            </article>
+            <div class="card">
+              <article class="component" data-release-kind="rc" data-search="exifinterface 1.2.0-rc01 2020-02-19 february 19, 2020" id="february-19-2020-exifinterface-1-2-0-rc01">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/exifinterface">Exifinterface</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/d5e6675db6f6b1c9317dc1c82b8f0bed06694a87..986ebacc6810b886802b3e4175bb0b96c64f5d0b/exifinterface/exifinterface" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/exifinterface#1.2.0-rc01" class="badge rc">1.2.0-rc01</a></div>
+                </div>
+                <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixed an issue where JPEG files were incorrected saved if the JPEG had XMP data</li></ul></div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="exifinterface 1.3.0-alpha01 2020-02-19 february 19, 2020" id="february-19-2020-exifinterface-1-3-0-alpha01">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/exifinterface">Exifinterface</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/d5e6675db6f6b1c9317dc1c82b8f0bed06694a87..6f7b9ed69dc63e3c2c2b02ee1155b6009a9d5f82/exifinterface/exifinterface" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/exifinterface#1.3.0-alpha01" class="badge alpha">1.3.0-alpha01</a></div>
+                </div>
+                <div class="notes"><p><strong>API Changes</strong></p><ul><li>Added a new method: <code>ExifInterface.getGpsDateTime()</code></li></ul></div>
+              </article>
+              <article class="component" data-release-kind="stable" data-search="fragment 1.2.2 2020-02-19 february 19, 2020" id="february-19-2020-fragment-1-2-2">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/fragment">Fragment</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/b27fe92ff55203b778e3201a949a85c7c6c1bf76..9598eb9e7eaf8411e0433c8b5fc5a5bc8abc096a/fragment" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/fragment#1.2.2" class="badge stable">1.2.2</a></div>
+                </div>
+                <div class="notes"><p><strong>New Lint checks</strong></p><ul><li>Lint suggests using the <code>viewLifecycleOwner</code> as the <code>LifecycleOwner</code> to calls into <code>OnBackPressedDispatcher</code> in <code>onCreateView()</code>, <code>onViewCreated()</code>, and <code>onActivityCreated()</code>. <a href="https://issuetracker.google.com/issues/142117657" title="b/142117657" class="ref ref-issue">b/142117657</a></li><li>Added a new Lint check that confirms that you are using the correct <code>debugImplementation</code> when using the <code>fragment-testing</code> artifact. <a href="https://issuetracker.google.com/issues/141500106" title="b/141500106" class="ref ref-issue">b/141500106</a></li><li>Fragments now suggest using the associated <code>require___()</code> methods for more descriptive error messages instead of <code>checkNotNull(get___())</code>, <code>requireNonNull(get___())</code>, or <code>get___()!!</code> for all of the Fragment APIs that include both a <code>get</code> and <code>require</code> equivalent. <a href="https://android-review.googlesource.com/1202883" title="aosp/1202883" class="ref ref-gerrit">aosp/1202883</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li>Fixed the Fragment ProGuard files to avoid R8 warnings <a href="https://issuetracker.google.com/issues/148963981" title="b/148963981" class="ref ref-issue">b/148963981</a></li><li>Improved the existing Lint check suggesting using <code>viewLifecycleOwner</code> when using <code>observe</code> to also handle the <code>livedata-ktx</code> extension method version of <code>observe</code>. <a href="https://issuetracker.google.com/issues/148996309" title="b/148996309" class="ref ref-issue">b/148996309</a></li><li>Fixed the formatting for many of the Lint checks <a href="https://android-review.googlesource.com/1157012" title="aosp/1157012" class="ref ref-gerrit">aosp/1157012</a></li></ul><p><strong>External contributions</strong></p><ul><li>Thanks to Zac Sweers for contributing the <code>require___()</code> Lint checks on behalf of Slack! <a href="https://android-review.googlesource.com/1202883" title="aosp/1202883" class="ref ref-gerrit">aosp/1202883</a></li></ul></div>
+              </article>
+              <article class="component" data-release-kind="beta" data-search="jetifier 1.0.0-beta09 2020-02-19 february 19, 2020" id="february-19-2020-jetifier-1-0-0-beta09">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/jetifier">Jetifier</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/b062e6d3d53790823deac02cc553aa21461a4079..6f7b9ed69dc63e3c2c2b02ee1155b6009a9d5f82/jetifier" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/jetifier#1.0.0-beta09" class="badge beta">1.0.0-beta09</a></div>
+                </div>
+                <div class="notes"><p><strong>New features</strong></p><ul><li>Added support for processing <code>@link</code> references in XML</li></ul><p><strong>Bug Fixes</strong></p><ul><li>Rewrite libraries that contain a mix of androidx and android.support references as these were skipped before. <a href="https://issuetracker.google.com/issues/148462462" title="b/148462462" class="ref ref-issue">b/148462462</a></li></ul></div>
+              </article>
+              <article class="component" data-release-kind="stable" data-search="media2 1.0.3 2020-02-19 february 19, 2020" id="february-19-2020-media2-1-0-3">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media2">Media2</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/media2#1.0.3" class="badge stable">1.0.3</a></div>
+                </div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="navigation 2.3.0-alpha02 2020-02-19 february 19, 2020" id="february-19-2020-navigation-2-3-0-alpha02">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/navigation">Navigation</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/a670497cb9ff2d13701f20ef5f25f14dd4548f22..6f7b9ed69dc63e3c2c2b02ee1155b6009a9d5f82/navigation" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/navigation#2.3.0-alpha02" class="badge alpha">2.3.0-alpha02</a></div>
+                </div>
+                <div class="notes"><p><strong>New Features</strong></p><ul><li>The <code>NavBackStackEntry</code> now allows you to access a <a href="https://developer.android.com/reference/androidx/lifecycle/SavedStateHandle"><code>SavedStateHandle</code></a> suitable for storing small amounts of saved state that should be associated with a particular back stack entry. See <a href="https://developer.android.com/guide/navigation/navigation-programmatic#returning_a_result">Returning a result</a> for an example use case. <a href="https://issuetracker.google.com/issues/79672220" title="b/79672220" class="ref ref-issue">b/79672220</a></li></ul><p><strong>API Changes</strong></p><ul><li>Convenience methods of <code>getCurrentBackStackEntry()</code> and <code>getPreviousBackStackEntry()</code> have been added to make it easier to retrieve a <code>NavBackStackEntry</code> for the current and previous destinations. <a href="https://issuetracker.google.com/issues/79672220" title="b/79672220" class="ref ref-issue">b/79672220</a></li></ul><p><strong>Bug Fixes</strong></p><ul><li><code>navigateUp()</code> now passes the current destination’s arguments and the <a href="https://developer.android.com/reference/androidx/navigation/NavController#KEY_DEEP_LINK_INTENT"><code>KEY_DEEP_LINK_INTENT</code></a> to the previous destination when launching your app on your own task stack. <a href="https://issuetracker.google.com/issues/147456890" title="b/147456890" class="ref ref-issue">b/147456890</a></li></ul><p><strong>Dependency changes</strong></p><ul><li>Navigation now depends on <a href="https://developer.android.com/jetpack/androidx/releases/core#1.2.0">Core <code>1.2.0</code></a>.</li></ul></div>
+              </article>
+              <article class="component" data-release-kind="stable" data-search="room 2.2.4 2020-02-19 february 19, 2020" id="february-19-2020-room-2-2-4">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/room">Room</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/31d127394de2acb29cd81204796b413f5a1db8b2..c4faf1724c897234f083f07e15f0156873fd6a8a/room" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/room#2.2.4" class="badge stable">2.2.4</a></div>
+                </div>
+                <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixed an issue with suspending transactions where they would deadlock if the coroutine was canceled quickly before the transaction actually started. <a href="https://issuetracker.google.com/issues/148181325" title="b/148181325" class="ref ref-issue">b/148181325</a></li><li>Fixed an issue with the @Generated being wrongly used when building with JDK 9. <a href="https://issuetracker.google.com/issues/146538330" title="b/146538330" class="ref ref-issue">b/146538330</a></li><li>Fixed an issue where Room would generate incorrect code when a DAO interface in Kotlin had a concrete function. <a href="https://issuetracker.google.com/issues/146825845" title="b/146825845" class="ref ref-issue">b/146825845</a></li></ul></div>
+              </article>
+              <article class="component" data-release-kind="stable" data-search="transition 1.3.1 2020-02-19 february 19, 2020" id="february-19-2020-transition-1-3-1">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/transition">Transition</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/250921e7515d62adecbbc0083dc133d14dff542d..d9fcad3c5d44e76249fafb1e5e3619c80d0f3a72/transition/transition" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/transition#1.3.1" class="badge stable">1.3.1</a></div>
+                </div>
+                <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixed bug when some animated Views were incorrectly clipped when ChangeTransform is used <a href="https://issuetracker.google.com/issues/148798452" title="b/148798452" class="ref ref-issue">b/148798452</a></li></ul></div>
+              </article>
+              <article class="component" data-release-kind="rc" data-search="webkit 1.2.0-rc01 2020-02-19 february 19, 2020" id="february-19-2020-webkit-1-2-0-rc01">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/webkit">Webkit</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/15eb802358e0836378e4daba5db3d88cf09b7f03..0bda71c96ae7ef19673a6a1e7bee8d1d8b8a4877/webkit/webkit" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/webkit#1.2.0-rc01" class="badge rc">1.2.0-rc01</a></div>
+                </div>
+              </article>
+              <article class="component" data-release-kind="stable" data-search="work 2.3.2 2020-02-19 february 19, 2020" id="february-19-2020-work-2-3-2">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/work">Work</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/d7ffb1e3214adc08092397ca92881b05fb69521a..3735155f52238ca168c5608ed332179382b76899/work" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/work#2.3.2" class="badge stable">2.3.2</a></div>
+                </div>
+                <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>Fixes an issue where WorkManager exceeds the 100 job limit in JobScheduler in rare cases. <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/1226859" title="aosp/1226859" class="ref ref-gerrit">aosp/1226859</a> <a href="https://issuetracker.google.com/issues/149092520" title="b/149092520" class="ref ref-issue">b/149092520</a></li><li>Fix for a race condition in ConstraintControllers. <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/1220100" title="aosp/1220100" class="ref ref-gerrit">aosp/1220100</a></li><li>Improved the management foreground Service lifecycle for long running Workers. <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/1226295" title="aosp/1226295" class="ref ref-gerrit">aosp/1226295</a></li><li>Improved the management of cancellation of Notifications for long running Workers upon Worker cancellation. <a href="https://android-review.googlesource.com/c/platform/frameworks/support/+/1228346" title="aosp/1228346" class="ref ref-gerrit">aosp/1228346</a></li></ul></div>
+              </article>
+            </div>
           </section>
         </div>
       </div>

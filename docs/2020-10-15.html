@@ -29,14 +29,16 @@
               <h2 class="date-title">October 15, 2020</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="alpha" data-search="test 1.3.1-alpha01 2020-10-15 october 15, 2020" id="october-15-2020-test-1-3-1-alpha01">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#1.3.1-alpha01" class="badge alpha">1.3.1-alpha01</a></div>
-              </div>
-              <div class="notes"><p>This is the alpha release of AndroidX Test 1.3.1. New APIs are subject to change. It contains updates to the following libraries:</p><ul><li>Core 1.3.1-alpha01</li><li>Espresso 3.4.0-alpha01</li><li>Intents 3.4.0-alpha01</li><li>JUnit 1.1.3-alpha01</li><li>Monitor 1.3.1-alpha01</li><li>Orchestrator 1.3.1-alpha01</li><li>Runner 1.3.1-alpha01</li><li>Rules 1.3.1-alpha01</li><li>Truth 1.3.1-alpha01</li><li>Test Services 1.3.1-alpha01</li></ul><p>Here is a summary of the changes since the 1.3.0 release:</p><p><strong>New Features</strong></p><ul><li>Add Espresso ViewMatcher APIs for negative conditions</li><li>Allow unregistering Loopers from Espresso IdlingRegistry</li><li>Support specifying junit RunListeners via java.util.ServiceLoader</li></ul><p><strong>Bug Fixes</strong></p><ul><li>Improve handling for large stack traces on test failures [#729, #269]
+            <div class="card">
+              <article class="component" data-release-kind="alpha" data-search="test 1.3.1-alpha01 2020-10-15 october 15, 2020" id="october-15-2020-test-1-3-1-alpha01">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#1.3.1-alpha01" class="badge alpha">1.3.1-alpha01</a></div>
+                </div>
+                <div class="notes"><p>This is the alpha release of AndroidX Test 1.3.1. New APIs are subject to change. It contains updates to the following libraries:</p><ul><li>Core 1.3.1-alpha01</li><li>Espresso 3.4.0-alpha01</li><li>Intents 3.4.0-alpha01</li><li>JUnit 1.1.3-alpha01</li><li>Monitor 1.3.1-alpha01</li><li>Orchestrator 1.3.1-alpha01</li><li>Runner 1.3.1-alpha01</li><li>Rules 1.3.1-alpha01</li><li>Truth 1.3.1-alpha01</li><li>Test Services 1.3.1-alpha01</li></ul><p>Here is a summary of the changes since the 1.3.0 release:</p><p><strong>New Features</strong></p><ul><li>Add Espresso ViewMatcher APIs for negative conditions</li><li>Allow unregistering Loopers from Espresso IdlingRegistry</li><li>Support specifying junit RunListeners via java.util.ServiceLoader</li></ul><p><strong>Bug Fixes</strong></p><ul><li>Improve handling for large stack traces on test failures [#729, #269]
   <ul><li>Remove test runner framework related stack frames</li><li>Truncate stack traces to a max limit of 64KB, to avoid binder limit transaction errors</li></ul></li><li>Espresso: Improve error messaging when no activity is present</li><li>Improve Instrumentation#runOnMainSync exception error handling</li><li>Add package visibility entries for Orchestrator and Services to fix Orchestator when using targetSdk 30 [#743]</li><li>Improve documentation for -e timeout_msec and AndroidJUnit4.</li><li>Send ActivityOptions to BootstrapActivity [#685]</li><li>Improve ViewMatchers#assertThat error messaging by enabling it to use Matcher.describeMismatch</li><li>Fix the missing desugar ThrowableExtension errors when using espresso remote [issuetracker.google.com/170228109]</li><li>Fix espresso web on &lt; Android API 19 by including the androidx.test.espresso.web.bridge classes</li></ul></div>
-            </article>
+              </article>
+            </div>
           </section>
         </div>
       </div>

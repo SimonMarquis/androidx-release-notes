@@ -29,12 +29,13 @@
               <h2 class="date-title">April 14, 2025</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="stable" data-search="media3 1.6.1 2025-04-14 april 14, 2025" id="april-14-2025-media3-1-6-1">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
-                <div class="actions"><a href="https://github.com/androidx/media/commits/1.6.1" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.6.1" class="badge stable">1.6.1</a></div>
-              </div>
-              <div class="notes"><p>April 14th, 2025</p><p><code>androidx.media3:media3-*:1.6.1</code> is released. Version 1.6.1 contains <a href="https://github.com/androidx/media/commits/1.6.1">these commits</a>.</p><ul><li>Common Library:
+            <div class="card">
+              <article class="component" data-release-kind="stable" data-search="media3 1.6.1 2025-04-14 april 14, 2025" id="april-14-2025-media3-1-6-1">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                  <div class="actions"><a href="https://github.com/androidx/media/commits/1.6.1" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.6.1" class="badge stable">1.6.1</a></div>
+                </div>
+                <div class="notes"><p>April 14th, 2025</p><p><code>androidx.media3:media3-*:1.6.1</code> is released. Version 1.6.1 contains <a href="https://github.com/androidx/media/commits/1.6.1">these commits</a>.</p><ul><li>Common Library:
   <ul><li>Add <code>PlaybackParameters.withPitch(float)</code> method for easily copying a <code>PlaybackParameters</code> with a new <code>pitch</code> value <a href="https://github.com/androidx/media/issues/2257" title="#2257" class="ref ref-github">#2257</a>.</li></ul></li><li>ExoPlayer:
   <ul><li>Fix issue where media item transition fails due to recoverable renderer error during initialization of the next media item <a href="https://github.com/androidx/media/issues/2229" title="#2229" class="ref ref-github">#2229</a>.</li><li>Fix issue where <code>ProgressiveMediaPeriod</code> throws an <code>IllegalStateException</code> as <code>PreloadMediaSource</code> attempts to call its <code>getBufferedDurationUs()</code> before it is prepared <a href="https://github.com/androidx/media/issues/2315" title="#2315" class="ref ref-github">#2315</a>.</li><li>Fix sending <code>CmcdData</code> in manifest requests for DASH, HLS, and SmoothStreaming <a href="https://github.com/androidx/media/pull/2253" title="#2253" class="ref ref-github">#2253</a>.</li><li>Ensure <code>AdPlaybackState.withAdDurationsUs(long[][])</code> can be used after ad groups have been removed. The user still needs to pass in an array of durations for removed ad groups which can be empty or null <a href="https://github.com/androidx/media/issues/2267" title="#2267" class="ref ref-github">#2267</a>.</li></ul></li><li>Extractors:
   <ul><li>MP4: Parse <code>alternate_group</code> from the <code>tkhd</code> box and expose it as an <code>Mp4AlternateGroupData</code> entry in each track's <code>Format.metadata</code> <a href="https://github.com/androidx/media/issues/2242" title="#2242" class="ref ref-github">#2242</a>.</li></ul></li><li>Audio:
@@ -44,7 +45,8 @@
   <ul><li>Fix issue where chunk duration wasn't set in <code>CmcdData</code> for HLS media, causing an assertion failure when processing encrypted media segments <a href="https://github.com/androidx/media/issues/2312" title="#2312" class="ref ref-github">#2312</a>.</li></ul></li><li>RTSP extension:
   <ul><li>Add support for URI with RTSPT scheme as a way to configure the RTSP session to use TCP <a href="https://github.com/androidx/media/issues/1484" title="#1484" class="ref ref-github">#1484</a>.</li></ul></li><li>Cast extension:
   <ul><li>Add support for playlist metadata <a href="https://github.com/androidx/media/pull/2235" title="#2235" class="ref ref-github">#2235</a>.</li></ul></li></ul></div>
-            </article>
+              </article>
+            </div>
           </section>
         </div>
       </div>

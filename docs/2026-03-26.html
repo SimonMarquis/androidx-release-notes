@@ -29,12 +29,13 @@
               <h2 class="date-title">March 26, 2026</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="stable" data-search="media3 1.10.0 2026-03-26 march 26, 2026" id="march-26-2026-media3-1-10-0">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.10.0" class="badge stable">1.10.0</a></div>
-              </div>
-              <div class="notes"><ul><li>Common library:
+            <div class="card">
+              <article class="component" data-release-kind="stable" data-search="media3 1.10.0 2026-03-26 march 26, 2026" id="march-26-2026-media3-1-10-0">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.10.0" class="badge stable">1.10.0</a></div>
+                </div>
+                <div class="notes"><ul><li>Common library:
   <ul><li>Promote <code>Player.mute()</code> and <code>Player.unmute()</code> from <code>UnstableApi</code> to stable.</li><li>Promote <code>Format.pcmEncoding</code> and <code>C.PcmEncoding</code> from <code>UnstableApi</code> to stable.</li><li>Add <code>Format.primaryTrackGroupId</code> to identify the primary group of embedded <code>Format</code> instances <a href="https://github.com/androidx/media/issues/294" title="#294" class="ref ref-github">#294</a>.</li></ul></li><li>ExoPlayer:
   <ul><li>Add clipping capabilities to <code>AdsMediaSource</code>.</li><li>Add support for dynamic scheduling in <code>MediaCodecVideoRenderer</code> to better align scheduling work and CPU wake-cycles to when video frames can be processed. You can enable this using <code>experimentalSetEnableMediaCodecVideoRendererDurationToProgressUs()</code> in the <code>DefaultRenderersFactory</code>.</li><li>Allow setting a custom <code>DataSource.Factory</code> in <code>DefaultPreloadManager.Builder</code>.</li><li>Allow <code>ExoPlayer</code> to be mocked without Robolectric by moving some default constants to <code>ExoPlayer.Builder</code>. Mocking this complex interface is not generally encouraged - only when the usage is minimal/simple/incidental <a href="https://github.com/androidx/media/issues/2985" title="#2985" class="ref ref-github">#2985</a>.
     <ul><li>This required moving <code>DEFAULT_STUCK_PLAYING_DETECTION_TIMEOUT_MS</code> from <code>ExoPlayer</code> to <code>ExoPlayer.Builder</code> (without deprecation).</li></ul></li><li>Fix a bug where <code>ProgressiveMediaSource</code> propagates out-of-date timeline info to the player, and the queued periods unexpectedly get removed <a href="https://github.com/androidx/media/issues/3016" title="#3016" class="ref ref-github">#3016</a>.</li><li>Fix issue where ExoPlayer would not request delayed audio focus when playback is requested during phone calls.</li><li>Fix bug where transitions from on-demand to live content may cause re-buffers at the end of the on-demand content <a href="https://github.com/androidx/media/issues/3052" title="#3052" class="ref ref-github">#3052</a>.</li><li>Add support for Dolby Vision Profile 10 <a href="https://github.com/androidx/media/pull/2830" title="#2830" class="ref ref-github">#2830</a>.</li><li>Fix bug where an uninitialized pre roll ad produced an <code>ArrayIndexOutOfBoundsException</code> <a href="https://github.com/androidx/media/issues/3125" title="#3125" class="ref ref-github">#3125</a>.</li></ul></li><li>CompositionPlayer:
@@ -57,14 +58,15 @@
   <ul><li>Add MPEG-H UI manager support to the MPEG-H decoder extension <a href="https://github.com/androidx/media/pull/3066" title="#3066" class="ref ref-github">#3066</a>.</li></ul></li><li>Cast extension:
   <ul><li>Add <code>RemoteCastPlayer.Builder#setTrackSelector</code> method that enables the implementation of track selection for Cast playbacks.</li></ul></li><li>Remove deprecated symbols:
   <ul><li>Remove <code>ExperimentalFrameExtractor</code>. Use <code>androidx.media3.inspector.frame.FrameExtractor</code> instead.</li><li>Remove <code>ChannelMixingMatrix.create()</code>. Use <code>ChannelMixingMatrix.createForConstantGain()</code> instead.</li><li>Remove <code>androidx.media3.extractor.metadata.flac.VorbisComment</code>. Use <code>androidx.media3.extractor.metadata.vorbis.VorbisComment</code> instead.</li><li>Remove <code>MediaSource.prepareSource(MediaSourceCaller, TransferListener)</code>. Use <code>MediaSource.prepareSource(MediaSourceCaller, TransferListener, PlayerId)</code> instead.</li></ul></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="rc" data-search="media3 1.10.0-rc03 2026-03-26 march 26, 2026" id="march-26-2026-media3-1-10-0-rc03">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.10.0-rc03" class="badge rc">1.10.0-rc03</a></div>
-              </div>
-              <div class="notes"><p>Use the 1.10.0 <a href="https://developer.android.com/jetpack/androidx/releases/media3#1.10.0">stable version</a>.</p></div>
-            </article>
+              </article>
+              <article class="component" data-release-kind="rc" data-search="media3 1.10.0-rc03 2026-03-26 march 26, 2026" id="march-26-2026-media3-1-10-0-rc03">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.10.0-rc03" class="badge rc">1.10.0-rc03</a></div>
+                </div>
+                <div class="notes"><p>Use the 1.10.0 <a href="https://developer.android.com/jetpack/androidx/releases/media3#1.10.0">stable version</a>.</p></div>
+              </article>
+            </div>
           </section>
         </div>
       </div>

@@ -29,18 +29,20 @@
               <h2 class="date-title">December 19, 2024</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="stable" data-search="media3 1.5.1 2024-12-19 december 19, 2024" id="december-19-2024-media3-1-5-1">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
-                <div class="actions"><a href="https://github.com/androidx/media/commits/1.5.1" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.5.1" class="badge stable">1.5.1</a></div>
-              </div>
-              <div class="notes"><ul><li>ExoPlayer:
+            <div class="card">
+              <article class="component" data-release-kind="stable" data-search="media3 1.5.1 2024-12-19 december 19, 2024" id="december-19-2024-media3-1-5-1">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                  <div class="actions"><a href="https://github.com/androidx/media/commits/1.5.1" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.5.1" class="badge stable">1.5.1</a></div>
+                </div>
+                <div class="notes"><ul><li>ExoPlayer:
   <ul><li>Disable use of asynchronous decryption in MediaCodec to avoid reported codec timeout issues with this platform API <a href="https://github.com/androidx/media/issues/1641" title="#1641" class="ref ref-github">#1641</a>.</li></ul></li><li>Extractors:
   <ul><li>MP3: Don't stop playback early when a <code>VBRI</code> frame's table of contents doesn't cover all the MP3 data in a file <a href="https://github.com/androidx/media/issues/1904" title="#1904" class="ref ref-github">#1904</a>.</li></ul></li><li>Video:
   <ul><li>Rollback of using <code>MediaCodecAdapter</code> supplied pixel aspect ratio values when provided while processing <code>onOutputFormatChanged</code> <a href="https://github.com/androidx/media/pull/1371" title="#1371" class="ref ref-github">#1371</a>.</li></ul></li><li>Text:
   <ul><li>Fix bug in <code>ReplacingCuesResolver.discardCuesBeforeTimeUs</code> where the cue active at <code>timeUs</code> (started before but not yet ended) was incorrectly discarded <a href="https://github.com/androidx/media/issues/1939" title="#1939" class="ref ref-github">#1939</a>.</li></ul></li><li>Metadata:
   <ul><li>Extract disc/track numbering and genre from Vorbis comments into <code>MediaMetadata</code> <a href="https://github.com/androidx/media/issues/1958" title="#1958" class="ref ref-github">#1958</a>.</li></ul></li></ul></div>
-            </article>
+              </article>
+            </div>
           </section>
         </div>
       </div>

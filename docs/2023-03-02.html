@@ -29,12 +29,13 @@
               <h2 class="date-title">March 2, 2023</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="rc" data-search="media3 1.0.0-rc02 2023-03-02 march 2, 2023" id="march-2-2023-media3-1-0-0-rc02">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
-                <div class="actions"><a href="https://github.com/androidx/media/commits/1.0.0-rc02" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.0.0-rc02" class="badge rc">1.0.0-rc02</a></div>
-              </div>
-              <div class="notes"><p>This release corresponds to the <a href="https://github.com/google/ExoPlayer/releases/tag/r2.18.4">ExoPlayer 2.18.4 release</a>.</p><ul><li>Core library:
+            <div class="card">
+              <article class="component" data-release-kind="rc" data-search="media3 1.0.0-rc02 2023-03-02 march 2, 2023" id="march-2-2023-media3-1-0-0-rc02">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                  <div class="actions"><a href="https://github.com/androidx/media/commits/1.0.0-rc02" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.0.0-rc02" class="badge rc">1.0.0-rc02</a></div>
+                </div>
+                <div class="notes"><p>This release corresponds to the <a href="https://github.com/google/ExoPlayer/releases/tag/r2.18.4">ExoPlayer 2.18.4 release</a>.</p><ul><li>Core library:
   <ul><li>Fix network type detection on API 33 <a href="https://github.com/google/ExoPlayer/issues/10970" title="#10970" class="ref ref-github">#10970</a>.</li><li>Fix <code>NullPointerException</code> when calling <code>ExoPlayer.isTunnelingEnabled</code> <a href="https://github.com/google/ExoPlayer/issues/10977" title="#10977" class="ref ref-github">#10977</a>.</li></ul></li><li>Downloads:
   <ul><li>Make the maximum difference of the start time of two segments to be merged configurable in <code>SegmentDownloader</code> and subclasses <a href="https://github.com/androidx/media/pull/248" title="#248" class="ref ref-github">#248</a>.</li></ul></li><li>Audio:
   <ul><li>Fix broken gapless MP3 playback on Samsung devices <a href="https://github.com/google/ExoPlayer/issues/8594" title="#8594" class="ref ref-github">#8594</a>.</li><li>Fix bug where playback speeds set immediately after disabling audio may be overridden by a previous speed change <a href="https://github.com/google/ExoPlayer/issues/10882" title="#10882" class="ref ref-github">#10882</a>.</li></ul></li><li>Video:
@@ -43,7 +44,8 @@
   <ul><li>Catch the IllegalArgumentException thrown in parsing of invalid RTSP Describe response messages <a href="https://github.com/google/ExoPlayer/issues/10971" title="#10971" class="ref ref-github">#10971</a>.</li></ul></li><li>Session:
   <ul><li>Fix a bug where notification play/pause button doesn't update with player state <a href="https://github.com/androidx/media/issues/192" title="#192" class="ref ref-github">#192</a>.</li></ul></li><li>IMA extension:
   <ul><li>Fix a bug which prevented DAI streams without any ads from starting because the first (and in the case without ads the only) <code>LOADED</code> event wasn't received.</li></ul></li></ul></div>
-            </article>
+              </article>
+            </div>
           </section>
         </div>
       </div>

@@ -29,12 +29,13 @@
               <h2 class="date-title">January 26, 2026</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="stable" data-search="media3 1.9.1 2026-01-26 january 26, 2026" id="january-26-2026-media3-1-9-1">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
-                <div class="actions"><a href="https://github.com/androidx/media/commits/1.9.1" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.9.1" class="badge stable">1.9.1</a></div>
-              </div>
-              <div class="notes"><ul><li>Common Library:
+            <div class="card">
+              <article class="component" data-release-kind="stable" data-search="media3 1.9.1 2026-01-26 january 26, 2026" id="january-26-2026-media3-1-9-1">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                  <div class="actions"><a href="https://github.com/androidx/media/commits/1.9.1" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.9.1" class="badge stable">1.9.1</a></div>
+                </div>
+                <div class="notes"><ul><li>Common Library:
   <ul><li>Support date-time strings with only hours in the timezone offset <a href="https://github.com/androidx/media/issues/2929" title="#2929" class="ref ref-github">#2929</a>.</li></ul></li><li>ExoPlayer:
   <ul><li>Allow dynamic scheduling to slow <code>doSomeWork</code> interval only after audio starts to support smoother A/V sync at beginning of playback.</li><li>Fix bug in <code>DefaultLoadErrorHandlingPolicy</code> where <code>FileNotFoundException</code> and similar exception types were retried multiple times.</li><li>Fix bug with dynamic scheduling where the calculated time for the next <code>doSomeWork</code> was mistakenly reduced by the elapsed time of the current iteration of <code>doSomeWork</code>. Addressing this hopefully extends CPU idle time and saves power.</li><li>Fix issue where some playbacks of Dolby Vision files fail when attempting to use a fallback AVC or HEVC codec.</li><li>Fix bug where loading continues after playback ended when removing the currently playing item from a playlist <a href="https://github.com/androidx/media/issues/2873" title="#2873" class="ref ref-github">#2873</a>.</li><li>Avoid leaking <code>MediaItem</code> instances when repeatedly using <code>ExoPlayer.replaceMediaItem</code> on the same item <a href="https://github.com/androidx/media/issues/2993" title="#2993" class="ref ref-github">#2993</a>.</li><li>Prevent potential ANRs caused by emergency wake lock releases <a href="https://github.com/androidx/media/issues/2979" title="#2979" class="ref ref-github">#2979</a>.</li></ul></li><li>Extractors:
   <ul><li>MP3: Parse LAME ReplayGain data <a href="https://github.com/androidx/media/pull/2840" title="#2840" class="ref ref-github">#2840</a>.</li></ul></li><li>Audio:
@@ -48,7 +49,8 @@
   <ul><li>Correctly handle RTP Packets with timestamps that wrap around <a href="https://github.com/androidx/media/issues/2930" title="#2930" class="ref ref-github">#2930</a>.</li></ul></li><li>Decoder extensions (FFmpeg, VP9, AV1, etc.):
   <ul><li>Fix potential <code>NullPointerException</code> that can occur when seeking prior to processing the first video frame <a href="https://github.com/androidx/media/issues/2965" title="#2965" class="ref ref-github">#2965</a>.</li></ul></li><li>Cast extension:
   <ul><li>Fix bug preventing the <code>RemoteCastPlayer</code> timeline from updating correctly when replacing the playlist.</li></ul></li></ul></div>
-            </article>
+              </article>
+            </div>
           </section>
         </div>
       </div>

@@ -29,20 +29,22 @@
               <h2 class="date-title">November 20, 2024</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="alpha" data-search="test orchestrator 1.6.0-alpha01 2024-11-20 november 20, 2024" id="november-20-2024-test-orchestrator-1-6-0-alpha01">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Orchestrator</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#orchestrator-1.6.0-alpha01" class="badge alpha">1.6.0-alpha01</a></div>
-              </div>
-              <div class="notes"><p><strong>API Changes</strong></p><ul><li>Update to minSdkVersion 21</li></ul></div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="test services 1.6.0-alpha01 2024-11-20 november 20, 2024" id="november-20-2024-test-services-1-6-0-alpha01">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Services</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#services-1.6.0-alpha01" class="badge alpha">1.6.0-alpha01</a></div>
-              </div>
-              <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>TestStorage: Use input directory location for internal files</li><li>StackTrimmer: harden against exceptions coming from Failure.getMessage().</li></ul><p><strong>New Features</strong></p><ul><li>Adding a LocalSocket-based protocol for the ShellExecutor to talk to the ShellMain. This obsoletes SpeakEasy; if androidx.test.services is killed (e.g. by the low memory killer) between the start of the app_process that invokes LocalSocketShellMain and the start of the test, the test is still able to talk to LocalSocketShellMain.</li></ul><p><strong>API Changes</strong></p><ul><li>Update to minSdkVersion 21</li></ul></div>
-            </article>
+            <div class="card">
+              <article class="component" data-release-kind="alpha" data-search="test orchestrator 1.6.0-alpha01 2024-11-20 november 20, 2024" id="november-20-2024-test-orchestrator-1-6-0-alpha01">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Orchestrator</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#orchestrator-1.6.0-alpha01" class="badge alpha">1.6.0-alpha01</a></div>
+                </div>
+                <div class="notes"><p><strong>API Changes</strong></p><ul><li>Update to minSdkVersion 21</li></ul></div>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="test services 1.6.0-alpha01 2024-11-20 november 20, 2024" id="november-20-2024-test-services-1-6-0-alpha01">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/test">Test Services</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/test#services-1.6.0-alpha01" class="badge alpha">1.6.0-alpha01</a></div>
+                </div>
+                <div class="notes"><p><strong>Bug Fixes</strong></p><ul><li>TestStorage: Use input directory location for internal files</li><li>StackTrimmer: harden against exceptions coming from Failure.getMessage().</li></ul><p><strong>New Features</strong></p><ul><li>Adding a LocalSocket-based protocol for the ShellExecutor to talk to the ShellMain. This obsoletes SpeakEasy; if androidx.test.services is killed (e.g. by the low memory killer) between the start of the app_process that invokes LocalSocketShellMain and the start of the test, the test is still able to talk to LocalSocketShellMain.</li></ul><p><strong>API Changes</strong></p><ul><li>Update to minSdkVersion 21</li></ul></div>
+              </article>
+            </div>
           </section>
         </div>
       </div>

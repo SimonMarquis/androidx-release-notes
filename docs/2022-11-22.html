@@ -29,12 +29,13 @@
               <h2 class="date-title">November 22, 2022</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="beta" data-search="media3 1.0.0-beta03 2022-11-22 november 22, 2022" id="november-22-2022-media3-1-0-0-beta03">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
-                <div class="actions"><a href="https://github.com/androidx/media/commits/1.0.0-beta03" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.0.0-beta03" class="badge beta">1.0.0-beta03</a></div>
-              </div>
-              <div class="notes"><p>This release corresponds to the <a href="https://github.com/google/ExoPlayer/releases/tag/r2.18.2">ExoPlayer 2.18.2 release</a>.</p><ul><li>Core library:
+            <div class="card">
+              <article class="component" data-release-kind="beta" data-search="media3 1.0.0-beta03 2022-11-22 november 22, 2022" id="november-22-2022-media3-1-0-0-beta03">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                  <div class="actions"><a href="https://github.com/androidx/media/commits/1.0.0-beta03" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.0.0-beta03" class="badge beta">1.0.0-beta03</a></div>
+                </div>
+                <div class="notes"><p>This release corresponds to the <a href="https://github.com/google/ExoPlayer/releases/tag/r2.18.2">ExoPlayer 2.18.2 release</a>.</p><ul><li>Core library:
   <ul><li>Add <code>ExoPlayer.isTunnelingEnabled</code> to check if tunneling is enabled for the currently selected tracks <a href="https://github.com/google/ExoPlayer/issues/2518" title="#2518" class="ref ref-github">#2518</a>.</li><li>Add <code>WrappingMediaSource</code> to simplify wrapping a single <code>MediaSource</code> <a href="https://github.com/google/ExoPlayer/issues/7279" title="#7279" class="ref ref-github">#7279</a>.</li><li>Discard back buffer before playback gets stuck due to insufficient available memory.</li><li>Close the Tracing "doSomeWork" block when offload is enabled.</li><li>Fix session tracking problem with fast seeks in <code>PlaybackStatsListener</code> <a href="https://github.com/androidx/media/issues/180" title="#180" class="ref ref-github">#180</a>.</li><li>Send missing <code>onMediaItemTransition</code> callback when calling <code>seekToNext</code> or <code>seekToPrevious</code> in a single-item playlist <a href="https://github.com/google/ExoPlayer/issues/10667" title="#10667" class="ref ref-github">#10667</a>.</li><li>Add <code>Player.getSurfaceSize</code> that returns the size of the surface on which the video is rendered.</li><li>Fix bug where removing listeners during the player release can cause an <code>IllegalStateException</code> <a href="https://github.com/google/ExoPlayer/issues/10758" title="#10758" class="ref ref-github">#10758</a>.</li></ul></li><li>Build:
   <ul><li>Enforce minimum <code>compileSdkVersion</code> to avoid compilation errors <a href="https://github.com/google/ExoPlayer/issues/10684" title="#10684" class="ref ref-github">#10684</a>.</li><li>Avoid publishing block when included in another gradle build.</li></ul></li><li>Track selection:
   <ul><li>Prefer other tracks to Dolby Vision if display does not support it. <a href="https://github.com/google/ExoPlayer/issues/8944" title="#8944" class="ref ref-github">#8944</a>.</li></ul></li><li>Downloads:
@@ -54,7 +55,8 @@
   <ul><li>Implement <code>getDeviceInfo()</code> to be able to identify <code>CastPlayer</code> when controlling playback with a <code>MediaController</code> <a href="https://github.com/androidx/media/issues/142" title="#142" class="ref ref-github">#142</a>.</li></ul></li><li>Transformer:
   <ul><li>Add muxer watchdog timer to detect when generating an output sample is too slow.</li></ul></li><li>Remove deprecated symbols:
   <ul><li>Remove <code>Transformer.Builder.setOutputMimeType(String)</code>. This feature has been removed. The MIME type will always be MP4 when the default muxer is used.</li></ul></li></ul></div>
-            </article>
+              </article>
+            </div>
           </section>
         </div>
       </div>

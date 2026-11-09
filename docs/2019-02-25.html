@@ -29,27 +29,29 @@
               <h2 class="date-title">February 25, 2019</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="stable" data-search="annotation 1.0.2 2019-02-25 february 25, 2019" id="february-25-2019-annotation-1-0-2">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/annotation">Annotation</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/annotation#1.0.2" class="badge stable">1.0.2</a></div>
-              </div>
-              <div class="notes"><p><strong>Bug fixes</strong></p><ul><li>Correct the R8/ProGuard rules which are embedded in the jar. These were incorrectly referencing the old <code>android.support.annotation</code> types instead of <code>androidx.annotation</code>. Note: This would have only had an impact on your builds if you were not using <code>getDefaultProguardFile</code> as those default rules also included correct rules for both packages. <a href="https://android-review.googlesource.com/891685/" title="aosp/891685" class="ref ref-gerrit">aosp/891685</a></li><li>Add a R8/ProGuard rule which explicitly keeps the @Keep annotation itself. This ensures that ProGuard does not remove the annotation from types prior to actually honoring its semantics. Note: This would have only had an impact on your builds if you were not using <code>getDefaultProguardFile</code> as those default rules also included correct rules for both packages. <a href="https://android-review.googlesource.com/903818/" title="aosp/903818" class="ref ref-gerrit">aosp/903818</a></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="stable" data-search="documentfile 1.0.1 2019-02-25 february 25, 2019" id="february-25-2019-documentfile-1-0-1">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/documentfile">DocumentFile</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/documentfile#1.0.1" class="badge stable">1.0.1</a></div>
-              </div>
-              <div class="notes"><p><strong>Bug fixes</strong></p><ul><li>Fixed bug where deep tree URIs were truncated by <code>Document.fromUri</code> <a href="https://issuetracker.google.com/37081745" title="b/37081745" class="ref ref-issue">b/37081745</a></li></ul></div>
-            </article>
-            <article class="card" data-release-kind="beta" data-search="jetifier 1.0.0-beta04 2019-02-25 february 25, 2019" id="february-25-2019-jetifier-1-0-0-beta04">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/jetifier">Jetifier</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/jetifier#1.0.0-beta04" class="badge beta">1.0.0-beta04</a></div>
-              </div>
-              <div class="notes"><p><strong>Bug fixes</strong></p><ul><li>Updated version of <code>ConstraintLayout</code> to <code>1.1.3</code></li><li>Fixed mapping of <code>android.support.v4.os.ResultReceiver</code> <a href="https://issuetracker.google.com/123651524" title="b/123651524" class="ref ref-issue">b/123651524</a></li></ul></div>
-            </article>
+            <div class="card">
+              <article class="component" data-release-kind="stable" data-search="annotation 1.0.2 2019-02-25 february 25, 2019" id="february-25-2019-annotation-1-0-2">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/annotation">Annotation</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/annotation#1.0.2" class="badge stable">1.0.2</a></div>
+                </div>
+                <div class="notes"><p><strong>Bug fixes</strong></p><ul><li>Correct the R8/ProGuard rules which are embedded in the jar. These were incorrectly referencing the old <code>android.support.annotation</code> types instead of <code>androidx.annotation</code>. Note: This would have only had an impact on your builds if you were not using <code>getDefaultProguardFile</code> as those default rules also included correct rules for both packages. <a href="https://android-review.googlesource.com/891685/" title="aosp/891685" class="ref ref-gerrit">aosp/891685</a></li><li>Add a R8/ProGuard rule which explicitly keeps the @Keep annotation itself. This ensures that ProGuard does not remove the annotation from types prior to actually honoring its semantics. Note: This would have only had an impact on your builds if you were not using <code>getDefaultProguardFile</code> as those default rules also included correct rules for both packages. <a href="https://android-review.googlesource.com/903818/" title="aosp/903818" class="ref ref-gerrit">aosp/903818</a></li></ul></div>
+              </article>
+              <article class="component" data-release-kind="stable" data-search="documentfile 1.0.1 2019-02-25 february 25, 2019" id="february-25-2019-documentfile-1-0-1">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/documentfile">DocumentFile</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/documentfile#1.0.1" class="badge stable">1.0.1</a></div>
+                </div>
+                <div class="notes"><p><strong>Bug fixes</strong></p><ul><li>Fixed bug where deep tree URIs were truncated by <code>Document.fromUri</code> <a href="https://issuetracker.google.com/37081745" title="b/37081745" class="ref ref-issue">b/37081745</a></li></ul></div>
+              </article>
+              <article class="component" data-release-kind="beta" data-search="jetifier 1.0.0-beta04 2019-02-25 february 25, 2019" id="february-25-2019-jetifier-1-0-0-beta04">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/jetifier">Jetifier</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/jetifier#1.0.0-beta04" class="badge beta">1.0.0-beta04</a></div>
+                </div>
+                <div class="notes"><p><strong>Bug fixes</strong></p><ul><li>Updated version of <code>ConstraintLayout</code> to <code>1.1.3</code></li><li>Fixed mapping of <code>android.support.v4.os.ResultReceiver</code> <a href="https://issuetracker.google.com/123651524" title="b/123651524" class="ref ref-issue">b/123651524</a></li></ul></div>
+              </article>
+            </div>
           </section>
         </div>
       </div>

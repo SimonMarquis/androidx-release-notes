@@ -29,12 +29,13 @@
               <h2 class="date-title">April 11, 2024</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="stable" data-search="media3 1.3.1 2024-04-11 april 11, 2024" id="april-11-2024-media3-1-3-1">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
-                <div class="actions"><a href="https://github.com/androidx/media/commits/1.3.1" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.3.1" class="badge stable">1.3.1</a></div>
-              </div>
-              <div class="notes"><ul><li>Common Library:
+            <div class="card">
+              <article class="component" data-release-kind="stable" data-search="media3 1.3.1 2024-04-11 april 11, 2024" id="april-11-2024-media3-1-3-1">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                  <div class="actions"><a href="https://github.com/androidx/media/commits/1.3.1" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.3.1" class="badge stable">1.3.1</a></div>
+                </div>
+                <div class="notes"><ul><li>Common Library:
   <ul><li>Add <code>Format.labels</code> to allow localized or other alternative labels.</li></ul></li><li>ExoPlayer:
   <ul><li>Fix issue where <code>PreloadMediaPeriod</code> cannot retain the streams when it is preloaded again.</li><li>Apply the correct corresponding <code>TrackSelectionResult</code> to the playing period in track reselection.</li><li>Start early-enabled renderers only after advancing the playing period when transitioning between media items <a href="https://github.com/androidx/media/issues/1017" title="#1017" class="ref ref-github">#1017</a>.</li><li>Add missing return type to proguard <code>-keepclasseswithmembers</code> rule for <code>DefaultVideoFrameProcessor.Factory.Builder.build()</code> <a href="https://github.com/androidx/media/issues/1187" title="#1187" class="ref ref-github">#1187</a>.</li></ul></li><li>Transformer:
   <ul><li>Add workaround for exception thrown due to <code>MediaMuxer</code> not supporting negative presentation timestamps before API 30.</li></ul></li><li>Track Selection:
@@ -50,7 +51,8 @@
   <ul><li>Populate all <code>Label</code> elements from the manifest into <code>Format.labels</code> <a href="https://github.com/androidx/media/pull/1054" title="#1054" class="ref ref-github">#1054</a>.</li></ul></li><li>RTSP Extension:
   <ul><li>Skip empty session information values (i-tags) in SDP parsing <a href="https://github.com/androidx/media/issues/1087" title="#1087" class="ref ref-github">#1087</a>.</li></ul></li><li>Decoder Extensions (FFmpeg, VP9, AV1, MIDI, etc.):
   <ul><li>Disable the MIDI extension as a local dependency by default because it requires an additional Maven repository to be configured. Users who need this module from a local dependency <a href="https://github.com/androidx/media/blob/main/README.md#midi-module">can re-enable it</a>.</li></ul></li></ul></div>
-            </article>
+              </article>
+            </div>
           </section>
         </div>
       </div>

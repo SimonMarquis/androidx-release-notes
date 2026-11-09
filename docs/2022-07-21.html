@@ -29,12 +29,13 @@
               <h2 class="date-title">July 21, 2022</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="beta" data-search="media3 1.0.0-beta02 2022-07-21 july 21, 2022" id="july-21-2022-media3-1-0-0-beta02">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
-                <div class="actions"><a href="https://github.com/androidx/media/commits/1.0.0-beta02" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.0.0-beta02" class="badge beta">1.0.0-beta02</a></div>
-              </div>
-              <div class="notes"><p>This release corresponds to the <a href="https://github.com/google/ExoPlayer/releases/tag/r2.18.1">ExoPlayer 2.18.1 release</a>.</p><ul><li>Core library:
+            <div class="card">
+              <article class="component" data-release-kind="beta" data-search="media3 1.0.0-beta02 2022-07-21 july 21, 2022" id="july-21-2022-media3-1-0-0-beta02">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                  <div class="actions"><a href="https://github.com/androidx/media/commits/1.0.0-beta02" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.0.0-beta02" class="badge beta">1.0.0-beta02</a></div>
+                </div>
+                <div class="notes"><p>This release corresponds to the <a href="https://github.com/google/ExoPlayer/releases/tag/r2.18.1">ExoPlayer 2.18.1 release</a>.</p><ul><li>Core library:
   <ul><li>Ensure that changing the <code>ShuffleOrder</code> with <code>ExoPlayer.setShuffleOrder</code> results in a call to <code>Player.Listener#onTimelineChanged</code> with <code>reason=Player.TIMELINE_CHANGE_REASON_PLAYLIST_CHANGED</code> <a href="https://github.com/google/ExoPlayer/issues/9889" title="#9889" class="ref ref-github">#9889</a>.</li><li>For progressive media, only include selected tracks in buffered position <a href="https://github.com/google/ExoPlayer/issues/10361" title="#10361" class="ref ref-github">#10361</a>.</li><li>Allow custom logger for all ExoPlayer log output <a href="https://github.com/google/ExoPlayer/issues/9752" title="#9752" class="ref ref-github">#9752</a>.</li><li>Fix implementation of <code>setDataSourceFactory</code> in <code>DefaultMediaSourceFactory</code>, which was non-functional in some cases <a href="https://github.com/androidx/media/issues/116" title="#116" class="ref ref-github">#116</a>.</li></ul></li><li>Extractors:
   <ul><li>Fix parsing of H265 short term reference picture sets <a href="https://github.com/google/ExoPlayer/issues/10316" title="#10316" class="ref ref-github">#10316</a>.</li><li>Fix parsing of bitrates from <code>esds</code> boxes <a href="https://github.com/google/ExoPlayer/issues/10381" title="#10381" class="ref ref-github">#10381</a>.</li></ul></li><li>DASH:
   <ul><li>Parse ClearKey license URL from manifests <a href="https://github.com/google/ExoPlayer/issues/10246" title="#10246" class="ref ref-github">#10246</a>.</li></ul></li><li>UI:
@@ -42,7 +43,8 @@
   <ul><li>Add VP8 fragmented packet handling <a href="https://github.com/androidx/media/pull/110" title="#110" class="ref ref-github">#110</a>.</li></ul></li><li>Leanback extension:
   <ul><li>Listen to <code>playWhenReady</code> changes in <code>LeanbackAdapter</code> <a href="https://github.com/google/ExoPlayer/issues/10420" title="10420" class="ref ref-github">10420</a>.</li></ul></li><li>Cast:
   <ul><li>Use the <code>MediaItem</code> that has been passed to the playlist methods as <code>Window.mediaItem</code> in <code>CastTimeline</code> <a href="https://github.com/androidx/media/issues/25" title="#25" class="ref ref-github">#25</a> <a href="https://github.com/google/ExoPlayer/issues/8212" title="#8212" class="ref ref-github">#8212</a>.</li><li>Support <code>Player.getMetadata()</code> and <code>Listener.onMediaMetadataChanged()</code> with <code>CastPlayer</code> <a href="https://github.com/androidx/media/issues/25" title="#25" class="ref ref-github">#25</a>.</li></ul></li></ul></div>
-            </article>
+              </article>
+            </div>
           </section>
         </div>
       </div>

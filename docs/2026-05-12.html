@@ -29,12 +29,13 @@
               <h2 class="date-title">May 12, 2026</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="stable" data-search="media3 1.10.1 2026-05-12 may 12, 2026" id="may-12-2026-media3-1-10-1">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.10.1" class="badge stable">1.10.1</a></div>
-              </div>
-              <div class="notes"><ul><li>Common library:
+            <div class="card">
+              <article class="component" data-release-kind="stable" data-search="media3 1.10.1 2026-05-12 may 12, 2026" id="may-12-2026-media3-1-10-1">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.10.1" class="badge stable">1.10.1</a></div>
+                </div>
+                <div class="notes"><ul><li>Common library:
   <ul><li>Fix handling of <code>onAudioSessionIdChanged</code> in <code>SimpleBasePlayer</code> and <code>ForwardingSimpleBasePlayer</code>.</li></ul></li><li>ExoPlayer:
   <ul><li>Fix race condition related to audio session ID generation that could lead to an <code>IllegalStateException</code> with tunneling mode. <a href="https://github.com/androidx/media/issues/3099" title="#3099" class="ref ref-github">#3099</a>.</li><li>Fix possible app crashes when recovering from decoder errors with renderer prewarming.</li><li>Fix issue where video artifacts were caused by supplying initialization data when using an AV1-based Dolby Vision codec <a href="https://github.com/androidx/media/pull/3153" title="#3153" class="ref ref-github">#3153</a>.</li></ul></li><li>Track selection:
   <ul><li>Adjust track selection logic in <code>VideoTrackInfo</code> to resolve fallback MIME types and move HDR and codec score preferences to quality preferences <a href="https://github.com/androidx/media/issues/3135" title="#3135" class="ref ref-github">#3135</a>.</li></ul></li><li>Extractors:
@@ -45,7 +46,8 @@
   <ul><li>Fix bug where <code>ForegroundServiceStartNotAllowedException</code> wasn't propagated across thread boundaries in case the application thread is not the main thread <a href="https://github.com/androidx/media/issues/2499" title="#2499" class="ref ref-github">#2499</a>.</li><li>Fix bug where <code>COMMAND_SEEK_TO_MEDIA_ITEM</code> is not available in a <code>MediaController</code> when connecting to a platform-only session that supports seeking to other items but no playlist modifications.</li><li>Fix issue where <code>MediaController</code> can't set media items on platform media sessions that don't allow <code>PREPARE_FROM</code> actions.</li><li>Fix bug where own process wasn't marked with <code>Controller.isTrusted()</code> on API 27 or before when connecting via platform controllers.</li></ul></li><li>HLS extension:
   <ul><li>Fix a bug where an <code>ArrayIndexOutOfBoundsException</code> is thrown during stream fallback if the track selection is a subset of the available tracks <a href="https://github.com/androidx/media/issues/3161" title="#3161" class="ref ref-github">#3161</a>.</li><li>Fix an issue where the initialization segment was not carried over across media playlist updates if the <code>#EXT-X-MAP</code> tag was not repeated in subsequent updates <a href="https://github.com/androidx/media/issues/3105" title="#3105" class="ref ref-github">#3105</a>.</li></ul></li><li>DASH extension:
   <ul><li>Fix crash in <code>SampleQueue</code> when seeking into a chunk that is currently being canceled.</li></ul></li></ul></div>
-            </article>
+              </article>
+            </div>
           </section>
         </div>
       </div>

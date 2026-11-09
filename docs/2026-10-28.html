@@ -29,12 +29,13 @@
               <h2 class="date-title">October 28, 2026</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="alpha" data-search="appstate statestore 1.0.0-alpha01 2026-10-28 october 28, 2026" id="october-28-2026-appstate-statestore-1-0-0-alpha01">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/appstate-statestore">Appstate Statestore</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/56ca943f55b3d53ce513a0fa356fe8fe4c43fe9f/appstate/statestore" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/appstate-statestore#1.0.0-alpha01" class="badge alpha">1.0.0-alpha01</a></div>
-              </div>
-              <div class="notes"><p><strong>New Features</strong></p><p><a href="https://developer.android.com/reference/kotlin/androidx/appstate/statestore/package-summary"><code>AppState StateStore</code></a> is a new library built on the Compose runtime that acts as a wrapper to provide custom integrations. The <code>androidx.appstate.statestore</code> artifact provides the library APIs and it also comes with a <code>androidx.appstate.statestore:statestore-datastore</code> artifact for state persistence. Developers can use <code>StateStore</code> to hoist their snapshot state into their application layer and the datastore integration to persist that state.</p><div></div><pre><code><span>class</span> <span>MyApplication</span> : <span>Application</span>() {
+            <div class="card">
+              <article class="component" data-release-kind="alpha" data-search="appstate statestore 1.0.0-alpha01 2026-10-28 october 28, 2026" id="october-28-2026-appstate-statestore-1-0-0-alpha01">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/appstate-statestore">Appstate Statestore</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/56ca943f55b3d53ce513a0fa356fe8fe4c43fe9f/appstate/statestore" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/appstate-statestore#1.0.0-alpha01" class="badge alpha">1.0.0-alpha01</a></div>
+                </div>
+                <div class="notes"><p><strong>New Features</strong></p><p><a href="https://developer.android.com/reference/kotlin/androidx/appstate/statestore/package-summary"><code>AppState StateStore</code></a> is a new library built on the Compose runtime that acts as a wrapper to provide custom integrations. The <code>androidx.appstate.statestore</code> artifact provides the library APIs and it also comes with a <code>androidx.appstate.statestore:statestore-datastore</code> artifact for state persistence. Developers can use <code>StateStore</code> to hoist their snapshot state into their application layer and the datastore integration to persist that state.</p><div></div><pre><code><span>class</span> <span>MyApplication</span> : <span>Application</span>() {
     <span>val</span> <span>stateStore</span> = <span>StateStore</span>()
     <span>private</span> <span>val</span> <span>scope</span> = <span>CoroutineScope</span>(<span>SupervisorJob</span>() + <span>Dispatchers</span>.<span>Default</span>)
 
@@ -55,13 +56,13 @@
     }
 }
 </code></pre></div>
-            </article>
-            <article class="card" data-release-kind="alpha" data-search="appstate transform 1.0.0-alpha01 2026-10-28 october 28, 2026" id="october-28-2026-appstate-transform-1-0-0-alpha01">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/appstate-transform">Appstate Transform</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/56ca943f55b3d53ce513a0fa356fe8fe4c43fe9f/appstate/transform" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/appstate-transform#1.0.0-alpha01" class="badge alpha">1.0.0-alpha01</a></div>
-              </div>
-              <div class="notes"><p><strong>New Features</strong></p><p><a href="https://developer.android.com/reference/kotlin/androidx/appstate/transform/package-summary"><code>AppState Transform</code></a> is a new library built on the Compose runtime that allows for running a composition outside of your UI. The <code>androidx.appstate.transform:transform</code> artifact provides the library APIs and it also comes with a <code>androidx.appstate.transform:transform-testing</code> artifact for testing. Developers can use Transform to manage their composition anywhere within their app.</p><div></div><pre><code><span>//</span><span> </span><span>With</span><span> </span><span>helper</span><span> </span><span>function</span>
+              </article>
+              <article class="component" data-release-kind="alpha" data-search="appstate transform 1.0.0-alpha01 2026-10-28 october 28, 2026" id="october-28-2026-appstate-transform-1-0-0-alpha01">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/appstate-transform">Appstate Transform</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/56ca943f55b3d53ce513a0fa356fe8fe4c43fe9f/appstate/transform" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/appstate-transform#1.0.0-alpha01" class="badge alpha">1.0.0-alpha01</a></div>
+                </div>
+                <div class="notes"><p><strong>New Features</strong></p><p><a href="https://developer.android.com/reference/kotlin/androidx/appstate/transform/package-summary"><code>AppState Transform</code></a> is a new library built on the Compose runtime that allows for running a composition outside of your UI. The <code>androidx.appstate.transform:transform</code> artifact provides the library APIs and it also comes with a <code>androidx.appstate.transform:transform-testing</code> artifact for testing. Developers can use Transform to manage their composition anywhere within their app.</p><div></div><pre><code><span>//</span><span> </span><span>With</span><span> </span><span>helper</span><span> </span><span>function</span>
 <span>var</span><span> </span><span>sourceState</span><span> </span><span>by</span><span> </span><span>mutableStateOf</span><span>(</span><span>0</span><span>)</span>
 
 <span>val</span><span> </span><span>state</span><span> </span><span>=</span><span> </span><span>transform</span><span>(</span><span>initialValue</span><span> </span><span>=</span><span> </span><span>0</span><span>,</span><span> </span><span>scope</span><span> </span><span>=</span><span> </span><span>myCoroutineScope</span><span>)</span><span> </span><span>{</span>
@@ -104,7 +105,8 @@
 <span>    </span><span>assertThat</span><span>(</span><span>state</span><span>.</span><span>value</span><span>)</span><span>.</span><span>isEqualTo</span><span>(</span><span>1</span><span>)</span>
 <span>}</span>
 </code></pre></div>
-            </article>
+              </article>
+            </div>
           </section>
         </div>
       </div>

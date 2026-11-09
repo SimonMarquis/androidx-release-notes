@@ -29,12 +29,13 @@
               <h2 class="date-title">August 14, 2023</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="stable" data-search="media3 1.1.1 2023-08-14 august 14, 2023" id="august-14-2023-media3-1-1-1">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
-                <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.1.1" class="badge stable">1.1.1</a></div>
-              </div>
-              <div class="notes"><ul><li>Common Library:
+            <div class="card">
+              <article class="component" data-release-kind="stable" data-search="media3 1.1.1 2023-08-14 august 14, 2023" id="august-14-2023-media3-1-1-1">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                  <div class="actions"><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.1.1" class="badge stable">1.1.1</a></div>
+                </div>
+                <div class="notes"><ul><li>Common Library:
   <ul><li>Remove accidentally added <code>multidex</code> dependency from all modules <a href="https://github.com/androidx/media/issues/499" title="#499" class="ref ref-github">#499</a>.</li></ul></li><li>ExoPlayer:
   <ul><li>Fix issue in <code>PlaybackStatsListener</code> where spurious <code>PlaybackStats</code> are created after the playlist is cleared.</li><li>Add additional fields to Common Media Client Data (CMCD) logging: streaming format (sf), stream type (st), version (v), top birate (tb), object duration (d), measured throughput (mtp) and object type (ot) <a href="https://github.com/google/ExoPlayer/issues/8699" title="#8699" class="ref ref-github">#8699</a>.</li></ul></li><li>Audio:
   <ul><li>Fix a bug where <code>Player.getState()</code> never transitioned to <code>STATE_ENDED</code> when playing very short files <a href="https://github.com/androidx/media/issues/538" title="#538" class="ref ref-github">#538</a>.</li></ul></li><li>Audio Offload:
@@ -43,7 +44,8 @@
   <ul><li>CEA-608: Change cue truncation logic to only consider visible text. Previously indent and tab offset were included when limiting the cue length to 32 characters (which was technically correct by the spec) <a href="https://github.com/google/ExoPlayer/issues/11019" title="#11019" class="ref ref-github">#11019</a>.</li></ul></li><li>IMA extension:
   <ul><li>Bump IMA SDK version to 3.30.3.</li></ul></li><li>Session:
   <ul><li>Add custom layout to the state of the controller and provide a getter to access it. When the custom layout changes, <code>MediaController.Listener.onCustomLayoutChanged</code> is called. Apps that want to send different custom layouts to different Media3 controller can do this in <code>MediaSession.Callback.onConnect</code> by using an <code>AcceptedResultBuilder</code> to make sure the custom layout is available to the controller when connection completes.</li><li>Fix cases where <code>MediaLibraryServiceLegacyStub</code> sent an error to a <code>Result</code> that didn't support this which produced an <code>UnsupportedOperationException</code> <a href="https://github.com/androidx/media/issues/78" title="#78" class="ref ref-github">#78</a>.</li><li>Fix the way <code>PlayerWrapper</code> creates a <code>VolumeProviderCompat</code> by determining <code>volumeControlType</code> through both legacy commands (<code>COMMAND_ADJUST_DEVICE_VOLUME</code> and <code>COMMAND_SET_DEVICE_VOLUME</code>) and new commands (<code>COMMAND_ADJUST_DEVICE_VOLUME_WITH_FLAGS</code> and <code>COMMAND_SET_DEVICE_VOLUME_WITH_FLAGS</code>) <a href="https://github.com/androidx/media/issues/554" title="#554" class="ref ref-github">#554</a>.</li></ul></li></ul></div>
-            </article>
+              </article>
+            </div>
           </section>
         </div>
       </div>

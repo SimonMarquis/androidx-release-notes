@@ -29,13 +29,15 @@
               <h2 class="date-title">January 17, 2023</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="stable" data-search="compose compiler 1.4.0 2023-01-17 january 17, 2023" id="january-17-2023-compose-compiler-1-4-0">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-compiler">Compose Compiler</a></h3>
-                <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/c950703bd4594e7a5cf41004d1395cb44ade44a3..7fff9039d5075dd1dd995e252c732eed7e4fe3fe/compose/compiler" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.4.0" class="badge stable">1.4.0</a></div>
-              </div>
-              <div class="notes"><p><strong>Important changes since 1.3.0</strong></p><ul><li>Support for Kotlin 1.8.0</li><li>Turned off intrinsic remember</li><li>The ui tooling data class <code>Group</code> now has a field, <code>isInline</code>, that indicates if the group is for a call to an inline composable function. If <code>isInline</code> is <code>true</code> then the call is to an inline composable function. However, the value might be false for calls to inline composable functions that are from modules that are compiled with a version of the compose compiler plugin that doesn't generate the inline function information.</li><li><code>ImmutableCollection</code> and their Persistent siblings are now considered stable.</li><li>New param in <code>AnimatedContent</code> for tooling label</li><li>Fixed faulty code generation for inline lambda</li></ul></div>
-            </article>
+            <div class="card">
+              <article class="component" data-release-kind="stable" data-search="compose compiler 1.4.0 2023-01-17 january 17, 2023" id="january-17-2023-compose-compiler-1-4-0">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/compose-compiler">Compose Compiler</a></h3>
+                  <div class="actions"><a href="https://android.googlesource.com/platform/frameworks/support/+log/c950703bd4594e7a5cf41004d1395cb44ade44a3..7fff9039d5075dd1dd995e252c732eed7e4fe3fe/compose/compiler" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.4.0" class="badge stable">1.4.0</a></div>
+                </div>
+                <div class="notes"><p><strong>Important changes since 1.3.0</strong></p><ul><li>Support for Kotlin 1.8.0</li><li>Turned off intrinsic remember</li><li>The ui tooling data class <code>Group</code> now has a field, <code>isInline</code>, that indicates if the group is for a call to an inline composable function. If <code>isInline</code> is <code>true</code> then the call is to an inline composable function. However, the value might be false for calls to inline composable functions that are from modules that are compiled with a version of the compose compiler plugin that doesn't generate the inline function information.</li><li><code>ImmutableCollection</code> and their Persistent siblings are now considered stable.</li><li>New param in <code>AnimatedContent</code> for tooling label</li><li>Fixed faulty code generation for inline lambda</li></ul></div>
+              </article>
+            </div>
           </section>
         </div>
       </div>

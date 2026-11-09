@@ -29,12 +29,13 @@
               <h2 class="date-title">August 27, 2024</h2>
               <div class="divider-line"></div>
             </div>
-            <article class="card" data-release-kind="stable" data-search="media3 1.4.1 2024-08-27 august 27, 2024" id="august-27-2024-media3-1-4-1">
-              <div class="head">
-                <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
-                <div class="actions"><a href="https://github.com/androidx/media/commits/1.4.1" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.4.1" class="badge stable">1.4.1</a></div>
-              </div>
-              <div class="notes"><ul><li>ExoPlayer:
+            <div class="card">
+              <article class="component" data-release-kind="stable" data-search="media3 1.4.1 2024-08-27 august 27, 2024" id="august-27-2024-media3-1-4-1">
+                <div class="head">
+                  <h3 class="name"><a href="https://developer.android.com/jetpack/androidx/releases/media3">Media3</a></h3>
+                  <div class="actions"><a href="https://github.com/androidx/media/commits/1.4.1" class="commits" title="Git commits"></a><a href="https://developer.android.com/jetpack/androidx/releases/media3#1.4.1" class="badge stable">1.4.1</a></div>
+                </div>
+                <div class="notes"><ul><li>ExoPlayer:
   <ul><li>Handle preload callbacks asynchronously in <code>PreloadMediaSource</code> <a href="https://github.com/androidx/media/issues/1568" title="#1568" class="ref ref-github">#1568</a>.</li><li>Allow playback regardless of buffered duration when loading fails <a href="https://github.com/androidx/media/issues/1571" title="#1571" class="ref ref-github">#1571</a>.</li></ul></li><li>Extractors:
   <ul><li>MP3: Fix <code>Searched too many bytes</code> error by correctly ignoring trailing non-MP3 data based on the length field in an <code>Info</code> frame <a href="https://github.com/androidx/media/issues/1480" title="#1480" class="ref ref-github">#1480</a>.</li></ul></li><li>Text:
   <ul><li>TTML: Fix handling of percentage <code>tts:fontSize</code> values to ensure they are correctly inherited from parent nodes with percentage <code>tts:fontSize</code> values.</li><li>Fix <code>IndexOutOfBoundsException</code> in <code>LegacySubtitleUtil</code> due to incorrectly handling the case of the requested output start time being greater than or equal to the final event time in the <code>Subtitle</code> <a href="https://github.com/androidx/media/issues/1516" title="#1516" class="ref ref-github">#1516</a>.</li></ul></li><li>DRM:
@@ -42,7 +43,8 @@
   <ul><li>Add a <code>release()</code> method to <code>GlObjectsProvider</code>.</li></ul></li><li>Session:
   <ul><li>Transform a double-tap of <code>KEYCODE_HEADSETHOOK</code> into a 'seek to next' action, as <a href="https://developer.android.com/reference/androidx/media3/session/MediaSession#media-key-events-mapping">documented</a> <a href="https://github.com/androidx/media/issues/1493" title="#1493" class="ref ref-github">#1493</a>.</li><li>Handle <code>KEYCODE_HEADSETHOOK</code> as a 'play' command in <code>MediaButtonReceiver</code> when deciding whether to ignore it to avoid a <code>ForegroundServiceDidNotStartInTimeException</code> <a href="https://github.com/androidx/media/issues/1581" title="#1581" class="ref ref-github">#1581</a>.</li></ul></li><li>RTSP Extension:
   <ul><li>Skip invalid Media Descriptions in SDP parsing <a href="https://github.com/androidx/media/issues/1472" title="#1087" class="ref ref-github">#1087</a>.</li></ul></li></ul></div>
-            </article>
+              </article>
+            </div>
           </section>
         </div>
       </div>
