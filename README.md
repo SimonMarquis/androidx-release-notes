@@ -5,10 +5,11 @@ Browse AndroidX release notes across libraries and dates in one place.
 - 🗓️ **Timeline:** Read the entire history of release notes.
 - 🎛️ **Stability:** Filter Stable, RC, Beta, or Alpha releases.
 - 🔎 **Search:** Find libraries and versions across the full timeline.
-- 🔔 **Notifications:** **Watch ➞ Custom ➞ Releases**.
 - ✨ **Less repetition:** Skip repeated metadata and focus on the changes.
 - 🔗 **Compact links:** Open issues, reviews, GitHub references, and commits.
-- 📄 **Standalone pages:** Browse the full index or any individual release page.
+
+> [!TIP]
+> 🔔 To get release notifications: **Watch ➞ Custom ➞ Releases**.
 
 <a href="https://simonmarquis.github.io/androidx-release-notes/">
   <picture>
