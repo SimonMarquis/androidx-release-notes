@@ -9,7 +9,8 @@ Browse AndroidX release notes across libraries and dates in one place.
 - 🔗 **Compact links:** Open issues, reviews, GitHub references, and commits.
 
 > [!TIP]
-> 🔔 To get release notifications: **Watch ➞ Custom ➞ Releases**.
+> 🔔 Follow releases via **Watch ➞ Custom ➞ Releases**.  
+> 📡 Or subscribe to the GitHub releases [Atom feed](https://github.com/SimonMarquis/androidx-release-notes/releases.atom).
 
 <a href="https://simonmarquis.github.io/androidx-release-notes/">
   <picture>
