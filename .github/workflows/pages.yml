@@ -33,8 +33,8 @@ jobs:
           fetch-depth: 0 # needed to diff against ${{ github.event.before }}
       - uses: ./.github/actions/setup-java
 
-      - run: ./scripts/androidx-release-notes.main.kts build-site
       - uses: ./.github/actions/minify-assets
+      - run: ./scripts/androidx-release-notes.main.kts build-site --minified
 
       - name: Capture previews
         id: previews
