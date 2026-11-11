@@ -53,9 +53,10 @@ button, input { font: inherit; }
 .brand { display: flex; flex: 0 0 auto; align-items: baseline; gap: 7px; white-space: nowrap; font-size: 18px; line-height: 1; font-weight: 700; letter-spacing: -.03em; }
 .brand-subtitle { color: var(--secondary); font-size: 10px; font-weight: 600; letter-spacing: .02em; }
 .header-filters { display: flex; align-items: center; gap: 2px; padding: 3px; border: 1px solid var(--subtle-border); border-radius: 9px; background: var(--surface-container-low); }
-.filter-btn, .badge { display: inline-flex; align-items: center; justify-content: center; border: 1px solid transparent; border-radius: 5px; line-height: 1.5; white-space: nowrap; transition: background-color .15s ease, border-color .15s ease, color .15s ease; }
-.filter-btn { padding: 5px 8px; background: transparent; color: var(--secondary); font-size: 10px; font-weight: 700; letter-spacing: .05em; cursor: pointer; }
+.filter-btn, .badge { display: inline-flex; align-items: center; justify-content: center; border: 1px solid transparent; border-radius: 5px; line-height: 1.5; white-space: nowrap; }
+.filter-btn { padding: 5px 8px; background: transparent; color: var(--secondary); font-size: 10px; font-weight: 700; letter-spacing: .05em; cursor: pointer; transition: background-color .15s ease, border-color .15s ease, color .15s ease; }
 .filter-btn:hover:not([aria-pressed="true"]), .badge:hover { background: var(--kind-fill); color: var(--kind-ink); }
+.badge:is(:hover, :focus-visible) { transition: background-color .15s ease, border-color .15s ease; }
 .stable { --kind-fill: var(--stable-fill); --kind-ink: var(--stable-ink); --kind-stroke: var(--stable-stroke); }
 .rc { --kind-fill: var(--rc-fill); --kind-ink: var(--rc-ink); --kind-stroke: var(--rc-stroke); }
 .beta { --kind-fill: var(--beta-fill); --kind-ink: var(--beta-ink); --kind-stroke: var(--beta-stroke); }
@@ -106,8 +107,8 @@ button, input { font: inherit; }
 .component:nth-child(1 of :not([hidden])) .head { border-top-left-radius: 11px; border-top-right-radius: 11px; }
 .component:nth-last-child(1 of :not([hidden])):not(:has(.notes)) .head { border-bottom-left-radius: 11px; border-bottom-right-radius: 11px; }
 .actions { display: flex; align-items: center; gap: 8px; }
-.commits { display: inline-block; width: 1.5rem; height: 1.5rem; border-radius: 4px; background-color: var(--secondary); -webkit-mask: var(--file-diff-icon) center / 16px 16px no-repeat; mask: var(--file-diff-icon) center / 16px 16px no-repeat; transition: background-color .15s ease; }
-.commits:is(:hover, :active, :focus-visible) { background-color: var(--primary); }
+.commits { display: inline-block; width: 1.5rem; height: 1.5rem; border-radius: 4px; background-color: var(--secondary); -webkit-mask: var(--file-diff-icon) center / 16px 16px no-repeat; mask: var(--file-diff-icon) center / 16px 16px no-repeat; }
+.commits:is(:hover, :active, :focus-visible) { background-color: var(--primary); transition: background-color .15s ease; }
 .name { min-width: 0; margin: 0; overflow-wrap: anywhere; font-size: 17px; line-height: 1.4; font-weight: 550; letter-spacing: -.01em; }
 .badge { padding: 3px 8px; color: var(--kind-ink); background: transparent; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; font-weight: 650; letter-spacing: 0; }
 .notes { padding: var(--card-padding); overflow-wrap: anywhere; }
