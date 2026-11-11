@@ -26,19 +26,8 @@ jobs:
       - uses: ./.github/actions/setup-java
 
       - name: Minify Pages assets
-        id: assets
         uses: ./.github/actions/minify-assets
       - run: ./scripts/androidx-release-notes.main.kts build-site --minified
-      - name: Upload minified assets
-        uses: actions/upload-artifact@v7
-        with:
-          name: minified-assets
-          path: |
-            ${{ steps.assets.outputs.javascript }}
-            ${{ steps.assets.outputs.javascript }}.map
-            ${{ steps.assets.outputs.stylesheet }}
-            ${{ steps.assets.outputs.stylesheet }}.map
-          if-no-files-found: error
 
       - run: ./scripts/androidx-release-notes.main.kts build-site --embedded --minified
       - name: Upload index.html
