@@ -1,5 +1,6 @@
 // Runs at the end of <body>, once every release section is parsed.
 (() => {
+  //region Theme
   // The head bootstrap applies the stored theme before paint; keep it in sync afterwards.
   const root = document.documentElement;
   const storageKey = "androidx-release-notes-theme";
@@ -33,7 +34,9 @@
     applyTheme();
     try { preference ? localStorage.setItem(storageKey, preference) : localStorage.removeItem(storageKey); } catch {}
   });
+  //endregion
 
+  //region Search and filters
   root.classList.remove("loading");
   const isIndex = document.body.hasAttribute("data-date-navigation");
   const header = document.querySelector(".site-header");
@@ -84,7 +87,9 @@
   });
   // Applies a query typed (or restored by the browser) before this script ran.
   if (search.value) update();
+  //endregion
 
+  //region Hash navigation and history
   let navigationToken = 0;
   let lastTarget = null;
   let lastNavigationAt = 0;
@@ -136,7 +141,9 @@
   const goToHash = () => { try { goTo(document.getElementById(decodeURIComponent(location.hash.slice(1)))); } catch {} };
   requestAnimationFrame(goToHash);
   addEventListener("hashchange", goToHash);
+  //endregion
 
+  //region Date navigation
   if (!isIndex) return;
   const visibleGroups = () => groups.filter(group => !group.hidden);
   const currentIndex = visible => {
@@ -164,4 +171,5 @@
     event.preventDefault();
     navigate(key === "n" ? 1 : -1);
   });
+  //endregion
 })();
