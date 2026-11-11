@@ -120,10 +120,9 @@ class IgnoreCommand : CliktCommand(name = "ignore") {
 class BuildSiteCommand : CliktCommand(name = "build-site") {
     override fun help(context: Context) = "Rebuild all static pages from stored intermediate entry files."
     private val embedded by option(help = "Inline CSS, JS, and favicon so each page works on its own.").flag()
-    private val minified by option(help = "Inline minified CSS and JS (requires --embedded and generated minified assets).").flag()
+    private val minified by option(help = "Use minified CSS and JS (generate minified assets first when embedding).").flag()
 
     override fun run() {
-        require(!minified || embedded) { "--minified requires --embedded" }
         val records = Archive().load()
         Log.info("📂 Loaded ${records.size} cached entries")
         SiteRenderer(Path(OUTPUT_DIR), embedded, minified).render(records)
@@ -708,9 +707,12 @@ class SiteRenderer(private val docs: Path, private val embedded: Boolean, privat
     // Pages load the assets from docs/assets/; embedded pages inline them so a single file works on its own.
     private fun asset(name: String): String = assets.getOrPut(name) { docs.resolve("assets/$name").readText() }
 
+    private fun assetName(name: String, extension: String): String =
+        if (minified) "${name.removeSuffix(".$extension")}.min.$extension" else name
+
     private fun embeddedAsset(name: String, extension: String): String {
         if (!minified) return asset(name)
-        val minifiedName = "${name.removeSuffix(".$extension")}.min.$extension"
+        val minifiedName = assetName(name, extension)
         // The standalone HTML has no adjacent source map.
         return asset(minifiedName).lineSequence()
             .filterNot { it.contains("sourceMappingURL=$minifiedName.map") }
@@ -718,10 +720,10 @@ class SiteRenderer(private val docs: Path, private val embedded: Boolean, privat
     }
 
     private fun HEAD.stylesheetAsset(name: String) =
-        if (embedded) style { unsafe { +embeddedAsset(name, "css") } } else link(rel = "stylesheet", href = "assets/${name.removeSuffix(".css")}.min.css")
+        if (embedded) style { unsafe { +embeddedAsset(name, "css") } } else link(rel = "stylesheet", href = "assets/${assetName(name, "css")}")
 
     private fun FlowOrMetaDataOrPhrasingContent.scriptAsset(name: String) =
-        if (embedded) script { unsafe { +embeddedAsset(name, "js") } } else script(src = "assets/${name.removeSuffix(".js")}.min.js") {}
+        if (embedded) script { unsafe { +embeddedAsset(name, "js") } } else script(src = "assets/${assetName(name, "js")}") {}
 
     //endregion
 
