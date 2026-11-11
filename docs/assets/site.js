@@ -10,7 +10,10 @@
   const normalizeTheme = value => ["light", "dark"].includes(value) ? value : null;
   // Re-read in case another tab changed the preference while this document was parsing.
   let preference = ["light", "dark"].find(name => root.classList.contains(name)) ?? null;
-  try { preference = normalizeTheme(localStorage.getItem(storageKey)); } catch {}
+  try {
+    preference = normalizeTheme(localStorage.getItem(storageKey));
+  } catch {
+  }
   const isDark = () => preference ? preference === "dark" : system.matches;
   const applyTheme = () => {
     for (const name of ["light", "dark"]) root.classList.toggle(name, preference === name);
@@ -32,7 +35,10 @@
     const dark = !isDark();
     preference = dark === system.matches ? null : dark ? "dark" : "light";
     applyTheme();
-    try { preference ? localStorage.setItem(storageKey, preference) : localStorage.removeItem(storageKey); } catch {}
+    try {
+      preference ? localStorage.setItem(storageKey, preference) : localStorage.removeItem(storageKey);
+    } catch {
+    }
   });
   //endregion
 
@@ -54,7 +60,7 @@
     // Every word must match, in any order, so "compose 1.8" finds "compose ui 1.8.0".
     const terms = search.value.toLowerCase().split(/\s+/).filter(Boolean);
     for (const component of components) {
-      const { releaseKind, search: text } = component.dataset;
+      const {releaseKind, search: text} = component.dataset;
       const hide = !((selectedKinds.size === 0 || selectedKinds.has(releaseKind)) && terms.every(term => text.includes(term)));
       if (component.hidden !== hide) component.hidden = hide;
     }
@@ -146,14 +152,16 @@
       if (token !== navigationToken) return;
       const desired = parseFloat(getComputedStyle(target).scrollMarginTop);
       if (frame === 0 || Math.abs(target.getBoundingClientRect().top - desired) > 2) {
-        target.scrollIntoView({ behavior: "instant", block: "start" });
+        target.scrollIntoView({behavior: "instant", block: "start"});
       }
       if (++frame < 30) requestAnimationFrame(align);
     };
     align();
   };
   for (const type of ["wheel", "touchstart", "pointerdown"]) {
-    window.addEventListener(type, () => { navigationToken++; }, { passive: true });
+    window.addEventListener(type, () => {
+      navigationToken++;
+    }, {passive: true});
   }
   document.addEventListener("keydown", event => {
     if (["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "].includes(event.key)) navigationToken++;
@@ -179,7 +187,12 @@
     history.scrollRestoration = "manual";
   });
   // Align the URL target under the header once the page is rendered, and whenever the hash changes.
-  const goToHash = () => { try { goTo(document.getElementById(decodeURIComponent(location.hash.slice(1)))); } catch {} };
+  const goToHash = () => {
+    try {
+      goTo(document.getElementById(decodeURIComponent(location.hash.slice(1))));
+    } catch {
+    }
+  };
   requestAnimationFrame(goToHash);
   addEventListener("hashchange", goToHash);
   //endregion
