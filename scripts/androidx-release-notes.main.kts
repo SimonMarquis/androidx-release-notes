@@ -738,16 +738,17 @@ class SiteRenderer(private val docs: Path, private val embedded: Boolean) {
             meta(charset = "utf-8")
             meta(name = "viewport", content = "width=device-width, initial-scale=1")
             meta(name = "color-scheme", content = "light dark")
-            meta(name = "theme-color", content = "#ffffff") { attributes["media"] = "(prefers-color-scheme: light)" }
-            meta(name = "theme-color", content = "#1b1e22") { attributes["media"] = "(prefers-color-scheme: dark)" }
+            meta(name = "theme-color", content = "#ffffff") { attributes("media" to "(prefers-color-scheme: light)", "data-theme-color" to "light") }
+            meta(name = "theme-color", content = "#1b1e22") { attributes("media" to "(prefers-color-scheme: dark)", "data-theme-color" to "dark") }
             // Links open in a new tab unless they set target="_self"; this keeps the attribute off every note link.
             base { attributes["target"] = "_blank" }
             title(if (date == null) siteTitle else "${date.heading} · $siteTitle")
             meta(name = "description", content = if (date == null) siteDescription else description(date, records))
             link(rel = "canonical", href = if (date == null) siteUrl else "$siteUrl$date.html")
             link(rel = "icon", type = "image/svg+xml", href = favicon)
+            // Apply the saved theme before the stylesheet or page content can paint.
+            script { unsafe { +asset("theme-init.js") } }
             stylesheetAsset("site.css")
-            scriptAsset("theme.js")
         }
         body {
             if (index) attributes["data-date-navigation"] = "true"
