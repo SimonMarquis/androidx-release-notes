@@ -73,11 +73,15 @@
     };
     align();
   };
+  const cancelNavigation = () => {
+    navigationToken++;
+    lastTarget = null;
+  };
   for (const type of ["wheel", "touchstart", "pointerdown"]) {
-    window.addEventListener(type, () => { navigationToken++; }, { passive: true });
+    window.addEventListener(type, cancelNavigation, { passive: true });
   }
   document.addEventListener("keydown", event => {
-    if (["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "].includes(event.key)) navigationToken++;
+    if (["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "].includes(event.key)) cancelNavigation();
   });
   // Record the clicked date in the URL before leaving, so Back lands on it via the alignment below.
   // Manual restoration stops the browser from restoring a pixel offset that no longer matches the
@@ -131,3 +135,4 @@
     navigate(key === "n" ? 1 : -1);
   });
 })();
+
