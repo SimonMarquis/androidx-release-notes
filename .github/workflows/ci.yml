@@ -25,7 +25,10 @@ jobs:
           persist-credentials: false
       - uses: ./.github/actions/setup-java
 
-      - run: ./scripts/androidx-release-notes.main.kts build-site --embedded
+      - uses: ./.github/actions/minify-assets
+      - run: ./scripts/androidx-release-notes.main.kts build-site --minified
+      - run: ./scripts/androidx-release-notes.main.kts build-site --embedded --minified
+
       - name: Upload index.html
         id: index
         uses: actions/upload-artifact@v7

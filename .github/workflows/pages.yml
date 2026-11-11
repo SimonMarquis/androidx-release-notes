@@ -6,7 +6,10 @@ on:
     paths:
       - data/**
       - docs/assets/**
+      - package-lock.json
+      - package.json
       - scripts/**
+      - .github/actions/minify-assets/action.yaml
       - .github/actions/screenshot/action.yaml
       - .github/workflows/pages.yml
   workflow_dispatch:
@@ -31,7 +34,8 @@ jobs:
           fetch-depth: 0 # needed to diff against ${{ github.event.before }}
       - uses: ./.github/actions/setup-java
 
-      - run: ./scripts/androidx-release-notes.main.kts build-site
+      - uses: ./.github/actions/minify-assets
+      - run: ./scripts/androidx-release-notes.main.kts build-site --minified
 
       - name: Capture previews
         id: previews
