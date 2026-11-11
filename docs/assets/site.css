@@ -56,7 +56,6 @@ button, input { font: inherit; }
 .filter-btn, .badge { display: inline-flex; align-items: center; justify-content: center; border: 1px solid transparent; border-radius: 5px; line-height: 1.5; white-space: nowrap; }
 .filter-btn { padding: 5px 8px; background: transparent; color: var(--secondary); font-size: 10px; font-weight: 700; letter-spacing: .05em; cursor: pointer; transition: background-color .15s ease, border-color .15s ease, color .15s ease; }
 .filter-btn:hover:not([aria-pressed="true"]), .badge:hover { background: var(--kind-fill); color: var(--kind-ink); }
-/* Enable link transitions only during interaction to avoid initial-render flashes. */
 .badge:is(:hover, :focus-visible) { transition: background-color .15s ease, border-color .15s ease; }
 .stable { --kind-fill: var(--stable-fill); --kind-ink: var(--stable-ink); --kind-stroke: var(--stable-stroke); }
 .rc { --kind-fill: var(--rc-fill); --kind-ink: var(--rc-ink); --kind-stroke: var(--rc-stroke); }
