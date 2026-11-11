@@ -1,4 +1,4 @@
-name: Minify Pages assets
+name: 🗜️ Minify Pages assets
 description: Minify the linked site assets and generate source maps.
 outputs:
   javascript:
