@@ -42,7 +42,7 @@
     searchTimer = setTimeout(update, 150);
   });
   search.addEventListener("keydown", event => {
-    if (event.key !== "Escape") return;
+    if (event.defaultPrevented || event.isComposing || event.key !== "Escape") return;
     clearTimeout(searchTimer);
     search.value = "";
     update();
@@ -127,7 +127,7 @@
     navigate(step.dataset.dateStep === "next" ? 1 : -1, step.closest(".date-group"));
   });
   document.addEventListener("keydown", event => {
-    if (event.altKey || event.ctrlKey || event.metaKey) return;
+    if (event.defaultPrevented || event.isComposing || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
     if (event.target instanceof Element && event.target.closest("input, textarea, select, [contenteditable]")) return;
     const key = event.key.toLowerCase();
     if (key !== "n" && key !== "p") return;
