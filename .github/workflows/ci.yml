@@ -25,10 +25,10 @@ jobs:
           persist-credentials: false
       - uses: ./.github/actions/setup-java
 
-      - run: ./scripts/androidx-release-notes.main.kts build-site
       - name: Minify Pages assets
         id: assets
         uses: ./.github/actions/minify-assets
+      - run: ./scripts/androidx-release-notes.main.kts build-site --minified
       - name: Upload minified assets
         uses: actions/upload-artifact@v7
         with:
