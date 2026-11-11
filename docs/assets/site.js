@@ -45,8 +45,11 @@
   const cards = [...document.querySelectorAll(".card")];
   const groups = [...document.querySelectorAll(".date-group")];
   const search = document.getElementById("release-search");
+  const filterButtons = [...document.querySelectorAll("[data-filter]")];
+  const dateLinks = [...document.querySelectorAll(".date-link, .date-back")].map(link => [link, new URL(link.href)]);
 
   const selectedKinds = new Set();
+  let lastSearch = location.search;
   const update = () => {
     // Every word must match, in any order, so "compose 1.8" finds "compose ui 1.8.0".
     const terms = search.value.toLowerCase().split(/\s+/).filter(Boolean);
@@ -65,16 +68,46 @@
       if (group.hidden !== hide) group.hidden = hide;
     }
   };
-  for (const button of document.querySelectorAll("[data-filter]")) {
+  // Keep shareable filters in the URL and in date links, including links opened in a new tab.
+  const syncUrl = () => {
+    const url = new URL(location.href);
+    if (search.value.trim()) url.searchParams.set("q", search.value);
+    else url.searchParams.delete("q");
+    url.searchParams.delete("s");
+    for (const kind of selectedKinds) url.searchParams.append("s", kind);
+    history.replaceState(history.state, "", url);
+    lastSearch = url.search;
+    for (const [link, target] of dateLinks) {
+      if (target.search === url.search) continue;
+      target.search = url.search;
+      link.href = target.href;
+    }
+  };
+  const restoreFilters = (initial = false) => {
+    const params = new URL(location.href).searchParams;
+    const query = params.get("q") ?? "";
+    search.value = query.trim() ? query : "";
+    const kinds = new Set(params.getAll("s"));
+    selectedKinds.clear();
+    for (const button of filterButtons) {
+      const selected = kinds.has(button.dataset.filter);
+      if (selected) selectedKinds.add(button.dataset.filter);
+      button.setAttribute("aria-pressed", selected);
+    }
+    if (!initial || search.value || selectedKinds.size) update();
+  };
+  for (const button of filterButtons) {
     button.addEventListener("click", () => {
       const kind = button.dataset.filter;
       if (!selectedKinds.delete(kind)) selectedKinds.add(kind);
       button.setAttribute("aria-pressed", selectedKinds.has(kind));
+      syncUrl();
       update();
     });
   }
   let searchTimer = 0;
   search.addEventListener("input", () => {
+    syncUrl();
     clearTimeout(searchTimer);
     searchTimer = setTimeout(update, 150);
   });
@@ -82,11 +115,18 @@
     if (event.key !== "Escape") return;
     clearTimeout(searchTimer);
     search.value = "";
+    syncUrl();
     update();
     search.blur();
   });
-  // Applies a query typed (or restored by the browser) before this script ran.
-  if (search.value) update();
+  addEventListener("popstate", () => {
+    if (location.search === lastSearch) return;
+    clearTimeout(searchTimer);
+    restoreFilters();
+    syncUrl();
+  });
+  restoreFilters(true);
+  syncUrl();
   //endregion
 
   //region Hash navigation and history
@@ -127,7 +167,8 @@
     if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || !(event.target instanceof Element)) return;
     const back = event.target.closest(".date-back");
     const previous = back && window.navigation?.entries()[navigation.currentEntry.index - 1];
-    if (previous && new URL(previous.url).pathname.replace(/index\.html$/, "") === back.pathname) {
+    const previousUrl = previous && new URL(previous.url);
+    if (previousUrl && previousUrl.pathname.replace(/index\.html$/, "") === back.pathname && previousUrl.search === back.search) {
       event.preventDefault();
       history.back();
       return;
