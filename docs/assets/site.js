@@ -103,7 +103,19 @@
     history.scrollRestoration = "manual";
   });
   // Align the URL target under the header once the page is rendered, and whenever the hash changes.
-  const goToHash = () => { try { goTo(document.getElementById(decodeURIComponent(location.hash.slice(1)))); } catch {} };
+  const goToHash = () => {
+    let id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+    const target = document.getElementById(id);
+    if (target?.closest("[hidden]")) {
+      clearTimeout(searchTimer);
+      search.value = "";
+      selectedKinds.clear();
+      document.querySelectorAll("[data-filter]").forEach(button => button.setAttribute("aria-pressed", "false"));
+      update();
+    }
+    goTo(target);
+  };
   requestAnimationFrame(goToHash);
   addEventListener("hashchange", goToHash);
 
