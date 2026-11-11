@@ -127,7 +127,8 @@
     if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || !(event.target instanceof Element)) return;
     const back = event.target.closest(".date-back");
     const previous = back && window.navigation?.entries()[navigation.currentEntry.index - 1];
-    if (previous && new URL(previous.url).pathname.replace(/index\.html$/, "") === back.pathname) {
+    const previousUrl = previous?.url ? new URL(previous.url) : null;
+    if (previousUrl && previousUrl.origin === back.origin && previousUrl.pathname.replace(/index\.html$/, "") === back.pathname) {
       event.preventDefault();
       history.back();
       return;
