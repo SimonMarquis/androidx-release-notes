@@ -4,13 +4,13 @@ on:
   push:
     branches: [main]
     paths:
-      - package.json
-      - package-lock.json
       - data/**
       - docs/assets/**
+      - package-lock.json
+      - package.json
       - scripts/**
-      - .github/actions/screenshot/action.yaml
       - .github/actions/minify-assets/action.yaml
+      - .github/actions/screenshot/action.yaml
       - .github/workflows/pages.yml
   workflow_dispatch:
 
