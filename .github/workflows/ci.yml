@@ -25,14 +25,6 @@ jobs:
           persist-credentials: false
       - uses: ./.github/actions/setup-java
 
-      - name: Generate lockfile
-        run: npm install --package-lock-only --include=dev
-      - name: Upload lockfile
-        uses: actions/upload-artifact@v7
-        with:
-          name: generated-lockfile
-          path: package-lock.json
-          if-no-files-found: error
       - name: Minify Pages assets
         id: assets
         uses: ./.github/actions/minify-assets
