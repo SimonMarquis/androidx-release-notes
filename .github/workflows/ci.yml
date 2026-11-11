@@ -63,6 +63,28 @@ jobs:
           if-no-files-found: error
 
       - run: ./scripts/androidx-release-notes.main.kts build-site --embedded
+      - name: Verify embedded original assets
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          html = Path("docs/index.html").read_text()
+          for name in ("site.js", "site.css"):
+              assert Path("docs/assets", name).read_text() in html
+          PY
+      - run: ./scripts/androidx-release-notes.main.kts build-site --embedded --minified
+      - name: Verify embedded minified assets
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          html = Path("docs/index.html").read_text()
+          for name in ("site.min.js", "site.min.css"):
+              content = Path("docs/assets", name).read_text()
+              content = "\\n".join(line for line in content.splitlines() if f"sourceMappingURL={name}.map" not in line)
+              assert content in html
+              assert f"sourceMappingURL={name}.map" not in html
+          PY
       - name: Upload index.html
         id: index
         uses: actions/upload-artifact@v7
