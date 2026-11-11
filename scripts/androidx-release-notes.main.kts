@@ -707,10 +707,10 @@ class SiteRenderer(private val docs: Path, private val embedded: Boolean) {
     private fun asset(name: String): String = assets.getOrPut(name) { docs.resolve("assets/$name").readText() }
 
     private fun HEAD.stylesheetAsset(name: String) =
-        if (embedded) style { unsafe { +asset(name) } } else link(rel = "stylesheet", href = "assets/$name")
+        if (embedded) style { unsafe { +asset(name) } } else link(rel = "stylesheet", href = "assets/${name.removeSuffix(".css")}.min.css")
 
     private fun FlowOrMetaDataOrPhrasingContent.scriptAsset(name: String) =
-        if (embedded) script { unsafe { +asset(name) } } else script(src = "assets/$name") {}
+        if (embedded) script { unsafe { +asset(name) } } else script(src = "assets/${name.removeSuffix(".js")}.min.js") {}
 
     //endregion
 
