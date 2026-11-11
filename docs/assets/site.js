@@ -1,6 +1,5 @@
 // Runs at the end of <body>, once every release section is parsed.
 (() => {
-  document.documentElement.classList.remove("loading");
   const isIndex = document.body.hasAttribute("data-date-navigation");
   const header = document.querySelector(".site-header");
 
@@ -119,7 +118,10 @@
   requestAnimationFrame(goToHash);
   addEventListener("hashchange", goToHash);
 
-  if (!isIndex) return;
+  if (!isIndex) {
+    document.documentElement.classList.remove("loading");
+    return;
+  }
   const visibleGroups = () => groups.filter(group => !group.hidden);
   const currentIndex = visible => {
     const edge = header.getBoundingClientRect().bottom + 16;
@@ -146,5 +148,6 @@
     event.preventDefault();
     navigate(key === "n" ? 1 : -1);
   });
+  document.documentElement.classList.remove("loading");
 })();
 

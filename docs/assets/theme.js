@@ -17,6 +17,17 @@
   setTheme();
   root.classList.add("loading");
   document.addEventListener("DOMContentLoaded", () => setTheme());
+  // A missing or failed site script must not leave the loading indicator running forever.
+  addEventListener("load", () => {
+    if (!root.classList.contains("loading")) return;
+    root.classList.remove("loading");
+    document.querySelectorAll(".filter-btn, .search-control input, .date-step").forEach(control => { control.disabled = true; });
+    const message = document.createElement("div");
+    message.className = "load-error";
+    message.setAttribute("role", "alert");
+    message.textContent = "Search and filters could not load. Reload to try again.";
+    document.body.append(message);
+  });
   system.addEventListener("change", () => setTheme());
   // Keeps other open tabs in sync with a theme picked here.
   addEventListener("storage", event => { if (event.key === storageKey) setTheme(event.newValue); });
@@ -29,3 +40,4 @@
     try { theme ? localStorage.setItem(storageKey, theme) : localStorage.removeItem(storageKey); } catch {}
   });
 })();
+
