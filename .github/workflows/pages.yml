@@ -8,6 +8,7 @@ on:
       - docs/assets/**
       - scripts/**
       - .github/actions/screenshot/action.yaml
+      - .github/actions/minify-assets/action.yaml
       - .github/workflows/pages.yml
   workflow_dispatch:
 
@@ -32,6 +33,7 @@ jobs:
       - uses: ./.github/actions/setup-java
 
       - run: ./scripts/androidx-release-notes.main.kts build-site
+      - uses: ./.github/actions/minify-assets
 
       - name: Capture previews
         id: previews
