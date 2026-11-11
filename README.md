@@ -5,7 +5,6 @@ Browse AndroidX release notes across libraries and dates in one place.
 - 🗓️ **Timeline:** Read the entire history of release notes.
 - 🎛️ **Stability:** Filter Stable, RC, Beta, or Alpha releases.
 - 🔎 **Search:** Find libraries and versions across the full timeline.
-- 🔗 **Share:** Copy the URL to share your search and stability filters.
 - ✨ **Less repetition:** Skip repeated metadata and focus on the changes.
 - 🔗 **Compact links:** Open issues, reviews, GitHub references, and commits.
 
