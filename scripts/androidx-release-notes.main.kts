@@ -902,11 +902,13 @@ object ReferenceLinks {
         outputSettings().prettyPrint(false)
         linkifyRawIssueReferences()
         dropBlockWhitespace()
-        val links = select("a[href]")
-        links.forEach { it.repairHref() }
-        links.forEach { link ->
+        select("a[href]").forEach { link ->
+            link.repairHref()
             val kind = link.referenceKind ?: return@forEach
             link.attr("title", link.label.ifEmpty { link.href }).addClass("ref").addClass(kind)
+        }
+        select("img").forEach { img ->
+            img.attr("loading", "lazy").attr("decoding", "async")
         }
         unwrapReferenceGroups()
     }.body().html()
