@@ -13,12 +13,12 @@ runs:
     - uses: actions/setup-node@v7
       with:
         node-version: 24
-        package-manager-cache: false
+        cache: npm
     - id: minify
       shell: bash
       run: |
         set -euo pipefail
-        npm install --no-package-lock --include=dev
+        npm ci --include=dev
         ./node_modules/.bin/esbuild docs/assets/site.js --minify --sourcemap --outfile=docs/assets/site.min.js
         ./node_modules/.bin/esbuild docs/assets/site.css --minify --sourcemap --outfile=docs/assets/site.min.css
         echo 'javascript=docs/assets/site.min.js' >> "$GITHUB_OUTPUT"
