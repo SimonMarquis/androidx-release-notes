@@ -53,7 +53,7 @@ Run `./scripts/androidx-release-notes.main.kts <command>` from the repository ro
 | --- | --- |
 | `sync-rss` | Import new or updated entries from the feed. |
 | `ignore <YYYY-MM-DD>` | Ignore every entry for a date. |
-| `build-site` | Generate the HTML pages. `--embedded` inlines assets. |
+| `build-site` | Generate the HTML pages. `--embedded` inlines assets; add `--minified` to inline previously generated minified CSS and JS. |
 | `sync-releases` | Create, update, or delete one GitHub release per date. `--changed-from SHA` limits it to changed dates. |
 | `import-history` | Import new entries from the all-channel page. |
 
