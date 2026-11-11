@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
     paths:
+      - package.json
       - data/**
       - docs/assets/**
       - scripts/**
