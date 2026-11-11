@@ -25,6 +25,43 @@ jobs:
           persist-credentials: false
       - uses: ./.github/actions/setup-java
 
+      - run: ./scripts/androidx-release-notes.main.kts build-site
+      - name: Minify Pages assets
+        id: assets
+        uses: ./.github/actions/minify-assets
+      - name: Verify generated assets
+        env:
+          JS_FILE: ${{ steps.assets.outputs.javascript }}
+          CSS_FILE: ${{ steps.assets.outputs.stylesheet }}
+        run: |
+          node --check "$JS_FILE"
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          for env, source in (("JS_FILE", "site.js"), ("CSS_FILE", "site.css")):
+              output = Path(os.environ[env])
+              assert output.is_file() and output.stat().st_size > 0
+              content = output.read_text()
+              assert f"sourceMappingURL={output.name}.map" in content
+              mapping = json.loads(Path(f"{output}.map").read_text())
+              assert mapping["version"] == 3 and mapping["mappings"]
+              assert Path(mapping["sources"][0]).name == source
+              assert mapping["sourcesContent"][0] == (output.parent / source).read_text()
+              assert f"assets/{output.name}" in Path("docs/index.html").read_text()
+          PY
+      - name: Upload minified assets
+        uses: actions/upload-artifact@v7
+        with:
+          name: minified-assets
+          path: |
+            ${{ steps.assets.outputs.javascript }}
+            ${{ steps.assets.outputs.javascript }}.map
+            ${{ steps.assets.outputs.stylesheet }}
+            ${{ steps.assets.outputs.stylesheet }}.map
+          if-no-files-found: error
+
       - run: ./scripts/androidx-release-notes.main.kts build-site --embedded
       - name: Upload index.html
         id: index
