@@ -1,6 +1,40 @@
 // Runs at the end of <body>, once every release section is parsed.
 (() => {
-  document.documentElement.classList.remove("loading");
+  // The head bootstrap applies the stored theme before paint; keep it in sync afterwards.
+  const root = document.documentElement;
+  const storageKey = "androidx-release-notes-theme";
+  const system = matchMedia("(prefers-color-scheme: dark)");
+  const themeColors = document.querySelectorAll('meta[name="theme-color"][data-theme-color]');
+  const themeToggle = document.getElementById("theme-toggle");
+  const normalizeTheme = value => ["light", "dark"].includes(value) ? value : null;
+  // Re-read in case another tab changed the preference while this document was parsing.
+  let preference = ["light", "dark"].find(name => root.classList.contains(name)) ?? null;
+  try { preference = normalizeTheme(localStorage.getItem(storageKey)); } catch {}
+  const isDark = () => preference ? preference === "dark" : system.matches;
+  const applyTheme = () => {
+    for (const name of ["light", "dark"]) root.classList.toggle(name, preference === name);
+    themeColors.forEach(meta => {
+      const color = meta.dataset.themeColor;
+      meta.media = preference ? (color === preference ? "all" : "not all") : `(prefers-color-scheme: ${color})`;
+    });
+    themeToggle?.setAttribute("aria-pressed", isDark());
+  };
+  applyTheme();
+  system.addEventListener("change", applyTheme);
+  addEventListener("storage", event => {
+    if (event.key === storageKey || event.key === null) {
+      preference = normalizeTheme(event.newValue);
+      applyTheme();
+    }
+  });
+  themeToggle?.addEventListener("click", () => {
+    const dark = !isDark();
+    preference = dark === system.matches ? null : dark ? "dark" : "light";
+    applyTheme();
+    try { preference ? localStorage.setItem(storageKey, preference) : localStorage.removeItem(storageKey); } catch {}
+  });
+
+  root.classList.remove("loading");
   const isIndex = document.body.hasAttribute("data-date-navigation");
   const header = document.querySelector(".site-header");
 
