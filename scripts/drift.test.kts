@@ -54,6 +54,11 @@ check(fixtureResult.flatMap { it.components }.size == 5)
 check(fixtureResult.none { entry -> entry.components.any { "other-" in it.url } })
 check(DriftFixer(fixtureScraper(fixtureHtml)).reconcile(fixtureResult) == fixtureResult)
 
+// Correct a cached version label when it disagrees with its actual source anchor.
+val fixtureMislabeled = fixtureEntry(components = listOf(fixtureComponent().copy(version = "9.9.9")))
+val fixtureCorrected = DriftFixer(fixtureScraper(fixtureHtml)).reconcile(listOf(fixtureMislabeled))
+check(fixtureCorrected.first().components.first().version == "1.0.0")
+
 // Ignore markers suppress updates and prevent missing versions from resurrecting an ignored date.
 val fixtureIgnoredDate = LocalDate.parse("2026-01-03")
 val fixtureIgnored = fixtureEntry(fixtureIgnoredDate, listOf(fixtureComponent("1.2.0")), ignored = true)

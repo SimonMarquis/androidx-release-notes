@@ -338,6 +338,7 @@ fun Document.allChannelEntries(): List<FeedEntry> {
 private val modernComponentLabel = Regex("^(.+?)\\s+Version\\s+(\\S+)$", RegexOption.IGNORE_CASE)
 private val legacyComponentLabel = Regex("^(.+?)\\s+(\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?)$")
 private val componentVersion = Regex("^\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?$")
+private val versionAnchor = Regex("^(.*?)(\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?)$")
 
 /** Reads a "Name Version x.y.z" (or legacy "Name x.y.z") link to an AndroidX release page. */
 fun Element.toComponentNote(): ComponentNote? {
@@ -463,15 +464,14 @@ class DriftFixer(private val scraper: ComponentScraper = ComponentScraper()) {
                 val fresh = byUrl[cached.url] ?: return@map cached.also {
                     Log.warn("Keeping unavailable cached release: ${it.url}")
                 }
-                require(cached.version == fresh.version) { "Version mismatch at ${cached.url}" }
                 require(!cached.detailsHtml.hasVisibleDetails() || fresh.detailsHtml.hasVisibleDetails()) {
                     "Refusing to erase cached changelog for ${cached.name} ${cached.version}: ${cached.url}"
                 }
-                cached.copy(url = fresh.url, detailsHtml = fresh.detailsHtml, commitsUrl = fresh.commitsUrl)
+                cached.copy(version = fresh.version, url = fresh.url, detailsHtml = fresh.detailsHtml, commitsUrl = fresh.commitsUrl)
             })
         }
         val knownUrls = records.flatMap(EntryRecord::components).map(ComponentRecord::url).toSet()
-        val knownKeys = registered.map(ComponentRecord::key).toMutableSet()
+        val knownKeys = result.values.flatMap(EntryRecord::components).map(ComponentRecord::key).toMutableSet()
         val ignoredDates = records.filter(EntryRecord::ignored).map(EntryRecord::releasedOn).toSet()
         for (release in history.sortedWith(compareBy({ it.date }, { it.component.name }, { it.component.version }, { it.component.url }))) {
             val fresh = release.component
@@ -545,10 +545,11 @@ class ComponentScraper(private val fetch: (String) -> Document = { fetchDocument
         val families = registered.groupBy { cached ->
             val note = resolved[cached.url] ?: ComponentNote(cached.name, cached.version, cached.url)
             val fragment = URI(note.url).fragment
-            require(fragment.endsWith(note.version)) { "Unrecognized version anchor: ${note.url}" }
-            note.url.pageUrl to fragment.removeSuffix(note.version)
+            val match = versionAnchor.matchEntire(fragment) ?: error("Unrecognized version anchor: ${note.url}")
+            note.url.pageUrl to match.groupValues[1]
         }
-        return families.flatMap { (family, cached) ->
+        val failures = mutableListOf<String>()
+        val history = families.flatMap { (family, cached) -> runCatching {
             val (url, prefix) = family
             val prototype = cached.last()
             val releases = page(url).select("[id]").mapNotNull { target ->
@@ -576,7 +577,12 @@ class ComponentScraper(private val fetch: (String) -> Document = { fetchDocument
                 require(resolved[it.url]?.url?.let(discovered::contains) != false) { "Cached release was not enumerated: ${it.url}" }
             }
             releases
-        }
+        }.getOrElse {
+            failures += it.message ?: it.toString()
+            emptyList()
+        } }
+        check(failures.isEmpty()) { "Could not parse release histories:\n${failures.joinToString("\n")}" }
+        return history
     }
 
     /** Finds the release section on the component page, or on the page it was renamed to. */
