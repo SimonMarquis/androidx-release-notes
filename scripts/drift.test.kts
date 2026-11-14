@@ -126,7 +126,9 @@ check(fixtureRenamed.flatMap { it.components }.size == 2)
 // Parse failures, truncated pages, and identity collisions are errors, not deletions or partial repairs.
 mustFail("missing cached section") { DriftFixer(fixtureScraper("<h1>No notes</h1>")).reconcile(listOf(fixtureEntry())) }
 mustFail("missing release date") {
-    DriftFixer(fixtureScraper("<h3 id='1.0.0'>Version 1.0.0</h3><p>Notes without a date</p>")).reconcile(listOf(fixtureEntry()))
+    val noDate = fixtureSection("1.0.0", "January 1, 2026", "Updated notes") +
+        "<h3 id='1.1.0'>Version 1.1.0</h3><p>New version without a date</p>"
+    DriftFixer(fixtureScraper(noDate)).reconcile(listOf(fixtureEntry()))
 }
 mustFail("empty changelog") {
     DriftFixer(fixtureScraper("<h3 id='1.0.0'>Version 1.0.0</h3><p>January 1, 2026</p>")).reconcile(listOf(fixtureEntry()))
@@ -159,4 +161,27 @@ try {
 } finally {
     fixtureDirectory.toFile().deleteRecursively()
 }
+
+// Historical date spellings and dates sharing a paragraph with release text.
+check("April 25th, 2019".toReleaseDateOrNull() == LocalDate.parse("2019-04-25"))
+check("Sept 28, 2021".toReleaseDateOrNull() == LocalDate.parse("2021-09-28"))
+check("Nov. 18, 2021".toReleaseDateOrNull() == LocalDate.parse("2021-11-18"))
+check("May 16, 2018 We recommend upgrading.".releaseDatePrefixOrNull() == LocalDate.parse("2018-05-16"))
+check("May 16, 2018 We recommend upgrading.".toReleaseDateOrNull() == null)
+val fixtureJoinedDate = "<h3 id='1.0.0'>Version 1.0.0</h3><p>Jan 1st, 2026 Please upgrade.</p><p>Updated notes</p>"
+check(DriftFixer(fixtureScraper(fixtureJoinedDate)).reconcile(listOf(fixtureEntry())).single().releasedOn == fixtureDate)
+
+// Condensed release sections can lose their date; use a unique stored date for that version.
+val fixtureCondensed = "<h3 id='1.0.0'>Version 1.0.0</h3><p>Use the stable version.</p>"
+check(DriftFixer(fixtureScraper(fixtureCondensed)).reconcile(listOf(fixtureEntry())).single().releasedOn == fixtureDate)
+val fixtureRetiredPage = DriftFixer(ComponentScraper {
+    Jsoup.parse("<h1>AndroidX releases</h1><table></table>", "https://developer.android.com/jetpack/androidx/versions")
+}).reconcile(listOf(fixtureEntry()))
+check(fixtureRetiredPage == listOf(fixtureEntry()))
+
+// Date metadata from older parser versions is safe to remove.
+val fixtureOldDateOnly = fixtureEntry(components = listOf(fixtureComponent(details = "<p>January 1st, 2026</p>")))
+check(DriftFixer(fixtureScraper("<h3 id='1.0.0'>Version 1.0.0</h3><p>January 1st, 2026</p>"))
+    .reconcile(listOf(fixtureOldDateOnly)).single().components.single().detailsHtml.isEmpty())
+
 println("✅ Drift reconciliation fixtures passed")

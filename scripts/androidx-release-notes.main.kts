@@ -451,7 +451,9 @@ class DriftFixer(private val scraper: ComponentScraper = ComponentScraper()) {
         records.associateByCanonicalId()
         val registered = records.sortedBy(EntryRecord::releasedOn).flatMap(EntryRecord::components)
         require(registered.isNotEmpty()) { "No registered components in the archive" }
-        val history = scraper.history(registered)
+        val dates = records.flatMap { entry -> entry.components.map { (it.url to it.version) to entry.releasedOn } }
+            .groupBy({ it.first }, { it.second }).mapValues { it.value.distinct() }
+        val history = scraper.history(registered, dates)
         val byUrl = history.flatMap { release ->
             (release.aliases + release.component.url).map { it to release.component }
         }.groupBy({ it.first }, { it.second }).mapValues { (url, components) ->
@@ -536,7 +538,7 @@ class ComponentScraper(private val fetch: (String) -> Document = { fetchDocument
     private fun page(url: String): Document = url.pageUrl.let { pages.getOrPut(it) { fetch(it) } }
 
     /** Enumerates version anchors in the same release families as the cached components. */
-    fun history(registered: List<ComponentRecord>): List<DatedComponent> {
+    fun history(registered: List<ComponentRecord>, dates: Map<Pair<String, String>, List<LocalDate>>): List<DatedComponent> {
         // Resolve old page names and bare version aliases before deriving the anchor families.
         val resolved = registered.distinctBy { it.url to it.version }.mapNotNull { cached ->
             val note = ComponentNote(cached.name, cached.version, cached.url)
@@ -570,9 +572,15 @@ class ComponentScraper(private val fetch: (String) -> Document = { fetchDocument
                 require(versions.isNotEmpty()) { "No version label at $url#$anchor" }
                 val releaseUrl = "$url#$anchor"
                 val section = Jsoup.parseBodyFragment(header.releaseSectionHtml(), releaseUrl)
-                val date = section.select("p, time").firstNotNullOfOrNull { it.text().toReleaseDateOrNull() }
-                    ?: error("No release date for ${prototype.name} at $releaseUrl")
+                val sourceDate = (listOf(section.body()) + section.select("p, time, div"))
+                    .firstNotNullOfOrNull { it.text().releaseDatePrefixOrNull() }
                 versions.map { version ->
+                    val cachedDates = cached.filter {
+                        (resolved[it.url to it.version]?.url ?: it.url) == releaseUrl &&
+                            (it.version == version || versions.size == 1)
+                    }.flatMap { dates[it.url to it.version].orEmpty() }.distinct()
+                    val date = sourceDate ?: cachedDates.singleOrNull()
+                        ?: error("No unambiguous release date for ${prototype.name} $version at $releaseUrl")
                     val note = resolvedByUrl[releaseUrl]
                         ?: scrape(ComponentNote(prototype.name, version, releaseUrl), strict = true)
                     val aliases = aliasesByUrl[releaseUrl].orEmpty().toSet()
@@ -580,7 +588,9 @@ class ComponentScraper(private val fetch: (String) -> Document = { fetchDocument
                 }
             }.distinctBy { it.component.url to it.component.version }
             if (releases.isEmpty()) {
-                require(page(url).select("[id]").any {
+                val document = page(url)
+                val retired = URI(document.location()).path.trimEnd('/') == "/jetpack/androidx/versions"
+                require(retired || document.select("[id]").any {
                     it.closest(HEADINGS) != null && Regex("\\d+\\.\\d+\\.\\d+").containsMatchIn(it.id())
                 }) { "No recognizable release sections at $url" }
                 Log.warn("No remaining sections for ${prototype.name} at $url (prefix '$prefix'); keeping cached releases")
@@ -695,15 +705,15 @@ private val sectionTitle = Regex(
         "Important changes since .+|Known Issues|Other Changes|Documentation Changes):?$",
 )
 
-/** Whether this HTML shows more than section titles. */
+/** Whether this HTML shows more than release dates and section titles. */
 fun String.hasVisibleDetails(): Boolean {
     val body = Jsoup.parseBodyFragment(this).body()
-    if (body.text().isBlank()) return false
+    if (body.text().isBlank() || body.text().toReleaseDateOrNull() != null) return false
     fun Element.isSectionTitle(): Boolean {
         val isTitle = headingLevel != null || normalName() == "p" && children().size == 1 && child(0).normalName() == "strong"
         return isTitle && sectionTitle.matches(text())
     }
-    return body.children().let { children -> children.isEmpty() || children.any { !it.isSectionTitle() } }
+    return body.children().let { children -> children.isEmpty() || children.any { !it.isSectionTitle() && it.text().toReleaseDateOrNull() == null } }
 }
 
 //endregion
@@ -1317,10 +1327,22 @@ private val releaseDateFormatter = DateTimeFormatterBuilder()
     .toFormatter(Locale.US)
 private val dateAnchorFormatter = DateTimeFormatter.ofPattern("MMMM_d_yyyy", Locale.US)
 private val looseDayYear = Regex("(\\d)\\s*,?\\s*(\\d{4})$")
+private val ordinalDay = Regex("(?i)(\\d{1,2})(?:st|nd|rd|th)\\b")
+private val shortMonth = Regex("(?i)^(Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sept?|Oct|Nov|Dec)\\.?(?=\\s)")
+private val monthNames = listOf("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+private val releaseDatePrefix = Regex("(?i)^[a-z]+\\.?\\s+\\d{1,2}(?:st|nd|rd|th)?\\s*,?\\s*\\d{4}\\b")
 
 /** Parses a "Month d, yyyy" release heading, tolerating a missing or unspaced comma. */
 fun String.toReleaseDateOrNull(): LocalDate? =
-    runCatching { LocalDate.parse(trim().replace(looseDayYear, "$1, $2"), releaseDateFormatter) }.getOrNull()
+    runCatching {
+        val normalized = trim().replace(ordinalDay, "$1").replace(shortMonth) { match ->
+            monthNames.first { it.startsWith(match.groupValues[1].take(3), ignoreCase = true) }
+        }.replace(looseDayYear, "$1, $2")
+        LocalDate.parse(normalized, releaseDateFormatter)
+    }.getOrNull()
+
+/** Dates can share a paragraph with the release announcement or other text. */
+fun String.releaseDatePrefixOrNull(): LocalDate? = releaseDatePrefix.find(trim())?.value?.toReleaseDateOrNull()
 
 /** The release heading of this date, e.g. "October 7, 2026". */
 val LocalDate.heading: String get() = format(releaseDateFormatter)
