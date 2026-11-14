@@ -339,6 +339,7 @@ private val modernComponentLabel = Regex("^(.+?)\\s+Version\\s+(\\S+)$", RegexOp
 private val legacyComponentLabel = Regex("^(.+?)\\s+(\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?)$")
 private val componentVersion = Regex("^\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?$")
 private val versionAnchor = Regex("^(.*?)(\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?)$")
+private val headingVersion = Regex("\\b\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?")
 
 /** Reads a "Name Version x.y.z" (or legacy "Name x.y.z") link to an AndroidX release page. */
 fun Element.toComponentNote(): ComponentNote? {
@@ -453,29 +454,33 @@ class DriftFixer(private val scraper: ComponentScraper = ComponentScraper()) {
         val byUrl = history.flatMap { release ->
             (release.aliases + release.component.url).map { it to release.component }
         }.groupBy({ it.first }, { it.second }).mapValues { (url, components) ->
-            require(components.distinctBy { Triple(it.version, it.detailsHtml, it.commitsUrl) }.size == 1) {
-                "Ambiguous scraped release: $url"
+            components.groupBy(ComponentRecord::version).forEach { (version, matches) ->
+                require(matches.distinctBy { it.detailsHtml to it.commitsUrl }.size == 1) {
+                    "Ambiguous scraped release: $url ($version)"
+                }
             }
-            components.first()
+            components.distinctBy(ComponentRecord::version)
         }
         val result = records.associateByTo(linkedMapOf(), EntryRecord::canonicalId)
         for (entry in records.filterNot(EntryRecord::ignored)) {
             result[entry.canonicalId] = entry.copy(components = entry.components.map { cached ->
-                val fresh = byUrl[cached.url] ?: return@map cached.also {
+                val matches = byUrl[cached.url] ?: return@map cached.also {
                     Log.warn("Keeping unavailable cached release: ${it.url}")
                 }
+                val fresh = matches.firstOrNull { it.version == cached.version } ?: matches.singleOrNull()
+                    ?: error("Ambiguous version label for ${cached.version} at ${cached.url}")
                 require(!cached.detailsHtml.hasVisibleDetails() || fresh.detailsHtml.hasVisibleDetails()) {
                     "Refusing to erase cached changelog for ${cached.name} ${cached.version}: ${cached.url}"
                 }
                 cached.copy(version = fresh.version, url = fresh.url, detailsHtml = fresh.detailsHtml, commitsUrl = fresh.commitsUrl)
             })
         }
-        val knownUrls = records.flatMap(EntryRecord::components).map(ComponentRecord::url).toSet()
+        val knownReleases = result.values.flatMap(EntryRecord::components).map { it.url to it.version }.toSet()
         val knownKeys = result.values.flatMap(EntryRecord::components).map(ComponentRecord::key).toMutableSet()
         val ignoredDates = records.filter(EntryRecord::ignored).map(EntryRecord::releasedOn).toSet()
         for (release in history.sortedWith(compareBy({ it.date }, { it.component.name }, { it.component.version }, { it.component.url }))) {
             val fresh = release.component
-            if ((release.aliases + fresh.url).any { it in knownUrls } || release.date in ignoredDates) continue
+            if ((release.aliases + fresh.url).any { it to fresh.version in knownReleases } || release.date in ignoredDates) continue
             require(knownKeys.add(fresh.key)) { "Ambiguous new component identity ${fresh.key} at ${fresh.url}" }
             val id = "tag:google.com,2016:androidx-release-notes#${release.date.anchor}"
             val entry = result[id] ?: EntryRecord(
@@ -538,12 +543,12 @@ class ComponentScraper(private val fetch: (String) -> Document = { fetchDocument
             // Some retired release anchors are no longer published. Keep their cache, but still
             // enumerate the family's remaining versions instead of blocking the whole archive.
             if (locate(note, fragment).second == null) null
-            else cached.url to scrape(note, strict = true)
+            else (cached.url to cached.version) to scrape(note, strict = true)
         }.toMap()
         val resolvedByUrl = resolved.values.associateBy(ComponentNote::url)
-        val aliasesByUrl = resolved.entries.groupBy({ it.value.url }, { it.key })
+        val aliasesByUrl = resolved.entries.groupBy({ it.value.url }, { it.key.first })
         val families = registered.groupBy { cached ->
-            val note = resolved[cached.url] ?: ComponentNote(cached.name, cached.version, cached.url)
+            val note = resolved[cached.url to cached.version] ?: ComponentNote(cached.name, cached.version, cached.url)
             val fragment = URI(note.url).fragment
             val match = versionAnchor.matchEntire(fragment) ?: error("Unrecognized version anchor: ${note.url}")
             note.url.pageUrl to match.groupValues[1]
@@ -552,20 +557,24 @@ class ComponentScraper(private val fetch: (String) -> Document = { fetchDocument
         val history = families.flatMap { (family, cached) -> runCatching {
             val (url, prefix) = family
             val prototype = cached.last()
-            val releases = page(url).select("[id]").mapNotNull { target ->
-                val header = target.closest(HEADINGS) ?: return@mapNotNull null
+            val releases = page(url).select("[id]").flatMap sections@{ target ->
+                val header = target.closest(HEADINGS) ?: return@sections emptyList()
                 val anchor = target.id()
-                if (!anchor.startsWith(prefix)) return@mapNotNull null
-                val version = anchor.removePrefix(prefix).takeIf(componentVersion::matches) ?: return@mapNotNull null
+                if (!anchor.startsWith(prefix) || !componentVersion.matches(anchor.removePrefix(prefix))) return@sections emptyList()
+                // Anchor IDs occasionally contain typos; the visible heading is authoritative.
+                val versions = headingVersion.findAll(header.text()).map { it.value.trimEnd('.') }.distinct().toList()
+                require(versions.isNotEmpty()) { "No version label at $url#$anchor" }
                 val releaseUrl = "$url#$anchor"
                 val section = Jsoup.parseBodyFragment(header.releaseSectionHtml(), releaseUrl)
                 val date = section.select("p, time").firstNotNullOfOrNull { it.text().toReleaseDateOrNull() }
-                    ?: error("No release date for ${prototype.name} $version at $releaseUrl")
-                val note = resolvedByUrl[releaseUrl]
-                    ?: scrape(ComponentNote(prototype.name, version, releaseUrl), strict = true)
-                val aliases = aliasesByUrl[releaseUrl].orEmpty().toSet()
-                DatedComponent(date, prototype.copy(version = version, url = note.url, detailsHtml = note.detailsHtml, commitsUrl = note.commitsUrl), aliases)
-            }.distinctBy { it.component.url }
+                    ?: error("No release date for ${prototype.name} at $releaseUrl")
+                versions.map { version ->
+                    val note = resolvedByUrl[releaseUrl]
+                        ?: scrape(ComponentNote(prototype.name, version, releaseUrl), strict = true)
+                    val aliases = aliasesByUrl[releaseUrl].orEmpty().toSet()
+                    DatedComponent(date, prototype.copy(version = version, url = note.url, detailsHtml = note.detailsHtml, commitsUrl = note.commitsUrl), aliases)
+                }
+            }.distinctBy { it.component.url to it.component.version }
             if (releases.isEmpty()) {
                 require(page(url).select("[id]").any {
                     it.closest(HEADINGS) != null && Regex("\\d+\\.\\d+\\.\\d+").containsMatchIn(it.id())
@@ -574,7 +583,7 @@ class ComponentScraper(private val fetch: (String) -> Document = { fetchDocument
             }
             val discovered = releases.map { it.component.url }.toSet()
             cached.forEach {
-                require(resolved[it.url]?.url?.let(discovered::contains) != false) { "Cached release was not enumerated: ${it.url}" }
+                require(resolved[it.url to it.version]?.url?.let(discovered::contains) != false) { "Cached release was not enumerated: ${it.url}" }
             }
             releases
         }.getOrElse {

@@ -59,6 +59,17 @@ val fixtureMislabeled = fixtureEntry(components = listOf(fixtureComponent().copy
 val fixtureCorrected = DriftFixer(fixtureScraper(fixtureHtml)).reconcile(listOf(fixtureMislabeled))
 check(fixtureCorrected.first().components.first().version == "1.0.0")
 
+// A typo in an official anchor must not override the visible release heading.
+val fixtureAnchorTypo = fixtureSection("1.1.0", "January 1, 2026", "Updated notes").replace("id=\"1.1.0\"", "id=\"1.0.0\"")
+check(DriftFixer(fixtureScraper(fixtureAnchorTypo)).reconcile(listOf(fixtureEntry())).single().components.single().version == "1.1.0")
+
+// Multiple versions may share one release section and one URL.
+val fixtureSharedHeading = fixtureSection("1.0.0", "January 1, 2026", "Shared notes")
+    .replace(">Version 1.0.0<", ">Versions 1.0.0 and 1.1.0<")
+val fixtureShared = DriftFixer(fixtureScraper(fixtureSharedHeading)).reconcile(listOf(fixtureEntry()))
+check(fixtureShared.single().components.map { it.version }.toSet() == setOf("1.0.0", "1.1.0"))
+check(DriftFixer(fixtureScraper(fixtureSharedHeading)).reconcile(fixtureShared) == fixtureShared)
+
 // Ignore markers suppress updates and prevent missing versions from resurrecting an ignored date.
 val fixtureIgnoredDate = LocalDate.parse("2026-01-03")
 val fixtureIgnored = fixtureEntry(fixtureIgnoredDate, listOf(fixtureComponent("1.2.0")), ignored = true)
