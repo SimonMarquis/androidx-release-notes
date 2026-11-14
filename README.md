@@ -52,6 +52,7 @@ Run `./scripts/androidx-release-notes.main.kts <command>` from the repository ro
 | Command | Operation |
 | --- | --- |
 | `sync-rss` | Import new or updated entries from the feed. |
+| `fix-drift` | Crawl every registered component’s full release history and repair changed or missing changelogs. `--dry-run` reports changes without writing JSON. |
 | `ignore <YYYY-MM-DD>` | Ignore every entry for a date. |
 | `build-site` | Generate HTML pages. `--embedded` inlines assets; `--minified` uses generated minified assets. |
 | `sync-releases` | Create, update, or delete one GitHub release per date. `--changed-from SHA` limits it to changed dates. |
@@ -60,8 +61,17 @@ Run `./scripts/androidx-release-notes.main.kts <command>` from the repository ro
 ### Workflows
 
 - [![🔃 RSS sync](https://github.com/SimonMarquis/androidx-release-notes/actions/workflows/rss.yml/badge.svg)](https://github.com/SimonMarquis/androidx-release-notes/actions/workflows/rss.yml) runs `sync-rss` periodically and commits new JSON in `data/`.
+- [🧭 Drift correction](.github/workflows/drift.yml) runs weekly and manually on `main`, creating or updating one PR from `automation/changelog-drift`. On PRs affecting the script or workflow, it runs the same reconciliation and only logs the produced diff.
 - [![📝 Pages sync](https://github.com/SimonMarquis/androidx-release-notes/actions/workflows/pages.yml/badge.svg)](https://github.com/SimonMarquis/androidx-release-notes/actions/workflows/pages.yml) rebuilds `docs/`, refreshes `art/` screenshots, and syncs releases.
 - [![🏗️ CI](https://github.com/SimonMarquis/androidx-release-notes/actions/workflows/ci.yml/badge.svg)](https://github.com/SimonMarquis/androidx-release-notes/actions/workflows/ci.yml) builds self-contained preview pages and screenshots on PRs.
 
 Workflows push as a GitHub App (`APP_CLIENT_ID`, `APP_PRIVATE_KEY` secrets).  
 GitHub Pages serves [`docs`](docs/) from `main`.
+
+### Drift reconciliation
+
+`fix-drift` uses cached component URLs and version-anchor prefixes as the registry. It fetches each official library page once, resolves existing aliases and renamed pages, enumerates matching version sections, and reuses the RSS changelog parser. Existing entry metadata and component identities are preserved; missing versions are added to the corresponding dated entries. Ignored entries remain unchanged, and ignored dates are not repopulated.
+
+The command validates the full crawl before saving. Missing sections, missing dates, ambiguous identities, or a source response that would erase a cached changelog fail the run without writing data. Unchanged records are not rewritten. After a correction PR is merged, Pages sync rebuilds the site and updates GitHub releases.
+
+Run `./scripts/test-drift.sh` for offline parser and reconciliation fixtures.

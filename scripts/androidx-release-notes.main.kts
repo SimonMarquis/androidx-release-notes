@@ -78,7 +78,7 @@ class ReleaseNotesCommand : NoOpCliktCommand(__FILE__.name) {
     override fun help(context: Context) = "Build and maintain the AndroidX release-notes archive."
 
     init {
-        subcommands(ImportHistoryCommand(), SyncRssCommand(), IgnoreCommand(), BuildSiteCommand(), SyncReleasesCommand())
+        subcommands(ImportHistoryCommand(), SyncRssCommand(), FixDriftCommand(), IgnoreCommand(), BuildSiteCommand(), SyncReleasesCommand())
     }
 }
 
@@ -103,6 +103,27 @@ class SyncRssCommand : CliktCommand(name = "sync-rss") {
     private val input by option(help = "Atom file or feed URL.").default(FEED_URL)
 
     override fun run() = Importer().import(loadDocument(input, FEED_URL, Parser.xmlParser()).atomEntries(), fromRss = true)
+}
+
+class FixDriftCommand : CliktCommand(name = "fix-drift") {
+    override fun help(context: Context) = "Reconcile every registered component's release history with its official library page."
+    private val dryRun by option(help = "Report drift without writing the JSON cache.").flag()
+
+    override fun run() {
+        val archive = Archive()
+        val records = archive.load()
+        val previous = records.associateByCanonicalId()
+        // Crawl and validate the complete result before changing any files.
+        val updates = DriftFixer().reconcile(records).filter { it != previous[it.canonicalId] }
+        updates.forEach { record ->
+            val old = previous[record.canonicalId]
+            record.components.filter { it !in old?.components.orEmpty() }.forEach {
+                Log.info("🧭 ${record.releasedOn}: ${it.name} ${it.version} (${it.url})")
+            }
+        }
+        if (!dryRun) updates.forEach { archive.save(it, previous[it.canonicalId]) }
+        echo("🧭 ${updates.size} entries ${if (dryRun) "would change" else "changed"}.")
+    }
 }
 
 class IgnoreCommand : CliktCommand(name = "ignore") {
@@ -357,7 +378,7 @@ class Importer(private val archive: Archive = Archive(), private val scraper: Co
                 releasedOn = entry.releasedOn,
                 updated = entry.updated,
                 sourceUrl = entry.sourceUrl,
-                components = merge(links.map(scraper::scrape), previous?.components.orEmpty(), knownComponents),
+                components = merge(links.map { scraper.scrape(it) }, previous?.components.orEmpty(), knownComponents),
                 rssUpdated = if (fromRss) entry.updated else previous?.rssUpdated,
             )
             record.components.associateByTo(knownComponents, ComponentRecord::key)
@@ -419,8 +440,58 @@ class Importer(private val archive: Archive = Archive(), private val scraper: Co
 
 //region Scraping
 
+data class DatedComponent(val date: LocalDate, val component: ComponentRecord, val aliases: Set<String> = emptySet())
+
+/** Refreshes stored notes and fills missing versions without changing feed-owned metadata. */
+class DriftFixer(private val scraper: ComponentScraper = ComponentScraper()) {
+    fun reconcile(records: List<EntryRecord>): List<EntryRecord> {
+        records.associateByCanonicalId()
+        val registered = records.sortedBy(EntryRecord::releasedOn).flatMap(EntryRecord::components)
+        require(registered.isNotEmpty()) { "No registered components in the archive" }
+        val history = scraper.history(registered)
+        val byUrl = history.flatMap { release ->
+            (release.aliases + release.component.url).map { it to release.component }
+        }.groupBy({ it.first }, { it.second }).mapValues { (url, components) ->
+            require(components.distinctBy { Triple(it.version, it.detailsHtml, it.commitsUrl) }.size == 1) {
+                "Ambiguous scraped release: $url"
+            }
+            components.first()
+        }
+        val result = records.associateByTo(linkedMapOf(), EntryRecord::canonicalId)
+        for (entry in records.filterNot(EntryRecord::ignored)) {
+            result[entry.canonicalId] = entry.copy(components = entry.components.map { cached ->
+                val fresh = byUrl[cached.url] ?: error("No scraped release for ${cached.url}")
+                require(cached.version == fresh.version) { "Version mismatch at ${cached.url}" }
+                require(!cached.detailsHtml.hasVisibleDetails() || fresh.detailsHtml.hasVisibleDetails()) {
+                    "Refusing to erase cached changelog for ${cached.name} ${cached.version}: ${cached.url}"
+                }
+                cached.copy(url = fresh.url, detailsHtml = fresh.detailsHtml, commitsUrl = fresh.commitsUrl)
+            })
+        }
+        val knownUrls = records.flatMap(EntryRecord::components).map(ComponentRecord::url).toSet()
+        val knownKeys = registered.map(ComponentRecord::key).toMutableSet()
+        val ignoredDates = records.filter(EntryRecord::ignored).map(EntryRecord::releasedOn).toSet()
+        for (release in history.sortedWith(compareBy({ it.date }, { it.component.name }, { it.component.version }, { it.component.url }))) {
+            val fresh = release.component
+            if ((release.aliases + fresh.url).any { it in knownUrls } || release.date in ignoredDates) continue
+            require(knownKeys.add(fresh.key)) { "Ambiguous new component identity ${fresh.key} at ${fresh.url}" }
+            val id = "tag:google.com,2016:androidx-release-notes#${release.date.anchor}"
+            val entry = result[id] ?: EntryRecord(
+                id = id,
+                title = release.date.heading,
+                releasedOn = release.date,
+                updated = release.date.atStartOfDay(ZoneOffset.UTC).toInstant().toString(),
+                sourceUrl = "$ALL_CHANNEL_URL#${release.date.anchor}",
+                components = emptyList(),
+            )
+            result[id] = entry.copy(components = entry.components + fresh)
+        }
+        return result.values.toList()
+    }
+}
+
 /** Scrapes component release notes from the library release pages, fetching each page once. */
-class ComponentScraper {
+class ComponentScraper(private val fetch: (String) -> Document = { fetchDocument(it) }) {
     private val pages = mutableMapOf<String, Document>()
     private val releasePageLink = "a[href*='/jetpack/androidx/releases/']"
     private val detailsSafelist = Safelist.relaxed()
@@ -432,18 +503,17 @@ class ComponentScraper {
     private val transparentContainers = setOf("article", "blockquote", "div", "section")
     private val nestedBlockElements = transparentContainers + setOf("h1", "h2", "h3", "h4", "h5", "h6", "ol", "p", "small", "ul")
 
-    fun scrape(component: ComponentNote): ComponentNote {
+    fun scrape(component: ComponentNote, strict: Boolean = false): ComponentNote {
         val fragment = URI(component.url).fragment ?: error("Component URL has no release anchor: ${component.url}")
         val (url, target) = locate(component, fragment)
         val header = target?.let { it.closest(HEADINGS) ?: it } ?: run {
+            check(!strict) { "No release section for ${component.name} ${component.version} at $url" }
             Log.warn("No release section for ${component.name} ${component.version} at $url; details left empty")
             return component.copy(url = url, detailsHtml = "")
         }
-        val level = header.headingLevel ?: 3
-        val html = header.nextElementSiblings()
-            .takeWhile { (it.headingLevel ?: Int.MAX_VALUE) > level }
-            .joinToString("", transform = Element::outerHtml)
+        val html = header.releaseSectionHtml()
         if (html.isBlank()) {
+            check(!strict) { "Empty release section for ${component.name} ${component.version} at $url" }
             Log.warn("Empty release section for ${component.name} ${component.version} at $url")
             return component.copy(url = url, detailsHtml = "")
         }
@@ -455,7 +525,47 @@ class ComponentScraper {
         return component.copy(url = url, detailsHtml = detailsHtml, commitsUrl = commitsUrl)
     }
 
-    private fun page(url: String): Document = url.pageUrl.let { pages.getOrPut(it) { fetchDocument(it) } }
+    private fun page(url: String): Document = url.pageUrl.let { pages.getOrPut(it) { fetch(it) } }
+
+    /** Enumerates version anchors in the same release families as the cached components. */
+    fun history(registered: List<ComponentRecord>): List<DatedComponent> {
+        // Resolve old page names and bare version aliases before deriving the anchor families.
+        val resolved = registered.distinctBy { it.url to it.version }.associate { cached ->
+            cached.url to scrape(ComponentNote(cached.name, cached.version, cached.url), strict = true)
+        }
+        val resolvedByUrl = resolved.values.associateBy(ComponentNote::url)
+        val aliasesByUrl = resolved.entries.groupBy({ it.value.url }, { it.key })
+        val families = registered.groupBy { cached ->
+            val note = resolved.getValue(cached.url)
+            val fragment = URI(note.url).fragment
+            require(fragment.endsWith(note.version)) { "Unrecognized version anchor: ${note.url}" }
+            note.url.pageUrl to fragment.removeSuffix(note.version)
+        }
+        return families.flatMap { (family, cached) ->
+            val (url, prefix) = family
+            val prototype = cached.last()
+            val releases = page(url).select("[id]").mapNotNull { target ->
+                val header = target.closest(HEADINGS) ?: return@mapNotNull null
+                val anchor = target.id()
+                if (!anchor.startsWith(prefix)) return@mapNotNull null
+                val version = anchor.removePrefix(prefix).takeIf(componentVersion::matches) ?: return@mapNotNull null
+                val releaseUrl = "$url#$anchor"
+                val section = Jsoup.parseBodyFragment(header.releaseSectionHtml(), releaseUrl)
+                val date = section.select("p, time").firstNotNullOfOrNull { it.text().toReleaseDateOrNull() }
+                    ?: error("No release date for ${prototype.name} $version at $releaseUrl")
+                val note = resolvedByUrl[releaseUrl]
+                    ?: scrape(ComponentNote(prototype.name, version, releaseUrl), strict = true)
+                val aliases = aliasesByUrl[releaseUrl].orEmpty().toSet()
+                DatedComponent(date, prototype.copy(version = version, url = note.url, detailsHtml = note.detailsHtml, commitsUrl = note.commitsUrl), aliases)
+            }.distinctBy { it.component.url }
+            require(releases.isNotEmpty()) { "No version sections for ${prototype.name} at $url (prefix '$prefix')" }
+            val discovered = releases.map { it.component.url }.toSet()
+            cached.forEach {
+                require(resolved.getValue(it.url).url in discovered) { "Cached release was not enumerated: ${it.url}" }
+            }
+            releases
+        }
+    }
 
     /** Finds the release section on the component page, or on the page it was renamed to. */
     private fun locate(component: ComponentNote, fragment: String): Pair<String, Element?> {
@@ -540,6 +650,14 @@ class ComponentScraper {
 private val headingTag = Regex("h([1-6])")
 
 val Element.headingLevel: Int? get() = headingTag.matchEntire(normalName())?.groupValues?.get(1)?.toInt()
+
+/** The body of a release heading, excluding the next heading at the same or a higher level. */
+fun Element.releaseSectionHtml(): String {
+    val level = headingLevel ?: 3
+    return nextElementSiblings()
+        .takeWhile { (it.headingLevel ?: Int.MAX_VALUE) > level }
+        .joinToString("", transform = Element::outerHtml)
+}
 
 private val sectionTitle = Regex(
     "(?i)^(?:API Changes|Bug Fixes|New Features|Behavior Changes|Dependency Changes|" +
