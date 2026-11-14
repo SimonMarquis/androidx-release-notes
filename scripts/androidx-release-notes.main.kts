@@ -340,6 +340,7 @@ private val legacyComponentLabel = Regex("^(.+?)\\s+(\\d+\\.\\d+\\.\\d+(?:[-+][0
 private val componentVersion = Regex("^\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?$")
 private val versionAnchor = Regex("^(.*?)(\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?)$")
 private val headingVersion = Regex("\\b\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?")
+private val legacyVersionAnchor = Regex("^(?:alpha|beta|rc)\\d+$")
 
 /** Reads a "Name Version x.y.z" (or legacy "Name x.y.z") link to an AndroidX release page. */
 fun Element.toComponentNote(): ComponentNote? {
@@ -550,17 +551,20 @@ class ComponentScraper(private val fetch: (String) -> Document = { fetchDocument
         val families = registered.groupBy { cached ->
             val note = resolved[cached.url to cached.version] ?: ComponentNote(cached.name, cached.version, cached.url)
             val fragment = URI(note.url).fragment
-            val match = versionAnchor.matchEntire(fragment) ?: error("Unrecognized version anchor: ${note.url}")
-            note.url.pageUrl to match.groupValues[1]
+            // Early Media3 releases use anchors such as #alpha01 instead of the full version.
+            note.url.pageUrl to versionAnchor.matchEntire(fragment)?.groupValues?.get(1).orEmpty()
         }
         val failures = mutableListOf<String>()
         val history = families.flatMap { (family, cached) -> runCatching {
             val (url, prefix) = family
             val prototype = cached.last()
+            val cachedAnchors = cached.map { resolved[it.url to it.version]?.url ?: it.url }.map { URI(it).fragment }.toSet()
             val releases = page(url).select("[id]").flatMap sections@{ target ->
                 val header = target.closest(HEADINGS) ?: return@sections emptyList()
                 val anchor = target.id()
-                if (!anchor.startsWith(prefix) || !componentVersion.matches(anchor.removePrefix(prefix))) return@sections emptyList()
+                val matchesFamily = anchor.startsWith(prefix) && componentVersion.matches(anchor.removePrefix(prefix))
+                val matchesLegacy = prefix.isEmpty() && legacyVersionAnchor.matches(anchor)
+                if (!matchesFamily && !matchesLegacy && anchor !in cachedAnchors) return@sections emptyList()
                 // Anchor IDs occasionally contain typos; the visible heading is authoritative.
                 val versions = headingVersion.findAll(header.text()).map { it.value.trimEnd('.') }.distinct().toList()
                 require(versions.isNotEmpty()) { "No version label at $url#$anchor" }

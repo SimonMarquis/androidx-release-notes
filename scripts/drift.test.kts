@@ -70,6 +70,16 @@ val fixtureShared = DriftFixer(fixtureScraper(fixtureSharedHeading)).reconcile(l
 check(fixtureShared.single().components.map { it.version }.toSet() == setOf("1.0.0", "1.1.0"))
 check(DriftFixer(fixtureScraper(fixtureSharedHeading)).reconcile(fixtureShared) == fixtureShared)
 
+// Early release pages use short prerelease anchors, with the full version in the heading.
+val fixtureLegacyHtml = fixtureSection("1.0.0-alpha01", "January 1, 2026", "Updated notes")
+    .replace("id=\"1.0.0-alpha01\"", "id=\"alpha01\"") +
+    fixtureSection("1.0.0-alpha02", "January 3, 2026", "Missing early version")
+        .replace("id=\"1.0.0-alpha02\"", "id=\"alpha02\"")
+val fixtureLegacyEntry = fixtureEntry(components = listOf(fixtureComponent("1.0.0-alpha01").copy(url = "$fixturePage#alpha01")))
+val fixtureLegacy = DriftFixer(fixtureScraper(fixtureLegacyHtml)).reconcile(listOf(fixtureLegacyEntry))
+check(fixtureLegacy.flatMap { it.components }.map { it.version }.toSet() == setOf("1.0.0-alpha01", "1.0.0-alpha02"))
+check(DriftFixer(fixtureScraper(fixtureLegacyHtml)).reconcile(fixtureLegacy) == fixtureLegacy)
+
 // Ignore markers suppress updates and prevent missing versions from resurrecting an ignored date.
 val fixtureIgnoredDate = LocalDate.parse("2026-01-03")
 val fixtureIgnored = fixtureEntry(fixtureIgnoredDate, listOf(fixtureComponent("1.2.0")), ignored = true)
