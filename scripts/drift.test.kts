@@ -184,4 +184,21 @@ val fixtureOldDateOnly = fixtureEntry(components = listOf(fixtureComponent(detai
 check(DriftFixer(fixtureScraper("<h3 id='1.0.0'>Version 1.0.0</h3><p>January 1st, 2026</p>"))
     .reconcile(listOf(fixtureOldDateOnly)).single().components.single().detailsHtml.isEmpty())
 
+// Direct redirects and the canonical page share one history and one fetch.
+var fixtureRedirectFetches = 0
+val fixtureRedirectEntries = listOf(fixtureEntry(components = listOf(
+    fixtureComponent(page = "$fixturePage-old"), fixtureComponent("1.1.0"),
+)))
+val fixtureRedirectResult = DriftFixer(ComponentScraper {
+    fixtureRedirectFetches++
+    Jsoup.parse(fixtureHtml, fixturePage)
+}).reconcile(fixtureRedirectEntries)
+check(fixtureRedirectFetches == 1)
+check(fixtureRedirectResult.flatMap { it.components }.count { it.version == "1.2.0" } == 1)
+check(fixtureRedirectResult.first().components.first().url == "$fixturePage#1.0.0")
+
+// Deprecated libraries and umbrella pages can keep only a landing page with successor links.
+val fixtureLanding = "<h1>Fixture</h1><p>Use <a href='$fixturePage-new'>the successor library</a>.</p>"
+check(DriftFixer(fixtureScraper(fixtureLanding)).reconcile(listOf(fixtureEntry())) == listOf(fixtureEntry()))
+
 println("✅ Drift reconciliation fixtures passed")

@@ -535,7 +535,15 @@ class ComponentScraper(private val fetch: (String) -> Document = { fetchDocument
         return component.copy(url = url, detailsHtml = detailsHtml, commitsUrl = commitsUrl)
     }
 
-    private fun page(url: String): Document = url.pageUrl.let { pages.getOrPut(it) { fetch(it) } }
+    private fun page(url: String): Document = url.pageUrl.let { input ->
+        pages.getOrPut(input) {
+            fetch(input).also { document -> document.canonicalReleasePage()?.let { pages.putIfAbsent(it, document) } }
+        }
+    }
+
+    private fun Document.canonicalReleasePage(): String? = runCatching { URI(location()) }.getOrNull()
+        ?.takeIf { it.scheme == "https" && it.host == "developer.android.com" && it.path.startsWith("/jetpack/androidx/releases/") }
+        ?.let { URI(it.scheme, it.authority, it.path, null, null).toString() }
 
     /** Enumerates version anchors in the same release families as the cached components. */
     fun history(registered: List<ComponentRecord>, dates: Map<Pair<String, String>, List<LocalDate>>): List<DatedComponent> {
@@ -590,7 +598,9 @@ class ComponentScraper(private val fetch: (String) -> Document = { fetchDocument
             if (releases.isEmpty()) {
                 val document = page(url)
                 val retired = URI(document.location()).path.trimEnd('/') == "/jetpack/androidx/versions"
-                require(retired || document.select("[id]").any {
+                val landingPage = document.selectFirst("h1")?.text()?.slug() == url.substringAfterLast('/').slug() &&
+                    document.select(releasePageLink).isNotEmpty()
+                require(retired || landingPage || document.select("[id]").any {
                     it.closest(HEADINGS) != null && Regex("\\d+\\.\\d+\\.\\d+").containsMatchIn(it.id())
                 }) { "No recognizable release sections at $url" }
                 Log.warn("No remaining sections for ${prototype.name} at $url (prefix '$prefix'); keeping cached releases")
@@ -612,21 +622,23 @@ class ComponentScraper(private val fetch: (String) -> Document = { fetchDocument
     private fun locate(component: ComponentNote, fragment: String): Pair<String, Element?> {
         val pageUrl = component.url.pageUrl
         val document = page(pageUrl)
-        document.getElementById(fragment)?.let { return component.url to it }
+        val canonicalPage = document.canonicalReleasePage() ?: pageUrl
+        document.getElementById(fragment)?.let { return "$canonicalPage#$fragment" to it }
         if (fragment == component.version) {
             // The RSS feed can link #version while the page prefixes the artifact:
             // #wear-1.3.0-rc01, or the only #…-1.0.1 anchor such as #input-motionprediction-1.0.1.
-            val prefixed = document.getElementById("${pageUrl.substringAfterLast('/')}-$fragment")
+            val prefixed = document.getElementById("${canonicalPage.substringAfterLast('/')}-$fragment")
                 ?: document.select("[id$=\"-$fragment\"]").singleOrNull()
             prefixed?.let {
                 Log.info("🔀 ${component.name} ${component.version} is at #${it.id()}")
-                return "$pageUrl#${it.id()}" to it
+                return "$canonicalPage#${it.id()}" to it
             }
         }
         Log.warn("#$fragment not found on $pageUrl; looking for a renamed library page")
         val renamed = document.renamedReleaseUrl(component, fragment) ?: return component.url to null
         Log.info("🔀 ${component.name} ${component.version} moved to $renamed")
-        return renamed to page(renamed).getElementById(fragment)
+        val renamedPage = page(renamed)
+        return "${renamedPage.canonicalReleasePage() ?: renamed.pageUrl}#$fragment" to renamedPage.getElementById(fragment)
     }
 
     /**

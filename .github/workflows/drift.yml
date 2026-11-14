@@ -28,6 +28,7 @@ jobs:
       - uses: actions/checkout@v7
         with:
           persist-credentials: false
+          ref: ${{ github.event_name == 'pull_request' && github.ref || github.event.repository.default_branch }}
       - uses: ./.github/actions/setup-java
 
       - name: Test drift reconciliation
