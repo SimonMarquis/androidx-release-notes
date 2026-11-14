@@ -67,6 +67,16 @@ val fixturePaddedResult = DriftFixer(fixtureScraper(fixtureHtml)).reconcile(list
 check(fixturePaddedResult.count { it.releasedOn == fixtureDate } == 1)
 check(fixturePaddedResult.first().id == fixturePadded.id)
 
+// Retired anchors retain their cached notes while the remaining family is still crawled.
+val fixtureRetiredHtml = fixtureSection("1.1.0", "January 3, 2026", "Still available")
+val fixtureRetired = DriftFixer(fixtureScraper(fixtureRetiredHtml)).reconcile(listOf(fixtureEntry()))
+check(fixtureRetired.first().components.single() == fixtureComponent())
+check(fixtureRetired.flatMap { it.components }.size == 2)
+
+// A retired artifact family does not prevent other families on its page from being repaired.
+val fixtureRetiredFamily = DriftFixer(fixtureScraper(fixtureRetiredHtml)).reconcile(listOf(fixtureOriginal))
+check(fixtureRetiredFamily.first().components.first { it.id == "child" } == fixtureOriginal.components.last())
+
 // Bare-version aliases resolve to an artifact-prefixed anchor before family enumeration.
 val fixtureAliasHtml = fixtureSection("1.0.0", "January 1, 2026", "Alias resolved", "fixture-") +
     fixtureSection("1.1.0", "January 3, 2026", "Alias history", "fixture-")

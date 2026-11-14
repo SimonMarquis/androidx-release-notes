@@ -460,7 +460,9 @@ class DriftFixer(private val scraper: ComponentScraper = ComponentScraper()) {
         val result = records.associateByTo(linkedMapOf(), EntryRecord::canonicalId)
         for (entry in records.filterNot(EntryRecord::ignored)) {
             result[entry.canonicalId] = entry.copy(components = entry.components.map { cached ->
-                val fresh = byUrl[cached.url] ?: error("No scraped release for ${cached.url}")
+                val fresh = byUrl[cached.url] ?: return@map cached.also {
+                    Log.warn("Keeping unavailable cached release: ${it.url}")
+                }
                 require(cached.version == fresh.version) { "Version mismatch at ${cached.url}" }
                 require(!cached.detailsHtml.hasVisibleDetails() || fresh.detailsHtml.hasVisibleDetails()) {
                     "Refusing to erase cached changelog for ${cached.name} ${cached.version}: ${cached.url}"
@@ -530,13 +532,18 @@ class ComponentScraper(private val fetch: (String) -> Document = { fetchDocument
     /** Enumerates version anchors in the same release families as the cached components. */
     fun history(registered: List<ComponentRecord>): List<DatedComponent> {
         // Resolve old page names and bare version aliases before deriving the anchor families.
-        val resolved = registered.distinctBy { it.url to it.version }.associate { cached ->
-            cached.url to scrape(ComponentNote(cached.name, cached.version, cached.url), strict = true)
-        }
+        val resolved = registered.distinctBy { it.url to it.version }.mapNotNull { cached ->
+            val note = ComponentNote(cached.name, cached.version, cached.url)
+            val fragment = URI(note.url).fragment ?: error("Component URL has no release anchor: ${note.url}")
+            // Some retired release anchors are no longer published. Keep their cache, but still
+            // enumerate the family's remaining versions instead of blocking the whole archive.
+            if (locate(note, fragment).second == null) null
+            else cached.url to scrape(note, strict = true)
+        }.toMap()
         val resolvedByUrl = resolved.values.associateBy(ComponentNote::url)
         val aliasesByUrl = resolved.entries.groupBy({ it.value.url }, { it.key })
         val families = registered.groupBy { cached ->
-            val note = resolved.getValue(cached.url)
+            val note = resolved[cached.url] ?: ComponentNote(cached.name, cached.version, cached.url)
             val fragment = URI(note.url).fragment
             require(fragment.endsWith(note.version)) { "Unrecognized version anchor: ${note.url}" }
             note.url.pageUrl to fragment.removeSuffix(note.version)
@@ -558,10 +565,15 @@ class ComponentScraper(private val fetch: (String) -> Document = { fetchDocument
                 val aliases = aliasesByUrl[releaseUrl].orEmpty().toSet()
                 DatedComponent(date, prototype.copy(version = version, url = note.url, detailsHtml = note.detailsHtml, commitsUrl = note.commitsUrl), aliases)
             }.distinctBy { it.component.url }
-            require(releases.isNotEmpty()) { "No version sections for ${prototype.name} at $url (prefix '$prefix')" }
+            if (releases.isEmpty()) {
+                require(page(url).select("[id]").any {
+                    it.closest(HEADINGS) != null && Regex("\\d+\\.\\d+\\.\\d+").containsMatchIn(it.id())
+                }) { "No recognizable release sections at $url" }
+                Log.warn("No remaining sections for ${prototype.name} at $url (prefix '$prefix'); keeping cached releases")
+            }
             val discovered = releases.map { it.component.url }.toSet()
             cached.forEach {
-                require(resolved.getValue(it.url).url in discovered) { "Cached release was not enumerated: ${it.url}" }
+                require(resolved[it.url]?.url?.let(discovered::contains) != false) { "Cached release was not enumerated: ${it.url}" }
             }
             releases
         }

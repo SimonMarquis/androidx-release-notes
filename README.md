@@ -72,6 +72,6 @@ GitHub Pages serves [`docs`](docs/) from `main`.
 
 `fix-drift` uses cached component URLs and version-anchor prefixes as the registry. It fetches each official library page once, resolves existing aliases and renamed pages, enumerates matching version sections, and reuses the RSS changelog parser. Existing entry metadata and component identities are preserved; missing versions are added to the corresponding dated entries. Ignored entries remain unchanged, and ignored dates are not repopulated.
 
-The command validates the full crawl before saving. Missing sections, missing dates, ambiguous identities, or a source response that would erase a cached changelog fail the run without writing data. Unchanged records are not rewritten. After a correction PR is merged, Pages sync rebuilds the site and updates GitHub releases.
+The command validates the full crawl before saving. Retired or unavailable historical anchors are logged and their cached releases are preserved. Unrecognizable pages, missing dates, ambiguous identities, or a source response that would erase a cached changelog fail the run without writing data. Unchanged records are not rewritten. After a correction PR is merged, Pages sync rebuilds the site and updates GitHub releases.
 
 Run `./scripts/test-drift.sh` for offline parser and reconciliation fixtures.
