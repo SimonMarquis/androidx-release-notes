@@ -1,0 +1,17 @@
+{
+  "date": "2019-05-23",
+  "id": "tag:google.com,2016:androidx-release-notes#may_23_2019",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#may_23_2019",
+  "updated": "2019-05-23T00:00:00Z",
+  "entries": [
+    {
+      "group": "security",
+      "id": "security-crypto",
+      "name": "Security-Crypto",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/security#security-crypto-1.0.0-alpha02",
+      "html": "<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed issue retrieving key/values associated with shared preferences from <a href=\"https://developer.android.com/reference/androidx/security/crypto/EncryptedSharedPreferences#getAll()\"><code>getAll()</code></a>.</li>\n <li>Blocked usage of restricted preference keys.</li>\n <li>Minor Javadoc updates.</li>\n</ul>",
+      "commits": "https://android.googlesource.com/platform/frameworks/support/+log/82480af90391b75a2acf8cf522f23f4d9ced132a..a1aa570607371188c68469577de50a2505d27eb7/security"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "date": "2019-03-05",
+  "id": "tag:google.com,2016:androidx-release-notes#march_5_2019",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#march_5_2019",
+  "updated": "2019-03-05T00:00:00Z",
+  "entries": [
+    {
+      "group": "work",
+      "id": "work",
+      "name": "WorkManager",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#1.0.0",
+      "html": "<p>This is WorkManager's 1.0.0 stable release. This version of WorkManager is identical to 1.0.0-rc02.</p>",
+      "commits": null
+    }
+  ]
+}

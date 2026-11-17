@@ -1,0 +1,26 @@
+{
+  "date": "2019-03-14",
+  "id": "tag:google.com,2016:androidx-release-notes#march_14_2019",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#march_14_2019",
+  "updated": "2019-03-14T00:00:00Z",
+  "entries": [
+    {
+      "group": "navigation",
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#1.0.0",
+      "html": "",
+      "commits": null
+    },
+    {
+      "group": "navigation",
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "2.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#2.0.0",
+      "html": "",
+      "commits": null
+    }
+  ]
+}
