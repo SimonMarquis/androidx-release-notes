@@ -1,0 +1,26 @@
+{
+  "date": "2018-05-08",
+  "id": "tag:google.com,2016:androidx-release-notes#may_08_2018",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#may_08_2018",
+  "updated": "2018-05-08T00:00:00Z",
+  "entries": [
+    {
+      "group": "navigation",
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#1.0.0-alpha01",
+      "html": "<p><a href=\"https://developer.android.com/topic/libraries/architecture/navigation/navigation-implementing\">Navigation</a> provides a framework for building in-app navigation. This initial release is <code>1.0.0-alpha01</code>.</p>",
+      "commits": null
+    },
+    {
+      "group": "work",
+      "id": "work",
+      "name": "WorkManager",
+      "version": "1.0.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#1.0.0-alpha01",
+      "html": "<p><a href=\"https://developer.android.com/topic/libraries/architecture/workmanager\">WorkManager</a> simplifies scheduling and execution of guaranteed, constraint-aware background work. This initial release is <code>1.0.0-alpha01</code>.</p>",
+      "commits": null
+    }
+  ]
+}

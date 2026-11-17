@@ -1,0 +1,26 @@
+{
+  "date": "2018-04-19",
+  "id": "tag:google.com,2016:androidx-release-notes#april_19_2018",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#april_19_2018",
+  "updated": "2018-04-19T00:00:00Z",
+  "entries": [
+    {
+      "group": "paging",
+      "id": "paging",
+      "name": "Paging",
+      "version": "1.0.0-rc1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/paging#1.0.0-rc1",
+      "html": "<p>We <strong>do not have</strong> any more known issues or new features scheduled for the Paging <code>1.0.0</code> release. Please upgrade your projects to use <code>1.0.0-rc1</code> and help us battle test it so that we can ship a rock solid <code>1.0.0</code>.</p>\n<p>There are no changes in this release, it is the same as <code>1.0.0-beta1</code>.</p>",
+      "commits": null
+    },
+    {
+      "group": "room",
+      "id": "room",
+      "name": "Room",
+      "version": "1.1.0-beta3",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#1.1.0-beta3",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix compilation error when a Kotlin POJO references a relation entity that was defined in Java <a href=\"https://issuetracker.google.com/issues/78199923\">b/78199923</a></li>\n</ul>",
+      "commits": null
+    }
+  ]
+}

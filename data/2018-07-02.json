@@ -1,0 +1,35 @@
+{
+  "date": "2018-07-02",
+  "id": "tag:google.com,2016:androidx-release-notes#july_02_2018",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#july_02_2018",
+  "updated": "2018-07-02T00:00:00Z",
+  "entries": [
+    {
+      "group": "lifecycle",
+      "id": "lifecycle",
+      "name": "Lifecycle",
+      "version": "2.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#2.0.0-beta01",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed LifecycleObserver proguard rule to keep only implementations, not subinterfaces <a href=\"https://issuetracker.google.com/issues/71389427\">b/71389427</a></li>\n <li>Fixed ViewModel proguard rules to allow obfuscation and shrinking</li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "paging",
+      "id": "paging",
+      "name": "Paging",
+      "version": "2.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/paging#2.0.0-beta01",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed content disappearing in some prepend cases (placeholders disabled, PositionalDataSource) <a href=\"https://issuetracker.google.com/issues/80149146\">b/80149146</a></li>\n <li>(Already released in <code>1.0.1</code>) Fixed crashes where <code>PagedListAdapter</code> and <code>AsyncPagedListDiffer</code> would fail to signal move events. <a href=\"https://issuetracker.google.com/issues/110711937\">b/110711937</a></li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "room",
+      "id": "room",
+      "name": "Room",
+      "version": "2.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.0.0-beta01",
+      "html": "<p><strong>API / Behavior Changes</strong></p>\n<ul>\n <li>Added <code>RoomDatabase.Builder.setQueryExecutor()</code> to allow customization of where queries are run</li>\n <li>Added RxJava2 <code>Observable</code> support</li>\n <li>Generated DAO and Database implementations are now final</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Specify class/field name in \"cannot find getter for field\" error <a href=\"https://issuetracker.google.com/issues/73334503\">b/73334503</a></li>\n <li>Fixed RoomOpenHelper backwards compatibility with older versions of Room <a href=\"https://issuetracker.google.com/issues/110197391\">b/110197391</a></li>\n</ul>",
+      "commits": null
+    }
+  ]
+}

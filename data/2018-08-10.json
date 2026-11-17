@@ -1,0 +1,17 @@
+{
+  "date": "2018-08-10",
+  "id": "tag:google.com,2016:androidx-release-notes#august_10_2018",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#august_10_2018",
+  "updated": "2018-08-10T00:00:00Z",
+  "entries": [
+    {
+      "group": "navigation",
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "1.0.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#1.0.0-alpha05",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fix a bug which cause incorrect backstack behavior. <a href=\"https://issuetracker.google.com/issues/111907708\">b/111907708</a></li>\n <li>Fix a bug in <code>equals()</code> of Generated Args classes. <a href=\"https://issuetracker.google.com/issues/111450897\">b/111450897</a></li>\n <li>Fix a build failure in Safe Args. <a href=\"https://issuetracker.google.com/issues/109409713\">b/109409713</a></li>\n <li>Fix a conversion from resource identifiers to java names <a href=\"https://issuetracker.google.com/issues/111602491\">b/111602491</a></li>\n <li>Fix error messages about nullability in Safe Args plugin.</li>\n <li>Add missing nullability annotations.</li>\n</ul>",
+      "commits": null
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "date": "2018-11-07",
+  "id": "tag:google.com,2016:androidx-release-notes#november_7_2018",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#november_7_2018",
+  "updated": "2018-11-07T00:00:00Z",
+  "entries": [
+    {
+      "group": "appcompat",
+      "id": "appcompat",
+      "name": "Appcompat",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.0.0",
+      "html": "<p><strong>New features</strong></p>\n<ul>\n <li><a href=\"https://developer.android.com/reference/androidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat\"><code>AnimatedStateListDrawableCompat</code></a> provides animated transitions between drawable states.</li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "appcompat",
+      "id": "appcompat",
+      "name": "Appcompat",
+      "version": "1.0.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/appcompat#1.0.2",
+      "html": "<p>Bugfix release of <code>core-1.0.1</code> and <code>appcompat-1.0.2</code>.</p>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed bug where <code>PrecomputedTextCompat</code> would crash when used with RTL <code>AppCompatTextView</code>. <a href=\"https://issuetracker.google.com/113070424\">b/113070424</a></li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "core",
+      "id": "core-and-core-ktx",
+      "name": "Core and Core-ktx",
+      "version": "1.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/core#1.0.1",
+      "html": "<p>Bugfix release of <code>core-1.0.1</code> and <code>appcompat-1.0.2</code>.</p>\n<p><strong>Bug fixes</strong></p>\n<ul>\n <li>Fixed bug where <code>PrecomputedTextCompat</code> would crash when used with RTL <code>AppCompatTextView</code>. <a href=\"https://issuetracker.google.com/113070424\">b/113070424</a></li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "vectordrawable",
+      "id": "vectordrawable",
+      "name": "Vectordrawable",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/vectordrawable#1.0.0",
+      "html": "<p><strong>New features</strong></p>\n<ul>\n <li><a href=\"https://developer.android.com/reference/androidx/vectordrawable/graphics/drawable/VectorDrawableCompat\"><code>VectorDrawableCompat</code></a> gains support for gradient and <a href=\"https://developer.android.com/reference/android/content/res/ColorStateList\"><code>ColorStateList</code></a> fills and strokes.</li>\n</ul>",
+      "commits": null
+    }
+  ]
+}

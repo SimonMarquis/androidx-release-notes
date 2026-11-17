@@ -1,0 +1,17 @@
+{
+  "date": "2018-10-12",
+  "id": "tag:google.com,2016:androidx-release-notes#october_12_2018",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#october_12_2018",
+  "updated": "2018-10-12T00:00:00Z",
+  "entries": [
+    {
+      "group": "paging",
+      "id": "paging",
+      "name": "Paging",
+      "version": "2.1.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/paging#2.1.0-alpha01",
+      "html": "<p>Paging <code>2.1.0-alpha01</code> has two major additions - page dropping, and KTX extension libraries for every artifact - as well as several other API changes and bugfixes.</p>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Added <code>PagedList.Config.Builder.setMaxSize()</code> for limiting the number of loaded items in memory.</li>\n <li>Added <code>androidx.paging.Config()</code> as a Kotlin alternative for <code>PagedList.Config.Builder</code></li>\n <li>Added <code>androidx.paging.PagedList()</code> as a Kotlin alternative for <code>PagedList.Builder</code></li>\n <li>Added <code>DataSourceFactory.toLiveData()</code> as a Kotlin alternative for <code>LivePagedListBuilder</code></li>\n <li>Added <code>DataSourceFactory.toObservable()</code> and <code>toFlowable()</code> as Kotlin alternatives for <code>RxPagedListBuilder</code></li>\n <li>Added <code>AsyncPagedListDiffer.addPagedListListener()</code> for listening to when PagedList is swapped. <a href=\"https://issuetracker.google.com/111698609\">b/111698609</a></li>\n <li>Added <code>PagedListAdapter.onCurrentListChanged()</code> variant that passes old and new list, deprecated previous variant.</li>\n <li>Added <code>PagedListAdapter/AsyncPagedListDiffer.submitList()</code> variants which take an additional callback that triggers if/when the pagedlist is displayed, after diffing. This allows you to synchronize a PagedList swap with other UI updates. <a href=\"https://issuetracker.google.com/73781068\">b/73781068</a></li>\n <li><code>PagedList.getLoadedCount()</code> added to let you know how many items are in memory. Note that the return value is always equal to <code>.size()</code> if placeholders are disabled.</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a race condition when diffing if lists are reused <a href=\"https://issuetracker.google.com/111591017\">b/111591017</a></li>\n <li><code>PagedList.loadAround()</code> now throws <code>IndexOutOfBoundsException</code> when index is invalid. Previously it could crash with an unclear other exception.</li>\n <li>Fixed a case where an extremely small initial load size together with unchanged data would result in no further loading <a href=\"https://issuetracker.google.com/113122599\">b/113122599</a></li>\n</ul>\n<strong>Note:</strong><span> page dropping is currently off by default - enable it with the new <code>PagedList.Config.Builder.setMaxSize()</code> API. To correctly support page dropping in a custom <code>ItemKeyedDataSource</code>, you must implement <code>loadBefore</code>.</span>   <strong>Note:</strong><span> Page dropping is not currently supported in <code>PageKeyedDataSource</code>, due to having no way to re-load the <code>loadInitial</code> result incrementally.</span>",
+      "commits": null
+    }
+  ]
+}

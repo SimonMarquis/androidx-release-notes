@@ -1,0 +1,17 @@
+{
+  "date": "2018-10-29",
+  "id": "tag:google.com,2016:androidx-release-notes#october_29_2018",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#october_29_2018",
+  "updated": "2018-10-29T00:00:00Z",
+  "entries": [
+    {
+      "group": "navigation",
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "1.0.0-alpha07",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#1.0.0-alpha07",
+      "html": "<p><strong>New Features</strong></p>\n<ul>\n <li>A new <a href=\"https://developer.android.com/reference/androidx/navigation/ui/AppBarConfiguration\">AppBarConfiguration</a> class allows you to customize which destinations are considered <em>top-level</em> destinations. See the <a href=\"https://developer.android.com/topic/libraries/architecture/navigation/navigation-ui\">updated documentation</a> for details. <a href=\"https://issuetracker.google.com/117333663\">b/117333663</a></li>\n <li>You can now pass arguments to the start destination of your graph <a href=\"https://issuetracker.google.com/110300470\">b/110300470</a></li>\n <li>Deep links now support custom schemes with periods, hyphens, and plus signs. <a href=\"https://issuetracker.google.com/112806402\">b/112806402</a></li>\n</ul>\n<p><strong>Breaking Changes</strong></p>\n<ul>\n <li>The <code>navigation-testing-ktx</code> module has been folded into the <code>navigation-testing artifact</code> and will no longer be published.</li>\n <li>The <code>navigation-testing</code> artifact now has a dependency on the Kotlin standard library. The API has been changed to be more consistent with Kotlin conventions, but you can continue to use it for tests written in Java.</li>\n <li>Metadata manifest registered navigation graphs are no longer supported. <a href=\"https://issuetracker.google.com/118355937\">b/118355937</a></li>\n <li>Actions can no longer be attached to &lt;activity&gt; destinations. <a href=\"https://android-review.googlesource.com/c/platform/frameworks/support/+/785539\">aosp/785539</a></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Deep links now correctly parse query parameters. <a href=\"https://issuetracker.google.com/110057514\">b/110057514</a></li>\n <li>Activity destinations now correctly apply all enter and exit animations. <a href=\"https://issuetracker.google.com/117145284\">b/117145284</a></li>\n <li>Fixed crash that occurs after configuration changes when using custom Navigators. <a href=\"https://issuetracker.google.com/110763345\">b/110763345</a></li>\n</ul>\n<p><strong>Safe Args</strong></p>\n<ul>\n <li>Safe args now have a fixed dependency on Android Gradle Plugin 3.2.1. <a href=\"https://issuetracker.google.com/113167627\">b/113167627</a></li>\n <li>Directions can now be generated for inner classes. <a href=\"https://issuetracker.google.com/117407555\">b/117407555</a></li>\n <li>Fixed an issue with generating Directions to an &lt;include&gt; graph. <a href=\"https://issuetracker.google.com/116542123\">b/116542123</a></li>\n</ul>",
+      "commits": null
+    }
+  ]
+}

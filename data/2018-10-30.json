@@ -1,0 +1,17 @@
+{
+  "date": "2018-10-30",
+  "id": "tag:google.com,2016:androidx-release-notes#october_30_2018",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#october_30_2018",
+  "updated": "2018-10-30T00:00:00Z",
+  "entries": [
+    {
+      "group": "room",
+      "id": "room",
+      "name": "Room",
+      "version": "2.1.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.1.0-alpha02",
+      "html": "<p><strong>New Features</strong></p>\n<ul>\n <li>Added support for referencing a <code>@DatabaseView</code> in a <code>@Relation</code>. <a href=\"https://issuetracker.google.com/117680932\">b/117680932</a></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a bug where Room would perform disk I/O in the main thread when subscribing and disposing from an Rx return type. <a href=\"https://issuetracker.google.com/117201279\">b/117201279</a></li>\n <li>Fixed a bug where Room would fail to find an appropriate type converter for a field in a Kotlin entity class. <a href=\"https://issuetracker.google.com/111404868\">b/111404868</a></li>\n <li>Fixed a bug where Room would generate incorrect code for a <code>DAO</code> interface implementation containing a Kotlin default method that has no arguments. <a href=\"https://issuetracker.google.com/117527454\">b/117527454</a></li>\n <li>Updated <code>Room</code> SQLite grammar parser, fixing a performance issue that would cause long build times. <a href=\"https://issuetracker.google.com/117401230\">b/117401230</a></li>\n</ul>",
+      "commits": null
+    }
+  ]
+}

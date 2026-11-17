@@ -1,0 +1,17 @@
+{
+  "date": "2018-06-07",
+  "id": "tag:google.com,2016:androidx-release-notes#june_07_2018",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#june_07_2018",
+  "updated": "2018-06-07T00:00:00Z",
+  "entries": [
+    {
+      "group": "navigation",
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#1.0.0-alpha02",
+      "html": "<p><strong>Behavior Changes</strong></p>\n<ul>\n <li>\n  <p><code>FragmentNavigator</code> now uses <code>setReorderingAllowed(true)</code>. <a href=\"https://issuetracker.google.com/issues/109826220\">b/109826220</a></p>\n </li>\n <li>\n  <p>Navigation now URLDecodes arguments parsed from deep links URLs. <a href=\"https://issuetracker.google.com/issues/79982454\">b/79982454</a></p>\n </li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>\n  <p>Fixed an <code>IllegalStateException</code> when calling navigate from Fragment lifecycle methods. <a href=\"https://issuetracker.google.com/issues/79632233\">b/79632233</a></p>\n </li>\n <li>\n  <p>Navigation now depends on Support Library 27.1.1 to fix flickering when using animations. <a href=\"https://issuetracker.google.com/issues/80160903\">b/80160903</a></p>\n </li>\n <li>\n  <p>Fixed an <code>IllegalArgumentException</code> when using defaultNavHost=\"true\" as a child fragment. <a href=\"https://issuetracker.google.com/issues/79656847\">b/79656847</a></p>\n </li>\n <li>\n  <p>Fixed a <code>StackOverflowError</code> when using NavDeepLinkBuilder. <a href=\"https://issuetracker.google.com/issues/109653065\">b/109653065</a></p>\n </li>\n <li>\n  <p>Fixed an <code>IllegalArgumentException</code> when navigating back to a nested graph. <a href=\"https://issuetracker.google.com/issues/80453447\">b/80453447</a></p>\n </li>\n <li>\n  <p>Fixed an issue with overlapping Fragments when using <code>launchSingleTop</code>. <a href=\"https://issuetracker.google.com/issues/79407969\">b/79407969</a></p>\n </li>\n <li>\n  <p>Navigation now builds the correct synthetic back stack for nested graphs. <a href=\"https://issuetracker.google.com/issues/79734195\">b/79734195</a></p>\n </li>\n <li>\n  <p>NavigationUI will now highlight the correct item when using a nested graph as a <code>MenuItem</code>. <a href=\"https://issuetracker.google.com/issues/109675998\">b/109675998</a></p>\n </li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>\n  <p>The <code>clearTask</code> attribute for actions and the associated API in <code>NavOptions</code> has been deprecated. <a href=\"https://issuetracker.google.com/issues/80338878\">b/80338878</a></p>\n </li>\n <li>\n  <p>The <code>launchDocument</code> attribute for actions and the associated API in <code>NavOptions</code> has been deprecated. <a href=\"https://issuetracker.google.com/issues/109806636\">b/109806636</a></p>\n </li>\n</ul>",
+      "commits": null
+    }
+  ]
+}

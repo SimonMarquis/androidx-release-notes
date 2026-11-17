@@ -1,0 +1,26 @@
+{
+  "date": "2018-10-01",
+  "id": "tag:google.com,2016:androidx-release-notes#october_01_2018",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#october_01_2018",
+  "updated": "2018-10-01T00:00:00Z",
+  "entries": [
+    {
+      "group": "paging",
+      "id": "paging",
+      "name": "Paging",
+      "version": "2.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/paging#2.0.0",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a crash that could occur with very fast scrolling using <code>PositionalDataSource</code> and placeholders <a href=\"https://issuetracker.google.com/114635383\">b/114635383</a>.</li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "room",
+      "id": "room",
+      "name": "Room",
+      "version": "2.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#2.0.0",
+      "html": "",
+      "commits": null
+    }
+  ]
+}

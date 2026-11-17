@@ -1,0 +1,26 @@
+{
+  "date": "2018-04-05",
+  "id": "tag:google.com,2016:androidx-release-notes#april_05_2018",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#april_05_2018",
+  "updated": "2018-04-05T00:00:00Z",
+  "entries": [
+    {
+      "group": "paging",
+      "id": "paging",
+      "name": "Paging",
+      "version": "1.0.0-beta1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/paging#1.0.0-beta1",
+      "html": "<p>Paging will be in beta for a short time before progressing to release candidate. We are not planning further API changes for <code>Paging 1.0</code>, and the bar for any API changes is very high.</p>\n<p>Alpha RxJava2 support for Paging is released as a separate optional module (<code>android.arch.paging:rxjava2:1.0.0-alpha1</code>) and will temporarily be versioned separately until it stabilizes.</p>\n<p>This new library provides an RxJava2 alternative to <code>LivePagedListBuilder</code>, capable of constructing <code>Observable</code>s and <code>Flowable</code>s, taking <code>Scheduler</code>s instead of <code>Executor</code>s:</p>\n<div>\n <div>\n  <h3>Kotlin</h3>\n  <div></div>\n  <pre><span>val</span><span> </span><span>pagedItems</span><span> </span><span>=</span><span> </span><span>RxPagedListBuilder</span><span>(</span><span>myDataSource</span><span>,</span><span> </span><span>/* page size */</span><span> </span><span>50</span><span>)</span>\n<span>        </span><span>.</span><span>setFetchScheduler</span><span>(</span><span>myNetworkScheduler</span><span>)</span>\n<span>        </span><span>.</span><span>buildObservable</span><span>()</span></pre>  \n  <h3>Java</h3>\n  <div></div>\n  <pre><span>Observable&lt;PagedList&lt;Item</span><span>&gt;&gt;</span><span> </span><span>pagedItems</span><span> </span><span>=</span>\n<span>        </span><span>RxPagedListBuilder</span><span>(</span><span>myDataSource</span><span>,</span><span> </span><span>/* page size */</span><span> </span><span>50</span><span>)</span>\n<span>                </span><span>.</span><span>setFetchScheduler</span><span>(</span><span>myNetworkScheduler</span><span>)</span>\n<span>                </span><span>.</span><span>buildObservable</span><span>();</span></pre> \n </div>\n</div>\n<p><strong>New Features</strong></p>\n<ul>\n <li><code>RxPagedListBuilder</code> is added via the new <code>android.arch.paging:rxjava2</code> artifact.</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>\n  <p>API changes to clarify the role of executors in builders:</p>\n  <ul>\n   <li>\n    <p>Renamed <code>setBackgroundThreadExecutor()</code> to <code>setFetchExecutor()</code> (in <code>PagedList.Builder</code> and <code>LivePagedListBuilder</code>)</p>\n   </li>\n   <li>\n    <p>Renamed <code>setMainThreadExecutor()</code> to <code>setNotifyExecutor()</code> (in <code>PagedList.Builder</code>).</p>\n   </li>\n  </ul>\n </li>\n <li>\n  <p>Fixed <code>PagedList.mCallbacks</code> member to be private.</p>\n </li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>\n  <p><code>LivePagedListBuilder</code> triggers initial <code>PagedList</code> load on the specified executor, instead of the Arch Components IO thread pool.</p>\n </li>\n <li>\n  <p>Fixed invalidate behavior in internal <code>DataSource</code> wrappers (used to implement <code>DataSource.map</code>, as well as placeholder-disabled <code>PositionalDataSource</code> loading) <a href=\"https://issuetracker.google.com/issues/77237534\">b/77237534</a></p>\n </li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "room",
+      "id": "room",
+      "name": "Room",
+      "version": "1.1.0-beta2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#1.1.0-beta2",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>\n  <p>Fixed a critical bug in <code>Room</code> Rx <code>Single</code> and <code>Maybe</code> implementations where it would recycle the query ahead of time, causing problems if you add more than 1 observer to the returned <code>Single</code> or <code>Maybe</code> instances. <a href=\"https://issuetracker.google.com/issues/76031240\">b/76031240</a></p>\n </li>\n <li>\n  <p>[RoomDatabase.clearAllTables][ref-clearAllTables] will not <code>VACUUM</code> the database if it is called inside a transaction. <a href=\"https://issuetracker.google.com/issues/77235565\">b/77235565</a></p>\n </li>\n</ul>",
+      "commits": null
+    }
+  ]
+}

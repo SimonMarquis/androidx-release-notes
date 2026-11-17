@@ -1,0 +1,17 @@
+{
+  "date": "2018-10-24",
+  "id": "tag:google.com,2016:androidx-release-notes#october_24_2018",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#october_24_2018",
+  "updated": "2018-10-24T00:00:00Z",
+  "entries": [
+    {
+      "group": "test",
+      "id": "test",
+      "name": "Test",
+      "version": "1.0.0",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#1.0.0",
+      "html": "<ul>\n <li>All libraries\n  <ul>\n   <li>Set minSdkVersion to 14 and targetSdkVersion to 28</li>\n  </ul></li>\n <li>Espresso 3.1.0\n  <ul>\n   <li>Fix withContentDescription to work with non-string types</li>\n   <li>Add support for using Espresso on Robolectric</li>\n   <li>Issue <a href=\"https://issuetracker.google.com/issues/73044169\">73044169</a>: Espresso ViewMatchers.withText doesn't work when textAllCaps is enabled</li>\n   <li>Add support for injecting a sequence of motion events</li>\n  </ul></li>\n <li>Intents\n  <ul>\n   <li>Add beta API for retrieving list of intents. Intended for use with new truth assertions</li>\n  </ul></li>\n <li>Runner 1.1.0\n  <ul>\n   <li>Add support for instant apps</li>\n   <li>Deprecate androidx.test.runner.AndroidJUnit4 and replace with androidx.test.ext.junit.runners.AndroidJUnit4</li>\n  </ul></li>\n <li>Monitor 1.1.0\n  <ul>\n   <li>Deprecate androidx.test.InstrumentationRegistry and replace with androidx.test.platform.app.InstrumentationRegistry and androidx.test.core.app.ApplicationProvider</li>\n  </ul></li>\n <li>AndroidTestOrchestrator 1.1.0\n  <ul>\n   <li>Only enable orchestrator coverage handling if both 'coverage' and 'coverageFilePath' arguments are passed.</li>\n   <li>Only wait for debugger when the -debug is set but not for listing ATO test cases. A new orchestratorDebug flag was added for debugging orchestrator itself</li>\n  </ul></li>\n <li>Core 1.0.0\n  <ul>\n   <li>New artifact! Includes new APIs that support both local and on-device tests for:\n    <ul>\n     <li>Retrieving context: ApplicationProvider</li>\n     <li>Controlling activity lifecycles: ActivityScenario(beta)</li>\n     <li>Builders for MotionEvent, PackageInfo</li>\n     <li>Parceables utility class</li>\n    </ul></li>\n  </ul></li>\n <li>Truth 1.0.0\n  <ul>\n   <li>New artifact! Includes custom truth subjects for Notification, Intent, Bundle, Parcelable, and MotionEvent</li>\n  </ul></li>\n <li>JUnit 1.0.0\n  <ul>\n   <li>New artifact! Includes JUnit runner class androidx.test.ext.junit.runners.AndroidJUnit4 that supports both local and on-device tests.</li>\n  </ul></li>\n</ul>",
+      "commits": null
+    }
+  ]
+}

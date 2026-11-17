@@ -1,0 +1,35 @@
+{
+  "date": "2018-03-21",
+  "id": "tag:google.com,2016:androidx-release-notes#march_21_2018",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#march_21_2018",
+  "updated": "2018-03-21T00:00:00Z",
+  "entries": [
+    {
+      "group": "lifecycle",
+      "id": "pre-androidx-versions",
+      "name": "Pre-AndroidX Versions",
+      "version": "1.1.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/lifecycle#1.1.1",
+      "html": "<p>Only one small change: <code>android.arch.core.util.Function</code> is moved from <code>arch:runtime</code> to <code>arch:common</code>. This allows it to be used without the runtime dependency, e.g. in <code>paging:common</code> below.</p>\n<p><code>lifecycle:common</code> is a dependency of <code>lifecycle:runtime</code>, so this change doesn’t affect <code>lifecycle:runtime</code> directly, only modules that depend directly on <code>lifecycle:common</code>, as Paging does.</p>",
+      "commits": null
+    },
+    {
+      "group": "paging",
+      "id": "paging",
+      "name": "Paging",
+      "version": "1.0.0-alpha7",
+      "url": "https://developer.android.com/jetpack/androidx/releases/paging#1.0.0-alpha7",
+      "html": "<p>Paging <code>alpha7</code> is planned to be the final release before Paging hits beta.</p>\n<p><strong>API Changes</strong></p>\n<ul>\n <li><code>DataSource.LoadParams</code> objects now have a public constructor and <code>DataSource.LoadCallback</code> objects are now abstract. This enables wrapping a <code>DataSource</code> or directly testing a <code>DataSource</code> with a mock callback. <a href=\"https://issuetracker.google.com/issues/72600421\">b/72600421</a></li>\n <li>Mappers for DataSource and DataSource.Factory\n  <ul>\n   <li><code>map(Function&lt;IN,OUT&gt;)</code> allows you to transform, wrap, or decorate results loaded by a <code>DataSource</code>.</li>\n   <li><code>mapByPage(&lt;List&lt;IN&gt;,List&lt;OUT&gt;&gt;)</code> enables the same for batch processing (e.g. if items loaded from SQL need to additionally query a separate database, that can be done as a batch.)</li>\n  </ul></li>\n <li><code>PagedList#getDataSource()</code> is added as a convenience method <a href=\"https://issuetracker.google.com/issues/72611341\">b/72611341</a></li>\n <li>All deprecated classes have been removed from the API, including the remains of <code>recyclerview.extensions</code> package, and the <code>LivePagedListProvider</code>.</li>\n <li><code>DataSource.Factory</code> is changed from an interface to an abstract class to enable map functionality.</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Changed Builders to be final. <a href=\"https://issuetracker.google.com/issues/70848565\">b/70848565</a></li>\n <li>Room <code>DataSource</code> implementation is now fixed to handle multi-table queries - this fix is contained within Room 1.1.0-beta1, see above.</li>\n <li>Fixed a bug where <code>BoundaryCallback.onItemAtEndLoaded</code> would not be invoked for <code>PositionalDataSource</code> if placeholders are enabled and the total size is an exact multiple of the page size.</li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "room",
+      "id": "room",
+      "name": "Room",
+      "version": "1.1.0-beta1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#1.1.0-beta1",
+      "html": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Based on API Review feedback, <code>@RawQuery</code> does not accept passing a <code>String</code> as the query parameter anymore. You need to use [SupportSQLiteQuery][ref-SupportSQLiteQuery]. (see [SimpleSQLiteQuery][ref-SimpleSQLiteQuery] to easily create an instance of [SupportSQLiteQuery][ref-SupportSQLiteQuery] with argument support).</li>\n <li>RoomDatabase.Builder's [fallbackToDestructiveMigrationFrom][ref-fallbackToDestructiveMigrationFrom] method now accepts <code>vararg int</code> instead of <code>vararg Integer</code>.</li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>[RoomDatabase.clearAllTables][ref-clearAllTables] now tries to return space back to the operating system by setting a WAL checkpoint and <code>VACUUM</code>ing the database.</li>\n <li>[<code>@RawQuery</code>][ref-RawQuery] now accepts any Pojo for the <code>observedEntities</code> property as long as the Pojo references to one or more entities via its <code>Embedded</code> fields or <code>Relation</code>s. <a href=\"https://issuetracker.google.com/issues/74041772\">b/74041772</a></li>\n <li>Paging: Room’s DataSource implementation now correctly handles multi-table dependencies (such as relations, and joins). Previously these would fail to trigger new results, or could fail to compile. <a href=\"https://issuetracker.google.com/issues/74128314\">b/74128314</a></li>\n</ul>",
+      "commits": null
+    }
+  ]
+}

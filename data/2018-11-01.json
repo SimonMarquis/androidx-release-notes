@@ -1,0 +1,17 @@
+{
+  "date": "2018-11-01",
+  "id": "tag:google.com,2016:androidx-release-notes#november_01_2018",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#november_01_2018",
+  "updated": "2018-11-01T00:00:00Z",
+  "entries": [
+    {
+      "group": "paging",
+      "id": "paging",
+      "name": "Paging",
+      "version": "2.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/paging#2.1.0-beta01",
+      "html": "",
+      "commits": null
+    }
+  ]
+}

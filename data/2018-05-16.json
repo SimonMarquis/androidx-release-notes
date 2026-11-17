@@ -1,0 +1,26 @@
+{
+  "date": "2018-05-16",
+  "id": "tag:google.com,2016:androidx-release-notes#may_16_2018",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#may_16_2018",
+  "updated": "2018-05-16T00:00:00Z",
+  "entries": [
+    {
+      "group": "paging",
+      "id": "rxjava2",
+      "name": "RxJava2",
+      "version": "1.0.0-rc1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/paging#1.0.0-rc1",
+      "html": "<p>Paging RxJava2 <code>1.0.0-rc1</code> is moving to release candidate with no changes from the initial alpha.</p>",
+      "commits": null
+    },
+    {
+      "group": "room",
+      "id": "room",
+      "name": "Room",
+      "version": "1.1.1-rc1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/room#1.1.1-rc1",
+      "html": "<p>Fixed a bug where Room would not handle post migration initialization properly <a href=\"https://issuetracker.google.com/issues/79362399\">b/79362399</a></p>",
+      "commits": null
+    }
+  ]
+}

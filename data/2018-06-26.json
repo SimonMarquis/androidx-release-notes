@@ -1,0 +1,26 @@
+{
+  "date": "2018-06-26",
+  "id": "tag:google.com,2016:androidx-release-notes#june_26_2018",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#june_26_2018",
+  "updated": "2018-06-26T00:00:00Z",
+  "entries": [
+    {
+      "group": "paging",
+      "id": "paging",
+      "name": "Paging",
+      "version": "1.0.1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/paging#1.0.1",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed crashes where <code>PagedListAdapter</code> and <code>AsyncPagedListDiffer</code> would fail to signal move events. <a href=\"https://issuetracker.google.com/issues/110711937\">b/110711937</a></li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "work",
+      "id": "work",
+      "name": "WorkManager",
+      "version": "1.0.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#1.0.0-alpha04",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li><code>PeriodicWorkRequest</code>s are now correctly rescheduled when using the <code>AlarmManager</code> based implementation.</li>\n <li>Fixed a potential ANR when rescheduling all workers after a force stop or a reboot. <a href=\"https://issuetracker.google.com/issues/110507716\">b/110507716</a></li>\n <li>Added nullability annotations to various WorkManager APIs. <a href=\"https://issuetracker.google.com/issues/110344065\">b/110344065</a></li>\n <li>Log uncaught exceptions that occur during Worker execution. <a href=\"https://issuetracker.google.com/issues/109900862\">b/109900862</a></li>\n <li>Allowed destructive database migrations in case you decide to roll back to an older version of WorkManager. <a href=\"https://issuetracker.google.com/issues/74633270\">b/74633270</a></li>\n <li>Fixed a migration crash if creating duplicate implicit tags. This is a very rare issue that occurred only if you used the same implicit tag format yourself.</li>\n</ul>",
+      "commits": null
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "date": "2018-07-24",
+  "id": "tag:google.com,2016:androidx-release-notes#july_24_2018",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#july_24_2018",
+  "updated": "2018-07-24T00:00:00Z",
+  "entries": [
+    {
+      "group": "work",
+      "id": "work",
+      "name": "WorkManager",
+      "version": "1.0.0-alpha05",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#1.0.0-alpha05",
+      "html": "<p><strong>API Changes</strong></p>\n<ul>\n <li><code>WorkManager.getInstance()</code> is now annotated with <code>@NonNull</code> instead of <code>@Nullable</code>. Instead, if the singleton isn't properly initialized in cases of manual initialization, the method will throw an <code>IllegalStateException</code>. <strong>This is a breaking API change.</strong></li>\n <li>Added a new API, <code>Configuration.Builder.setMinimumLoggingLevel(int)</code>, which can control WorkManager verbosity. By default, WorkManager logs <code>Log.INFO</code> and above.</li>\n <li>Changed signature of <code>Data.getString()</code> so it no longer takes a default value (it is implicitly <code>null</code>). <strong>This is a breaking API change.</strong></li>\n <li>Marked some methods needed only for internal usage as <code>@hide</code>. This includes the <code>Constraints</code> constructor, <code>Data.toByteArray()</code>, and <code>Data.fromByteArray(byte[])</code>. <strong>This is a breaking API change.</strong></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>WorkManager no longer executes work during known cases of auto-backup. This could have resulted in a crash. <a href=\"https://issuetracker.google.com/issues/110564377\">b/110564377</a></li>\n <li>Fixed double-scheduling of <code>PeriodicWorkRequest</code>s when using <code>JobScheduler</code>. <a href=\"https://issuetracker.google.com/issues/110798652\">b/110798652</a></li>\n <li>Fixed an issue with <code>PeriodicWorkRequest</code>s not executing correctly after device doze. <a href=\"https://issuetracker.google.com/issues/111469837\">b/111469837</a></li>\n <li>Fixed an issue with initial delays when using Firebase JobDispatcher. <a href=\"https://issuetracker.google.com/issues/111141023\">b/111141023</a></li>\n <li>Fixed some potential race conditions and timing issues.</li>\n <li>Correctly freed up <code>BroadcastReceiver</code>s that were no longer needed.</li>\n <li>Optimized rescheduling performance when apps restart after being force closed.</li>\n <li>Allowed <code>TestScheduler.setAllConstraintsMet(UUID)</code> to be called before or after enqueuing the given <code>WorkRequest</code>. <a href=\"https://issuetracker.google.com/issues/111238024\">b/111238024</a></li>\n</ul>\n<p><strong>Breaking Changes</strong></p>\n<ul>\n <li><code>WorkManager.getInstance()</code> is now annotated with <code>@NonNull</code> instead of <code>@Nullable</code>.</li>\n <li>Changed signature of <code>Data.getString()</code> so it no longer takes a default value (it is implicitly <code>null</code>).</li>\n <li>Marked some methods needed only for internal usage as <code>@hide</code>. This includes the <code>Constraints</code> constructor, <code>Data.toByteArray()</code>, and <code>Data.fromByteArray(byte[])</code>.</li>\n</ul>",
+      "commits": null
+    }
+  ]
+}

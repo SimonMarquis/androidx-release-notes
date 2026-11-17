@@ -1,0 +1,17 @@
+{
+  "date": "2018-07-19",
+  "id": "tag:google.com,2016:androidx-release-notes#july_19_2018",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#july_19_2018",
+  "updated": "2018-07-19T00:00:00Z",
+  "entries": [
+    {
+      "group": "navigation",
+      "id": "navigation",
+      "name": "Navigation",
+      "version": "1.0.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigation#1.0.0-alpha04",
+      "html": "<p>Navigation <code>1.0.0-alpha04</code> and the associated Safe Args gradle plugin contains a number of API changes, behavior changes, and bug fixes.</p>\n<p><strong>API / Behavior Changes</strong></p>\n<ul>\n <li>NavHostFragment will always set the current Fragment as the primary navigation fragment, ensuring that child fragment managers are popped before the outer NavController is popped <a href=\"https://issuetracker.google.com/issues/111345778\">b/111345778</a></li>\n</ul>\n<p><strong>Safe Args</strong></p>\n<ul>\n <li><strong>Breaking Change:</strong> <code>app:type</code> has been changed to <code>app:argType</code> to avoid conflicts with other libraries such as ConstraintLayout 2.0.0-alpha1 <a href=\"https://issuetracker.google.com/issues/111110548\">b/111110548</a></li>\n <li>Error messages from Safe Args are now clickable <a href=\"https://issuetracker.google.com/issues/111534438\">b/111534438</a></li>\n <li>Args classes now confirms that <code>NonNull</code> attributes are actually not null <a href=\"https://issuetracker.google.com/issues/111451769\">b/111451769</a></li>\n <li>Additional <code>NonNull</code> annotations have been added to NavDirections and Args generated classes <a href=\"https://issuetracker.google.com/issues/111455455\">b/111455455</a> <a href=\"https://issuetracker.google.com/issues/111455456\">b/111455456</a></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed an issue with the system back button after deep linking to a fragment destination <a href=\"https://issuetracker.google.com/issues/111515685\">b/111515685</a></li>\n</ul>",
+      "commits": null
+    }
+  ]
+}

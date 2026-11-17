@@ -1,0 +1,17 @@
+{
+  "date": "2018-08-16",
+  "id": "tag:google.com,2016:androidx-release-notes#august_16_2018",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#august_16_2018",
+  "updated": "2018-08-16T00:00:00Z",
+  "entries": [
+    {
+      "group": "work",
+      "id": "work",
+      "name": "WorkManager",
+      "version": "1.0.0-alpha07",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#1.0.0-alpha07",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a potential SQL query with negative limits that could return an unbounded number of results.</li>\n <li>Work that has finished execution now correctly cancels all pending copies of that work in other Schedulers. This led to exceeding the <code>JobScheduler</code> jobs limit. <a href=\"https://issuetracker.google.com/111569265\">b/111569265</a></li>\n <li>Fixed a <code>ConcurrentModificationException</code> in <code>ConstraintTracker</code>. <a href=\"https://issuetracker.google.com/112272753\">b/112272753</a></li>\n <li>Changed return type annotations of <code>Data.getBooleanArray(String)</code> and <code>Data.getIntArray(String)</code> to <code>@Nullable</code> instead of <code>@NonNull</code>. <a href=\"https://issuetracker.google.com/112275229\">b/112275229</a></li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li><code>Worker</code> now extends a new class, <code>NonBlockingWorker</code>. This does not affect any current usage. In the future, <code>NonBlockingWorker</code> will become a fully supported entity for custom threading solutions.</li>\n <li>Changed return type annotations of <code>Data.getBooleanArray(String)</code> and <code>Data.getIntArray(String)</code> to <code>@Nullable</code> instead of <code>@NonNull</code>. <a href=\"https://issuetracker.google.com/112275229\">b/112275229</a></li>\n <li>Kotlin extensions: deprecated <code>Map.toWorkData()</code> and added a top-level <code>workDataOf(vararg Pair&lt;String, Any?&gt;)</code> to be more consistent with existing APIs.</li>\n</ul>",
+      "commits": null
+    }
+  ]
+}
