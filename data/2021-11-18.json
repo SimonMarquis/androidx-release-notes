@@ -1,0 +1,44 @@
+{
+  "date": "2021-11-18",
+  "id": "tag:google.com,2016:androidx-release-notes#november_18_2021",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#november_18_2021",
+  "updated": "2021-11-18T00:00:00Z",
+  "entries": [
+    {
+      "group": "test",
+      "id": "annotation",
+      "name": "Annotation",
+      "version": "1.0.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#annotation-1.0.0-rc01",
+      "html": "",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "monitor-aka-platform",
+      "name": "Monitor aka Platform",
+      "version": "1.5.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#monitor-1.5.0-rc01",
+      "html": "",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "orchestrator",
+      "name": "Orchestrator",
+      "version": "1.4.1-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#orchestrator-1.4.1-rc01",
+      "html": "",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "services",
+      "name": "Services",
+      "version": "1.4.1-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#services-1.4.1-rc01",
+      "html": "",
+      "commits": null
+    }
+  ]
+}

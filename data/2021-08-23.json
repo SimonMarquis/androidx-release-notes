@@ -1,0 +1,89 @@
+{
+  "date": "2021-08-23",
+  "id": "tag:google.com,2016:androidx-release-notes#august_23_2021",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#august_23_2021",
+  "updated": "2021-08-23T00:00:00Z",
+  "entries": [
+    {
+      "group": "test",
+      "id": "core",
+      "name": "Core",
+      "version": "1.4.1-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#core-1.4.1-alpha01",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Reduce ActivityScenario overhead by using plain whitebackground and disabling transition animations in internal Activities</li>\n</ul>\n<p><strong>Dependency Changes</strong></p>\n<ul>\n <li>-ktx: Explicitly depend on kotlin stdlib 1.4.30</li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "espresso",
+      "name": "Espresso",
+      "version": "3.5.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#espresso-3.5.0-alpha01",
+      "html": "<p>The following artifacts were released:</p>\n<ul>\n <li><code>androidx.test.espresso:espresso-accessibility:3.5.0-alpha01</code></li>\n <li><code>androidx.test.espresso:espresso-core:3.5.0-alpha01</code></li>\n <li><code>androidx.test.espresso:espresso-contrib:3.5.0-alpha01</code></li>\n <li><code>androidx.test.espresso:espresso-idling-resource:3.5.0-alpha01</code></li>\n <li><code>androidx.test.espresso:espresso-intents:3.5.0-alpha01</code></li>\n <li><code>androidx.test.espresso:espresso-remote:3.5.0-alpha01</code></li>\n <li><code>androidx.test.espresso:espresso-web:3.5.0-alpha01</code></li>\n <li><code>androidx.test.espresso.idling:idling-concurrent:3.5.0-alpha01</code></li>\n <li><code>androidx.test.espresso.idling:idling-net:3.5.0-alpha01</code></li>\n</ul>\n<p><strong>New features</strong></p>\n<ul>\n <li>Save view hierarchy to a file on failures</li>\n</ul>\n<p><strong>API Changes</strong></p>\n<ul>\n <li>Add IntentMatcher.hasExtra API</li>\n</ul>\n<p><strong>Dependency Changes</strong></p>\n<ul>\n <li>core: Depend on kotlin stdlib 1.4.30</li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "junit-extensions",
+      "name": "JUnit Extensions",
+      "version": "1.1.4-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#ext.junit-1.1.4-alpha01",
+      "html": "<p><strong>Dependency Changes</strong></p>\n<ul>\n <li>-ktx: Explicitly depend on kotlin stdlib 1.4.30</li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "monitor-aka-platform",
+      "name": "Monitor aka Platform",
+      "version": "1.5.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#monitor-1.5.0-alpha01",
+      "html": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Add HardwareRendererCompat</li>\n <li>Add PlatformTestStorage</li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "orchestrator",
+      "name": "Orchestrator",
+      "version": "1.4.1-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#orchestrator-1.4.1-alpha01",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Delete obsolete OrchestrationXmlTestRunListener , in part to prevent error messages on Android 11+</li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "rules",
+      "name": "Rules",
+      "version": "1.4.1-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#rules-1.4.1-alpha01",
+      "html": "<p>No significant changes</p>",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "runner",
+      "name": "Runner",
+      "version": "1.4.1-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#runner-1.4.1-alpha01",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Enhance error handling in exception scenarios (app crashes, etc)</li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "services",
+      "name": "Services",
+      "version": "1.4.1-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#services-1.4.1-alpha01",
+      "html": "<p>** Bug Fixes**</p>\n<ul>\n <li>Fix execution on Android S Beta4 by using real uid for ToolConnection [#1042]</li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "truth-extensions",
+      "name": "Truth Extensions",
+      "version": "1.5.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#ext.truth-1.5.0-alpha01",
+      "html": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Add BundleSubject#doubleFloat</li>\n</ul>",
+      "commits": null
+    }
+  ]
+}
