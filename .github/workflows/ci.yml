@@ -78,6 +78,7 @@ jobs:
         with:
           page: site/index.html
           output: screenshots
+          optimize: false
       - name: Upload screenshots
         id: screenshots
         uses: actions/upload-artifact@v7
