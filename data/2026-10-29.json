@@ -1,0 +1,98 @@
+{
+  "date": "2026-10-29",
+  "id": "tag:google.com,2016:androidx-release-notes#october_29_2026",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#october_29_2026",
+  "updated": "2026-10-29T00:00:00Z",
+  "entries": [
+    {
+      "group": "test",
+      "id": "core",
+      "name": "Core",
+      "version": "1.8.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#core-1.8.0-alpha03",
+      "html": "",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "espresso",
+      "name": "Espresso",
+      "version": "3.8.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#espresso-3.8.0-alpha03",
+      "html": "<p>The following artifacts were released:</p>\n<ul>\n <li><code>androidx.test.espresso:espresso-accessibility:3.8.0-alpha03</code></li>\n <li><code>androidx.test.espresso:espresso-core:3.8.0-alpha03</code></li>\n <li><code>androidx.test.espresso:espresso-contrib:3.8.0-alpha03</code></li>\n <li><code>androidx.test.espresso:espresso-idling-resource:3.8.0-alpha03</code></li>\n <li><code>androidx.test.espresso:espresso-intents:3.8.0-alpha03</code></li>\n <li><code>androidx.test.espresso:espresso-remote:3.8.0-alpha03</code></li>\n <li><code>androidx.test.espresso:espresso-web:3.8.0-alpha03</code></li>\n <li><code>androidx.test.espresso.idling:idling-concurrent:3.8.0-alpha03</code></li>\n <li><code>androidx.test.espresso.idling:idling-net:3.8.0-alpha03</code></li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "espresso-device",
+      "name": "Espresso Device",
+      "version": "1.2.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#espresso-device-1.2.0-alpha03",
+      "html": "",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "junit-extensions",
+      "name": "JUnit Extensions",
+      "version": "1.4.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#ext.junit-1.4.0-alpha03",
+      "html": "",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "monitor",
+      "name": "Monitor",
+      "version": "1.9.0-alpha04",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#monitor-1.9.0-alpha04",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Use <code>SystemClock.uptimeMillis()</code> instead of <code>System.currentTimeMillis()</code> in <code>MonitoringInstrumentation</code> so wall-clock adjustments (such as NTP sync) do not skew activity completion wait loops or idle timestamps. (b/578740191)</li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "orchestrator",
+      "name": "Orchestrator",
+      "version": "1.7.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#orchestrator-1.7.0-alpha03",
+      "html": "",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "rules",
+      "name": "Rules",
+      "version": "1.8.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#rules-1.8.0-alpha03",
+      "html": "",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "runner",
+      "name": "Runner",
+      "version": "1.8.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#runner-1.8.0-alpha03",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Inspect class-level annotations in <code>TestRequestBuilder.CustomFilters</code> so <code>@CustomFilter</code> annotations applied at the test class level are evaluated. (b/573501234)</li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "services",
+      "name": "Services",
+      "version": "1.7.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#services-1.7.0-alpha03",
+      "html": "",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "truth-extensions",
+      "name": "Truth Extensions",
+      "version": "1.8.0-alpha03",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#ext.truth-1.8.0-alpha03",
+      "html": "",
+      "commits": null
+    }
+  ]
+}

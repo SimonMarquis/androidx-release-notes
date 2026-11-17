@@ -1,0 +1,26 @@
+{
+  "date": "2026-03-16",
+  "id": "tag:google.com,2016:androidx-release-notes#march_16_2026",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#march_16_2026",
+  "updated": "2026-03-16T00:00:00Z",
+  "entries": [
+    {
+      "group": "media3",
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.9.3",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.9.3",
+      "html": "<ul>\n <li>Audio:\n  <ul>\n   <li>Fix bug where playback gets stuck when playing a playlist of gapless audio in compressed offload mode.</li>\n  </ul></li>\n</ul>",
+      "commits": "https://github.com/androidx/media/commits/1.9.3"
+    },
+    {
+      "group": "media3",
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.10.0-rc02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.10.0-rc02",
+      "html": "<p>Use the 1.10.0 <a href=\"https://developer.android.com/jetpack/androidx/releases/media3#1.10.0\">stable version</a>.</p>",
+      "commits": null
+    }
+  ]
+}

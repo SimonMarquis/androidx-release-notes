@@ -1,0 +1,17 @@
+{
+  "date": "2026-03-27",
+  "id": "tag:google.com,2016:androidx-release-notes#march_27_2026",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#march_27_2026",
+  "updated": "2026-03-27T00:00:00Z",
+  "entries": [
+    {
+      "group": "navigationevent",
+      "id": "navigationevent",
+      "name": "navigationevent",
+      "version": "1.1.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/navigationevent#1.1.0-beta01",
+      "html": "<p><strong>API Changes</strong></p>\n<ul>\n <li>Add <code>OnForwardCompletedFallback</code> to <code>NavigationEventDispatcher</code>, enabling a default system behavior for unhandled forward navigation events. (<a href=\"https://android-review.googlesource.com/#/q/Iac6205388c43b21e51406b0aa5c42040b2ad325d\">Iac620</a>, <a href=\"https://issuetracker.google.com/issues/489138116\">b/489138116</a>)</li>\n</ul>",
+      "commits": "https://android.googlesource.com/platform/frameworks/support/+log/c640b9aa8e30b5db9ee258561ad1fc4bc947e69d..9b50dbba6a2338e2659bd9ccdd682779ca02615f/navigationevent"
+    }
+  ]
+}
