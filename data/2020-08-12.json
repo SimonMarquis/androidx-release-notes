@@ -1,0 +1,17 @@
+{
+  "date": "2020-08-12",
+  "id": "tag:google.com,2016:androidx-release-notes#august_12_2020",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#august_12_2020",
+  "updated": "2020-08-12T00:00:00Z",
+  "entries": [
+    {
+      "group": "games",
+      "id": "games",
+      "name": "Android Games",
+      "version": "1.0.0-alpha02",
+      "url": "https://developer.android.com/jetpack/androidx/releases/games#games-performance-tuner-1.0.0-alpha02",
+      "html": "<p>The Android Gaming library was renamed to the Android Games library.</p>\n<div></div>\n<pre><code>androidx.gaming -&gt; androidx.games\n</code></pre>",
+      "commits": null
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "date": "2020-10-27",
+  "id": "tag:google.com,2016:androidx-release-notes#october_27_2020",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#october_27_2020",
+  "updated": "2020-10-27T00:00:00Z",
+  "entries": [
+    {
+      "group": "constraintlayout",
+      "id": "constraintlayout",
+      "name": "Constraintlayout",
+      "version": "2.0.3",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-2.0.3",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<p>This releases fixes a few issues. It is recommended to update to this version.</p>\n<ul>\n <li>Windows insets handling</li>\n <li>Handling of dimension ratio in some situations</li>\n <li>Crash with some RTL layouts</li>\n</ul>\n<p>See the list of closed issues <a href=\"https://androidstudio.googleblog.com/2020/10/constraintlayout-203.html\">here</a>.</p>",
+      "commits": null
+    }
+  ]
+}

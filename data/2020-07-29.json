@@ -1,0 +1,17 @@
+{
+  "date": "2020-07-29",
+  "id": "tag:google.com,2016:androidx-release-notes#july_29_2020",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#july_29_2020",
+  "updated": "2020-07-29T00:00:00Z",
+  "entries": [
+    {
+      "group": "constraintlayout",
+      "id": "constraintlayout",
+      "name": "Constraintlayout",
+      "version": "2.0.0-rc1",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-2.0.0-rc1",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<p>See the list of closed issues <a href=\"https://androidstudio.googleblog.com/2020/07/constraintlayout-200-rc1.html\">here</a>.</p>\n<p>Notable fixes are:</p>\n<ul>\n <li>Flow fixes</li>\n <li>RecyclerView fixes (we recommend to update to recyclerview 1.2.0 alpha 5 or later)</li>\n <li>MotionLayout TransitionListener fixes</li>\n <li>MotionLayout memory leak fix</li>\n</ul>",
+      "commits": null
+    }
+  ]
+}

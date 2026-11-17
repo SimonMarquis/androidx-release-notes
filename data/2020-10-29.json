@@ -1,0 +1,17 @@
+{
+  "date": "2020-10-29",
+  "id": "tag:google.com,2016:androidx-release-notes#october_29_2020",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#october_29_2020",
+  "updated": "2020-10-29T00:00:00Z",
+  "entries": [
+    {
+      "group": "constraintlayout",
+      "id": "constraintlayout",
+      "name": "Constraintlayout",
+      "version": "2.0.4",
+      "url": "https://developer.android.com/jetpack/androidx/releases/constraintlayout#constraintlayout-2.0.4",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<p>This releases fixes a potential NPE that may happen when removing a child view at runtime. It is recommended to update to this version.</p>\n<p>See the list of closed issues <a href=\"https://androidstudio.googleblog.com/2020/10/constraintlayout-204.html\">here</a>.</p>",
+      "commits": null
+    }
+  ]
+}
