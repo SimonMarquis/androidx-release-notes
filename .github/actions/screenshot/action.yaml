@@ -10,6 +10,10 @@ inputs:
   devices:
     description: Space-separated devices (desktop, tablet, smartphone)
     default: desktop tablet smartphone
+  optimize:
+    description: Optimize screenshots using pngquant and zopflipng
+    required: false
+    default: "true"
 runs:
   using: composite
   steps:
@@ -24,6 +28,7 @@ runs:
         PAGE: ${{ inputs.page }}
         OUTPUT: ${{ inputs.output }}
         DEVICES: ${{ inputs.devices }}
+        OPTIMIZE: ${{ inputs.optimize }}
       run: |
         set -euo pipefail
         mkdir -p "$OUTPUT"
@@ -79,10 +84,12 @@ runs:
               echo "::warning::Chromium timed out for $device/$theme (exit code $status). Retrying ($attempt/3)..."
             done
 
-            echo "::group::Compress screenshot: $device-$theme"
-            pngquant --force --ext .png --strip --speed 1 --nofs 64 -- "$screenshot"
-            zopflipng -y --filters=0me --iterations=15 "$screenshot" "$screenshot"
-            echo "::endgroup::"
+            if [[ "$OPTIMIZE" == "true" ]]; then
+              echo "::group::Compress screenshot: $device-$theme"
+              pngquant --force --ext .png --strip --speed 1 --nofs 64 -- "$screenshot"
+              zopflipng -y --filters=0me --iterations=15 "$screenshot" "$screenshot"
+              echo "::endgroup::"
+            fi
           done
         done
 
