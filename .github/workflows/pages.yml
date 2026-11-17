@@ -47,7 +47,7 @@ jobs:
       - name: Capture previews
         id: previews
         continue-on-error: true
-        timeout-minutes: 5
+        timeout-minutes: 10
         uses: ./.github/actions/screenshot
         with:
           page: site/index.html
