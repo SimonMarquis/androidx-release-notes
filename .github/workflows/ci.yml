@@ -58,7 +58,7 @@ jobs:
   screenshots:
     needs: build
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     outputs:
       artifact_url: ${{ steps.screenshots.outputs.artifact-url }}
     steps:
@@ -73,7 +73,7 @@ jobs:
           path: site
 
       - name: Capture screenshots
-        timeout-minutes: 5
+        timeout-minutes: 10
         uses: ./.github/actions/screenshot
         with:
           page: site/index.html
