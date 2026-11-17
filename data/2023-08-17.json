@@ -1,0 +1,17 @@
+{
+  "date": "2023-08-17",
+  "id": "tag:google.com,2016:androidx-release-notes#august_17_2023",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#august_17_2023",
+  "updated": "2023-08-17T00:00:00Z",
+  "entries": [
+    {
+      "group": "media3",
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.2.0-alpha01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.2.0-alpha01",
+      "html": "<p>Use the 1.2.0 <a href=\"https://developer.android.com/jetpack/androidx/releases/media3#1.2.0\">stable version</a>.</p>",
+      "commits": null
+    }
+  ]
+}
