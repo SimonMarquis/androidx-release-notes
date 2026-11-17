@@ -87,7 +87,7 @@ runs:
             if [[ "$OPTIMIZE" == "true" ]]; then
               echo "::group::Compress screenshot: $device-$theme"
               pngquant --force --ext .png --strip --speed 1 --nofs 64 -- "$screenshot"
-              zopflipng -y --filters=0me --iterations=15 "$screenshot" "$screenshot"
+              zopflipng -y --iterations=1 "$screenshot" "$screenshot"
               echo "::endgroup::"
             fi
           done
