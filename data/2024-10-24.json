@@ -1,0 +1,17 @@
+{
+  "date": "2024-10-24",
+  "id": "tag:google.com,2016:androidx-release-notes#october_24_2024",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#october_24_2024",
+  "updated": "2024-10-24T00:00:00Z",
+  "entries": [
+    {
+      "group": "work",
+      "id": "work",
+      "name": "WorkManager",
+      "version": "2.10.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/work#2.10.0-rc01",
+      "html": "",
+      "commits": "https://android.googlesource.com/platform/frameworks/support/+log/b6ae8d0a0e8cd803f7b84f30101eda1af4f1d6b6..61fffa80db30c92b3f06eb44b8f108dcdb33410e/work"
+    }
+  ]
+}

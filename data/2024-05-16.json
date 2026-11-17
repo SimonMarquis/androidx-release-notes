@@ -1,0 +1,98 @@
+{
+  "date": "2024-05-16",
+  "id": "tag:google.com,2016:androidx-release-notes#may_16_2024",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#may_16_2024",
+  "updated": "2024-05-16T00:00:00Z",
+  "entries": [
+    {
+      "group": "test",
+      "id": "core",
+      "name": "Core",
+      "version": "1.6.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#core-1.6.0-beta01",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Remove unused androidx.test.annotation dependency</li>\n <li>Revert back to androidx.concurrent 1.1.0</li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "espresso",
+      "name": "Espresso",
+      "version": "3.6.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#espresso-3.6.0-beta01",
+      "html": "<p>The following artifacts were released:</p>\n<ul>\n <li><code>androidx.test.espresso:espresso-accessibility:3.6.0-beta01</code></li>\n <li><code>androidx.test.espresso:espresso-core:3.6.0-beta01</code></li>\n <li><code>androidx.test.espresso:espresso-contrib:3.6.0-beta01</code></li>\n <li><code>androidx.test.espresso:espresso-idling-resource:3.6.0-beta01</code></li>\n <li><code>androidx.test.espresso:espresso-intents:3.6.0-beta01</code></li>\n <li><code>androidx.test.espresso:espresso-remote:3.6.0-beta01</code></li>\n <li><code>androidx.test.espresso:espresso-web:3.6.0-beta01</code></li>\n <li><code>androidx.test.espresso.idling:idling-concurrent:3.6.0-beta01</code></li>\n <li><code>androidx.test.espresso.idling:idling-net:3.6.0-beta01</code></li>\n</ul>\n<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Remove unused androidx.test.annotation dependency</li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "espresso-device",
+      "name": "Espresso Device",
+      "version": "1.0.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#espresso-device-1.0.0-beta01",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Remove unused androidx.test.annotation dependency</li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "junit-extensions",
+      "name": "JUnit Extensions",
+      "version": "1.2.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#ext.junit-1.2.0-beta01",
+      "html": "",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "monitor",
+      "name": "Monitor",
+      "version": "1.7.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#monitor-1.7.0-beta01",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Remove unused androidx.test.annotation dependency</li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "orchestrator",
+      "name": "Orchestrator",
+      "version": "1.5.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#orchestrator-1.5.0-beta01",
+      "html": "",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "rules",
+      "name": "Rules",
+      "version": "1.6.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#rules-1.6.0-beta01",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Remove unused androidx.test.annotation dependency</li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "runner",
+      "name": "Runner",
+      "version": "1.6.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#runner-1.6.0-beta01",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Remove unused androidx.test.annotation dependency</li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "services",
+      "name": "Services",
+      "version": "1.5.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#services-1.5.0-beta01",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Reduce HostedFile log spam</li>\n <li>Remove unused androidx.test.annotation dependency</li>\n</ul>",
+      "commits": null
+    },
+    {
+      "group": "test",
+      "id": "truth-extensions",
+      "name": "Truth Extensions",
+      "version": "1.6.0-beta01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/test#ext.truth-1.6.0-beta01",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Remove unused androidx.test.annotation dependency</li>\n</ul>",
+      "commits": null
+    }
+  ]
+}

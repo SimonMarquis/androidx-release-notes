@@ -1,0 +1,17 @@
+{
+  "date": "2024-02-22",
+  "id": "tag:google.com,2016:androidx-release-notes#february_22_2024",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#february_22_2024",
+  "updated": "2024-02-22T00:00:00Z",
+  "entries": [
+    {
+      "group": "media3",
+      "id": "media3",
+      "name": "Media3",
+      "version": "1.3.0-rc01",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.3.0-rc01",
+      "html": "<p>Use the <a href=\"https://developer.android.com/jetpack/androidx/releases/media3#1.3.0\">1.3.0 stable version</a>.</p>",
+      "commits": null
+    }
+  ]
+}
