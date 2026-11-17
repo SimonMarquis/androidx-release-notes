@@ -1,0 +1,25 @@
+name: 🗜️ Minify Pages assets
+description: Minify the linked site assets and generate source maps.
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v7
+      with:
+        node-version: lts/lithium # v26
+        cache: npm
+    - shell: bash
+      run: |
+        set -euo pipefail
+        npm ci --include=dev
+        ./node_modules/.bin/esbuild static/assets/site.js --minify --sourcemap --outfile=static/assets/site.min.js
+        ./node_modules/.bin/esbuild static/assets/site.css --minify --sourcemap --outfile=static/assets/site.min.css
+    - name: Upload minified assets
+      uses: actions/upload-artifact@v7
+      with:
+        name: minified-assets
+        path: |
+          static/assets/site.min.js
+          static/assets/site.min.js.map
+          static/assets/site.min.css
+          static/assets/site.min.css.map
+        if-no-files-found: error

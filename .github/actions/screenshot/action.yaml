@@ -1,0 +1,88 @@
+name: 📸 Screenshot
+description: Capture light and dark Chromium screenshots of a local HTML page
+inputs:
+  page:
+    description: HTML file to capture
+    required: true
+  output:
+    description: Directory receiving <device>-<theme>.png files
+    required: true
+  devices:
+    description: Space-separated devices (desktop, tablet, smartphone)
+    default: desktop tablet smartphone
+runs:
+  using: composite
+  steps:
+    - name: Install pngquant and zopflipng
+      shell: bash
+      run: |
+        set -euo pipefail
+        sudo apt-get update -qq
+        sudo apt-get install -y -qq pngquant zopfli
+    - shell: bash
+      env:
+        PAGE: ${{ inputs.page }}
+        OUTPUT: ${{ inputs.output }}
+        DEVICES: ${{ inputs.devices }}
+      run: |
+        set -euo pipefail
+        mkdir -p "$OUTPUT"
+        for device in $DEVICES; do
+          case "$device" in
+            desktop)    width=1440; height=900; dpr=2 ;;
+            tablet)     width=820; height=1180; dpr=2 ;;
+            smartphone) width=402; height=874; dpr=3 ;;
+            *) echo "Unknown device: $device" >&2; exit 1 ;;
+          esac
+
+          for theme in light dark; do
+            screenshot="$OUTPUT/$device-$theme.png"
+
+            for attempt in 1 2 3; do
+              echo "::group::Chromium screenshot: $device-$theme (attempt $attempt/3)"
+
+              if timeout --kill-after=10s 1m chromium \
+                --headless \
+                --no-sandbox \
+                --no-first-run \
+                --disable-gpu \
+                --enable-features=OverlayScrollbar:mode/overlay \
+                --hide-scrollbars \
+                --force-device-scale-factor="$dpr" \
+                --window-size="$width,$height" \
+                --virtual-time-budget=2000 \
+                $([[ "$theme" == dark ]] && echo --force-dark-mode) \
+                --screenshot="$screenshot" \
+                "file://$(realpath "$PAGE")"
+              then
+                echo "::endgroup::"
+                break
+              else
+                status=$?
+              fi
+
+              echo "::endgroup::"
+
+              # 124 = timeout; 137 = killed with SIGKILL (possibly after timeout's kill-after period).
+              if [[ "$status" -ne 124 && "$status" -ne 137 ]]; then
+                echo "::error::Chromium failed with exit code $status ($device/$theme)"
+                exit "$status"
+              fi
+
+              rm -f "$screenshot"
+
+              if [[ "$attempt" -eq 3 ]]; then
+                echo "::error::Chromium timed out after 3 attempts ($device/$theme, exit code $status)"
+                exit "$status"
+              fi
+
+              echo "::warning::Chromium timed out for $device/$theme (exit code $status). Retrying ($attempt/3)..."
+            done
+
+            echo "::group::Compress screenshot: $device-$theme"
+            pngquant --verbose --force --ext .png --strip --speed 1 --nofs 64 -- "$screenshot"
+            zopflipng --verbose -y --filters=0me --iterations=15 "$screenshot" "$screenshot"
+            echo "::endgroup::"
+          done
+        done
+

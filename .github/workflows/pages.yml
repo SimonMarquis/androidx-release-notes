@@ -1,0 +1,99 @@
+name: 📝 Pages sync
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - data/**
+      - static/**
+      - package-lock.json
+      - package.json
+      - scripts/**
+      - .github/actions/minify-assets/action.yaml
+      - .github/actions/screenshot/action.yaml
+      - .github/workflows/pages.yml
+  workflow_dispatch:
+
+concurrency:
+  group: androidx-release-notes-sync
+  cancel-in-progress: false
+  queue: max
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          fetch-depth: 0 # needed to diff against ${{ github.event.before }}
+      - uses: ./.github/actions/setup-java
+
+      - uses: ./.github/actions/minify-assets
+      - run: ./scripts/androidx-release-notes.main.kts build --minified 2>&1 | tee -a "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+
+      - name: Capture previews
+        id: previews
+        continue-on-error: true
+        timeout-minutes: 5
+        uses: ./.github/actions/screenshot
+        with:
+          page: site/index.html
+          output: art
+      - name: Discard partial previews
+        if: steps.previews.outcome == 'failure'
+        run: |
+          echo "::warning::Preview capture failed, keeping the committed previews"
+          git restore -- art
+          git clean -fdq -- art
+
+      - id: github-app
+        uses: SimonMarquis/setup-github-app-as-bot@v1
+        with:
+          client-id: ${{ secrets.APP_CLIENT_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          permission-contents: write
+      - name: Commit and push previews
+        run: |
+          [[ -z "$(git status --porcelain -- art)" ]] && exit 0
+          git add art
+          git commit -m "🤖 AndroidX release notes previews"
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
+
+      - name: Synchronize GitHub releases
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == workflow_dispatch ]]; then
+            ./scripts/androidx-release-notes.main.kts releases 2>&1 | tee -a "$GITHUB_STEP_SUMMARY"
+          elif [[ "$GITHUB_EVENT_NAME" == push ]]; then
+            ./scripts/androidx-release-notes.main.kts releases --changed-from "$BEFORE" 2>&1 | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ steps.github-app.outputs.token }}
+          BEFORE: ${{ github.event.before }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
