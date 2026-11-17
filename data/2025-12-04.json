@@ -1,0 +1,35 @@
+{
+  "date": "2025-12-04",
+  "id": "tag:google.com,2016:androidx-release-notes#december_4_2025",
+  "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#december_4_2025",
+  "updated": "2025-12-04T00:00:00Z",
+  "entries": [
+    {
+      "group": "camera",
+      "id": "camera",
+      "name": "Camera",
+      "version": "1.5.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera#1.5.2",
+      "html": "<p><strong>Bug Fixes</strong></p>\n<ul>\n <li>Fixed a crash due to an <code>IllegalArgumentException: Dynamic range profile cannot be converted to a DynamicRange object:</code> on Android 17 or higher. (<a href=\"https://android-review.googlesource.com/#/q/Ic91844818c0072e2585c61067e500c514832f155\">Ic9184</a>)</li>\n <li>Fixed a bug leading to inconsistent feature group API results when <code>PREVIEW_STABILIZATION</code> feature was added with <code>VideoCapture</code> use case, but without <code>Preview</code> use case. (<a href=\"https://android-review.googlesource.com/#/q/Ifed82d0d9ce2cfdb407523535d9e4c8c4a51f46d\">Ifed82</a>)</li>\n <li>Fixed preferred features not being filtered out despite lacking the required use cases for the features to be supported. (<a href=\"https://android-review.googlesource.com/#/q/I38db88ca0ae9c2cd87b49ceffddd7980b3178576\">I38db8</a>)</li>\n</ul>",
+      "commits": "https://android.googlesource.com/platform/frameworks/support/+log/e7bb7786b42348603fed2825d18815e6dfa9bd4b..0975f1cec9e7c5b1192d3ceb925b3178cd234957/camera"
+    },
+    {
+      "group": "camera-featurecombinationquery",
+      "id": "camera-featurecombinationquery",
+      "name": "Camera Feature Combination Query",
+      "version": "1.5.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera-featurecombinationquery#1.5.2",
+      "html": "",
+      "commits": "https://android.googlesource.com/platform/frameworks/support/+log/e7bb7786b42348603fed2825d18815e6dfa9bd4b..0975f1cec9e7c5b1192d3ceb925b3178cd234957/camera/featurecombinationquery"
+    },
+    {
+      "group": "camera-viewfinder",
+      "id": "camera-viewfinder",
+      "name": "camera viewfinder",
+      "version": "1.5.2",
+      "url": "https://developer.android.com/jetpack/androidx/releases/camera-viewfinder#1.5.2",
+      "html": "",
+      "commits": "https://android.googlesource.com/platform/frameworks/support/+log/e7bb7786b42348603fed2825d18815e6dfa9bd4b..0975f1cec9e7c5b1192d3ceb925b3178cd234957/camera/viewfinder"
+    }
+  ]
+}
