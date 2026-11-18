@@ -1176,6 +1176,9 @@ class SiteRenderer(private val static: Path, private val output: Path, private v
                 id = "theme-toggle"
                 attributes["title"] = "Toggle theme"
             }
+            a(href = "https://developer.android.com/jetpack/androidx/versions", classes = "android-link") {
+                attributes["title"] = "View official AndroidX releases"
+            }
             a(href = "https://github.com/SimonMarquis/androidx-release-notes", classes = "github-link") {
                 attributes["title"] = "View project on GitHub"
             }
