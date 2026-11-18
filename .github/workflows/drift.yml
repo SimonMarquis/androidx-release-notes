@@ -13,6 +13,10 @@ concurrency:
 permissions:
   contents: read
 
+env:
+  BRANCH: automation/drift-sync
+  TITLE: 🧭 Drift sync
+
 defaults:
   run:
     shell: bash
@@ -22,8 +26,6 @@ jobs:
     if: github.ref_name == github.event.repository.default_branch
     runs-on: ubuntu-latest
     timeout-minutes: 60
-    env:
-      BRANCH: automation/drift-sync
     steps:
       - uses: actions/checkout@v7
         with:
@@ -52,7 +54,6 @@ jobs:
         if: steps.changes.outputs.changed == 'true'
         env:
           BASE_BRANCH: ${{ github.event.repository.default_branch }}
-          TITLE: 🧭 Drift sync
         run: |
           git commit -m "$TITLE" -- data
           git push --force origin "HEAD:refs/heads/$BRANCH"
