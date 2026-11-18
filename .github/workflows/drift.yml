@@ -34,11 +34,8 @@ jobs:
         id: changes
         run: |
           git add -A -- data
-          if git diff --cached --quiet -- data; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
+          CHANGES="$(git diff --cached --name-only -- data)"
+          echo "changed=$([[ -n "$CHANGES" ]] && echo true || echo false)" >> "$GITHUB_OUTPUT"
 
       - uses: SimonMarquis/setup-github-app-as-bot@v1
         with:
@@ -75,7 +72,7 @@ jobs:
         env:
           BRANCH: automation/drift-sync
         run: |
-          PR_NUMBERS="$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$BRANCH" --state open --json number --jq '.[].number')"
+          PR_NUMBERS="$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$BRANCH" --state open --json number,headRepositoryOwner --jq ".[] | select(.headRepositoryOwner.login == \"$GITHUB_REPOSITORY_OWNER\") | .number")"
           for PR_NUMBER in $PR_NUMBERS; do
             gh pr close "$PR_NUMBER" --repo "$GITHUB_REPOSITORY"
           done
