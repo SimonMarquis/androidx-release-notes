@@ -57,18 +57,16 @@ jobs:
           git commit -m "$TITLE" -- data
           git push --force origin "HEAD:refs/heads/$BRANCH"
 
-          if gh pr view "$BRANCH" --repo "$GITHUB_REPOSITORY" \
-              --json state --jq '.state' 2>/dev/null | grep -qx OPEN; then
-            echo "::notice::PR already exists"; exit 0
-          fi
-
           gh pr create \
             --repo "$GITHUB_REPOSITORY" \
             --title "$TITLE" \
             --body "" \
             --base "$BASE_BRANCH" \
             --head "$BRANCH" \
-            --assignee "$GITHUB_TRIGGERING_ACTOR"
+            --assignee "$GITHUB_TRIGGERING_ACTOR" || {
+              gh pr view "$BRANCH" --repo "$GITHUB_REPOSITORY" \
+                --json state,baseRefName --jq ".state + \":\" + .baseRefName" | grep -Fx "OPEN:$BASE_BRANCH"
+            }
 
       - name: 🧹 Close stale PR and delete branch
         if: steps.changes.outputs.changed == 'false'
