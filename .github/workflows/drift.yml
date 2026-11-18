@@ -30,6 +30,16 @@ jobs:
 
       - run: ./scripts/androidx-release-notes.main.kts sync all-channel 2>&1 | tee -a "$GITHUB_STEP_SUMMARY"
 
+      - name: 🔎 Detect changes
+        id: changes
+        run: |
+          git add -A -- data
+          if git diff --cached --quiet -- data; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - uses: SimonMarquis/setup-github-app-as-bot@v1
         with:
           client-id: ${{ secrets.APP_CLIENT_ID }}
@@ -38,17 +48,12 @@ jobs:
           permission-pull-requests: write
 
       - name: 📡 Create PR
+        if: steps.changes.outputs.changed == 'true'
         env:
           BASE_BRANCH: ${{ github.event.repository.default_branch }}
           BRANCH: automation/drift-sync
           TITLE: 🧭 Drift sync
         run: |
-          git add -A -- data
-
-          if git diff --cached --quiet --exit-code -- data; then
-            echo "::notice::UP-TO-DATE"; exit 0
-          fi
-
           git commit -m "$TITLE" -- data
           git push --force origin "HEAD:refs/heads/$BRANCH"
 
@@ -64,3 +69,18 @@ jobs:
             --base "$BASE_BRANCH" \
             --head "$BRANCH" \
             --assignee "$GITHUB_TRIGGERING_ACTOR"
+
+      - name: 🧹 Close stale PR and delete branch
+        if: steps.changes.outputs.changed == 'false'
+        env:
+          BRANCH: automation/drift-sync
+        run: |
+          PR_NUMBERS="$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$BRANCH" --state open --json number --jq '.[].number')"
+          for PR_NUMBER in $PR_NUMBERS; do
+            gh pr close "$PR_NUMBER" --repo "$GITHUB_REPOSITORY"
+          done
+
+          REFS="$(gh api "repos/$GITHUB_REPOSITORY/git/matching-refs/heads/$BRANCH" --jq '.[].ref')"
+          if grep -Fxq "refs/heads/$BRANCH" <<< "$REFS"; then
+            git push origin --delete "$BRANCH"
+          fi
