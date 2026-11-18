@@ -64,10 +64,9 @@ jobs:
             --body "" \
             --base "$BASE_BRANCH" \
             --head "$BRANCH" \
-            --assignee "$GITHUB_TRIGGERING_ACTOR" || {
-              gh pr view "$BRANCH" --repo "$GITHUB_REPOSITORY" \
-                --json state,baseRefName --jq ".state + \":\" + .baseRefName" | grep -Fx "OPEN:$BASE_BRANCH"
-            }
+            --assignee "$GITHUB_TRIGGERING_ACTOR" ||
+            gh pr view "$BRANCH" --repo "$GITHUB_REPOSITORY" --json state,baseRefName |
+              jq -e --arg base "$BASE_BRANCH" '.state == "OPEN" and .baseRefName == $base'
 
       - name: 🧹 Close stale PR and delete branch
         if: steps.changes.outputs.changed == 'false'
