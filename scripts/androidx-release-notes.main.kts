@@ -1158,29 +1158,32 @@ class SiteRenderer(private val static: Path, private val output: Path, private v
                     }
                 }
             }
-            // Shown while the page is loading; site.js ends loading once the page is parsed.
-            if (index) span("loader") { attributes["aria-hidden"] = "true" }
-            // CSS expands the field while it is focused or filled; the icon label focuses it.
-            div("search-control") {
-                label("search-icon") {
-                    htmlFor = "release-search"
-                    attributes["title"] = "Search"
+            // Grouped in one grid column so the filters stay centered until the expanded search needs the room.
+            div("header-actions") {
+                // Shown while the page is loading; site.js ends loading once the page is parsed.
+                if (index) span("loader") { attributes["aria-hidden"] = "true" }
+                // CSS expands the field while it is focused or filled; the icon label focuses it.
+                div("search-control") {
+                    label("search-icon") {
+                        htmlFor = "release-search"
+                        attributes["title"] = "Search"
+                    }
+                    input(type = InputType.search, name = "release-search") {
+                        id = "release-search"
+                        placeholder = "Name, version, date…"
+                        attributes("autocomplete" to "off", "aria-label" to "Filter components by name, version or date")
+                    }
                 }
-                input(type = InputType.search, name = "release-search") {
-                    id = "release-search"
-                    placeholder = "Name, version, date…"
-                    attributes("autocomplete" to "off", "aria-label" to "Filter components by name, version or date")
+                button(type = ButtonType.button, classes = "theme-toggle") {
+                    id = "theme-toggle"
+                    attributes["title"] = "Toggle theme"
                 }
-            }
-            button(type = ButtonType.button, classes = "theme-toggle") {
-                id = "theme-toggle"
-                attributes["title"] = "Toggle theme"
-            }
-            a(href = "https://developer.android.com/jetpack/androidx/versions", classes = "android-link") {
-                attributes["title"] = "View official AndroidX releases"
-            }
-            a(href = "https://github.com/SimonMarquis/androidx-release-notes", classes = "github-link") {
-                attributes["title"] = "View project on GitHub"
+                a(href = "https://developer.android.com/jetpack/androidx/versions", classes = "android-link") {
+                    attributes["title"] = "View official AndroidX releases"
+                }
+                a(href = "https://github.com/SimonMarquis/androidx-release-notes", classes = "github-link") {
+                    attributes["title"] = "View project on GitHub"
+                }
             }
         }
     }

@@ -97,18 +97,19 @@ button, input {
 }
 
 .header-inner {
-  position: relative;
   width: min(896px, calc(100% - 32px));
   min-height: 64px;
   margin: auto;
-  display: flex;
+  display: grid;
+  /* Equal side columns center the filters; the actions column outgrows its share as the search expands. */
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 8px;
 }
 
 .brand {
   display: flex;
+  justify-self: start;
   flex: 0 0 auto;
   align-items: baseline;
   gap: 7px;
@@ -204,6 +205,13 @@ button, input {
   outline-offset: 2px;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
 .search-control {
   position: relative;
   display: flex;
@@ -211,7 +219,6 @@ button, input {
   width: 34px;
   height: 34px;
   flex: 0 0 auto;
-  margin-left: auto;
   transition: width .2s ease;
 }
 
@@ -223,7 +230,6 @@ button, input {
   width: 20px;
   height: 20px;
   flex: 0 0 auto;
-  margin-left: auto;
   border-radius: 50%;
   background: var(--primary);
   animation: loader 1s ease-in infinite;
@@ -231,10 +237,6 @@ button, input {
 
 :root:not(.loading) .loader {
   display: none;
-}
-
-.loading .loader ~ .search-control {
-  margin-left: 0;
 }
 
 .loading :where(.filter-btn, .search-control, .theme-toggle, .date-step) {
@@ -702,14 +704,6 @@ button, input {
   }
 }
 
-@media (min-width: 801px) {
-  .header-filters {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-
 @media (max-width: 800px) {
   .brand {
     flex-direction: column;
@@ -719,29 +713,19 @@ button, input {
 
 }
 
-@media (min-width: 601px) and (max-width: 800px) {
-  .header-filters {
-    margin-inline: auto;
-  }
-
-  .loader, .search-control {
-    margin-left: 0;
-  }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   :root {
     --app-bar-height: 98px;
   }
 
   .header-inner {
-    flex-wrap: wrap;
+    grid-template-columns: 1fr auto;
     padding: 10px 0;
   }
 
   .header-filters {
-    order: 4;
-    width: 100%;
+    grid-column: 1 / -1;
+    grid-row: 2;
   }
 
   .filter-btn {
