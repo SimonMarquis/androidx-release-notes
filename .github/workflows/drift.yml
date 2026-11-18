@@ -13,6 +13,10 @@ concurrency:
 permissions:
   contents: read
 
+env:
+  BRANCH: automation/drift-sync
+  TITLE: 🧭 Drift sync
+
 defaults:
   run:
     shell: bash
@@ -30,6 +34,15 @@ jobs:
 
       - run: ./scripts/androidx-release-notes.main.kts sync all-channel 2>&1 | tee -a "$GITHUB_STEP_SUMMARY"
 
+      - name: 🔎 Detect changes
+        id: changes
+        run: |
+          git add -A -- data
+          if git diff --cached --quiet -- data;
+          then echo "changed=false"
+          else echo "changed=true"
+          fi >> "$GITHUB_OUTPUT"
+
       - uses: SimonMarquis/setup-github-app-as-bot@v1
         with:
           client-id: ${{ secrets.APP_CLIENT_ID }}
@@ -38,24 +51,12 @@ jobs:
           permission-pull-requests: write
 
       - name: 📡 Create PR
+        if: steps.changes.outputs.changed == 'true'
         env:
           BASE_BRANCH: ${{ github.event.repository.default_branch }}
-          BRANCH: automation/drift-sync
-          TITLE: 🧭 Drift sync
         run: |
-          git add -A -- data
-
-          if git diff --cached --quiet --exit-code -- data; then
-            echo "::notice::UP-TO-DATE"; exit 0
-          fi
-
           git commit -m "$TITLE" -- data
           git push --force origin "HEAD:refs/heads/$BRANCH"
-
-          if gh pr view "$BRANCH" --repo "$GITHUB_REPOSITORY" \
-              --json state --jq '.state' 2>/dev/null | grep -qx OPEN; then
-            echo "::notice::PR already exists"; exit 0
-          fi
 
           gh pr create \
             --repo "$GITHUB_REPOSITORY" \
@@ -63,4 +64,10 @@ jobs:
             --body "" \
             --base "$BASE_BRANCH" \
             --head "$BRANCH" \
-            --assignee "$GITHUB_TRIGGERING_ACTOR"
+            --assignee "$GITHUB_TRIGGERING_ACTOR" ||
+            gh pr view "$BRANCH" --repo "$GITHUB_REPOSITORY" --json state,baseRefName |
+              jq -e --arg base "$BASE_BRANCH" '.state == "OPEN" and .baseRefName == $base'
+
+      - name: 🧹 Close stale PR and delete branch
+        if: steps.changes.outputs.changed == 'false'
+        run: gh pr close "$BRANCH" --repo "$GITHUB_REPOSITORY" --delete-branch || true
