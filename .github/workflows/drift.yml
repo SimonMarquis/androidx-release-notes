@@ -35,7 +35,11 @@ jobs:
         run: |
           git add -A -- data
           CHANGES="$(git diff --cached --name-only -- data)"
-          echo "changed=$([[ -n "$CHANGES" ]] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+          if [[ -n "$CHANGES" ]]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - uses: SimonMarquis/setup-github-app-as-bot@v1
         with:
