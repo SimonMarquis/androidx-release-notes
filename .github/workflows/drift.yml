@@ -22,6 +22,8 @@ jobs:
     if: github.ref_name == github.event.repository.default_branch
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    env:
+      BRANCH: automation/drift-sync
     steps:
       - uses: actions/checkout@v7
         with:
@@ -52,7 +54,6 @@ jobs:
         if: steps.changes.outputs.changed == 'true'
         env:
           BASE_BRANCH: ${{ github.event.repository.default_branch }}
-          BRANCH: automation/drift-sync
           TITLE: 🧭 Drift sync
         run: |
           git commit -m "$TITLE" -- data
@@ -73,8 +74,6 @@ jobs:
 
       - name: 🧹 Close stale PR and delete branch
         if: steps.changes.outputs.changed == 'false'
-        env:
-          BRANCH: automation/drift-sync
         run: |
           PR_NUMBERS="$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$BRANCH" --state open --json number,headRepositoryOwner --jq ".[] | select(.headRepositoryOwner.login == \"$GITHUB_REPOSITORY_OWNER\") | .number")"
           for PR_NUMBER in $PR_NUMBERS; do
