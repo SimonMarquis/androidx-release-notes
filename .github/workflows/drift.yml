@@ -71,4 +71,8 @@ jobs:
 
       - name: 🧹 Close stale PR and delete branch
         if: steps.changes.outputs.changed == 'false'
-        run: gh pr close "$BRANCH" --repo "$GITHUB_REPOSITORY" --delete-branch || true
+        run: |
+          pr=$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$BRANCH" --state open --json number --jq '.[0].number // empty')
+          if [[ -n "$pr" ]]; then
+            gh pr close "$pr" --repo "$GITHUB_REPOSITORY" --delete-branch
+          fi
