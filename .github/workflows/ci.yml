@@ -42,7 +42,6 @@ jobs:
           if-no-files-found: error
       - name: Find latest release notes
         id: latest
-        shell: bash
         run: |
           pages=(site/????-??-??.html)
           test -f "${pages[-1]}"
@@ -115,7 +114,6 @@ jobs:
           LATEST_PAGE: ${{ needs.build.outputs.latest_page }}
           SCREENSHOTS: ${{ needs.screenshots.result == 'success' && format('[Download]({0})', needs.screenshots.outputs.artifact_url) || '❌ Failed' }}
           CI_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-        shell: bash
         run: |
           gh pr comment "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" \
             --edit-last --create-if-none --body-file - <<EOF
