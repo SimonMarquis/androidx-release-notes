@@ -2,11 +2,11 @@
 
 @file:CompilerOptions("-jvm-target", "25", "-opt-in=kotlin.io.path.ExperimentalPathApi")
 @file:DependsOn(
-    "com.github.ajalt.clikt:clikt-jvm:5.1.0",
+    "com.github.ajalt.clikt:clikt-jvm:5.2.1",
     "org.jsoup:jsoup:1.24.1",
     "org.jspecify:jspecify:1.0.1", // jsoup nullability annotations
     "org.jetbrains.kotlinx:kotlinx-html-jvm:0.12.0",
-    "org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.12.0",
+    "org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.13.0",
 )
 
 import com.github.ajalt.clikt.core.CliktCommand
