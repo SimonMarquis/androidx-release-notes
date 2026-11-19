@@ -97,8 +97,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - id: github-app
-        uses: SimonMarquis/setup-github-app-as-bot@v1
+      - uses: SimonMarquis/setup-github-app-as-bot@v1
         with:
           client-id: ${{ secrets.APP_CLIENT_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
@@ -107,7 +106,6 @@ jobs:
 
       - name: Post artifact links in PR comment
         env:
-          GH_TOKEN: ${{ steps.github-app.outputs.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
           INDEX_URL: ${{ needs.build.outputs.index_url }}
           LATEST_URL: ${{ needs.build.outputs.latest_url }}
