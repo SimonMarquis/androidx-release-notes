@@ -67,10 +67,10 @@ Run `./scripts/androidx-release-notes.main.kts <command>` from the repository ro
 
 ### Workflows
 
+- [![🏗️ CI](https://github.com/SimonMarquis/androidx-release-notes/actions/workflows/ci.yml/badge.svg)](https://github.com/SimonMarquis/androidx-release-notes/actions/workflows/ci.yml) builds self-contained preview pages and screenshots on PRs.
 - [![🔃 RSS sync](https://github.com/SimonMarquis/androidx-release-notes/actions/workflows/rss.yml/badge.svg)](https://github.com/SimonMarquis/androidx-release-notes/actions/workflows/rss.yml) runs `sync rss` periodically and commits new JSON in `data/`.
 - [![🧭 Drift sync](https://github.com/SimonMarquis/androidx-release-notes/actions/workflows/drift.yml/badge.svg)](https://github.com/SimonMarquis/androidx-release-notes/actions/workflows/drift.yml) runs `sync all-channel` weekly and opens a PR when `data/` drifts.
 - [![📝 Pages sync](https://github.com/SimonMarquis/androidx-release-notes/actions/workflows/pages.yml/badge.svg)](https://github.com/SimonMarquis/androidx-release-notes/actions/workflows/pages.yml) builds and deploys the site, refreshes `art/` screenshots, and syncs releases.
-- [![🏗️ CI](https://github.com/SimonMarquis/androidx-release-notes/actions/workflows/ci.yml/badge.svg)](https://github.com/SimonMarquis/androidx-release-notes/actions/workflows/ci.yml) builds self-contained preview pages and screenshots on PRs.
 
 Workflows push as a GitHub App (`APP_CLIENT_ID`, `APP_PRIVATE_KEY` secrets).  
 GitHub Pages deploys the site built in `site/` as an artifact.
