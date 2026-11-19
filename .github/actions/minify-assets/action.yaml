@@ -13,13 +13,3 @@ runs:
         npm ci --include=dev
         ./node_modules/.bin/esbuild static/assets/site.js --minify --sourcemap --outfile=static/assets/site.min.js
         ./node_modules/.bin/esbuild static/assets/site.css --minify --sourcemap --outfile=static/assets/site.min.css
-    - name: Upload minified assets
-      uses: actions/upload-artifact@v7
-      with:
-        name: minified-assets
-        path: |
-          static/assets/site.min.js
-          static/assets/site.min.js.map
-          static/assets/site.min.css
-          static/assets/site.min.css.map
-        if-no-files-found: error

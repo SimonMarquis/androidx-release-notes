@@ -18,6 +18,7 @@ runs:
   using: composite
   steps:
     - name: Install pngquant and zopflipng
+      if: inputs.optimize == 'true'
       shell: bash
       run: |
         set -euo pipefail
@@ -61,6 +62,10 @@ runs:
                 "file://$(realpath "$PAGE")"
               then
                 echo "::endgroup::"
+                if [[ ! -s "$screenshot" ]]; then
+                  echo "::error::Chromium produced no screenshot ($device/$theme)"
+                  exit 1
+                fi
                 break
               else
                 status=$?

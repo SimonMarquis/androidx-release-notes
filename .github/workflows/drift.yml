@@ -54,6 +54,7 @@ jobs:
         if: steps.changes.outputs.changed == 'true'
         env:
           BASE_BRANCH: ${{ github.event.repository.default_branch }}
+          ASSIGNEE: ${{ github.event_name == 'schedule' && github.repository_owner || github.triggering_actor }}
         run: |
           git commit -m "$TITLE" -- data
           git push --force origin "HEAD:refs/heads/$BRANCH"
@@ -64,10 +65,14 @@ jobs:
             --body "" \
             --base "$BASE_BRANCH" \
             --head "$BRANCH" \
-            --assignee "$GITHUB_TRIGGERING_ACTOR" ||
+            --assignee "$ASSIGNEE" ||
             gh pr view "$BRANCH" --repo "$GITHUB_REPOSITORY" --json state,baseRefName |
               jq -e --arg base "$BASE_BRANCH" '.state == "OPEN" and .baseRefName == $base'
 
       - name: 🧹 Close stale PR and delete branch
         if: steps.changes.outputs.changed == 'false'
-        run: gh pr close "$BRANCH" --repo "$GITHUB_REPOSITORY" --delete-branch || true
+        run: |
+          pr=$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$BRANCH" --state open --json number --jq '.[0].number // empty')
+          if [[ -n "$pr" ]]; then
+            gh pr close "$pr" --repo "$GITHUB_REPOSITORY" --delete-branch
+          fi

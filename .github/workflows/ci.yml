@@ -42,7 +42,6 @@ jobs:
           if-no-files-found: error
       - name: Find latest release notes
         id: latest
-        shell: bash
         run: |
           pages=(site/????-??-??.html)
           test -f "${pages[-1]}"
@@ -98,8 +97,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - id: github-app
-        uses: SimonMarquis/setup-github-app-as-bot@v1
+      - uses: SimonMarquis/setup-github-app-as-bot@v1
         with:
           client-id: ${{ secrets.APP_CLIENT_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
@@ -108,14 +106,12 @@ jobs:
 
       - name: Post artifact links in PR comment
         env:
-          GH_TOKEN: ${{ steps.github-app.outputs.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
           INDEX_URL: ${{ needs.build.outputs.index_url }}
           LATEST_URL: ${{ needs.build.outputs.latest_url }}
           LATEST_PAGE: ${{ needs.build.outputs.latest_page }}
           SCREENSHOTS: ${{ needs.screenshots.result == 'success' && format('[Download]({0})', needs.screenshots.outputs.artifact_url) || '❌ Failed' }}
           CI_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-        shell: bash
         run: |
           gh pr comment "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" \
             --edit-last --create-if-none --body-file - <<EOF
