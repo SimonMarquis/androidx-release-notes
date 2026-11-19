@@ -10,6 +10,5 @@ runs:
     - shell: bash
       run: |
         set -euo pipefail
-        npm ci --include=dev
-        ./node_modules/.bin/esbuild static/assets/site.js --minify --sourcemap --outfile=static/assets/site.min.js
-        ./node_modules/.bin/esbuild static/assets/site.css --minify --sourcemap --outfile=static/assets/site.min.css
+        npm ci
+        npm run minify

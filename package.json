@@ -1,5 +1,8 @@
 {
   "private": true,
+  "scripts": {
+    "minify": "esbuild static/assets/site.js --minify --sourcemap --outfile=static/assets/site.min.js && esbuild static/assets/site.css --minify --sourcemap --outfile=static/assets/site.min.css"
+  },
   "devDependencies": {
     "esbuild": "0.28.2"
   }
