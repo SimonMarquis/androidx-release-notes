@@ -7,3 +7,8 @@ runs:
       with:
         java-version: 25
         distribution: temurin
+        cache: maven
+        cache-dependency-path: scripts/*.main.kts
+        cache-path: |
+          ~/.m2/repository
+          !~/.m2/repository/**/*.lastUpdated
