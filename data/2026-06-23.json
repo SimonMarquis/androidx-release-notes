@@ -3,6 +3,7 @@
   "id": "tag:google.com,2016:androidx-release-notes#june_23_2026",
   "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#june_23_2026",
   "updated": "2026-06-23T20:30:00Z",
+  "rssUpdated": "2026-06-23T20:30:00Z",
   "entries": [
     {
       "group": "tracing",

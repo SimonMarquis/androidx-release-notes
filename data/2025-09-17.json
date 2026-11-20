@@ -3,6 +3,7 @@
   "id": "tag:google.com,2016:androidx-release-notes#september_17_2025",
   "link": "https://developer.android.com/jetpack/androidx/versions/all-channel#september_17_2025",
   "updated": "2025-09-17T00:00:00Z",
+  "rssUpdated": "2025-09-17T00:00:00Z",
   "entries": [
     {
       "group": "lifecycle",
