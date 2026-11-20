@@ -53,10 +53,11 @@ import java.net.http.HttpResponse.BodyHandlers
 import java.nio.file.Path
 import java.nio.file.StandardCopyOption.ATOMIC_MOVE
 import java.nio.file.StandardCopyOption.REPLACE_EXISTING
+import java.time.Instant
 import java.time.LocalDate
 import java.time.Month
 import java.time.OffsetDateTime
-import java.time.ZoneOffset
+import java.time.ZoneOffset.UTC
 import java.time.format.DateTimeFormatter
 import java.time.temporal.ChronoUnit
 import java.util.Locale
@@ -240,7 +241,7 @@ data class VersionSection(
 data class GroupPage(val group: Group, val sections: List<VersionSection>)
 
 /** A release date listed by the RSS feed or the all-channel page, with its release links. */
-data class ListedRelease(val date: LocalDate, val id: String, val updated: String?, val links: List<ReleaseLink>) {
+data class ListedRelease(val date: LocalDate, val id: String, val updated: Instant?, val links: List<ReleaseLink>) {
     val fragment: String get() = id.fragment
 }
 
@@ -278,9 +279,10 @@ data class EntryKey(val group: String, val id: String, val version: String) : Co
 data class Release(
     val date: LocalDate,
     val id: String,
-    val updated: String,
+    val updated: Instant,
     val entries: List<Entry>,
     val ignored: Boolean = false,
+    val rssUpdated: Instant? = null,
 ) {
     val fragment: String get() = id.fragment
     val link: String get() = "$ALL_CHANNEL_URL#$fragment"
@@ -297,9 +299,6 @@ val String.fragmentDate: LocalDate? get() = fragment.replace('_', ' ').toDateOrN
 
 /** The id of a release missing from the sources, following the current all-channel anchors (e.g. `october_07_2026`). */
 val LocalDate.releaseId: String get() = RELEASE_ID_PREFIX + anchor
-
-/** The `updated` value of a release missing from the RSS feed. */
-val LocalDate.startOfDay: String get() = atStartOfDay(ZoneOffset.UTC).toInstant().toString()
 
 /**
  * A version, ordered like `1.9.0` < `1.10.0-alpha01` < `1.10.0-beta01` < `1.10.0-rc01` < `1.10.0`; unreadable ones last, by text.
@@ -407,7 +406,7 @@ fun Document.rssReleases(): List<ListedRelease> = select("entry").map { entry ->
     val link = entry.selectFirst("link[rel=alternate]")?.attr("href").orEmpty()
     if (link.fragment != fragment) Log.issue(Issue.Link, "RSS '$title' (#$fragment) links to $link")
     val content = Jsoup.parseBodyFragment(entry.selectFirst("content")?.wholeText().orEmpty(), FEED_URL)
-    ListedRelease(date, id, OffsetDateTime.parse(text("updated")).toInstant().toString(), content.releaseLinks("RSS '$title'"))
+    ListedRelease(date, id, OffsetDateTime.parse(text("updated")).toInstant(), content.releaseLinks("RSS '$title'"))
 }
 
 /** Turns the all-channel page into one listed release per date heading. */
@@ -756,7 +755,7 @@ class Sync(
      */
     private fun ListedRelease.isUpToDate(): Boolean = updated != null && when (val release = stored[date]) {
         null -> links.all { it.isStored() }
-        else -> release.updated == updated
+        else -> release.rssUpdated == updated
     }
 
     private fun ReleaseLink.isStored(): Boolean {
@@ -849,11 +848,15 @@ class Sync(
         }
         entries.replaceLinkOnly(date, previous, scope)
         entries.dropStale(date, found.keys, scope)
+        val id = idOf(date, previous, listed)
+        val sortedEntries = entries.values.sortedBy(Entry::key)
+        val changed = previous == null || previous.id != id || previous.entries != sortedEntries
         val release = Release(
             date = date,
-            id = idOf(date, previous, listed),
-            updated = listed?.updated ?: previous?.updated ?: date.startOfDay,
-            entries = entries.values.sortedBy(Entry::key),
+            id = id,
+            updated = if (changed) Instant.now() else previous!!.updated,
+            entries = sortedEntries,
+            rssUpdated = listed?.updated ?: previous?.rssUpdated,
         )
         if (release == previous) return null
         Log.info("${if (previous == null) "🆕" else "✏️"} $date: ${release.entries.size} entries")
@@ -978,7 +981,8 @@ class Archive(private val directory: Path = Path(DATA_DIR)) {
         put("date", date.toString())
         put("id", id)
         put("link", link)
-        put("updated", updated)
+        put("updated", updated.toString())
+        rssUpdated?.let { put("rssUpdated", it.toString()) }
         if (ignored) put("ignored", true)
         put("entries", JsonArray(entries.sortedBy(Entry::key).map { it.toJson() }))
     }
@@ -996,7 +1000,8 @@ class Archive(private val directory: Path = Path(DATA_DIR)) {
     private fun JsonObject.toRelease(): Release = Release(
         date = LocalDate.parse(string("date")),
         id = string("id"),
-        updated = string("updated"),
+        updated = Instant.parse(string("updated")),
+        rssUpdated = stringOrNull("rssUpdated")?.let(Instant::parse),
         entries = getValue("entries").jsonArray.map { it.jsonObject.toEntry() },
         ignored = boolOrNull("ignored") ?: false,
     )
@@ -1054,7 +1059,7 @@ class SiteRenderer(private val static: Path, private val output: Path, private v
                 Log.info("🗑️ Removing stale page ${it.name}")
                 it.deleteExisting()
             }
-        output.resolve("sitemap.xml").writeAtomically(sitemap(dated.keys))
+        output.resolve("sitemap.xml").writeAtomically(sitemap(dated))
         Log.info("✅ Rendered index.html, sitemap.xml and ${dated.size} dated pages in $output")
     }
 
@@ -1088,13 +1093,16 @@ class SiteRenderer(private val static: Path, private val output: Path, private v
     /**
      * Lists the index and dated pages. The index follows the weekly release cadence; dated pages rarely change once published.
      */
-    private fun sitemap(dates: Set<LocalDate>): String = """
+    private fun sitemap(dated: Map<LocalDate, List<Release>>): String {
+        val dates = dated.mapValues { (_, releases) -> releases.maxOf(Release::updated).atOffset(UTC).toLocalDate() }
+        return """
         |<?xml version="1.0" encoding="UTF-8"?>
         |<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-        |  <url><loc>$siteUrl</loc><changefreq>weekly</changefreq></url>
-        |${dates.joinToString("\n") { "  <url><loc>$siteUrl$it.html</loc></url>" }}
+        |  <url><loc>$siteUrl</loc>${dates.values.maxOrNull()?.let { "<lastmod>$it</lastmod>" } ?: ""}<changefreq>weekly</changefreq></url>
+        |${dates.entries.joinToString("\n") { (date, updated) -> "  <url><loc>$siteUrl$date.html</loc><lastmod>$updated</lastmod></url>" }}
         |</urlset>
         |""".trimMargin()
+    }
 
     /** Renders the index when [date] is null, or the page of that date. */
     private fun page(releases: List<Release>, date: LocalDate? = null): String =
