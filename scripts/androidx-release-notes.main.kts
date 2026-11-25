@@ -1119,7 +1119,7 @@ class SiteRenderer(private val static: Path, private val output: Path, private v
             meta(name = "theme-color", content = "#1b1e22") { attributes("media" to "(prefers-color-scheme: dark)", "data-theme-color" to "dark") }
             // Links open in a new tab unless they set target="_self"; this keeps the attribute off every note link.
             base { attributes["target"] = "_blank" }
-            title(if (date == null) siteTitle else "${date.heading} · $siteTitle")
+            title(if (date == null) siteTitle else "$siteTitle · ${date.heading}")
             meta(name = "description", content = if (date == null) siteDescription else description(date, releases))
             link(rel = "canonical", href = if (date == null) siteUrl else "$siteUrl$date.html")
             link(rel = "icon", type = "image/svg+xml", href = favicon)
