@@ -1122,6 +1122,7 @@ class SiteRenderer(private val static: Path, private val output: Path, private v
             title(if (date == null) siteTitle else "$siteTitle · ${date.heading}")
             meta(name = "description", content = if (date == null) siteDescription else description(date, releases))
             link(rel = "canonical", href = if (date == null) siteUrl else "$siteUrl$date.html")
+            if (!embedded) link(rel = "icon", href = "favicon.ico") { attributes["sizes"] = "48x48" }
             link(rel = "icon", type = "image/svg+xml", href = favicon)
             // Apply the saved theme before the stylesheet or page content can paint.
             script { unsafe { +asset("theme-init.js") } }
